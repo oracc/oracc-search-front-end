@@ -1,31 +1,73 @@
 # OraccSearchTable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
+This Angular 4 project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2 and customised using components ng2-search-filter, 'ng2-order-pipe' and 'ngx-pagination'.
 
-## Serve the data with json-server in localhost:3000 so it's accessible from the table:
+This is just a test for showing ORACC data on a search table, and more tests using other components can be found in different branches.
 
+## Install requirements
+
+### npm
+
+https://www.npmjs.com/get-npm
+
+### Angular CLI
+
+https://cli.angular.io
+
+### Project dependencies
+
+Go to project root directory and run
+
+```
+npm install
+```
+
+to get all the dependencies set up. These are listed in `package.json`.
+
+If you add any new dependencies, remember to install them with:
+
+```
+npm install --save
+```
+
+so they are added to `package.json` which is version controlled.
+
+### json-server
+
+We need to serve the data with json-server in localhost:3000 so it's accessible from the table.
+This is temporary until we get the ElasticSearch/Flask-Restful backend ready.
+
+To run json-server:
 ```
 json-server --watch src/assets/data/entries_db.json &
 ```
 
-Note it might be that it's not enough with `npm install` and it needs to be uninstalled locally, then installed globally: 
+Note it might be that it's not enough with `npm install` and it needs to be uninstalled locally, then installed globally:
 
 ```
 npm uninstall json-server
 npm install json-server [--save] -g
 ```
 
+See more in https://github.com/typicode/json-server.
 
+### yarn, optionally
 
-## Requirements
+Needed to automatically install dependencies when installing a new package e.g. ng2-search-table has dependencies that need manual installing - yarn will install these automatically.
 
-Run
+In Mac OS X:
 
 ```
-npm install
+brew install yarn
 ```
 
-to get all the dependencies set up.
+Sample usage:
+
+```
+yarn install --peer
+```
+
+See more in https://yarnpkg.com.
 
 ## Development server
 
