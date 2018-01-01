@@ -2,6 +2,31 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
 
+## Serve the data with json-server in localhost:3000 so it's accessible from the table:
+
+```
+json-server --watch src/assets/data/entries_db.json &
+```
+
+Note it might be that it's not enough with `npm install` and it needs to be uninstalled locally, then installed globally: 
+
+```
+npm uninstall json-server
+npm install json-server [--save] -g
+```
+
+
+
+## Requirements
+
+Run
+
+```
+npm install
+```
+
+to get all the dependencies set up.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
