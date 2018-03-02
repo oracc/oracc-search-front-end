@@ -10,9 +10,12 @@ import { AppComponent } from './app.component';
 
 import { DataService } from './data.service';
 
+import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService }   from './translate';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { DataService } from './data.service';
     Ng2OrderModule, // importing the sorting package here
     NgxPaginationModule
   ],
-  providers: [DataService],
+  providers: [DataService, TranslateService, TRANSLATION_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
