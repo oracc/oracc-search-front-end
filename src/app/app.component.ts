@@ -32,6 +32,7 @@ export class AppComponent {
 
       this.supportedLangs = [
         { display: 'English', value: 'en' },
+        { display: 'Arabic', value: 'ar'}
       ];
       this.selectLang('en');
   }
