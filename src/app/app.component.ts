@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataService } from './data.service';
 import { TranslateService } from './translate';
 
 
@@ -11,24 +10,18 @@ import { TranslateService } from './translate';
 })
 
 export class AppComponent {
-  title = 'Search results';
+  title = 'Main component';
   supportedLangs: any[];
   public languageName: string;
   currentLang: string;
 
-  constructor(private dataService:DataService, private translateService:TranslateService) {
+  constructor(private translateService:TranslateService) {
 
   }
 
   entries = []
 
   ngOnInit() {
-
-      this.dataService.getEntries().subscribe((entries) => {
-
-          console.log(entries);
-          this.entries = entries
-      });
 
       this.supportedLangs = [
         { display: 'English', value: 'en' },
@@ -56,12 +49,4 @@ export class AppComponent {
       this.languageName = this.currentLang;
   }
 
-  //sorting
-  key: string = 'headword'
-  reverse: boolean = false;
-  sort(key){
-    this.key = key;
-    this.reverse = !this.reverse;
-  }
-  p: number = 1;
 }
