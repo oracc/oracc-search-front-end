@@ -13,12 +13,14 @@ import { DataService } from './search-table';
 import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService }   from './translate';
 
 import { TopMenuComponent, routerConfig } from './top-menu';
+import { HomeComponent } from './home';
 import { HelpComponent } from './help';
 import { SearchTableComponent } from './search-table';
 
 @NgModule({
   declarations: [
-    AppComponent, TranslatePipe, TopMenuComponent, HelpComponent, SearchTableComponent
+    AppComponent, TranslatePipe, TopMenuComponent,
+    HomeComponent, HelpComponent, SearchTableComponent
   ],
   imports: [
     BrowserModule,
