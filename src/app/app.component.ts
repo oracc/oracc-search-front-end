@@ -25,7 +25,8 @@ export class AppComponent {
 
       this.supportedLangs = [
         { display: 'English', value: 'en' },
-        { display: 'Arabic', value: 'ar'}
+        { display: 'Arabic', value: 'ar'},
+        // new languages go here so that there is a button for selecting them
       ];
       this.selectLang('en');
   }
