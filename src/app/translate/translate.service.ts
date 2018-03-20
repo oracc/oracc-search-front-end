@@ -18,6 +18,11 @@ export class TranslateService {
         this._currentLang = lang;
     }
 
+    public isRtl(): boolean {
+        // TODO generalise!
+        return (this._currentLang == "ar");
+    }
+
     private translate(key: string): string {
         // private perform translation
         let translation = key;

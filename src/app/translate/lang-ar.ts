@@ -6,7 +6,7 @@ export const LANG_AR_TRANS = {
     'search.guideword': 'guide word (ar)',
     'search.headword': 'headword (ar)',
     // Translations for the help page
-    'help.text': 'This is some help content in Arabic.',
+    'help.text': 'هذه بعض المعلومات.',
     // Translations for the home page
-    'welcome.text': 'General text in Arabic. Some information about Oracc, this search function.',
+    'welcome.text': 'General text in Arabic. This will flow from right to left.',
 };
