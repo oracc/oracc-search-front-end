@@ -6,10 +6,10 @@
     <table class="table">
       <thead>
         <tr>
-          <th (click)="sort('cf')">{{ "headword" | translate }}
+          <th (click)="sort('cf')">{{ "search.headword" | translate }}
             <span class="glyphicon sort-icon" *ngIf="key =='cf'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
-          <th (click)="sort('gw')">{{ "guide word" | translate }}
+          <th (click)="sort('gw')">{{ "search.guideword" | translate }}
             <span class="glyphicon sort-icon" *ngIf="key =='gw'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
           <!--th (click)="sort('headword')">guide word

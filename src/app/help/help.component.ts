@@ -10,5 +10,4 @@ import { Component } from '@angular/core';
 
 export class HelpComponent {
   title = 'help page';
-  text = 'This is some help content';
 }

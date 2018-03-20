@@ -10,5 +10,4 @@ import { Component } from '@angular/core';
 
 export class HomeComponent {
   title = 'home page';
-  text = 'General text. Some information about Oracc, this search function.';
 }
