@@ -5,14 +5,22 @@ import { HttpModule } from '@angular/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; //importing the module
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
-
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
-import { DataService } from './data.service';
+import { DataService } from './search-table';
+
+import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService }   from './translate';
+
+import { TopMenuComponent, routerConfig } from './top-menu';
+import { HomeComponent } from './home';
+import { HelpComponent } from './help';
+import { SearchTableComponent } from './search-table';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, TranslatePipe, TopMenuComponent,
+    HomeComponent, HelpComponent, SearchTableComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +28,10 @@ import { DataService } from './data.service';
     HttpModule,
     Ng2SearchPipeModule, //including into imports
     Ng2OrderModule, // importing the sorting package here
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule.forRoot(routerConfig)
   ],
-  providers: [DataService],
+  providers: [DataService, TranslateService, TRANSLATION_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

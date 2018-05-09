@@ -1,41 +1,13 @@
 <header>
-  <nav class="navbar navbar-default">
-    <a class="navbar-brand" href="#">ORACC entries</a>
-  </nav>
+<top-menu></top-menu>
 </header>
 
-<div class="container">
-  <div class="row">
-    <nav class="navbar">
-      <input class="form-control" type="text" name="search" [(ngModel)]="filter">      
-    </nav>
-    <table class="table">
-      <thead>
-        <tr>
-          <th (click)="sort('cf')">headword
-            <span class="glyphicon sort-icon" *ngIf="key =='cf'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-          </th>
-          <th (click)="sort('gw')">guide word
-            <span class="glyphicon sort-icon" *ngIf="key =='gw'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-          </th>
-          <!--th (click)="sort('headword')">guide word
-            <span class="glyphicon sort-icon" *ngIf="key =='headword'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-          </th-->
-          <!--th (click)="sort('senses')">senses
-            <span class="glyphicon sort-icon" *ngIf="key =='senses'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-          </th-->
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let entry of entries | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
-          <td>{{entry.cf}}</td>
-          <td>{{entry.gw}}</td>
-          <!--td>{{entry.headword}}</td-->
-          <!-- It doesn't work for entries with more than 1 sense yet -->
-          <!--td>{{entry.senses[0].mng}}</td-->
-        </tr>
-      </tbody> 
-    </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
+<div class="btn-group">
+      <button *ngFor="let lang of supportedLangs" (click)="selectLang(lang.value)" class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
+          {{ lang.display }}
+      </button>
+</div>
+
+<div dir="{{(this.translateService.isRtl()) ? 'rtl' : 'ltr'}}">
+<router-outlet></router-outlet>
 </div>
