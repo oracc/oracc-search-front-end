@@ -12,6 +12,10 @@
           <th (click)="sort('gw')">{{ "search.guideword" | translate }}
             <span class="glyphicon sort-icon" *ngIf="key =='gw'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
+          <th (click)="sort('icount')">{{ "search.icount" | translate }}
+            <span class="glyphicon sort-icon" *ngIf="key =='icount'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+          <th>{{ "search.periods" | translate }}</th>
           <!--th (click)="sort('headword')">guide word
             <span class="glyphicon sort-icon" *ngIf="key =='headword'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th-->
@@ -24,6 +28,12 @@
         <tr *ngFor="let entry of entries | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
           <td>{{entry.cf}}</td>
           <td>{{entry.gw}}</td>
+          <td>{{entry.icount}}</td>
+          <td>
+            <span *ngFor="let period of entry.periods_p; let isLast = last">
+              {{period}}{{isLast ? '' : ', ' }}
+            </span>
+          </td>
           <!--td>{{entry.headword}}</td-->
           <!-- It doesn't work for entries with more than 1 sense yet -->
           <!--td>{{entry.senses[0].mng}}</td-->
