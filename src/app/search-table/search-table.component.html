@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let entry of entries | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+        <tr *ngFor="let entry of sortedEntries() | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
           <td>{{entry.cf}}</td>
           <td>{{entry.gw}}</td>
           <td>{{entry.icount}}</td>
