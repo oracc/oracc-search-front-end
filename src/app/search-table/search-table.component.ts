@@ -49,4 +49,11 @@ export class SearchTableComponent {
     })
   }
   p: number = 1;
+
+  clicked(entry) {
+    console.log(`clicked from ${entry.cf}`);
+    let link = `http://build-oracc.museum.upenn.edu/neo/cbd/${entry.lang}/${entry.id}.html`;
+    //window.location.href = link;
+    window.open(link);
+  }
 }

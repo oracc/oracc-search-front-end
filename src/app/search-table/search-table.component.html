@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let entry of sortedEntries() | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+        <tr *ngFor="let entry of sortedEntries() | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index" (click)="clicked(entry)">
           <td>{{entry.cf}}</td>
           <td>{{entry.gw}}</td>
           <td align="right">{{entry.icount}}</td>
