@@ -7,6 +7,7 @@ export const LANG_AR_TRANS = {
     'search.headword': 'headword (ar)',
     'search.icount': 'count (ar)',
     'search.periods': 'periods (ar)',
+    'search.meanings': 'meanings (ar)',
     // Translations for the help page
     'help.text': 'هذه بعض المعلومات.',
     // Translations for the home page

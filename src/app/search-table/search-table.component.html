@@ -16,6 +16,7 @@
             <span class="glyphicon sort-icon" *ngIf="key =='icount'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
           <th>{{ "search.periods" | translate }}</th>
+          <th>{{ "search.meanings" | translate }}</th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +27,11 @@
           <td>
             <span *ngFor="let period of entry.periods_p; let isLast = last">
               {{period}}{{isLast ? '' : ', ' }}
+            </span>
+          </td>
+          <td>
+            <span *ngFor="let mng of entry.senses_mng; let isLast = last">
+              {{mng}}{{isLast ? '' : ', ' }}
             </span>
           </td>
         </tr>

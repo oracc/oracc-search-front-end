@@ -7,6 +7,7 @@ export const LANG_EN_TRANS = {
     'search.headword': 'headword',
     'search.icount': 'count',
     'search.periods': 'periods',
+    'search.meanings': 'meanings',
     // Translations for the help page
     'help.text': 'This is some help content',
     // Translations for the home page
