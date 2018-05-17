@@ -28,7 +28,7 @@
         <tr *ngFor="let entry of sortedEntries() | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
           <td>{{entry.cf}}</td>
           <td>{{entry.gw}}</td>
-          <td>{{entry.icount}}</td>
+          <td align="right">{{entry.icount}}</td>
           <td>
             <span *ngFor="let period of entry.periods_p; let isLast = last">
               {{period}}{{isLast ? '' : ', ' }}
