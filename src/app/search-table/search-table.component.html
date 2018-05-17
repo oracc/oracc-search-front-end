@@ -16,12 +16,6 @@
             <span class="glyphicon sort-icon" *ngIf="key =='icount'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
           <th>{{ "search.periods" | translate }}</th>
-          <!--th (click)="sort('headword')">guide word
-            <span class="glyphicon sort-icon" *ngIf="key =='headword'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-          </th-->
-          <!--th (click)="sort('senses')">senses
-            <span class="glyphicon sort-icon" *ngIf="key =='senses'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-          </th-->
         </tr>
       </thead>
       <tbody>
@@ -34,9 +28,6 @@
               {{period}}{{isLast ? '' : ', ' }}
             </span>
           </td>
-          <!--td>{{entry.headword}}</td-->
-          <!-- It doesn't work for entries with more than 1 sense yet -->
-          <!--td>{{entry.senses[0].mng}}</td-->
         </tr>
       </tbody>
     </table>

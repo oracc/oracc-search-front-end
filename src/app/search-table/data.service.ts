@@ -22,11 +22,6 @@ export class DataService {
             }
             return json
           });
-//    return [
-//        {"gw": "\u02beAtean", "headword": "\u02beAtaya[\u02beAtean]EN", "cf": "\u02beAtaya"},
-//        {"gw": "the sign A\u2082", "headword": "a[the sign A\u2082]N", "cf": "a"},
-//        {"gw": "asdas", "headword": "a[the sign A\u2082]N", "cf": "a"}
-//    ];
   }
 
 
