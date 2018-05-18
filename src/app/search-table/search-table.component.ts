@@ -7,7 +7,7 @@ import { TranslateService } from '../translate';
   selector: 'search-table',
   templateUrl: './search-table.component.html',
   // TODO Do we need separate styles?
-//  styleUrls: ['./search-table.component.css'],
+  styleUrls: ['./search-table.component.css'],
   moduleId: module.id,
 })
 
@@ -50,10 +50,16 @@ export class SearchTableComponent {
   }
   p: number = 1;
 
+  // clicking and hightling rows on mouseover
   clicked(entry) {
     console.log(`clicked from ${entry.cf}`);
     let link = `http://build-oracc.museum.upenn.edu/neo/cbd/${entry.lang}/${entry.id}.html`;
     //window.location.href = link;
     window.open(link);
+  }
+
+  current_id: string = null;
+  select(entry_id) {
+    this.current_id = entry_id;
   }
 }
