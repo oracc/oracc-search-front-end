@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '../translate';
 
 @Component({
   selector: 'help',
@@ -8,6 +8,22 @@ import { Component } from '@angular/core';
   moduleId: module.id,
 })
 
-export class HelpComponent {
+export class HelpComponent implements OnInit {
   title = 'help page';
+
+  translations = {
+    'help.text': {
+      'en': 'This is some help content',
+      'ar': 'هذه بعض المعلومات.'
+    }
+  }
+
+  constructor(private translateService:TranslateService) {
+
+  }
+
+  ngOnInit() {
+      this.translateService.addTranslations(this.translations);
+  }
+
 }

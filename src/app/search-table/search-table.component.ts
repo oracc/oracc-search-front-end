@@ -14,6 +14,17 @@ import { TranslateService } from '../translate';
 export class SearchTableComponent {
   title = 'Search results';
 
+  translations = {
+    'search.guideword': {
+      'en': 'guide word',
+      'ar': 'guide word (ar)'
+    },
+    'search.headword': {
+      'en': 'headword',
+      'ar': 'headword (ar)'
+    }
+  }
+
   constructor(private dataService:DataService, private translateService:TranslateService) {
 
   }
@@ -21,13 +32,11 @@ export class SearchTableComponent {
   entries = []
 
   ngOnInit() {
-
+      this.translateService.addTranslations(this.translations);
       this.dataService.getEntries().subscribe((entries) => {
-
           console.log(entries);
           this.entries = entries
       });
-
   }
 
   //sorting
