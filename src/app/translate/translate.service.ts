@@ -10,7 +10,7 @@ export class TranslateService {
     }
 
     // inject our translations
-    constructor(@Inject(TRANSLATIONS) private _translations: any) {
+    constructor(@Inject(TRANSLATIONS) private _translations: object) {
     }
 
     public use(lang: string): void {
@@ -21,6 +21,17 @@ export class TranslateService {
     public isRtl(): boolean {
         // TODO generalise!
         return (this._currentLang == "ar");
+    }
+
+    public addTranslations(contributed): void {
+        for (let entry in contributed) {
+          for (let lang in contributed[entry]) {
+            if (this._translations[lang] && entry in this._translations[lang]) {
+              console.log(`Entry ${entry} already exists!`);
+            }
+            this._translations[lang][entry] = contributed[entry][lang];
+          }
+        }
     }
 
     private translate(key: string): string {

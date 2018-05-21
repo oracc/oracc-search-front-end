@@ -10,8 +10,8 @@ export const TRANSLATIONS = new InjectionToken<string>('translations');
 
 // all translations
 const dictionary = {
-    [LANG_EN_NAME]: LANG_EN_TRANS,
-    [LANG_AR_NAME]: LANG_AR_TRANS,
+    [LANG_EN_NAME]: {},
+    [LANG_AR_NAME]: {},
     // other languages should have a similar entry here
 };
 
