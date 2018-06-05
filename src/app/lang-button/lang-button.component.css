@@ -2,3 +2,12 @@
   display: inline;
   float: right;
 }
+
+.lang-selector {
+  border-radius: 5px;
+  background-color: white;
+}
+
+.lang-selector.chosen {
+  background-color: rgb(69, 131, 232);
+}
