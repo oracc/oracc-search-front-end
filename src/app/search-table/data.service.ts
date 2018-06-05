@@ -12,16 +12,6 @@ export class DataService {
 
   getEntries() {
       return this.http.get("http://localhost:5000/search_all")
-          .map(function(res) {
-            let json = res.json();
-            // is this more readable?
-            //json.map(e => {e.icount = parseInt(e.icount); return e});
-            for (var entry of json) {
-              entry.icount = parseInt(entry.icount);
-            }
-            return json
-          });
+          .map(res => res.json());
   }
-
-
 }
