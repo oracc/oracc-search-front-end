@@ -58,8 +58,4 @@ export class SearchTableComponent {
     window.open(link);
   }
 
-  current_id: string = null;
-  select(entry_id) {
-    this.current_id = entry_id;
-  }
 }
