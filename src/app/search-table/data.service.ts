@@ -11,8 +11,7 @@ export class DataService {
 
 
   getEntries() {
-      //return this.http.get("http://localhost:5000/search_all")
-      return this.http.get("http://localhost:3000/entries")
+      return this.http.get("http://localhost:5000/search_all")
           .map(function(res) {
             let json = res.json();
             // is this more readable?
