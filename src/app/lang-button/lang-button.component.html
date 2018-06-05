@@ -1,0 +1,5 @@
+<div class="lang-bar">
+  <button *ngFor="let lang of supportedLangs" (click)="selectLang(lang.value)" class="lang-selector" [class.btn-primary]="isCurrentLang(lang.value)">
+    {{ lang.display }}
+  </button>
+</div>

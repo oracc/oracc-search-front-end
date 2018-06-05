@@ -1,9 +1,15 @@
 import {Injectable, Inject} from '@angular/core';
 import { TRANSLATIONS } from './translations'; // import our opaque token
 
+interface Language {
+  displayString: string;
+  value: string;
+}
+
 @Injectable()
 export class TranslateService {
     private _currentLang: string;
+    private supportedLanguages : Language[];
 
     public get currentLang() {
         return this._currentLang;
@@ -11,6 +17,12 @@ export class TranslateService {
 
     // inject our translations
     constructor(@Inject(TRANSLATIONS) private _translations: any) {
+      this.supportedLanguages = [
+        { display: 'English', value: 'en' },
+        { display: 'Arabic', value: 'ar'},
+        // new languages go here so that there is a button for selecting them
+      ];
+      this.use('en');
     }
 
     public use(lang: string): void {
@@ -21,6 +33,10 @@ export class TranslateService {
     public isRtl(): boolean {
         // TODO generalise!
         return (this._currentLang == "ar");
+    }
+
+    public getSupportedLanguages(): Language[] {
+        return this.supportedLanguages;
     }
 
     private translate(key: string): string {
