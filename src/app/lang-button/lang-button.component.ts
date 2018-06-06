@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '../translate';
+import { Language, TranslateService } from '../translate';
 
 @Component({
   selector: 'lang-button',

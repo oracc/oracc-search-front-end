@@ -1,8 +1,8 @@
 import {Injectable, Inject} from '@angular/core';
 import { TRANSLATIONS } from './translations'; // import our opaque token
 
-interface Language {
-  displayString: string;
+export interface Language {
+  display: string;
   value: string;
 }
 
