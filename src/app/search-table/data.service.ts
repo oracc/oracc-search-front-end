@@ -11,7 +11,7 @@ export class DataService {
 
 
   getEntries() {
-      return this.http.get("http://localhost:5000/search_all")
+      return this.http.get(`http://${window.location.hostname}:5000/search_all`)
           .map(res => res.json());
   }
 }
