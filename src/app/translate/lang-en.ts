@@ -11,5 +11,8 @@ export const LANG_EN_TRANS = {
     // Translations for the help page
     'help.text': 'This is some help content',
     // Translations for the home page
-    'welcome.text': 'General text. Some information about Oracc, this search function.',
+    'welcome.title': 'Welcome to ORACC\'s website!',
+    'welcome.text': `Oracc is a collaborative effort to develop a complete corpus of cuneiform whose rich annotation
+      and open licensing support the next generation of scholarly research. Created by Steve Tinney,
+      Oracc is steered by Jamie Novotny, Eleanor Robson, Tinney, and Niek Veldhuis.`,
 };
