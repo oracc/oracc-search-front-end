@@ -6,7 +6,7 @@ export const LANG_AR_TRANS = {
     'search.guideword': 'guide word (ar)',
     'search.headword': 'headword (ar)',
     'search.icount': 'count (ar)',
-    'search.periods': 'periods (ar)',
+    'search.periods': 'language and periods (ar)',
     'search.meanings': 'meanings (ar)',
     // Translations for the help page
     'help.title': 'مساعد',
