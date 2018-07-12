@@ -60,9 +60,15 @@ export class SearchTableComponent {
 
   // language codes and names
   lang_names = {
-    // TODO add the rest of the supported languages
+    // TODO What other languages should we add? qpn? xhu? others?
+    // See also http://oracc.museum.upenn.edu/doc/help/languages/index.html
     'akk': 'Akkadian',
+    'arc': 'Aramaic',
+    'elx': 'Elamite',
+    'grc': 'Greek',
+    'peo': 'Old Persian',
     'sux': 'Sumerian',
+    'uga': 'Ugaritic',
   }
   codeToName(lang_code: string): string {
     if (this.lang_names.hasOwnProperty(lang_code)) {
