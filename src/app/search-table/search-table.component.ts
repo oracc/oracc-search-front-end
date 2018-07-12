@@ -58,4 +58,16 @@ export class SearchTableComponent {
     window.open(link);
   }
 
+  // language codes and names
+  lang_names = {
+    // TODO add the rest of the supported languages
+    'akk': 'Akkadian',
+    'sux': 'Sumerian',
+  }
+  codeToName(lang_code: string): string {
+    if (this.lang_names.hasOwnProperty(lang_code)) {
+      return this.lang_names[lang_code];
+    }
+    return lang_code; // if the language has somehow escaped us
+  }
 }

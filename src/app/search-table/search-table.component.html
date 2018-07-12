@@ -26,7 +26,9 @@
           <td>{{entry.gw}}</td>
           <td align="right">{{entry.icount}}</td>
           <td>
-            <span>{{entry.lang}}</span>;
+            <span class="language" title={{codeToName(entry.lang)}}>
+              {{entry.lang}}
+            </span>;
             <span *ngFor="let period of entry.periods_p; let isLast = last">
               {{period}}{{isLast ? '' : ', ' }}
             </span>
