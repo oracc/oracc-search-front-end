@@ -10,7 +10,7 @@ export const LANG_AR_TRANS = {
     'search.meanings': 'meanings (ar)',
     // Translations for the help page
     'help.title': 'مساعد',
-    'help.intro': ':يمكنك البحث في محتويات ORACC بطريقتين مختلفتين',
+    'help.intro': 'يمكنك البحث في محتويات ORACC بطريقتين مختلفتين:',
     'help.heading1': 'ابحث في الإدخالات',
     'help.text1': `يمكنك الاستعلام عن مجموعة من النسخ باستخدام استعلام من اختيارك. سوف يكون الاستعلام الخاص بك
       متطابقة مع النص الأصلي ومعناه المترجم. ضع في اعتبارك أنك
