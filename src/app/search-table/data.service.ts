@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Http} from '@angular/http';
-import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class DataService {
 
-  constructor(public http:Http) {
+  constructor(public http:HttpClient) {
     console.log("Data service connected...")
   }
 
-
-  getEntries() {
-      return this.http.get(`http://${window.location.hostname}:5000/search_all`)
-          .map(res => res.json());
+  // TODO Can we get a better type for this that works with the table?
+  // See also https://angular.io/guide/http#type-checking-the-response
+  getEntries(count: number, after?:string): any {
+    let searchParams: { [param: string]: string} = {count: count.toString()};
+    if (after != undefined) {
+      searchParams['after'] = after.toString();
+    }
+    return this.http.get(`http://${window.location.hostname}:5000/search_all`,
+                        {params: searchParams});
   }
 }
