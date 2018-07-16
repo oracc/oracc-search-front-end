@@ -57,3 +57,7 @@ thead>tr>th {
   color:black;
   text-decoration: none;
 }
+
+.large-text {
+  font-size: larger;
+}

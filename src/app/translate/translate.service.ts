@@ -35,6 +35,11 @@ export class TranslateService {
         return (this._currentLang == "ar");
     }
 
+    public shouldEnlarge(): boolean {
+        // We want to show Arabic text in a larger font by default
+        return (this._currentLang == "ar");
+    }
+
     public getSupportedLanguages(): Language[] {
         return this.supportedLanguages;
     }
