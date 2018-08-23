@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '../home';
 import { HelpComponent } from '../help';
+import { DisplayTableComponent } from '../display-table';
 import { SearchTableComponent } from '../search-table';
 
 export const routerConfig: Routes = [
@@ -14,6 +15,10 @@ export const routerConfig: Routes = [
     },
     {
         path: 'search',
+        component: DisplayTableComponent
+    },
+    {
+        path: 'list-all',
         component: SearchTableComponent
     },
     {

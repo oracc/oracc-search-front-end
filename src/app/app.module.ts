@@ -17,11 +17,13 @@ import { HomeComponent } from './home';
 import { HelpComponent } from './help';
 import { SearchTableComponent } from './search-table';
 import { LangButtonComponent } from './lang-button/lang-button.component';
+import { DisplayTableComponent } from './display-table/display-table.component';
+
 
 @NgModule({
   declarations: [
     AppComponent, TranslatePipe, TopMenuComponent,
-    HomeComponent, HelpComponent, SearchTableComponent, LangButtonComponent
+    HomeComponent, HelpComponent, SearchTableComponent, LangButtonComponent, DisplayTableComponent
   ],
   imports: [
     BrowserModule,
