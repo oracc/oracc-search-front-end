@@ -8,7 +8,7 @@ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
-import { DataService } from './search-table';
+import { DataService } from './data-service';
 
 import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService }   from './translate';
 
