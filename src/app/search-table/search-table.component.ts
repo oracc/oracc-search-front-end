@@ -13,8 +13,6 @@ import { TranslateService } from '../translate';
 
 export class SearchTableComponent {
   title = 'Search results';
-  count: number = 10; // how many entries to display
-  start: string = ""; // which entry to start from
 
   constructor(private dataService:DataService, private translateService:TranslateService) {
 
@@ -24,7 +22,7 @@ export class SearchTableComponent {
 
   ngOnInit() {
 
-      this.dataService.getEntries(this.count).subscribe((entries) => {
+      this.dataService.getAllEntries().subscribe((entries) => {
           console.log(entries);
           this.entries = entries
       });

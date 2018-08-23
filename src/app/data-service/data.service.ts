@@ -18,4 +18,8 @@ export class DataService {
     return this.http.get(`http://${window.location.hostname}:5000/search_all`,
                         {params: searchParams});
   }
+
+  getAllEntries(): any {
+    return this.http.get(`http://${window.location.hostname}:5000/search_all`);
+  }
 }
