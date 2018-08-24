@@ -20,14 +20,9 @@ export class DisplayTableComponent {
 
   }
 
-  entries = []
-
+  entries = [];
+  query = ''; // text in the search bar
   ngOnInit() {
-
-      this.dataService.getEntries(this.count).subscribe((entries) => {
-          console.log(entries);
-          this.entries = entries
-      });
 
   }
 
@@ -57,6 +52,13 @@ export class DisplayTableComponent {
     let link = `http://build-oracc.museum.upenn.edu/neo/cbd/${entry.lang}/${entry.id}.html`;
     //window.location.href = link;
     window.open(link);
+  }
+
+  searchWord() {
+    this.dataService.searchWord(this.query).subscribe((entries) => {
+        console.log(entries);
+        this.entries = entries
+    });
   }
 
   // language codes and names

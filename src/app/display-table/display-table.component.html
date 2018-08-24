@@ -1,8 +1,15 @@
 <div class="container">
   <div class="row">
-    <nav class="navbar">
-      <input class="form-control" type="text" name="search" [(ngModel)]="filter">
-    </nav>
+    <div class="search-row">
+      <div id="search-bar" >
+        <input type="text" name="search" [(ngModel)]="query">
+      </div>
+      <div id="search-button">
+        <button mat-stroked-button (click)="searchWord()">Search glossary</button>
+      </div>
+    </div>
+  </div>
+  <div>
     <table class="table">
       <thead>
         <tr>

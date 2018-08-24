@@ -1,3 +1,30 @@
+.row {
+  width: 100%;
+}
+
+.search-row {
+  display: table;
+  width: 100%;
+}
+
+#search-bar, #search-button {
+  display: table-cell;
+  vertical-align: middle;
+  width: auto;
+}
+
+#search-bar {
+  width: 85%;
+}
+
+#search-bar input {
+  width: 100%;
+}
+
+#search-button {
+  text-align: right;
+}
+
 tr.table-row:hover {
   background-color: rgba(42, 203, 244, 0.2);
 }

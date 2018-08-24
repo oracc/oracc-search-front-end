@@ -22,4 +22,8 @@ export class DataService {
   getAllEntries(): any {
     return this.http.get(`http://${window.location.hostname}:5000/search_all`);
   }
+
+  searchWord(query: string): any {
+    return this.http.get(`http://${window.location.hostname}:5000/search/${query}`);
+  }
 }
