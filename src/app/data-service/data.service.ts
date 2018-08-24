@@ -4,8 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class DataService {
 
+  baseURL: string;
+
   constructor(public http:HttpClient) {
     console.log("Data service connected...")
+    this.baseURL = `http://${window.location.hostname}:5000`;
   }
 
   // TODO Can we get a better type for this that works with the table?
@@ -15,15 +18,14 @@ export class DataService {
     if (after != undefined) {
       searchParams['after'] = after.toString();
     }
-    return this.http.get(`http://${window.location.hostname}:5000/search_all`,
-                        {params: searchParams});
+    return this.http.get(this.baseURL + "/search_all", {params: searchParams});
   }
 
   getAllEntries(): any {
-    return this.http.get(`http://${window.location.hostname}:5000/search_all`);
+    return this.http.get(this.baseURL + "/search_all");
   }
 
   searchWord(query: string): any {
-    return this.http.get(`http://${window.location.hostname}:5000/search/${query}`);
+    return this.http.get(this.baseURL + `/search/${encodeURIComponent(query)}`);
   }
 }
