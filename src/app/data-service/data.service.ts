@@ -25,7 +25,14 @@ export class DataService {
     return this.http.get(this.baseURL + "/search_all");
   }
 
-  searchWord(query: string): any {
-    return this.http.get(this.baseURL + `/search/${encodeURIComponent(query)}`);
+  searchWord(query: string, sortField?: string, asc = true): any {
+    let searchParams: { [param: string]: string} = {};
+    if (sortField != undefined) {
+      searchParams.sort_by = sortField;
+      searchParams.dir = asc ? "asc" : "desc";
+    }
+    return this.http.get(this.baseURL + `/search/${encodeURIComponent(query)}`, {
+      params: searchParams
+    });
   }
 }

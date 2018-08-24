@@ -30,8 +30,18 @@ export class DisplayTableComponent {
   key: string = 'headword'
   reverse: boolean = false;
   sort(key){
-    this.key = key;
-    this.reverse = !this.reverse;
+    if (this.key != key) {
+      this.key = key;
+      this.reverse = true;
+    } else {
+      this.reverse = !this.reverse;
+    }
+    // Request sorted data
+    this.dataService.searchWord(this.query, key, this.reverse).subscribe((entries) => {
+        console.log(entries);
+        this.entries = entries
+    });
+
   }
   sortedEntries(): any {
     return this.entries.sort((a, b) => {
