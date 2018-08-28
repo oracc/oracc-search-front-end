@@ -2,12 +2,15 @@
 export const LANG_AR_NAME = 'ar';
 
 export const LANG_AR_TRANS = {
-    // Translations for the the search table
+    // Translations for the the search tables
     'search.guideword': 'guide word (ar)',
     'search.headword': 'headword (ar)',
     'search.icount': 'count (ar)',
     'search.periods': 'language and periods (ar)',
     'search.meanings': 'meanings (ar)',
+    // And specifically for the simple results table
+    'display.instructions': 'Enter a query to search for. You can sort the results by clicking on the column headings.'
+    'display.button_msg': 'بحث',
     // Translations for the help page
     'help.title': 'مساعد',
     'help.intro': 'يمكنك البحث في محتويات Oracc بطريقتين مختلفتين:',

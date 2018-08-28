@@ -2,12 +2,15 @@
 export const LANG_EN_NAME = 'en';
 
 export const LANG_EN_TRANS = {
-    // Translations for the the search table
+    // Translations for the the search tables
     'search.guideword': 'guide word',
     'search.headword': 'headword',
     'search.icount': 'count',
     'search.periods': 'language and periods',
     'search.meanings': 'meanings',
+    // And specifically for the simple results table
+    'display.instructions': 'Enter a query to search for. You can sort the results by clicking on the column headings.'
+    'display.button_msg': 'Search glossary',
     // Translations for the help page
     'help.title': 'Help',
     'help.intro': 'You can search the contents of Oracc in two different ways:',

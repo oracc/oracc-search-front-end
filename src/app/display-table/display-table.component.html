@@ -1,11 +1,12 @@
 <div class="container">
+  <p>{{"display.instructions" | translate}}</p>
   <div class="row">
     <div class="search-row">
       <div id="search-bar" >
         <input type="text" name="search" (keyup.enter)="searchWord()" [(ngModel)]="query">
       </div>
       <div id="search-button">
-        <button mat-stroked-button (click)="searchWord()">Search glossary</button>
+        <button mat-stroked-button (click)="searchWord()">{{"display.button_msg" | translate}}</button>
       </div>
     </div>
   </div>
