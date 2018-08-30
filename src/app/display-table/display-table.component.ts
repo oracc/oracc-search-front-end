@@ -55,10 +55,14 @@ export class DisplayTableComponent {
   }
 
   searchWord() {
-    this.dataService.searchWord(this.query).subscribe((entries) => {
-        console.log(entries);
-        this.entries = entries
-    });
+    if (this.query) {
+      this.dataService.searchWord(this.query).subscribe((entries) => {
+          console.log(entries);
+          this.entries = entries;
+      });
+    } else {
+      this.entries = [];
+    }
   }
 
   // language codes and names
