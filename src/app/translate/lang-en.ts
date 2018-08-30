@@ -9,7 +9,7 @@ export const LANG_EN_TRANS = {
     'search.periods': 'language and periods',
     'search.meanings': 'meanings',
     // And specifically for the simple results table
-    'display.instructions': 'Enter a query to search for. You can sort the results by clicking on the column headings.'
+    'display.instructions': 'Enter a query to search for. You can sort the results by clicking on the column headings.',
     'display.button_msg': 'Search glossary',
     // Translations for the help page
     'help.title': 'Help',
