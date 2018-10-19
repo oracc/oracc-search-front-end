@@ -1,13 +1,15 @@
-<header>
-<top-menu></top-menu>
-</header>
+<div>
+  <div class="left-side not-small">
+    <a href="http://www.oracc.org" class="logo" target="_blank">Oracc</a>
+  </div>
 
-<div class="btn-group">
-      <button *ngFor="let lang of supportedLangs" (click)="selectLang(lang.value)" class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
-          {{ lang.display }}
-      </button>
-</div>
+  <div class="right-side">
+    <header>
+      <top-menu></top-menu>
+    </header>
 
-<div dir="{{(this.translateService.isRtl()) ? 'rtl' : 'ltr'}}">
-<router-outlet></router-outlet>
+    <div dir="{{(this.translateService.isRtl()) ? 'rtl' : 'ltr'}}" class="{{(this.translateService.shouldEnlarge()) ? 'large-text' : 'normal-text'}}">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

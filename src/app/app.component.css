@@ -1,3 +1,63 @@
 thead>tr>th {
     cursor: pointer;
 }
+
+.left-side {
+  float: left;
+  display: block;
+  width: 15%;
+}
+
+.right-side {
+  float: right;
+  display: block;
+  width: 75%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .not-small {
+    display: none;
+  }
+  .left-side {
+    width: 0%;
+  }
+  .right-side {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .left-side>.logo {
+    padding-top: 2ex;
+    display: block;
+  }
+}
+
+.logo {
+  font-size: 18pt;
+  font-family: sans-serif;
+  color: black;
+  text-decoration: none;
+  padding-left: 2ex;
+}
+
+.logo:hover {
+  color:black;
+  text-decoration: none;
+}
+
+.logo:active {
+  color:black;
+  text-decoration: none;
+}
+
+.logo:visited {
+  color:black;
+  text-decoration: none;
+}
+
+.large-text {
+  font-size: larger;
+}

@@ -16,11 +16,12 @@ import { TopMenuComponent, routerConfig } from './top-menu';
 import { HomeComponent } from './home';
 import { HelpComponent } from './help';
 import { SearchTableComponent } from './search-table';
+import { LangButtonComponent } from './lang-button/lang-button.component';
 
 @NgModule({
   declarations: [
     AppComponent, TranslatePipe, TopMenuComponent,
-    HomeComponent, HelpComponent, SearchTableComponent
+    HomeComponent, HelpComponent, SearchTableComponent, LangButtonComponent
   ],
   imports: [
     BrowserModule,
