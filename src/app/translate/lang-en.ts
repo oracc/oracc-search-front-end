@@ -19,12 +19,12 @@ export const LANG_EN_TRANS = {
       matched against both the original text and its translated meaning. Keep in mind that you
       can also use extended Unicode characters such as ā or š (for more information on how to
       enter these, click here).
-      In the list of returned results, you can find include links to the occurences of each word
-      that matched your query.`,
+      In the list of returned results, each row corresponds to a single word that matched your query.
+      Clicking on a row links to the occurences of that word.`,
     'help.heading2': 'Search the Oracc information pages (coming soon)',
     'help.text2': `In addition to transcriptions, the Oracc project also comprises a wealth of information about
       Mesopotamian history and culture, which is searchable through this website. Your query will
-      return links to relevant queries, which you can then visit by clicking on the links displayed.`,
+      return links to relevant pages, which you can then visit by clicking on the links displayed.`,
     // Translations for the home page
     'welcome.title': 'Welcome to the Oracc website!',
     'welcome.text': `Oracc is a collaborative effort to develop a complete corpus of cuneiform whose rich annotation
