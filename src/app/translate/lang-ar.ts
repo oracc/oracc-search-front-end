@@ -3,9 +3,9 @@ export const LANG_AR_NAME = 'ar';
 
 export const LANG_AR_TRANS = {
     // Translations for the the search tables
-    'search.guideword': 'guide word (ar)',
-    'search.headword': 'headword (ar)',
-    'search.icount': 'count (ar)',
+    'search.guideword': 'translation (ar)',
+    'search.headword': 'ancient word (ar)',
+    'search.icount': 'hits (ar)',
     'search.periods': 'language and periods (ar)',
     'search.meanings': 'meanings (ar)',
     // And specifically for the simple results table

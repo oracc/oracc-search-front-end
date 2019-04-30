@@ -3,9 +3,9 @@ export const LANG_EN_NAME = 'en';
 
 export const LANG_EN_TRANS = {
     // Translations for the the search tables
-    'search.guideword': 'guide word',
-    'search.headword': 'headword',
-    'search.icount': 'count',
+    'search.guideword': 'translation',
+    'search.headword': 'ancient word',
+    'search.icount': 'hits',
     'search.periods': 'language and periods',
     'search.meanings': 'meanings',
     // And specifically for the simple results table
