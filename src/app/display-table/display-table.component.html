@@ -34,16 +34,16 @@
           <td>{{entry.gw}}</td>
           <td align="right">{{entry.icount}}</td>
           <td>
+            <span *ngFor="let mng of entry.senses_mng; let isLast = last">
+              {{mng}}{{isLast ? '' : ', ' }}
+            </span>
+          </td>
+          <td>
             <span class="language" title={{codeToName(entry.lang)}}>
               {{entry.lang}}
             </span>;
             <span *ngFor="let period of entry.periods_p; let isLast = last">
               {{period}}{{isLast ? '' : ', ' }}
-            </span>
-          </td>
-          <td>
-            <span *ngFor="let mng of entry.senses_mng; let isLast = last">
-              {{mng}}{{isLast ? '' : ', ' }}
             </span>
           </td>
         </tr>
