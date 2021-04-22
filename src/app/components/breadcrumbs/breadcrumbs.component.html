@@ -1,0 +1,17 @@
+<div class="bcrumbs">
+  <div class="container bcrumbs__container">
+    <ul class="bcrumbs__list">
+      <li class="bcrumbs__list-item" routerLink="/">
+        {{ "breadcrumbs.homeText" | translate }}
+      </li>
+      <li
+        class="bcrumbs__list-item js-list-item"
+        *ngFor="let link of breadcrumbsLinks; let i = index"
+        (click)="handleBreadcrumbClick($event, link.url, i, link.data)"
+        data-id="{{ link.url }}"
+      >
+        <i class="fas fa-arrow-left bcrumbs__list-icon"></i>{{ link.name }}
+      </li>
+    </ul>
+  </div>
+</div>

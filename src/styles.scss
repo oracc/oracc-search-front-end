@@ -1,0 +1,35 @@
+/*--------------------------------------------------------------
+# Config
+--------------------------------------------------------------*/
+@import "scss/config/reset";
+@import "scss/config/variables";
+@import "scss/config/keyframes";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "scss/base/layout";
+@import "scss/base/fonts";
+@import "scss/base/typography";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "scss/layout/buttons";
+@import "scss/layout/lists";
+@import "scss/layout/general";
+@import "scss/layout/arabic";
+@import "scss/layout/pagination";
+@import "scss/layout/loader";
+@import "scss/layout/glossary-article";
+
+svg {
+  path {
+    stroke: black;
+    stroke-width: 1%;
+  }
+}
+html,
+body {
+  height: 100%;
+}

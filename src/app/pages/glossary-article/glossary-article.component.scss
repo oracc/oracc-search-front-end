@@ -1,0 +1,77 @@
+@import "../../../scss/config/variables";
+
+.glossary {
+  text-align: left;
+  @media only screen and (max-width: 991px) {
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 1436px;
+  }
+  .entry.heading {
+    margin-bottom: 30px;
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+  p.icount {
+    display: none;
+  }
+  .forms,
+  .norms,
+  .morphs {
+    display: table;
+    margin-bottom: 15px;
+    @media only screen and (max-width: 991px) {
+      display: block;
+    }
+    .icountu {
+      font-weight: normal;
+      @media only screen and (max-width: 991px) {
+        font-size: 14px;
+      }
+      &:hover {
+        color: $blueLight;
+      }
+    }
+    .iheader {
+      display: table-cell;
+      padding-right: 12px;
+      min-width: 250px;
+      text-align: right;
+      font-weight: 700;
+      color: $blueDark;
+      font-size: 18px;
+      @media only screen and (max-width: 991px) {
+        display: block;
+        text-align: left;
+        font-size: 14px;
+      }
+    }
+  }
+  .senses {
+    margin-left: 242px;
+    @media only screen and (max-width: 991px) {
+      margin-left: 0;
+      font-size: 14px;
+    }
+    .sense,
+    .icount {
+      font-weight: normal;
+      @media only screen and (max-width: 991px) {
+        font-size: 14px;
+      }
+    }
+    .sensenum {
+      @media only screen and (max-width: 991px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.glossary__fetching {
+  position: relative;
+}
+.glossary__fallback {
+  text-align: center;
+}

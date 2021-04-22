@@ -1,0 +1,12 @@
+app-breadcrumbs {
+	&.bcrumbs--hidden {
+		position: absolute;
+		width: 100%;
+		left: 100%;
+	}
+}
+
+.bcrumbs-wrap {
+	overflow: hidden;
+	position: relative;
+}

@@ -1,0 +1,34 @@
+@import '../../../scss/config/variables';
+
+.cookies {
+	background-color: $white;
+	position: fixed;
+	font-family: $fontSecondary;
+	bottom: 0;
+	height: 80px;
+	width: 100%;
+	box-shadow: 0 7px 10px -10px inset $grayDark;
+	transition: $dur $ease;
+	@media only screen and (max-width: 991px) {
+		box-shadow: none;
+	}
+}
+
+.cookies__hide {
+	bottom: -100%;
+}
+
+.cookies__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+.cookies__text {
+	font-size: 14px;
+	@media only screen and (max-width: 991px) {
+		font-size: 9px;
+		margin-right: 35px;
+	}
+}

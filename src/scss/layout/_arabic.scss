@@ -1,0 +1,111 @@
+:lang(ar) {
+  .header {
+    .header__nav-lang-link {
+      &:first-of-type {
+        margin-left: 30px;
+        &::after {
+          left: -15px;
+          right: initial;
+        }
+        @media only screen and (max-width: 991px) {
+          margin-left: 15px;
+          &::after {
+            left: -9px;
+          }
+        }
+      }
+    }
+    .header__nav-bar {
+      @media only screen and (max-width: 991px) {
+        left: 100%;
+      }
+    }
+    .header__nav-bar--active {
+      @media only screen and (max-width: 991px) {
+        left: 0;
+      }
+    }
+  }
+  .footer {
+    .footer__social-link {
+      margin-left: 0;
+      margin-right: 42px;
+      @media only screen and (max-width: 991px) {
+        margin-right: 0;
+      }
+    }
+  }
+  .search {
+    .search__input {
+      margin-right: 0;
+      margin-left: 15px;
+    }
+    .search__btn {
+      .fa-search {
+        margin-left: 10px;
+        margin-right: 0;
+      }
+    }
+  }
+  .results {
+    .results__show-count-link {
+      margin-left: 0;
+      margin-right: 30px;
+    }
+    .results__table-head-item {
+      .fa-sort-down {
+        left: 0 !important;
+        margin-right: 5px;
+      }
+    }
+    .results__table-head-item,
+    .results__table-cell {
+      &:nth-child(5) {
+        margin-right: 10px !important;
+      }
+    }
+  }
+  .glossary {
+    text-align: right;
+    .forms,
+    .norms {
+      .iheader {
+        text-align: left;
+        padding-right: 0;
+        padding-left: 12px;
+      }
+    }
+    .senses {
+      text-align: right;
+      margin-left: 0;
+      margin-right: 242px;
+    }
+  }
+  .details {
+    .details__word {
+      text-align: right;
+    }
+    .details__panel-col {
+      &:not(:first-of-type) {
+        margin-right: 17px;
+      }
+      &:first-of-type {
+        margin-right: 0;
+      }
+    }
+    .details__panel-list-item {
+      &:first-of-type,
+      &:last-of-type {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+  .cookies {
+    .cookies__text {
+      @media only screen and (max-width: 991px) {
+        margin-right: 0;
+        margin-left: 35px;
+      }
+    }
+  }
+}

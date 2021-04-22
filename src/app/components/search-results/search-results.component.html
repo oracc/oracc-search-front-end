@@ -1,0 +1,140 @@
+<section class="results js-results">
+  <div class="results__content" *ngIf="dataRecieved">
+    <div class="results__top">
+      <span class="results__count"
+        >{{ "search.resultsText" | translate }}: {{ results }}</span
+      >
+      <div class="results__show-count">
+        <a
+          href="javascript:;"
+          class="results__show-count-link"
+          [ngClass]="{ active: itemsPerPage === 10 }"
+          (click)="setItemsPerPage($event, 10)"
+          >{{ "search.showText" | translate }} 10</a
+        >
+        <a
+          href="javascript:;"
+          class="results__show-count-link"
+          [ngClass]="{ active: itemsPerPage === 25 }"
+          (click)="setItemsPerPage($event, 25)"
+          >{{ "search.showText" | translate }} 25</a
+        >
+        <a
+          href="javascript:;"
+          class="results__show-count-link"
+          [ngClass]="{ active: itemsPerPage === 50 }"
+          (click)="setItemsPerPage($event, 50)"
+          >{{ "search.showText" | translate }} 50</a
+        >
+      </div>
+    </div>
+    <div class="results__table js-results-table">
+      <div class="results__table-head">
+        <span
+          class="results__table-head-item results__table-head-item--wide"
+          (click)="handleHeaderClick($event, false)"
+          id="5"
+          >{{ "search.ancientWordText" | translate
+          }}<i
+            class="fas fa-sort-down"
+            [ngClass]="{
+              descending: isDescending && clickedHeaderIndex == 5
+            }"
+          ></i
+        ></span>
+        <ul class="results__table-head-drop js-table-head">
+          <li
+            class="results__table-head-item js-table-head-item"
+            *ngFor="let heading of tableHeadings; let i = index"
+            (click)="handleHeaderClick($event)"
+            data-id="{{ i }}"
+          >
+            <i class="fas fa-list"></i>
+            {{ heading }}
+            <i
+              class="fas fa-sort-down"
+              [ngClass]="{
+                descending: isDescending && clickedHeaderIndex == i
+              }"
+            ></i>
+            <input
+              type="text"
+              name="filter-periods"
+              class="results__table-head-input"
+              type="text"
+              *ngIf="!isMobile"
+              (keyup)="filterPeriods($event)"
+              data-id="{{ i }}"
+              [placeholder]="'search.placeholderTextFilter' | translate"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        class="results__table-row js-table-row"
+        *ngFor="
+          let entry of translationData
+            | sort: sortField:isDescending
+            | paginate: { itemsPerPage: itemsPerPage, currentPage: p };
+          let i = index
+        "
+        (click)="showGlossaryArticle(entry.lang, entry.id, entry.cf)"
+        data-id="{{ entry.id }}"
+      >
+        <span class="results__table-cell results__table-cell--wide">{{
+          entry.cf
+        }}</span>
+        <ul class="results__table-row-drop">
+          <li
+            class="results__table-cell js-table-cell"
+            data-id="0"
+            *ngIf="clickedHeaderIndex == 0 || !isMobile"
+          >
+            {{ entry.gw }}
+          </li>
+          <li
+            class="results__table-cell js-table-cell"
+            data-id="1"
+            *ngIf="clickedHeaderIndex == 1 || !isMobile"
+          >
+            {{ entry.icount }}
+          </li>
+          <li
+            class="results__table-cell js-table-cell"
+            data-id="2"
+            *ngIf="clickedHeaderIndex == 2 || !isMobile"
+          >
+            {{ entry.senses_mng.join(", ") }}
+          </li>
+          <li
+            class="results__table-cell js-table-cell"
+            data-id="3"
+            *ngIf="clickedHeaderIndex == 3 || !isMobile"
+          >
+            {{ entry.lang }}
+          </li>
+          <li
+            class="results__table-cell js-table-cell"
+            data-id="4"
+            *ngIf="clickedHeaderIndex == 4 || !isMobile"
+          >
+            {{ entry.periods_p.join(", ") }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <pagination-controls
+      (pageChange)="p = $event"
+      previousLabel="&larr;"
+      nextLabel="&rarr;"
+      autoHide="true"
+      responsive="true"
+    ></pagination-controls>
+  </div>
+  <div class="results__fetching" *ngIf="waitForData">
+    <i class="fas fa-spinner"></i>
+  </div>
+  <span class="results__none" *ngIf="noRecievedData">{{
+    "search.noResultsText" | translate
+  }}</span>
+</section>

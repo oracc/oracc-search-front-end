@@ -1,0 +1,38 @@
+.glossary__content {
+  .heading {
+    font-size: 26px;
+    color: $grayDark;
+    margin-bottom: 10px;
+    @media only screen and (max-width: 991px) {
+      font-size: 20px;
+    }
+    span.cf {
+      color: $red;
+    }
+  }
+  .header,
+  .forms,
+  .norms,
+  .senses {
+    .iheader,
+    .icountu,
+    .sensenum,
+    .sense,
+    .icount {
+      font-family: $fontPrimary;
+      color: $blueDark;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .forms {
+      .iheader {
+        margin-right: 10px;
+      }
+    }
+  }
+  .header {
+    .icount {
+      margin-bottom: 10px;
+    }
+  }
+}

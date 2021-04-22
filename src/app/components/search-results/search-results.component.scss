@@ -1,0 +1,334 @@
+@import "../../../scss/config/variables";
+
+.results {
+  margin-left: 10px;
+  margin-right: 10px;
+  @media only screen and (max-width: 991px) {
+    padding-bottom: 30px;
+    background-color: $grayLight;
+    box-shadow: 0 -17px 0 20px $grayLight;
+    min-height: 100vh;
+  }
+}
+
+.results--hidden {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  .search--only & {
+    height: 1000px;
+  }
+}
+
+.results__top {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 47px;
+  @media only screen and (max-width: 991px) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+.results__count {
+  position: absolute;
+  color: $grayDark;
+  font-size: 26px;
+  font-weight: 700;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  @media only screen and (max-width: 991px) {
+    display: block;
+    font-size: 18px;
+    position: relative;
+    transform: none;
+    left: 0;
+    top: 0;
+  }
+}
+
+.results__show-count-link {
+  font-size: 18px;
+  font-weight: 100;
+  margin-left: 30px;
+  position: relative;
+  &:not(:last-of-type) {
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 18px;
+      width: 1px;
+      right: -15px;
+      bottom: 2px;
+      background-color: $grayDark;
+    }
+  }
+  &.active,
+  &:hover {
+    color: $blueDark;
+  }
+  @media only screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+.results__table {
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: $grayDark;
+  position: relative;
+  width: 100%;
+}
+
+.results__table-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.results__table-head-item {
+  display: flex;
+  align-items: center;
+  background-color: $blueLight;
+  font-family: $fontSecondary;
+  font-size: 12px;
+  text-align: left;
+  width: 9.6%;
+  height: 35px;
+  color: $white;
+  margin-right: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:not(:last-of-type) {
+    &:hover {
+      background-color: $blueDark;
+    }
+  }
+  &:last-of-type {
+    .fa-sort-down {
+      display: none;
+    }
+  }
+  .fa-sort-down {
+    font-size: 18px;
+    position: relative;
+    left: 5px;
+    top: -3px;
+    pointer-events: none;
+    transform-origin: 50% 70%;
+    transition: $dur $ease;
+    &.descending {
+      transform: rotate(180deg);
+    }
+  }
+  .fa-list {
+    display: none;
+    margin-right: 7px;
+  }
+  .results__table-head-input {
+    display: none;
+    margin-left: 20px;
+    border-radius: 5px;
+    height: 66%;
+    width: 100%;
+    border: none;
+    padding: 0 10px;
+  }
+  &:last-child {
+    .results__table-head-input {
+      display: block;
+    }
+  }
+}
+
+.results__table-head-item--active {
+  background-color: $blueDark;
+  .fa-sort-down {
+    color: $blueLight;
+  }
+}
+
+.results__table-head-item--wide,
+.results__table-cel--wide {
+  @media only screen and (max-width: 991px) {
+    width: 50%;
+  }
+}
+
+.results__table-head-drop,
+.results__table-row-drop {
+  display: flex;
+  width: 100%;
+  @media only screen and (max-width: 991px) {
+    width: 50%;
+  }
+  .results__table-head-item,
+  .results__table-cell {
+    @media only screen and (max-width: 991px) {
+      width: 100% !important;
+    }
+    &:first-of-type {
+      width: 11.4%;
+    }
+    &:nth-child(2) {
+      width: 4.4%;
+    }
+    &:nth-child(3) {
+      width: 29.6%;
+    }
+    &:nth-child(4) {
+      width: 10.6%;
+    }
+    &:nth-child(5) {
+      flex-grow: 1;
+      margin-right: 0;
+    }
+  }
+}
+
+.results__table-row-drop {
+  .results__table-cell {
+    @media only screen and (max-width: 991px) {
+      width: 100% !important;
+    }
+  }
+}
+
+.results__table-head-drop {
+  @media only screen and (max-width: 991px) {
+    flex-direction: column;
+    position: relative;
+  }
+  .results__table-head-item {
+    @media only screen and (max-width: 991px) {
+      position: absolute;
+      font-size: 11px;
+      background-color: $white;
+      color: $grayBorder;
+      border-left: 1px solid $grayBorder;
+      border-right: 1px solid $grayBorder;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      .fa-sort-down {
+        display: none;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 8px;
+        right: 8px;
+        height: 1px;
+        background-color: $grayBorder;
+      }
+      &:first-of-type {
+        background-color: $blueLight;
+        color: $white;
+        border: none;
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        &::after {
+          content: none;
+        }
+        .fa-list {
+          display: block;
+        }
+      }
+      &:nth-child(2) {
+        height: 55px;
+        top: 100%;
+      }
+      &:nth-child(3) {
+        height: 55px;
+        top: calc(200% + 20px);
+      }
+      &:nth-child(4) {
+        height: 55px;
+        top: calc(300% + 40px);
+      }
+      &:nth-child(5) {
+        height: 55px;
+        top: calc(400% + 60px);
+        border-bottom: 1px solid $grayBorder;
+        &::after {
+          content: none;
+        }
+      }
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+  }
+}
+
+.results__table-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    .results__table-cell {
+      background-color: $grayTable;
+    }
+  }
+  &:nth-child(even) {
+    .results__table-cell {
+      background-color: $white;
+    }
+  }
+  &:hover {
+    .results__table-cell {
+      background-color: $blueSky;
+    }
+  }
+}
+
+.results__table-cell {
+  text-align: left;
+  display: block;
+  padding: 8px;
+  margin-right: 10px;
+  width: 9.6%;
+  font-size: 14px;
+  padding-bottom: 23px;
+  box-sizing: border-box;
+  cursor: pointer;
+  @media only screen and (max-width: 991px) {
+    margin-right: 0;
+  }
+}
+
+.results__table-cell--wide {
+  @media only screen and (max-width: 991px) {
+    width: 50%;
+    margin-right: 10px;
+  }
+}
+
+.reults__none-search {
+  display: none;
+}
+
+.results__none,
+.reults__none-search {
+  font-size: 20px;
+  color: $grayDark;
+  font-weight: 700;
+  @media only screen and (max-width: 991px) {
+    display: block;
+    min-height: 100vh;
+  }
+}
+
+.results__fetching {
+  position: relative;
+}

@@ -1,0 +1,19 @@
+// Fonts
+$fontPrimary: 'NotoSerif', 'DroidSerif', serif;
+$fontSecondary: 'OpenSans', sans-serif;
+
+// Colors
+$red: #e84118;
+$blueDark: #273c75;
+$blueLight: #0097e6;
+$blueSky: #dfeef7;
+$grayLight: #f8f8f8;
+$grayDark: #404040;
+$gray: lighten($grayDark, 50%);
+$grayTable: #f5f5f5;
+$grayBorder: #707070;
+$white: #fff;
+
+// Transition
+$dur: 350ms;
+$ease: ease-in-out;

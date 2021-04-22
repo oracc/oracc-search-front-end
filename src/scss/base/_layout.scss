@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  max-width: 1404px;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.content {
+  min-height: 100vh;
+  position: relative;
+}
+
+.fa-spinner {
+  display: block;
+  font-size: 45px;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  animation: loaderSpin 1000ms infinite linear;
+}

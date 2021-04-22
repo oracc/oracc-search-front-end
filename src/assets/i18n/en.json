@@ -1,0 +1,52 @@
+{
+  "header": {
+    "linkText1": "Search",
+    "linkText2": "Projects",
+    "linkText3": "Tools",
+    "linkText4": "About",
+    "linkText5": "Help",
+    "langText1": "English",
+    "langText2": "Arabic",
+    "langAbbrText1": "EN",
+    "langAbbrText2": "AR"
+  },
+  "footer": {
+    "licenceText": "This work is licensed under a",
+    "licenceLinkText": "Creative Commons Attribution-ShareAlike 3.0 International License. 2014."
+  },
+  "home": {
+    "introText": "Welcome to",
+    "logoText": "Oracc",
+    "paraText1": "Oracc is a collaborative effort to develop a complete corpus of cuneiform whose rich annotation and open licensing support the next generation of scholarly research. Created by Steve Tinney, Oracc is steered by Jamie Novotny, Eleanor Robson, Tinney, and Niek Veldhuis.",
+    "paraText2": "From the links above, you can <a href='/search' class='js-search-home'>Search</a> the Oracc glossary to find words of interest. You can also browse through individual <a href='http://oracc.museum.upenn.edu/projectlist.html' target='_blank'>Projects</a> (in the old format) and use Oracc’s web <a href='http://oracc.museum.upenn.edu/doc/tools/index.html' target='_blank'>Tools</a> for editing. Choose the <a href='http://oracc.museum.upenn.edu/doc/about/index.html' target='_blank'>About</a> or the <a href='http://oracc.museum.upenn.edu/doc/help/index.html' target='_blank'>Help</a> heading if you need more guidance."
+  },
+  "search": {
+    "titleText": "Search Oracc",
+    "introText": "Enter a query to search for. You can sort the results by clicking on the column headings.",
+    "buttonText": "Search",
+    "resultsText": "Results",
+    "showText": "Show",
+    "ancientWordText": "Ancient word",
+    "noResultsText": "No results for given word.",
+    "placeholderText": "Search Oracc",
+    "placeholderTextFilter": "Filter periods"
+  },
+  "cookies": {
+    "text1": "Oracc uses cookies only to collect Google Analytics data. Read more",
+    "text2": "see the stats",
+    "text3": "opt out",
+    "hereText": "here",
+    "buttonText": "Got it!"
+  },
+  "breadcrumbs": {
+    "homeText": "Home"
+  },
+  "details": {
+    "metadataText": "Metadata",
+    "showText": "Show translation",
+    "textSingularText": "Text",
+    "textPluralText": "Texts",
+    "linesText": "Lines",
+    "sourceText": "Source"
+  }
+}

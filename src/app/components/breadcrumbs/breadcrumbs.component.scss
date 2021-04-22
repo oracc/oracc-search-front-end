@@ -1,0 +1,43 @@
+@import "../../../scss/config/variables";
+
+.bcrumbs {
+  background-color: $white;
+  font-family: $fontSecondary;
+  color: $blueLight;
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 20px;
+  }
+}
+
+.bcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bcrumbs__list-item {
+  cursor: pointer;
+  &:last-of-type {
+    color: $grayDark;
+    cursor: default;
+  }
+  @media only screen and (max-width: 991px) {
+    font-size: 10px;
+    line-height: 18px;
+  }
+}
+
+.bcrumbs__list-icon {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  top: 1px;
+  color: $blueLight;
+  @media only screen and (max-width: 991px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

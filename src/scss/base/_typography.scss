@@ -1,0 +1,11 @@
+a {
+  color: $blueLight;
+  font-weight: 700;
+  &:hover {
+    color: $blueDark;
+  }
+}
+
+p {
+  font-family: $fontSecondary;
+}

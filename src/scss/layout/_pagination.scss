@@ -1,0 +1,61 @@
+.ngx-pagination {
+  margin-bottom: 30px !important;
+  text-align: center;
+  .pagination-previous {
+    font-size: 25px;
+    font-family: $fontSecondary;
+    &::before {
+      content: none !important;
+    }
+    a {
+      font-size: 25px !important;
+      &::before {
+        content: none !important;
+      }
+    }
+  }
+
+  .pagination-next {
+    font-size: 25px;
+    font-family: $fontSecondary;
+    &::after {
+      content: none !important;
+    }
+    a {
+      font-size: 25px !important;
+      &::after {
+        content: none !important;
+      }
+    }
+  }
+  a {
+    font-family: $fontSecondary;
+    font-size: 18px !important;
+    color: $blueLight !important;
+    &:hover {
+      background-color: inherit !important;
+      color: $blueDark !important;
+    }
+  }
+  .current {
+    background-color: inherit !important;
+    color: $blueDark !important;
+    font-family: $fontSecondary !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .disabled {
+    color: $blueDark !important;
+    span {
+      border-radius: 0;
+      display: block;
+    }
+  }
+
+  .small-screen {
+    font-family: $fontSecondary;
+    font-size: 18px !important;
+    color: $blueLight !important;
+    font-weight: 700;
+  }
+}

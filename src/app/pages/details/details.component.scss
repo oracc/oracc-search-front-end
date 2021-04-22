@@ -1,0 +1,368 @@
+@import "../../../scss/config/variables";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+.details {
+  text-align: left;
+  @media only screen and (max-width: 991px) {
+    padding: 20px;
+  }
+}
+
+.details__content {
+  padding: 0;
+}
+
+.details__word {
+  display: block;
+  color: $red;
+  font-size: 27px;
+  margin-top: -8px;
+  margin-bottom: 45px;
+  font-weight: 700;
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 25px;
+    font-size: 24px;
+  }
+}
+
+.details__panel {
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 991px) {
+    flex-direction: column;
+  }
+}
+
+.details__panel-col {
+  flex-grow: 1;
+  &:first-of-type {
+    width: 19%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+    }
+  }
+  &:nth-child(2) {
+    max-width: 676px;
+  }
+  &:last-of-type {
+    width: 29%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+    }
+  }
+  &:not(:last-of-type) {
+    margin-right: 17px;
+    @media only screen and (max-width: 991px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.details__panel-top {
+  background-color: $white;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $blueDark;
+  font-weight: 700;
+  font-size: 19px;
+  padding: 0 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  @media only screen and (max-width: 991px) {
+    font-size: 16px;
+  }
+}
+
+.details__panel-main {
+  height: 500px;
+  background-color: $white;
+  padding: 14px 20px;
+  position: relative;
+  @media only screen and (max-width: 991px) {
+    height: inherit;
+    max-height: 500px;
+    min-height: 80px;
+    overflow-x: scroll;
+  }
+  .heading {
+    a {
+      pointer-events: none;
+    }
+  }
+  &:last-child {
+    .heading {
+      margin-bottom: 3px;
+    }
+    .xtr-label {
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+  .fa-spinner {
+    @media only screen and (max-width: 991px) {
+      font-size: 20px;
+    }
+  }
+  a {
+    cursor: pointer;
+  }
+  .cell {
+    display: block;
+    margin-bottom: 15px;
+  }
+  .haveimg {
+    background-color: $blueSky;
+  }
+  .pgotl {
+    &.level0 {
+      h2 {
+        color: $red;
+        font-size: 12px;
+        margin-bottom: 7px;
+      }
+    }
+    .level1 {
+      padding-left: 6px;
+      h3 {
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+    }
+    .level2 {
+      margin-bottom: 31px;
+      a {
+        font-size: 12px;
+        color: $grayBorder;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .xmdoutline {
+    h3 {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    ul {
+      margin-bottom: 15px;
+    }
+    li,
+    p {
+      font-size: 12px;
+      color: $grayBorder;
+      font-weight: normal;
+    }
+  }
+
+  .xtloutline {
+    h3 {
+      font-size: 12px;
+      margin-bottom: 1px;
+    }
+    p {
+      a {
+        font-size: 12px;
+      }
+    }
+    .xol2 {
+      margin-bottom: 15px;
+    }
+  }
+
+  .text {
+    tr.selected {
+      background-color: $blueSky;
+    }
+    span.lnum {
+      display: none;
+    }
+    .xlabel {
+      font-size: 12px;
+      color: $grayBorder;
+    }
+    .cbd,
+    .sign {
+      font-size: 14px;
+      @media only screen and (max-width: 991px) {
+        font-size: 12px;
+      }
+    }
+    .heading {
+      font-size: 18px;
+      @media only screen and (max-width: 991px) {
+        font-size: 14px;
+      }
+    }
+    .column,
+    .surface,
+    .nonlbody,
+    p {
+      font-size: 14px;
+      color: $grayBorder;
+    }
+  }
+
+  .ce-heading {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+  .ce-result,
+  .ce-label {
+    font-size: 12px;
+    color: $grayBorder;
+    font-weight: normal;
+    .selected {
+      background-color: $blueSky;
+    }
+  }
+  .ce-label {
+    a:hover {
+      color: $blueDark;
+    }
+  }
+  .p3notes {
+    .notemark {
+      display: inline-block;
+      color: $blueDark;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+    .note {
+      display: none;
+    }
+  }
+}
+
+.details__panel-main--right {
+  a {
+    color: $grayBorder;
+    font-weight: normal;
+  }
+  tr {
+    &:hover {
+      background-color: $blueSky;
+      cursor: pointer;
+    }
+  }
+  .xtr-label {
+    color: $blueLight;
+  }
+  .foreign,
+  .uncertain {
+    font-style: italic;
+  }
+}
+
+.details__panel-top-exp {
+  display: block;
+  position: relative;
+  width: 16px;
+  height: 5px;
+  background-color: $blueLight;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 15px;
+    width: 5px;
+    background-color: $blueLight;
+    left: 50%;
+    top: -5px;
+    transform-origin: center;
+    transform: translateX(-50%);
+    transition: 150ms linear;
+  }
+  &.active {
+    &::before {
+      height: 0;
+      top: 0;
+    }
+  }
+}
+
+.details__panel-list {
+  display: flex;
+  align-items: center;
+  li {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+.details__panel-list-item {
+  font-family: "OpenSans", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: $blueLight;
+  &.active {
+    color: $blueDark;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+.details__panel-left,
+.details__panel-right {
+  font-size: 25px;
+}
+
+.details__panel-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details__popup {
+  width: 450px;
+  height: 200px;
+  background-color: $white;
+  padding: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px 0px $grayBorder;
+  box-sizing: border-box;
+  overflow: auto;
+  @media only screen and (max-width: 576px) {
+    width: 90%;
+    height: 60%;
+  }
+  .lnum {
+    padding-right: 10px;
+  }
+  .enum {
+    padding-left: 10px;
+  }
+  a,
+  span {
+    font-size: 14px;
+  }
+}
+.details__popup-close {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  display: block;
+  position: absolute;
+  color: $blueLight;
+  right: 5px;
+  top: 5px;
+  &:hover {
+    color: $red;
+  }
+}
+.details__popup-title {
+  text-align: center;
+  padding: 0 20px 10px;
+  font-size: 18px;
+}
