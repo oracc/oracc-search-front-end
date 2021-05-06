@@ -400,8 +400,7 @@ export class DetailsTextsComponent implements OnInit {
       this.isMobile
         ? centralPanelLine.scrollIntoView()
         : centralPanel.scroll({
-            top: centralPanelLine.offsetTop - 50,
-            behavior: "smooth"
+            top: centralPanelLine.offsetTop - 50
           });
       rightPanel.querySelectorAll("tr").forEach((el) => {
         el.classList.remove("selected");
