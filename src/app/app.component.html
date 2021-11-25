@@ -3,6 +3,6 @@
 <div class="bcrumbs-wrap">
   <app-breadcrumbs [class.bcrumbs--hidden]="isHome"></app-breadcrumbs>
 </div>
-<router-outlet (activate)="onActivate($event)"></router-outlet>
+<router-outlet></router-outlet>
 <app-footer [shouldAdjustFooter]="adjustFooter"></app-footer>
 <app-cookies (cookieHiddenEvent)="adjustFooter = $event"></app-cookies>
