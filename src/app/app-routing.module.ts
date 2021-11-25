@@ -10,7 +10,7 @@ import { DetailsTextsComponent } from "./pages/details-texts/details-texts.compo
 import { DetailsSourceComponent } from "./pages/details-source/details-source.component";
 import { GlossaryArticleSourceComponent } from "./pages/glossary-article-source/glossary-article-source.component";
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: "",
     component: HomeComponent
@@ -51,7 +51,7 @@ export const routes: Routes = [
   }
 ];
 
-export const routesMob: Routes = [
+const routesMob: Routes = [
   {
     path: "",
     component: HomeComponent
