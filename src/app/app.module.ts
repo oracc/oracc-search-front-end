@@ -10,7 +10,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { CookiesComponent } from "./components/cookies/cookies.component";
 import { SearchComponent } from "./pages/search/search.component";
 import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.component";
-import { AppRoutungModule } from "./app-routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
@@ -60,7 +60,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   imports: [
     BrowserModule,
-    AppRoutungModule,
+    AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,

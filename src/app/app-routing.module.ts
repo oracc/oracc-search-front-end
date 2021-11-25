@@ -44,8 +44,7 @@ export const routes: Routes = [
         component: GlossaryArticleTextsComponent
       },
       {
-        path:
-          "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
+        path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
         component: GlossaryArticleSourceComponent
       }
     ]
@@ -86,8 +85,7 @@ export const routesMob: Routes = [
         component: GlossaryArticleTextsComponent
       },
       {
-        path:
-          "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
+        path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
         component: GlossaryArticleSourceComponent
       }
     ]
@@ -117,8 +115,7 @@ export const routesMob: Routes = [
     component: GlossaryArticleTextsComponent
   },
   {
-    path:
-      "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
+    path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
     component: GlossaryArticleSourceComponent
   }
 ];
@@ -133,4 +130,4 @@ const finalRoutes = isDesktop ? routes : routesMob;
   ],
   exports: [RouterModule]
 })
-export class AppRoutungModule {}
+export class AppRoutingModule {}
