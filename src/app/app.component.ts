@@ -26,10 +26,6 @@ export class AppComponent implements OnInit {
     this.isHome = window.location.pathname === "/" ? true : false;
   }
 
-  onActivate() {
-    window.scroll(0, 0);
-  }
-
   bindEvents() {
     window.addEventListener("load", () => {
       // tslint:disable-next-line: no-unused-expression
