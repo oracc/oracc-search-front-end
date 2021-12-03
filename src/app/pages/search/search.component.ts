@@ -48,6 +48,8 @@ export class SearchComponent implements OnInit {
   }
 
   searchOnEnter(event) {
+    event.stopImmediatePropagation(); // prevents repeated api calls
+
     if (event.code === "Enter") {
       this.searchButton.click();
       event.target.blur();

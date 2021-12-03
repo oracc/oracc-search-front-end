@@ -79,7 +79,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.resultsTable = document.querySelector(".js-results");
     this.isMobile = window.innerWidth < 991 ? true : false;
     window.innerWidth < 991 && (this.clickedHeaderIndex = 0);
-    this.search();
+    //this.search();
     this.getDataService.setIsSubsequentPageVisit(false);
   }
 
