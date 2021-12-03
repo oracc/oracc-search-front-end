@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+    frontend:
+       container_name: ng-docker-prod
+       build:
+           context: ui
+           dockerfile: ../compose/Dockerfile
+       ports:
+           - "4200:80"
+       stdin_open: true
+       tty: true
