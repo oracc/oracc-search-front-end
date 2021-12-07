@@ -78,7 +78,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.sortArrow = document.querySelectorAll(".js-table-head i");
     this.resultsTable = document.querySelector(".js-results");
     this.isMobile = window.innerWidth < 991 ? true : false;
-    window.innerWidth < 991 && (this.clickedHeaderIndex = 0);
+    this.isMobile && (this.clickedHeaderIndex = 0);
     //this.search();
     this.getDataService.setIsSubsequentPageVisit(false);
   }
