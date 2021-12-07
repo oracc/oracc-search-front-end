@@ -26,7 +26,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public translationData = [];
   public isMobile: boolean;
   public isDescending = false;
-  public clickedHeaderIndex = 0;
+  public clickedHeaderIndex = 5;
   private translationDataPure: any = [];
   private resultsTable: Element;
   private criteriaHead: NodeListOf<Element>;
@@ -78,7 +78,8 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.sortArrow = document.querySelectorAll(".js-table-head i");
     this.resultsTable = document.querySelector(".js-results");
     this.isMobile = window.innerWidth < 991 ? true : false;
-    this.search();
+    this.isMobile && (this.clickedHeaderIndex = 0);
+    //this.search();
     this.getDataService.setIsSubsequentPageVisit(false);
   }
 
@@ -156,7 +157,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
         default:
           this.sortField = "cf";
       }
-
       this.isDescending = !this.isDescending;
     }
     this.clickedHeaderIndex =

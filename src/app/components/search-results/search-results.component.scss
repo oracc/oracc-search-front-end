@@ -104,15 +104,8 @@
   padding-right: 8px;
   box-sizing: border-box;
   cursor: pointer;
-  &:not(:last-of-type) {
-    &:hover {
-      background-color: $blueDark;
-    }
-  }
-  &:last-of-type {
-    .fa-sort-down {
-      display: none;
-    }
+  &:hover {
+    background-color: $blueDark;
   }
   .fa-sort-down {
     font-size: 18px;
@@ -142,6 +135,32 @@
   &:last-child {
     .results__table-head-input {
       display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .fa-sort-down {
+    display: none;
+  }
+
+  .fa-sort-down.header-active {
+    display: block;
+  }
+
+  .results__table-head-item.results__table-head-item--wide:hover
+    .fas.fa-sort-down,
+  .results__table-head-item.js-table-head-item:hover .fas.fa-sort-down {
+    display: block;
+  }
+
+  .results__table-head-drop {
+    .results__table-head-item {
+      &:last-of-type {
+        .fa-sort-down {
+          display: none;
+        }
+      }
     }
   }
 }

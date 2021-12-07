@@ -28,6 +28,7 @@
         >
       </div>
     </div>
+
     <div class="results__table js-results-table">
       <div class="results__table-head">
         <span
@@ -38,10 +39,12 @@
           }}<i
             class="fas fa-sort-down"
             [ngClass]="{
-              descending: isDescending && clickedHeaderIndex == 5
+              descending: isDescending,
+              'header-active': clickedHeaderIndex == 5
             }"
           ></i
         ></span>
+
         <ul class="results__table-head-drop js-table-head">
           <li
             class="results__table-head-item js-table-head-item"
@@ -54,7 +57,8 @@
             <i
               class="fas fa-sort-down"
               [ngClass]="{
-                descending: isDescending && clickedHeaderIndex == i
+                descending: isDescending,
+                'header-active': clickedHeaderIndex == i
               }"
             ></i>
             <input
@@ -70,6 +74,7 @@
           </li>
         </ul>
       </div>
+
       <div
         class="results__table-row js-table-row"
         *ngFor="
