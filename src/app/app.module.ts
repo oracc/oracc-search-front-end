@@ -33,7 +33,7 @@ import { DetailsSourceComponent } from "./pages/details-source/details-source.co
 import { GlossaryArticleSourceComponent } from "./pages/glossary-article-source/glossary-article-source.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, "./assets/i18n/");
 }
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {

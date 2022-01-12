@@ -14,6 +14,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Serving the app under a custom url directory
+
+The app is configured to run under a `/new` directory to satisfy production requirements. To change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
