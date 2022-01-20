@@ -20,7 +20,8 @@ export class GetDataService {
   private glossaryArticleParam: string;
   private subsequentPageVisit = false;
 
-  private searchURL = "http://build-oracc.museum.upenn.edu:5000/search/";
+  private searchURL =
+    "https://cors-everywhere.herokuapp.com/http://build-oracc.museum.upenn.edu:5000/search/";
   private glossaryArticleURL = "http://build-oracc.museum.upenn.edu/neo/";
   private detailDataURL = "http://build-oracc.museum.upenn.edu/";
   private sourceURL = "http://cdli.ucla.edu/";
