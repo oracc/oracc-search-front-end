@@ -20,9 +20,7 @@ export class GetDataService {
   private glossaryArticleParam: string;
   private subsequentPageVisit = false;
 
-  private httpsProxy = "https://cors-everywhere.herokuapp.com/"; // temporary fix until the backend api is configured to accept https
-  private searchURL =
-    this.httpsProxy + "http://build-oracc.museum.upenn.edu:5000/search/";
+  private searchURL = "https://build-oracc.museum.upenn.edu:5000/search/";
   private glossaryArticleURL = "https://build-oracc.museum.upenn.edu/neo/";
   private detailDataURL = "https://build-oracc.museum.upenn.edu/";
   private sourceURL = "http://cdli.ucla.edu/";
