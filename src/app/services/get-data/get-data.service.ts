@@ -20,9 +20,9 @@ export class GetDataService {
   private glossaryArticleParam: string;
   private subsequentPageVisit = false;
 
-  private searchURL = "http://build-oracc.museum.upenn.edu:5000/search/";
-  private glossaryArticleURL = "http://build-oracc.museum.upenn.edu/neo/";
-  private detailDataURL = "http://build-oracc.museum.upenn.edu/";
+  private searchURL = "https://build-oracc.museum.upenn.edu:5000/search/";
+  private glossaryArticleURL = "https://build-oracc.museum.upenn.edu/neo/";
+  private detailDataURL = "https://build-oracc.museum.upenn.edu/";
   private sourceURL = "http://cdli.ucla.edu/";
 
   constructor(private http: HttpClient) {}
