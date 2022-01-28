@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       }
     });
 
-    this.bindEvents();
+    // this.bindEvents();
   }
 
   ngOnInit() {
@@ -26,10 +26,10 @@ export class AppComponent implements OnInit {
     this.isHome = window.location.pathname === "/" ? true : false;
   }
 
-  bindEvents() {
-    window.addEventListener("load", () => {
-      // tslint:disable-next-line: no-unused-expression
-      this.router.url !== "/" && this.router.navigate(["/"]);
-    });
-  }
+  // bindEvents() {
+  //   window.addEventListener("load", () => {
+  //     // tslint:disable-next-line: no-unused-expression
+  //     this.router.url !== "/" && this.router.navigate(["/"]);
+  //   });
+  // }
 }
