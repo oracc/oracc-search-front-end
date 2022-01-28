@@ -1,7 +1,9 @@
 <app-header></app-header>
 <app-search *ngIf="isMobile"></app-search>
 <div class="bcrumbs-wrap">
-  <app-breadcrumbs [class.bcrumbs--hidden]="isHome"></app-breadcrumbs>
+  <app-breadcrumbs
+    [class.bcrumbs--hidden]="isHome || isPageNotFound"
+  ></app-breadcrumbs>
 </div>
 <router-outlet></router-outlet>
 <app-footer [shouldAdjustFooter]="adjustFooter"></app-footer>
