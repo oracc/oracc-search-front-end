@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
 import { SearchComponent } from "./pages/search/search.component";
+import { SearchProjectComponent } from "./pages/search-project/search-project.component";
+import { SearchProjectTextComponent } from "./pages/search-project-text/search-project-text.component";
 import { SearchResultsComponent } from "./components/search-results/search-results.component";
 import { GlossaryArticleComponent } from "./pages/glossary-article/glossary-article.component";
 import { GlossaryArticleTextsComponent } from "./pages/glossary-article-texts/glossary-article-texts.component";
@@ -47,6 +49,19 @@ const routes: Routes = [
       {
         path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
         component: GlossaryArticleSourceComponent
+      }
+    ]
+  },
+  {
+    path: "search-project",
+    children: [
+      {
+        path: ":project/:id",
+        component: SearchProjectTextComponent
+      },
+      {
+        path: ":project/:subproject/:id",
+        component: SearchProjectTextComponent
       }
     ]
   },

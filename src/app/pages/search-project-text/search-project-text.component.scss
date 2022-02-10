@@ -1,0 +1,124 @@
+@import "../../../scss/config/variables";
+
+.search {
+  padding-top: 57px;
+  // background-color: $grayLight;
+  &:not(.search--mob) {
+    @media only screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+}
+
+.search__content {
+  text-align: center;
+  @media only screen and (max-width: 991px) {
+    padding: 0 10px;
+  }
+}
+
+.search__title {
+  font-size: 30px;
+  font-weight: 700;
+  color: $grayDark;
+  margin-bottom: 26px;
+}
+
+.search__intro {
+  color: $red;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.search__form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 38px;
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 0;
+  }
+}
+
+.search__input {
+  border: 1px solid $grayDark;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 15px;
+  width: 100%;
+  max-width: 346px;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: $dur $ease;
+  &:focus {
+    border: 1px solid $blueLight;
+    box-shadow: 0 0 6px 0 $blueLight;
+  }
+}
+
+.search__btn {
+  .fa-search {
+    margin-right: 10px;
+  }
+}
+
+img {
+  width: 30px;
+  font-weight: 900;
+  stroke-width: 1px;
+}
+
+.svg-stroke-width {
+  stroke-width: 0.1;
+}
+
+/// Mobile devices styles
+
+.search--mob {
+  padding-top: 20px;
+  background-color: $white;
+  z-index: 2;
+  .content {
+    min-height: 0;
+  }
+  .search__title,
+  .search__intro {
+    display: none;
+  }
+  .search__form {
+    padding-bottom: 20px;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      bottom: 0;
+      height: 1px;
+      background-color: $gray;
+    }
+  }
+  .search__input {
+    border: 1px solid $gray;
+    min-width: 220px;
+    margin-left: 18px;
+    margin-right: 6px;
+    padding-left: 11px;
+    padding-right: 11px;
+    &::placeholder {
+      font-family: $fontPrimary;
+      font-style: italic;
+    }
+  }
+  .search__btn {
+    height: 32px;
+    font-size: 0;
+    color: $grayDark;
+    background-color: $white;
+    .fa-search {
+      font-size: 23px;
+      margin-right: 0;
+    }
+  }
+}

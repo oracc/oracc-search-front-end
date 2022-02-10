@@ -1,0 +1,24 @@
+<div class="search" [class.search--mob]="isMobile">
+  <div class="container content search__content">
+    <h2 class="search__title">{{ "search.titleText" | translate }}</h2>
+    <span class="search__intro">{{ "search.introText" | translate }}</span>
+    <div class="search__form">
+      <input
+        type="text"
+        name="search"
+        class="search__input js-search-input"
+        [placeholder]="'search.placeholderText' | translate"
+        [(ngModel)]="searchParam"
+        (keydown)="searchOnEnter($event)"
+      />
+      <button
+        class="btn search__btn js-search-btn"
+        routerLink="search-results"
+        (click)="setSearchParam(searchParam)"
+      >
+        <i class="fa fa-search"></i>Search project
+      </button>
+    </div>
+    <router-outlet *ngIf="!isMobile"></router-outlet>
+  </div>
+</div>

@@ -28,10 +28,12 @@ export class GetDataService {
   constructor(private http: HttpClient) {}
 
   public getSearchData() {
+    console.log("search: " + this.searchURL + this.searchParam);
     return this.http.get(this.searchURL + this.searchParam);
   }
 
   public getGlossaryArticleData() {
+    console.log(this.glossaryArticleURL + this.lang + "/" + this.id);
     return this.http.get(this.glossaryArticleURL + this.lang + "/" + this.id, {
       responseType: "text"
     });
@@ -68,6 +70,10 @@ export class GetDataService {
   }
 
   public getDetailData() {
+    console.log(
+      "detail data: " +
+        `${this.detailDataURL}${this.urlParam}/${this.language}?xis=${this.queryString}`
+    );
     return this.http.get(
       `${this.detailDataURL}${this.urlParam}/${this.language}?xis=${this.queryString}`,
       {
@@ -77,6 +83,10 @@ export class GetDataService {
   }
 
   public getDetailDataPage(pageNumber) {
+    console.log(
+      "detail data page: " +
+        `${this.detailDataURL}${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`
+    );
     return this.http.get(
       `${this.detailDataURL}${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
       {
@@ -108,6 +118,7 @@ export class GetDataService {
   }
 
   public getTermData() {
+    console.log(`${this.glossaryArticleURL}${this.termDataParam}`);
     return this.http.get(`${this.glossaryArticleURL}${this.termDataParam}`, {
       responseType: "text"
     });
@@ -119,6 +130,7 @@ export class GetDataService {
 
   public getSourceData() {
     let sourceDataURL = `${this.detailDataURL}${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
+    console.log(sourceDataURL);
     if (this.sourceParams[2].length > 0) {
       sourceDataURL = sourceDataURL + "?" + this.sourceParams[2];
       if (this.sourceParams[3].length > 0) {
@@ -131,6 +143,10 @@ export class GetDataService {
   }
 
   public getPopupData(project: string, item: string, blockId: string) {
+    console.log(
+      "popup data: " +
+        `${this.detailDataURL}${project}/${item}/score?${blockId}`
+    );
     return this.http.get(
       `${this.detailDataURL}${project}/${item}/score?${blockId}`,
       {

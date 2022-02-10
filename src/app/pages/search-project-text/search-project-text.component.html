@@ -1,0 +1,6 @@
+<div class="search" [class.search--mob]="isMobile">
+  <div class="container content search__content">
+    <div>search project text</div>
+    <router-outlet *ngIf="!isMobile"></router-outlet>
+  </div>
+</div>
