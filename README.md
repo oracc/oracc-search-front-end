@@ -18,6 +18,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Deploy to GH-pages
+
+Run `ng deploy --base-href=/oracc-search-front-end/`
+
+Make sure that the project has first been initialised through Git and linked to you local repository.
+
 ## Serving the app under a custom url directory
 
 The app is configured to run under a `/new` directory to satisfy production requirements. To change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
