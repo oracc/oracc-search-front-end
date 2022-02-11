@@ -23,6 +23,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng deploy --base-href=/oracc-search-front-end/`
 
 Make sure that the project has first been initialised through Git and linked to you local repository.
+See the [documentation for the package we use](https://www.npmjs.com/package/angular-cli-ghpages) for more information.
 
 ## Serving the app under a custom url directory
 
