@@ -130,6 +130,14 @@ const routesMob: Routes = [
     path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
     component: GlossaryArticleSourceComponent
   },
+  {
+    path: ":project/:id",
+    component: SearchProjectTextComponent
+  },
+  {
+    path: ":project/:subproject/:id",
+    component: SearchProjectTextComponent
+  },
   { path: "404", component: PageNotFoundComponent },
   { path: "**", redirectTo: "404" }
 ];
