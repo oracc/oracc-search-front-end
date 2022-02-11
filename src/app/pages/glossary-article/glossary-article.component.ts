@@ -105,7 +105,7 @@ export class GlossaryArticleComponent implements OnInit {
     }
   }
 
-  private handleTextToHTMLConversion(text) {
+  private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, "text/html");
     const glossaryContentInput = htmlData.getElementsByTagName("body")[0];

@@ -96,7 +96,7 @@ export class DetailsComponent implements OnInit {
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
-  private handleTextToHTMLConversion(text, isTermData = false) {
+  private handleTextToHTMLConversion(text: string, isTermData = false) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, "text/html");
     const htmlDataToBeReduced = parser.parseFromString(text, "text/html");

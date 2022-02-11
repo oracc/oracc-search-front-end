@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
-import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
+import { DomSanitizer } from "@angular/platform-browser";
 
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 
 @Component({
   selector: "app-search-project-text",
@@ -10,51 +10,38 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./search-project-text.component.scss"]
 })
 export class SearchProjectTextComponent implements OnInit {
-  private searchInput: Element;
-  private searchButton: HTMLElement;
-  public placeholderText: string;
   public isMobile: boolean;
   public routerLink: string;
-  public searchParam: string;
-  public breadcrumbLink = [
-    {
-      name: "Search",
-      url: "/search"
-    }
-  ];
+  public projectTextContent: any;
 
   constructor(
     private route: ActivatedRoute,
+    private sanitizer: DomSanitizer,
     private getDataService: GetDataService
   ) {}
 
   ngOnInit() {
-    // get route params
-    this.route.paramMap.subscribe((paramMap) => {
-      //this.bankName = paramMap.get('bank');
-      console.log(paramMap);
-    });
+    this.isMobile = window.innerWidth < 991;
 
-    this.isMobile = window.innerWidth < 991 ? true : false;
-    this.bindEvents();
-  }
-
-  bindEvents() {
-    this.searchInput.addEventListener("keydown", (event) => {
-      this.searchOnEnter(event);
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      this.getArticle(paramMap);
     });
   }
 
-  setSearchParam(searchParam: string) {
-    this.getDataService.setSearchParam(searchParam);
+  public getArticle(paramMap: ParamMap) {
+    this.getDataService.getProjectTextData(paramMap).subscribe((data) => {
+      // @ts-ignore
+      this.handleTextToHTMLConversion(data);
+    });
   }
 
-  searchOnEnter(event) {
-    event.stopImmediatePropagation(); // prevents repeated api calls
+  private handleTextToHTMLConversion(text: string) {
+    const parser = new DOMParser();
+    const htmlData = parser.parseFromString(text, "text/html");
+    const projectTextContentInput = htmlData.getElementsByTagName("body")[0];
 
-    if (event.code === "Enter") {
-      this.searchButton.click();
-      event.target.blur();
-    }
+    this.projectTextContent = this.sanitizer.bypassSecurityTrustHtml(
+      projectTextContentInput.innerHTML
+    );
   }
 }
