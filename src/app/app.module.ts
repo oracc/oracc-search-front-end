@@ -31,6 +31,7 @@ import { GlossaryArticleTextsComponent } from "./pages/glossary-article-texts/gl
 import { DetailsTextsComponent } from "./pages/details-texts/details-texts.component";
 import { DetailsSourceComponent } from "./pages/details-source/details-source.component";
 import { GlossaryArticleSourceComponent } from "./pages/glossary-article-source/glossary-article-source.component";
+import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/");
@@ -56,7 +57,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     GlossaryArticleTextsComponent,
     DetailsTextsComponent,
     DetailsSourceComponent,
-    GlossaryArticleSourceComponent
+    GlossaryArticleSourceComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

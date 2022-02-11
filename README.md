@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Development server on mobile
+
+Run `ng serve --host 0.0.0.0`. Find your local IP address. Navigate to `<local IP address>:4200/`.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -13,6 +17,13 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Deploy to GH-pages
+
+Run `ng deploy --base-href=/oracc-search-front-end/`
+
+Make sure that the project has first been initialised through Git and linked to you local repository.
+See the [documentation for the package we use](https://www.npmjs.com/package/angular-cli-ghpages) for more information.
 
 ## Serving the app under a custom url directory
 

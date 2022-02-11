@@ -9,6 +9,7 @@ import { DetailsComponent } from "./pages/details/details.component";
 import { DetailsTextsComponent } from "./pages/details-texts/details-texts.component";
 import { DetailsSourceComponent } from "./pages/details-source/details-source.component";
 import { GlossaryArticleSourceComponent } from "./pages/glossary-article-source/glossary-article-source.component";
+import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   {
@@ -48,7 +49,9 @@ const routes: Routes = [
         component: GlossaryArticleSourceComponent
       }
     ]
-  }
+  },
+  { path: "404", component: PageNotFoundComponent },
+  { path: "**", redirectTo: "404" }
 ];
 
 const routesMob: Routes = [
@@ -117,7 +120,9 @@ const routesMob: Routes = [
   {
     path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
     component: GlossaryArticleSourceComponent
-  }
+  },
+  { path: "404", component: PageNotFoundComponent },
+  { path: "**", redirectTo: "404" }
 ];
 
 const isDesktop = window.innerWidth > 991;
