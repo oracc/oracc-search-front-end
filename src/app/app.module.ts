@@ -9,7 +9,6 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { CookiesComponent } from "./components/cookies/cookies.component";
 import { SearchComponent } from "./pages/search/search.component";
-import { SearchProjectComponent } from "./pages/search-project/search-project.component";
 import { SearchProjectTextComponent } from "./pages/search-project-text/search-project-text.component";
 import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -61,7 +60,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     DetailsSourceComponent,
     GlossaryArticleSourceComponent,
     PageNotFoundComponent,
-    SearchProjectComponent,
     SearchProjectTextComponent
   ],
   imports: [
