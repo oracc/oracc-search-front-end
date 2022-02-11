@@ -1,0 +1,52 @@
+{
+  "header": {
+    "linkText1": "Search",
+    "linkText2": "Projects",
+    "linkText3": "Tools",
+    "linkText4": "About",
+    "linkText5": "Help",
+    "langText1": "English",
+    "langText2": "Arabic",
+    "langAbbrText1": "EN",
+    "langAbbrText2": "AR"
+  },
+  "footer": {
+    "licenceText": "This work is licensed under a",
+    "licenceLinkText": "Creative Commons Attribution-ShareAlike 3.0 International License. 2014."
+  },
+  "home": {
+    "introText": "Welcome to",
+    "logoText": "Oracc",
+    "paraText1": "Oracc هو جهد تعاوني لتطوير مجموعة كاملة من المسمارية التي تدعم التعليقات التوضيحية الغنية والترخيص المفتوح الجيل القادم من الأبحاث العلمية. ابتكر من قبل ستيف تيني ، Oracc يديرها جيمي نوفوتني ، إليانور روبسون ، تيني ، ونيك فيلدهويس.",
+    "paraText2": "من الروابط أعلاه ، يمكنك البحث في مسرد Oracc للعثور على الكلمات التي تهمك. يمكنك أيضًا تصفح المشروعات الفردية (بالتنسيق القديم) واستخدام أدوات الويب الخاصة بـ Oracc للتحرير. اختر العنوان حول أو المساعدة إذا كنت بحاجة إلى مزيد من الإرشادات."
+  },
+  "search": {
+    "titleText": "Search Oracc",
+    "introText": "Enter a query to search for. You can sort the results by clicking on the column headings.",
+    "buttonText": "Search",
+    "resultsText": "Results",
+    "showText": "Show",
+    "ancientWordText": "Ancient word",
+    "noResultsText": "No results for given word.",
+    "placeholderText": "Search Oracc",
+    "placeholderTextFilter": "Filter periods"
+  },
+  "cookies": {
+    "text1": "Oracc uses cookies only to collect Google Analytics data. Read more",
+    "text2": "see the stats",
+    "text3": "opt out",
+    "hereText": "here",
+    "buttonText": "Got it!"
+  },
+  "breadcrumbs": {
+    "homeText": "Home"
+  },
+  "details": {
+    "metadataText": "Metadata",
+    "showText": "Show text",
+    "textSingularText": "Text",
+    "textPluralText": "Texts",
+    "linesText": "Lines",
+    "sourceText": "Source"
+  }
+}
