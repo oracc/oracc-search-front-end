@@ -22,7 +22,6 @@ export class SearchProjectTextComponent implements OnInit {
       url: "/search"
     }
   ];
-  public orderby: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +29,11 @@ export class SearchProjectTextComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.route.snapshot.params);
+    // get route params
+    this.route.paramMap.subscribe((paramMap) => {
+      //this.bankName = paramMap.get('bank');
+      console.log(paramMap);
+    });
 
     this.isMobile = window.innerWidth < 991 ? true : false;
     this.bindEvents();
