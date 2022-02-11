@@ -1,10 +1,10 @@
-<div class="glossary">
+<div class="project-text">
   <div
-    class="container content glossary__content js-glossary-content"
+    class="container content project-text__content js-project-text-content"
     [innerHTML]="projectTextContent"
     *ngIf="projectTextContent; else loader"
   ></div>
   <ng-template #loader
-    ><div class="glossary__fetching"><i class="fas fa-spinner"></i></div
+    ><div class="project-text__fetching"><i class="fas fa-spinner"></i></div
   ></ng-template>
 </div>
