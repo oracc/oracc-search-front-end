@@ -19,8 +19,6 @@ export class AppComponent implements OnInit {
         this.isPageNotFound = val.urlAfterRedirects === "/404";
       }
     });
-
-    // this.bindEvents();
   }
 
   ngOnInit() {
@@ -28,11 +26,4 @@ export class AppComponent implements OnInit {
     this.isHome = window.location.pathname === "/new";
     this.isPageNotFound = window.location.pathname === "/404";
   }
-
-  // bindEvents() {
-  //   window.addEventListener("load", () => {
-  //     // tslint:disable-next-line: no-unused-expression
-  //     this.router.url !== "/" && this.router.navigate(["/"]);
-  //   });
-  // }
 }
