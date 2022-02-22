@@ -106,11 +106,27 @@ export class DetailsComponent implements OnInit {
     if (this.paramMap.get("projectId") !== null) {
       console.log("param version");
       console.log(this.paramMap);
-      this.getDataService
-        .getProjectTextData(this.paramMap)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversion(data, true);
-        });
+      // this.getDataService
+      //   .getProjectTextData(this.paramMap)
+      //   .subscribe((data) => {
+      //     this.handleTextToHTMLConversion(data, true);
+      //   });
+
+      console.log(
+        `${this.paramMap.get("projectId")}/${this.paramMap.get("textId")}`
+      );
+
+      const project = this.paramMap.get("projectId");
+      const subProject = this.paramMap.get("subprojectId");
+      const textId = this.paramMap.get("textId");
+
+      let url = subProject
+        ? `${this.paramMap.get("projectId")}/${this.paramMap.get(
+            "subprojectId"
+          )}/${this.paramMap.get("textId")}`
+        : `${this.paramMap.get("projectId")}/${this.paramMap.get("textId")}`;
+
+      this.router.navigate([url, "texts"]);
     } else {
       console.log("search version");
       this.getDataService.getDetailData().subscribe((data) => {

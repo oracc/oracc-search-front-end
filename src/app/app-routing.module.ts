@@ -56,8 +56,16 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
+    path: ":projectId/:textId/texts",
+    component: DetailsTextsComponent
+  },
+  {
     path: ":projectId/:subprojectId/:textId",
-    component: SearchProjectTextComponent
+    component: DetailsComponent
+  },
+  {
+    path: ":projectId/:subprojectId/:textId/texts",
+    component: DetailsTextsComponent
   },
   { path: "404", component: PageNotFoundComponent },
   { path: "**", redirectTo: "404" }
@@ -131,11 +139,11 @@ const routesMob: Routes = [
     component: GlossaryArticleSourceComponent
   },
   {
-    path: ":projectId/:textId",
-    component: SearchProjectTextComponent
+    path: ":projectId/:textId/texts",
+    component: DetailsComponent
   },
   {
-    path: ":projectId/:subprojectId/:textId",
+    path: ":projectId/:subprojectId/:textId/texts",
     component: SearchProjectTextComponent
   },
   { path: "404", component: PageNotFoundComponent },

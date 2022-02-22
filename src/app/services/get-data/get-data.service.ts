@@ -67,8 +67,6 @@ export class GetDataService {
       ? `${this.baseUrl}${project}/${subProject}/${textId}`
       : `${this.baseUrl}${project}/${textId}`;
 
-    url = "https://build-oracc.museum.upenn.edu/neo/P322250";
-
     return this.http.get(url, {
       responseType: "text"
     });
