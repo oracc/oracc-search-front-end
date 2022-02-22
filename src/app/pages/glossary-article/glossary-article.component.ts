@@ -101,6 +101,8 @@ export class GlossaryArticleComponent implements OnInit {
         queryParams[2]
       );
       this.getDataService.setChosenTermText(filteredText);
+
+      // navigates to details component
       this.router.navigate([decodeURI(this.router.url), "occurrences"]);
     }
   }

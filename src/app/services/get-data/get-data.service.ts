@@ -40,14 +40,34 @@ export class GetDataService {
     });
   }
 
-  public getProjectTextData(params: ParamMap) {
-    const project = params.get("project");
-    const subProject = params.get("subproject");
-    const textId = params.get("id");
+  // public getProjectTextData(params: ParamMap) {
+  //   console.log(params);
+  //   console.log(params.get("projectId"));
+  //   const project = params.get("projectId");
+  //   const subProject = params.get("subprojectId");
+  //   const textId = params.get("textId");
 
-    const url = subProject
-      ? `${this.baseUrl}${project}/${subProject}/${textId}/html`
-      : `${this.baseUrl}${project}/${textId}/html`;
+  //   const url = subProject
+  //     ? `${this.baseUrl}${project}/${subProject}/${textId}/html`
+  //     : `${this.baseUrl}${project}/${textId}/html`;
+
+  //   return this.http.get(url, {
+  //     responseType: "text"
+  //   });
+  // }
+
+  public getProjectTextData(params: ParamMap) {
+    console.log(params);
+    console.log(params.get("projectId"));
+    const project = params.get("projectId");
+    const subProject = params.get("subprojectId");
+    const textId = params.get("textId");
+
+    let url = subProject
+      ? `${this.baseUrl}${project}/${subProject}/${textId}`
+      : `${this.baseUrl}${project}/${textId}`;
+
+    url = "https://build-oracc.museum.upenn.edu/neo/P322250";
 
     return this.http.get(url, {
       responseType: "text"
@@ -134,7 +154,15 @@ export class GetDataService {
 
   public getTermData() {
     console.log(`${this.glossaryArticleURL}${this.termDataParam}`);
-    return this.http.get(`${this.glossaryArticleURL}${this.termDataParam}`, {
+
+    // return this.http.get(`${this.glossaryArticleURL}${this.termDataParam}`, {
+    //   responseType: "text"
+    // });
+
+    const originalURL = "https://build-oracc.museum.upenn.edu/neo/P322250";
+    const testUrl = "https://build-oracc.museum.upenn.edu/dcclt/P322250";
+
+    return this.http.get(testUrl, {
       responseType: "text"
     });
   }

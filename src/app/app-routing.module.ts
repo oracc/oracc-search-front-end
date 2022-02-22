@@ -52,11 +52,11 @@ const routes: Routes = [
     ]
   },
   {
-    path: ":project/:id",
-    component: SearchProjectTextComponent
+    path: ":projectId/:textId",
+    component: DetailsComponent
   },
   {
-    path: ":project/:subproject/:id",
+    path: ":projectId/:subprojectId/:textId",
     component: SearchProjectTextComponent
   },
   { path: "404", component: PageNotFoundComponent },
@@ -131,11 +131,11 @@ const routesMob: Routes = [
     component: GlossaryArticleSourceComponent
   },
   {
-    path: ":project/:id",
+    path: ":projectId/:textId",
     component: SearchProjectTextComponent
   },
   {
-    path: ":project/:subproject/:id",
+    path: ":projectId/:subprojectId/:textId",
     component: SearchProjectTextComponent
   },
   { path: "404", component: PageNotFoundComponent },

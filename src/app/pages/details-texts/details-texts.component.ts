@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { composedPath } from "../../../utils/utils";
 import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from "../../../utils/consts";
 
@@ -32,6 +32,8 @@ export class DetailsTextsComponent implements OnInit {
   private isTermDataShown: boolean;
   private pathnameArray = window.location.pathname.slice(1).split("/");
   private isMobile: boolean;
+  private paramMap: ParamMap;
+
   private breadcrumbLink =
     window.innerWidth > 991
       ? [
@@ -98,22 +100,48 @@ export class DetailsTextsComponent implements OnInit {
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,
     private sanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
   }
 
   ngOnInit() {
-    this.getDataService.getTermData().subscribe((data) => {
-      this.handleTextToHTMLConversion(data, true);
+    console.log("details text component");
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      this.paramMap = paramMap;
+      console.log(paramMap.get("projectId"));
     });
-    this.chosenTermText = this.getDataService.getChosenTermText();
+
+    if (this.paramMap.get("projectId") !== null) {
+      console.log("param version");
+      console.log(this.paramMap);
+      this.getDataService
+        .getProjectTextData(this.paramMap)
+        .subscribe((data) => {
+          this.handleTextToHTMLConversion(data, true);
+        });
+    } else {
+      console.log("search version");
+      this.getDataService.getTermData().subscribe((data) => {
+        this.handleTextToHTMLConversion(data, true);
+      });
+      this.chosenTermText = this.getDataService.getChosenTermText();
+    }
+
+    // this.getDataService.getTermData().subscribe((data) => {
+    //   console.log(data);
+    //   this.handleTextToHTMLConversion(data, true);
+    // });
+    // this.chosenTermText = this.getDataService.getChosenTermText();
+
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
   private handleTextToHTMLConversion(text: string, isTermData = false) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, "text/html");
+    console.log(htmlData);
     const htmlDataToBeReduced = parser.parseFromString(text, "text/html");
     const metadataPanelInput = htmlData.getElementById("p3left");
     const middlePanelInput = htmlData.getElementById("p3right");
