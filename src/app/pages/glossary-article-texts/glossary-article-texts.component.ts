@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
@@ -7,7 +7,9 @@ import { composedPath } from "../../../utils/utils";
 
 @Component({
   selector: "app-glossary-article-texts",
-  templateUrl: "./glossary-article-texts.component.html"
+  templateUrl: "./glossary-article-texts.component.html",
+  styleUrls: ["../glossary-article/glossary-article.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class GlossaryArticleTextsComponent implements OnInit {
   public glossaryContent: any;

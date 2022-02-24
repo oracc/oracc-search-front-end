@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { HandleBreadcrumbsService } from "src/app/services/handle-breadcrumbs/handle-breadcrumbs.service";
 import { DomSanitizer } from "@angular/platform-browser";
-import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { Router, ParamMap } from "@angular/router";
 import { composedPath } from "../../../utils/utils";
 import { DIRECTION, PANEL_TYPE } from "../../../utils/consts";
 
@@ -84,56 +84,17 @@ export class DetailsComponent implements OnInit {
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,
     private sanitizer: DomSanitizer,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
   }
 
   ngOnInit() {
-    // this.getDataService.getDetailData().subscribe((data) => {
-    //   this.handleTextToHTMLConversion(data);
-    // });
-    // this.chosenTermText = this.getDataService.getChosenTermText();
-    // this.isMobile = window.innerWidth < 991 ? true : false;
-
-    console.log("details component");
-    this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      this.paramMap = paramMap;
-      console.log(paramMap.get("projectId"));
+    this.getDataService.getDetailData().subscribe((data) => {
+      this.handleTextToHTMLConversion(data);
     });
-
-    if (this.paramMap.get("projectId") !== null) {
-      console.log("param version");
-      console.log(this.paramMap);
-      // this.getDataService
-      //   .getProjectTextData(this.paramMap)
-      //   .subscribe((data) => {
-      //     this.handleTextToHTMLConversion(data, true);
-      //   });
-
-      console.log(
-        `${this.paramMap.get("projectId")}/${this.paramMap.get("textId")}`
-      );
-
-      const project = this.paramMap.get("projectId");
-      const subProject = this.paramMap.get("subprojectId");
-      const textId = this.paramMap.get("textId");
-
-      let url = subProject
-        ? `${this.paramMap.get("projectId")}/${this.paramMap.get(
-            "subprojectId"
-          )}/${this.paramMap.get("textId")}`
-        : `${this.paramMap.get("projectId")}/${this.paramMap.get("textId")}`;
-
-      this.router.navigate([url, "texts"]);
-    } else {
-      console.log("search version");
-      this.getDataService.getDetailData().subscribe((data) => {
-        this.handleTextToHTMLConversion(data, true);
-      });
-      this.chosenTermText = this.getDataService.getChosenTermText();
-    }
+    this.chosenTermText = this.getDataService.getChosenTermText();
+    this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
   private handleTextToHTMLConversion(text: string, isTermData = false) {
@@ -235,9 +196,7 @@ export class DetailsComponent implements OnInit {
     );
   }
 
-  // it looks like we need to have this page rendered before we show the final project text data
   public handleDetailsClick(e) {
-    console.log("clicked details link");
     e.preventDefault();
     const anchorEl = e.path
       ? e.path.find((el) => {
@@ -252,8 +211,6 @@ export class DetailsComponent implements OnInit {
           .split(":")
           [anchorEl.href.split(":").length - 1].split("'")[0]
       : "";
-
-    console.log(idParam);
 
     if (idParam) {
       // navigates to details texts component

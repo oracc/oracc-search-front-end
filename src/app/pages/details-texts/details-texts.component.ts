@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
@@ -8,7 +8,9 @@ import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from "../../../utils/consts";
 
 @Component({
   selector: "app-details-texts",
-  templateUrl: "./details-texts.component.html"
+  templateUrl: "./details-texts.component.html",
+  styleUrls: ["../details/details.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class DetailsTextsComponent implements OnInit {
   public metadataPanel: any = "<i class='fas fa-spinner'></i>";
@@ -107,33 +109,26 @@ export class DetailsTextsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("details text component");
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       this.paramMap = paramMap;
-      console.log(paramMap.get("projectId"));
     });
 
     if (this.paramMap.get("projectId") !== null) {
       console.log("param version");
-      console.log(this.paramMap);
+      // user accesses project text by entering a url manually
       this.getDataService
         .getProjectTextData(this.paramMap)
         .subscribe((data) => {
           this.handleTextToHTMLConversion(data, true);
         });
     } else {
+      // user accesses project texts via the search functionality
       console.log("search version");
       this.getDataService.getTermData().subscribe((data) => {
         this.handleTextToHTMLConversion(data, true);
       });
       this.chosenTermText = this.getDataService.getChosenTermText();
     }
-
-    // this.getDataService.getTermData().subscribe((data) => {
-    //   console.log(data);
-    //   this.handleTextToHTMLConversion(data, true);
-    // });
-    // this.chosenTermText = this.getDataService.getChosenTermText();
 
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
@@ -289,10 +284,20 @@ export class DetailsTextsComponent implements OnInit {
             queryParams[queryParams.length - 1].split("=")[0]
           }=${anchorElWrapper.title}`;
 
-          this.router.navigate([
-            decodeURI(this.router.url),
-            anchorEl.innerText
-          ]);
+          if (this.paramMap.get("projectId") !== null) {
+            // we are setting the navigation link manually here to get us to the desired location
+            // todo: is this hackey?
+            this.router.navigate([
+              "/search/search-results/id/occurrences/texts",
+              anchorEl.innerText
+            ]);
+          } else {
+            this.router.navigate([
+              decodeURI(this.router.url),
+              anchorEl.innerText
+            ]);
+          }
+
           this.getDataService.setSubsequentGlossaryArticleParam(pureQueryParam);
         } else if (!!anchorEl.href) {
           this.isDetailsPopupActive = true;
