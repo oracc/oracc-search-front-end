@@ -132,18 +132,10 @@ const routesMob: Routes = [
   },
   {
     path: ":projectId/:textId",
-    component: DetailsComponent
-  },
-  {
-    path: ":projectId/:textId/texts",
     component: DetailsTextsComponent
   },
   {
     path: ":projectId/:subprojectId/:textId",
-    component: DetailsComponent
-  },
-  {
-    path: ":projectId/:subprojectId/:textId/texts",
     component: DetailsTextsComponent
   },
   { path: "404", component: PageNotFoundComponent },
