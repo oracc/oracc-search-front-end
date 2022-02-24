@@ -114,7 +114,6 @@ export class DetailsTextsComponent implements OnInit {
     });
 
     if (this.paramMap.get("projectId") !== null) {
-      console.log("param version");
       // user accesses project text by entering a url manually
       this.getDataService
         .getProjectTextData(this.paramMap)
@@ -123,7 +122,6 @@ export class DetailsTextsComponent implements OnInit {
         });
     } else {
       // user accesses project texts via the search functionality
-      console.log("search version");
       this.getDataService.getTermData().subscribe((data) => {
         this.handleTextToHTMLConversion(data, true);
       });
@@ -285,12 +283,14 @@ export class DetailsTextsComponent implements OnInit {
           }=${anchorElWrapper.title}`;
 
           if (this.paramMap.get("projectId") !== null) {
-            // we are setting the navigation link manually here to get us to the desired location
-            // todo: is this hackey?
-            this.router.navigate([
-              "/search/search-results/id/occurrences/texts",
-              anchorEl.innerText
-            ]);
+            // set the navigation link manually when searching for project text id's in the url bar
+            // slightly different routes are used for desktop and mobile
+
+            let url = this.isMobile
+              ? "/search-results/id/occurrences/texts"
+              : "/search/search-results/id/occurrences/texts";
+
+            this.router.navigate([url, anchorEl.innerText]);
           } else {
             this.router.navigate([
               decodeURI(this.router.url),
