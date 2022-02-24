@@ -134,7 +134,6 @@ export class DetailsTextsComponent implements OnInit {
   private handleTextToHTMLConversion(text: string, isTermData = false) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, "text/html");
-    console.log(htmlData);
     const htmlDataToBeReduced = parser.parseFromString(text, "text/html");
     const metadataPanelInput = htmlData.getElementById("p3left");
     const middlePanelInput = htmlData.getElementById("p3right");
