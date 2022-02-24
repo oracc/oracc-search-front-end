@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
 import { SearchComponent } from "./pages/search/search.component";
-import { SearchProjectTextComponent } from "./pages/search-project-text/search-project-text.component";
 import { SearchResultsComponent } from "./components/search-results/search-results.component";
 import { GlossaryArticleComponent } from "./pages/glossary-article/glossary-article.component";
 import { GlossaryArticleTextsComponent } from "./pages/glossary-article-texts/glossary-article-texts.component";
