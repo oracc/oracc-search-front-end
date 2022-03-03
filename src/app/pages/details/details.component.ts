@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { HandleBreadcrumbsService } from "src/app/services/handle-breadcrumbs/handle-breadcrumbs.service";
 import { DomSanitizer } from "@angular/platform-browser";
-import { Router, ParamMap } from "@angular/router";
+import { Router } from "@angular/router";
 import { composedPath } from "../../../utils/utils";
 import { DIRECTION, PANEL_TYPE } from "../../../utils/consts";
 
