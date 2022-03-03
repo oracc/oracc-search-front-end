@@ -12,7 +12,7 @@ import {
   styleUrls: ["./cookies.component.scss"]
 })
 export class CookiesComponent implements OnInit {
-  public isHidden = isDevMode() ? true : false;
+  public isHidden = isDevMode();
   @Output() public cookieHiddenEvent = new EventEmitter();
 
   constructor() {}
