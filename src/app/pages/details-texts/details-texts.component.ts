@@ -109,17 +109,14 @@ export class DetailsTextsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      this.paramMap = paramMap;
-    });
+    const paramMap = this.route.snapshot.paramMap;
+    const projectId = paramMap.get("projectId");
 
-    if (this.paramMap.get("projectId") !== null) {
+    if (projectId !== null) {
       // user accesses project text by entering a url manually
-      this.getDataService
-        .getProjectTextData(this.paramMap)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversion(data, true);
-        });
+      this.getDataService.getProjectTextData(paramMap).subscribe((data) => {
+        this.handleTextToHTMLConversion(data, true);
+      });
     } else {
       // user accesses project texts via the search functionality
       this.getDataService.getTermData().subscribe((data) => {
@@ -281,7 +278,7 @@ export class DetailsTextsComponent implements OnInit {
             queryParams[queryParams.length - 1].split("=")[0]
           }=${anchorElWrapper.title}`;
 
-          if (this.paramMap.get("projectId") !== null) {
+          if (this.route.snapshot.paramMap.get("projectId") !== null) {
             // set the navigation link manually when searching for project text id's in the url bar
             // slightly different routes are used for desktop and mobile
 

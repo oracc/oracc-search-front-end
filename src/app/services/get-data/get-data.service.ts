@@ -39,13 +39,13 @@ export class GetDataService {
   }
 
   public getProjectTextData(params: ParamMap) {
-    const project = params.get("projectId");
-    const subProject = params.get("subprojectId");
+    const projectId = params.get("projectId");
+    const subProjectId = params.get("subprojectId");
     const textId = params.get("textId");
 
-    const url = subProject
-      ? `${this.baseUrl}${project}/${subProject}/${textId}`
-      : `${this.baseUrl}${project}/${textId}`;
+    const url = subProjectId
+      ? `${this.baseUrl}${projectId}/${subProjectId}/${textId}`
+      : `${this.baseUrl}${projectId}/${textId}`;
 
     return this.http.get(url, {
       responseType: "text"
