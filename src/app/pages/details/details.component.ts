@@ -31,7 +31,6 @@ export class DetailsComponent implements OnInit {
   private all: any;
   private pathnameArray = window.location.pathname.slice(1).split("/");
   private isMobile: boolean;
-  private paramMap: ParamMap;
   private breadcrumbLink =
     window.innerWidth > 991
       ? [
