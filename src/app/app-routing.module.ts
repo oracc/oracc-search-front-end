@@ -11,62 +11,14 @@ import { DetailsSourceComponent } from "./pages/details-source/details-source.co
 import { GlossaryArticleSourceComponent } from "./pages/glossary-article-source/glossary-article-source.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
+// duplicated routes are to handle both desktop and mobile versions
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent
   },
-  {
-    path: "search",
-    component: SearchComponent,
-    children: [
-      {
-        path: "search-results",
-        component: SearchResultsComponent
-      },
-      {
-        path: "search-results/:id:breadcrumb",
-        component: GlossaryArticleComponent
-      },
-      {
-        path: "search-results/:id:breadcrumb/occurrences",
-        component: DetailsComponent
-      },
-      {
-        path: "search-results/:id:breadcrumb/occurrences/texts",
-        component: DetailsTextsComponent
-      },
-      {
-        path: "search-results/:id:breadcrumb/occurrences/texts/source",
-        component: DetailsSourceComponent
-      },
-      {
-        path: "search-results/:id:breadcrumb/occurrences/texts/:id:breadcrumb",
-        component: GlossaryArticleTextsComponent
-      },
-      {
-        path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
-        component: GlossaryArticleSourceComponent
-      }
-    ]
-  },
-  {
-    path: ":projectId/:textId",
-    component: DetailsTextsComponent
-  },
-  {
-    path: ":projectId/:subprojectId/:textId",
-    component: DetailsTextsComponent
-  },
-  { path: "404", component: PageNotFoundComponent },
-  { path: "**", redirectTo: "404" }
-];
 
-const routesMob: Routes = [
-  {
-    path: "",
-    component: HomeComponent
-  },
+  // routes for desktop
   {
     path: "search",
     component: SearchComponent,
@@ -101,6 +53,8 @@ const routesMob: Routes = [
       }
     ]
   },
+
+  // routes for mobile
   {
     path: "search-results",
     component: SearchResultsComponent
@@ -129,6 +83,8 @@ const routesMob: Routes = [
     path: "search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb",
     component: GlossaryArticleSourceComponent
   },
+
+  // routes for manually entereded URL's
   {
     path: ":projectId/:textId",
     component: DetailsTextsComponent
@@ -137,15 +93,15 @@ const routesMob: Routes = [
     path: ":projectId/:subprojectId/:textId",
     component: DetailsTextsComponent
   },
+
+  // fallback routes
   { path: "404", component: PageNotFoundComponent },
   { path: "**", redirectTo: "404" }
 ];
 
-const isDesktop = window.innerWidth > 991;
-const finalRoutes = isDesktop ? routes : routesMob;
 @NgModule({
   imports: [
-    RouterModule.forRoot(finalRoutes, {
+    RouterModule.forRoot(routes, {
       onSameUrlNavigation: "reload"
     })
   ],
