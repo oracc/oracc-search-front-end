@@ -1,14 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { composedPath } from "../../../utils/utils";
 import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from "../../../utils/consts";
 
 @Component({
   selector: "app-details-texts",
-  templateUrl: "./details-texts.component.html"
+  templateUrl: "./details-texts.component.html",
+  styleUrls: ["../details/details.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class DetailsTextsComponent implements OnInit {
   public metadataPanel: any = "<i class='fas fa-spinner'></i>";
@@ -32,6 +34,8 @@ export class DetailsTextsComponent implements OnInit {
   private isTermDataShown: boolean;
   private pathnameArray = window.location.pathname.slice(1).split("/");
   private isMobile: boolean;
+  private paramMap: ParamMap;
+
   private breadcrumbLink =
     window.innerWidth > 991
       ? [
@@ -98,20 +102,33 @@ export class DetailsTextsComponent implements OnInit {
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,
     private sanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
   }
 
   ngOnInit() {
-    this.getDataService.getTermData().subscribe((data) => {
-      this.handleTextToHTMLConversion(data, true);
-    });
-    this.chosenTermText = this.getDataService.getChosenTermText();
+    const paramMap = this.route.snapshot.paramMap;
+    const projectId = paramMap.get("projectId");
+
+    if (projectId !== null) {
+      // user accesses project text by entering a url manually
+      this.getDataService.getProjectTextData(paramMap).subscribe((data) => {
+        this.handleTextToHTMLConversion(data, true);
+      });
+    } else {
+      // user accesses project texts via the search functionality
+      this.getDataService.getTermData().subscribe((data) => {
+        this.handleTextToHTMLConversion(data, true);
+      });
+      this.chosenTermText = this.getDataService.getChosenTermText();
+    }
+
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
-  private handleTextToHTMLConversion(text, isTermData = false) {
+  private handleTextToHTMLConversion(text: string, isTermData = false) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, "text/html");
     const htmlDataToBeReduced = parser.parseFromString(text, "text/html");
@@ -261,10 +278,22 @@ export class DetailsTextsComponent implements OnInit {
             queryParams[queryParams.length - 1].split("=")[0]
           }=${anchorElWrapper.title}`;
 
-          this.router.navigate([
-            decodeURI(this.router.url),
-            anchorEl.innerText
-          ]);
+          if (this.route.snapshot.paramMap.get("projectId") !== null) {
+            // set the navigation link manually when searching for project text id's in the url bar
+            // slightly different routes are used for desktop and mobile
+
+            let url = this.isMobile
+              ? "/search-results/id/occurrences/texts"
+              : "/search/search-results/id/occurrences/texts";
+
+            this.router.navigate([url, anchorEl.innerText]);
+          } else {
+            this.router.navigate([
+              decodeURI(this.router.url),
+              anchorEl.innerText
+            ]);
+          }
+
           this.getDataService.setSubsequentGlossaryArticleParam(pureQueryParam);
         } else if (!!anchorEl.href) {
           this.isDetailsPopupActive = true;

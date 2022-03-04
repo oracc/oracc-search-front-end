@@ -128,7 +128,7 @@ export class DetailsSourceComponent implements OnInit {
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
-  private handleTextToHTMLConversion(text) {
+  private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, "text/html");
     const htmlDataToBeReduced = parser.parseFromString(text, "text/html");

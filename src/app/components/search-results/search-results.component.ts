@@ -185,6 +185,8 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     const urlPathname = this.isMobile
       ? "/search-results"
       : "/search/search-results";
+
+    // navigates to glossary article component
     this.router.navigate([urlPathname, wordClean]);
   }
 }
