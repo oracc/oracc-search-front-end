@@ -18,9 +18,9 @@
 
         <div
           *ngIf="
-            searchSuggestionsArray &&
-            (searchSuggestionsArray.suggestions.length > 1 ||
-              searchSuggestionsArray.completions.length > 1)
+            searchSuggestions &&
+            (searchSuggestions.suggestions.length > 1 ||
+              searchSuggestions.completions.length > 1)
           "
           class="search__suggestions"
         >
@@ -40,9 +40,7 @@
             </div>
           </div>
           <p
-            *ngFor="
-              let suggestion of searchSuggestionsArray[suggestionsCategory]
-            "
+            *ngFor="let suggestion of searchSuggestions[suggestionsCategory]"
             (click)="setSuggestionSearchParam(suggestion)"
           >
             {{ suggestion }}
@@ -50,7 +48,7 @@
 
           <p
             class="no-suggestions-fallback"
-            *ngIf="searchSuggestionsArray[suggestionsCategory].length === 0"
+            *ngIf="searchSuggestions[suggestionsCategory].length === 0"
           >
             No items to display
           </p>

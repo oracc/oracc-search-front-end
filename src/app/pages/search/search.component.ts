@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   public isMobile: boolean;
   public routerLink: string;
   public searchParam: string;
-  public searchSuggestionsArray;
+  public searchSuggestions: {};
   public suggestionsCategory = "completions";
   public breadcrumbLink = [
     {
@@ -55,7 +55,7 @@ export class SearchComponent implements OnInit {
 
   setSuggestionSearchParam(searchParam: string) {
     this.searchParam = searchParam;
-    this.searchSuggestionsArray = null; // is there a better way of doing it?
+    this.searchSuggestions = null; // is there a better way of doing it?
   }
 
   getSearchSuggestions(searchParam) {
@@ -65,7 +65,7 @@ export class SearchComponent implements OnInit {
         .getSearchSuggestionsData(searchParam)
         .subscribe((data) => {
           console.log(data);
-          this.searchSuggestionsArray = data;
+          this.searchSuggestions = data;
         });
     }
   }
