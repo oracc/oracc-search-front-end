@@ -59,9 +59,8 @@
 }
 
 .search__suggestions {
-  width: 100%;
   max-height: 200px;
-  border: 1px solid grey;
+  border: 1px solid $grayDark;
   border-radius: 5px;
   text-align: left;
   background-color: white;
@@ -70,11 +69,11 @@
 }
 
 .search__suggestions p {
-  border-bottom: 1px solid $grayDark;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
+  border-bottom: 1px solid $gray;
+  padding: 10px;
   font-size: 0.8rem;
+  font-family: inherit;
+  color: $grayDark;
   cursor: pointer;
 }
 
@@ -129,8 +128,6 @@ img {
   .search__input {
     border: 1px solid $gray;
     min-width: 220px;
-    margin-left: 18px;
-    margin-right: 6px;
     padding-left: 11px;
     padding-right: 11px;
     &::placeholder {
@@ -147,5 +144,12 @@ img {
       font-size: 23px;
       margin-right: 0;
     }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .search-input__container {
+    margin-left: 18px;
+    margin-right: 6px;
   }
 }

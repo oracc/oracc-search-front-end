@@ -65,7 +65,7 @@ export class SearchComponent implements OnInit {
   }
 
   onBlurMethod() {
-    this.searchSuggestionsArray = null;
+    //this.searchSuggestionsArray = null;
   }
 
   searchOnEnter(event) {
