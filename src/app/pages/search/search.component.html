@@ -26,14 +26,14 @@
         >
           <div class="suggestions-category-select">
             <div
-              [ngClass]="suggestionsCategory == 'completions' ? 'active' : ''"
+              [ngClass]="suggestionsCategory === 'completions' ? 'active' : ''"
               (click)="setSuggestionsCategory($event)"
             >
               Completions
             </div>
 
             <div
-              [ngClass]="suggestionsCategory == 'suggestions' ? 'active' : ''"
+              [ngClass]="suggestionsCategory === 'suggestions' ? 'active' : ''"
               (click)="setSuggestionsCategory($event)"
             >
               Suggestions

@@ -50,7 +50,7 @@ export class SearchComponent implements OnInit {
   }
 
   setSuggestionsCategory(event) {
-    this.suggestionsCategory = event.target.textContent.trim().toLowerCase();
+    this.suggestionsCategory = event.target.innerText.toLowerCase();
   }
 
   setSuggestionSearchParam(searchParam: string) {
@@ -58,7 +58,7 @@ export class SearchComponent implements OnInit {
     this.searchSuggestions = null; // is there a better way of doing it?
   }
 
-  getSearchSuggestions(searchParam) {
+  getSearchSuggestions(searchParam: string) {
     // todo: only call this if letters are entered (not other keys like esc)
     if (searchParam.length > 1) {
       this.getDataService
