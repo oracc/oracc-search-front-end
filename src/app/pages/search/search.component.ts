@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   public routerLink: string;
   public searchParam: string;
   public searchSuggestionsArray;
-  public suggestionsCategory = "suggestions";
+  public suggestionsCategory = "completions";
   public breadcrumbLink = [
     {
       name: "Search",
