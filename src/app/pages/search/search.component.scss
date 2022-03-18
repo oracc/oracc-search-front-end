@@ -83,6 +83,10 @@
   border-bottom: 1px solid black;
 }
 
+.no-suggestions-fallback {
+  pointer-events: none;
+}
+
 .search__suggestions p {
   border-bottom: 1px solid $gray;
   padding: 10px;

@@ -51,7 +51,6 @@ export class SearchComponent implements OnInit {
 
   setSuggestionsCategory(event) {
     this.suggestionsCategory = event.target.textContent.trim().toLowerCase();
-    console.log(this.suggestionsCategory);
   }
 
   setSuggestionSearchParam(searchParam: string) {

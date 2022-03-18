@@ -47,9 +47,12 @@
             {{ suggestion }}
           </p>
 
-          <div *ngIf="searchSuggestionsArray[suggestionsCategory].length === 0">
+          <p
+            class="no-suggestions-fallback"
+            *ngIf="searchSuggestionsArray[suggestionsCategory].length === 0"
+          >
             No items to display
-          </div>
+          </p>
         </div>
       </div>
 
