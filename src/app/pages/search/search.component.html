@@ -12,18 +12,10 @@
           [placeholder]="'search.placeholderText' | translate"
           [(ngModel)]="searchParam"
           (keydown)="searchOnEnter($event)"
-          (keyup)="getSearchSuggestions(searchParam)"
-          (blur)="onBlurMethod()"
+          (keyup)="getSearchSuggestions($event, searchParam)"
         />
 
-        <div
-          *ngIf="
-            searchSuggestions &&
-            (searchSuggestions.suggestions.length > 1 ||
-              searchSuggestions.completions.length > 1)
-          "
-          class="search__suggestions"
-        >
+        <div *ngIf="showSuggestions" class="search__suggestions">
           <div class="suggestions-category-select">
             <div
               [ngClass]="suggestionsCategory === 'completions' ? 'active' : ''"
@@ -39,9 +31,11 @@
               Suggestions
             </div>
           </div>
+
           <p
             *ngFor="let suggestion of searchSuggestions[suggestionsCategory]"
             (click)="setSuggestionSearchParam(suggestion)"
+            class="suggestion"
           >
             {{ suggestion }}
           </p>

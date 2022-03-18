@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
 
@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   public searchParam: string;
   public searchSuggestions: {};
   public suggestionsCategory = "completions";
+  public showSuggestions = false;
   public breadcrumbLink = [
     {
       name: "Search",
@@ -55,23 +56,39 @@ export class SearchComponent implements OnInit {
 
   setSuggestionSearchParam(searchParam: string) {
     this.searchParam = searchParam;
-    this.searchSuggestions = null; // is there a better way of doing it?
+    this.showSuggestions = false;
   }
 
-  getSearchSuggestions(searchParam: string) {
-    // todo: only call this if letters are entered (not other keys like esc)
-    if (searchParam.length > 1) {
-      this.getDataService
-        .getSearchSuggestionsData(searchParam)
-        .subscribe((data) => {
-          console.log(data);
-          this.searchSuggestions = data;
-        });
+  getSearchSuggestions(event, searchParam: string) {
+    if (searchParam.length < 2 || event.code === "Escape") {
+      this.showSuggestions = false;
+      return;
     }
+
+    // todo: only call this if letters are entered (not other keys like esc)
+    this.getDataService
+      .getSearchSuggestionsData(searchParam)
+      .subscribe((data) => {
+        this.searchSuggestions = data;
+        this.showSuggestions = true;
+      });
   }
 
-  onBlurMethod() {
-    //this.searchSuggestionsArray = null;
+  @HostListener("window:click", ["$event"])
+  hideSuggestionsOnBlur(event) {
+    const targetClass = event.target.classList[0];
+    const parentNodeClass = event.target.parentNode.className;
+
+    // only hide suggestions if we are not clicking inside the suggestions element
+    if (
+      targetClass === "suggestion" ||
+      targetClass === "search__input" ||
+      parentNodeClass == "suggestions-category-select"
+    ) {
+      return;
+    }
+
+    this.showSuggestions = false;
   }
 
   searchOnEnter(event) {
