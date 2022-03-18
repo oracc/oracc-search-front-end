@@ -25,11 +25,17 @@ export class GetDataService {
   private glossaryArticleURL = "https://build-oracc.museum.upenn.edu/neo/";
   private baseUrl = "https://build-oracc.museum.upenn.edu/";
   private sourceURL = "http://cdli.ucla.edu/";
+  private searchSuggestionsUrl =
+    "https://build-oracc.museum.upenn.edu:5000/suggest_all/";
 
   constructor(private http: HttpClient) {}
 
   public getSearchData() {
     return this.http.get(this.searchURL + this.searchParam);
+  }
+
+  public getSearchSuggestionsData(partialSearchTerm) {
+    return this.http.get(this.searchSuggestionsUrl + partialSearchTerm);
   }
 
   public getGlossaryArticleData() {
