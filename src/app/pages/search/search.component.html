@@ -23,8 +23,24 @@
           "
           class="search__suggestions"
         >
+          <div class="suggestions-category-select">
+            <div
+              [ngClass]="suggestionsCategory == 'suggestions' ? 'active' : ''"
+              (click)="setSuggestionsCategory($event)"
+            >
+              Suggestions
+            </div>
+            <div
+              [ngClass]="suggestionsCategory == 'completions' ? 'active' : ''"
+              (click)="setSuggestionsCategory($event)"
+            >
+              Completions
+            </div>
+          </div>
           <p
-            *ngFor="let suggestion of searchSuggestionsArray.suggestions"
+            *ngFor="
+              let suggestion of searchSuggestionsArray[suggestionsCategory]
+            "
             (click)="setSuggestionSearchParam(suggestion)"
           >
             {{ suggestion }}

@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   public routerLink: string;
   public searchParam: string;
   public searchSuggestionsArray;
+  public suggestionsCategory = "suggestions";
   public breadcrumbLink = [
     {
       name: "Search",
@@ -48,12 +49,18 @@ export class SearchComponent implements OnInit {
     this.getDataService.setSearchParam(searchParam);
   }
 
+  setSuggestionsCategory(event) {
+    this.suggestionsCategory = event.target.textContent.trim().toLowerCase();
+    console.log(this.suggestionsCategory);
+  }
+
   setSuggestionSearchParam(searchParam: string) {
     this.searchParam = searchParam;
-    this.searchSuggestionsArray = null;
+    this.searchSuggestionsArray = null; // is there a better way of doing it?
   }
 
   getSearchSuggestions(searchParam) {
+    // todo: only call this if letters are entered (not other keys like esc)
     if (searchParam.length > 1) {
       this.getDataService
         .getSearchSuggestionsData(searchParam)
