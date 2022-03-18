@@ -34,7 +34,7 @@ export class GetDataService {
     return this.http.get(this.searchURL + this.searchParam);
   }
 
-  public getSearchSuggestionsData(partialSearchTerm) {
+  public getSearchSuggestionsData(partialSearchTerm: string) {
     return this.http.get(this.searchSuggestionsUrl + partialSearchTerm);
   }
 
