@@ -45,7 +45,6 @@
   margin-right: 15px;
   width: 100%;
   max-width: 346px;
-  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -57,19 +56,16 @@
   padding-right: 15px;
   outline: none;
   height: 50px;
-  // width: 100%;
 }
 
 .search__suggestions {
-  text-align: left;
   width: 100%;
-  position: absolute;
-  top: 50px;
   max-height: 200px;
-  overflow: scroll;
   border: 1px solid grey;
   border-radius: 5px;
-  background-color: #efefef;
+  text-align: left;
+  background-color: white;
+  overflow: scroll;
   z-index: 1;
 }
 
@@ -79,9 +75,15 @@
   padding-top: 10px;
   padding-left: 10px;
   font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.search__suggestions p:hover {
+  background-color: #dddddd;
 }
 
 .search__btn {
+  align-self: baseline;
   .fa-search {
     margin-right: 10px;
   }

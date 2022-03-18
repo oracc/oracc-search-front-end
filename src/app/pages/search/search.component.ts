@@ -64,6 +64,10 @@ export class SearchComponent implements OnInit {
     }
   }
 
+  onBlurMethod() {
+    this.searchSuggestionsArray = null;
+  }
+
   searchOnEnter(event) {
     event.stopImmediatePropagation(); // prevents repeated api calls
 

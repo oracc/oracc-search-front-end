@@ -13,6 +13,7 @@
           [(ngModel)]="searchParam"
           (keydown)="searchOnEnter($event)"
           (keyup)="getSearchSuggestions(searchParam)"
+          (blur)="onBlurMethod()"
         />
 
         <div
