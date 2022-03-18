@@ -19,7 +19,8 @@
         <div
           *ngIf="
             searchSuggestionsArray &&
-            searchSuggestionsArray.suggestions.length > 1
+            (searchSuggestionsArray.suggestions.length > 1 ||
+              searchSuggestionsArray.completions.length > 1)
           "
           class="search__suggestions"
         >
@@ -45,6 +46,10 @@
           >
             {{ suggestion }}
           </p>
+
+          <div *ngIf="searchSuggestionsArray[suggestionsCategory].length === 0">
+            No items to display
+          </div>
         </div>
       </div>
 
