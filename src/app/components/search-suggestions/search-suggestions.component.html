@@ -1,4 +1,4 @@
-<div class="search__suggestions">
+<div class="search__suggestions" (keyup)="setSearchSuggestionOnEnter($event)">
   <div
     *ngIf="
       loading === false && searchSuggestions[suggestionsCategory].length > 0
@@ -24,6 +24,7 @@
       *ngFor="let suggestion of searchSuggestions[suggestionsCategory]"
       class="suggestion"
       (click)="setSuggestionSearchParamChild(suggestion)"
+      tabindex="0"
     >
       {{ suggestion }}
     </p>

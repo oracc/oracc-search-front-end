@@ -21,7 +21,15 @@ export class SearchSuggestionsComponent implements OnInit {
     this.suggestionsCategory = event.target.innerText.toLowerCase();
   }
 
-  setSuggestionSearchParamChild(searchParam: string) {
+  setSearch(searchParam: string) {
     this.setSuggestionSearchParam.emit(searchParam);
+  }
+
+  setSearchSuggestionOnEnter(event) {
+    if (event.code !== "Enter") return;
+
+    const currentActiveSuggestion = document.activeElement.innerHTML.trim();
+
+    this.setSearch(currentActiveSuggestion);
   }
 }

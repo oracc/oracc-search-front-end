@@ -51,6 +51,9 @@ export class SearchComponent implements OnInit {
   }
 
   getSearchSuggestions(event, searchParam: string) {
+    // detect arrow key press
+    if ((event.keyCode > 36 && event.keyCode < 41) || !searchParam) return;
+
     if (searchParam.length < 2 || event.code === "Escape") {
       this.showSuggestions = false;
       return;
@@ -64,7 +67,6 @@ export class SearchComponent implements OnInit {
       .getSearchSuggestionsData(searchParam)
       .subscribe((data) => {
         this.searchSuggestions = data;
-        //this.showSuggestions = true;
         this.loading = false;
       });
   }
@@ -72,6 +74,9 @@ export class SearchComponent implements OnInit {
   setSuggestionSearchParam(searchParam: string) {
     this.searchParam = searchParam;
     this.showSuggestions = false;
+
+    // will carry out search on enter
+    this.searchButton.focus();
   }
 
   @HostListener("window:click", ["$event"])
