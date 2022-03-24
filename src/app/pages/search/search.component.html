@@ -14,39 +14,11 @@
           (keydown)="searchOnEnter($event)"
           (keyup)="getSearchSuggestions($event, searchParam)"
         />
-
-        <div *ngIf="showSuggestions" class="search__suggestions">
-          <div class="suggestions-category-select">
-            <div
-              [ngClass]="suggestionsCategory === 'completions' ? 'active' : ''"
-              (click)="setSuggestionsCategory($event)"
-            >
-              Completions
-            </div>
-
-            <div
-              [ngClass]="suggestionsCategory === 'suggestions' ? 'active' : ''"
-              (click)="setSuggestionsCategory($event)"
-            >
-              Suggestions
-            </div>
-          </div>
-
-          <p
-            *ngFor="let suggestion of searchSuggestions[suggestionsCategory]"
-            (click)="setSuggestionSearchParam(suggestion)"
-            class="suggestion"
-          >
-            {{ suggestion }}
-          </p>
-
-          <p
-            class="no-suggestions-fallback"
-            *ngIf="searchSuggestions[suggestionsCategory].length === 0"
-          >
-            No items to display
-          </p>
-        </div>
+        <app-search-suggestions
+          *ngIf="showSuggestions"
+          [searchSuggestions]="searchSuggestions"
+          (setSuggestionSearchParam)="setSuggestionSearchParam($event)"
+        ></app-search-suggestions>
       </div>
 
       <button

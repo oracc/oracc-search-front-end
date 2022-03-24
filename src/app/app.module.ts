@@ -32,6 +32,7 @@ import { DetailsTextsComponent } from "./pages/details-texts/details-texts.compo
 import { DetailsSourceComponent } from "./pages/details-source/details-source.component";
 import { GlossaryArticleSourceComponent } from "./pages/glossary-article-source/glossary-article-source.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
+import { SearchSuggestionsComponent } from "./components/search-suggestions/search-suggestions.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/");
@@ -58,7 +59,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     DetailsTextsComponent,
     DetailsSourceComponent,
     GlossaryArticleSourceComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchSuggestionsComponent
   ],
   imports: [
     BrowserModule,

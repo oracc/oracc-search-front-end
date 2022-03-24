@@ -15,7 +15,6 @@ export class SearchComponent implements OnInit {
   public routerLink: string;
   public searchParam: string;
   public searchSuggestions: {};
-  public suggestionsCategory = "completions";
   public showSuggestions = false;
   public breadcrumbLink = [
     {
@@ -50,15 +49,6 @@ export class SearchComponent implements OnInit {
     this.getDataService.setSearchParam(searchParam);
   }
 
-  setSuggestionsCategory(event) {
-    this.suggestionsCategory = event.target.innerText.toLowerCase();
-  }
-
-  setSuggestionSearchParam(searchParam: string) {
-    this.searchParam = searchParam;
-    this.showSuggestions = false;
-  }
-
   getSearchSuggestions(event, searchParam: string) {
     if (searchParam.length < 2 || event.code === "Escape") {
       this.showSuggestions = false;
@@ -74,6 +64,11 @@ export class SearchComponent implements OnInit {
       });
   }
 
+  setSuggestionSearchParam(searchParam: string) {
+    this.searchParam = searchParam;
+    this.showSuggestions = false;
+  }
+
   @HostListener("window:click", ["$event"])
   hideSuggestionsOnBlur(event) {
     const targetClass = event.target.classList[0];
@@ -83,7 +78,7 @@ export class SearchComponent implements OnInit {
     if (
       targetClass === "suggestion" ||
       targetClass === "search__input" ||
-      parentNodeClass == "suggestions-category-select"
+      parentNodeClass === "suggestions-category-select"
     ) {
       return;
     }

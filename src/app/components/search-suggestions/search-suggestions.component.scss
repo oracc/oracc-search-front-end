@@ -1,0 +1,43 @@
+@import "../../../scss/config/variables";
+
+.search__suggestions {
+  max-height: 200px;
+  border: 1px solid $grayDark;
+  border-radius: 5px;
+  text-align: left;
+  background-color: white;
+  overflow: scroll;
+  z-index: 1;
+}
+
+.suggestions-category-select {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  padding-top: 7px;
+}
+
+.suggestions-category-select div {
+  cursor: pointer;
+}
+
+.suggestions-category-select .active {
+  border-bottom: 1px solid black;
+}
+
+.no-suggestions-fallback {
+  pointer-events: none;
+}
+
+.search__suggestions p {
+  border-bottom: 1px solid $gray;
+  padding: 10px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: $grayDark;
+  cursor: pointer;
+}
+
+.search__suggestions p:hover {
+  background-color: #dddddd;
+}
