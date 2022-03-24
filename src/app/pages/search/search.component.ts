@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   public searchParam: string;
   public searchSuggestions: {};
   public showSuggestions = false;
+  public loading = false;
   public breadcrumbLink = [
     {
       name: "Search",
@@ -55,12 +56,16 @@ export class SearchComponent implements OnInit {
       return;
     }
 
+    this.loading = true;
+    this.showSuggestions = true;
+
     // todo: only call this if letters are entered (not other keys like esc)
     this.getDataService
       .getSearchSuggestionsData(searchParam)
       .subscribe((data) => {
         this.searchSuggestions = data;
-        this.showSuggestions = true;
+        //this.showSuggestions = true;
+        this.loading = false;
       });
   }
 

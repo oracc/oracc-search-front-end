@@ -16,6 +16,7 @@
         />
         <app-search-suggestions
           *ngIf="showSuggestions"
+          [loading]="loading"
           [searchSuggestions]="searchSuggestions"
           (setSuggestionSearchParam)="setSuggestionSearchParam($event)"
         ></app-search-suggestions>

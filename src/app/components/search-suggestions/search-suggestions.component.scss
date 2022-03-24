@@ -7,7 +7,10 @@
   text-align: left;
   background-color: white;
   overflow: scroll;
-  z-index: 1;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  max-width: 346px;
 }
 
 .suggestions-category-select {
@@ -25,7 +28,7 @@
   border-bottom: 1px solid black;
 }
 
-.no-suggestions-fallback {
+.suggestions-fallback {
   pointer-events: none;
 }
 

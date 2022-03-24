@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 //----------  reset
 //------------------------------------------------------------------------------
 body,
@@ -24,8 +24,8 @@ p,
 blockquote,
 th,
 td {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 article,
@@ -39,135 +39,135 @@ hgroup,
 nav,
 section,
 main {
-	display: block;
+  display: block;
 }
 
 audio:not([controls]) {
-	display: none;
+  display: none;
 }
 
 [hidden] {
-	display: none;
+  display: none;
 }
 
 //----------  base reset
 //------------------------------------------------------------------------------
 html {
-	font-size: 100%;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
-	font-size: 1em;
-	line-height: 1.35;
-	font-family: $fontPrimary;
-	min-height: calc(100vh + 140px);
-	position: relative;
-	background-color: $grayLight;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+  font-size: 1em;
+  line-height: 1.35;
+  font-family: $fontPrimary;
+  min-height: calc(100vh + 140px);
+  position: relative;
+  background-color: $grayLight;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::-moz-selection {
-	background: #000;
-	color: #fff;
-	text-shadow: none;
+  background: #000;
+  color: #fff;
+  text-shadow: none;
 }
 
 ::selection {
-	background: #000;
-	color: #fff;
-	text-shadow: none;
+  background: #000;
+  color: #fff;
+  text-shadow: none;
 }
 
 //----------  links
 //------------------------------------------------------------------------------
 a {
-	text-decoration: none;
-	outline: none;
+  text-decoration: none;
+  outline: none;
 }
 
 a:focus,
 a:hover,
 a:active {
-	outline: none;
+  outline: none;
 }
 
 //----------  typography
 //------------------------------------------------------------------------------
 abbr[title] {
-	border-bottom: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
 b,
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 blockquote {
-	margin: 0;
+  margin: 0;
 }
 
 dfn {
-	font-style: italic;
+  font-style: italic;
 }
 
 hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 1em 0;
-	padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 ins {
-	background: #ff9;
-	color: #000;
-	text-decoration: none;
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
 }
 
 pre,
 code,
 kbd,
 samp {
-	font-family: monospace, serif;
-	font-size: 1em;
+  font-family: monospace, serif;
+  font-size: 1em;
 }
 
 pre {
-	white-space: pre;
-	word-wrap: break-word;
+  white-space: pre;
+  word-wrap: break-word;
 }
 
 q {
-	quotes: none;
+  quotes: none;
 }
 
 q::before,
 q::after {
-	content: '';
+  content: "";
 }
 
 small {
-	font-size: 85%;
+  font-size: 85%;
 }
 
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sup {
-	top: -0.5em;
+  top: -0.5em;
 }
 
 sub {
-	bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 //----------  lists
@@ -176,117 +176,123 @@ nav ul,
 nav ol,
 ul,
 li {
-	list-style: none;
-	list-style-image: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
 }
 
 //----------  Embedded content
 //------------------------------------------------------------------------------
 img {
-	border: 0;
-	-ms-interpolation-mode: bicubic;
-	vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
 }
 
 svg:not(:root) {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 //----------  forms
 //------------------------------------------------------------------------------
 figure {
-	margin: 0;
+  margin: 0;
 }
 
 form {
-	margin: 0;
+  margin: 0;
 }
 
 fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 label {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 legend {
-	border: 0;
-	padding: 0;
-	white-space: normal;
+  border: 0;
+  padding: 0;
+  white-space: normal;
 }
 
 button,
 input,
 select,
 textarea {
-	font-size: 100%;
-	margin: 0;
-	vertical-align: baseline;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
 }
 
 button,
 input {
-	line-height: normal;
+  line-height: normal;
 }
 
 button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-	cursor: pointer;
-	-webkit-appearance: button;
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
 }
 
 button[disabled],
 input[disabled] {
-	cursor: default;
+  cursor: default;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='search'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
 textarea {
-	box-shadow: none;
-	appearance: none;
+  box-shadow: none;
+  appearance: none;
 }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 textarea {
-	overflow: auto;
-	vertical-align: top;
-	resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
 }
 
 input:invalid,
 textarea:invalid {
-	background-color: #f0dddd;
+  background-color: #f0dddd;
 }
 
 input,
 textarea,
 select {
-	outline: none;
+  outline: none;
 }
 
 //----------  tables
 //------------------------------------------------------------------------------
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	border-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: transparent;
 }
 
 td {
-	vertical-align: top;
+  vertical-align: top;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

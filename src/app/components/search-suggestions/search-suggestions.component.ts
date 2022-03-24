@@ -7,6 +7,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 })
 export class SearchSuggestionsComponent implements OnInit {
   @Input() searchSuggestions;
+  @Input() loading;
   @Output() setSuggestionSearchParam: EventEmitter<string> =
     new EventEmitter<string>();
 
