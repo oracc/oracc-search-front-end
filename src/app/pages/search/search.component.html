@@ -12,7 +12,7 @@
           [placeholder]="'search.placeholderText' | translate"
           [(ngModel)]="searchParam"
           (ngModelChange)="getSearchSuggestions(searchParam)"
-          (keyup)="searchOnEnter($event)"
+          (keyup.enter)="searchOnEnter($event)"
         />
         <app-search-suggestions
           *ngIf="showSuggestions"

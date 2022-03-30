@@ -13,7 +13,7 @@ import {
   styleUrls: ["./search-suggestions.component.scss"]
 })
 export class SearchSuggestionsComponent implements OnInit {
-  @Input() searchSuggestions;
+  @Input() searchSuggestions: {};
   @Input() loading: Boolean;
   @Output() setShowSuggestions = new EventEmitter<boolean>();
   @Output() setSuggestionSearchParam = new EventEmitter<string>();
@@ -28,9 +28,7 @@ export class SearchSuggestionsComponent implements OnInit {
     this.suggestionsCategory = event.target.innerText.toLowerCase();
   }
 
-  setSearchParam(event, searchParam: string) {
-    if (event.code && event.code !== "Enter") return;
-
+  setSearchParam(searchParam: string) {
     this.setSuggestionSearchParam.emit(searchParam);
   }
 

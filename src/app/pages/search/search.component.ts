@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
 
@@ -37,17 +37,15 @@ export class SearchComponent implements OnInit {
     this.isMobile = window.innerWidth < 991 ? true : false;
     this.searchInput = document.querySelector(".js-search-input");
     this.searchButton = document.querySelector(".js-search-btn");
-    this.bindEvents();
-  }
-
-  bindEvents() {
-    this.searchInput.addEventListener("keydown", (event) => {
-      this.searchOnEnter(event);
-    });
   }
 
   setSearchParam(searchParam: string) {
     this.getDataService.setSearchParam(searchParam);
+  }
+
+  searchOnEnter(event) {
+    this.searchButton.click();
+    event.target.blur();
   }
 
   getSearchSuggestions(searchParam: string) {
@@ -77,12 +75,5 @@ export class SearchComponent implements OnInit {
 
   setShowSuggestions(showSuggestions: boolean) {
     this.showSuggestions = showSuggestions;
-  }
-
-  searchOnEnter(event) {
-    if (event.code !== "Enter") return;
-
-    this.searchButton.click();
-    event.target.blur();
   }
 }
