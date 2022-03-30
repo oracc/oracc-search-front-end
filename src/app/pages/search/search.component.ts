@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
-import { debounceTime } from "rxjs/operators";
 
 @Component({
   selector: "app-search",
