@@ -11,14 +11,15 @@
           class="search__input js-search-input"
           [placeholder]="'search.placeholderText' | translate"
           [(ngModel)]="searchParam"
+          (ngModelChange)="getSearchSuggestions(searchParam)"
           (keydown)="searchOnEnter($event)"
-          (keyup)="getSearchSuggestions($event, searchParam)"
         />
         <app-search-suggestions
           *ngIf="showSuggestions"
           [loading]="loading"
           [searchSuggestions]="searchSuggestions"
           (setSuggestionSearchParam)="setSuggestionSearchParam($event)"
+          (setShowSuggestions)="setShowSuggestions($event)"
         ></app-search-suggestions>
       </div>
 

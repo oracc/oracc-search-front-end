@@ -28,7 +28,8 @@
   border-bottom: 1px solid black;
 }
 
-.suggestions-fallback {
+.suggestions-fallback,
+.suggestions-fetching {
   pointer-events: none;
 }
 

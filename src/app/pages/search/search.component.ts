@@ -50,19 +50,15 @@ export class SearchComponent implements OnInit {
     this.getDataService.setSearchParam(searchParam);
   }
 
-  getSearchSuggestions(event, searchParam: string) {
-    // detect arrow key press
-    if ((event.keyCode > 36 && event.keyCode < 41) || !searchParam) return;
-
-    if (searchParam.length < 2 || event.code === "Escape") {
-      this.showSuggestions = false;
+  getSearchSuggestions(searchParam: string) {
+    if (searchParam.length < 2) {
+      this.setShowSuggestions(false);
       return;
     }
 
     this.loading = true;
-    this.showSuggestions = true;
+    this.setShowSuggestions(true);
 
-    // todo: only call this if letters are entered (not other keys like esc)
     this.getDataService
       .getSearchSuggestionsData(searchParam)
       .subscribe((data) => {
@@ -73,27 +69,14 @@ export class SearchComponent implements OnInit {
 
   setSuggestionSearchParam(searchParam: string) {
     this.searchParam = searchParam;
-    this.showSuggestions = false;
+    this.setShowSuggestions(false);
 
     // will carry out search on enter
     this.searchButton.focus();
   }
 
-  @HostListener("window:click", ["$event"])
-  hideSuggestionsOnBlur(event) {
-    const targetClass = event.target.classList[0];
-    const parentNodeClass = event.target.parentNode.className;
-
-    // only hide suggestions if we are not clicking inside the suggestions element
-    if (
-      targetClass === "suggestion" ||
-      targetClass === "search__input" ||
-      parentNodeClass === "suggestions-category-select"
-    ) {
-      return;
-    }
-
-    this.showSuggestions = false;
+  setShowSuggestions(showSuggestions: boolean) {
+    this.showSuggestions = showSuggestions;
   }
 
   searchOnEnter(event) {

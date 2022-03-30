@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  HostListener
+} from "@angular/core";
 
 @Component({
   selector: "app-search-suggestions",
@@ -7,9 +14,9 @@ import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 })
 export class SearchSuggestionsComponent implements OnInit {
   @Input() searchSuggestions;
-  @Input() loading;
-  @Output() setSuggestionSearchParam: EventEmitter<string> =
-    new EventEmitter<string>();
+  @Input() loading: Boolean;
+  @Output() setShowSuggestions = new EventEmitter<boolean>();
+  @Output() setSuggestionSearchParam = new EventEmitter<string>();
 
   public suggestionsCategory = "completions";
 
@@ -25,11 +32,33 @@ export class SearchSuggestionsComponent implements OnInit {
     this.setSuggestionSearchParam.emit(searchParam);
   }
 
+  setShowSuggestionsHandler(showSuggestions: boolean) {
+    this.setShowSuggestions.emit(showSuggestions);
+  }
+
   setSearchSuggestionOnEnter(event) {
     if (event.code !== "Enter") return;
 
     const currentActiveSuggestion = document.activeElement.innerHTML.trim();
 
     this.setSearch(currentActiveSuggestion);
+  }
+
+  @HostListener("window:click", ["$event"])
+  hideSuggestionsOnBlur(event) {
+    const targetClass = event.target.classList[0];
+    const parentNodeClass = event.target.parentNode.className;
+
+    // only hide suggestions if we are not clicking inside the suggestions element
+    if (
+      targetClass === "search__suggestions" ||
+      targetClass === "search__input" ||
+      targetClass === "suggestions-category-select" ||
+      parentNodeClass === "suggestions-category-select"
+    ) {
+      return;
+    }
+
+    this.setShowSuggestionsHandler(false);
   }
 }
