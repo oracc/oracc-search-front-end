@@ -28,20 +28,14 @@ export class SearchSuggestionsComponent implements OnInit {
     this.suggestionsCategory = event.target.innerText.toLowerCase();
   }
 
-  setSearch(searchParam: string) {
+  setSearchParam(event, searchParam: string) {
+    if (event.code && event.code !== "Enter") return;
+
     this.setSuggestionSearchParam.emit(searchParam);
   }
 
   setShowSuggestionsHandler(showSuggestions: boolean) {
     this.setShowSuggestions.emit(showSuggestions);
-  }
-
-  setSearchSuggestionOnEnter(event) {
-    if (event.code !== "Enter") return;
-
-    const currentActiveSuggestion = document.activeElement.innerHTML.trim();
-
-    this.setSearch(currentActiveSuggestion);
   }
 
   @HostListener("window:click", ["$event"])

@@ -1,8 +1,4 @@
-<div
-  *ngIf="!loading"
-  class="search__suggestions"
-  (keyup)="setSearchSuggestionOnEnter($event)"
->
+<div *ngIf="!loading" class="search__suggestions">
   <div>
     <div class="suggestions-category-select">
       <div
@@ -23,7 +19,8 @@
     <p
       *ngFor="let suggestion of searchSuggestions[suggestionsCategory]"
       class="suggestion"
-      (click)="setSearch(suggestion)"
+      (click)="setSearchParam($event, suggestion)"
+      (keyup)="setSearchParam($event, suggestion)"
       tabindex="0"
     >
       {{ suggestion }}
