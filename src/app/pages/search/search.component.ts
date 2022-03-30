@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
+import { debounceTime } from "rxjs/operators";
 
 @Component({
   selector: "app-search",
@@ -17,6 +18,7 @@ export class SearchComponent implements OnInit {
   public searchSuggestions: {};
   public showSuggestions = false;
   public loading = false;
+  public timer;
   public breadcrumbLink = [
     {
       name: "Search",
@@ -49,6 +51,8 @@ export class SearchComponent implements OnInit {
   }
 
   getSearchSuggestions(searchParam: string) {
+    searchParam = searchParam.trim();
+
     if (searchParam.length < 2) {
       this.setShowSuggestions(false);
       return;
@@ -57,19 +61,25 @@ export class SearchComponent implements OnInit {
     this.loading = true;
     this.setShowSuggestions(true);
 
-    this.getDataService
-      .getSearchSuggestionsData(searchParam)
-      .subscribe((data) => {
-        this.searchSuggestions = data;
-        this.loading = false;
-      });
+    this.debounceSearchSuggestions(searchParam);
+  }
+
+  debounceSearchSuggestions(searchParam: string) {
+    clearTimeout(this.timer);
+
+    this.timer = setTimeout(() => {
+      this.getDataService
+        .getSearchSuggestionsData(searchParam)
+        .subscribe((data) => {
+          this.searchSuggestions = data;
+          this.loading = false;
+        });
+    }, 500);
   }
 
   setSuggestionSearchParam(searchParam: string) {
     this.searchParam = searchParam;
     this.setShowSuggestions(false);
-
-    // will carry out search on enter
     this.searchButton.focus();
   }
 
