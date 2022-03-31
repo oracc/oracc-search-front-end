@@ -45,3 +45,14 @@
 .search__suggestions p:hover {
   background-color: #dddddd;
 }
+
+@media only screen and (max-width: 500px) {
+  .search__suggestions {
+    max-width: 241px;
+    font-size: 0.9rem;
+  }
+
+  .search__suggestions p {
+    font-size: 0.7rem;
+  }
+}
