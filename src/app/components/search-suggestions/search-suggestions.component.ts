@@ -44,8 +44,6 @@ export class SearchSuggestionsComponent implements OnInit {
     const targetClass = event.target.classList[0];
     const parentNodeClass = event.target.parentNode.className;
 
-    console.log(targetClass, parentNodeClass);
-
     // only hide suggestions if we are not clicking inside the suggestions element
     if (
       targetClass === "search__suggestions" ||
