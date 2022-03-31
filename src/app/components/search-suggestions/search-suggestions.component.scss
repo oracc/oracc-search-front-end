@@ -46,6 +46,18 @@
   background-color: #dddddd;
 }
 
+.close-suggestions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px;
+  padding-right: 5px;
+  color: $grayDark;
+}
+
+.close-suggestions span {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 500px) {
   .search__suggestions {
     max-width: 241px;

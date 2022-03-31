@@ -19,10 +19,13 @@ export class SearchSuggestionsComponent implements OnInit {
   @Output() setSuggestionSearchParam = new EventEmitter<string>();
 
   public suggestionsCategory = "completions";
+  public isMobile: boolean;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isMobile = window.innerWidth < 991 ? true : false;
+  }
 
   setSuggestionsCategory(event) {
     this.suggestionsCategory = event.target.innerText.toLowerCase();
@@ -41,12 +44,15 @@ export class SearchSuggestionsComponent implements OnInit {
     const targetClass = event.target.classList[0];
     const parentNodeClass = event.target.parentNode.className;
 
+    console.log(targetClass, parentNodeClass);
+
     // only hide suggestions if we are not clicking inside the suggestions element
     if (
       targetClass === "search__suggestions" ||
       targetClass === "search__input" ||
       targetClass === "suggestions-category-select" ||
-      parentNodeClass === "suggestions-category-select"
+      parentNodeClass === "suggestions-category-select" ||
+      parentNodeClass === "search__suggestions"
     ) {
       return;
     }

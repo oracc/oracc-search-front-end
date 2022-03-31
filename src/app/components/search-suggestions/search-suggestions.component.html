@@ -1,5 +1,9 @@
 <div *ngIf="!loading" class="search__suggestions">
-  <div>
+  <div *ngIf="isMobile" class="close-suggestions">
+    <span (click)="setShowSuggestionsHandler(false)"> Close </span>
+  </div>
+
+  <div class="suggestions-content">
     <div class="suggestions-category-select">
       <div
         [ngClass]="suggestionsCategory === 'completions' ? 'active' : ''"
