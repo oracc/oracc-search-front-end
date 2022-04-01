@@ -1,4 +1,4 @@
-<div *ngIf="!loading" class="search__suggestions">
+<div *ngIf="!loading && showSuggestions" class="search__suggestions">
   <div *ngIf="isMobile" class="close-suggestions">
     <span (click)="setShowSuggestionsHandler(false)"> Close </span>
   </div>
@@ -39,6 +39,6 @@
   </p>
 </div>
 
-<div class="search__suggestions" *ngIf="loading">
+<div class="search__suggestions" *ngIf="loading && showSuggestions">
   <p class="suggestions-fetching">Fetching suggestions...</p>
 </div>

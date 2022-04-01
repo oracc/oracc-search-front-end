@@ -14,10 +14,7 @@ export class SearchComponent implements OnInit {
   public isMobile: boolean;
   public routerLink: string;
   public searchParam: string;
-  public searchSuggestions: {};
   public showSuggestions = false;
-  public loading = false;
-  public timer;
   public breadcrumbLink = [
     {
       name: "Search",
@@ -49,37 +46,11 @@ export class SearchComponent implements OnInit {
     event.target.blur();
   }
 
-  getSearchSuggestions(searchParam: string) {
-    searchParam = searchParam.trim();
-
-    if (searchParam.length < 2) {
-      this.setShowSuggestions(false);
-      return;
-    }
-
-    this.loading = true;
-    this.setShowSuggestions(true);
-
-    this.debounceSearchSuggestions(searchParam);
-  }
-
-  debounceSearchSuggestions(searchParam: string) {
-    clearTimeout(this.timer);
-
-    this.timer = setTimeout(() => {
-      this.getDataService
-        .getSearchSuggestionsData(searchParam)
-        .subscribe((data) => {
-          this.searchSuggestions = data;
-          this.loading = false;
-        });
-    }, 500);
-  }
-
   setSuggestionSearchParam(searchParam: string) {
     this.searchParam = searchParam;
-    this.setShowSuggestions(false);
-    this.searchButton.focus();
+
+    this.searchButton.click();
+    this.searchButton.blur();
   }
 
   setShowSuggestions(showSuggestions: boolean) {
