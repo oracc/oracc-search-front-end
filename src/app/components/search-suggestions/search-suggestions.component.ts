@@ -5,8 +5,7 @@ import {
   EventEmitter,
   Output,
   HostListener,
-  OnChanges,
-  SimpleChange
+  OnChanges
 } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 
