@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
   public isMobile: boolean;
   public routerLink: string;
   public searchParam: string;
+  public showSuggestions = false;
   public breadcrumbLink = [
     {
       name: "Search",
@@ -34,13 +35,6 @@ export class SearchComponent implements OnInit {
     this.isMobile = window.innerWidth < 991 ? true : false;
     this.searchInput = document.querySelector(".js-search-input");
     this.searchButton = document.querySelector(".js-search-btn");
-    this.bindEvents();
-  }
-
-  bindEvents() {
-    this.searchInput.addEventListener("keydown", (event) => {
-      this.searchOnEnter(event);
-    });
   }
 
   setSearchParam(searchParam: string) {
@@ -48,11 +42,18 @@ export class SearchComponent implements OnInit {
   }
 
   searchOnEnter(event) {
-    event.stopImmediatePropagation(); // prevents repeated api calls
+    this.searchButton.click();
+    event.target.blur();
+  }
 
-    if (event.code === "Enter") {
-      this.searchButton.click();
-      event.target.blur();
-    }
+  setSuggestionSearchParam(searchParam: string) {
+    this.searchParam = searchParam;
+
+    this.searchButton.click();
+    this.searchButton.blur();
+  }
+
+  setShowSuggestions(showSuggestions: boolean) {
+    this.showSuggestions = showSuggestions;
   }
 }

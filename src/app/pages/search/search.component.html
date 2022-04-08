@@ -3,14 +3,25 @@
     <h2 class="search__title">{{ "search.titleText" | translate }}</h2>
     <span class="search__intro">{{ "search.introText" | translate }}</span>
     <div class="search__form">
-      <input
-        type="text"
-        name="search"
-        class="search__input js-search-input"
-        [placeholder]="'search.placeholderText' | translate"
-        [(ngModel)]="searchParam"
-        (keydown)="searchOnEnter($event)"
-      />
+      <div class="search-input__container">
+        <input
+          autocomplete="off"
+          type="text"
+          name="search"
+          class="search__input js-search-input"
+          [placeholder]="'search.placeholderText' | translate"
+          [(ngModel)]="searchParam"
+          (ngModelChange)="setShowSuggestions(true)"
+          (keyup.enter)="searchOnEnter($event)"
+        />
+        <app-search-suggestions
+          *ngIf="showSuggestions"
+          [searchParam]="searchParam"
+          (setSuggestionSearchParam)="setSuggestionSearchParam($event)"
+          (setShowSuggestions)="setShowSuggestions($event)"
+        ></app-search-suggestions>
+      </div>
+
       <button
         class="btn search__btn js-search-btn"
         routerLink="search-results"

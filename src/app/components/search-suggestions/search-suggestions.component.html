@@ -1,0 +1,44 @@
+<div *ngIf="!loading && showSuggestions" class="search__suggestions">
+  <div *ngIf="isMobile" class="close-suggestions">
+    <span (click)="setShowSuggestionsHandler(false)"> Close </span>
+  </div>
+
+  <div class="suggestions-content">
+    <div class="suggestions-category-select">
+      <div
+        [ngClass]="suggestionsCategory === 'completions' ? 'active' : ''"
+        (click)="setSuggestionsCategory($event)"
+      >
+        Completions
+      </div>
+
+      <div
+        [ngClass]="suggestionsCategory === 'suggestions' ? 'active' : ''"
+        (click)="setSuggestionsCategory($event)"
+      >
+        Suggestions
+      </div>
+    </div>
+
+    <p
+      *ngFor="let suggestion of searchSuggestions[suggestionsCategory]"
+      class="suggestion"
+      (click)="setSearchParam(suggestion)"
+      (keyup.enter)="setSearchParam(suggestion)"
+      tabindex="0"
+    >
+      {{ suggestion }}
+    </p>
+  </div>
+
+  <p
+    class="suggestions-fallback"
+    *ngIf="searchSuggestions[suggestionsCategory].length === 0"
+  >
+    No items to display
+  </p>
+</div>
+
+<div class="search__suggestions" *ngIf="loading && showSuggestions">
+  <p class="suggestions-fetching">Fetching suggestions...</p>
+</div>

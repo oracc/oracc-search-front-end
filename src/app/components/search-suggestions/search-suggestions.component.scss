@@ -1,0 +1,70 @@
+@import "../../../scss/config/variables";
+
+.search__suggestions {
+  max-height: 200px;
+  border: 1px solid $grayDark;
+  border-radius: 5px;
+  text-align: left;
+  background-color: white;
+  overflow: scroll;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  max-width: 346px;
+}
+
+.suggestions-category-select {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  padding-top: 7px;
+}
+
+.suggestions-category-select div {
+  cursor: pointer;
+}
+
+.suggestions-category-select .active {
+  border-bottom: 1px solid black;
+}
+
+.suggestions-fallback,
+.suggestions-fetching {
+  pointer-events: none;
+}
+
+.search__suggestions p {
+  border-bottom: 1px solid $gray;
+  padding: 10px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: $grayDark;
+  cursor: pointer;
+}
+
+.search__suggestions p:hover {
+  background-color: #dddddd;
+}
+
+.close-suggestions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px;
+  padding-right: 5px;
+  color: $grayDark;
+}
+
+.close-suggestions span {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .search__suggestions {
+    max-width: 241px;
+    font-size: 0.9rem;
+  }
+
+  .search__suggestions p {
+    font-size: 0.7rem;
+  }
+}
