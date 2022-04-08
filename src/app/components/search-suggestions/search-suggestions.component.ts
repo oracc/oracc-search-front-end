@@ -80,20 +80,9 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
 
   @HostListener("window:click", ["$event"])
   hideSuggestionsOnBlur(event) {
-    const targetClass = event.target.classList[0];
-    const parentNodeClass = event.target.parentNode.className;
+    const searchSuggestionsEl = event.target.closest(".search__suggestions");
 
-    // only hide suggestions if we are not clicking inside the suggestions element
-    if (
-      targetClass === "search__suggestions" ||
-      targetClass === "search__input" ||
-      targetClass === "suggestions-category-select" ||
-      parentNodeClass === "suggestions-category-select" ||
-      parentNodeClass === "search__suggestions"
-    ) {
-      return;
-    }
-
-    this.showSuggestions = false;
+    // hide suggestions if we click outside the component
+    if (searchSuggestionsEl == null) this.showSuggestions = false;
   }
 }

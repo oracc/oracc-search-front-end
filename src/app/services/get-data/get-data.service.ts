@@ -21,12 +21,12 @@ export class GetDataService {
   private glossaryArticleParam: string;
   private subsequentPageVisit = false;
 
-  private searchURL = "https://build-oracc.museum.upenn.edu:5000/search/";
-  private glossaryArticleURL = "https://build-oracc.museum.upenn.edu/neo/";
-  private baseUrl = "https://build-oracc.museum.upenn.edu/";
   private sourceURL = "http://cdli.ucla.edu/";
-  private searchSuggestionsUrl =
-    "https://build-oracc.museum.upenn.edu:5000/suggest_all/";
+
+  private baseUrl = "https://build-oracc.museum.upenn.edu";
+  private searchURL = `${this.baseUrl}:5000/search/`;
+  private glossaryArticleURL = `${this.baseUrl}/neo/`;
+  private searchSuggestionsUrl = `${this.baseUrl}:5000/suggest_all/`;
 
   constructor(private http: HttpClient) {}
 
@@ -50,8 +50,8 @@ export class GetDataService {
     const textId = params.get("textId");
 
     const url = subProjectId
-      ? `${this.baseUrl}${projectId}/${subProjectId}/${textId}`
-      : `${this.baseUrl}${projectId}/${textId}`;
+      ? `${this.baseUrl}/${projectId}/${subProjectId}/${textId}`
+      : `${this.baseUrl}/${projectId}/${textId}`;
 
     return this.http.get(url, {
       responseType: "text"
@@ -90,7 +90,7 @@ export class GetDataService {
 
   public getDetailData() {
     return this.http.get(
-      `${this.baseUrl}${this.urlParam}/${this.language}?xis=${this.queryString}`,
+      `${this.baseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}`,
       {
         responseType: "text"
       }
@@ -99,7 +99,7 @@ export class GetDataService {
 
   public getDetailDataPage(pageNumber) {
     return this.http.get(
-      `${this.baseUrl}${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
+      `${this.baseUrl}/${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
       {
         responseType: "text"
       }
@@ -139,7 +139,7 @@ export class GetDataService {
   }
 
   public getSourceData() {
-    let sourceDataURL = `${this.baseUrl}${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
+    let sourceDataURL = `${this.baseUrl}/${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
 
     if (this.sourceParams[2].length > 0) {
       sourceDataURL = sourceDataURL + "?" + this.sourceParams[2];
@@ -153,8 +153,11 @@ export class GetDataService {
   }
 
   public getPopupData(project: string, item: string, blockId: string) {
-    return this.http.get(`${this.baseUrl}${project}/${item}/score?${blockId}`, {
-      responseType: "text"
-    });
+    return this.http.get(
+      `${this.baseUrl}/${project}/${item}/score?${blockId}`,
+      {
+        responseType: "text"
+      }
+    );
   }
 }
