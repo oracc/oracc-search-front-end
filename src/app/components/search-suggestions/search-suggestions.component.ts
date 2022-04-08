@@ -9,6 +9,11 @@ import {
 } from "@angular/core";
 import { GetDataService } from "../../services/get-data/get-data.service";
 
+enum SuggestionsCategories {
+  COMPLETIONS = "completions",
+  SUGGESTIONS = "suggestions"
+}
+
 @Component({
   selector: "app-search-suggestions",
   templateUrl: "./search-suggestions.component.html",
@@ -22,7 +27,7 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
   public showSuggestions = false;
   public loading = false;
   public searchSuggestions: {};
-  public suggestionsCategory = "completions";
+  public suggestionsCategory: SuggestionsCategories;
   public timer;
   public isMobile: boolean;
 
@@ -30,6 +35,7 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 991 ? true : false;
+    this.suggestionsCategory = SuggestionsCategories.COMPLETIONS;
   }
 
   ngOnChanges(changes) {
@@ -65,7 +71,11 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
   }
 
   setSuggestionsCategory(event) {
-    this.suggestionsCategory = event.target.innerText.toLowerCase();
+    let newCategory = event.target.innerText.toUpperCase();
+
+    this.suggestionsCategory = SuggestionsCategories[
+      newCategory
+    ] as SuggestionsCategories;
   }
 
   setSearchParam(searchParam: string) {
