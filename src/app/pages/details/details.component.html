@@ -8,7 +8,9 @@
           class="details__panel-top"
           (click)="togglePanel($event, 'metadataPanel')"
         >
-          <span class="details__panel-top-text">{{'details.metadataText' | translate}}</span>
+          <span class="details__panel-top-text">{{
+            "details.metadataText" | translate
+          }}</span>
           <span
             class="details__panel-top-exp"
             [ngClass]="{ active: isMetadataPanelActive }"
@@ -17,7 +19,6 @@
         <div
           class="details__panel-main ps"
           [innerHTML]="metadataPanel"
-          [perfectScrollbar]
           *ngIf="isMetadataPanelActive"
         ></div>
       </div>
@@ -62,7 +63,6 @@
         <div
           class="details__panel-main js-panel-central ls"
           [innerHTML]="middlePanel"
-          [perfectScrollbar]
           (click)="handleDetailsClick($event)"
         ></div>
       </div>
@@ -72,7 +72,9 @@
           class="details__panel-top"
           (click)="togglePanel($event, 'textPanel')"
         >
-          <span class="details__panel-top-text">{{ 'details.showText' | translate }}</span>
+          <span class="details__panel-top-text">{{
+            "details.showText" | translate
+          }}</span>
           <span
             class="details__panel-top-exp"
             [ngClass]="{ active: isTextPanelActive }"
@@ -82,7 +84,6 @@
           class="details__panel-main details__panel-main--right js-panel-right"
           *ngIf="isTextPanelActive"
           [innerHTML]="textPanel"
-          [perfectScrollbar]
         ></div>
       </div>
     </div>

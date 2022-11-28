@@ -23,9 +23,6 @@ import { GlossaryArticleComponent } from "./pages/glossary-article/glossary-arti
 import { FormsModule } from "@angular/forms";
 import { DetailsComponent } from "./pages/details/details.component";
 import { BreadcrumbsModule } from "ng6-breadcrumbs";
-import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
-import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
-import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
 import { SortPipe } from "./pipes/sort.pipe";
 import { GlossaryArticleTextsComponent } from "./pages/glossary-article-texts/glossary-article-texts.component";
 import { DetailsTextsComponent } from "./pages/details-texts/details-texts.component";
@@ -37,10 +34,6 @@ import { SearchSuggestionsComponent } from "./components/search-suggestions/sear
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/");
 }
-
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: false
-};
 
 @NgModule({
   declarations: [
@@ -78,16 +71,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserAnimationsModule,
     MaterialModule,
     NgxPaginationModule,
-    BreadcrumbsModule,
-    PerfectScrollbarModule
+    BreadcrumbsModule
   ],
-  providers: [
-    GetDataService,
-    {
-      provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
-  ],
+  providers: [GetDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
