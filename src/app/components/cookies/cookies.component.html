@@ -1,18 +1,20 @@
 <div class="cookies" [class.cookies__hide]="isHidden">
   <div class="container cookies__content">
     <span class="cookies__text"
-      >{{'cookies.text1' | translate}}
+      >{{ "cookies.text1" | translate }}
       <a
         href="http://oracc.museum.upenn.edu/doc/about/cookies/index.html"
         target="_blank"
-        >{{'cookies.hereText' | translate}}</a
-      >; {{'cookies.text2' | translate}}
+        >{{ "cookies.hereText" | translate }}</a
+      >; {{ "cookies.text2" | translate }}
       <a
         href="https://www.seethestats.com/site/oracc.museum.upenn.edu"
         target="_blank"
-        >{{'cookies.hereText' | translate}}</a
-      >; {{'cookies.text3' | translate}}
-      <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">{{'cookies.hereText' | translate}}</a
+        >{{ "cookies.hereText" | translate }}</a
+      >; {{ "cookies.text3" | translate }}
+      <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">{{
+        "cookies.hereText" | translate
+      }}</a
       >.</span
     >
     <button class="btn" (click)="acceptCookies()">Got it!</button>

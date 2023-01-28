@@ -1,11 +1,11 @@
 <div class="glossary">
-	<div
-	  class="container content glossary__content js-glossary-content"
-	  [innerHTML]="glossaryContent"
-	  (click)="handleTermClick($event)"
-	  *ngIf="glossaryContent; else loader"
-	></div>
-	<ng-template #loader
-	  ><div class="glossary__fetching"><i class="fas fa-spinner"></i></div
-	></ng-template>
-  </div>
+  <div
+    class="container content glossary__content js-glossary-content"
+    [innerHTML]="glossaryContent"
+    (click)="handleTermClick($event)"
+    *ngIf="glossaryContent; else loader"
+  ></div>
+  <ng-template #loader
+    ><div class="glossary__fetching"><i class="fas fa-spinner"></i></div
+  ></ng-template>
+</div>

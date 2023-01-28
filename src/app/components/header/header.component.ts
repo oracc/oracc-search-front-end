@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
-import { LANGUAGE } from "src/utils/consts";
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { LANGUAGE } from 'src/utils/consts';
 
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  htmlTag: HTMLElement = document.getElementsByTagName("html")[0];
+  htmlTag: HTMLElement = document.getElementsByTagName('html')[0];
   isDesktop = window.innerWidth < 991 ? false : true;
-  routerLinks = document.querySelectorAll("[routerLink]");
+  routerLinks = document.querySelectorAll('[routerLink]');
   isMenuOpen = false;
 
   constructor(public translate: TranslateService) {
@@ -25,20 +25,20 @@ export class HeaderComponent implements OnInit {
   public changeLang(lang) {
     if (lang.id === LANGUAGE.ENGLISH) {
       this.translate.use(LANGUAGE.ENGLISH);
-      this.htmlTag.setAttribute("dir", "ltr");
-      this.htmlTag.setAttribute("lang", LANGUAGE.ENGLISH);
+      this.htmlTag.setAttribute('dir', 'ltr');
+      this.htmlTag.setAttribute('lang', LANGUAGE.ENGLISH);
       lang.parentNode.childNodes.forEach((elem) => {
-        elem.classList.remove("header__nav-lang-link--active");
+        elem.classList.remove('header__nav-lang-link--active');
       });
-      lang.classList.add("header__nav-lang-link--active");
+      lang.classList.add('header__nav-lang-link--active');
     } else if (lang.id === LANGUAGE.ARABIC) {
       this.translate.use(LANGUAGE.ARABIC);
-      this.htmlTag.setAttribute("dir", "rtl");
-      this.htmlTag.setAttribute("lang", LANGUAGE.ARABIC);
+      this.htmlTag.setAttribute('dir', 'rtl');
+      this.htmlTag.setAttribute('lang', LANGUAGE.ARABIC);
       lang.parentNode.childNodes.forEach((elem) => {
-        elem.classList.remove("header__nav-lang-link--active");
+        elem.classList.remove('header__nav-lang-link--active');
       });
-      lang.classList.add("header__nav-lang-link--active");
+      lang.classList.add('header__nav-lang-link--active');
     }
   }
 
@@ -48,7 +48,7 @@ export class HeaderComponent implements OnInit {
 
   public closeNavPanel(e) {
     if (
-      e.target.hasAttribute("routerLink") &&
+      e.target.hasAttribute('routerLink') &&
       window.innerWidth < 991 &&
       this.isMenuOpen
     ) {

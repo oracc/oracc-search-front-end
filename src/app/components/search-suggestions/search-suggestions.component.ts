@@ -6,18 +6,18 @@ import {
   Output,
   HostListener,
   OnChanges
-} from "@angular/core";
-import { GetDataService } from "../../services/get-data/get-data.service";
+} from '@angular/core';
+import { GetDataService } from '../../services/get-data/get-data.service';
 
 enum SuggestionsCategories {
-  COMPLETIONS = "completions",
-  SUGGESTIONS = "suggestions"
+  COMPLETIONS = 'completions',
+  SUGGESTIONS = 'suggestions'
 }
 
 @Component({
-  selector: "app-search-suggestions",
-  templateUrl: "./search-suggestions.component.html",
-  styleUrls: ["./search-suggestions.component.scss"]
+  selector: 'app-search-suggestions',
+  templateUrl: './search-suggestions.component.html',
+  styleUrls: ['./search-suggestions.component.scss']
 })
 export class SearchSuggestionsComponent implements OnInit, OnChanges {
   @Input() searchParam: string;
@@ -88,9 +88,9 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
     this.setShowSuggestions.emit(showSuggestions);
   }
 
-  @HostListener("window:click", ["$event"])
+  @HostListener('window:click', ['$event'])
   hideSuggestionsOnBlur(event) {
-    const searchSuggestionsEl = event.target.closest(".search__suggestions");
+    const searchSuggestionsEl = event.target.closest('.search__suggestions');
 
     // hide suggestions if we click outside the component
     if (searchSuggestionsEl == null) this.showSuggestions = false;

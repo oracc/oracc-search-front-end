@@ -5,7 +5,7 @@ export function composedPath(el) {
   while (el) {
     path.push(el);
 
-    if (el.tagName === "HTML") {
+    if (el.tagName === 'HTML') {
       path.push(document);
       path.push(window);
 
@@ -14,4 +14,6 @@ export function composedPath(el) {
 
     el = el.parentElement;
   }
+
+  return path;
 }

@@ -1,115 +1,115 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { GetDataService } from "../../services/get-data/get-data.service";
-import { DomSanitizer } from "@angular/platform-browser";
-import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
-import { Router } from "@angular/router";
-import { composedPath } from "../../../utils/utils";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { GetDataService } from '../../services/get-data/get-data.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
+import { Router } from '@angular/router';
+import { composedPath } from '../../../utils/utils';
 
 @Component({
-  selector: "app-glossary-article-source",
-  templateUrl: "./glossary-article-source.component.html"
+  selector: 'app-glossary-article-source',
+  templateUrl: './glossary-article-source.component.html'
 })
 export class GlossaryArticleSourceComponent implements OnInit {
   public glossaryContent: any;
-  public pathnameArray = window.location.pathname.slice(1).split("/");
+  public pathnameArray = window.location.pathname.slice(1).split('/');
   public breadcrumbLink =
     window.innerWidth > 991
       ? [
           {
-            name: "Search",
-            url: "/search"
+            name: 'Search',
+            url: '/search'
           },
           {
-            name: "Search Results",
-            url: "/search/search-results"
+            name: 'Search Results',
+            url: '/search/search-results'
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 5]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -4).join("/")
+              window.location.pathname.split('/').slice(0, -4).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 4]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -3).join("/")
+              window.location.pathname.split('/').slice(0, -3).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -2).join("/")
+              window.location.pathname.split('/').slice(0, -2).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -1).join("/")
+              window.location.pathname.split('/').slice(0, -1).join('/')
             ),
             data: history.state.data
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: window.location.pathname
           }
         ]
       : [
           {
-            name: "Search Results",
-            url: "/search-results"
+            name: 'Search Results',
+            url: '/search-results'
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 5]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -4).join("/")
+              window.location.pathname.split('/').slice(0, -4).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 4]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -3).join("/")
+              window.location.pathname.split('/').slice(0, -3).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -2).join("/")
+              window.location.pathname.split('/').slice(0, -2).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -1).join("/")
+              window.location.pathname.split('/').slice(0, -1).join('/')
             ),
             data: history.state.data
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: window.location.pathname
           }
         ];
 
-  @ViewChild("glossary", { static: false }) glossaryWraper;
+  @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
     private getDataService: GetDataService,
     private sanitizer: DomSanitizer,
@@ -133,23 +133,23 @@ export class GlossaryArticleSourceComponent implements OnInit {
   public handleTermClick(e) {
     const anchorEl = e.path
       ? e.path.find((el) => {
-          return !!el.className ? el.className.match("icount") : "";
+          return !!el.className ? el.className.match('icount') : '';
         })
       : composedPath(e.target).find((el) => {
-          return !!el.className ? el.className.match("icount") : "";
+          return !!el.className ? el.className.match('icount') : '';
         });
     if (anchorEl) {
-      const anchorElText = anchorEl.querySelector("span")
-        ? anchorEl.querySelector("span").innerText
+      const anchorElText = anchorEl.querySelector('span')
+        ? anchorEl.querySelector('span').innerText
         : anchorEl.innerText;
       e.preventDefault();
       const queryParams = anchorEl.href
-        .split("(")
+        .split('(')
         .slice(1)
         .join()
         .slice(0, -1)
-        .replace(/'/g, "")
-        .split(",");
+        .replace(/'/g, '')
+        .split(',');
 
       this.getDataService.setDetailsPageParams(
         queryParams[0],
@@ -161,12 +161,12 @@ export class GlossaryArticleSourceComponent implements OnInit {
       if (window.innerWidth > 991) {
         this.router.navigate([
           `/search/search-results/${decodeURI(this.pathnameArray[2])}`,
-          "occurrences"
+          'occurrences'
         ]);
       } else {
         this.router.navigate([
           `/search-results/${decodeURI(this.pathnameArray[1])}`,
-          "occurrences"
+          'occurrences'
         ]);
       }
     }
@@ -174,19 +174,19 @@ export class GlossaryArticleSourceComponent implements OnInit {
 
   private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, "text/html");
-    const glossaryContentInput = htmlData.getElementsByTagName("body")[0];
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const glossaryContentInput = htmlData.getElementsByTagName('body')[0];
 
     if (
-      glossaryContentInput.querySelector("p") &&
+      glossaryContentInput.querySelector('p') &&
       (glossaryContentInput
-        .querySelector("p")
+        .querySelector('p')
         .innerText.toLowerCase()
-        .match("no such map") ||
+        .match('no such map') ||
         glossaryContentInput
-          .querySelector("p")
+          .querySelector('p')
           .innerText.toLowerCase()
-          .match("no html file found"))
+          .match('no html file found'))
     ) {
       this.glossaryContent = `<p class="glossary__fallback">No glossary article found</p>`;
     } else {
