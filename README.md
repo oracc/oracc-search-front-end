@@ -24,7 +24,7 @@ Our current approach is to deploy the production version onto an ubuntu server.
 
 We currently deploy a staging version of this site to GitHub pages. Use the following commands to deploy to GH-pages:
 
-Run `ng deploy --configuration=github-pages`
+Run `ng deploy --build-target=github-pages`
 
 or
 
@@ -39,7 +39,7 @@ See the [documentation for the package we use](https://www.npmjs.com/package/ang
 
 The app is configured to run under a `/new` directory to satisfy production requirements on the production ubuntu server (this is not applicable to the GH-pages deployment). To change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
 
-It is also possible to define the `baseHref` property using a custom build configuration if desired. You can do this by setting a custom field within the `configurations` object within `angular.json`. For instance, we currently have set the `github-pages` configuration which sets a custom `baseHref`. This is the configuration that is used when deploying to github-pages.
+It is also possible to define the `baseHref` property using a custom build configuration if desired. You can do this by setting a custom field within the `configurations` object within `angular.json`. For instance, we currently have set the `github-pages` configuration which sets a custom `baseHref`and is run with `ng build --configuration=github-pages`.
 
 ## Running unit tests
 
