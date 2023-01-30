@@ -24,11 +24,11 @@ Our current approach is to deploy the production version onto an ubuntu server.
 
 We currently deploy a staging version of this site to GitHub pages. Use the following commands to deploy to GH-pages:
 
-Run `ng deploy --build-target=github-pages`
+Run `ng deploy --base-href=/oracc-search-front-end/`
 
 or
 
-`npm run deploy`
+`npm run gh-pages-deploy`
 
 This will build the project using a custom `baseHref` property defined in `angular.json`. The project will then automatically be deployed to github-pages.
 
