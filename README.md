@@ -74,7 +74,7 @@ The website is currently served from a `/new` directory on the server. Therefore
 
 This can be achieved by running the following command from within the destination directory you'd like to make the symlink to: `sudo cp -r --symbolic-link /home/rits/oracc-search-front-end/dist/oracc/* .`
 
-The above command should be repeated for fresh deployments of the application since the symlinked files may not automatically sync.
+This will symlink each file and folder to the new directory and not the directory itself, so the above command should be repeated for fresh deployments of the application since the symlinked files may not automatically sync.
 
 ### Further Apache configurations
 
