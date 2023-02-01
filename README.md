@@ -72,6 +72,10 @@ Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set 
 
 The website is currently served from a `/new` directory on the server. Therefore, the Angular application is symlinked from `/home/rits/oracc-search-front-end/dist/oracc` into `/home/oracc/www/new`.
 
+This can be achieved by running the following command from within the destination directory you'd like to make the symlink to: `sudo cp -r --symbolic-link /home/rits/oracc-search-front-end/dist/oracc/* .`
+
+The above command should be repeated for fresh deployments of the application since the symlinked files may not automatically sync.
+
 ### Further Apache configurations
 
 The Oracc server runs on Ubuntu and exposes the Oracc website via an Apache web server. Therefore, you may need to configure Apache to appropriately serve the static content generated via the Angular build process.
