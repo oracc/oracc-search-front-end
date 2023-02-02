@@ -62,7 +62,7 @@ The following software needs to be installed on the server (ask Steve Tinney for
 
 ## Clone the repo
 
-On the server, all our project code is located at `/home/rits` and the Angular code is in the `/home/rits/oracc-search-front-end` directory. If the `oracc-search-front-end` folder does not exits, you will need to clone the repo via git into `/home/rits`.
+On the server, all our project code is located at `/home/rits` and the Angular code is in the `/home/rits/oracc-search-front-end` directory. If the `oracc-search-front-end` folder does not exit, you will need to clone the repo via git into `/home/rits`.
 
 ## Build the website for production
 
