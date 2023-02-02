@@ -53,22 +53,22 @@ See the [documentation for the package we use](https://www.npmjs.com/package/ang
 
 First, you will need to gain access to the Oracc build server which is currently managed by Steve Tinney. You should email Steve to gain access to the server, the project PI should be able to give you his contact details. To log in to the server you will need to generate an ssh key pair and store the public key on the server, Steve should be able to assist with this. Once you have access to the server, you can proceed to deploy the application there.
 
-The following software needs to be instaled on the server (ask Steve Tinney for help if this software has not yet been installed):
+The following software needs to be installed on the server (ask Steve Tinney for help if this software has not yet been installed):
 
 1. Git (for cloning the website repo)
 2. NodeJs at least version 14
 3. npm (should come bundled with NodeJs)
 4. Angular CLI at least version 15
 
-### Clone the repo
+## Clone the repo
 
 On the server, all our project code is located at `/home/rits` and the Angular code is in the `/home/rits/oracc-search-front-end` directory. If the `oracc-search-front-end` folder does not exits, you will need to clone the repo via git into `/home/rits`.
 
-### Build the website for production
+## Build the website for production
 
 Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website. This will create a `dist/oracc` folder where the production ready files exist.
 
-### Link the production folder to an Apache directory
+## Link the production folder to an Apache directory
 
 The website is currently served from a `/new` directory on the server. Therefore, the Angular application is symlinked from `/home/rits/oracc-search-front-end/dist/oracc` into `/home/oracc/www/new`.
 
@@ -76,11 +76,11 @@ This can be achieved by running the following command from within the destinatio
 
 This will symlink each file and folder to the new directory and not the directory itself, so the above command should be repeated for fresh deployments of the application since the symlinked files may not automatically sync.
 
-### Further Apache configurations
+## Further Apache configurations
 
 The Oracc server runs on Ubuntu and exposes the Oracc website via an Apache web server. Therefore, you may need to configure Apache to appropriately serve the static content generated via the Angular build process.
 
-Please refer to [this](https://angular.io/guide/deployment#server-configuration) Angular guide for more information about how to configure an Apache server to correctly serve an Angular application.
+Please refer to [this](https://angular.io/guide/deployment#server-configuration) Angular guide for more information about how to configure an Apache server to correctly serve an Angular application. Specifically, you will need to add a rewrite rule so that pages fall back to Angulars `index.html`.
 
 ---
 
