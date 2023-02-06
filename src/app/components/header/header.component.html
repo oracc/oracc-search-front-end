@@ -11,7 +11,7 @@
               routerLink="/search"
               routerLinkActive="header__nav-list-link--active"
               class="header__nav-list-link"
-              >{{'header.linkText1' | translate}}</a
+              >{{ "header.linkText1" | translate }}</a
             >
           </li>
           <li class="header__nav-list-item">
@@ -19,7 +19,7 @@
               href="http://oracc.museum.upenn.edu/projectlist.html"
               target="_blank"
               class="header__nav-list-link"
-              >{{'header.linkText2' | translate}}</a
+              >{{ "header.linkText2" | translate }}</a
             >
           </li>
           <li class="header__nav-list-item">
@@ -27,7 +27,7 @@
               href="http://oracc.museum.upenn.edu/doc/tools/index.html"
               target="_blank"
               class="header__nav-list-link"
-              >{{'header.linkText3' | translate}}</a
+              >{{ "header.linkText3" | translate }}</a
             >
           </li>
           <li class="header__nav-list-item">
@@ -35,7 +35,7 @@
               href="http://oracc.museum.upenn.edu/doc/about/index.html"
               target="_blank"
               class="header__nav-list-link"
-              >{{'header.linkText4' | translate}}</a
+              >{{ "header.linkText4" | translate }}</a
             >
           </li>
           <li class="header__nav-list-item">
@@ -43,7 +43,7 @@
               href="http://oracc.museum.upenn.edu/doc/help/index.html"
               target="_blank"
               class="header__nav-list-link"
-              >{{'header.linkText5' | translate}}</a
+              >{{ "header.linkText5" | translate }}</a
             >
           </li>
         </ul>
@@ -55,7 +55,7 @@
           id="en"
           class="header__nav-lang-link header__nav-lang-link--active"
           (click)="changeLang(enLang)"
-          >{{'header.langText1' | translate}}</a
+          >{{ "header.langText1" | translate }}</a
         >
         <a
           #arLang
@@ -63,7 +63,7 @@
           id="ar"
           class="header__nav-lang-link"
           (click)="changeLang(arLang)"
-          >{{'header.langText2' | translate}}</a
+          >{{ "header.langText2" | translate }}</a
         >
       </div>
       <ng-template #isMobile>
@@ -74,7 +74,7 @@
             id="en"
             class="header__nav-lang-link header__nav-lang-link--active"
             (click)="changeLang(enLang)"
-            >{{'header.langAbbrText1' | translate}}</a
+            >{{ "header.langAbbrText1" | translate }}</a
           >
           <a
             #arLang
@@ -82,7 +82,7 @@
             id="ar"
             class="header__nav-lang-link"
             (click)="changeLang(arLang)"
-            >{{'header.langAbbrText2' | translate}}</a
+            >{{ "header.langAbbrText2" | translate }}</a
           >
         </div>
       </ng-template>

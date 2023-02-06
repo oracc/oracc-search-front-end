@@ -79,8 +79,8 @@
         class="results__table-row js-table-row"
         *ngFor="
           let entry of translationData
-            | sort: sortField:isDescending
-            | paginate: { itemsPerPage: itemsPerPage, currentPage: p };
+            | sort : sortField : isDescending
+            | paginate : { itemsPerPage: itemsPerPage, currentPage: p };
           let i = index
         "
         (click)="showGlossaryArticle(entry.lang, entry.id, entry.cf)"
@@ -132,8 +132,8 @@
       (pageChange)="p = $event"
       previousLabel="&larr;"
       nextLabel="&rarr;"
-      autoHide="true"
-      responsive="true"
+      [autoHide]="true"
+      [responsive]="true"
     ></pagination-controls>
   </div>
   <div class="results__fetching" *ngIf="waitForData">

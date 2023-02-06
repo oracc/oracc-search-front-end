@@ -8,12 +8,11 @@ import { Component, Input, OnChanges } from '@angular/core';
 export class FooterComponent implements OnChanges {
   @Input() public shouldAdjustFooter: boolean;
 
-  constructor() { }
+  constructor() {}
 
   ngOnChanges() {
-	if(this.shouldAdjustFooter) {
-		document.querySelector('.footer').classList.add('footer--adjusted');
-	}
+    if (this.shouldAdjustFooter) {
+      document.querySelector('.footer').classList.add('footer--adjusted');
+    }
   }
-
 }

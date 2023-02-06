@@ -4,25 +4,25 @@ import {
   Output,
   EventEmitter,
   OnDestroy
-} from "@angular/core";
-import { GetDataService } from "../../services/get-data/get-data.service";
-import { Router, NavigationEnd } from "@angular/router";
-import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
+} from '@angular/core';
+import { GetDataService } from '../../services/get-data/get-data.service';
+import { Router, NavigationEnd } from '@angular/router';
+import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 
 @Component({
-  selector: "app-search-results",
-  templateUrl: "./search-results.component.html",
-  styleUrls: ["./search-results.component.scss"]
+  selector: 'app-search-results',
+  templateUrl: './search-results.component.html',
+  styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit, OnDestroy {
   public dataRecieved = false;
   public noRecievedData = false;
   public waitForData = false;
   public p = 1;
-  public sortField = "cf";
+  public sortField = 'cf';
   public itemsPerPage = 10;
   public results: number;
-  public tableHeadings = ["Translation", "Hits", "Meanings", "Lang", "Period"];
+  public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
   public isMobile: boolean;
   public isDescending = false;
@@ -43,18 +43,18 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     window.innerWidth > 991
       ? [
           {
-            name: "Search",
-            url: "/search"
+            name: 'Search',
+            url: '/search'
           },
           {
-            name: "Search Results",
-            url: "/search/search-results"
+            name: 'Search Results',
+            url: '/search/search-results'
           }
         ]
       : [
           {
-            name: "Search Results",
-            url: "/search-results"
+            name: 'Search Results',
+            url: '/search-results'
           }
         ];
 
@@ -74,9 +74,9 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.criteriaHead = document.querySelectorAll(".results__table-head-item");
-    this.sortArrow = document.querySelectorAll(".js-table-head i");
-    this.resultsTable = document.querySelector(".js-results");
+    this.criteriaHead = document.querySelectorAll('.results__table-head-item');
+    this.sortArrow = document.querySelectorAll('.js-table-head i');
+    this.resultsTable = document.querySelector('.js-results');
     this.isMobile = window.innerWidth < 991 ? true : false;
     this.isMobile && (this.clickedHeaderIndex = 0);
     //this.search();
@@ -119,43 +119,43 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
 
   public handleHeaderClick(e, hasDropdown = true) {
     if (window.innerWidth < 991 && hasDropdown) {
-      this.tableHeadItems = document.querySelectorAll(".js-table-head-item");
+      this.tableHeadItems = document.querySelectorAll('.js-table-head-item');
       this.tableHeadFirstItem = document.querySelector(
-        ".js-table-head-item:first-of-type"
+        '.js-table-head-item:first-of-type'
       );
-      this.tableHead = document.querySelector(".js-table-head");
-      this.tableCells = document.querySelectorAll(".js-table-cell");
+      this.tableHead = document.querySelector('.js-table-head');
+      this.tableCells = document.querySelectorAll('.js-table-cell');
       this.tableHeadItems.forEach((item) => {
-        item.classList.toggle("active");
+        item.classList.toggle('active');
       });
       if (e.target !== this.tableHeadFirstItem) {
         this.tableHead.prepend(e.target);
         this.tableCells.forEach((cell) => {
-          cell.classList.remove("active");
-          if (cell.getAttribute("data-id") === e.target.id) {
-            cell.classList.add("active");
+          cell.classList.remove('active');
+          if (cell.getAttribute('data-id') === e.target.id) {
+            cell.classList.add('active');
           }
         });
       }
     } else {
       switch (parseInt(e.target.id, 10)) {
         case 0:
-          this.sortField = "gw";
+          this.sortField = 'gw';
           break;
         case 1:
-          this.sortField = "icount";
+          this.sortField = 'icount';
           break;
         case 2:
-          this.sortField = "senses_mng";
+          this.sortField = 'senses_mng';
           break;
         case 3:
-          this.sortField = "lang";
+          this.sortField = 'lang';
           break;
         case 4:
           this.sortField = null;
           break;
         default:
-          this.sortField = "cf";
+          this.sortField = 'cf';
       }
       this.isDescending = !this.isDescending;
     }
@@ -181,10 +181,10 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
 
   public showGlossaryArticle(lang: string, id: string, word: string) {
     this.getDataService.setGlossaryLangAndId(lang, id);
-    const wordClean = word.replace(" ", "-");
+    const wordClean = word.replace(' ', '-');
     const urlPathname = this.isMobile
-      ? "/search-results"
-      : "/search/search-results";
+      ? '/search-results'
+      : '/search/search-results';
 
     // navigates to glossary article component
     this.router.navigate([urlPathname, wordClean]);

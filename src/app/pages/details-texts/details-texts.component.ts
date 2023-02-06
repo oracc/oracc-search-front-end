@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { GetDataService } from "../../services/get-data/get-data.service";
-import { DomSanitizer } from "@angular/platform-browser";
-import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
-import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { composedPath } from "../../../utils/utils";
-import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from "../../../utils/consts";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { GetDataService } from '../../services/get-data/get-data.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { composedPath } from '../../../utils/utils';
+import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
 
 @Component({
-  selector: "app-details-texts",
-  templateUrl: "./details-texts.component.html",
-  styleUrls: ["../details/details.component.scss"],
+  selector: 'app-details-texts',
+  templateUrl: './details-texts.component.html',
+  styleUrls: ['../details/details.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class DetailsTextsComponent implements OnInit {
@@ -32,7 +32,7 @@ export class DetailsTextsComponent implements OnInit {
   private paginationSliceEnd: number = 7;
   private totalLines: number;
   private isTermDataShown: boolean;
-  private pathnameArray = window.location.pathname.slice(1).split("/");
+  private pathnameArray = window.location.pathname.slice(1).split('/');
   private isMobile: boolean;
   private paramMap: ParamMap;
 
@@ -40,61 +40,61 @@ export class DetailsTextsComponent implements OnInit {
     window.innerWidth > 991
       ? [
           {
-            name: "Search",
-            url: "/search"
+            name: 'Search',
+            url: '/search'
           },
           {
-            name: "Search Results",
-            url: "/search/search-results"
+            name: 'Search Results',
+            url: '/search/search-results'
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -2).join("/")
+              window.location.pathname.split('/').slice(0, -2).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -1).join("/")
+              window.location.pathname.split('/').slice(0, -1).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: window.location.pathname
           }
         ]
       : [
           {
-            name: "Search Results",
-            url: "/search-results"
+            name: 'Search Results',
+            url: '/search-results'
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -2).join("/")
+              window.location.pathname.split('/').slice(0, -2).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -1).join("/")
+              window.location.pathname.split('/').slice(0, -1).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: window.location.pathname
           }
         ];
@@ -110,7 +110,7 @@ export class DetailsTextsComponent implements OnInit {
 
   ngOnInit() {
     const paramMap = this.route.snapshot.paramMap;
-    const projectId = paramMap.get("projectId");
+    const projectId = paramMap.get('projectId');
 
     if (projectId !== null) {
       // user accesses project text by entering a url manually
@@ -130,36 +130,36 @@ export class DetailsTextsComponent implements OnInit {
 
   private handleTextToHTMLConversion(text: string, isTermData = false) {
     const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, "text/html");
-    const htmlDataToBeReduced = parser.parseFromString(text, "text/html");
-    const metadataPanelInput = htmlData.getElementById("p3left");
-    const middlePanelInput = htmlData.getElementById("p3right");
-    const textPanelInput = htmlDataToBeReduced.getElementById("p3right");
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const htmlDataToBeReduced = parser.parseFromString(text, 'text/html');
+    const metadataPanelInput = htmlData.getElementById('p3left');
+    const middlePanelInput = htmlData.getElementById('p3right');
+    const textPanelInput = htmlDataToBeReduced.getElementById('p3right');
 
-    middlePanelInput.querySelectorAll("td").forEach((node) => {
-      if (node.className === "t1 xtr") {
-        if (typeof node.remove === "function") {
+    middlePanelInput.querySelectorAll('td').forEach((node) => {
+      if (node.className === 't1 xtr') {
+        if (typeof node.remove === 'function') {
           node.remove();
         } else {
-          node.outerHTML = "";
+          node.outerHTML = '';
         }
       }
     });
-    textPanelInput.querySelectorAll("td").forEach((node) => {
-      if (node.className !== "t1 xtr") {
-        if (typeof node.remove === "function") {
+    textPanelInput.querySelectorAll('td').forEach((node) => {
+      if (node.className !== 't1 xtr') {
+        if (typeof node.remove === 'function') {
           node.remove();
         } else {
-          node.outerHTML = "";
+          node.outerHTML = '';
         }
       }
     });
 
-    const controlsInput = htmlData.getElementById("p3controls");
+    const controlsInput = htmlData.getElementById('p3controls');
     this.totalPages = Array(
       parseInt(
         controlsInput.querySelector(
-          ".p3-pages .p3toccenter.bg-dk span:nth-of-type(6)"
+          '.p3-pages .p3toccenter.bg-dk span:nth-of-type(6)'
         ).innerHTML,
         10
       )
@@ -170,7 +170,7 @@ export class DetailsTextsComponent implements OnInit {
     this.isTermDataShown = true;
     this.totalTexts = parseInt(
       controlsInput.querySelector(
-        "#p3navRight .p3-items .p3toccenter.bg-dk span:nth-of-type(5)"
+        '#p3navRight .p3-items .p3toccenter.bg-dk span:nth-of-type(5)'
       ).innerHTML,
       10
     );
@@ -195,8 +195,8 @@ export class DetailsTextsComponent implements OnInit {
 
   private handleTextToHTMLConversionOnPageChange(text: string) {
     const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, "text/html");
-    const middlePanelInput = htmlData.querySelector("body");
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const middlePanelInput = htmlData.querySelector('body');
 
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       middlePanelInput.innerHTML
@@ -204,9 +204,9 @@ export class DetailsTextsComponent implements OnInit {
   }
   private handlePopupDataInputHTMLConversion(text: string) {
     const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, "text/html");
-    const detailsPopupContentInput = htmlData.querySelector(".score_block");
-    const detailsPopupTitleInput = htmlData.querySelector("title");
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const detailsPopupContentInput = htmlData.querySelector('.score_block');
+    const detailsPopupTitleInput = htmlData.querySelector('title');
 
     this.detailsPopupTitle = this.sanitizer.bypassSecurityTrustHtml(
       detailsPopupTitleInput.innerHTML
@@ -220,48 +220,48 @@ export class DetailsTextsComponent implements OnInit {
     e.preventDefault();
     const anchorEl = e.path
       ? e.path.find((el) => {
-          return el.localName === "a";
+          return el.localName === 'a';
         })
       : composedPath(e.target).find((el) => {
-          return el.localName === "a";
+          return el.localName === 'a';
         });
 
     const anchorElWrapper = e.path
       ? e.path.find((el) => {
-          return !!el.className ? el.className.includes("w ") : "";
+          return !!el.className ? el.className.includes('w ') : '';
         })
       : composedPath(e.target).find((el) => {
-          return !!el.className ? el.className.includes("w ") : "";
+          return !!el.className ? el.className.includes('w ') : '';
         });
     if (anchorEl) {
       const queryParams = !!anchorEl.attributes[1]
         ? anchorEl.attributes[1].nodeValue
-            .split("(")
+            .split('(')
             .slice(1)
             .join()
             .slice(0, -1)
-            .replace(/'/g, "")
-            .split(" , ")
+            .replace(/'/g, '')
+            .split(' , ')
         : [];
       const popupDataQueryParams = !!anchorEl.attributes[2]
         ? anchorEl.attributes[2].nodeValue
-            .split("(")
+            .split('(')
             .slice(1)
             .join()
             .slice(0, -1)
-            .replace(/'/g, "")
-            .split(",")
+            .replace(/'/g, '')
+            .split(',')
         : [];
 
-      if (anchorEl.href.includes("showexemplar")) {
+      if (anchorEl.href.includes('showexemplar')) {
         const popupSourceQueryParams = !!anchorEl.attributes[0]
           ? anchorEl.attributes[0].nodeValue
-              .split("(")
+              .split('(')
               .slice(1)
               .join()
               .slice(0, -1)
-              .replace(/'/g, "")
-              .split(",")
+              .replace(/'/g, '')
+              .split(',')
           : [];
 
         this.getDataService.setSourceParams(popupSourceQueryParams);
@@ -269,22 +269,22 @@ export class DetailsTextsComponent implements OnInit {
           SESSION_KEYS.METADATA_CONTENT,
           this.unsanatizedMetadataPanel
         );
-        this.router.navigate([this.router.url, "source"], {
+        this.router.navigate([this.router.url, 'source'], {
           state: { data: this.unsanatizedMetadataPanel }
         });
       } else {
         if (!!anchorElWrapper) {
           const pureQueryParam = `${
-            queryParams[queryParams.length - 1].split("=")[0]
+            queryParams[queryParams.length - 1].split('=')[0]
           }=${anchorElWrapper.title}`;
 
-          if (this.route.snapshot.paramMap.get("projectId") !== null) {
+          if (this.route.snapshot.paramMap.get('projectId') !== null) {
             // set the navigation link manually when searching for project text id's in the url bar
             // slightly different routes are used for desktop and mobile
 
             let url = this.isMobile
-              ? "/search-results/id/occurrences/texts"
-              : "/search/search-results/id/occurrences/texts";
+              ? '/search-results/id/occurrences/texts'
+              : '/search/search-results/id/occurrences/texts';
 
             this.router.navigate([url, anchorEl.innerText]);
           } else {
@@ -326,21 +326,21 @@ export class DetailsTextsComponent implements OnInit {
           return el.href;
         });
     if (!!clickedLink) {
-      if (clickedLink.href.startsWith("javascript")) {
+      if (clickedLink.href.startsWith('javascript')) {
         const queryParams = clickedLink.href
-          .split("(")
+          .split('(')
           .slice(1)
           .join()
           .slice(0, -1)
-          .replace(/'/g, "")
-          .split(",");
+          .replace(/'/g, '')
+          .split(',');
 
         sessionStorage.setItem(
           SESSION_KEYS.METADATA_CONTENT,
           this.unsanatizedMetadataPanel
         );
         this.getDataService.setSourceParams(queryParams);
-        this.router.navigate([this.router.url, "source"], {
+        this.router.navigate([this.router.url, 'source'], {
           state: { data: this.unsanatizedMetadataPanel }
         });
       } else {
@@ -413,32 +413,32 @@ export class DetailsTextsComponent implements OnInit {
   public handleTranslationClick(e) {
     const clickedLine = e.path
       ? e.path.find((el) => {
-          return el.localName === "tr";
+          return el.localName === 'tr';
         })
       : composedPath(e.target).find((el) => {
-          return el.localName === "tr";
+          return el.localName === 'tr';
         });
 
     if (!!clickedLine) {
       const centralPanelLine: HTMLElement = clickedLine.id
         ? document.getElementById(clickedLine.id)
-        : document.querySelector(".js-panel-central");
-      const centralPanel = document.querySelector(".js-panel-central");
-      const rightPanel = document.querySelector(".js-panel-right");
+        : document.querySelector('.js-panel-central');
+      const centralPanel = document.querySelector('.js-panel-central');
+      const rightPanel = document.querySelector('.js-panel-right');
 
       this.isMobile
         ? centralPanelLine.scrollIntoView()
         : centralPanel.scroll({
             top: centralPanelLine.offsetTop - 50
           });
-      rightPanel.querySelectorAll("tr").forEach((el) => {
-        el.classList.remove("selected");
+      rightPanel.querySelectorAll('tr').forEach((el) => {
+        el.classList.remove('selected');
       });
-      centralPanel.querySelectorAll("tr").forEach((el) => {
-        el.classList.remove("selected");
+      centralPanel.querySelectorAll('tr').forEach((el) => {
+        el.classList.remove('selected');
       });
-      clickedLine.classList.add("selected");
-      centralPanelLine.classList.add("selected");
+      clickedLine.classList.add('selected');
+      centralPanelLine.classList.add('selected');
     }
   }
 }

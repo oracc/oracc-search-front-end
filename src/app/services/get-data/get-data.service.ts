@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { ParamMap } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ParamMap } from '@angular/router';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class GetDataService {
   private searchParam: string;
@@ -21,9 +21,9 @@ export class GetDataService {
   private glossaryArticleParam: string;
   private subsequentPageVisit = false;
 
-  private sourceURL = "http://cdli.ucla.edu/";
+  private sourceURL = 'http://cdli.ucla.edu/';
 
-  private baseUrl = "https://build-oracc.museum.upenn.edu";
+  private baseUrl = 'https://build-oracc.museum.upenn.edu';
   private searchURL = `${this.baseUrl}:5000/search/`;
   private glossaryArticleURL = `${this.baseUrl}/neo/`;
   private searchSuggestionsUrl = `${this.baseUrl}:5000/suggest_all/`;
@@ -39,22 +39,22 @@ export class GetDataService {
   }
 
   public getGlossaryArticleData() {
-    return this.http.get(this.glossaryArticleURL + this.lang + "/" + this.id, {
-      responseType: "text"
+    return this.http.get(this.glossaryArticleURL + this.lang + '/' + this.id, {
+      responseType: 'text'
     });
   }
 
   public getProjectTextData(params: ParamMap) {
-    const projectId = params.get("projectId");
-    const subProjectId = params.get("subprojectId");
-    const textId = params.get("textId");
+    const projectId = params.get('projectId');
+    const subProjectId = params.get('subprojectId');
+    const textId = params.get('textId');
 
     const url = subProjectId
       ? `${this.baseUrl}/${projectId}/${subProjectId}/${textId}`
       : `${this.baseUrl}/${projectId}/${textId}`;
 
     return this.http.get(url, {
-      responseType: "text"
+      responseType: 'text'
     });
   }
 
@@ -72,10 +72,10 @@ export class GetDataService {
   }
 
   public getSubsequentGlossaryArticleData() {
-    const bio = "\u2623"; // force encoding always to be utf8
+    const bio = '\u2623'; // force encoding always to be utf8
     const encodedString = encodeURIComponent(bio + this.glossaryArticleParam);
-    return this.http.get(this.glossaryArticleURL + "sig?" + encodedString, {
-      responseType: "text"
+    return this.http.get(this.glossaryArticleURL + 'sig?' + encodedString, {
+      responseType: 'text'
     });
   }
 
@@ -92,7 +92,7 @@ export class GetDataService {
     return this.http.get(
       `${this.baseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}`,
       {
-        responseType: "text"
+        responseType: 'text'
       }
     );
   }
@@ -101,7 +101,7 @@ export class GetDataService {
     return this.http.get(
       `${this.baseUrl}/${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
       {
-        responseType: "text"
+        responseType: 'text'
       }
     );
   }
@@ -130,7 +130,7 @@ export class GetDataService {
 
   public getTermData() {
     return this.http.get(`${this.glossaryArticleURL}${this.termDataParam}`, {
-      responseType: "text"
+      responseType: 'text'
     });
   }
 
@@ -142,13 +142,13 @@ export class GetDataService {
     let sourceDataURL = `${this.baseUrl}/${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
 
     if (this.sourceParams[2].length > 0) {
-      sourceDataURL = sourceDataURL + "?" + this.sourceParams[2];
+      sourceDataURL = sourceDataURL + '?' + this.sourceParams[2];
       if (this.sourceParams[3].length > 0) {
-        sourceDataURL = sourceDataURL + "," + this.sourceParams[3];
+        sourceDataURL = sourceDataURL + ',' + this.sourceParams[3];
       }
     }
     return this.http.get(sourceDataURL, {
-      responseType: "text"
+      responseType: 'text'
     });
   }
 
@@ -156,7 +156,7 @@ export class GetDataService {
     return this.http.get(
       `${this.baseUrl}/${project}/${item}/score?${blockId}`,
       {
-        responseType: "text"
+        responseType: 'text'
       }
     );
   }

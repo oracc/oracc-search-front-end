@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { GetDataService } from "../../services/get-data/get-data.service";
-import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
+import { Component, OnInit } from '@angular/core';
+import { GetDataService } from '../../services/get-data/get-data.service';
+import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 
 @Component({
-  selector: "app-search",
-  templateUrl: "./search.component.html",
-  styleUrls: ["./search.component.scss"]
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
   private searchInput: Element;
@@ -17,8 +17,8 @@ export class SearchComponent implements OnInit {
   public showSuggestions = false;
   public breadcrumbLink = [
     {
-      name: "Search",
-      url: "/search"
+      name: 'Search',
+      url: '/search'
     }
   ];
 
@@ -31,10 +31,10 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.routerLink =
-      window.innerWidth < 991 ? "search/search-results" : "search-results";
+      window.innerWidth < 991 ? 'search/search-results' : 'search-results';
     this.isMobile = window.innerWidth < 991 ? true : false;
-    this.searchInput = document.querySelector(".js-search-input");
-    this.searchButton = document.querySelector(".js-search-btn");
+    this.searchInput = document.querySelector('.js-search-input');
+    this.searchButton = document.querySelector('.js-search-btn');
   }
 
   setSearchParam(searchParam: string) {

@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { GetDataService } from "../../services/get-data/get-data.service";
-import { HandleBreadcrumbsService } from "src/app/services/handle-breadcrumbs/handle-breadcrumbs.service";
-import { DomSanitizer } from "@angular/platform-browser";
-import { NavigationEnd, Router } from "@angular/router";
-import { composedPath } from "../../../utils/utils";
-import { PANEL_TYPE, SESSION_KEYS } from "../../../utils/consts";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { GetDataService } from '../../services/get-data/get-data.service';
+import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
+import { composedPath } from '../../../utils/utils';
+import { PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
 
 @Component({
-  selector: "app-details-source",
-  templateUrl: "./details-source.component.html",
-  styleUrls: ["./details-source.component.scss"],
+  selector: 'app-details-source',
+  templateUrl: './details-source.component.html',
+  styleUrls: ['./details-source.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class DetailsSourceComponent implements OnInit {
@@ -21,83 +21,83 @@ export class DetailsSourceComponent implements OnInit {
   public detailsPopupTitle: any;
   public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
   public isTextPanelActive = window.innerWidth > 991 ? true : false;
-  private pathnameArray = window.location.pathname.slice(1).split("/");
+  private pathnameArray = window.location.pathname.slice(1).split('/');
   private isMobile: boolean;
   private breadcrumbLink =
     window.innerWidth > 991
       ? [
           {
-            name: "Search",
-            url: "/search"
+            name: 'Search',
+            url: '/search'
           },
           {
-            name: "Search Results",
-            url: "/search/search-results"
+            name: 'Search Results',
+            url: '/search/search-results'
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 4]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -3).join("/")
+              window.location.pathname.split('/').slice(0, -3).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -2).join("/")
+              window.location.pathname.split('/').slice(0, -2).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -1).join("/")
+              window.location.pathname.split('/').slice(0, -1).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: window.location.pathname
           }
         ]
       : [
           {
-            name: "Search Results",
-            url: "/search-results"
+            name: 'Search Results',
+            url: '/search-results'
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 4]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -3).join("/")
+              window.location.pathname.split('/').slice(0, -3).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -2).join("/")
+              window.location.pathname.split('/').slice(0, -2).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: decodeURI(
-              window.location.pathname.split("/").slice(0, -1).join("/")
+              window.location.pathname.split('/').slice(0, -1).join('/')
             )
           },
           {
             name: decodeURI(
               this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace("-", " "),
+            ).replace('-', ' '),
             url: window.location.pathname
           }
         ];
@@ -130,26 +130,26 @@ export class DetailsSourceComponent implements OnInit {
 
   private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, "text/html");
-    const htmlDataToBeReduced = parser.parseFromString(text, "text/html");
-    const middlePanelInput = htmlData.querySelector(".text");
-    const textPanelInput = htmlDataToBeReduced.querySelector(".text");
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const htmlDataToBeReduced = parser.parseFromString(text, 'text/html');
+    const middlePanelInput = htmlData.querySelector('.text');
+    const textPanelInput = htmlDataToBeReduced.querySelector('.text');
 
-    middlePanelInput.querySelectorAll("td").forEach((node) => {
-      if (node.className === "t1 xtr") {
-        if (typeof node.remove === "function") {
+    middlePanelInput.querySelectorAll('td').forEach((node) => {
+      if (node.className === 't1 xtr') {
+        if (typeof node.remove === 'function') {
           node.remove();
         } else {
-          node.outerHTML = "";
+          node.outerHTML = '';
         }
       }
     });
-    textPanelInput.querySelectorAll("td").forEach((node) => {
-      if (node.className !== "t1 xtr") {
-        if (typeof node.remove === "function") {
+    textPanelInput.querySelectorAll('td').forEach((node) => {
+      if (node.className !== 't1 xtr') {
+        if (typeof node.remove === 'function') {
           node.remove();
         } else {
-          node.outerHTML = "";
+          node.outerHTML = '';
         }
       }
     });
@@ -184,14 +184,14 @@ export class DetailsSourceComponent implements OnInit {
           return el.href;
         });
     if (!!clickedLink) {
-      if (clickedLink.href.startsWith("javascript")) {
+      if (clickedLink.href.startsWith('javascript')) {
         const queryParams = clickedLink.href
-          .split("(")
+          .split('(')
           .slice(1)
           .join()
           .slice(0, -1)
-          .replace(/'/g, "")
-          .split(",");
+          .replace(/'/g, '')
+          .split(',');
 
         this.getDataService.setSourceParams(queryParams);
         this.router.navigate([this.router.url], {
@@ -205,9 +205,9 @@ export class DetailsSourceComponent implements OnInit {
 
   private handlePopupDataInputHTMLConversion(text: string) {
     const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, "text/html");
-    const detailsPopupContentInput = htmlData.querySelector(".score_block");
-    const detailsPopupTitleInput = htmlData.querySelector("title");
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const detailsPopupContentInput = htmlData.querySelector('.score_block');
+    const detailsPopupTitleInput = htmlData.querySelector('title');
 
     this.detailsPopupTitle = this.sanitizer.bypassSecurityTrustHtml(
       detailsPopupTitleInput.innerHTML
@@ -221,48 +221,48 @@ export class DetailsSourceComponent implements OnInit {
     e.preventDefault();
     const anchorEl = e.path
       ? e.path.find((el) => {
-          return el.localName === "a";
+          return el.localName === 'a';
         })
       : composedPath(e.target).find((el) => {
-          return el.localName === "a";
+          return el.localName === 'a';
         });
 
     const anchorElWrapper = e.path
       ? e.path.find((el) => {
-          return !!el.className ? el.className.includes("w ") : "";
+          return !!el.className ? el.className.includes('w ') : '';
         })
       : composedPath(e.target).find((el) => {
-          return !!el.className ? el.className.includes("w ") : "";
+          return !!el.className ? el.className.includes('w ') : '';
         });
     if (anchorEl) {
       const queryParams = !!anchorEl.attributes[1]
         ? anchorEl.attributes[1].nodeValue
-            .split("(")
+            .split('(')
             .slice(1)
             .join()
             .slice(0, -1)
-            .replace(/'/g, "")
-            .split(" , ")
+            .replace(/'/g, '')
+            .split(' , ')
         : [];
       const popupDataQueryParams = !!anchorEl.attributes[2]
         ? anchorEl.attributes[2].nodeValue
-            .split("(")
+            .split('(')
             .slice(1)
             .join()
             .slice(0, -1)
-            .replace(/'/g, "")
-            .split(",")
+            .replace(/'/g, '')
+            .split(',')
         : [];
 
-      if (anchorEl.href.includes("showexemplar")) {
+      if (anchorEl.href.includes('showexemplar')) {
         const popupSourceQueryParams = !!anchorEl.attributes[0]
           ? anchorEl.attributes[0].nodeValue
-              .split("(")
+              .split('(')
               .slice(1)
               .join()
               .slice(0, -1)
-              .replace(/'/g, "")
-              .split(",")
+              .replace(/'/g, '')
+              .split(',')
           : [];
 
         this.getDataService.setSourceParams(popupSourceQueryParams);
@@ -270,7 +270,7 @@ export class DetailsSourceComponent implements OnInit {
       } else {
         if (!!anchorElWrapper) {
           const pureQueryParam = `${
-            queryParams[queryParams.length - 1].split("=")[0]
+            queryParams[queryParams.length - 1].split('=')[0]
           }=${anchorElWrapper.title}`;
 
           this.router.navigate(
@@ -301,33 +301,33 @@ export class DetailsSourceComponent implements OnInit {
   public handleTranslationClick(e) {
     const clickedLine = e.path
       ? e.path.find((el) => {
-          return el.localName === "tr";
+          return el.localName === 'tr';
         })
       : composedPath(e.target).find((el) => {
-          return el.localName === "tr";
+          return el.localName === 'tr';
         });
 
     if (!!clickedLine) {
       const centralPanelLine: HTMLElement = clickedLine.id
         ? document.getElementById(clickedLine.id)
-        : document.querySelector(".js-panel-central");
-      const centralPanel = document.querySelector(".js-panel-central");
-      const rightPanel = document.querySelector(".js-panel-right");
+        : document.querySelector('.js-panel-central');
+      const centralPanel = document.querySelector('.js-panel-central');
+      const rightPanel = document.querySelector('.js-panel-right');
 
       this.isMobile
         ? centralPanelLine.scrollIntoView()
         : centralPanel.scroll({
             top: centralPanelLine.offsetTop - 50,
-            behavior: "smooth"
+            behavior: 'smooth'
           });
-      rightPanel.querySelectorAll("tr").forEach((el) => {
-        el.classList.remove("selected");
+      rightPanel.querySelectorAll('tr').forEach((el) => {
+        el.classList.remove('selected');
       });
-      centralPanel.querySelectorAll("tr").forEach((el) => {
-        el.classList.remove("selected");
+      centralPanel.querySelectorAll('tr').forEach((el) => {
+        el.classList.remove('selected');
       });
-      clickedLine.classList.add("selected");
-      centralPanelLine.classList.add("selected");
+      clickedLine.classList.add('selected');
+      centralPanelLine.classList.add('selected');
     }
   }
 }
