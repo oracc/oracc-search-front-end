@@ -2,7 +2,37 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
-## Development server
+The guide below is sufficient for setting up the project. For additional technical and supplementary information please also refer to [this](https://github.com/oracc/website/wiki) wiki.
+
+# Requirements
+
+First, clone the project onto your local development machine.
+
+## Nodejs and npm
+
+You need to have [Node.js](https://nodejs.org/en/download/) installed on your local development machine. Nodejs comes bundled with npm which is used for managing the libraries that are used for the frontend. Node version `>=12` and npm version `>=8` should work with this project.
+
+To install all the necessary frontend packages and libraries, run the following from the project root directory:
+
+```shell script
+npm install
+```
+
+This will install all of the project dependencies that are specified in `package.json`.
+
+You can update the version numbers of individual packages in the `package.json` file when necessary. Running `npm install` again will install the specified dependencies.
+
+## Install the Angular CLI
+
+To install the Angular CLi run the following:
+
+```shell script
+npm install -g @angular/cli
+```
+
+This will allow you to run the necessary `ng` commands for performing several Angular tasks.
+
+## Running a development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
@@ -16,9 +46,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ---
 
-## Build
+## Build the production ready website files
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist` directory.
 
 ---
 
@@ -51,18 +81,19 @@ See the [documentation for the package we use](https://www.npmjs.com/package/ang
 
 ## Deploy to the Oracc build server (for production)
 
-First, you will need to gain access to the Oracc build server which is currently managed by Steve Tinney. You should email Steve to gain access to the server, the project PI should be able to give you his contact details. To log in to the server you will need to generate an ssh key pair and store the public key on the server, Steve should be able to assist with this. Once you have access to the server, you can proceed to deploy the application there.
+The application is currently deployed for production to the Oracc build server (more details [here](https://github.com/oracc/website/wiki/ORACC-Server)) which runs on Ubuntu and exposes an Apache web server. Ask a senior team member or Steve Tinney to get access to this server.
 
-The following software needs to be installed on the server (ask Steve Tinney for help if this software has not yet been installed):
+The following software needs to be installed on the Ubuntu server:
 
-1. Git (for cloning the website repo)
-2. NodeJs at least version 14
+1. `Git` (for cloning the website repo: `sudo apt-get install git`)
+2. `NodeJs` (at least version 14: `sudo apt install nodejs npm`)
+   - This may install outdated versions, so to upgrade to the latest versions of NodeJs and npm run `sudo npm install -g n` followed by `sudo n lts`
 3. npm (should come bundled with NodeJs)
-4. Angular CLI at least version 15
+4. Angular CLI (at least version 15: `sudo npm install -g @angular/cli`)
 
 ## Clone the repo
 
-On the server, all our project code is located at `/home/rits` and the Angular code is in the `/home/rits/oracc-search-front-end` directory. If the `oracc-search-front-end` folder does not exit, you will need to clone the repo via git into `/home/rits`.
+On the Ubuntu server, our project code should be located at `/home/rits` so this is where you should clone the project into. You should end up with the Angular project code inside the `/home/rits/oracc-search-front-end` directory.
 
 ## Build the website for production
 
