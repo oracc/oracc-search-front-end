@@ -103,9 +103,7 @@ Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set 
 
 ## Link the production folder to an Apache directory
 
-The website is currently served from a `/new` directory on the server. Therefore, the Angular application is symlinked from `/home/rits/oracc-search-front-end/dist/oracc` into `/home/oracc/www/new`.
-
-This can be achieved by running the following command from the location where you'd like to create the symlink: `sudo ln -sT /home/rits/oracc-search-front-end/dist/oracc new`.
+The website is currently served from a `/new` directory on the server. This can be achieved by running the following command to create a symlink: `sudo ln -sT /home/rits/oracc-search-front-end/dist/oracc /home/oracc/www/new`.
 
 This will symlink each file and folder to the new directory. You can check that the symlink has been created by running: `ls -la ./ | grep "\->"`
 
