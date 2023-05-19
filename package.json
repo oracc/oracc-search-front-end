@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
-    "gh-pages-deploy": "ng deploy --base-href=/oracc-search-front-end/",
+    "gh-pages-deploy": "ng deploy --build-target=oracc:build:github-pages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

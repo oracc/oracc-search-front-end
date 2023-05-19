@@ -68,10 +68,16 @@ Use the following commands to deploy to GH-pages:
 
 From the main project directory run: `npm run gh-pages-deploy`
 
-This will build the project using a custom `baseHref` property defined in `angular.json`. The project will then automatically be deployed to github-pages.
+This will run the `gh-pages-deploy` script defined in `package.json`. It will build the project using the `github-pages` build target defined in `angular.json`. This sets a custom `baseHref` property (which is the name of your github repo) and also sets the custom environment variables.
 
-Make sure that the project has first been initialised through Git and linked to your local repository.
+The project will automatically be deployed to github-pages.
+
+Make sure that the project has first been initialised through Git and linked to your remote repository.
 See the [documentation for the package we use](https://www.npmjs.com/package/angular-cli-ghpages) for more information.
+
+---
+
+## _to-do: add build instructions for the build-oracc server separate to oracc2_
 
 ---
 
