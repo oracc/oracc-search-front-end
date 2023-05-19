@@ -95,6 +95,8 @@ The following software needs to be installed on the Ubuntu server:
 
 On the Ubuntu server, our project code should be located at `/home/rits` so this is where you should clone the project into. You should end up with the Angular project code inside the `/home/rits/oracc-search-front-end` directory.
 
+Use the `main` git branch for production deployments.
+
 ## Build the website for production
 
 Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website. This will create a `dist/oracc` folder where the production ready files exist.
