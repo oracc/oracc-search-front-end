@@ -66,11 +66,7 @@ Both deployment strategies are described below.
 
 Use the following commands to deploy to GH-pages:
 
-From the main project directory run: `ng deploy --base-href=/oracc-search-front-end/`
-
-or
-
-`npm run gh-pages-deploy`
+From the main project directory run: `npm run gh-pages-deploy`
 
 This will build the project using a custom `baseHref` property defined in `angular.json`. The project will then automatically be deployed to github-pages.
 
@@ -103,9 +99,11 @@ Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set 
 
 ## Link the production folder to an Apache directory
 
-The website is currently served from a `/new` directory on the server. This can be achieved by running the following command to create a symlink: `sudo ln -sT /home/rits/oracc-search-front-end/dist/oracc /home/oracc/www/new`.
+The website is currently served from a `/new` directory on the server. This can be achieved by running the following command to create a symlink: `sudo ln -sT /home/rits/oracc-search-front-end/dist/oracc /home/oracc/www/new`
 
 This will symlink each file and folder to the new directory. You can check that the symlink has been created by running: `ls -la ./ | grep "\->"`
+
+Note that if you are getting a `403 forbidden` error from Apache you probably need to set the correct folder privileges. Make sure that the `/home/rits` folder and all its child folders relating to Angular have at least `drwxr-xr-x` privileges. You can set these privileges with: `sudo chmod 755 /home/rits` and you can check current privileges with: `ls -l /home/rits` .
 
 ## Further Apache configurations
 
@@ -137,7 +135,7 @@ There are other methods to achieve the same result as above. However, we have se
 
 ## Angular config for serving the app under a custom url directory
 
-As explained above, the app is configured to run under a `/new` directory on the production ubuntu server (this does not apply to staging, see deployment steps above). If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
+As explained above, the production and staging apps are configured to run under a `/new` directory while the gh-pages deployment just runs from the root directory. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
 
 It is also possible to define the `baseHref` property using a custom build configuration if desired. You can do this by setting a custom field within the `configurations` object within `angular.json`. For instance, we currently have set the `github-pages` configuration which sets a custom `baseHref`and is run with `ng build --configuration=github-pages`.
 

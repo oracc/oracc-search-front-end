@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ParamMap } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class GetDataService {
 
   private sourceURL = 'http://cdli.ucla.edu/';
 
-  private baseUrl = 'https://build-oracc.museum.upenn.edu';
+  private baseUrl = environment.apiUrl;
   private searchURL = `${this.baseUrl}:5000/search/`;
   private glossaryArticleURL = `${this.baseUrl}/neo/`;
   private searchSuggestionsUrl = `${this.baseUrl}:5000/suggest_all/`;
