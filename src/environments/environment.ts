@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'https://oracc2.museum.upenn.edu'
+  apiUrl: 'https://build-oracc.museum.upenn.edu'
 };
 
 /*
