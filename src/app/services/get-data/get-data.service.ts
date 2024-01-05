@@ -25,9 +25,9 @@ export class GetDataService {
   private sourceURL = 'http://cdli.ucla.edu/';
 
   private baseUrl = environment.apiUrl;
-  private searchURL = `${this.baseUrl}/search/`;
+  private searchURL = `${this.baseUrl}:${environment.port}/search/`;
   private glossaryArticleURL = `${this.baseUrl}/neo/`;
-  private searchSuggestionsUrl = `${this.baseUrl}/suggest_all/`;
+  private searchSuggestionsUrl = `${this.baseUrl}:${environment.port}/suggest_all/`;
 
   constructor(private http: HttpClient) {}
 

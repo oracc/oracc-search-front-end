@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://build-oracc.museum.upenn.edu:5000'
+  port: '5000',
+  apiUrl: 'https://build-oracc.museum.upenn.edu'
 };
