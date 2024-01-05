@@ -26,7 +26,7 @@ export class GetDataService {
 
   private baseUrl = environment.apiUrl;
   private searchURL = `${this.baseUrl}:${environment.port}/search/`;
-  private glossaryArticleURL = `${this.baseUrl}/neo/`;
+  private glossaryArticleURL = `${environment.glossaryArticleURL}/neo/`;
   private searchSuggestionsUrl = `${this.baseUrl}:${environment.port}/suggest_all/`;
 
   constructor(private http: HttpClient) {}
