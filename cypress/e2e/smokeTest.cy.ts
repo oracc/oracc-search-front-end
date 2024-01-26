@@ -2,6 +2,7 @@ describe('basic home visibility', () => {
   it('finds the home page with blurb', () => {
     cy.visit('https://oracc2.museum.upenn.edu/new/');
 
+    cy.get('.home__logo-head').contains('Oracc').should('be.visible');
     cy.contains(
       'Oracc is a collaborative effort to develop a complete corpus of cuneiform '
     );
@@ -20,7 +21,7 @@ describe('navigate to search', () => {
   });
 });
 
-describe('search visibiity', () => {
+describe('search process visibiity', () => {
   it('goes through process of a search and checks component visibility', () => {
     cy.visit('https://oracc2.museum.upenn.edu/new/search/');
     cy.get('.search__input').type('water');
@@ -53,6 +54,6 @@ describe('search visibiity', () => {
     cy.get('.norms').should('be.visible');
 
     cy.get('.bcrumbs__list-item').contains('texts').click();
-    cy.get('.details').should('be.visible');
+    cy.get('.details').should('be.visible'); // if this passes then the breadcrumb issue is fixes
   });
 });
