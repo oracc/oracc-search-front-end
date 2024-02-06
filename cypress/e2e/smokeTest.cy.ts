@@ -1,6 +1,6 @@
 describe('basic home visibility', () => {
   it('finds the home page with blurb', () => {
-    cy.visit('https://oracc2.museum.upenn.edu/new/');
+    cy.visit('https://oracc.museum.upenn.edu/new/');
 
     cy.get('.home__logo-head').contains('Oracc').should('be.visible');
     cy.contains(
@@ -23,7 +23,7 @@ describe('navigate to search', () => {
 
 describe('search process visibiity', () => {
   it('goes through process of a search and checks component visibility', () => {
-    cy.visit('https://oracc2.museum.upenn.edu/new/search/');
+    cy.visit('https://oracc.museum.upenn.edu/new/search/');
     // do a search for "water" and check suggestions show
     cy.get('.search__input').type('water');
     cy.get('.suggestions-content').should('be.visible');
@@ -63,5 +63,18 @@ describe('search process visibiity', () => {
     // check breadcrumbs work in a deep search
     cy.get('.bcrumbs__list-item').contains('texts').click();
     cy.get('.details').should('be.visible'); // if this passes then the breadcrumb issue is fixed
+  });
+});
+
+describe('popups not blank', () => {
+  it('checks if popups work properly', () => {
+    cy.visit('https://oracc.museum.upenn.edu/new/search/');
+    cy.get('.search__input').type('watering place {enter}');
+    cy.contains('ugu').click();
+    cy.get('span.sux').eq(1).click();
+    cy.contains('(KUB 03, 103 r 6)').click();
+
+    cy.get('span.marker').first().click();
+    cy.get('.details__popup').should('be.visible').should('have.text');
   });
 });
