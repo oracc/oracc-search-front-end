@@ -25,9 +25,6 @@ export class DetailsTextsComponent implements OnInit {
   public middlePanel: any = "<i class='fas fa-spinner'></i>";
   public isTextPanelActive = window.innerWidth > 991 ? true : false;
   public shouldShowPaginationArrows: boolean;
-  public isDetailsPopupActive: boolean;
-  public detailsPopupContent: any;
-  public detailsPopupTitle: any;
   private paginationSliceStart: number = 0;
   private paginationSliceEnd: number = 7;
   private totalLines: number;
@@ -202,19 +199,6 @@ export class DetailsTextsComponent implements OnInit {
       middlePanelInput.innerHTML
     );
   }
-  private handlePopupDataInputHTMLConversion(text: string) {
-    const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, 'text/html');
-    const detailsPopupContentInput = htmlData.querySelector('.score_block');
-    const detailsPopupTitleInput = htmlData.querySelector('title');
-
-    this.detailsPopupTitle = this.sanitizer.bypassSecurityTrustHtml(
-      detailsPopupTitleInput.innerHTML
-    );
-    this.detailsPopupContent = this.sanitizer.bypassSecurityTrustHtml(
-      `<table>${detailsPopupContentInput.innerHTML}<table>`
-    );
-  }
 
   public handleDetailsClick(e) {
     e.preventDefault();
@@ -243,28 +227,8 @@ export class DetailsTextsComponent implements OnInit {
             .replace(/'/g, '')
             .split(' , ')
         : [];
-      const popupDataQueryParams = !!anchorEl.attributes[2]
-        ? anchorEl.attributes[2].nodeValue
-            .split('(')
-            .slice(1)
-            .join()
-            .slice(0, -1)
-            .replace(/'/g, '')
-            .split(',')
-        : [];
 
       if (anchorEl.href.includes('showexemplar')) {
-        const popupSourceQueryParams = !!anchorEl.attributes[0]
-          ? anchorEl.attributes[0].nodeValue
-              .split('(')
-              .slice(1)
-              .join()
-              .slice(0, -1)
-              .replace(/'/g, '')
-              .split(',')
-          : [];
-
-        this.getDataService.setSourceParams(popupSourceQueryParams);
         sessionStorage.setItem(
           SESSION_KEYS.METADATA_CONTENT,
           this.unsanatizedMetadataPanel
@@ -295,25 +259,9 @@ export class DetailsTextsComponent implements OnInit {
           }
 
           this.getDataService.setSubsequentGlossaryArticleParam(pureQueryParam);
-        } else if (!!anchorEl.href) {
-          this.isDetailsPopupActive = true;
-
-          this.getDataService
-            .getPopupData(
-              popupDataQueryParams[0],
-              popupDataQueryParams[1],
-              popupDataQueryParams[2]
-            )
-            .subscribe((data: any) => {
-              this.handlePopupDataInputHTMLConversion(data);
-            });
         }
       }
     }
-  }
-
-  public handleDetailsPopupClose() {
-    this.isDetailsPopupActive = false;
   }
 
   public handleMetadataClick(e) {

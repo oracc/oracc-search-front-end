@@ -95,15 +95,4 @@
       </div>
     </div>
   </div>
-  <div class="details__popup" *ngIf="isDetailsPopupActive">
-    <button class="details__popup-close" (click)="handleDetailsPopupClose()">
-      <i class="fas fa-times"></i>
-    </button>
-    <h1 class="details__popup-title" [innerHTML]="detailsPopupTitle"></h1>
-    <div
-      class="details__popup-content"
-      [innerHTML]="detailsPopupContent"
-      (click)="handleDetailsClick($event)"
-    ></div>
-  </div>
 </section>
