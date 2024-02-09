@@ -8,6 +8,7 @@ import {
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
+import { getBreadcrumbs } from 'src/utils/utils';
 
 @Component({
   selector: 'app-search-results',
@@ -39,24 +40,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   private noResults = false;
   private searchMsg = false;
   private navigationSubscription;
-  private breadcrumbLink =
-    window.innerWidth > 991
-      ? [
-          {
-            name: 'Search',
-            url: '/search'
-          },
-          {
-            name: 'Search Results',
-            url: '/search/search-results'
-          }
-        ]
-      : [
-          {
-            name: 'Search Results',
-            url: '/search-results'
-          }
-        ];
+  private breadcrumbLink = getBreadcrumbs();
 
   @Output() public wordClickEvent = new EventEmitter();
 
