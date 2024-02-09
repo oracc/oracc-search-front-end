@@ -22,13 +22,10 @@ export class GetDataService {
   private glossaryArticleParam: string;
   private subsequentPageVisit = false;
 
-  private sourceURL = 'http://cdli.ucla.edu/';
-
   private baseUrl = environment.apiUrl;
-  private hostUrl = `${this.baseUrl}:${environment.port}`;
-  private searchURL = `${this.hostUrl}/search/`;
+  private searchURL = `${this.baseUrl}/search/`;
   private glossaryArticleURL = `${environment.glossaryArticleURL}/neo/`;
-  private searchSuggestionsUrl = `${this.hostUrl}/suggest_all/`;
+  private searchSuggestionsUrl = `${this.baseUrl}/suggest_all/`;
   private oraccBaseUrl = `${environment.glossaryArticleURL}`;
 
   constructor(private http: HttpClient) {}
