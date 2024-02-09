@@ -1,6 +1,5 @@
 export const environment = {
   production: false,
-  port: '8000',
-  apiUrl: 'http://localhost',
+  apiUrl: 'http://localhost:8000',
   glossaryArticleURL: 'https://build-oracc.museum.upenn.edu'
 };
