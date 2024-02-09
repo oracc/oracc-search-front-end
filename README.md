@@ -169,6 +169,31 @@ These rules look like this:
 </VirtualHost>
 ```
 
+The line `ProxyPass http://localhost:5001` means that you will need an
+`oracc-rest` backend listening on port `5001`. So set:
+
+```sh
+export ORACC_PORT=5001
+export ORACC_INGEST_DIRECTORY=/home/rits/oracc-rest/neo
+```
+
+in your `~/.bashrc` file, restart your shell and start
+`docker-compose up --build -d` in the `oracc-rest` source directory
+as described in the instuctions in the `README.md` of `oracc-rest`.
+
+The use of `ProxyPass` requires that Apache modules`proxy_http` and
+`proxy_http2` are enabled. Check what is enabled with the command:
+
+```sh
+a2query -m
+```
+
+and enable missing modules (if needed) with:
+
+```sh
+a2enmod proxy_http proxy_http2
+```
+
 Apache will need to be restarted following any config modifications. You can restart Apache with the following:
 
 ```sh
