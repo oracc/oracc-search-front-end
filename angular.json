@@ -29,7 +29,9 @@
               "src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/scripts/p3.js"
+            ]
           },
           "configurations": {
             "github-pages": {
@@ -116,5 +118,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
