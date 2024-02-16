@@ -48,7 +48,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build the production ready website files
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist` directory.
+Run `ng build` to build the project for `oracc-build`. The build artifacts will be stored in the `dist` directory.
+
+To build for `oracc2` use `ng build -c oracc2`.
 
 ---
 
