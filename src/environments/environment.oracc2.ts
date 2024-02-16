@@ -6,8 +6,7 @@
 
 export const environment = {
   production: true,
-  port: '5000',
-  apiUrl: 'https://oracc2.museum.upenn.edu',
+  apiUrl: 'https://oracc2.museum.upenn.edu/oracc-rest-api',
   glossaryArticleURL: 'https://oracc2.museum.upenn.edu'
 };
 
