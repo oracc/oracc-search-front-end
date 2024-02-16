@@ -48,7 +48,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build the production ready website files
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist` directory.
+Run `ng build` to build the project for `oracc-build`. The build artifacts will be stored in the `dist` directory.
+
+To build for `oracc2` use `ng build -c oracc2`.
 
 ---
 
@@ -94,11 +96,15 @@ The following software needs to be installed on the Ubuntu server:
 
 On the Ubuntu server, our project code should be located at `/home/rits` so this is where you should clone the project into. You should end up with the Angular project code inside the `/home/rits/oracc-search-front-end` directory.
 
+### Switch to the new assets
+
 Use the `main` git branch for production deployments.
 
 ## Build the website for production
 
-Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website. This will create a `dist/oracc` folder where the production ready files exist.
+Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
+
+For the `oracc2` machine the equivalent would be `ng build -c oracc2`
 
 ## Link the production folder to an Apache directory
 
