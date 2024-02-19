@@ -48,7 +48,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build the production ready website files
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist` directory.
+Run `ng build` to build the project for `oracc-build`. The build artifacts will be stored in the `dist` directory.
+
+To build for `oracc2` use `ng build -c oracc2`.
 
 ---
 
@@ -99,10 +101,15 @@ The website is currently served from a `/new` directory on the production server
 symlink from `/home/oracc/www/new` to the directory
 containing the assets.
 
+
+
+Use the `main` git branch for production deployments.
+
 Firstly we need to ssh into the build-oracc server. If you want to be able to restore the current version,
 take a note of the current link's target (only type the
 characters after the $ on each line, and note that here
 I'm also showing a possible result of the ls command):
+
 
 ```sh
 $ ssh rits@build-oracc.museum.upenn.edu
@@ -110,7 +117,13 @@ rits@build-oracc:~$ ls -l /home/oracc/www/new
 lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/new -> /home/rits/www/oracc-search-front-end/1.2.2
 ```
 
+
+Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
+
+For the `oracc2` machine the equivalent would be `ng build -c oracc2`
+
 Now we can redirect this link:
+
 
 ```sh
 rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.3 /home/oracc/www/new
