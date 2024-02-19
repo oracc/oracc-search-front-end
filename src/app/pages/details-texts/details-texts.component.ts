@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { composedPath } from '../../../utils/utils';
+import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
 
 @Component({
@@ -33,68 +33,8 @@ export class DetailsTextsComponent implements OnInit {
   private isMobile: boolean;
   private paramMap: ParamMap;
 
-  private breadcrumbLink =
-    window.innerWidth > 991
-      ? [
-          {
-            name: 'Search',
-            url: '/search'
-          },
-          {
-            name: 'Search Results',
-            url: '/search/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -2).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -1).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ]
-      : [
-          {
-            name: 'Search Results',
-            url: '/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -2).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -1).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ];
+  private breadcrumbLink = getBreadcrumbs();
+
   constructor(
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,
