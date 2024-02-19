@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { composedPath } from '../../../utils/utils';
+import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 import { DIRECTION, PANEL_TYPE } from '../../../utils/consts';
 
 @Component({
@@ -31,54 +31,8 @@ export class DetailsComponent implements OnInit {
   private all: any;
   private pathnameArray = window.location.pathname.slice(1).split('/');
   private isMobile: boolean;
-  private breadcrumbLink =
-    window.innerWidth > 991
-      ? [
-          {
-            name: 'Search',
-            url: '/search'
-          },
-          {
-            name: 'Search Results',
-            url: '/search/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace('-', ' '),
-            url: decodeURI(
-              decodeURI(
-                window.location.pathname.split('/').slice(0, -1).join('/')
-              )
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ]
-      : [
-          {
-            name: 'Search Results',
-            url: '/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -1).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ];
+  private breadcrumbLink = getBreadcrumbs();
+
   constructor(
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,

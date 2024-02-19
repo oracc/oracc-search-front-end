@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { Router } from '@angular/router';
-import { composedPath } from '../../../utils/utils';
+import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-source',
@@ -12,103 +12,9 @@ import { composedPath } from '../../../utils/utils';
 export class GlossaryArticleSourceComponent implements OnInit {
   public glossaryContent: any;
   public pathnameArray = window.location.pathname.slice(1).split('/');
-  public breadcrumbLink =
-    window.innerWidth > 991
-      ? [
-          {
-            name: 'Search',
-            url: '/search'
-          },
-          {
-            name: 'Search Results',
-            url: '/search/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 5]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -4).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 4]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -3).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -2).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -1).join('/')
-            ),
-            data: history.state.data
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ]
-      : [
-          {
-            name: 'Search Results',
-            url: '/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 5]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -4).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 4]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -3).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 3]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -2).join('/')
-            )
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 2]
-            ).replace('-', ' '),
-            url: decodeURI(
-              window.location.pathname.split('/').slice(0, -1).join('/')
-            ),
-            data: history.state.data
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ];
+  public breadcrumbLink = getBreadcrumbs();
 
+  
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
     private getDataService: GetDataService,

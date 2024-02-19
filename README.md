@@ -84,59 +84,141 @@ The project will automatically be deployed to github-pages.
 
 The application is currently deployed for production to the Oracc build server (more details [here](https://github.com/oracc/website/wiki/ORACC-Server)) which runs on Ubuntu and exposes an Apache web server. Ask a senior team member or Steve Tinney to get access to this server.
 
-The following software needs to be installed on the Ubuntu server:
+### Push the new assets to the server
 
-1. `Git` (for cloning the website repo: `sudo apt-get install git`)
-2. `NodeJs` (at least version 14: `sudo apt install nodejs npm`)
-   - This may install outdated versions, so to upgrade to the latest versions of NodeJs and npm run `sudo npm install -g n` followed by `sudo n lts`
-3. npm (should come bundled with NodeJs)
-4. Angular CLI (at least version 15: `sudo npm install -g @angular/cli`)
+Once we are happy with our front end code, we must update
+the version number in `package.json`, then call `ng build`.
+Now we can use `rsync` to push this new version to the
+production server. Let's say our new version is `1.2.3`:
 
-## Clone the repo
-
-On the Ubuntu server, our project code should be located at `/home/rits` so this is where you should clone the project into. You should end up with the Angular project code inside the `/home/rits/oracc-search-front-end` directory.
+```sh
+rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-end/1.2.3
+```
 
 ### Switch to the new assets
 
+The website is currently served from a `/new` directory on the production server. This is achieved through a
+symlink from `/home/oracc/www/new` to the directory
+containing the assets.
+
+
+
 Use the `main` git branch for production deployments.
 
-## Build the website for production
+Firstly we need to ssh into the build-oracc server. If you want to be able to restore the current version,
+take a note of the current link's target (only type the
+characters after the $ on each line, and note that here
+I'm also showing a possible result of the ls command):
+
+
+```sh
+$ ssh rits@build-oracc.museum.upenn.edu
+rits@build-oracc:~$ ls -l /home/oracc/www/new
+lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/new -> /home/rits/www/oracc-search-front-end/1.2.2
+```
+
 
 Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
 
 For the `oracc2` machine the equivalent would be `ng build -c oracc2`
 
-## Link the production folder to an Apache directory
+Now we can redirect this link:
 
-The website is currently served from a `/new` directory on the production server. This can be achieved by running the following command to create a symlink: `sudo ln -sT /home/rits/oracc-search-front-end/dist/oracc /home/oracc/www/new`
 
-This will symlink each file and folder to the new directory. You can check that the symlink has been created by running: `ls -la ./ | grep "\->"`
+```sh
+rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.3 /home/oracc/www/new
+```
 
-Note that if you are getting a `403 forbidden` error from Apache you probably need to set the correct folder privileges. Make sure that the `/home/rits` folder and all its child folders relating to Angular have at least `drwxr-xr-x` privileges. You can set these privileges with: `sudo chmod 755 /home/rits` and you can check current privileges with: `ls -l /home/rits` .
+In case of trouble, we can roll back to the old version using the same command with the old version number we found out earlier:
 
-## Further Apache configurations
+```sh
+rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.2 /home/oracc/www/new
+```
+
+The production server will instantly begin serving this
+new version. If you like, you can delete old, obsolete
+versions like so:
+
+```sh
+rits@build-oracc:~$ rm /home/rits/www/oracc-search-front-end/1.1.0/ -rf
+```
+
+Note that if you are getting a `403 forbidden` error from Apache you probably need to set the correct folder privileges. Make sure that the `/home/rits/www` folder and all its child folders relating to Angular have at least `drwxr-xr-x` privileges. You can set these privileges with: `sudo chmod 755 /home/rits/www` and you can check current privileges with: `ls -l /home/rits/www` .
+
+### Further Apache configurations
 
 The Oracc server runs on Ubuntu and exposes the Oracc website via an Apache web server. Therefore, you may need to configure Apache to appropriately serve the static content generated via the Angular build process.
 
-Specifically, you will need to add a rewrite rule so that the angular app pages fall back to `/new/index.html`. This has currenty been achieved by adding the following rewrite rules to `/etc/apache2/sites-enabled/oracc-vhost-ssl.conf` :
+The following rules need to exist in the file `/etc/apache2/sites-enabled/oracc-vhost-ssl.conf`:
+
+1. The angular app should be served at `/new`
+2. The oracc-rest API should be served at `/oracc-rest-api/`
+
+These rules look like this:
 
 ```apacheconf
 <VirtualHost *:443>
 ...
 
-# Angular website config - rewrites routes back to /new/index.html
-RewriteCond %{REQUEST_FILENAME} "^/new(/.*)?$"
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
-RewriteRule ^ - [L]
-RewriteCond %{REQUEST_FILENAME} "^/new(/.*)?$"
-RewriteRule ^(.+)$ /new/index.html [L]
+    <Location /oracc-rest-api>
+        ProxyPass http://localhost:5001
+    </Location>
+
+    RewriteEngine on
+
+    # oracc-rest
+    RewriteCond %{REQUEST_URI} "^/oracc-rest-api/"
+    RewriteRule ^ - [L]
+
+    # Angular website config - rewrites routes back to /new/index.html
+    RewriteCond %{REQUEST_FILENAME} "^/new/?"
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+    RewriteRule ^ - [L]
+    RewriteCond %{REQUEST_FILENAME} "^/new(/.*)?$"
+    RewriteRule ^ /new/index.html [L]
 
 ...
 </VirtualHost>
 ```
 
-Apache may need to be restarted following any config modifications. You can restart Apache with the following: `sudo service apache2 restart` . You can verify that the configs are working by navigating to `https://build-oracc.museum.upenn.edu/new/404` in your browser and you should see the custom 404 page generated by the angular website.
+The line `ProxyPass http://localhost:5001` means that you will need an
+`oracc-rest` backend listening on port `5001`. So set:
+
+```sh
+export ORACC_PORT=5001
+export ORACC_INGEST_DIRECTORY=/home/rits/oracc-rest/neo
+```
+
+in your `~/.bashrc` file, restart your shell and start
+`docker-compose up --build -d` in the `oracc-rest` source directory
+as described in the instuctions in the `README.md` of `oracc-rest`.
+
+The use of `ProxyPass` requires that Apache modules`proxy_http` and
+`proxy_http2` are enabled. Check what is enabled with the command:
+
+```sh
+a2query -m
+```
+
+and enable missing modules (if needed) with:
+
+```sh
+a2enmod proxy_http proxy_http2
+```
+
+Apache will need to be restarted following any config modifications. You can restart Apache with the following:
+
+```sh
+$ sudo apache2ctl -t
+Syntax OK
+$ sudo systemctl restart apache2
+```
+
+(if you do not get the `Syntax OK` message, please don't run the
+second command; check your edits to the configuration and try again).
+
+You can verify that the configs are working by navigating to `https://build-oracc.museum.upenn.edu/new/404` in your browser and you should see the custom 404 page generated by the angular website.
 
 Once the above process is done, you can simply pull the latest changes to the `main` branch on the server. The website should then display these latest changes.
 
@@ -144,7 +226,7 @@ You can learn more about Apache configurations for an Angular app [here](https:/
 
 ---
 
-## Angular config for serving the app under a custom url directory
+### Angular config for serving the app under a custom url directory
 
 As explained above, the production and staging apps are configured to run under a `/new` directory while the gh-pages deployment and development environment just run from the root directory `/`. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
 

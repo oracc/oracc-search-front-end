@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
+import { getBreadcrumbs } from 'src/utils/utils';
 
 @Component({
   selector: 'app-search',
@@ -15,12 +16,7 @@ export class SearchComponent implements OnInit {
   public routerLink: string;
   public searchParam: string;
   public showSuggestions = false;
-  public breadcrumbLink = [
-    {
-      name: 'Search',
-      url: '/search'
-    }
-  ];
+  public breadcrumbLink =  getBreadcrumbs();
 
   constructor(
     private getDataService: GetDataService,

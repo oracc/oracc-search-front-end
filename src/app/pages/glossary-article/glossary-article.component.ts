@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { Router } from '@angular/router';
-import { composedPath } from '../../../utils/utils';
+import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article',
@@ -14,36 +14,7 @@ import { composedPath } from '../../../utils/utils';
 export class GlossaryArticleComponent implements OnInit {
   public glossaryContent: any;
   public pathnameArray = window.location.pathname.slice(1).split('/');
-  public breadcrumbLink =
-    window.innerWidth > 991
-      ? [
-          {
-            name: 'Search',
-            url: '/search'
-          },
-          {
-            name: 'Search Results',
-            url: '/search/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ]
-      : [
-          {
-            name: 'Search Results',
-            url: '/search-results'
-          },
-          {
-            name: decodeURI(
-              this.pathnameArray[this.pathnameArray.length - 1]
-            ).replace('-', ' '),
-            url: window.location.pathname
-          }
-        ];
+  public breadcrumbLink = getBreadcrumbs();
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
