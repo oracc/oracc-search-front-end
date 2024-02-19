@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8000',
+  apiUrl: 'https://build-oracc.museum.upenn.edu/oracc-rest-api/',
   glossaryArticleURL: 'https://build-oracc.museum.upenn.edu'
 };

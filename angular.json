@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/new/",
+            "baseHref": "/search/",
             "outputPath": "dist/oracc",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,9 +29,7 @@
               "src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": [
-              "src/scripts/p3.js"
-            ]
+            "scripts": ["src/scripts/p3.js"]
           },
           "configurations": {
             "github-pages": {
