@@ -74,7 +74,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "baseHref": "/",
+              "baseHref": "/search",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
