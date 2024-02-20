@@ -30,8 +30,6 @@ export function getBreadcrumbs() {
     const decodedName = decodeURI(segment).replace('-', ' ');
     const decodedPath = decodeURI(segment);
 
-    console.log(segment);
-
     if (index === 0) return; // Skip the first segment since it is just the base URL
 
     currentPath += `${decodedPath}/`;
