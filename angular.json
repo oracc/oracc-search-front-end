@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/new/",
+            "baseHref": "/search/",
             "outputPath": "dist/oracc",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,7 +29,7 @@
               "src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": ["src/scripts/p3.js"]
           },
           "configurations": {
             "github-pages": {
@@ -49,6 +49,15 @@
                 }
               ]
             },
+            "oracc2": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.oracc2.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "production": {
               "budgets": [
                 {
@@ -65,7 +74,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "baseHref": "/",
+              "baseHref": "/search",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -116,5 +125,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

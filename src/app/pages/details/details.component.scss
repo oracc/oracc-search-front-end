@@ -236,7 +236,16 @@
       font-weight: bold;
     }
     .note {
-      display: none;
+      display: block;
+      position: fixed;
+      width: 450px;
+      height: 200px;
+      background-color: $white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 12px 0px $grayBorder;
+      box-sizing: border-box;
+      overflow: auto;
     }
   }
 }

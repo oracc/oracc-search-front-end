@@ -22,12 +22,11 @@ export class GetDataService {
   private glossaryArticleParam: string;
   private subsequentPageVisit = false;
 
-  private sourceURL = 'http://cdli.ucla.edu/';
-
   private baseUrl = environment.apiUrl;
-  private searchURL = `${this.baseUrl}:5000/search/`;
-  private glossaryArticleURL = `${this.baseUrl}/neo/`;
-  private searchSuggestionsUrl = `${this.baseUrl}:5000/suggest_all/`;
+  private searchURL = `${this.baseUrl}/search/`;
+  private glossaryArticleURL = `${environment.glossaryArticleURL}/neo/`;
+  private searchSuggestionsUrl = `${this.baseUrl}/suggest_all/`;
+  private oraccBaseUrl = `${environment.glossaryArticleURL}`;
 
   constructor(private http: HttpClient) {}
 
@@ -51,8 +50,8 @@ export class GetDataService {
     const textId = params.get('textId');
 
     const url = subProjectId
-      ? `${this.baseUrl}/${projectId}/${subProjectId}/${textId}`
-      : `${this.baseUrl}/${projectId}/${textId}`;
+      ? `${this.oraccBaseUrl}/${projectId}/${subProjectId}/${textId}`
+      : `${this.oraccBaseUrl}/${projectId}/${textId}`;
 
     return this.http.get(url, {
       responseType: 'text'
@@ -91,7 +90,7 @@ export class GetDataService {
 
   public getDetailData() {
     return this.http.get(
-      `${this.baseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}`,
+      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}`,
       {
         responseType: 'text'
       }
@@ -100,7 +99,7 @@ export class GetDataService {
 
   public getDetailDataPage(pageNumber) {
     return this.http.get(
-      `${this.baseUrl}/${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
+      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
       {
         responseType: 'text'
       }
@@ -140,7 +139,7 @@ export class GetDataService {
   }
 
   public getSourceData() {
-    let sourceDataURL = `${this.baseUrl}/${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
+    let sourceDataURL = `${this.oraccBaseUrl}/${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
 
     if (this.sourceParams[2].length > 0) {
       sourceDataURL = sourceDataURL + '?' + this.sourceParams[2];
@@ -155,7 +154,7 @@ export class GetDataService {
 
   public getPopupData(project: string, item: string, blockId: string) {
     return this.http.get(
-      `${this.baseUrl}/${project}/${item}/score?${blockId}`,
+      `${this.oraccBaseUrl}/${project}/${item}/score?${blockId}`,
       {
         responseType: 'text'
       }

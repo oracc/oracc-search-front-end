@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
@@ -25,7 +25,7 @@ export class AppComponent {
 
 	ngOnInit() {
 		this.isMobile = window.innerWidth < 991;
-		this.isHome = window.location.pathname === "/new";
+		this.isHome = window.location.pathname === "/search";
 		this.isPageNotFound = window.location.pathname === "/404";
 	}
 }
