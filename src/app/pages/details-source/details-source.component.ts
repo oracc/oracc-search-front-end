@@ -33,8 +33,7 @@ export class DetailsSourceComponent implements OnInit {
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
-      history.state.data ||
-        sessionStorage.getItem(SESSION_KEYS.METADATA_CONTENT)
+      sessionStorage.getItem(SESSION_KEYS.METADATA_CONTENT)
     );
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -118,9 +117,7 @@ export class DetailsSourceComponent implements OnInit {
           .split(',');
 
         this.getDataService.setSourceParams(queryParams);
-        this.router.navigate([this.router.url], {
-          state: { data: history.state.data }
-        });
+        this.router.navigate([this.router.url]);
       } else {
         window.open(clickedLink.href);
       }
@@ -198,8 +195,7 @@ export class DetailsSourceComponent implements OnInit {
           }=${anchorElWrapper.title}`;
 
           this.router.navigate(
-            [decodeURI(this.router.url), anchorEl.innerText],
-            { state: { data: history.state.data } }
+            [decodeURI(this.router.url), anchorEl.innerText]
           );
           this.getDataService.setSubsequentGlossaryArticleParam(pureQueryParam);
         } else if (!!anchorEl.href) {
