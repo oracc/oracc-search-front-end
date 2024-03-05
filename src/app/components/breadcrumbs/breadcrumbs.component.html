@@ -7,7 +7,7 @@
       <li
         class="bcrumbs__list-item js-list-item"
         *ngFor="let link of breadcrumbsLinks; let i = index"
-        (click)="handleBreadcrumbClick($event, link.url, i, link.data)"
+        (click)="handleBreadcrumbClick($event, link.url, i)"
         data-id="{{ link.url }}"
       >
         <i class="fas fa-arrow-left bcrumbs__list-icon"></i>{{ link.name }}

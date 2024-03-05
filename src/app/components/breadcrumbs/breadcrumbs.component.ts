@@ -30,9 +30,9 @@ export class BreadcrumbsComponent {
     });
   }
 
-  public handleBreadcrumbClick(e, link, id, data?) {
+  public handleBreadcrumbClick(e, link, id) {
     this.preventBreadcrumbsAdd.shouldPrevent = true;
     this.preventBreadcrumbsAdd.linkId = id;
-    this.router.navigate([link], { state: { data } });
+    this.router.navigate([link]);
   }
 }
