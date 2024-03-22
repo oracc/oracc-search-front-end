@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ParamMap } from '@angular/router';
 import { environment } from '../../../environments/environment';
 
+const p3zoomgx = new RegExp("p3zoomgx\\('([^']*)', *'([^']*)', *'([^']*)', *([^)]*)\\)");
+
 @Injectable({
   providedIn: 'root'
 })
@@ -104,6 +106,36 @@ export class GetDataService {
         responseType: 'text'
       }
     );
+  }
+
+  private findParent(element, condition) {
+    while (element) {
+      if (condition(element)) {
+        return element;
+      }
+      element = element.parent;
+    }
+    return null;
+  }
+
+  public p3ZoomGx(element, callback) {
+    if (!element) {
+      return false;
+    }
+    const el = this.findParent(element, el => el.hasAttribute('onclick'));
+    if (!el) {
+      return false;
+    }
+    const call = el.attributes['onclick'].nodeValue;
+    const args = p3zoomgx.exec(call);
+    if (!args) {
+      return false;
+    }
+    this.http.get(
+      `${this.oraccBaseUrl}/neo/${args[2]}?xis=${args[3]}&zoom=${args[4]}`,
+      { responseType: 'text' }
+    ).subscribe(callback);
+    return true;
   }
 
   public setDetailsPageParams(

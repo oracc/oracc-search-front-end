@@ -142,7 +142,8 @@ export class DetailsComponent implements OnInit {
   private handleTextToHTMLConversionOnPageChange(text) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const middlePanelInput = htmlData.querySelector('body');
+    const p3content = htmlData.querySelector('#p3right');
+    const middlePanelInput = p3content? p3content : htmlData.querySelector('body');
 
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       middlePanelInput.innerHTML
@@ -169,6 +170,14 @@ export class DetailsComponent implements OnInit {
       // navigates to details texts component
       this.router.navigate([decodeURI(this.router.url), 'texts']);
       this.getDataService.setTermDataParam(idParam);
+    }
+  }
+
+  public handleMetadataClick(e) {
+    if (this.getDataService.p3ZoomGx(e.target, (data) => {
+      this.handleTextToHTMLConversionOnPageChange(data);
+    })) {
+      e.preventDefault();
     }
   }
 

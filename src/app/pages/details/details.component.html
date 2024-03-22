@@ -20,6 +20,7 @@
           class="details__panel-main ps"
           [innerHTML]="metadataPanel"
           *ngIf="isMetadataPanelActive"
+          (click)="handleMetadataClick($event)"
         ></div>
       </div>
 
