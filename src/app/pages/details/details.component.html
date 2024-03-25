@@ -32,6 +32,10 @@
             ></span>
             <span> {{ isTermDataShown ? "Texts" : "Lines" }}</span>
           </span>
+          <span
+            *ngIf="isZoomed()"
+            (click)="handleResetZoom($event)"
+          ><a href="javascript://">Reset zoom</a></span>
           <div class="details__panel-pagination">
             <span
               class="details__panel-left"

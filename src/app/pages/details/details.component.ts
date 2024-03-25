@@ -174,11 +174,22 @@ export class DetailsComponent implements OnInit {
   }
 
   public handleMetadataClick(e) {
+    e.preventDefault();
     if (this.getDataService.p3ZoomGx(e.target, (data) => {
       this.handleTextToHTMLConversionOnPageChange(data);
     })) {
       e.preventDefault();
     }
+  }
+
+  public handleResetZoom(e) {
+    this.getDataService.resetDetailZoom((data) => {
+      this.handleTextToHTMLConversionOnPageChange(data);
+    });
+  }
+
+  public isZoomed() {
+    return this.getDataService.isZoomed();
   }
 
   public togglePanel(e, panelType) {

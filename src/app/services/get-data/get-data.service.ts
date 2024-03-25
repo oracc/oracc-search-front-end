@@ -16,6 +16,7 @@ export class GetDataService {
   private urlParam: string;
   private language: string;
   private queryString: string;
+  private zoomItem: string;
 
   private chosenTerm: string;
   private termDataParam: string;
@@ -91,20 +92,19 @@ export class GetDataService {
   }
 
   public getDetailData() {
-    return this.http.get(
-      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}`,
-      {
-        responseType: 'text'
-      }
-    );
+    return this.getDetailDataPage(null);
+  }
+
+  public isZoomed() {
+    return this.zoomItem != null;
   }
 
   public getDetailDataPage(pageNumber) {
+    const zoom = this.zoomItem == null? "" : `&zoom=${this.zoomItem}`;
+    const page = pageNumber == null? "" : `&page=${pageNumber}`;
     return this.http.get(
-      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
-      {
-        responseType: 'text'
-      }
+      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}${zoom}${page}`,
+      { responseType: 'text' }
     );
   }
 
@@ -131,21 +131,26 @@ export class GetDataService {
     if (!args) {
       return false;
     }
-    this.http.get(
-      `${this.oraccBaseUrl}/neo/${args[2]}?xis=${args[3]}&zoom=${args[4]}`,
-      { responseType: 'text' }
-    ).subscribe(callback);
+    this.setDetailsPageParams('neo', args[2], args[3], args[4]);
+    this.getDetailData().subscribe(callback);
     return true;
+  }
+
+  public resetDetailZoom(callback) {
+    this.zoomItem = null;
+    this.getDetailData().subscribe(callback);
   }
 
   public setDetailsPageParams(
     urlParam: string,
     language: string,
-    queryString: string
+    queryString: string,
+    zoomItem?: string,
   ) {
     this.urlParam = urlParam;
     this.language = language;
     this.queryString = queryString;
+    this.zoomItem = zoomItem == undefined? null : zoomItem;
   }
 
   public setChosenTermText(term: string) {
