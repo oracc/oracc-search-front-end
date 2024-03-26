@@ -47,6 +47,7 @@
     "textSingularText": "Text",
     "textPluralText": "Texts",
     "linesText": "Lines",
-    "sourceText": "Source"
+    "sourceText": "Source",
+    "resetZoom": "Reset Filter"
   }
 }
