@@ -1,10 +1,9 @@
 {
   "header": {
-    "linkText1": "Search",
-    "linkText2": "Projects",
-    "linkText3": "Tools",
-    "linkText4": "About",
-    "linkText5": "Help",
+    "linkText1": "Projects",
+    "linkText2": "Tools",
+    "linkText3": "About",
+    "linkText4": "Help",
     "langText1": "English",
     "langText2": "Arabic",
     "langAbbrText1": "EN",

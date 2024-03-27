@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { GlossaryArticleComponent } from './pages/glossary-article/glossary-article.component';
@@ -13,14 +12,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 
 // duplicated routes are to handle both desktop and mobile versions
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-
   // routes for desktop
   {
-    path: 'search',
+    path: '',
     component: SearchComponent,
     children: [
       {
