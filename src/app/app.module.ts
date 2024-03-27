@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // pages
-import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { SearchComponent } from './pages/search/search.component';
 import { GlossaryArticleComponent } from './pages/glossary-article/glossary-article.component';
@@ -43,7 +42,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     SearchComponent,
     SearchSuggestionsComponent,
     SearchResultsComponent,
