@@ -1,11 +1,10 @@
+const oraccUrl = 'http://localhost:4200/';
+// https://oracc.museum.upenn.edu/search
 describe('basic home visibility', () => {
-  it('finds the home page with blurb', () => {
-    cy.visit('https://oracc.museum.upenn.edu/new/');
+  it('checks the home page is the search page', () => {
+    cy.visit(oraccUrl);
 
-    cy.get('.home__logo-head').contains('Oracc').should('be.visible');
-    cy.contains(
-      'Oracc is a collaborative effort to develop a complete corpus of cuneiform '
-    );
+    cy.get('.search__title').contains('Search Oracc').should('be.visible');
 
     cy.get('.cookies').should('be.visible');
 
@@ -16,14 +15,14 @@ describe('basic home visibility', () => {
 
 describe('navigate to search', () => {
   it('clicks the search button', () => {
-    cy.visit('https://oracc2.museum.upenn.edu/new/');
+    cy.visit(oraccUrl);
     cy.get('.header__nav-list-link').contains('Search').click();
   });
 });
 
 describe('search process visibiity', () => {
   it('goes through process of a search and checks component visibility', () => {
-    cy.visit('https://oracc.museum.upenn.edu/new/search/');
+    cy.visit(oraccUrl);
     // do a search for "water" and check suggestions show
     cy.get('.search__input').type('water');
     cy.get('.suggestions-content').should('be.visible');
@@ -68,7 +67,7 @@ describe('search process visibiity', () => {
 
 describe('popups not blank', () => {
   it('checks if popups work properly', () => {
-    cy.visit('https://oracc.museum.upenn.edu/new/search/');
+    cy.visit(oraccUrl);
     cy.get('.search__input').type('watering place {enter}');
     cy.contains('ugu').click();
     cy.get('span.sux').eq(1).click();
