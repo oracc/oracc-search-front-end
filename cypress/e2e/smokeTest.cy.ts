@@ -1,5 +1,4 @@
-const oraccUrl = 'http://localhost:4200/';
-// https://oracc.museum.upenn.edu/search
+const oraccUrl = 'https://oracc.museum.upenn.edu/search';
 describe('basic home visibility', () => {
   it('checks the home page is the search page', () => {
     cy.visit(oraccUrl);
@@ -25,7 +24,7 @@ describe('search process visibiity', () => {
     cy.get('.results').should('be.visible');
     cy.get('.bcrumbs').should('be.visible');
     cy.get('.bcrumbs__list-item')
-      .contains('Search Results')
+      .contains('search results')
       .should('be.visible');
     cy.get('li[data-id="4"]').contains('Urartian').click();
 
