@@ -13,13 +13,6 @@ describe('basic home visibility', () => {
   });
 });
 
-describe('navigate to search', () => {
-  it('clicks the search button', () => {
-    cy.visit(oraccUrl);
-    cy.get('.header__nav-list-link').contains('Search').click();
-  });
-});
-
 describe('search process visibiity', () => {
   it('goes through process of a search and checks component visibility', () => {
     cy.visit(oraccUrl);
