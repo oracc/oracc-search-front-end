@@ -1,11 +1,11 @@
-const oraccUrl = 'https://oracc.museum.upenn.edu/search';
+const oraccUrl = 'http://localhost:4200';
 describe('basic home visibility', () => {
   it('checks the home page is the search page', () => {
     cy.visit(oraccUrl);
 
     cy.get('.search__title').contains('Search Oracc').should('be.visible');
 
-    cy.get('.cookies').should('be.visible');
+    // cy.get('.cookies').should('be.visible'); // not applicable to local
 
     cy.get('.footer').should('be.visible');
     cy.get('.header').should('be.visible');
