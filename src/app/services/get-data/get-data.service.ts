@@ -23,7 +23,7 @@ export class GetDataService {
   private subsequentPageVisit = false;
 
   private baseUrl = environment.apiUrl;
-  private searchURL = `${this.baseUrl}/search/`;
+  private searchURL = `${this.baseUrl}/`;
   private glossaryArticleURL = `${environment.glossaryArticleURL}/neo/`;
   private searchSuggestionsUrl = `${this.baseUrl}/suggest_all/`;
   private oraccBaseUrl = `${environment.glossaryArticleURL}`;

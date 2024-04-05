@@ -14,7 +14,6 @@ export class GlossaryArticleSourceComponent implements OnInit {
   public pathnameArray = window.location.pathname.slice(1).split('/');
   public breadcrumbLink = getBreadcrumbs();
 
-  
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
     private getDataService: GetDataService,
@@ -66,7 +65,7 @@ export class GlossaryArticleSourceComponent implements OnInit {
       this.getDataService.setChosenTermText(anchorElText);
       if (window.innerWidth > 991) {
         this.router.navigate([
-          `/search/search-results/${decodeURI(this.pathnameArray[2])}`,
+          `/search-results/${decodeURI(this.pathnameArray[2])}`,
           'occurrences'
         ]);
       } else {

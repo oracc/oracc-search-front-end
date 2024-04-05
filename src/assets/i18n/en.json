@@ -17,7 +17,7 @@
     "introText": "Welcome to",
     "logoText": "Oracc",
     "paraText1": "Oracc is a collaborative effort to develop a complete corpus of cuneiform whose rich annotation and open licensing support the next generation of scholarly research. Created by Steve Tinney, Oracc is steered by Jamie Novotny, Eleanor Robson, Tinney, and Niek Veldhuis.",
-    "paraText2": "From the links above, you can <a href='/search' class='js-search-home'>Search</a> the Oracc glossary to find words of interest. You can also browse through individual <a href='http://oracc.museum.upenn.edu/projectlist.html' target='_blank'>Projects</a> (in the old format) and use Oracc’s web <a href='http://oracc.museum.upenn.edu/doc/tools/index.html' target='_blank'>Tools</a> for editing. Choose the <a href='http://oracc.museum.upenn.edu/doc/about/index.html' target='_blank'>About</a> or the <a href='http://oracc.museum.upenn.edu/doc/help/index.html' target='_blank'>Help</a> heading if you need more guidance."
+    "paraText2": "From the links above, you can <a href='/' class='js-search-home'>Search</a> the Oracc glossary to find words of interest. You can also browse through individual <a href='http://oracc.museum.upenn.edu/projectlist.html' target='_blank'>Projects</a> (in the old format) and use Oracc’s web <a href='http://oracc.museum.upenn.edu/doc/tools/index.html' target='_blank'>Tools</a> for editing. Choose the <a href='http://oracc.museum.upenn.edu/doc/about/index.html' target='_blank'>About</a> or the <a href='http://oracc.museum.upenn.edu/doc/help/index.html' target='_blank'>Help</a> heading if you need more guidance."
   },
   "search": {
     "titleText": "Search Oracc",
