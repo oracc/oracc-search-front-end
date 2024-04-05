@@ -101,8 +101,6 @@ The website is currently served from a `/new` directory on the production server
 symlink from `/home/oracc/www/new` to the directory
 containing the assets.
 
-
-
 Use the `main` git branch for production deployments.
 
 Firstly we need to ssh into the build-oracc server. If you want to be able to restore the current version,
@@ -110,20 +108,17 @@ take a note of the current link's target (only type the
 characters after the $ on each line, and note that here
 I'm also showing a possible result of the ls command):
 
-
 ```sh
 $ ssh rits@build-oracc.museum.upenn.edu
 rits@build-oracc:~$ ls -l /home/oracc/www/new
 lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/new -> /home/rits/www/oracc-search-front-end/1.2.2
 ```
 
-
 Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
 
 For the `oracc2` machine the equivalent would be `ng build -c oracc2`
 
 Now we can redirect this link:
-
 
 ```sh
 rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.3 /home/oracc/www/new
@@ -240,7 +235,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This project also uses Cypress for testing. To run the tests without a window, run `npx cypress run` or `npm run cypress:run`. To open a window and see the tests run (more helpful when writing the tests and debugging), run `npx cypress open` or `npm run cypress:open` and choose the tests you'd like to run through the GUI.
 
 ## Further help
 
