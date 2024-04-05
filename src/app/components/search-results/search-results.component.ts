@@ -166,11 +166,8 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public showGlossaryArticle(lang: string, id: string, word: string) {
     this.getDataService.setGlossaryLangAndId(lang, id);
     const wordClean = word.replace(' ', '-');
-    const urlPathname = this.isMobile
-      ? '/search-results'
-      : '/search/search-results';
 
     // navigates to glossary article component
-    this.router.navigate([urlPathname, wordClean]);
+    this.router.navigate(['/search-results', wordClean]);
   }
 }

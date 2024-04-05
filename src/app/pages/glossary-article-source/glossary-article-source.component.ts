@@ -64,17 +64,10 @@ export class GlossaryArticleSourceComponent implements OnInit {
       );
 
       this.getDataService.setChosenTermText(anchorElText);
-      if (window.innerWidth > 991) {
-        this.router.navigate([
-          `/search/search-results/${decodeURI(this.pathnameArray[2])}`,
-          'occurrences'
-        ]);
-      } else {
-        this.router.navigate([
-          `/search-results/${decodeURI(this.pathnameArray[1])}`,
-          'occurrences'
-        ]);
-      }
+      this.router.navigate([
+        `/search-results/${decodeURI(this.pathnameArray[2])}`,
+        'occurrences'
+      ]);
     }
   }
 
