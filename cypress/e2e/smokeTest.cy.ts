@@ -5,7 +5,7 @@ describe('basic home visibility', () => {
 
     cy.get('.search__title').contains('Search Oracc').should('be.visible');
 
-    // cy.get('.cookies').should('be.visible'); // not applicable to local
+    cy.get('.cookies').should('be.visible');
 
     cy.get('.footer').should('be.visible');
     cy.get('.header').should('be.visible');
