@@ -9,30 +9,17 @@ import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/hand
 })
 export class BreadcrumbsComponent {
   public breadcrumbsLinks = [];
-  public preventBreadcrumbsAdd = {
-    shouldPrevent: false,
-    linkId: null
-  };
 
   constructor(
     private router: Router,
     private breadcrumbsService: HandleBreadcrumbsService
   ) {
     this.router.events.subscribe((val) => {
-      if (this.preventBreadcrumbsAdd.shouldPrevent) {
-        this.breadcrumbsLinks.splice(
-          this.preventBreadcrumbsAdd.linkId + 1,
-          100
-        );
-        this.preventBreadcrumbsAdd.shouldPrevent = false;
-      }
       this.breadcrumbsLinks = this.breadcrumbsService.getBreadcrumbs();
     });
   }
 
   public handleBreadcrumbClick(e, link, id, data?) {
-    this.preventBreadcrumbsAdd.shouldPrevent = true;
-    this.preventBreadcrumbsAdd.linkId = id;
     this.router.navigate([link], { state: { data } });
   }
 }

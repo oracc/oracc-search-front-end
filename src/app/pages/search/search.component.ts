@@ -17,14 +17,13 @@ export class SearchComponent implements OnInit {
   public routerLink: string;
   public searchParam: string;
   public showSuggestions = false;
-  public breadcrumbLink = getBreadcrumbs(this.router);
 
   constructor(
     private router: Router,
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
   ngOnInit() {

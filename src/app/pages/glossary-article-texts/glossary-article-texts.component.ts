@@ -14,7 +14,6 @@ import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 export class GlossaryArticleTextsComponent implements OnInit {
   public glossaryContent: any;
   private pathnameArray: Array<string>;
-  public breadcrumbLink = getBreadcrumbs(this.router);
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
@@ -23,7 +22,7 @@ export class GlossaryArticleTextsComponent implements OnInit {
     private breadcrumbsService: HandleBreadcrumbsService,
     private router: Router
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
     this.pathnameArray = this.router.url.split('/').filter(v => v != '');
   }
 

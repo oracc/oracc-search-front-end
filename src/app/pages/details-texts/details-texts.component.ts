@@ -32,8 +32,6 @@ export class DetailsTextsComponent implements OnInit {
   private isMobile: boolean;
   private paramMap: ParamMap;
 
-  private breadcrumbLink = getBreadcrumbs(this.router);
-
   constructor(
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,
@@ -41,7 +39,7 @@ export class DetailsTextsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
   ngOnInit() {

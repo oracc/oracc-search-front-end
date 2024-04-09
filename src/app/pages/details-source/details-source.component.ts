@@ -22,7 +22,6 @@ export class DetailsSourceComponent implements OnInit {
   public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
   public isTextPanelActive = window.innerWidth > 991 ? true : false;
   private isMobile: boolean;
-  private breadcrumbLink = getBreadcrumbs(this.router);
 
   constructor(
     private getDataService: GetDataService,
@@ -30,7 +29,7 @@ export class DetailsSourceComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private router: Router
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
       history.state.data ||
         sessionStorage.getItem(SESSION_KEYS.METADATA_CONTENT)
