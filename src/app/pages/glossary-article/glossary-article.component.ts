@@ -13,8 +13,7 @@ import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 })
 export class GlossaryArticleComponent implements OnInit {
   public glossaryContent: any;
-  public pathnameArray = window.location.pathname.slice(1).split('/');
-  public breadcrumbLink = getBreadcrumbs();
+  public breadcrumbLink = getBreadcrumbs(this.router);
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(

@@ -40,7 +40,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   private noResults = false;
   private searchMsg = false;
   private navigationSubscription;
-  private breadcrumbLink = getBreadcrumbs();
+  private breadcrumbLink = getBreadcrumbs(this.router);
 
   @Output() public wordClickEvent = new EventEmitter();
 

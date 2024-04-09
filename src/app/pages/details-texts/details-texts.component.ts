@@ -29,11 +29,10 @@ export class DetailsTextsComponent implements OnInit {
   private paginationSliceEnd: number = 7;
   private totalLines: number;
   private isTermDataShown: boolean;
-  private pathnameArray = window.location.pathname.slice(1).split('/');
   private isMobile: boolean;
   private paramMap: ParamMap;
 
-  private breadcrumbLink = getBreadcrumbs();
+  private breadcrumbLink = getBreadcrumbs(this.router);
 
   constructor(
     private getDataService: GetDataService,

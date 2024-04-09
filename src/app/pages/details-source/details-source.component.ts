@@ -21,9 +21,8 @@ export class DetailsSourceComponent implements OnInit {
   public detailsPopupTitle: any;
   public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
   public isTextPanelActive = window.innerWidth > 991 ? true : false;
-  private pathnameArray = window.location.pathname.slice(1).split('/');
   private isMobile: boolean;
-  private breadcrumbLink = getBreadcrumbs();
+  private breadcrumbLink = getBreadcrumbs(this.router);
 
   constructor(
     private getDataService: GetDataService,

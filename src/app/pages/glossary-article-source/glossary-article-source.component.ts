@@ -11,8 +11,8 @@ import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 })
 export class GlossaryArticleSourceComponent implements OnInit {
   public glossaryContent: any;
-  public pathnameArray = window.location.pathname.slice(1).split('/');
-  public breadcrumbLink = getBreadcrumbs();
+  private pathnameArray: Array<string>;
+  public breadcrumbLink = getBreadcrumbs(this.router);
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
@@ -21,6 +21,7 @@ export class GlossaryArticleSourceComponent implements OnInit {
     private breadcrumbsService: HandleBreadcrumbsService,
     private router: Router
   ) {
+    this.pathnameArray = this.router.url.split('/').filter(v => v != '');
     this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
   }
 
@@ -63,17 +64,10 @@ export class GlossaryArticleSourceComponent implements OnInit {
       );
 
       this.getDataService.setChosenTermText(anchorElText);
-      if (window.innerWidth > 991) {
-        this.router.navigate([
-          `/search-results/${decodeURI(this.pathnameArray[2])}`,
-          'occurrences'
-        ]);
-      } else {
-        this.router.navigate([
-          `/search-results/${decodeURI(this.pathnameArray[1])}`,
-          'occurrences'
-        ]);
-      }
+      this.router.navigate([
+        `/search-results/${decodeURI(this.pathnameArray[1])}`,
+        'occurrences'
+      ]);
     }
   }
 

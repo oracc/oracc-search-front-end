@@ -29,9 +29,8 @@ export class DetailsComponent implements OnInit {
   private paginationSliceStart: number = 0;
   private paginationSliceEnd: number = 7;
   private all: any;
-  private pathnameArray = window.location.pathname.slice(1).split('/');
   private isMobile: boolean;
-  private breadcrumbLink = getBreadcrumbs();
+  private breadcrumbLink = getBreadcrumbs(this.router);
 
   constructor(
     private getDataService: GetDataService,
