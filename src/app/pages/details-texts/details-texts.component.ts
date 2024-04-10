@@ -186,9 +186,7 @@ export class DetailsTextsComponent implements OnInit {
             // set the navigation link manually when searching for project text id's in the url bar
             // slightly different routes are used for desktop and mobile
 
-            let url = this.isMobile
-              ? '/search-results/id/occurrences/texts'
-              : '/search/search-results/id/occurrences/texts';
+            let url = '/search-results/id/occurrences/texts';
 
             this.router.navigate([url, anchorEl.innerText]);
           } else {

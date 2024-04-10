@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   public routerLink: string;
   public searchParam: string;
   public showSuggestions = false;
-  public breadcrumbLink =  getBreadcrumbs();
+  public breadcrumbLink = getBreadcrumbs();
 
   constructor(
     private getDataService: GetDataService,
@@ -26,8 +26,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.routerLink =
-      window.innerWidth < 991 ? 'search/search-results' : 'search-results';
+    this.routerLink = 'search-results';
     this.isMobile = window.innerWidth < 991 ? true : false;
     this.searchInput = document.querySelector('.js-search-input');
     this.searchButton = document.querySelector('.js-search-btn');
