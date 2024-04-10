@@ -19,7 +19,10 @@ export class BreadcrumbsComponent {
     });
   }
 
-  public handleBreadcrumbClick(e, link, id, data?) {
-    this.router.navigate([link], { state: { data } });
+  public handleBreadcrumbClick(num) {
+    if (num < this.breadcrumbsLinks.length) {
+      const link = this.breadcrumbsLinks[num];
+      this.router.navigate([link.url]);
+    }
   }
 }

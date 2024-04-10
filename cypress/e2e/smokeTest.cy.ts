@@ -1,9 +1,9 @@
 const oraccUrl = 'http://localhost:4200';
-describe('basic home visibility', () => {
-  it('checks the home page is the search page', () => {
+describe('home page', () => {
+  it('is the search page', () => {
     cy.visit(oraccUrl);
 
-    cy.get('.search__title').contains('Search Oracc').should('be.visible');
+    check_page_is_search();
 
     // cy.get('.cookies').should('be.visible'); // not applicable to local
 
@@ -12,8 +12,8 @@ describe('basic home visibility', () => {
   });
 });
 
-describe('search process visibiity', () => {
-  it('goes through process of a search and checks component visibility', () => {
+describe('search process component journey', () => {
+  it('shows the correct pages', () => {
     cy.visit(oraccUrl);
     // do a search for "water" and check suggestions show
     cy.get('.search__input').type('water');
@@ -51,10 +51,34 @@ describe('search process visibiity', () => {
     cy.get('.bcrumbs__list-item').contains('texts').click();
     cy.get('.details').should('be.visible'); // if this passes then the breadcrumb issue is fixed
   });
+  it('is navigable via breadcrumbs', () => {
+    cy.visit(oraccUrl);
+    check_page_is_search();
+    cy.get('.search__input').type('water{enter}');
+    check_page_is_search_results();
+    cy.get('span.results__table-cell').contains('ugu').click();
+    check_page_is_search_result();
+    cy.get('p.norms span.sux').contains('ugu').click();
+    check_page_is_details();
+    cy.get('.details__panel-main').contains('KUB 03, 103 r 6').click();
+    check_page_is_details_texts();
+    cy.get('table.transliteration tr.l a.cbd span.sux').contains('er').click();
+    check_page_is_glossary_article_texts();
+    cy.get('ul.bcrumbs__list li:nth-of-type(5)').click();
+    check_page_is_details_texts();
+    cy.get('ul.bcrumbs__list li:nth-of-type(4)').click();
+    check_page_is_details();
+    cy.get('ul.bcrumbs__list li:nth-of-type(3)').click();
+    check_page_is_search_result();
+    cy.get('ul.bcrumbs__list li:nth-of-type(2)').click();
+    check_page_is_search_results();
+    cy.get('ul.bcrumbs__list li:nth-of-type(1)').click();
+    check_page_is_search();
+  });
 });
 
-describe('popups not blank', () => {
-  it('checks if popups work properly', () => {
+describe('footnote popup', () => {
+  it('works properly', () => {
     cy.visit(oraccUrl);
     cy.get('.search__input').type('watering place {enter}');
     cy.contains('ugu').click();
@@ -65,3 +89,34 @@ describe('popups not blank', () => {
     cy.get('p.note').should('be.visible').should('not.be.empty');
   });
 });
+
+// First page: search.component
+function check_page_is_search() {
+  cy.get('.search__title').contains('Search Oracc').should('be.visible');
+  cy.get('app-search div.search__content div.search__form').next().next().should("not.exist");
+}
+
+// Second page: search-results.component
+function check_page_is_search_results() {
+  cy.get('section.results');
+}
+
+// Third page: search.component
+function check_page_is_search_result() {
+  cy.get('div.glossary-article');
+}
+
+// Fourth page: details.component
+function check_page_is_details() {
+  cy.get('section.details--main');
+}
+
+// Fifth page: details-texts.component
+function check_page_is_details_texts() {
+  cy.get('section.details--texts');
+}
+
+// Sixth page: glossary-article-texts.component
+function check_page_is_glossary_article_texts() {
+  cy.get('div.glossary-article-text');
+}
