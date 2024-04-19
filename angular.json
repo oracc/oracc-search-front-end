@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/search/",
+            "baseHref": "/",
             "outputPath": "dist/oracc",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -74,7 +74,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "baseHref": "/search",
+              "baseHref": "/",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,

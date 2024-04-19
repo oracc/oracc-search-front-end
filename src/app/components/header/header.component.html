@@ -8,7 +8,7 @@
         <ul class="header__nav-list">
           <li class="header__nav-list-item" *ngIf="isDesktop">
             <a
-              routerLink="/search"
+              routerLink="/"
               routerLinkActive="header__nav-list-link--active"
               class="header__nav-list-link"
               >{{ "header.linkText1" | translate }}</a
@@ -36,14 +36,6 @@
               target="_blank"
               class="header__nav-list-link"
               >{{ "header.linkText4" | translate }}</a
-            >
-          </li>
-          <li class="header__nav-list-item">
-            <a
-              href="http://oracc.museum.upenn.edu/doc/help/index.html"
-              target="_blank"
-              class="header__nav-list-link"
-              >{{ "header.linkText5" | translate }}</a
             >
           </li>
         </ul>
