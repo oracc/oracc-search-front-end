@@ -1,4 +1,7 @@
-function p3zoom(z) {
+function p3zoom(_id) {
+}
+
+function p3zoomgx(_project, _glos, _gxis, _zoom) {
 }
 
 function hideNote(_e,nid) {

@@ -42,6 +42,7 @@
               ]
             },
             "build-oracc": {
+              "baseHref": "/search/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

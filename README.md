@@ -92,6 +92,7 @@ Now we can use `rsync` to push this new version to the
 production server. Let's say our new version is `1.2.3`:
 
 ```sh
+ng build -c build-oracc
 rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-end/1.2.3
 ```
 
