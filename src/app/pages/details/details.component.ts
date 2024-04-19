@@ -29,9 +29,7 @@ export class DetailsComponent implements OnInit {
   private paginationSliceStart: number = 0;
   private paginationSliceEnd: number = 7;
   private all: any;
-  private pathnameArray = window.location.pathname.slice(1).split('/');
   private isMobile: boolean;
-  private breadcrumbLink = getBreadcrumbs();
 
   constructor(
     private getDataService: GetDataService,
@@ -39,7 +37,7 @@ export class DetailsComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private router: Router
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { getBreadcrumbs } from 'src/utils/utils';
@@ -16,13 +17,13 @@ export class SearchComponent implements OnInit {
   public routerLink: string;
   public searchParam: string;
   public showSuggestions = false;
-  public breadcrumbLink = getBreadcrumbs();
 
   constructor(
+    private router: Router,
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
   ngOnInit() {
