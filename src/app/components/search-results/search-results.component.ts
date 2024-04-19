@@ -40,7 +40,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   private noResults = false;
   private searchMsg = false;
   private navigationSubscription;
-  private breadcrumbLink = getBreadcrumbs();
 
   @Output() public wordClickEvent = new EventEmitter();
 
@@ -49,7 +48,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     private router: Router,
     private breadcrumbsService: HandleBreadcrumbsService
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.search();

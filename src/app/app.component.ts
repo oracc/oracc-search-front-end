@@ -25,7 +25,5 @@ export class AppComponent {
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 991;
-    this.isHome = window.location.pathname === '/';
-    this.isPageNotFound = window.location.pathname === '/404';
   }
 }

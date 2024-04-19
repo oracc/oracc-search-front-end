@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+
 // Method used for getting element path in non Chrome browsers
 export function composedPath(el) {
   const path = [];
@@ -18,9 +20,8 @@ export function composedPath(el) {
   return path;
 }
 
-export function getBreadcrumbs() {
-  const url = window.location.pathname;
-  const urlSegments = url.split('/').filter((segment) => segment !== ''); // Split URL and remove empty segments
+export function getBreadcrumbs(router: Router) {
+  const urlSegments = router.url.split('/').filter((segment) => segment !== ''); // Split URL and remove empty segments
 
   const breadcrumbs = [];
   let currentPath = '/';
@@ -29,8 +30,6 @@ export function getBreadcrumbs() {
     // decode the name and path segments to display special characters correctly
     const decodedName = decodeURI(segment).replace('-', ' ');
     const decodedPath = decodeURI(segment);
-
-    if (index === 0) return; // Skip the first segment since it is just the base URL
 
     currentPath += `${decodedPath}/`;
 

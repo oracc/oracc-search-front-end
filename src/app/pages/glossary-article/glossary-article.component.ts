@@ -13,8 +13,6 @@ import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 })
 export class GlossaryArticleComponent implements OnInit {
   public glossaryContent: any;
-  public pathnameArray = window.location.pathname.slice(1).split('/');
-  public breadcrumbLink = getBreadcrumbs();
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
@@ -23,7 +21,7 @@ export class GlossaryArticleComponent implements OnInit {
     private breadcrumbsService: HandleBreadcrumbsService,
     private router: Router
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
   ngOnInit() {
