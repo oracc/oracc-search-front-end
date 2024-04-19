@@ -98,8 +98,8 @@ rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-en
 
 ### Switch to the new assets
 
-The website is currently served from a `/new` directory on the production server. This is achieved through a
-symlink from `/home/oracc/www/new` to the directory
+The website is currently served from a `/search` directory on the production server. This is achieved through a
+symlink from `/home/oracc/www/search` to the directory
 containing the assets.
 
 Use the `main` git branch for production deployments.
@@ -111,8 +111,8 @@ I'm also showing a possible result of the ls command):
 
 ```sh
 $ ssh rits@build-oracc.museum.upenn.edu
-rits@build-oracc:~$ ls -l /home/oracc/www/new
-lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/new -> /home/rits/www/oracc-search-front-end/1.2.2
+rits@build-oracc:~$ ls -l /home/oracc/www/search
+lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/search -> /home/rits/www/oracc-search-front-end/1.2.2
 ```
 
 Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
