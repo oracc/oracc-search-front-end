@@ -2,10 +2,18 @@
 
 .header {
   min-height: 100px;
-  background-color: $white;
   box-shadow: 0 0 8px 0 $grayDark;
   position: relative;
   z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(210, 149, 86, 1) 0%,
+    rgba(239, 198, 140, 1) 8%,
+    rgba(243, 222, 186, 1) 14%,
+    rgba(252, 249, 219, 1) 42%,
+    rgba(252, 249, 219, 1) 100%
+  );
+
   @media only screen and (max-width: 991px) {
     min-height: 70px;
     box-shadow: none;
@@ -67,6 +75,12 @@
   color: $red;
   font-weight: 700;
   font-size: 40px;
+}
+
+.header__logo-image {
+  position: relative;
+  left: 0;
+  max-width: 40vw;
 }
 
 .header__nav-list {
@@ -132,7 +146,7 @@
   top: 7px;
   transition: $dur $ease;
   &:hover {
-    color: darken($grayLight, 10%);
+    color: darken($grayLight, 20%);
   }
   @media only screen and (max-width: 991px) {
     font-size: 12px;
@@ -161,7 +175,7 @@
 }
 
 .header__nav-lang-link--active {
-  color: darken($grayLight, 10%);
+  color: darken($grayLight, 30%);
 }
 
 /// Header mob menu toggle button

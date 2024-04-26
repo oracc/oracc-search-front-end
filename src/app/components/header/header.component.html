@@ -1,7 +1,14 @@
 <header class="header">
   <div class="container header__content" (click)="closeNavPanel($event)">
     <div class="header__logo">
-      <a routerLink="/" class="header__logo-link">Oracc</a>
+      <a routerLink="/" class="header__logo-link"
+        ><img
+          *ngIf="isDesktop; else mobileLogo"
+          class="header__logo-image"
+          [src]="imgURL"
+          alt="ORACC: The Open Richly Annotated Cuneiform Corpus"
+      /></a>
+      <ng-template #mobileLogo> Oracc </ng-template>
     </div>
     <div class="header__nav">
       <nav class="header__nav-bar" [class.header__nav-bar--active]="isMenuOpen">
