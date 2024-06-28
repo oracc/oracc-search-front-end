@@ -42,19 +42,16 @@ export class GetDataService {
   }
 
   public getGlossaryArticleData() {
-    return this.http.get(this.glossaryArticleURL + this.lang + '/' + this.id, {
+    return this.http.get(`${this.glossaryArticleURL}${this.lang}/${this.id}`, {
       responseType: 'text'
     });
   }
 
   public getProjectTextData(params: ParamMap) {
     const projectId = params.get('projectId');
-    const subProjectId = params.get('subprojectId');
     const textId = params.get('textId');
 
-    const url = subProjectId
-      ? `${this.oraccBaseUrl}/${projectId}/${subProjectId}/${textId}`
-      : `${this.oraccBaseUrl}/${projectId}/${textId}`;
+    const url = `${this.oraccBaseUrl}/${projectId}/${textId}?html`;
 
     return this.http.get(url, {
       responseType: 'text'
@@ -106,6 +103,24 @@ export class GetDataService {
       `${this.oraccBaseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}${zoom}${page}`,
       { responseType: 'text' }
     );
+  }
+
+  // Get information from the oracc server.
+  // project is neo or rimanum or whatever.
+  // language is language code, such as akk or sux.
+  // isid is the instance set ID, such as sux.r000003
+  // options has the following possible keys:
+  // - zoom: The zoom item (if the metadata was clicked)
+  // - page: The page number for pagination (from 1)
+  // - ref: The item ref, such as P405163.13
+  public getDetailData2(project, language, isid, options) {
+    let url: string = `${this.oraccBaseUrl}/${project}/${language}?xis=${isid}`;
+    ['ref', 'zoom', 'page'].forEach(v => {
+      if (v in options) {
+        url += `&${v}=${options[v]}`;
+      }
+    });
+    return this.http.get(url, { responseType: 'text' });
   }
 
   private findParent(element, condition) {

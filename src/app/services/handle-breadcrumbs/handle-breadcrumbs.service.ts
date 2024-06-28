@@ -10,7 +10,7 @@ export class HandleBreadcrumbsService {
   constructor() {}
 
   public setBreadcrumbs(router: Router) {
-    const urlSegments = router.url.split('/').filter((segment) => segment !== ''); // Split URL and remove empty segments
+    const urlSegments = router.url.split('?')[0].split('/').filter((segment) => segment !== ''); // Split URL and remove empty segments
     let currentPath = '/';
 
     urlSegments.forEach((segment, index) => {

@@ -2,8 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { composedPath, getBreadcrumbs } from '../../../utils/utils';
+import { Router, ActivatedRoute } from '@angular/router';
+import { composedPath, splitOutTranslations } from '../../../utils/utils';
 import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
 
 @Component({
@@ -30,7 +30,6 @@ export class DetailsTextsComponent implements OnInit {
   private totalLines: number;
   private isTermDataShown: boolean;
   private isMobile: boolean;
-  private paramMap: ParamMap;
 
   constructor(
     private getDataService: GetDataService,
@@ -44,17 +43,24 @@ export class DetailsTextsComponent implements OnInit {
 
   ngOnInit() {
     const paramMap = this.route.snapshot.paramMap;
-    const projectId = paramMap.get('projectId');
 
-    if (projectId !== null) {
+    if (paramMap.get('projectId') !== null) {
       // user accesses project text by entering a url manually
       this.getDataService.getProjectTextData(paramMap).subscribe((data) => {
         this.handleTextToHTMLConversion(data, true);
       });
     } else {
       // user accesses project texts via the search functionality
-      this.getDataService.getTermData().subscribe((data) => {
-        this.handleTextToHTMLConversion(data, true);
+      //this.getDataService.getTermData().subscribe((data) => {
+      //  this.handleTextToHTMLConversion(data, true);
+      //});
+      this.getDataService.getDetailData2(
+        'neo',
+        this.route.snapshot.queryParams['lang'],
+        this.route.snapshot.queryParams['isid'],
+        {ref: this.route.snapshot.queryParams['iref']}
+      ).subscribe((data) => {
+        this.handleTextToHTMLConversionP4(data, true);
       });
       this.chosenTermText = this.getDataService.getChosenTermText();
     }
@@ -89,25 +95,50 @@ export class DetailsTextsComponent implements OnInit {
       }
     });
 
-    const controlsInput = htmlData.getElementById('p3controls');
-    this.totalPages = Array(
-      parseInt(
-        controlsInput.querySelector(
-          '.p3-pages .p3toccenter.bg-dk span:nth-of-type(6)'
-        ).innerHTML,
-        10
-      )
-    )
-      .fill(1)
-      .map((e, i) => i);
-    this.shouldShowPaginationArrows = this.totalPages.length > 6;
-    this.isTermDataShown = true;
-    this.totalTexts = parseInt(
-      controlsInput.querySelector(
-        '#p3navRight .p3-items .p3toccenter.bg-dk span:nth-of-type(5)'
-      ).innerHTML,
+    const controlsInput = htmlData.getElementById('p4PageNav');
+    this.totalLines = parseInt(
+      controlsInput.getAttribute('data-imax'),
       10
     );
+    const pageCount = parseInt(
+      controlsInput.getAttribute('data-pmax'),
+      10
+    );
+    this.totalPages = Array(pageCount - this.paginationSliceStart)
+      .fill(1)
+      .map((e, i) => i + 1);
+    this.shouldShowPaginationArrows = this.totalPages.length > 6;
+    this.paginatedPages = this.totalPages.slice(
+      this.paginationSliceStart,
+      this.paginationSliceEnd
+    );
+
+    this.metadataPanel = "<i class='fas fa-spinner'></i>";
+    this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
+      metadataPanelInput.innerHTML
+    );
+
+    this.middlePanel = "<i class='fas fa-spinner'></i>";
+    this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
+      middlePanelInput.innerHTML
+    );
+
+    this.textPanel = "<i class='fas fa-spinner'></i>";
+    this.textPanel = this.sanitizer.bypassSecurityTrustHtml(
+      textPanelInput.innerHTML
+    );
+
+    this.unsanatizedMetadataPanel = metadataPanelInput.innerHTML;
+  }
+
+  private handleTextToHTMLConversionP4(text: string, isTermData = false) {
+    const parser = new DOMParser();
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const metadataPanelInput = htmlData.getElementById('p4MenuOutline');
+    let middlePanelInput = htmlData.getElementById('p4XtfData');
+    const textPanelInput = splitOutTranslations(middlePanelInput);
+
+    const controlsInput = htmlData.getElementById('p4PageNav');
 
     this.metadataPanel = "<i class='fas fa-spinner'></i>";
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(

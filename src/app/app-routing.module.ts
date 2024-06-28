@@ -12,7 +12,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 
 // duplicated routes are to handle both desktop and mobile versions
 const routes: Routes = [
-  // routes for desktop
   {
     path: '',
     component: SearchComponent,
@@ -22,69 +21,35 @@ const routes: Routes = [
         component: SearchResultsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb',
+        path: 'search-results/:word',
         component: GlossaryArticleComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences',
+        path: 'search-results/:word/occurrences',
         component: DetailsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts',
+        path: 'search-results/:word/occurrences/texts',
         component: DetailsTextsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts/source',
+        path: 'search-results/:word/occurrences/texts/source',
         component: DetailsSourceComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts/:id:breadcrumb',
+        path: 'search-results/:word/occurrences/texts/:id:breadcrumb',
         component: GlossaryArticleTextsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb',
+        path: 'search-results/:word/occurrences/texts/source/:id:breadcrumb',
         component: GlossaryArticleSourceComponent
       }
     ]
   },
 
-  // routes for mobile
-  {
-    path: 'search-results',
-    component: SearchResultsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb',
-    component: GlossaryArticleComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences',
-    component: DetailsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts',
-    component: DetailsTextsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts/source',
-    component: DetailsSourceComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts/:id:breadcrumb',
-    component: GlossaryArticleTextsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb',
-    component: GlossaryArticleSourceComponent
-  },
-
   // routes for manually entereded URL's
   {
     path: ':projectId/:textId',
-    component: DetailsTextsComponent
-  },
-  {
-    path: ':projectId/:subprojectId/:textId',
     component: DetailsTextsComponent
   },
 

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 import { DIRECTION, PANEL_TYPE } from '../../../utils/consts';
 
@@ -28,70 +28,48 @@ export class DetailsComponent implements OnInit {
   public shouldShowPaginationArrows: boolean;
   private paginationSliceStart: number = 0;
   private paginationSliceEnd: number = 7;
-  private all: any;
   private isMobile: boolean;
 
   constructor(
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,
     private sanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
   ngOnInit() {
-    this.getDataService.getDetailData().subscribe((data) => {
+    this.getDataService.getDetailData2(
+      'neo',
+      this.route.snapshot.queryParams['lang'],
+      this.route.snapshot.queryParams['isid'],
+      {}
+    ).subscribe((data) => {
       this.handleTextToHTMLConversion(data);
     });
     this.chosenTermText = this.getDataService.getChosenTermText();
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
-  private handleTextToHTMLConversion(text: string, isTermData = false) {
+  private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const htmlDataToBeReduced = parser.parseFromString(text, 'text/html');
-    const allInput = htmlData.getElementsByTagName('body')[0];
-    const metadataPanelInput = htmlData.getElementById('p3left');
-    const middlePanelInput = htmlData.getElementById('p3right');
-    const textPanelInput = htmlDataToBeReduced.getElementById('p3right');
+    const metadataPanelInput = htmlData.getElementById('p4MenuOutline');
+    const middlePanelInput = htmlData.getElementById('p4Content');
 
-    middlePanelInput.querySelectorAll('td').forEach((node) => {
-      if (node.className === 't1 xtr') {
-        if (typeof node.remove === 'function') {
-          node.remove();
-        } else {
-          node.outerHTML = '';
-        }
-      }
-    });
-    textPanelInput.querySelectorAll('td').forEach((node) => {
-      if (node.className !== 't1 xtr') {
-        if (typeof node.remove === 'function') {
-          node.remove();
-        } else {
-          node.outerHTML = '';
-        }
-      }
-    });
-
-    const controlsInput = htmlData.getElementById('p3controls');
+    const controlsInput = htmlData.getElementById('p4PageNav');
 
     this.totalLines = parseInt(
-      controlsInput.querySelector(
-        '.p3-pages .p3toccenter.bg-dk span:nth-of-type(5)'
-      ).innerHTML,
+      controlsInput.getAttribute('data-imax'),
       10
     );
-    this.totalPages = Array(
-      parseInt(
-        controlsInput.querySelector(
-          '.p3-pages .p3toccenter.bg-dk span:nth-of-type(6)'
-        ).innerHTML,
-        10
-      )
-    )
+    const pageCount = parseInt(
+      controlsInput.getAttribute('data-pmax'),
+      10
+    );
+    this.totalPages = Array(pageCount - this.paginationSliceStart)
       .fill(1)
       .map((e, i) => i + 1);
     this.shouldShowPaginationArrows = this.totalPages.length > 6;
@@ -100,37 +78,10 @@ export class DetailsComponent implements OnInit {
       this.paginationSliceEnd
     );
 
-    this.all = this.sanitizer.bypassSecurityTrustHtml(allInput.innerHTML);
-
-    if (isTermData) {
-      this.isTermDataShown = true;
-      this.totalTexts = parseInt(
-        controlsInput.querySelector(
-          '#p3navRight .p3-items .p3toccenter.bg-dk span:nth-of-type(5)'
-        ).innerHTML,
-        10
-      );
-
-      this.metadataPanel = "<i class='fas fa-spinner'></i>";
-      this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
-        metadataPanelInput.innerHTML
-      );
-
-      this.middlePanel = "<i class='fas fa-spinner'></i>";
-      this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
-        middlePanelInput.innerHTML
-      );
-
-      this.textPanel = "<i class='fas fa-spinner'></i>";
-      this.textPanel = this.sanitizer.bypassSecurityTrustHtml(
-        textPanelInput.innerHTML
-      );
-    } else {
-      this.isTermDataShown = false;
-      this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
-        middlePanelInput.innerHTML
-      );
-    }
+    this.isTermDataShown = false;
+    this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
+      middlePanelInput.innerHTML
+    );
 
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
       metadataPanelInput.innerHTML
@@ -140,8 +91,7 @@ export class DetailsComponent implements OnInit {
   private handleTextToHTMLConversionOnPageChange(text) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const p3content = htmlData.querySelector('#p3right');
-    const middlePanelInput = p3content? p3content : htmlData.querySelector('body');
+    const middlePanelInput = htmlData.getElementById('p4Content');
 
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       middlePanelInput.innerHTML
@@ -158,16 +108,18 @@ export class DetailsComponent implements OnInit {
           return el.localName === 'a';
         });
 
-    const idParam = !!anchorEl
-      ? anchorEl.href
-          .split(':')
-          [anchorEl.href.split(':').length - 1].split("'")[0]
-      : '';
+    const ref = anchorEl.getAttribute('data-iref');
 
-    if (idParam) {
+    if (ref) {
       // navigates to details texts component
-      this.router.navigate([decodeURI(this.router.url), 'texts']);
-      this.getDataService.setTermDataParam(idParam);
+      this.router.navigate(
+        ['search-results', this.route.snapshot.paramMap.get('word'), 'occurrences', 'texts'],
+        { queryParams: {
+          iref: ref,
+          lang: this.route.snapshot.queryParams['lang'],
+          isid: this.route.snapshot.queryParams['isid']
+        }}
+      );
     }
   }
 

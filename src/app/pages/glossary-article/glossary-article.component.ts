@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 
 @Component({
@@ -19,6 +19,7 @@ export class GlossaryArticleComponent implements OnInit {
     private getDataService: GetDataService,
     private sanitizer: DomSanitizer,
     private breadcrumbsService: HandleBreadcrumbsService,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.router);
@@ -45,41 +46,20 @@ export class GlossaryArticleComponent implements OnInit {
         });
 
     if (!!anchorEl) {
-      const anchorElText = anchorEl.querySelector('span')
-        ? anchorEl.querySelector('span').innerText
-        : anchorEl.innerText;
-      e.preventDefault();
-      const queryParams = anchorEl.href
-        .split('(')
-        .slice(1)
-        .join()
-        .slice(0, -1)
-        .replace(/'/g, '')
-        .split(',');
-      const filteredText = anchorElText.match('%')
-        ? Array.prototype.slice
-            .call(anchorEl.parentNode.childNodes)
-            .filter((node) => {
-              return node.nodeType === 3 ? node : '';
-            })[0].textContent
-        : anchorElText;
-
-      this.getDataService.setDetailsPageParams(
-        queryParams[0],
-        queryParams[1],
-        queryParams[2]
+      this.router.navigate(
+        ['search-results', this.route.snapshot.paramMap.get('word'), 'occurrences'],
+        { queryParams: {
+          lang: anchorEl.getAttribute('data-lang'),
+          isid: anchorEl.getAttribute('data-isid'),
+        }}
       );
-      this.getDataService.setChosenTermText(filteredText);
-
-      // navigates to details component
-      this.router.navigate([decodeURI(this.router.url), 'occurrences']);
     }
   }
 
   private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const glossaryContentInput = htmlData.getElementsByTagName('body')[0];
+    const glossaryContentInput = htmlData.getElementById('p4Content');
 
     this.glossaryContent = this.sanitizer.bypassSecurityTrustHtml(
       glossaryContentInput.innerHTML

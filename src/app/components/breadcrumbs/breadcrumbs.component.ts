@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, ActivatedRouteSnapshot, Route, Router } from "@angular/router";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
 
 @Component({
@@ -12,6 +12,7 @@ export class BreadcrumbsComponent {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private breadcrumbsService: HandleBreadcrumbsService
   ) {
     this.router.events.subscribe((val) => {
@@ -22,7 +23,7 @@ export class BreadcrumbsComponent {
   public handleBreadcrumbClick(num) {
     if (num < this.breadcrumbsLinks.length) {
       const link = this.breadcrumbsLinks[num];
-      this.router.navigate([link.url]);
+      this.router.navigate([link.url], {queryParams: this.route.snapshot.queryParams});
     }
   }
 }
