@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { Router } from '@angular/router';
-import { composedPath, getBreadcrumbs } from '../../../utils/utils';
+import { composedPath } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-source',

@@ -37,11 +37,11 @@ const routes: Routes = [
         component: DetailsSourceComponent
       },
       {
-        path: 'search-results/:word/occurrences/texts/:id:breadcrumb',
+        path: 'search-results/:word/occurrences/texts/:sig',
         component: GlossaryArticleTextsComponent
       },
       {
-        path: 'search-results/:word/occurrences/texts/source/:id:breadcrumb',
+        path: 'search-results/:word/occurrences/texts/source/:sig',
         component: GlossaryArticleSourceComponent
       }
     ]

@@ -74,9 +74,13 @@ export class GetDataService {
   public getSubsequentGlossaryArticleData() {
     const bio = '\u2623'; // force encoding always to be utf8
     const encodedString = encodeURIComponent(bio + this.glossaryArticleParam);
-    return this.http.get(this.glossaryArticleURL + 'sig?' + encodedString, {
+    return this.http.get(`${this.glossaryArticleURL}?sig=${encodedString}`, {
       responseType: 'text'
     });
+    // old style:
+//    return this.http.get(this.glossaryArticleURL + 'sig?' + encodedString, {
+//      responseType: 'text'
+//    });
   }
 
   public setSearchParam(searchParam: string) {

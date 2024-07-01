@@ -8,7 +8,6 @@ import {
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { getBreadcrumbs } from 'src/utils/utils';
 
 @Component({
   selector: 'app-search-results',

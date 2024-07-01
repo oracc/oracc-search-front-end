@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
-import { composedPath, getBreadcrumbs } from '../../../utils/utils';
+import { composedPath } from '../../../utils/utils';
 import { DIRECTION, PANEL_TYPE } from '../../../utils/consts';
 
 @Component({
@@ -113,7 +113,11 @@ export class DetailsComponent implements OnInit {
     if (ref) {
       // navigates to details texts component
       this.router.navigate(
-        ['search-results', this.route.snapshot.paramMap.get('word'), 'occurrences', 'texts'],
+        [ 'search-results',
+          this.route.snapshot.paramMap.get('word'),
+          'occurrences',
+          'texts'
+        ],
         { queryParams: {
           iref: ref,
           lang: this.route.snapshot.queryParams['lang'],
@@ -171,35 +175,29 @@ export class DetailsComponent implements OnInit {
   }
 
   public handlePageChange(e, direction?: string) {
+    const oldPage = this.currentPage;
     if (!direction) {
       this.currentPage = parseInt(e.target.innerHTML, 10);
-      this.handlePaginationBoundary(this.currentPage);
-      this.getDataService
-        .getDetailDataPage(this.currentPage)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversionOnPageChange(data);
-        });
     }
     if (direction === DIRECTION.BACK && this.currentPage >= 1) {
       this.currentPage = this.currentPage - 1 || 1;
-      this.handlePaginationBoundary(this.currentPage);
-      this.getDataService
-        .getDetailDataPage(this.currentPage)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversionOnPageChange(data);
-        });
     }
     if (
       direction === DIRECTION.FORWARD &&
       this.totalPages.length !== this.currentPage
     ) {
       this.currentPage = this.currentPage + 1;
+    }
+    if (oldPage !== this.currentPage) {
       this.handlePaginationBoundary(this.currentPage);
-      this.getDataService
-        .getDetailDataPage(this.currentPage)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversionOnPageChange(data);
-        });
+      this.getDataService.getDetailData2(
+        'neo',
+        this.route.snapshot.queryParams['lang'],
+        this.route.snapshot.queryParams['isid'],
+        { page: this.currentPage }
+      ).subscribe((data) => {
+        this.handleTextToHTMLConversionOnPageChange(data);
+      });
     }
   }
 }

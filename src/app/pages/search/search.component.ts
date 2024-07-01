@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { getBreadcrumbs } from 'src/utils/utils';
 
 @Component({
   selector: 'app-search',

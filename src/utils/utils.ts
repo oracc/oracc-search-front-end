@@ -20,28 +20,6 @@ export function composedPath(el) {
   return path;
 }
 
-export function getBreadcrumbs(router: Router) {
-  const urlSegments = router.url.split('/').filter((segment) => segment !== ''); // Split URL and remove empty segments
-
-  const breadcrumbs = [];
-  let currentPath = '/';
-
-  urlSegments.forEach((segment, index) => {
-    // decode the name and path segments to display special characters correctly
-    const decodedName = decodeURI(segment).replace('-', ' ');
-    const decodedPath = decodeURI(segment);
-
-    currentPath += `${decodedPath}/`;
-
-    breadcrumbs.push({
-      name: decodedName,
-      url: currentPath
-    });
-  });
-
-  return breadcrumbs;
-}
-
 // Removes td.t1.xtr elements from node.
 // Returns a clone of node that has all td elements that do not
 // match .t1.xtr removed.
@@ -59,6 +37,8 @@ function splitOutTranslationsNode(node: Node) : Node {
       return null;
     }
   }
+  // Not a TD, so must be in both. Shallow clone it for the
+  // translations node and fill it with splits of all the child nodes.
   let translations = node.cloneNode(false);
   node.childNodes.forEach(child => {
     let trans = splitOutTranslationsNode(child);

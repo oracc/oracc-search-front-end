@@ -178,56 +178,42 @@ export class DetailsTextsComponent implements OnInit {
           return el.localName === 'a';
         });
 
-    const anchorElWrapper = e.path
+    const bloc = anchorEl.parentElement.getAttribute('data-bloc');
+    const wsig = anchorEl.getAttribute('data-wsig');
+    const anchorElWrapper : Element = e.path
       ? e.path.find((el) => {
           return !!el.className ? el.className.includes('w ') : '';
         })
       : composedPath(e.target).find((el) => {
           return !!el.className ? el.className.includes('w ') : '';
         });
-    if (anchorEl) {
-      const queryParams = !!anchorEl.attributes[1]
-        ? anchorEl.attributes[1].nodeValue
-            .split('(')
-            .slice(1)
-            .join()
-            .slice(0, -1)
-            .replace(/'/g, '')
-            .split(' , ')
-        : [];
+    const ref = anchorElWrapper.getAttribute('id');
 
-      if (anchorEl.href.includes('showexemplar')) {
-        sessionStorage.setItem(
-          SESSION_KEYS.METADATA_CONTENT,
-          this.unsanatizedMetadataPanel
-        );
-        this.router.navigate([this.router.url, 'source'], {
-          state: { data: this.unsanatizedMetadataPanel }
-        });
-      } else {
-        if (!!anchorElWrapper) {
-          const pureQueryParam = `${
-            queryParams[queryParams.length - 1].split('=')[0]
-          }=${anchorElWrapper.title}`;
+    if (this.route.snapshot.paramMap.get('projectId') !== null) {
+      // set the navigation link manually when searching for project text id's in the url bar
+      // slightly different routes are used for desktop and mobile
+      //...
+      let url = '/search-results/id/occurrences/texts';
 
-          if (this.route.snapshot.paramMap.get('projectId') !== null) {
-            // set the navigation link manually when searching for project text id's in the url bar
-            // slightly different routes are used for desktop and mobile
-
-            let url = '/search-results/id/occurrences/texts';
-
-            this.router.navigate([url, anchorEl.innerText]);
-          } else {
-            this.router.navigate([
-              decodeURI(this.router.url),
-              anchorEl.innerText
-            ]);
-          }
-
-          this.getDataService.setSubsequentGlossaryArticleParam(pureQueryParam);
-        }
-      }
+      this.router.navigate([url, anchorEl.innerText]);
+    } else {
+      this.router.navigate(
+        [ 'search-results',
+          this.route.snapshot.paramMap.get('word'),
+          'occurrences',
+          'texts',
+          anchorEl.innerText
+        ],
+        { queryParams: {
+          iref: ref,
+          lang: this.route.snapshot.queryParams['lang'],
+          isid: this.route.snapshot.queryParams['isid'],
+          wsig: encodeURIComponent(wsig)
+        }}
+      );
     }
+    // this is irrelevant now unless that subsequentPageVisit=true thing does anything
+    this.getDataService.setSubsequentGlossaryArticleParam(wsig);
   }
 
   public handleMetadataClick(e) {
@@ -292,35 +278,31 @@ export class DetailsTextsComponent implements OnInit {
   }
 
   public handlePageChange(e, direction?: string) {
+    const oldPage = this.currentPage;
     if (!direction) {
       this.currentPage = parseInt(e.target.innerHTML, 10);
-      this.handlePaginationBoundary(this.currentPage);
-      this.getDataService
-        .getDetailDataPage(this.currentPage)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversionOnPageChange(data);
-        });
     }
     if (direction === DIRECTION.BACK && this.currentPage >= 1) {
       this.currentPage = this.currentPage - 1 || 1;
-      this.handlePaginationBoundary(this.currentPage);
-      this.getDataService
-        .getDetailDataPage(this.currentPage)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversionOnPageChange(data);
-        });
     }
     if (
       direction === DIRECTION.FORWARD &&
       this.totalPages.length !== this.currentPage
     ) {
       this.currentPage = this.currentPage + 1;
+    }
+    if (oldPage !== this.currentPage) {
       this.handlePaginationBoundary(this.currentPage);
-      this.getDataService
-        .getDetailDataPage(this.currentPage)
-        .subscribe((data) => {
-          this.handleTextToHTMLConversionOnPageChange(data);
-        });
+      this.getDataService.getDetailData2(
+        'neo',
+        this.route.snapshot.queryParams['lang'],
+        this.route.snapshot.queryParams['isid'],
+        { page: this.currentPage,
+          ref: this.route.snapshot.queryParams['iref']
+        }
+      ).subscribe((data) => {
+        this.handleTextToHTMLConversionOnPageChange(data);
+      });
     }
   }
 

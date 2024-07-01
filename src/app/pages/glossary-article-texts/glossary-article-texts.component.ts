@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { Router } from '@angular/router';
-import { composedPath, getBreadcrumbs } from '../../../utils/utils';
+import { ActivatedRoute, Router } from '@angular/router';
+import { composedPath } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-texts',
@@ -13,17 +13,16 @@ import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 })
 export class GlossaryArticleTextsComponent implements OnInit {
   public glossaryContent: any;
-  private pathnameArray: Array<string>;
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
     private getDataService: GetDataService,
     private sanitizer: DomSanitizer,
     private breadcrumbsService: HandleBreadcrumbsService,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.router);
-    this.pathnameArray = this.router.url.split('/').filter(v => v != '');
   }
 
   ngOnInit() {
@@ -51,25 +50,19 @@ export class GlossaryArticleTextsComponent implements OnInit {
         ? anchorEl.querySelector('span').innerText
         : anchorEl.innerText;
       e.preventDefault();
-      const queryParams = anchorEl.href
-        .split('(')
-        .slice(1)
-        .join()
-        .slice(0, -1)
-        .replace(/'/g, '')
-        .split(',');
-
-      this.getDataService.setDetailsPageParams(
-        queryParams[0],
-        queryParams[1],
-        queryParams[2]
-      );
+      //...
 
       this.getDataService.setChosenTermText(anchorElText);
-      this.router.navigate([
-        `/search-results/${decodeURI(this.pathnameArray[1])}`,
-        'occurrences'
-      ]);
+      this.router.navigate(
+        [ 'search-results',
+          this.route.snapshot.paramMap.get('word'),
+          'occurrences'
+        ],
+        { queryParams: {
+          lang: this.route.snapshot.queryParams['lang'],
+          isid: this.route.snapshot.queryParams['isid']
+        }}
+      );
     }
   }
 

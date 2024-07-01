@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
-import { composedPath, getBreadcrumbs } from '../../../utils/utils';
+import { composedPath } from '../../../utils/utils';
 import { PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
 
 @Component({
