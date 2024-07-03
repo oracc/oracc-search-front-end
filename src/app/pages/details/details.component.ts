@@ -129,6 +129,16 @@ export class DetailsComponent implements OnInit {
 
   public handleMetadataClick(e) {
     e.preventDefault();
+    if (e.target.tagName === "A" && e.target.hasAttribute('data-zoom')) {
+      const zoom = parseInt(e.target.getAttribute('data-zoom'), 10);
+      this.getDataService.getDetailData2(
+        'neo',
+        this.route.snapshot.queryParams['lang'],
+        this.route.snapshot.queryParams['isid'], {
+          zoom: zoom
+        }
+    ).subscribe(data => this.handleTextToHTMLConversionOnPageChange(data));
+    }
     if (this.getDataService.p3ZoomGx(e.target, (data) => {
       this.handleTextToHTMLConversionOnPageChange(data);
     })) {

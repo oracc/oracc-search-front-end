@@ -1,4 +1,42 @@
-import { Router } from '@angular/router';
+// Find ancestor with a particular tag. Returns false if there isn't one.
+export function findAncestorByTag(element: HTMLElement, tag: string) : HTMLElement | null {
+  tag = tag.toUpperCase();
+  while (element) {
+    if (element.tagName == tag) {
+      return element;
+    }
+    element = element.parentElement;
+  }
+  return null;
+}
+
+// Find ancestor with a particular attribute that filterBy also returns true for.
+// Returns the value of this attribute of this element.
+// Returns null if there is no such element.
+export function findAttributeBy(element: Element, attrName: string, filterBy: (e : Element) => boolean) : string | null {
+  while (element) {
+    if (filterBy(element) && element.hasAttribute(attrName)) {
+      return element.getAttribute(attrName);
+    }
+    element = element.parentElement;
+  }
+  return null;
+}
+
+// Find ancestor with a particular attribute.
+// Returns the value of this attribute of this element.
+// Returns null if there is no such element.
+export function findAttribute(element: Element, attrName: string) : string | null {
+  return findAttributeBy(element, attrName, (e) => true);
+}
+
+// Find ancestor that has the specified tag and an attrName attribute.
+// Returns the value of this attribute of this element.
+// Returns null if there is no such element.
+export function findAttributeOnTag(element: Element, attrName: string, tag: string) : string | null {
+  tag = tag.toUpperCase();
+  return findAttributeBy(element, attrName, (e) => e.tagName == tag);
+}
 
 // Method used for getting element path in non Chrome browsers
 export function composedPath(el) {

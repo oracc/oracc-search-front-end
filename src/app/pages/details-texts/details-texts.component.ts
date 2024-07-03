@@ -1,10 +1,18 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, SecurityContext, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { composedPath, splitOutTranslations } from '../../../utils/utils';
+import {
+  composedPath,
+  splitOutTranslations,
+  findAttribute,
+  findAttributeOnTag,
+  findAttributeBy,
+  findAncestorByTag
+} from '../../../utils/utils';
 import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-details-texts',
@@ -14,7 +22,6 @@ import { DIRECTION, PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
 })
 export class DetailsTextsComponent implements OnInit {
   public metadataPanel: any = "<i class='fas fa-spinner'></i>";
-  public unsanatizedMetadataPanel: any;
   public currentPage = 1;
   public textPanel: any;
   public chosenTermText: string;
@@ -127,35 +134,37 @@ export class DetailsTextsComponent implements OnInit {
     this.textPanel = this.sanitizer.bypassSecurityTrustHtml(
       textPanelInput.innerHTML
     );
-
-    this.unsanatizedMetadataPanel = metadataPanelInput.innerHTML;
   }
 
   private handleTextToHTMLConversionP4(text: string, isTermData = false) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const metadataPanelInput = htmlData.getElementById('p4MenuOutline');
-    let middlePanelInput = htmlData.getElementById('p4XtfData');
-    const textPanelInput = splitOutTranslations(middlePanelInput);
+    const outlineInput = htmlData.getElementById('p4MenuOutline');
+    const metadataInput = htmlData.getElementById('p4XtfMeta');
 
     const controlsInput = htmlData.getElementById('p4PageNav');
 
     this.metadataPanel = "<i class='fas fa-spinner'></i>";
-    this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
-      metadataPanelInput.innerHTML
-    );
+    let m = document.createElement('div');
+    m.append(metadataInput, outlineInput);
+    this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(m.innerHTML);
 
-    this.middlePanel = "<i class='fas fa-spinner'></i>";
-    this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
-      middlePanelInput.innerHTML
-    );
+    let middlePanelInput = this.handleTextToHTMLConversionMiddlePanel(htmlData, 'p4XtfData');
 
+    const textPanelInput = splitOutTranslations(middlePanelInput);
     this.textPanel = "<i class='fas fa-spinner'></i>";
     this.textPanel = this.sanitizer.bypassSecurityTrustHtml(
       textPanelInput.innerHTML
     );
+  }
 
-    this.unsanatizedMetadataPanel = metadataPanelInput.innerHTML;
+  private handleTextToHTMLConversionMiddlePanel(htmlData: Document, middleId: string) {
+    let middlePanelInput = htmlData.getElementById(middleId);
+    this.middlePanel = "<i class='fas fa-spinner'></i>";
+    this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
+      middlePanelInput.innerHTML
+    );
+    return middlePanelInput;
   }
 
   private handleTextToHTMLConversionOnPageChange(text: string) {
@@ -170,28 +179,38 @@ export class DetailsTextsComponent implements OnInit {
 
   public handleDetailsClick(e) {
     e.preventDefault();
-    const anchorEl = e.path
-      ? e.path.find((el) => {
-          return el.localName === 'a';
-        })
-      : composedPath(e.target).find((el) => {
-          return el.localName === 'a';
-        });
+    const anchorEl = findAncestorByTag(e.target, 'a');
+    if (!anchorEl) {
+      // Are we in the <h1> tag containing an external link to the text source?
+      const els = e.target.getElementsByTagName('a');
+      if (els.length != 0) {
+        window.open(els[0].getAttribute('href'), '_blank');
+      }
+      return;
+    }
 
-    const bloc = anchorEl.parentElement.getAttribute('data-bloc');
+    const bloc = findAttribute(anchorEl, 'data-bloc');
+    if (bloc) {
+      // We are looking at a score number (number on the left, not
+      // prefixed by 'o').
+      const ref = findAttributeOnTag(e.target, 'id', 'tr');
+      if (ref) {
+        // This sends us back into neo, which seems wrong.
+        // We should make a special page for it.
+        window.open(`${environment.glossaryArticleURL}/neo/${ref}?block=${bloc}`, '_blank');
+      }
+      console.log("Cannot find associated TR element for this data-bloc attribute");
+      return;
+    }
     const wsig = anchorEl.getAttribute('data-wsig');
-    const anchorElWrapper : Element = e.path
-      ? e.path.find((el) => {
-          return !!el.className ? el.className.includes('w ') : '';
-        })
-      : composedPath(e.target).find((el) => {
-          return !!el.className ? el.className.includes('w ') : '';
-        });
-    const ref = anchorElWrapper.getAttribute('id');
+    const ref = findAttributeBy(e.target, 'id', (el) => {
+      return el.classList.contains('w');
+    });
 
     if (this.route.snapshot.paramMap.get('projectId') !== null) {
       // set the navigation link manually when searching for project text id's in the url bar
       // slightly different routes are used for desktop and mobile
+      // need to test this, I doubt it works...
       //...
       let url = '/search-results/id/occurrences/texts';
 
@@ -205,7 +224,7 @@ export class DetailsTextsComponent implements OnInit {
           anchorEl.innerText
         ],
         { queryParams: {
-          iref: ref,
+          ref: ref,
           lang: this.route.snapshot.queryParams['lang'],
           isid: this.route.snapshot.queryParams['isid'],
           wsig: encodeURIComponent(wsig)
@@ -218,34 +237,28 @@ export class DetailsTextsComponent implements OnInit {
 
   public handleMetadataClick(e) {
     e.preventDefault();
-    const clickedLink = e.path
-      ? e.path.find((el) => {
-          return el.href;
-        })
-      : composedPath(e.target).find((el) => {
-          return el.href;
-        });
-    if (!!clickedLink) {
-      if (clickedLink.href.startsWith('javascript')) {
-        const queryParams = clickedLink.href
-          .split('(')
-          .slice(1)
-          .join()
-          .slice(0, -1)
-          .replace(/'/g, '')
-          .split(',');
-
-        sessionStorage.setItem(
-          SESSION_KEYS.METADATA_CONTENT,
-          this.unsanatizedMetadataPanel
-        );
-        this.getDataService.setSourceParams(queryParams);
-        this.router.navigate([this.router.url, 'source'], {
-          state: { data: this.unsanatizedMetadataPanel }
-        });
-      } else {
-        window.open(clickedLink.href);
-      }
+    const clickedLink = findAncestorByTag(e.target, 'a');
+    if (!clickedLink) {
+      return;
+    }
+    const zoom = clickedLink.getAttribute('data-zoom');
+    if (zoom) {
+      this.getDataService.getDetailData2(
+        'neo',
+        this.route.snapshot.queryParams['lang'],
+        this.route.snapshot.queryParams['isid'], {
+          ref: this.route.snapshot.queryParams['iref'],
+          zoom: zoom
+        }
+      ).subscribe((data) => {
+        // this doesn't seem to work! It seems when you have ref=, zoom= doesn't have an effect. Ask Steve...
+        const parser = new DOMParser();
+        const htmlData = parser.parseFromString(data, 'text/html');
+        this.handleTextToHTMLConversionMiddlePanel(htmlData, 'p4XtfData');
+        console.log(`details texts component zoom: ${zoom}`);
+      });
+    } else {
+      window.open(clickedLink.getAttribute('href'));
     }
   }
 
