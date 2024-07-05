@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { Router } from '@angular/router';
-import { composedPath } from '../../../utils/utils';
+import { ActivatedRoute, Router } from '@angular/router';
+import { composedPath, findAttribute } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-source',
@@ -12,12 +12,14 @@ import { composedPath } from '../../../utils/utils';
 export class GlossaryArticleSourceComponent implements OnInit {
   public glossaryContent: any;
   private pathnameArray: Array<string>;
+  private project: string = 'neo';
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
     private getDataService: GetDataService,
     private sanitizer: DomSanitizer,
     private breadcrumbsService: HandleBreadcrumbsService,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.pathnameArray = this.router.url.split('/').filter(v => v != '');
@@ -25,11 +27,19 @@ export class GlossaryArticleSourceComponent implements OnInit {
   }
 
   ngOnInit() {
+    const proj = this.route.snapshot.queryParams['proj'];
+    if (proj) {
+      this.project = proj;
+    }
     this.getSubsequentArticle();
   }
 
   public getSubsequentArticle() {
-    this.getDataService.getSubsequentGlossaryArticleData().subscribe((data) => {
+    console.log(`getSubsequentArticle ${this.project} ${this.route.snapshot.queryParams['wsig']}`);
+    this.getDataService.getSubsequentGlossaryArticleData(
+      this.project,
+      this.route.snapshot.queryParams['wsig']
+    ).subscribe((data) => {
       // @ts-ignore
       this.handleTextToHTMLConversion(data);
     });
@@ -64,9 +74,14 @@ export class GlossaryArticleSourceComponent implements OnInit {
 
       this.getDataService.setChosenTermText(anchorElText);
       this.router.navigate([
-        `/search-results/${decodeURI(this.pathnameArray[1])}`,
+        'search-results',
+        anchorElText,
         'occurrences'
-      ]);
+      ], { queryParams: {
+        lang: findAttribute(anchorEl, 'data-lang'),
+        isid: findAttribute(anchorEl, 'data-isid'),
+        proj: this.project
+      }});
     }
   }
 
@@ -75,6 +90,11 @@ export class GlossaryArticleSourceComponent implements OnInit {
     const htmlData = parser.parseFromString(text, 'text/html');
     const glossaryContentInput = htmlData.getElementsByTagName('body')[0];
 
+    const pager = htmlData.getElementById('p4Pager');
+    if (pager && pager.hasAttribute('data-proj')) {
+      this.project = pager.getAttribute('data-proj');
+      console.log(`glossary-article-source project ${this.project}`);
+    }
     if (
       glossaryContentInput.querySelector('p') &&
       (glossaryContentInput

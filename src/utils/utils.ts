@@ -58,16 +58,17 @@ export function composedPath(el) {
   return path;
 }
 
-// Removes td.t1.xtr elements from node.
-// Returns a clone of node that has all td elements that do not
-// match .t1.xtr removed.
-function splitOutTranslationsNode(node: Node) : Node {
+// Removes TD elements that match the class named in extractClass.
+// Returns the extracted nodes put into a copy of node (but without the
+// non-extracted TD elements). Node has its TD elements with the
+// matching class removed.
+function splitOutColumnByClass(node: Node, extractClass: string) : Node {
   if (!node) {
     return null;
   }
   if (node.nodeName == "TD") {
     let el = node as Element;
-    if (el.classList.contains('t1') && el.classList.contains('xtr')) {
+    if (el.classList.contains(extractClass)) {
       // move this node into the "translations" return value
       return node.parentNode.removeChild(node);
     } else {
@@ -77,16 +78,26 @@ function splitOutTranslationsNode(node: Node) : Node {
   }
   // Not a TD, so must be in both. Shallow clone it for the
   // translations node and fill it with splits of all the child nodes.
-  let translations = node.cloneNode(false);
+  let extracted = node.cloneNode(false);
   node.childNodes.forEach(child => {
-    let trans = splitOutTranslationsNode(child);
-    if (trans) {
-      translations.appendChild(trans);
+    let extr = splitOutColumnByClass(child, extractClass);
+    if (extr) {
+      extracted.appendChild(extr);
     }
   });
-  return translations;
+  return extracted;
 }
 
+// Removes td.xtr elements from node.
+// Returns a clone of node that has all td elements that do not
+// match .xtr removed.
 export function splitOutTranslations(node: Element) : Element {
-  return splitOutTranslationsNode(node) as Element;
+  return splitOutColumnByClass(node, 'xtr') as Element;
+}
+
+// Removes td.enum elements from node.
+// Returns a clone of node that has all td elements that do not
+// match .enum removed.
+export function splitOutEnums(node: Element) : Element {
+  return splitOutColumnByClass(node, 'enum') as Element;
 }

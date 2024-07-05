@@ -2,8 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { NavigationEnd, Router } from '@angular/router';
-import { composedPath } from '../../../utils/utils';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { composedPath, findAncestorByTag, findAttribute, splitOutEnums } from '../../../utils/utils';
 import { PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
 
 @Component({
@@ -22,11 +22,13 @@ export class DetailsSourceComponent implements OnInit {
   public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
   public isTextPanelActive = window.innerWidth > 991 ? true : false;
   private isMobile: boolean;
+  private project: string = 'neo';
 
   constructor(
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService,
     private sanitizer: DomSanitizer,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.router);
@@ -34,51 +36,44 @@ export class DetailsSourceComponent implements OnInit {
       history.state.data ||
         sessionStorage.getItem(SESSION_KEYS.METADATA_CONTENT)
     );
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.getDataService.getSourceData().subscribe((data: any) => {
-          this.handleTextToHTMLConversion(data);
-        });
-      }
-    });
+    // this seems to fire no matter which page we are on
+    //this.router.events.subscribe((event) => {
+    //  if (event instanceof NavigationEnd) {
+    //    this.populatePanels();
+    //  }
+    //});
   }
 
   ngOnInit() {
-    this.getDataService.getSourceData().subscribe((data: any) => {
+    this.populatePanels();
+    this.isMobile = window.innerWidth < 991 ? true : false;
+  }
+
+  private populatePanels() {
+    this.getDataService.getSourceData(
+      this.project,
+      this.route.snapshot.queryParams['iref'],
+      this.route.snapshot.queryParams['bloc']
+    ).subscribe((data: any) => {
       this.handleTextToHTMLConversion(data);
     });
-    this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
   private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const htmlDataToBeReduced = parser.parseFromString(text, 'text/html');
-    const middlePanelInput = htmlData.querySelector('.text');
-    const textPanelInput = htmlDataToBeReduced.querySelector('.text');
-
-    middlePanelInput.querySelectorAll('td').forEach((node) => {
-      if (node.className === 't1 xtr') {
-        if (typeof node.remove === 'function') {
-          node.remove();
-        } else {
-          node.outerHTML = '';
-        }
-      }
-    });
-    textPanelInput.querySelectorAll('td').forEach((node) => {
-      if (node.className !== 't1 xtr') {
-        if (typeof node.remove === 'function') {
-          node.remove();
-        } else {
-          node.outerHTML = '';
-        }
-      }
-    });
+    const pager = htmlData.getElementById('p4Pager');
+    if (pager.hasAttribute('data-proj')) {
+      this.project = pager.getAttribute('data-proj');
+      console.log(`project: ${this.project}`);
+    } else {
+      console.log('did not find a data-proj');
+    }
+    const textPanelInput = splitOutEnums(pager);
 
     this.middlePanel = "<i class='fas fa-spinner'></i>";
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
-      middlePanelInput.innerHTML
+      pager.innerHTML
     );
 
     this.textPanel = "<i class='fas fa-spinner'></i>";
@@ -98,6 +93,7 @@ export class DetailsSourceComponent implements OnInit {
 
   public handleMetadataClick(e) {
     e.preventDefault();
+    console.log('details-source handleMetadataClick');
     const clickedLink = e.path
       ? e.path.find((el) => {
           return el.href;
@@ -141,79 +137,35 @@ export class DetailsSourceComponent implements OnInit {
 
   public handleDetailsClick(e) {
     e.preventDefault();
-    const anchorEl = e.path
-      ? e.path.find((el) => {
-          return el.localName === 'a';
-        })
-      : composedPath(e.target).find((el) => {
-          return el.localName === 'a';
-        });
+    const anchorEl = findAncestorByTag(e.target, 'a');
+    const wsig = findAttribute(e.target, 'data-wsig');
 
-    const anchorElWrapper = e.path
-      ? e.path.find((el) => {
-          return !!el.className ? el.className.includes('w ') : '';
-        })
-      : composedPath(e.target).find((el) => {
-          return !!el.className ? el.className.includes('w ') : '';
-        });
-    if (anchorEl) {
-      const queryParams = !!anchorEl.attributes[1]
-        ? anchorEl.attributes[1].nodeValue
-            .split('(')
-            .slice(1)
-            .join()
-            .slice(0, -1)
-            .replace(/'/g, '')
-            .split(' , ')
-        : [];
-      const popupDataQueryParams = !!anchorEl.attributes[2]
-        ? anchorEl.attributes[2].nodeValue
-            .split('(')
-            .slice(1)
-            .join()
-            .slice(0, -1)
-            .replace(/'/g, '')
-            .split(',')
-        : [];
+// what is this showexemplar thing?...
+//      if (anchorEl.href.includes('showexemplar')) {
+//        const popupSourceQueryParams = !!anchorEl.attributes[0]
+//          ? anchorEl.attributes[0].nodeValue
+//              .split('(')
+//              .slice(1)
+//              .join()
+//              .slice(0, -1)
+//              .replace(/'/g, '')
+//              .split(',')
+//          : [];
+//        this.getDataService.setSourceParams(popupSourceQueryParams);
+//        this.router.navigate([this.router.url]);
 
-      if (anchorEl.href.includes('showexemplar')) {
-        const popupSourceQueryParams = !!anchorEl.attributes[0]
-          ? anchorEl.attributes[0].nodeValue
-              .split('(')
-              .slice(1)
-              .join()
-              .slice(0, -1)
-              .replace(/'/g, '')
-              .split(',')
-          : [];
-
-        this.getDataService.setSourceParams(popupSourceQueryParams);
-        this.router.navigate([this.router.url]);
-      } else {
-        if (!!anchorElWrapper) {
-          const pureQueryParam = `${
-            queryParams[queryParams.length - 1].split('=')[0]
-          }=${anchorElWrapper.title}`;
-
-          this.router.navigate(
-            [decodeURI(this.router.url), anchorEl.innerText],
-            { state: { data: history.state.data } }
-          );
-          this.getDataService.setSubsequentGlossaryArticleParam(pureQueryParam);
-        } else if (!!anchorEl.href) {
-          this.isDetailsPopupActive = true;
-          this.getDataService
-            .getPopupData(
-              popupDataQueryParams[0],
-              popupDataQueryParams[1],
-              popupDataQueryParams[2]
-            )
-            .subscribe((data: any) => {
-              this.handlePopupDataInputHTMLConversion(data);
-            });
-        }
-      }
-    }
+    console.log(`proj: ${this.project} sig: ${wsig}`);
+    this.router.navigate([
+      'search-results',
+      this.route.snapshot.paramMap.get('word'),
+      'occurrences',
+      'texts',
+      'source',
+      anchorEl.innerText
+    ], { queryParams: {
+      proj: this.project,
+      wsig: wsig
+    }});
   }
 
   public handleDetailsPopupClose() {

@@ -13,6 +13,7 @@ import { composedPath } from '../../../utils/utils';
 })
 export class GlossaryArticleTextsComponent implements OnInit {
   public glossaryContent: any;
+  private project: string = 'neo';
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
@@ -26,11 +27,18 @@ export class GlossaryArticleTextsComponent implements OnInit {
   }
 
   ngOnInit() {
+    const proj = this.route.snapshot.queryParams['proj'];
+    if (proj) {
+      this.project = proj;
+    }
     this.getSubsequentArticle();
   }
 
   public getSubsequentArticle() {
-    this.getDataService.getSubsequentGlossaryArticleData().subscribe((data) => {
+    this.getDataService.getSubsequentGlossaryArticleData(
+      this.project,
+      this.route.snapshot.queryParams['wsig']
+    ).subscribe((data) => {
       // @ts-ignore
       this.handleTextToHTMLConversion(data);
     });

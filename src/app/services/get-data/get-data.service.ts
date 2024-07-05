@@ -71,10 +71,10 @@ export class GetDataService {
     this.subsequentPageVisit = isSubsequent;
   }
 
-  public getSubsequentGlossaryArticleData() {
+  public getSubsequentGlossaryArticleData(project: string, sig: string) {
     const bio = '\u2623'; // force encoding always to be utf8
-    const encodedString = encodeURIComponent(bio + this.glossaryArticleParam);
-    return this.http.get(`${this.glossaryArticleURL}?sig=${encodedString}`, {
+    const encodedString = encodeURIComponent(bio + sig);
+    return this.http.get(`${environment.glossaryArticleURL}/${project}?sig=${encodedString}`, {
       responseType: 'text'
     });
     // old style:
@@ -127,6 +127,9 @@ export class GetDataService {
     return this.http.get(url, { responseType: 'text' });
   }
 
+  // Get information for score data from the oracc server.
+  // project might be neo or rimanum.
+  // 
   private findParent(element, condition) {
     while (element) {
       if (condition(element)) {
@@ -194,16 +197,9 @@ export class GetDataService {
     this.sourceParams = params;
   }
 
-  public getSourceData() {
-    let sourceDataURL = `${this.oraccBaseUrl}/${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
-
-    if (this.sourceParams[2].length > 0) {
-      sourceDataURL = sourceDataURL + '?' + this.sourceParams[2];
-      if (this.sourceParams[3].length > 0) {
-        sourceDataURL = sourceDataURL + ',' + this.sourceParams[3];
-      }
-    }
-    return this.http.get(sourceDataURL, {
+  public getSourceData(project: string, ref: string, bloc: string) {
+    let url = `${this.oraccBaseUrl}/${project}/${ref}?block=${bloc}`;
+    return this.http.get(url, {
       responseType: 'text'
     });
   }

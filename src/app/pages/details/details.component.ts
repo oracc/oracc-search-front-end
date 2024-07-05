@@ -28,6 +28,7 @@ export class DetailsComponent implements OnInit {
   public shouldShowPaginationArrows: boolean;
   private paginationSliceStart: number = 0;
   private paginationSliceEnd: number = 7;
+  private project: string = 'neo';
   private isMobile: boolean;
 
   constructor(
@@ -41,8 +42,12 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    const proj = this.route.snapshot.queryParams['proj'];
+    if (proj) {
+      this.project = proj;
+    }
     this.getDataService.getDetailData2(
-      'neo',
+      this.project,
       this.route.snapshot.queryParams['lang'],
       this.route.snapshot.queryParams['isid'],
       {}
@@ -121,7 +126,8 @@ export class DetailsComponent implements OnInit {
         { queryParams: {
           iref: ref,
           lang: this.route.snapshot.queryParams['lang'],
-          isid: this.route.snapshot.queryParams['isid']
+          isid: this.route.snapshot.queryParams['isid'],
+          proj: this.project
         }}
       );
     }
@@ -132,7 +138,7 @@ export class DetailsComponent implements OnInit {
     if (e.target.tagName === "A" && e.target.hasAttribute('data-zoom')) {
       const zoom = parseInt(e.target.getAttribute('data-zoom'), 10);
       this.getDataService.getDetailData2(
-        'neo',
+        this.project,
         this.route.snapshot.queryParams['lang'],
         this.route.snapshot.queryParams['isid'], {
           zoom: zoom
@@ -201,7 +207,7 @@ export class DetailsComponent implements OnInit {
     if (oldPage !== this.currentPage) {
       this.handlePaginationBoundary(this.currentPage);
       this.getDataService.getDetailData2(
-        'neo',
+        this.project,
         this.route.snapshot.queryParams['lang'],
         this.route.snapshot.queryParams['isid'],
         { page: this.currentPage }

@@ -36,6 +36,7 @@ export class DetailsTextsComponent implements OnInit {
   private paginationSliceEnd: number = 7;
   private totalLines: number;
   private isTermDataShown: boolean;
+  private project: string = 'neo';
   private isMobile: boolean;
 
   constructor(
@@ -49,6 +50,10 @@ export class DetailsTextsComponent implements OnInit {
   }
 
   ngOnInit() {
+    const proj = this.route.snapshot.queryParams['proj'];
+    if (proj) {
+      this.project = proj;
+    }
     const paramMap = this.route.snapshot.paramMap;
 
     if (paramMap.get('projectId') !== null) {
@@ -62,7 +67,7 @@ export class DetailsTextsComponent implements OnInit {
       //  this.handleTextToHTMLConversion(data, true);
       //});
       this.getDataService.getDetailData2(
-        'neo',
+        this.project,
         this.route.snapshot.queryParams['lang'],
         this.route.snapshot.queryParams['isid'],
         {ref: this.route.snapshot.queryParams['iref']}
@@ -149,22 +154,20 @@ export class DetailsTextsComponent implements OnInit {
     m.append(metadataInput, outlineInput);
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(m.innerHTML);
 
-    let middlePanelInput = this.handleTextToHTMLConversionMiddlePanel(htmlData, 'p4XtfData');
-
-    const textPanelInput = splitOutTranslations(middlePanelInput);
-    this.textPanel = "<i class='fas fa-spinner'></i>";
-    this.textPanel = this.sanitizer.bypassSecurityTrustHtml(
-      textPanelInput.innerHTML
-    );
+    this.handleTextToHTMLConversionText(htmlData, 'p4XtfData');
   }
 
-  private handleTextToHTMLConversionMiddlePanel(htmlData: Document, middleId: string) {
+  private handleTextToHTMLConversionText(htmlData: Document, middleId: string) {
     let middlePanelInput = htmlData.getElementById(middleId);
     this.middlePanel = "<i class='fas fa-spinner'></i>";
+    this.textPanel = "<i class='fas fa-spinner'></i>";
+    const textPanelInput = splitOutTranslations(middlePanelInput);
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       middlePanelInput.innerHTML
     );
-    return middlePanelInput;
+    this.textPanel = this.sanitizer.bypassSecurityTrustHtml(
+      textPanelInput.innerHTML
+    );
   }
 
   private handleTextToHTMLConversionOnPageChange(text: string) {
@@ -195,9 +198,18 @@ export class DetailsTextsComponent implements OnInit {
       // prefixed by 'o').
       const ref = findAttributeOnTag(e.target, 'id', 'tr');
       if (ref) {
-        // This sends us back into neo, which seems wrong.
-        // We should make a special page for it.
-        window.open(`${environment.glossaryArticleURL}/neo/${ref}?block=${bloc}`, '_blank');
+        this.router.navigate([
+          'search-results',
+          this.route.snapshot.paramMap.get('word'),
+          'occurrences',
+          'texts',
+          'source'
+        ], {
+          queryParams: {
+            iref: ref,
+            bloc: bloc
+          }
+        });
       }
       console.log("Cannot find associated TR element for this data-bloc attribute");
       return;
@@ -216,22 +228,22 @@ export class DetailsTextsComponent implements OnInit {
 
       this.router.navigate([url, anchorEl.innerText]);
     } else {
-      this.router.navigate(
-        [ 'search-results',
-          this.route.snapshot.paramMap.get('word'),
-          'occurrences',
-          'texts',
-          anchorEl.innerText
-        ],
-        { queryParams: {
-          ref: ref,
-          lang: this.route.snapshot.queryParams['lang'],
-          isid: this.route.snapshot.queryParams['isid'],
-          wsig: encodeURIComponent(wsig)
-        }}
-      );
+      this.router.navigate([
+        'search-results',
+        this.route.snapshot.paramMap.get('word'),
+        'occurrences',
+        'texts',
+        anchorEl.innerText
+      ],{
+        queryParams: {
+        ref: ref,
+        lang: this.route.snapshot.queryParams['lang'],
+        isid: this.route.snapshot.queryParams['isid'],
+        wsig: wsig
+      }});
     }
     // this is irrelevant now unless that subsequentPageVisit=true thing does anything
+    console.log(`subsequent: ${wsig}`);
     this.getDataService.setSubsequentGlossaryArticleParam(wsig);
   }
 
@@ -244,7 +256,7 @@ export class DetailsTextsComponent implements OnInit {
     const zoom = clickedLink.getAttribute('data-zoom');
     if (zoom) {
       this.getDataService.getDetailData2(
-        'neo',
+        this.project,
         this.route.snapshot.queryParams['lang'],
         this.route.snapshot.queryParams['isid'], {
           ref: this.route.snapshot.queryParams['iref'],
@@ -254,7 +266,7 @@ export class DetailsTextsComponent implements OnInit {
         // this doesn't seem to work! It seems when you have ref=, zoom= doesn't have an effect. Ask Steve...
         const parser = new DOMParser();
         const htmlData = parser.parseFromString(data, 'text/html');
-        this.handleTextToHTMLConversionMiddlePanel(htmlData, 'p4XtfData');
+        this.handleTextToHTMLConversionText(htmlData, 'p4XtfData');
         console.log(`details texts component zoom: ${zoom}`);
       });
     } else {
@@ -307,7 +319,7 @@ export class DetailsTextsComponent implements OnInit {
     if (oldPage !== this.currentPage) {
       this.handlePaginationBoundary(this.currentPage);
       this.getDataService.getDetailData2(
-        'neo',
+        this.project,
         this.route.snapshot.queryParams['lang'],
         this.route.snapshot.queryParams['isid'],
         { page: this.currentPage,
