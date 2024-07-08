@@ -198,6 +198,7 @@ export class GetDataService {
   }
 
   public getSourceData(project: string, ref: string, bloc: string) {
+    // actually score?
     let url = `${this.oraccBaseUrl}/${project}/${ref}?block=${bloc}`;
     return this.http.get(url, {
       responseType: 'text'

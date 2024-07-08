@@ -38,6 +38,7 @@ export class DetailsTextsComponent implements OnInit {
   private isTermDataShown: boolean;
   private project: string = 'neo';
   private isMobile: boolean;
+  private item: string = '';
 
   constructor(
     private getDataService: GetDataService,
@@ -144,6 +145,8 @@ export class DetailsTextsComponent implements OnInit {
   private handleTextToHTMLConversionP4(text: string, isTermData = false) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
+    const pager: HTMLElement = htmlData.getElementById('p4Pager');
+    this.item = pager.getAttribute('data-item');
     const outlineInput = htmlData.getElementById('p4MenuOutline');
     const metadataInput = htmlData.getElementById('p4XtfMeta');
 
@@ -185,9 +188,11 @@ export class DetailsTextsComponent implements OnInit {
     const anchorEl = findAncestorByTag(e.target, 'a');
     if (!anchorEl) {
       // Are we in the <h1> tag containing an external link to the text source?
-      const els = e.target.getElementsByTagName('a');
-      if (els.length != 0) {
-        window.open(els[0].getAttribute('href'), '_blank');
+      if (findAncestorByTag(e.target, 'h1')) {
+        const els = e.target.getElementsByTagName('a');
+        if (els.length != 0) {
+          window.open(els[0].getAttribute('href'), '_blank');
+        }
       }
       return;
     }
@@ -215,9 +220,7 @@ export class DetailsTextsComponent implements OnInit {
       return;
     }
     const wsig = anchorEl.getAttribute('data-wsig');
-    const ref = findAttributeBy(e.target, 'id', (el) => {
-      return el.classList.contains('w');
-    });
+    const ref = findAttributeBy(e.target, 'id', (el) => el.classList.contains('w'));
 
     if (this.route.snapshot.paramMap.get('projectId') !== null) {
       // set the navigation link manually when searching for project text id's in the url bar
@@ -227,7 +230,10 @@ export class DetailsTextsComponent implements OnInit {
       let url = '/search-results/id/occurrences/texts';
 
       this.router.navigate([url, anchorEl.innerText]);
-    } else {
+      return;
+    }
+
+    if (wsig && ref) {
       this.router.navigate([
         'search-results',
         this.route.snapshot.paramMap.get('word'),
@@ -241,10 +247,11 @@ export class DetailsTextsComponent implements OnInit {
         isid: this.route.snapshot.queryParams['isid'],
         wsig: wsig
       }});
+      // this is irrelevant now unless that subsequentPageVisit=true thing does anything
+      console.log(`subsequent: ${wsig}`);
+      this.getDataService.setSubsequentGlossaryArticleParam(wsig);
+      return;
     }
-    // this is irrelevant now unless that subsequentPageVisit=true thing does anything
-    console.log(`subsequent: ${wsig}`);
-    this.getDataService.setSubsequentGlossaryArticleParam(wsig);
   }
 
   public handleMetadataClick(e) {
@@ -269,9 +276,19 @@ export class DetailsTextsComponent implements OnInit {
         this.handleTextToHTMLConversionText(htmlData, 'p4XtfData');
         console.log(`details texts component zoom: ${zoom}`);
       });
-    } else {
-      window.open(clickedLink.getAttribute('href'));
+      return;
     }
+    const onclick = clickedLink.getAttribute('onclick');
+    if (onclick && onclick.startsWith('act_score(')) {
+      // neo opens a popup
+      window.open(`${environment.glossaryArticleURL}/${this.project}/${this.item}?score`);
+      return;
+    }
+    if (onclick && onclick.startsWith('act_sources(')) {
+      window.open(`${environment.glossaryArticleURL}/${this.project}/${this.item}?sources`);
+      return;
+    }
+    window.open(clickedLink.getAttribute('href'));
   }
 
   public togglePanel(e, panelType) {
