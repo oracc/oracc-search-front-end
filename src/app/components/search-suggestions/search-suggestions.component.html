@@ -25,6 +25,8 @@
       class="suggestion"
       (click)="setSearchParam(suggestion)"
       (keyup.enter)="setSearchParam(suggestion)"
+      (keydown.arrowup)="prevSuggestion(); $event.stopPropagation()"
+      (keydown.arrowdown)="nextSuggestion(); $event.stopPropagation()"
       tabindex="0"
     >
       {{ suggestion }}

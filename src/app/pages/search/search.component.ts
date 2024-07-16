@@ -51,4 +51,13 @@ export class SearchComponent implements OnInit {
   setShowSuggestions(showSuggestions: boolean) {
     this.showSuggestions = showSuggestions;
   }
+
+  focusSuggestions() {
+    if (this.showSuggestions) {
+      const suggestions = document.getElementsByClassName('suggestion');
+      if (suggestions.length != 0) {
+        (suggestions[0] as HTMLElement).focus();
+      }
+    }
+  }
 }

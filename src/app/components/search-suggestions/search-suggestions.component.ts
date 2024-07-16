@@ -8,6 +8,7 @@ import {
   OnChanges
 } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
+import { findInCollection } from 'src/utils/utils';
 
 enum SuggestionsCategories {
   COMPLETIONS = 'completions',
@@ -94,5 +95,21 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
 
     // hide suggestions if we click outside the component
     if (searchSuggestionsEl == null) this.showSuggestions = false;
+  }
+
+  nextSuggestion() {
+    const suggestions = document.getElementsByClassName('suggestion');
+    const index = findInCollection(suggestions, e => e == document.activeElement);
+    if (index !== null && index + 1 < suggestions.length) {
+      (suggestions[index + 1] as HTMLElement).focus();
+    }
+  }
+
+  prevSuggestion() {
+    const suggestions = document.getElementsByClassName('suggestion');
+    const index = findInCollection(suggestions, e => e == document.activeElement);
+    if (index !== null && index !== 0) {
+      (suggestions[index - 1] as HTMLElement).focus();
+    }
   }
 }

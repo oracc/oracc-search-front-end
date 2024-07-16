@@ -22,7 +22,7 @@ export class HandleBreadcrumbsService {
       currentPath += `${decodedPath}/`;
       if (this.breadcrumbsLinks.length <= index || this.breadcrumbsLinks[index].url !== currentPath) {
         this.breadcrumbsLinks.splice(index, Infinity, {
-          name: decodedPath.replace('-', ' '),
+          name: decodedPath.replaceAll('-', ' '),
           url: currentPath
         });
       }

@@ -41,8 +41,8 @@ export class GetDataService {
     return this.http.get(this.searchSuggestionsUrl + partialSearchTerm);
   }
 
-  public getGlossaryArticleData() {
-    return this.http.get(`${this.glossaryArticleURL}${this.lang}/${this.id}`, {
+  public getGlossaryArticleData(lang: string, isid: string) {
+    return this.http.get(`${this.glossaryArticleURL}${lang}/${isid}`, {
       responseType: 'text'
     });
   }

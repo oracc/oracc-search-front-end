@@ -167,6 +167,9 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     const urlPathname = '/search-results';
 
     // navigates to glossary article component
-    this.router.navigate([urlPathname, wordClean]);
+    this.router.navigate([urlPathname, wordClean], {queryParams: {
+      lang: lang,
+      isid: id
+    }});
   }
 }

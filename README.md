@@ -238,6 +238,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 This project also uses Cypress for testing. Ensure you've got the backend and frontend apps running before attempting the tests. To run the tests without a window, run `npx cypress run` or `npm run cypress:run`. To open a window and see the tests run (more helpful when writing the tests and debugging), run `npx cypress open` or `npm run cypress:open` and choose the tests you'd like to run through the GUI.
 
+### Debugging
+
+Cypress is not interested in giving us a way to debug Cypress tests
+in a normal IDE. Instead, we place a breakpoint by inserting
+`cy.pause()` in the code, then run `npx cypress open` or
+`npm run cypress:open`. You can't use `cypress:run`; you have to
+use the GUI front end because this is how the debugger is displayed.
+You then have "Resume" and "Next" buttons to click.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

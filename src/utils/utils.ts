@@ -101,3 +101,14 @@ export function splitOutTranslations(node: Element) : Element {
 export function splitOutEnums(node: Element) : Element {
   return splitOutColumnByClass(node, 'enum') as Element;
 }
+
+// Returns the index at which the predicate is true, or null
+// if the predicate is false for all the elements in the collection.
+export function findInCollection(collection: HTMLCollection, predicate: (Element) => boolean) {
+  for (let i = 0; i < collection.length; ++i) {
+    if (predicate(collection[i])) {
+      return i;
+    }
+  }
+  return null;
+}

@@ -30,7 +30,10 @@ export class GlossaryArticleComponent implements OnInit {
   }
 
   public getArticle() {
-    this.getDataService.getGlossaryArticleData().subscribe((data) => {
+    this.getDataService.getGlossaryArticleData(
+      this.route.snapshot.queryParams['lang'],
+      this.route.snapshot.queryParams['isid']
+    ).subscribe((data) => {
       // @ts-ignore
       this.handleTextToHTMLConversion(data);
     });
@@ -46,6 +49,7 @@ export class GlossaryArticleComponent implements OnInit {
         });
 
     if (!!anchorEl) {
+      e.preventDefault();
       this.router.navigate(
         ['search-results', this.route.snapshot.paramMap.get('word'), 'occurrences'],
         { queryParams: {

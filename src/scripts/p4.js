@@ -1,8 +1,6 @@
-function p3zoom(_id) {
-}
-
-function p3zoomgx(_project, _glos, _gxis, _zoom) {
-}
+function act_isid() {}
+function act_iref() {}
+function act_wsig() {}
 
 function hideNote(_e,nid) {
     var note = document.getElementById(nid);

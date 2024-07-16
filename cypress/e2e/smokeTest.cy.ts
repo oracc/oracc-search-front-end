@@ -1,5 +1,3 @@
-const oraccUrl = 'http://localhost:4200';
-
 const configs = [{
   name: 'desktop',
   is_mobile: false,
@@ -12,7 +10,7 @@ const configs = [{
 
 describe('home page', () => {
   it('is the search page', () => {
-    cy.visit(oraccUrl);
+    cy.visit("/");
 
     check_page_is_search();
 
@@ -32,22 +30,30 @@ for (const config of configs) {
     });
     describe(`search process component journey`, () => {
       it('shows the correct pages', () => {
-        cy.visit(oraccUrl);
-        // do a search for "water" and check suggestions show
-        cy.get('.search__input').type('water');
-        cy.get('.suggestions-content').should('be.visible');
-        cy.get('.suggestion').contains('water');
-        cy.get('.search__input').type('{enter}');
+        const search = "wat";
+        const suggestion = "water";
+        const result = "zebu";
+        const form = "ab-za-za";
+        const ref = "NFT 204-206 (AO 4328 (+) 4330) o i 2";
+        const translation = "the enemy has a furious heart";
+        // part of the transliteration that matches this translation
+        const transliteration = "mu-sa-re";
 
-        // check water results table displays and click bail (first result)
+        cy.visit("/");
+        // do a search for "water" and check suggestions show
+        cy.get('.search__input').type(search);
+        cy.get('.suggestions-content').should('be.visible');
+        cy.get('.suggestion').contains(suggestion).click();
+
+        // check water results table displays and click `result`
         cy.get('.results').should('be.visible');
         cy.get('.bcrumbs').should('be.visible');
-        cy.get('li.results__table-cell').contains('bail').click();
+        cy.get('li.results__table-cell').contains(result).click();
 
-        // expect details of a bal
+        // expect details
         cy.get('.glossary').should('be.visible');
         cy.get('.norms').should('be.visible');
-        cy.get('.norms').contains('a bal').click();
+        cy.get('.norms').contains(form).click();
 
         // check breadcrumbs show the correct level of traceback and detail page shown
         cy.get('.bcrumbs').should('be.visible');
@@ -55,37 +61,47 @@ for (const config of configs) {
         cy.get('.details').should('be.visible');
 
         // check clicking on an entry reveals the translation and changes the main column to that entry
-        cy.get('.ce-label').contains('NABU').click();
+        cy.get('.ce-label').contains(ref).click();
         if (config.is_mobile) {
           // open the translation panel
           cy.get('.text-expand').click();
         }
-        cy.contains('good "neck and jaw" barley').should('be.visible');
-        cy.contains('NABU 2017/40').should('be.visible');
+        cy.contains(translation).should('be.visible').click();
+        // now the transliteration corresponding to this translation should be .selected
+        // and visible
+        const translit_element = cy.get('.selected').contains(transliteration).should('be.visible');
 
         // check clicking the "original" text (not translation) goes on to provide details for that word
-        cy.contains('ama').click();
+        translit_element.click();
         cy.get('.bcrumbs').should('be.visible');
-        cy.get('.bcrumbs__list-item').contains('ama').should('be.visible');
+        const breadcrumb1 = form.replaceAll('-', '');
+        cy.get('.bcrumbs__list-item').contains(breadcrumb1).should('be.visible');
+        const breadcrumb2 = transliteration.replaceAll('-', ' ');
+        cy.get('.bcrumbs__list-item').contains(breadcrumb2).should('be.visible');
         cy.get('.norms').should('be.visible');
 
         // check breadcrumbs work in a deep search
         cy.get('.bcrumbs__list-item').contains('texts').click();
-        cy.get('.details').should('be.visible'); // if this passes then the breadcrumb issue is fixed
+        cy.get('.details').should('be.visible');
       });
 
       it('is navigable via breadcrumbs', () => {
-        cy.visit(oraccUrl);
+        const input = "water";
+        const result = "abala";
+        const form = "a-bala";
+        const ref = "CBS 3656 o 25";
+        const transliteration_word = "gada";
+        cy.visit("/");
         check_page_is_search();
-        cy.get('.search__input').type('water{enter}');
+        cy.get('.search__input').type(`${input}{enter}`);
         check_page_is_search_results();
-        cy.get('span.results__table-cell').contains('ugu').click();
+        cy.get('span.results__table-cell').contains(result).click();
         check_page_is_search_result();
-        cy.get('p.norms span.sux').contains('ugu').click();
+        cy.get('p.norms span').contains(form).click();
         check_page_is_details();
-        cy.get('.details__panel-main').contains('KUB 03, 103 r 6').click();
+        cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
-        cy.get('table.transliteration tr.l a.cbd span.sux').contains('er').click();
+        cy.get('table.transliteration tr.l a.cbd span').contains(transliteration_word).click();
         check_page_is_glossary_article_texts();
         cy.get('ul.bcrumbs__list li:nth-of-type(5)').click();
         check_page_is_details_texts();
@@ -99,18 +115,54 @@ for (const config of configs) {
         check_page_is_search();
       });
     });
+
+    describe('search suggestion box', () => {
+      it('is navigable with up and down arrow keys', () => {
+        const search = "wa";
+        const suggestion = "water";
+        const recurse_limit = 50;
+        cy.visit("/");
+        cy.get('.search__input').type(search);
+        cy.get('.suggestion').should('be.visible');
+        cy.get('.search__input').type('{downArrow}');
+        // we have to recurse for this to interlace with Cypress properly
+        const down_to_suggestion = (limit) => {
+          if (limit == 0) {
+            return;
+          }
+          cy.focused().then(($sugg) => {
+            if ($sugg.text().trim() == suggestion) {
+              return;
+            }
+            cy.wrap($sugg).type('{downArrow}');
+            down_to_suggestion(limit - 1);
+          });
+        };
+        down_to_suggestion(recurse_limit);
+        cy.focused().contains(suggestion);
+        cy.focused().type('{upArrow}');
+        cy.focused().contains(suggestion).should('not.exist');
+        cy.focused().type('{downArrow}');
+        cy.focused().contains(suggestion);
+      });
+    });
   });
 }
 
 describe('footnote popup', () => {
   it('works properly', () => {
-    cy.visit(oraccUrl);
-    cy.get('.search__input').type('watering place {enter}');
-    cy.contains('ugu').click();
-    cy.get('span.sux').eq(1).click();
-    cy.contains('(KUB 03, 103 r 6)').click();
+    cy.visit("/");
+    const search = "king";
+    const result = "Abdi-Liʾti";
+    const ref = "Sennacherib 4 36";
+    cy.get('.search__input').type(search);
+    cy.get('.suggestion').contains(search).click();
+    cy.get('.results__table-row').contains(result).click();
+    cy.get('.forms .icountu').click();
+    cy.get('.details__panel-main').contains(ref).click();
 
-    cy.get('span.marker').first().click();
+    cy.get('p.note').should('not.be.visible');
+    cy.get('span.marker').first().trigger('mouseover');
     cy.get('p.note').should('be.visible').should('not.be.empty');
   });
 });
