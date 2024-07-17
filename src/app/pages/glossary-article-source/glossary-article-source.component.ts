@@ -35,7 +35,6 @@ export class GlossaryArticleSourceComponent implements OnInit {
   }
 
   public getSubsequentArticle() {
-    console.log(`getSubsequentArticle ${this.project} ${this.route.snapshot.queryParams['wsig']}`);
     this.getDataService.getSubsequentGlossaryArticleData(
       this.project,
       this.route.snapshot.queryParams['wsig']
@@ -93,7 +92,6 @@ export class GlossaryArticleSourceComponent implements OnInit {
     const pager = htmlData.getElementById('p4Pager');
     if (pager && pager.hasAttribute('data-proj')) {
       this.project = pager.getAttribute('data-proj');
-      console.log(`glossary-article-source project ${this.project}`);
     }
     if (
       glossaryContentInput.querySelector('p') &&

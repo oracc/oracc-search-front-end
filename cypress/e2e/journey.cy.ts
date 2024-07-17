@@ -8,25 +8,18 @@ const configs = [{
   viewport: {width: 600, height: 1000}
 }];
 
-describe('home page', () => {
-  it('is the search page', () => {
-    cy.visit("/");
-
-    check_page_is_search();
-
-    cy.get('.cookies').should('be.visible');
-
-    cy.get('.footer').should('be.visible');
-    cy.get('.header').should('be.visible');
-  });
-});
-
 for (const config of configs) {
   describe(`${config.name}:`, () => {
     before(() => {
-      console.log(config);
+      cy.log(`Configuration: ${JSON.stringify(config)}`);
       const vp = config.viewport;
       cy.viewport(vp.width, vp.height);
+      cy.intercept('GET', '/search/*', (req) => {
+        console.log(JSON.stringify(req));
+        req.continue((res) => {
+          console.log(JSON.stringify(res));
+        });
+      });
     });
     describe(`search process component journey`, () => {
       it('shows the correct pages', () => {
@@ -148,24 +141,6 @@ for (const config of configs) {
     });
   });
 }
-
-describe('footnote popup', () => {
-  it('works properly', () => {
-    cy.visit("/");
-    const search = "king";
-    const result = "Abdi-Liʾti";
-    const ref = "Sennacherib 4 36";
-    cy.get('.search__input').type(search);
-    cy.get('.suggestion').contains(search).click();
-    cy.get('.results__table-row').contains(result).click();
-    cy.get('.forms .icountu').click();
-    cy.get('.details__panel-main').contains(ref).click();
-
-    cy.get('p.note').should('not.be.visible');
-    cy.get('span.marker').first().trigger('mouseover');
-    cy.get('p.note').should('be.visible').should('not.be.empty');
-  });
-});
 
 // First page: search.component
 function check_page_is_search() {

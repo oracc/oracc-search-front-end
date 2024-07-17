@@ -2,9 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { composedPath, findAncestorByTag, findAttribute, splitOutEnums } from '../../../utils/utils';
-import { PANEL_TYPE, SESSION_KEYS } from '../../../utils/consts';
+import { PANEL_TYPE } from '../../../utils/consts';
 
 @Component({
   selector: 'app-details-source',
@@ -33,8 +33,7 @@ export class DetailsSourceComponent implements OnInit {
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.router);
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
-      history.state.data ||
-        sessionStorage.getItem(SESSION_KEYS.METADATA_CONTENT)
+      '<div/>'
     );
     // this seems to fire no matter which page we are on
     //this.router.events.subscribe((event) => {
@@ -93,7 +92,6 @@ export class DetailsSourceComponent implements OnInit {
 
   public handleMetadataClick(e) {
     e.preventDefault();
-    console.log('details-source handleMetadataClick');
     const clickedLink = e.path
       ? e.path.find((el) => {
           return el.href;

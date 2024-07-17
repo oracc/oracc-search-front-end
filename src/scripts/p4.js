@@ -1,6 +1,7 @@
 function act_isid() {}
 function act_iref() {}
 function act_wsig() {}
+function act_block() {}
 
 function hideNote(_e,nid) {
     var note = document.getElementById(nid);
