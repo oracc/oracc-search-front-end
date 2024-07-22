@@ -84,6 +84,7 @@ for (const config of configs) {
         const form = "a-bala";
         const ref = "CBS 3656 o 25";
         const transliteration_word = "gada";
+        const expected_form = "gada,gin";
         cy.visit("/");
         check_page_is_search();
         cy.get('.search__input').type(`${input}{enter}`);
@@ -96,14 +97,19 @@ for (const config of configs) {
         check_page_is_details_texts();
         cy.get('table.transliteration tr.l a.cbd span').contains(transliteration_word).click();
         check_page_is_glossary_article_texts();
+        cy.get('#p4GlossaryEntry').contains(expected_form);
         cy.get('ul.bcrumbs__list li:nth-of-type(5)').click();
         check_page_is_details_texts();
+        cy.get('table.transliteration tr.l a.cbd span').contains(transliteration_word);
         cy.get('ul.bcrumbs__list li:nth-of-type(4)').click();
         check_page_is_details();
+        cy.get('.details__panel-main').contains(ref);
         cy.get('ul.bcrumbs__list li:nth-of-type(3)').click();
         check_page_is_search_result();
+        cy.get('p.norms span').contains(form);
         cy.get('ul.bcrumbs__list li:nth-of-type(2)').click();
         check_page_is_search_results();
+        cy.get('span.results__table-cell').contains(result);
         cy.get('ul.bcrumbs__list li:nth-of-type(1)').click();
         check_page_is_search();
       });
