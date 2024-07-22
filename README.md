@@ -232,11 +232,47 @@ It is also possible to define the `baseHref` property using a custom build confi
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io). Although there are not unit tests
+at the moment.
 
 ## Running end-to-end tests
 
 This project also uses Cypress for testing. Ensure you've got the backend and frontend apps running before attempting the tests. To run the tests without a window, run `npx cypress run` or `npm run cypress:run`. To open a window and see the tests run (more helpful when writing the tests and debugging), run `npx cypress open` or `npm run cypress:open` and choose the tests you'd like to run through the GUI.
+
+`ng serve` (or equivalent) should be running while these tests
+are run.
+
+The `oracc-rest` server should also be running and the
+build-oracc server should be reachable for those tests that
+are not using stubbed calls.
+
+### Backend stubs
+
+Certain parts of the test now stub calls to the backend
+(`oracc-rest` and build-oracc) servers using fixtures in the
+`cypress/fixtures` directory. Running these tests, therefore,
+does not require the build-oracc server to be reachable or the
+`oracc-rest` server to be running.
+
+### Updating the backend stubs
+
+These fixtures can be updated automatically by deleting the
+`backend`, `oracc` and `suggests` directories, and replacing
+the contents of the `directory.json` function with the contents:
+
+```json
+{}
+```
+
+Also delete the `cypress/fixtures_new` directory. Then rerun the
+tests, with the build-oracc server reachable and the `oracc-rest`
+server running.. New files will be added to the
+`cypress/fixtures_new` directory. These can all be copied into
+`cypress/fixtures` (including overwriting the `directory.json` file
+created above), giving us the new stub responses.
+
+Any future runs will use these updated responses. These new
+files can be committed to source control.
 
 ### Debugging
 

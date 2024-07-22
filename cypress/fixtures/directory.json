@@ -1,0 +1,13 @@
+{
+  "backend/search/king": "http://localhost:8000/search/king",
+  "backend/search/cow": "http://localhost:8000/search/cow",
+  "suggests/suggest_all/king": "http://localhost:8000/suggest_all/king",
+  "suggests/suggest_all/cow": "http://localhost:8000/suggest_all/cow",
+  "oracc/neo/qpn/x000028130": "https://build-oracc.museum.upenn.edu/neo/qpn/x000028130",
+  "oracc/neo/xis=qpn.r00002c/qpn": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002c",
+  "oracc/neo/ref=Q003478.36/xis=qpn.r00002c/qpn": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002c&ref=Q003478.36",
+  "oracc/neo/sux/o0023294": "https://build-oracc.museum.upenn.edu/neo/sux/o0023294",
+  "oracc/neo/xis=sux.r000097/sux": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000097",
+  "oracc/neo/ref=Q000012.1/xis=sux.r000097/sux": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000097&ref=Q000012.1",
+  "oracc/neo/block=sb.Q000012.1/Q000012.1": "https://build-oracc.museum.upenn.edu/neo/Q000012.1?block=sb.Q000012.1"
+}
