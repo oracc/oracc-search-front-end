@@ -242,7 +242,7 @@ export class DetailsTextsComponent implements OnInit {
         anchorEl.innerText
       ],{
         queryParams: {
-        ref: ref,
+        iref: ref,
         lang: this.route.snapshot.queryParams['lang'],
         isid: this.route.snapshot.queryParams['isid'],
         wsig: wsig
