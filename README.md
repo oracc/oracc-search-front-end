@@ -232,8 +232,8 @@ It is also possible to define the `baseHref` property using a custom build confi
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io). Although there are not unit tests
-at the moment.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Although there are not unit tests at the moment.
 
 ## Running end-to-end tests
 
