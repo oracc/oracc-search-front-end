@@ -1,0 +1,84 @@
+{
+  "searches/search/water": {
+    "hostname": "localhost",
+    "pathname": "/search/water",
+    "query": {}
+  },
+  "suggests/suggest_all/wat": {
+    "hostname": "localhost",
+    "pathname": "/suggest_all/wat",
+    "query": {}
+  },
+  "suggests/suggest_all/water": {
+    "hostname": "localhost",
+    "pathname": "/suggest_all/water",
+    "query": {}
+  },
+  "suggests/suggest_all/wa": {
+    "hostname": "localhost",
+    "pathname": "/suggest_all/wa",
+    "query": {}
+  },
+  "oracc/neo/sux/o0023441": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux/o0023441",
+    "query": {}
+  },
+  "oracc/neo/xis%3Dsux.r0000fa/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r0000fa"
+    }
+  },
+  "oracc/neo/ref%3DP315472.7/xis%3Dsux.r0000fa/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r0000fa",
+      "ref": "P315472.7"
+    }
+  },
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Amu-sa-re%3Dsar%5Brun%2F%2Fto%20run%2C%20hasten%5DV%2Fi%C2%B4V%2Fi%24mu%3Asar%3Be%2Fsa-r%C2%B7e%23mu%3A~%3Be/neo": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo",
+    "query": {
+      "sig": "☣☣@obel%sux:mu-sa-re=sar[run//to run, hasten]V/i´V/i$mu:sar;e/sa-r·e#mu:~;e"
+    }
+  },
+  "oracc/neo/sux/o0023325": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux/o0023325",
+    "query": {}
+  },
+  "oracc/neo/xis%3Dsux.r0000c5/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r0000c5"
+    }
+  },
+  "oracc/neo/ref%3DP260028.16/xis%3Dsux.r0000c5/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r0000c5",
+      "ref": "P260028.16"
+    }
+  },
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Agada%3Dgada%5Bflax%2F%2Flinen%5DN%C2%B4N%24gada%2Fgada%23~/neo": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo",
+    "query": {
+      "sig": "☣☣@obel%sux:gada=gada[flax//linen]N´N$gada/gada#~"
+    }
+  },
+  "oracc/neo/ref%3Dundefined/xis%3Dsux.r0000c5/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r0000c5",
+      "ref": "undefined"
+    }
+  }
+}

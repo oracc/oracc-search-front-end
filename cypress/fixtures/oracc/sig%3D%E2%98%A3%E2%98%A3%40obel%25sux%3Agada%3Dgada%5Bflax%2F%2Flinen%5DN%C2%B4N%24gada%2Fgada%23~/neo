@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
+  <script type="text/javascript" src="/js/p4.js">&#160;</script>
+  <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
+  <title>neo</title>    
+</head>
+  <body id="p4Pager" class="bborder-top sig item dglo iart zoom default" data-proj="neo" data-glos="sux" data-glet="entry_ids" data-gent="o0027611" data-prev="" data-item="o0027611" data-next="" data-bkmk="o0027611" data-lang="en">
+    <div id="p4GlossaryEntry">
+<div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="header">
+      <h1 class="entry heading border-top"><span class="cf sux">gada</span><span class="gw"> [FLAX]</span> <span class="pos">(N)</span></h1>
+      <p class="icount">
+        <a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d0">11 instances</a>
+      </p>
+    </div>
+<p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="norms"><span class="iheader">Base forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d0"><span class="orth1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">gada</span></span></span></a>.</p>
+<div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="forms">
+      <p class="forms"><span class="iheader">Written forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">gada</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">gada</span>-<span x="3" class="sux">gin₇</span></span></a>.</p>
+    </div>
+<p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="norms"><span class="iheader">Normalized forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d1">gada</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">gada</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d2">gada,gin</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">gada</span>-<span x="3" class="sux">gin₇</span></span></a>).</p>
+<div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="morphs">
+      <span class="iheader">Morphological forms:</span>
+      <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d1">~</a>
+      <span class="punct-sc">; </span>
+      <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d2">~,gin</a>
+      <span class="punct-sc">.</span>
+    </div>
+<div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="senses">
+      <h3 class="sense"><span class="sensenum">1.</span> flax<a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d3"> (4x/36%)</a></h3>
+      <h3 class="sense"><span class="sensenum">2.</span> linen<a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0014d5"> (7x/64%)</a></h3>
+    </div>
+<div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="purl">
+      <p>ID=http://oracc.org/neo/o0027611</p>
+      <p>
+        <a href="http://oracc.org/epsd2/o0027611">See full ePSD2 article for gada[flax]N</a>
+      </p>
+    </div>
+<hr xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="article"/>
+</div>
+
+  </body>
+</html>

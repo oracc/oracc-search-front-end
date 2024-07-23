@@ -1,0 +1,2952 @@
+[
+  {
+    "gw": "water",
+    "headword": "a[water]N",
+    "cf": "a",
+    "icount": 302,
+    "id": "o0023102",
+    "senses_mng": [
+      "semen, sperm",
+      "water"
+    ],
+    "forms_n": [
+      "a{+e}",
+      "a",
+      "a-a",
+      "a-bi",
+      "a-e",
+      "a-gin₇",
+      "a-ŋu₁₀",
+      "a-na",
+      "a-ni",
+      "a-še₃",
+      "a-ši",
+      "a-ta",
+      "e",
+      "e-bi",
+      "e-gi-en",
+      "e-ia-na",
+      "e-še",
+      "e-ta",
+      "e₂",
+      "e₂-be₂",
+      "e₂-e"
+    ],
+    "norms_n": [
+      "a",
+      "a,a",
+      "a,ani",
+      "a,ani.a",
+      "a,ani.ak",
+      "a,bi",
+      "a,bi.e",
+      "a,e",
+      "a,eše",
+      "a,gin",
+      "a,ŋu",
+      "a,ta",
+      "a;e"
+    ],
+    "periods_p": [
+      "ED IIIa",
+      "Early Dynastic",
+      "Early Old Babylonian",
+      "Old Babylonian",
+      "Neo-Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "edlex:P010717.10.2",
+      "edlex:P010717.100.2",
+      "edlex:Q000006.142.2",
+      "edlex:Q000008.72.2",
+      "edlex:Q000038.116.1",
+      "edlex:Q000268.13.1",
+      "obel:P223481.25.3",
+      "obel:P223481.5.1",
+      "obel:P255417.21.3",
+      "obel:P255417.74.2",
+      "obel:P256178.38.1",
+      "obel:P257610.29.3",
+      "obel:P257610.30.3",
+      "obel:P257677.26.4",
+      "obel:P257710.25.1",
+      "obel:P259270.59.2",
+      "obel:P259270.80.4",
+      "obel:P259270.87.1",
+      "obel:P264320.31.3",
+      "obel:P264320.39.1",
+      "obel:P266487.14.3",
+      "obel:P266508.35.3",
+      "obel:P266534.14.3",
+      "obel:P267066.31.6",
+      "obel:P267066.33.4",
+      "obel:P267066.35.4",
+      "obel:P267066.61.2",
+      "obel:P267066.62.1",
+      "obel:P269651.20.3",
+      "obel:P269651.39.1",
+      "obel:P269651.51.3",
+      "obel:P274199.17.1",
+      "obel:P274199.26.1",
+      "obel:P274199.27.1",
+      "obel:P274200.8.3",
+      "obel:P274201.25.1",
+      "obel:P274201.27.1",
+      "obel:P274203.29.3",
+      "obel:P274203.30.3",
+      "obel:P274203.33.4",
+      "obel:P274203.34.2",
+      "obel:P274203.35.2",
+      "obel:P274203.37.1",
+      "obel:P274203.39.1",
+      "obel:P274203.41.7",
+      "obel:P274203.42.6",
+      "obel:P274203.45.3",
+      "obel:P274204.11.1",
+      "obel:P274204.9.3",
+      "obel:P274209.14.1",
+      "obel:P274209.14.3",
+      "obel:P274209.15.2",
+      "obel:P274214.2.1",
+      "obel:P274215.103.4",
+      "obel:P274215.37.3",
+      "obel:P274215.38.3",
+      "obel:P274215.56.2",
+      "obel:P274215.62.2",
+      "obel:P274216.31.1",
+      "obel:P274227.5.2",
+      "obel:P274230.9.4",
+      "obel:P274233.51.1",
+      "obel:P274234.100.1",
+      "obel:P274234.175.1",
+      "obel:P274234.175.3",
+      "obel:P274237.58.1",
+      "obel:P274275.10.4",
+      "obel:P274275.11.4",
+      "obel:P274275.14.1",
+      "obel:P274275.20.4",
+      "obel:P275008.31.1",
+      "obel:P278183.17.3",
+      "obel:P278183.21.1",
+      "obel:P278417.21.2",
+      "obel:P278417.23.4",
+      "obel:P278417.9.2",
+      "obel:P278623.26.1",
+      "obel:P283739.78.3",
+      "obel:P283739.97.1",
+      "obel:P283740.38.3",
+      "obel:P283740.79.1",
+      "obel:P283740.80.1",
+      "obel:P283761.11.1",
+      "obel:P283761.16.5",
+      "obel:P283764.22.3",
+      "obel:P283775.141.3",
+      "obel:P283775.142.3",
+      "obel:P283775.59.3",
+      "obel:P283775.60.3",
+      "obel:P283776.31.1",
+      "obel:P283776.31.3",
+      "obel:P283778.110.2",
+      "obel:P290067.64.2",
+      "obel:P302741.18.2",
+      "obel:P302741.18.4",
+      "obel:P302741.19.2",
+      "obel:P302741.19.4",
+      "obel:P302741.90.4",
+      "obel:P302741.92.1",
+      "obel:P315471.23.3",
+      "obel:P315471.42.3",
+      "obel:P342809.50.6",
+      "obel:P342810.11.1",
+      "obel:P342810.114.5",
+      "obel:P342810.115.5",
+      "obel:P342810.23.2",
+      "obel:P342810.23.5",
+      "obel:P342811.159.2",
+      "obel:P342816.156.3",
+      "obel:P342816.156.7",
+      "obel:P342816.162.2",
+      "obel:P342816.176.4",
+      "obel:P342819.15.1",
+      "obel:P342819.16.2",
+      "obel:P342819.36.1",
+      "obel:P342819.36.5",
+      "obel:P342819.44.2",
+      "obel:P342819.44.6",
+      "obel:P342833.344.1",
+      "obel:P342833.415.1",
+      "obel:P342833.415.3",
+      "obel:P342834.160.1",
+      "obel:P342834.75.1",
+      "obel:P342834.75.3",
+      "obel:P342834.76.2",
+      "obel:P342834.88.4",
+      "obel:P342837.16.1",
+      "obel:P342837.18.1",
+      "obel:P342839.53.3",
+      "obel:P342839.56.4",
+      "obel:P342840.46.1",
+      "obel:P342842.32.4",
+      "obel:P342842.33.5",
+      "obel:P342842.34.5",
+      "obel:P342842.35.3",
+      "obel:P342842.36.3",
+      "obel:P342842.37.5",
+      "obel:P342842.38.4",
+      "obel:P342842.39.7",
+      "obel:P342842.40.3",
+      "obel:P342842.42.1",
+      "obel:P342842.44.1",
+      "obel:P342842.46.1",
+      "obel:P342902.57.3",
+      "obel:P342921.3.3",
+      "obel:P342925.10.2",
+      "obel:P342931.79.5",
+      "obel:P342934.17.3",
+      "obel:P343230.18.2",
+      "obel:P343230.20.2",
+      "obel:P344229.13.4",
+      "obel:P344229.15.3",
+      "obel:P344288.34.4",
+      "obel:P344916.11.2",
+      "obel:P344926.18.2",
+      "obel:P344926.18.4",
+      "obel:P344926.19.1",
+      "obel:P344926.19.3",
+      "obel:P344926.44.1",
+      "obel:P344926.44.3",
+      "obel:P344926.72.1",
+      "obel:P345055.34.1",
+      "obel:P345055.39.2",
+      "obel:P345234.27.4",
+      "obel:P345337.8.1",
+      "obel:P345345.36.3",
+      "obel:P345347.19.2",
+      "obel:P345347.36.1",
+      "obel:P345347.36.3",
+      "obel:P345347.49.3",
+      "obel:P345352.111.4",
+      "obel:P345352.113.5",
+      "obel:P345352.115.5",
+      "obel:P345352.117.5",
+      "obel:P345352.119.7",
+      "obel:P345352.41.3",
+      "obel:P345418.12.3",
+      "obel:P345418.12.5",
+      "obel:P345418.13.1",
+      "obel:P345418.13.3",
+      "obel:P345418.9.3",
+      "obel:P345446.24.3",
+      "obel:P345447.20.4",
+      "obel:P345449.21.2",
+      "obel:P345449.21.4",
+      "obel:P345449.22.1",
+      "obel:P345449.22.3",
+      "obel:P345452.27.2",
+      "obel:P345452.28.2",
+      "obel:P345452.29.2",
+      "obel:P345452.30.3",
+      "obel:P345452.31.4",
+      "obel:P345452.32.5",
+      "obel:P345453.23.1",
+      "obel:P345453.33.1",
+      "obel:P345504.138.1",
+      "obel:P345504.138.3",
+      "obel:P345504.139.2",
+      "obel:P345504.139.5",
+      "obel:P345506.16.2",
+      "obel:P345506.22.3",
+      "obel:P345509.41.4",
+      "obel:P345509.41.5",
+      "obel:P345509.79.4",
+      "obel:P345509.83.2",
+      "obel:P345509.85.2",
+      "obel:P345509.87.2",
+      "obel:P345509.89.2",
+      "obel:P345509.91.2",
+      "obel:P345509.93.2",
+      "obel:P345523.17.1",
+      "obel:P345523.21.1",
+      "obel:P345523.22.1",
+      "obel:P345524.50.3",
+      "obel:P345525.45.2",
+      "obel:P345525.7.3",
+      "obel:P345621.36.1",
+      "obel:P345621.46.5",
+      "obel:P345662.45.3",
+      "obel:P345721.23.3",
+      "obel:P345736.20.1",
+      "obel:P345736.20.3",
+      "obel:P345736.21.3",
+      "obel:P345767.7.4",
+      "obel:P345778.200.1",
+      "obel:P345778.200.3",
+      "obel:P345778.83.1",
+      "obel:P345778.83.3",
+      "obel:P345779.154.1",
+      "obel:P345791.30.3",
+      "obel:P345791.31.5",
+      "obel:P345791.76.3",
+      "obel:P345797.23.1",
+      "obel:P345797.23.3",
+      "obel:P345830.2.1",
+      "obel:P346276.9.3",
+      "obel:P349128.23.3",
+      "obel:P349128.23.5",
+      "obel:P355651.26.2",
+      "obel:P355665.176.3",
+      "obel:P355665.177.5",
+      "obel:P355665.185.4",
+      "obel:P355673.125.3",
+      "obel:P355673.62.1",
+      "obel:P355673.62.3",
+      "obel:P355673.86.1",
+      "obel:P355674.236.4",
+      "obel:P355674.237.4",
+      "obel:P355674.248.2",
+      "obel:P355674.80.2",
+      "obel:P355674.82.2",
+      "obel:P355681.30.4",
+      "obel:P355682.11.3",
+      "obel:P355682.6.3",
+      "obel:P355682.6.5",
+      "obel:P355691.14.1",
+      "obel:P355691.27.2",
+      "obel:P355691.27.5",
+      "obel:P355691.40.6",
+      "obel:P355693.63.1",
+      "obel:P355694.10.2",
+      "obel:P355694.34.1",
+      "obel:P355694.34.3",
+      "obel:P355694.47.1",
+      "obel:P355696.26.7",
+      "obel:P355696.27.5",
+      "obel:P355696.28.6",
+      "obel:P355696.29.6",
+      "obel:P355696.3.2",
+      "obel:P355696.30.6",
+      "obel:P355698.172.1",
+      "obel:P355698.173.3",
+      "obel:P355698.174.1",
+      "obel:P355698.25.2",
+      "obel:P355698.27.2",
+      "obel:P355698.62.1",
+      "obel:P355701.13.2",
+      "obel:P355701.13.4",
+      "obel:P355702.105.2",
+      "obel:P355702.122.4",
+      "obel:P355702.123.3",
+      "obel:P355702.124.3",
+      "obel:P355702.205.3",
+      "obel:P355702.206.4",
+      "obel:P355702.21.5",
+      "obel:P355702.225.1",
+      "obel:P355702.340.1",
+      "obel:P355702.345.5",
+      "obel:P355702.99.2",
+      "obel:P355702.99.5",
+      "obel:P355727.10.1",
+      "obel:P355727.14.1",
+      "obel:P355727.19.2",
+      "obel:P355727.31.2",
+      "obel:P357172.10.1",
+      "obel:P412174.52.1",
+      "obel:P430946.22.1",
+      "obel:P430946.22.3",
+      "obel:P430946.23.1",
+      "obel:P430946.26.1",
+      "obel:P527055.30.2",
+      "obel:P527055.38.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "a",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 302
+  },
+  {
+    "gw": "water",
+    "headword": "mû[water]N",
+    "cf": "mû",
+    "icount": 204,
+    "id": "x0006937",
+    "senses_mng": [
+      "water"
+    ],
+    "forms_n": [
+      "A",
+      "A.MEŠ",
+      "A.MEŠ-ša₂",
+      "A.MEŠ-šu₂",
+      "me-e",
+      "mu-u₂"
+    ],
+    "norms_n": [
+      "mê",
+      "mêša",
+      "mû",
+      "mûša",
+      "mûšu"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "dccmt:P254439.6.6",
+      "dccmt:P255026.35.4",
+      "dccmt:P255026.47.5",
+      "dccmt:P255045.28.2",
+      "dccmt:P255045.33.2",
+      "dccmt:P274707.329.1",
+      "rimanum:P296278.14.3",
+      "rimanum:P405206.4.4",
+      "rimanum:P405236.6.4",
+      "rimanum:P405333.9.3",
+      "rinap/rinap1:Q003418.6.6",
+      "rinap/rinap1:Q003448.177.2",
+      "rinap/rinap1:Q003448.70.1",
+      "rinap/rinap1:Q003450.52.4",
+      "rinap/rinap1:Q003460.83.5",
+      "rinap/rinap1:Q003460.87.8",
+      "rinap/rinap1:Q003619.15.6",
+      "rinap/rinap1:Q006330.6.6",
+      "rinap/rinap1:Q006333.35.6",
+      "rinap/rinap2:Q006482.345.2",
+      "rinap/rinap2:Q006482.346.3",
+      "rinap/rinap2:Q006483.211.7",
+      "rinap/rinap2:Q006483.213.6",
+      "rinap/rinap2:Q006483.234.6",
+      "rinap/rinap2:Q006487.11.11",
+      "rinap/rinap2:Q006488.128.19",
+      "rinap/rinap2:Q006488.128.6",
+      "rinap/rinap2:Q006488.130.3",
+      "rinap/rinap2:Q006524.37.10",
+      "rinap/rinap2:Q006546.138.4",
+      "rinap/rinap2:Q006546.160.8",
+      "rinap/rinap2:Q006546.213.7",
+      "rinap/rinap2:Q006546.215.3",
+      "rinap/rinap2:Q006546.215.7",
+      "rinap/rinap2:Q006546.22.12",
+      "rinap/rinap2:Q006546.232.10",
+      "rinap/rinap2:Q006546.233.6",
+      "rinap/rinap2:Q006546.256.3",
+      "rinap/rinap2:Q006546.344.2",
+      "rinap/rinap2:Q006546.414.9",
+      "rinap/rinap2:Q006546.415.9",
+      "rinap/rinap2:Q006555.266.6",
+      "rinap/rinap2:Q006555.270.1",
+      "rinap/rinap2:Q006563.134.1",
+      "rinap/rinap2:Q006563.449.2",
+      "rinap/rinap2:Q006563.467.7",
+      "rinap/rinap2:Q006572.13.3",
+      "rinap/rinap2:Q006587.6.3",
+      "rinap/rinap2:Q006590.21.2",
+      "rinap/rinap2:Q006590.24.7",
+      "rinap/rinap2:Q006590.30.14",
+      "rinap/rinap2:Q006592.36.19",
+      "rinap/rinap2:Q006592.37.11",
+      "rinap/rinap2:Q006594.11.18",
+      "rinap/rinap2:Q006594.12.11",
+      "rinap/rinap2:Q006596.82.9",
+      "rinap/rinap3:Q003482.23.4",
+      "rinap/rinap3:Q003482.30.12",
+      "rinap/rinap3:Q003482.33.7",
+      "rinap/rinap3:Q003489.455.5",
+      "rinap/rinap3:Q003490.343.5",
+      "rinap/rinap3:Q003490.586.1",
+      "rinap/rinap3:Q003490.595.4",
+      "rinap/rinap3:Q003490.628.4",
+      "rinap/rinap3:Q003491.324.5",
+      "rinap/rinap3:Q003491.473.5",
+      "rinap/rinap3:Q003491.616.3",
+      "rinap/rinap3:Q003491.677.2",
+      "rinap/rinap3:Q003491.690.5",
+      "rinap/rinap3:Q003491.697.1",
+      "rinap/rinap3:Q003491.704.3",
+      "rinap/rinap3:Q003491.708.1",
+      "rinap/rinap3:Q003491.709.4",
+      "rinap/rinap3:Q003491.714.4",
+      "rinap/rinap3:Q003492.423.3",
+      "rinap/rinap3:Q003492.436.3",
+      "rinap/rinap3:Q003492.453.4",
+      "rinap/rinap3:Q003496.263.5",
+      "rinap/rinap3:Q003497.244.1",
+      "rinap/rinap3:Q003498.55.3",
+      "rinap/rinap3:Q003513.70.3",
+      "rinap/rinap3:Q003514.54.7",
+      "rinap/rinap3:Q003515.29.6",
+      "rinap/rinap3:Q003516.71.9",
+      "rinap/rinap3:Q003516.78.10",
+      "rinap/rinap3:Q003517.90.12",
+      "rinap/rinap3:Q003517.97.2",
+      "rinap/rinap3:Q003518.68.7",
+      "rinap/rinap3:Q003520.118.12",
+      "rinap/rinap3:Q003520.151.14",
+      "rinap/rinap3:Q003520.157.4",
+      "rinap/rinap3:Q003520.40.19",
+      "rinap/rinap3:Q003520.75.8",
+      "rinap/rinap3:Q003520.77.8",
+      "rinap/rinap3:Q003523.14.6",
+      "rinap/rinap3:Q003524.14.6",
+      "rinap/rinap3:Q003943.84.4",
+      "rinap/rinap3:Q003958.36.1",
+      "rinap/rinap3:Q003960.14.6",
+      "rinap/rinap3:Q003960.29.3",
+      "rinap/rinap3:Q003966.28.7",
+      "rinap/rinap3:Q003967.37.4",
+      "rinap/rinap3:Q003967.41.2",
+      "rinap/rinap3:Q003967.42.2",
+      "rinap/rinap3:Q003967.45.7",
+      "rinap/rinap3:Q003973.14.2",
+      "rinap/rinap3:Q003973.55.2",
+      "rinap/rinap3:Q004027.43.1",
+      "rinap/rinap3:Q004028.10.5",
+      "rinap/rinap3:Q004028.11.11",
+      "rinap/rinap3:Q004028.12.8",
+      "rinap/rinap3:Q004028.14.13",
+      "rinap/rinap3:Q004028.14.5",
+      "rinap/rinap3:Q004028.16.3",
+      "rinap/rinap3:Q004028.19.7",
+      "rinap/rinap3:Q004028.21.7",
+      "rinap/rinap3:Q004028.31.2",
+      "rinap/rinap3:Q004028.52.13",
+      "rinap/rinap3:Q004028.58.5",
+      "rinap/rinap3:Q004028.7.6",
+      "rinap/rinap3:Q004031.2.2",
+      "rinap/rinap3:Q004031.3.1",
+      "rinap/rinap3:Q004031.3.3",
+      "rinap/rinap3:Q004031.4.1",
+      "rinap/rinap3:Q004031.5.1",
+      "rinap/rinap3:Q004031.9.2",
+      "rinap/rinap3:Q004032.2.9",
+      "rinap/rinap3:Q004034.3.4",
+      "rinap/rinap3:Q004071.17.6",
+      "rinap/rinap4:Q003230.255.7",
+      "rinap/rinap4:Q003230.52.5",
+      "rinap/rinap4:Q003231.179.7",
+      "rinap/rinap4:Q003236.16.7",
+      "rinap/rinap4:Q003262.94.7",
+      "rinap/rinap4:Q003263.17.6",
+      "rinap/rinap4:Q003263.21.1",
+      "rinap/rinap4:Q003265.8.2",
+      "rinap/rinap4:Q003327.91.10",
+      "rinap/rinap4:Q003333.164.3",
+      "rinap/rinap4:Q003333.43.2",
+      "rinap/rinap4:Q003334.198.1",
+      "rinap/rinap4:Q003334.200.3",
+      "rinap/rinap4:Q003334.49.1",
+      "rinap/rinap4:Q003337.72.1",
+      "rinap/rinap4:Q003342.13.3",
+      "rinap/rinap4:Q003343.29.2",
+      "rinap/rinap4:Q003345.17.4",
+      "rinap/rinap4:Q003380.9.3",
+      "rinap/rinap5:Q003702.144.1",
+      "rinap/rinap5:Q003702.346.3",
+      "rinap/rinap5:Q003702.515.6",
+      "rinap/rinap5:Q003703.122.1",
+      "rinap/rinap5:Q003703.310.3",
+      "rinap/rinap5:Q003703.460.7",
+      "rinap/rinap5:Q003703.677.2",
+      "rinap/rinap5:Q003705.290.1",
+      "rinap/rinap5:Q003705.531.3",
+      "rinap/rinap5:Q003705.684.2",
+      "rinap/rinap5:Q003705.837.4",
+      "rinap/rinap5:Q003706.236.1",
+      "rinap/rinap5:Q003706.454.3",
+      "rinap/rinap5:Q003706.849.4",
+      "rinap/rinap5:Q003706.956.4",
+      "rinap/rinap5:Q003707.217.2",
+      "rinap/rinap5:Q003707.325.4",
+      "rinap/rinap5:Q003708.149.1",
+      "rinap/rinap5:Q003708.168.7",
+      "rinap/rinap5:Q003708.233.6",
+      "rinap/rinap5:Q003708.381.7",
+      "rinap/rinap5:Q003710.1048.5",
+      "rinap/rinap5:Q003710.1050.2",
+      "rinap/rinap5:Q003710.1065.5",
+      "rinap/rinap5:Q003710.1102.5",
+      "rinap/rinap5:Q003710.1104.1",
+      "rinap/rinap5:Q003710.1108.6",
+      "rinap/rinap5:Q003710.319.1",
+      "rinap/rinap5:Q003710.345.4",
+      "rinap/rinap5:Q003710.575.5",
+      "rinap/rinap5:Q003710.767.3",
+      "rinap/rinap5:Q003711.184.2",
+      "rinap/rinap5:Q003715.6.3",
+      "rinap/rinap5:Q003721.41.6",
+      "rinap/rinap5:Q003721.42.3",
+      "rinap/rinap5:Q003721.52.5",
+      "rinap/rinap5:Q003721.53.2",
+      "rinap/rinap5:Q003785.41.6",
+      "rinap/rinap5:Q003788.79.4",
+      "rinap/rinap5:Q003790.102.7",
+      "rinap/rinap5:Q003791.24.4",
+      "rinap/rinap5:Q003791.40.7",
+      "rinap/rinap5:Q003823.6.4",
+      "rinap/rinap5:Q003845.12.1",
+      "rinap/rinap5:Q003859.5.6",
+      "rinap/rinap5:Q007541.14.8",
+      "rinap/rinap5:Q007569.152.3",
+      "rinap/rinap5:Q007574.5.10",
+      "rinap/rinap5:Q007593.16.4",
+      "rinap/rinap5:Q007602.153.5",
+      "rinap/rinap5:Q007602.155.2",
+      "rinap/rinap5:Q007602.170.4",
+      "rinap/rinap5:Q007605.66.8",
+      "rinap/rinap5:Q007615.109.5",
+      "rinap/rinap5:Q007625.13.7",
+      "rinap/rinap5:Q008322.28.5"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "mû",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 204
+  },
+  {
+    "gw": "river",
+    "headword": "id[river]N",
+    "cf": "id",
+    "icount": 203,
+    "id": "o0030551",
+    "senses_mng": [
+      "river, watercourse, canal",
+      "river"
+    ],
+    "forms_n": [
+      "e₂",
+      "i",
+      "i-da",
+      "i₃-da",
+      "i₇",
+      "i₇-a",
+      "i₇-da",
+      "id₂",
+      "id₂-bi",
+      "id₂-bi-ta",
+      "id₂-da",
+      "id₂{+id}-da",
+      "id₂-da-gin₇",
+      "id₂-da-ke₄",
+      "id₂-da-ra",
+      "id₂-de₃",
+      "id₂-gin₇",
+      "id₂-ŋa₂",
+      "id₂-še₃",
+      "id₂-ta",
+      "id₂-za",
+      "im-ma-ši"
+    ],
+    "norms_n": [
+      "i",
+      "id",
+      "id,a",
+      "id,ak",
+      "id,ak.e",
+      "id,ak.gin",
+      "id,ak.ra",
+      "id,bi",
+      "id,bi.ta",
+      "id,e",
+      "id,eše",
+      "id,gin",
+      "id,ŋu.a",
+      "id,ta",
+      "id,zu.ak"
+    ],
+    "periods_p": [
+      "Early Old Babylonian",
+      "Old Babylonian",
+      "Neo-Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "obel:P223481.13.5",
+      "obel:P223481.15.5",
+      "obel:P223481.17.5",
+      "obel:P223481.19.7",
+      "obel:P255232.7.1",
+      "obel:P255417.139.3",
+      "obel:P255417.149.3",
+      "obel:P256178.31.2",
+      "obel:P256178.32.2",
+      "obel:P256178.33.2",
+      "obel:P257710.33.3",
+      "obel:P259270.87.5",
+      "obel:P264320.31.1",
+      "obel:P266481.53.1",
+      "obel:P266487.36.3",
+      "obel:P266487.39.2",
+      "obel:P266518.38.1",
+      "obel:P274199.4.3",
+      "obel:P274199.5.4",
+      "obel:P274200.34.3",
+      "obel:P274201.19.1",
+      "obel:P274204.34.1",
+      "obel:P274204.34.6",
+      "obel:P274204.38.4",
+      "obel:P274215.101.1",
+      "obel:P274215.103.3",
+      "obel:P274215.56.1",
+      "obel:P274234.100.3",
+      "obel:P274239.14.1",
+      "obel:P274268.18.1",
+      "obel:P276199.14.1",
+      "obel:P277466.10.3",
+      "obel:P277466.11.2",
+      "obel:P277466.12.2",
+      "obel:P277466.13.2",
+      "obel:P277466.9.2",
+      "obel:P278359.19.1",
+      "obel:P278623.25.1",
+      "obel:P283739.78.1",
+      "obel:P283740.40.1",
+      "obel:P283740.40.2",
+      "obel:P283740.40.3",
+      "obel:P283740.41.1",
+      "obel:P283740.41.3",
+      "obel:P283740.42.1",
+      "obel:P283740.42.3",
+      "obel:P283740.43.1",
+      "obel:P283740.43.3",
+      "obel:P283774.103.3",
+      "obel:P283774.104.3",
+      "obel:P283775.56.2",
+      "obel:P302741.121.1",
+      "obel:P302741.47.1",
+      "obel:P302741.86.2",
+      "obel:P302741.87.2",
+      "obel:P302741.88.3",
+      "obel:P308085.9.2",
+      "obel:P310399.8.2",
+      "obel:P342809.47.2",
+      "obel:P342809.48.4",
+      "obel:P342809.49.3",
+      "obel:P342809.50.2",
+      "obel:P342811.4.2",
+      "obel:P342811.5.1",
+      "obel:P342812.25.3",
+      "obel:P342819.116.1",
+      "obel:P342819.205.3",
+      "obel:P342833.167.1",
+      "obel:P342833.344.3",
+      "obel:P342833.76.3",
+      "obel:P342836.6.2",
+      "obel:P342840.42.2",
+      "obel:P342840.44.1",
+      "obel:P342842.34.1",
+      "obel:P342854.12.1",
+      "obel:P342902.57.1",
+      "obel:P342911.17.1",
+      "obel:P343583.50.3",
+      "obel:P344288.91.2",
+      "obel:P344926.118.1",
+      "obel:P344926.41.1",
+      "obel:P344926.68.2",
+      "obel:P344926.69.2",
+      "obel:P345055.38.1",
+      "obel:P345055.38.2",
+      "obel:P345055.39.1",
+      "obel:P345348.24.4",
+      "obel:P345352.129.1",
+      "obel:P345352.129.2",
+      "obel:P345352.130.3",
+      "obel:P345352.131.2",
+      "obel:P345352.132.2",
+      "obel:P345352.133.2",
+      "obel:P345352.134.2",
+      "obel:P345352.135.2",
+      "obel:P345352.136.4",
+      "obel:P345352.257.1",
+      "obel:P345352.257.2",
+      "obel:P345352.258.3",
+      "obel:P345352.259.2",
+      "obel:P345352.260.2",
+      "obel:P345352.261.2",
+      "obel:P345352.262.2",
+      "obel:P345352.263.2",
+      "obel:P345352.264.4",
+      "obel:P345413.17.2",
+      "obel:P345452.31.1",
+      "obel:P345459.14.2",
+      "obel:P345459.25.1",
+      "obel:P345459.25.2",
+      "obel:P345461.4.1",
+      "obel:P345461.4.2",
+      "obel:P345461.5.3",
+      "obel:P345461.6.2",
+      "obel:P345461.7.2",
+      "obel:P345461.8.2",
+      "obel:P345504.133.1",
+      "obel:P345504.142.1",
+      "obel:P345504.143.3",
+      "obel:P345504.16.3",
+      "obel:P345504.73.1",
+      "obel:P345509.125.2",
+      "obel:P345509.60.1",
+      "obel:P345509.83.1",
+      "obel:P345509.85.1",
+      "obel:P345509.87.1",
+      "obel:P345509.89.1",
+      "obel:P345509.91.1",
+      "obel:P345509.93.1",
+      "obel:P345524.50.1",
+      "obel:P345736.82.1",
+      "obel:P345767.11.3",
+      "obel:P345778.195.1",
+      "obel:P345778.204.1",
+      "obel:P345778.56.1",
+      "obel:P345778.57.3",
+      "obel:P345778.58.1",
+      "obel:P345778.58.2",
+      "obel:P345778.59.1",
+      "obel:P345778.59.2",
+      "obel:P345778.60.1",
+      "obel:P345778.60.3",
+      "obel:P345778.61.1",
+      "obel:P345778.62.1",
+      "obel:P345778.76.1",
+      "obel:P345778.77.3",
+      "obel:P345778.78.1",
+      "obel:P345778.78.2",
+      "obel:P345778.87.1",
+      "obel:P345778.88.3",
+      "obel:P345778.89.1",
+      "obel:P345778.89.2",
+      "obel:P345779.135.1",
+      "obel:P345779.136.1",
+      "obel:P345779.143.1",
+      "obel:P345779.51.2",
+      "obel:P345779.69.3",
+      "obel:P345779.73.3",
+      "obel:P345779.94.2",
+      "obel:P345779.95.2",
+      "obel:P345779.98.5",
+      "obel:P345779.99.6",
+      "obel:P345791.44.2",
+      "obel:P355666.23.5",
+      "obel:P355673.125.1",
+      "obel:P355673.38.2",
+      "obel:P355674.111.1",
+      "obel:P355674.111.2",
+      "obel:P355674.112.1",
+      "obel:P355674.114.1",
+      "obel:P355674.115.1",
+      "obel:P355681.44.1",
+      "obel:P355682.13.3",
+      "obel:P355682.23.2",
+      "obel:P355682.3.2",
+      "obel:P355682.4.1",
+      "obel:P355682.6.1",
+      "obel:P355694.10.4",
+      "obel:P355694.12.2",
+      "obel:P355694.12.5",
+      "obel:P355695.54.2",
+      "obel:P355696.10.4",
+      "obel:P355696.33.6",
+      "obel:P355696.34.3",
+      "obel:P355696.40.1",
+      "obel:P355698.222.1",
+      "obel:P355702.124.2",
+      "obel:P355702.135.2",
+      "obel:P355702.424.2",
+      "obel:P355702.99.1",
+      "obel:P389155.105.1",
+      "obel:P389155.106.4",
+      "obel:P389155.126.2",
+      "obel:P389155.90.2",
+      "obel:P412174.10.1",
+      "obel:P412174.11.1",
+      "obel:P412174.11.4",
+      "obel:P412174.13.1",
+      "obel:P412174.13.4",
+      "obel:P412174.9.1",
+      "obel:P423975.18.2",
+      "obel:P433192.10.1",
+      "rimanum:P405449.50.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "id",
+      "river"
+    ],
+    "sort": "['river']",
+    "instances_count": 203
+  },
+  {
+    "gw": "river",
+    "headword": "nāru[river]N",
+    "cf": "nāru",
+    "icount": 133,
+    "id": "x0017619",
+    "senses_mng": [
+      "(a geometrical figure)",
+      "canal",
+      "river",
+      "watercourse"
+    ],
+    "forms_n": [
+      "I₇-MEŠ",
+      "ID₂",
+      "ID₂.MEŠ",
+      "ID₂.MEŠ-šu₂",
+      "ID₂.MEŠ-šu₂-un",
+      "ID₂-šu",
+      "ID₂-šu₂",
+      "{ID₂}MEŠ",
+      "na-a-ru",
+      "na-ar",
+      "na-ra-am",
+      "na-ri"
+    ],
+    "norms_n": [
+      "nār",
+      "nāram",
+      "nārārtišun",
+      "nārāti",
+      "nārātišu",
+      "nārātu",
+      "nārātum",
+      "nāri",
+      "nārīšu",
+      "nāršu",
+      "nāru"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "dccmt:P254605.68.1",
+      "dccmt:P254605.68.2",
+      "dccmt:P254605.69.1",
+      "dccmt:P254605.69.3",
+      "dccmt:P254835.38.5",
+      "dccmt:P414663.4.5",
+      "obel:P345413.17.4",
+      "obta:P412480.12.2",
+      "obta:P412480.18.2",
+      "rinap/rinap1:Q003452.35.5",
+      "rinap/rinap1:Q003461.19.19",
+      "rinap/rinap2:Q006482.268.2",
+      "rinap/rinap2:Q006482.328.14",
+      "rinap/rinap2:Q006482.329.6",
+      "rinap/rinap2:Q006482.346.14",
+      "rinap/rinap2:Q006482.348.3",
+      "rinap/rinap2:Q006483.159.2",
+      "rinap/rinap2:Q006483.192.15",
+      "rinap/rinap2:Q006483.193.4",
+      "rinap/rinap2:Q006483.215.5",
+      "rinap/rinap2:Q006483.218.2",
+      "rinap/rinap2:Q006484.30.12",
+      "rinap/rinap2:Q006487.2.4",
+      "rinap/rinap2:Q006488.129.19",
+      "rinap/rinap2:Q006488.129.9",
+      "rinap/rinap2:Q006488.130.4",
+      "rinap/rinap2:Q006489.30.15",
+      "rinap/rinap2:Q006490.46.4",
+      "rinap/rinap2:Q006524.46.11",
+      "rinap/rinap2:Q006524.55.16",
+      "rinap/rinap2:Q006546.184.14",
+      "rinap/rinap2:Q006546.232.11",
+      "rinap/rinap2:Q006546.233.2",
+      "rinap/rinap2:Q006546.256.1",
+      "rinap/rinap2:Q006546.313.7",
+      "rinap/rinap2:Q006546.35.3",
+      "rinap/rinap2:Q006555.255.4",
+      "rinap/rinap2:Q006555.272.5",
+      "rinap/rinap2:Q006555.276.2",
+      "rinap/rinap2:Q006555.412.3",
+      "rinap/rinap2:Q006563.466.10",
+      "rinap/rinap2:Q006567.3.2",
+      "rinap/rinap2:Q006587.12.3",
+      "rinap/rinap2:Q006590.21.5",
+      "rinap/rinap2:Q006592.38.8",
+      "rinap/rinap2:Q006592.39.7",
+      "rinap/rinap2:Q006594.13.8",
+      "rinap/rinap2:Q006594.14.7",
+      "rinap/rinap2:Q006594.9.9",
+      "rinap/rinap2:Q006596.110.4",
+      "rinap/rinap2:Q006596.45.13",
+      "rinap/rinap2:Q006596.82.8",
+      "rinap/rinap3:Q003475.69.9",
+      "rinap/rinap3:Q003476.40.9",
+      "rinap/rinap3:Q003477.40.9",
+      "rinap/rinap3:Q003478.67.9",
+      "rinap/rinap3:Q003489.280.3",
+      "rinap/rinap3:Q003490.394.3",
+      "rinap/rinap3:Q003491.425.3",
+      "rinap/rinap3:Q003496.480.2",
+      "rinap/rinap3:Q003498.54.5",
+      "rinap/rinap3:Q003520.77.4",
+      "rinap/rinap3:Q003520.87.2",
+      "rinap/rinap3:Q003959.10.5",
+      "rinap/rinap3:Q003959.19.7",
+      "rinap/rinap3:Q003959.21.6",
+      "rinap/rinap3:Q003960.22.1",
+      "rinap/rinap3:Q003960.22.14",
+      "rinap/rinap3:Q003960.24.3",
+      "rinap/rinap3:Q003960.26.15",
+      "rinap/rinap3:Q003960.28.6",
+      "rinap/rinap3:Q003971.23.11",
+      "rinap/rinap3:Q003973.11.4",
+      "rinap/rinap3:Q003973.55.3",
+      "rinap/rinap3:Q004014.18.8",
+      "rinap/rinap3:Q004028.10.10",
+      "rinap/rinap3:Q004028.13.9",
+      "rinap/rinap3:Q004028.15.10",
+      "rinap/rinap3:Q004028.25.1",
+      "rinap/rinap3:Q004028.25.14",
+      "rinap/rinap3:Q004028.27.3",
+      "rinap/rinap3:Q004028.29.5",
+      "rinap/rinap3:Q004028.30.7",
+      "rinap/rinap3:Q004028.32.2",
+      "rinap/rinap3:Q004028.33.10",
+      "rinap/rinap3:Q004028.34.11",
+      "rinap/rinap3:Q004028.54.10",
+      "rinap/rinap3:Q004034.2.2",
+      "rinap/rinap3:Q004034.4.7",
+      "rinap/rinap3:Q004034.6.1",
+      "rinap/rinap3:Q004072.22.4",
+      "rinap/rinap4:Q003230.414.6",
+      "rinap/rinap4:Q003234.29.3",
+      "rinap/rinap4:Q003263.20.6",
+      "rinap/rinap4:Q003265.7.8",
+      "rinap/rinap4:Q003316.8.4",
+      "rinap/rinap4:Q003333.39.2",
+      "rinap/rinap4:Q003334.44.1",
+      "rinap/rinap4:Q003343.26.1",
+      "rinap/rinap4:Q003345.16.2",
+      "rinap/rinap4:Q003375.6.2",
+      "rinap/rinap4:Q003389.2.3",
+      "rinap/rinap5:Q003701.92.4",
+      "rinap/rinap5:Q003702.496.3",
+      "rinap/rinap5:Q003703.441.3",
+      "rinap/rinap5:Q003705.662.3",
+      "rinap/rinap5:Q003705.837.1",
+      "rinap/rinap5:Q003706.629.3",
+      "rinap/rinap5:Q003706.849.1",
+      "rinap/rinap5:Q003707.188.3",
+      "rinap/rinap5:Q003707.325.1",
+      "rinap/rinap5:Q003708.276.3",
+      "rinap/rinap5:Q003708.282.2",
+      "rinap/rinap5:Q003708.296.4",
+      "rinap/rinap5:Q003710.630.3",
+      "rinap/rinap5:Q003710.637.2",
+      "rinap/rinap5:Q003722.102.7",
+      "rinap/rinap5:Q003785.20.3",
+      "rinap/rinap5:Q003788.79.1",
+      "rinap/rinap5:Q003788.8.3",
+      "rinap/rinap5:Q003790.63.2",
+      "rinap/rinap5:Q003790.73.4",
+      "rinap/rinap5:Q007546.4.2",
+      "rinap/rinap5:Q007559.4.1",
+      "rinap/rinap5:Q007569.152.6",
+      "rinap/rinap5:Q007574.6.3",
+      "rinap/rinap5:Q007578.16.10",
+      "rinap/rinap5:Q007605.77.3",
+      "rinap/rinap5:Q007605.79.6",
+      "rinap/rinap5:Q007615.31.6",
+      "rinap/rinap5:Q007628.94.3",
+      "rinap/rinap5:Q007637.87.1",
+      "rinap/rinap5:Q008319.12.2"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "nāru",
+      "river"
+    ],
+    "sort": "['river']",
+    "instances_count": 133
+  },
+  {
+    "gw": "underground water",
+    "headword": "nagbu[underground water]N",
+    "cf": "nagbu",
+    "icount": 57,
+    "id": "x0021429",
+    "senses_mng": [
+      "(the) whole",
+      "underground water"
+    ],
+    "forms_n": [
+      "IDIM.MEŠ-šu₂",
+      "na-ag-bi",
+      "na-gab",
+      "na-gab-ša₂",
+      "nag-bi",
+      "nag-bi-ka",
+      "nag-bi-šu",
+      "nag-bi-šu₂"
+    ],
+    "norms_n": [
+      "nagab",
+      "nagabša",
+      "nagbī",
+      "nagbi",
+      "nagbīka",
+      "nagbīšu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap1:Q003452.2.13",
+      "rinap/rinap2:Q006482.345.3",
+      "rinap/rinap2:Q006482.8.10",
+      "rinap/rinap2:Q006483.211.8",
+      "rinap/rinap2:Q006488.128.7",
+      "rinap/rinap2:Q006488.149.15",
+      "rinap/rinap2:Q006488.15.14",
+      "rinap/rinap2:Q006488.16.13",
+      "rinap/rinap2:Q006489.21.15",
+      "rinap/rinap2:Q006489.46.9",
+      "rinap/rinap2:Q006490.88.9",
+      "rinap/rinap2:Q006491.12.4",
+      "rinap/rinap2:Q006492.10.1",
+      "rinap/rinap2:Q006493.13.1",
+      "rinap/rinap2:Q006494.62.2",
+      "rinap/rinap2:Q006498.4.3",
+      "rinap/rinap2:Q006500.5.3",
+      "rinap/rinap2:Q006523.10.5",
+      "rinap/rinap2:Q006524.11.10",
+      "rinap/rinap2:Q006524.70.3",
+      "rinap/rinap2:Q006555.266.7",
+      "rinap/rinap2:Q006557.10.3",
+      "rinap/rinap2:Q006563.449.3",
+      "rinap/rinap2:Q006586.7.1",
+      "rinap/rinap2:Q006592.36.20",
+      "rinap/rinap2:Q006594.11.19",
+      "rinap/rinap2:Q006597.28.13",
+      "rinap/rinap2:Q006609.12.2",
+      "rinap/rinap3:Q003482.30.13",
+      "rinap/rinap3:Q003489.455.6",
+      "rinap/rinap3:Q003490.586.2",
+      "rinap/rinap3:Q003491.677.3",
+      "rinap/rinap3:Q003516.6.2",
+      "rinap/rinap3:Q003518.13.3",
+      "rinap/rinap3:Q003960.26.9",
+      "rinap/rinap3:Q004028.28.15",
+      "rinap/rinap3:Q004036.9.3",
+      "rinap/rinap4:Q003244.4.2",
+      "rinap/rinap4:Q003273.30.9",
+      "rinap/rinap4:Q003277.50.6",
+      "rinap/rinap4:Q003277.9.10",
+      "rinap/rinap4:Q003334.198.2",
+      "rinap/rinap4:Q003363.2.7",
+      "rinap/rinap5:Q003702.29.3",
+      "rinap/rinap5:Q003703.23.6",
+      "rinap/rinap5:Q003704.76.3",
+      "rinap/rinap5:Q003706.89.6",
+      "rinap/rinap5:Q003707.24.3",
+      "rinap/rinap5:Q003709.171.3",
+      "rinap/rinap5:Q003710.46.6",
+      "rinap/rinap5:Q003800.11.3",
+      "rinap/rinap5:Q003845.12.2",
+      "rinap/rinap5:Q003879.5.5",
+      "rinap/rinap5:Q007594.33.12",
+      "rinap/rinap5:Q007632.10.3",
+      "rinap/rinap5:Q007633.16.3",
+      "rinap/rinap5:Q008352.11.12"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "nagbu",
+      "underground water"
+    ],
+    "sort": "['underground water']",
+    "instances_count": 57
+  },
+  {
+    "gw": "high water",
+    "headword": "mīlu[high water]N",
+    "cf": "mīlu",
+    "icount": 53,
+    "id": "x0012291",
+    "senses_mng": [
+      "high water"
+    ],
+    "forms_n": [
+      "ILLU",
+      "ILLU.MEŠ",
+      "ILLU-ša₂",
+      "ILLU-ši-na",
+      "ILLU-šu₂",
+      "mi-le-e-ša₂",
+      "mi-li",
+      "mi-li-ši-na"
+    ],
+    "norms_n": [
+      "mīlêša",
+      "mīli",
+      "mīlī",
+      "mīliša",
+      "mīlišina",
+      "mīlišu",
+      "mīlša",
+      "mīlu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap1:Q003449.13.4",
+      "rinap/rinap1:Q003460.83.14",
+      "rinap/rinap2:Q006482.241.8",
+      "rinap/rinap2:Q006483.144.5",
+      "rinap/rinap2:Q006484.19.10",
+      "rinap/rinap2:Q006500.5.1",
+      "rinap/rinap2:Q006546.22.13",
+      "rinap/rinap2:Q006546.256.4",
+      "rinap/rinap2:Q006546.266.12",
+      "rinap/rinap2:Q006546.35.6",
+      "rinap/rinap2:Q006563.460.2",
+      "rinap/rinap3:Q003475.77.4",
+      "rinap/rinap3:Q003476.47.9",
+      "rinap/rinap3:Q003476.52.4",
+      "rinap/rinap3:Q003477.47.9",
+      "rinap/rinap3:Q003477.52.4",
+      "rinap/rinap3:Q003478.74.9",
+      "rinap/rinap3:Q003478.80.4",
+      "rinap/rinap3:Q003489.315.3",
+      "rinap/rinap3:Q003489.345.4",
+      "rinap/rinap3:Q003490.435.3",
+      "rinap/rinap3:Q003490.471.4",
+      "rinap/rinap3:Q003491.467.2",
+      "rinap/rinap3:Q003491.484.4",
+      "rinap/rinap3:Q003492.303.3",
+      "rinap/rinap3:Q003496.432.5",
+      "rinap/rinap3:Q003497.402.2",
+      "rinap/rinap3:Q003513.15.4",
+      "rinap/rinap3:Q003516.21.3",
+      "rinap/rinap3:Q003516.25.13",
+      "rinap/rinap3:Q003517.14.3",
+      "rinap/rinap3:Q003517.18.11",
+      "rinap/rinap3:Q003520.116.4",
+      "rinap/rinap3:Q003523.18.14",
+      "rinap/rinap3:Q003524.10.9",
+      "rinap/rinap3:Q003943.51.2",
+      "rinap/rinap3:Q004035.88.8",
+      "rinap/rinap3:Q004072.29.3",
+      "rinap/rinap4:Q003263.13.12",
+      "rinap/rinap4:Q003333.268.3",
+      "rinap/rinap4:Q003333.41.2",
+      "rinap/rinap4:Q003334.365.3",
+      "rinap/rinap4:Q003334.46.1",
+      "rinap/rinap4:Q003336.101.2",
+      "rinap/rinap4:Q003341.52.3",
+      "rinap/rinap4:Q003343.26.3",
+      "rinap/rinap4:Q003345.16.8",
+      "rinap/rinap4:Q003345.28.4",
+      "rinap/rinap4:Q003387.49.2",
+      "rinap/rinap5:Q003710.1026.2",
+      "rinap/rinap5:Q003879.2.8",
+      "rinap/rinap5:Q007559.4.2",
+      "rinap/rinap5:Q007602.132.2"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "mīlu",
+      "high water"
+    ],
+    "sort": "['high water']",
+    "instances_count": 53
+  },
+  {
+    "gw": "water",
+    "headword": "māmū[water]N",
+    "cf": "māmū",
+    "icount": 36,
+    "id": "x0006670",
+    "senses_mng": [
+      "water"
+    ],
+    "forms_n": [
+      "ma-a-me",
+      "ma-a-mi",
+      "ma-mi"
+    ],
+    "norms_n": [
+      "māmē",
+      "māmī"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006498.5.3",
+      "rinap/rinap2:Q006546.214.9",
+      "rinap/rinap3:Q003475.76.21",
+      "rinap/rinap3:Q003475.90.8",
+      "rinap/rinap3:Q003476.49.15",
+      "rinap/rinap3:Q003476.67.8",
+      "rinap/rinap3:Q003477.49.15",
+      "rinap/rinap3:Q003477.60.8",
+      "rinap/rinap3:Q003478.76.15",
+      "rinap/rinap3:Q003478.88.8",
+      "rinap/rinap3:Q003482.21.8",
+      "rinap/rinap3:Q003482.31.2",
+      "rinap/rinap3:Q003489.323.6",
+      "rinap/rinap3:Q003489.456.2",
+      "rinap/rinap3:Q003489.481.1",
+      "rinap/rinap3:Q003490.586.4",
+      "rinap/rinap3:Q003490.620.2",
+      "rinap/rinap3:Q003490.624.4",
+      "rinap/rinap3:Q003491.678.2",
+      "rinap/rinap3:Q003491.699.3",
+      "rinap/rinap3:Q003492.320.5",
+      "rinap/rinap3:Q003492.424.1",
+      "rinap/rinap3:Q003498.59.2",
+      "rinap/rinap3:Q003513.25.4",
+      "rinap/rinap3:Q003516.23.20",
+      "rinap/rinap3:Q003516.77.10",
+      "rinap/rinap3:Q003517.16.20",
+      "rinap/rinap3:Q003517.96.2",
+      "rinap/rinap3:Q003518.39.3",
+      "rinap/rinap3:Q003520.156.8",
+      "rinap/rinap3:Q003943.77.4",
+      "rinap/rinap3:Q003959.19.5",
+      "rinap/rinap3:Q004028.31.16",
+      "rinap/rinap3:Q004028.54.4",
+      "rinap/rinap3:Q004028.6.11",
+      "rinap/rinap3:Q004072.27.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "māmū",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 36
+  },
+  {
+    "gw": "go along",
+    "headword": "bâʾu[go along]V",
+    "cf": "bâʾu",
+    "icount": 27,
+    "id": "x0006197",
+    "senses_mng": [
+      "cause water to flow over",
+      "go along",
+      "walk"
+    ],
+    "forms_n": [
+      "i-ba-ʾu-ma",
+      "i-ba-ʾu-u",
+      "i-ba-ʾu-u₂-ma",
+      "i-ba-aʾ",
+      "i-ba-aʾ-u₂-ma",
+      "ib-ʾa",
+      "u₂-ša₂-aš₂-ba-ʾu-u-ma",
+      "uš-bi-iʾ",
+      "uš-bi-iʾ-ma"
+    ],
+    "norms_n": [
+      "ibʾa",
+      "ibâʾ",
+      "ibaʾʾû",
+      "ibaʾûma",
+      "ušašbaʾûma",
+      "ušbiʾ",
+      "ušbīʾma"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.107.7",
+      "rinap/rinap2:Q006546.268.9",
+      "rinap/rinap3:Q003475.74.7",
+      "rinap/rinap3:Q003476.47.7",
+      "rinap/rinap3:Q003477.47.7",
+      "rinap/rinap3:Q003478.74.7",
+      "rinap/rinap3:Q003489.315.1",
+      "rinap/rinap3:Q003490.435.1",
+      "rinap/rinap3:Q003491.466.3",
+      "rinap/rinap3:Q003500.19.4",
+      "rinap/rinap3:Q003513.15.2",
+      "rinap/rinap3:Q003516.21.1",
+      "rinap/rinap3:Q003517.14.1",
+      "rinap/rinap3:Q003518.34.11",
+      "rinap/rinap3:Q003520.116.2",
+      "rinap/rinap3:Q003524.10.7",
+      "rinap/rinap3:Q003966.10.4",
+      "rinap/rinap4:Q003262.178.6",
+      "rinap/rinap4:Q003333.43.3",
+      "rinap/rinap4:Q003334.49.2",
+      "rinap/rinap4:Q003342.13.4",
+      "rinap/rinap4:Q003343.30.1",
+      "rinap/rinap4:Q003345.17.5",
+      "rinap/rinap5:Q007618.15.12",
+      "rinap/rinap5:Q007619.15.12",
+      "rinap/rinap5:Q007622.15.12",
+      "rinap/rinap5:Q007628.63.6"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "bâʾu",
+      "go along"
+    ],
+    "sort": "['go along']",
+    "instances_count": 27
+  },
+  {
+    "gw": "irrigate",
+    "headword": "makāru[irrigate]V",
+    "cf": "makāru",
+    "icount": 24,
+    "id": "x0014614",
+    "senses_mng": [
+      "irrigate",
+      "let (water) irrigate (the fields)",
+      "provide irrigation",
+      "water"
+    ],
+    "forms_n": [
+      "am-ki-ra",
+      "am-kir",
+      "i-ma-ak-ki-ir",
+      "im-ki-ir-ma",
+      "šum-ki-ra",
+      "u₂-ša₂-an-kar",
+      "u₂-ša₂-an-ki-ra",
+      "u₂-šam-ka-ra",
+      "u₂-šam-ki-ra"
+    ],
+    "norms_n": [
+      "amkir",
+      "amkira",
+      "imakkir",
+      "imkirma",
+      "šumkira",
+      "ušamkara",
+      "ušamkira",
+      "ušankar",
+      "ušankara"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006498.6.1",
+      "rinap/rinap2:Q006546.216.7",
+      "rinap/rinap2:Q006555.270.2",
+      "rinap/rinap2:Q006590.21.7",
+      "rinap/rinap2:Q006590.30.13",
+      "rinap/rinap2:Q006592.37.12",
+      "rinap/rinap2:Q006594.12.12",
+      "rinap/rinap3:Q003482.26.13",
+      "rinap/rinap3:Q003489.501.4",
+      "rinap/rinap3:Q003490.624.5",
+      "rinap/rinap3:Q003490.662.4",
+      "rinap/rinap3:Q003491.713.6",
+      "rinap/rinap3:Q003491.744.4",
+      "rinap/rinap3:Q003492.452.4",
+      "rinap/rinap3:Q003492.478.2",
+      "rinap/rinap3:Q003516.87.3",
+      "rinap/rinap3:Q003517.105.2",
+      "rinap/rinap3:Q003520.163.15",
+      "rinap/rinap3:Q003960.20.7",
+      "rinap/rinap3:Q004028.23.8",
+      "rinap/rinap4:Q003230.497.4",
+      "rinap/rinap4:Q003231.349.3",
+      "rinap/rinap4:Q003232.202.3",
+      "rinap/rinap4:Q003274.41.2"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "makāru",
+      "irrigate"
+    ],
+    "sort": "['irrigate']",
+    "instances_count": 24
+  },
+  {
+    "gw": "(cosmic) underground water",
+    "headword": "apsû[(cosmic) underground water]N",
+    "cf": "apsû",
+    "icount": 23,
+    "id": "x0021835",
+    "senses_mng": [
+      "(cosmic) underground water"
+    ],
+    "forms_n": [
+      "ABZU",
+      "ap-se-e",
+      "ap-si-i",
+      "ZU.AB"
+    ],
+    "norms_n": [
+      "apsê",
+      "apsî"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap1:Q003460.93.9",
+      "rinap/rinap2:Q006483.319.4",
+      "rinap/rinap2:Q006488.169.8",
+      "rinap/rinap2:Q006524.47.8",
+      "rinap/rinap3:Q003520.79.5",
+      "rinap/rinap3:Q003964.3.3",
+      "rinap/rinap4:Q003247.6.4",
+      "rinap/rinap4:Q003282.9.4",
+      "rinap/rinap4:Q003286.235.3",
+      "rinap/rinap4:Q003286.253.4",
+      "rinap/rinap4:Q003289.27.4",
+      "rinap/rinap4:Q003333.148.2",
+      "rinap/rinap4:Q003334.174.2",
+      "rinap/rinap4:Q003337.51.2",
+      "rinap/rinap5:Q003710.492.5",
+      "rinap/rinap5:Q003760.15.4",
+      "rinap/rinap5:Q003857.10.6",
+      "rinap/rinap5:Q003857.8.6",
+      "rinap/rinap5:Q007628.105.5",
+      "rinap/rinap5:Q007631.24.4",
+      "rinap/rinap5:Q008331.14.3",
+      "rinap/rinap5:Q008334.67.4",
+      "rinap/rinap5:Q008347.15.7"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "apsû",
+      "(cosmic) underground water"
+    ],
+    "sort": "['(cosmic) underground water']",
+    "instances_count": 23
+  },
+  {
+    "gw": "drink",
+    "headword": "šatû[drink]V",
+    "cf": "šatû",
+    "icount": 22,
+    "id": "x0017427",
+    "senses_mng": [
+      "be watered",
+      "constantly drink",
+      "drink"
+    ],
+    "forms_n": [
+      "aš₂-ti",
+      "i-šat-tu-u",
+      "i-šat-tu-u₂",
+      "iš-ta-at-tu-u",
+      "iš-tu-u",
+      "iš-tu-u₂",
+      "ši-ti"
+    ],
+    "norms_n": [
+      "ašti",
+      "išattû",
+      "ištattû",
+      "ištû",
+      "šiti"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.213.9",
+      "rinap/rinap3:Q003490.344.5",
+      "rinap/rinap3:Q003491.325.5",
+      "rinap/rinap3:Q003492.442.3",
+      "rinap/rinap3:Q003492.443.2",
+      "rinap/rinap3:Q003496.264.4",
+      "rinap/rinap3:Q003497.244.7",
+      "rinap/rinap3:Q003520.41.5",
+      "rinap/rinap3:Q004027.43.7",
+      "rinap/rinap5:Q003702.442.5",
+      "rinap/rinap5:Q003703.379.3",
+      "rinap/rinap5:Q003706.572.3",
+      "rinap/rinap5:Q003706.817.3",
+      "rinap/rinap5:Q003707.303.3",
+      "rinap/rinap5:Q003708.341.1",
+      "rinap/rinap5:Q003710.1065.4",
+      "rinap/rinap5:Q003710.1108.3",
+      "rinap/rinap5:Q003710.712.4",
+      "rinap/rinap5:Q003778.82.5",
+      "rinap/rinap5:Q003796.8.1",
+      "rinap/rinap5:Q007602.170.3",
+      "rinap/rinap5:Q007608.36.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "šatû",
+      "drink"
+    ],
+    "sort": "['drink']",
+    "instances_count": 22
+  },
+  {
+    "gw": "water",
+    "headword": "abzu[water]N",
+    "cf": "abzu",
+    "icount": 22,
+    "id": "o0023444",
+    "senses_mng": [
+      "(cosmic) underground water",
+      "water"
+    ],
+    "forms_n": [
+      "ab-zu",
+      "ab-zu-ši",
+      "abzu",
+      "abzu-a",
+      "abzu-bi-eš",
+      "abzu-ŋu₁₀",
+      "ap-su{ki}",
+      "ap-su-ra"
+    ],
+    "norms_n": [
+      "abzu",
+      "abzu,ak",
+      "abzu,bi.eše",
+      "abzu,eše",
+      "abzu,ŋu",
+      "abzu,ra"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Early Old Babylonian",
+      "Old Babylonian",
+      "Neo-Assyrian",
+      "Neo-Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "edlex:Q000035.62.1",
+      "obel:P274239.26.2",
+      "obel:P283774.88.4",
+      "obel:P283778.100.1",
+      "obel:P283778.100.4",
+      "obel:P283778.3.2",
+      "obel:P342811.68.2",
+      "obel:P342819.190.4",
+      "obel:P342819.27.3",
+      "obel:P342819.6.2",
+      "obel:P344991.52.2",
+      "obel:P345521.35.2",
+      "obel:P345621.8.6",
+      "obel:P355698.124.3",
+      "obel:P355698.125.2",
+      "obel:P355698.126.1",
+      "obel:P355701.13.3",
+      "obel:P424008.85.4",
+      "obel:P433192.18.3",
+      "obel:P433192.19.3",
+      "obel:P433192.7.3",
+      "rinap/rinap5:Q003847.9.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "abzu",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 22
+  },
+  {
+    "gw": "watering place",
+    "headword": "mašqītu[watering place]N",
+    "cf": "mašqītu",
+    "icount": 18,
+    "id": "x0016129",
+    "senses_mng": [
+      "watering place"
+    ],
+    "forms_n": [
+      "mal-qi-te",
+      "maš-qat₆-ši-na",
+      "maš-qi₂-su-nu",
+      "maš-qi₂-ti",
+      "maš-qi₂-ti-šu₂",
+      "maš-qi₂-tu₂",
+      "maš-qit"
+    ],
+    "norms_n": [
+      "malqīte",
+      "mašqâtšina",
+      "mašqīssunu",
+      "mašqīt",
+      "mašqīti",
+      "mašqītišu",
+      "mašqītu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003478.34.8",
+      "rinap/rinap3:Q003489.138.4",
+      "rinap/rinap3:Q003490.178.4",
+      "rinap/rinap3:Q003491.162.2",
+      "rinap/rinap3:Q003496.132.2",
+      "rinap/rinap3:Q003497.124.6",
+      "rinap/rinap3:Q003509.60.6",
+      "rinap/rinap3:Q003945.20.8",
+      "rinap/rinap4:Q003230.183.4",
+      "rinap/rinap4:Q003230.477.3",
+      "rinap/rinap4:Q003231.326.2",
+      "rinap/rinap4:Q003235.55.2",
+      "rinap/rinap4:Q003375.7.3",
+      "rinap/rinap4:Q003382.4.3",
+      "rinap/rinap5:Q003830.17.3",
+      "rinap/rinap5:Q003830.18.7",
+      "rinap/rinap5:Q003839.17.5",
+      "rinap/rinap5:Q007610.6.2"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "mašqītu",
+      "watering place"
+    ],
+    "sort": "['watering place']",
+    "instances_count": 18
+  },
+  {
+    "gw": "cistern",
+    "headword": "kuppu[cistern]N",
+    "cf": "kuppu",
+    "icount": 17,
+    "id": "x0013625",
+    "senses_mng": [
+      "water-source"
+    ],
+    "forms_n": [
+      "ku-up-pi",
+      "kup-pa-ni",
+      "kup-pi",
+      "kup-pi₂",
+      "kup₃-pi-ia",
+      "kup₃-pi-šu₂"
+    ],
+    "norms_n": [
+      "kuppāni",
+      "kuppi",
+      "kuppī",
+      "kuppīšu",
+      "kuppīya"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006498.5.2",
+      "rinap/rinap2:Q006524.37.4",
+      "rinap/rinap3:Q003489.448.3",
+      "rinap/rinap3:Q003490.576.3",
+      "rinap/rinap3:Q003491.665.3",
+      "rinap/rinap3:Q003491.703.6",
+      "rinap/rinap3:Q003492.407.5",
+      "rinap/rinap3:Q003956.29.3",
+      "rinap/rinap3:Q003960.26.10",
+      "rinap/rinap3:Q004028.16.4",
+      "rinap/rinap3:Q004028.28.16",
+      "rinap/rinap3:Q004031.5.2",
+      "rinap/rinap3:Q004034.3.5",
+      "rinap/rinap5:Q003710.1102.2",
+      "rinap/rinap5:Q003721.52.2",
+      "rinap/rinap5:Q007632.10.2",
+      "rinap/rinap5:Q007633.16.2"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "kuppu",
+      "cistern"
+    ],
+    "sort": "['cistern']",
+    "instances_count": 17
+  },
+  {
+    "gw": "watercourse",
+    "headword": "miṭirtu[watercourse]N",
+    "cf": "miṭirtu",
+    "icount": 17,
+    "id": "x0000384",
+    "senses_mng": [
+      "watercourse"
+    ],
+    "forms_n": [
+      "miṭ-ra-a-te",
+      "miṭ-ra-a-ti"
+    ],
+    "norms_n": [
+      "miṭrāte",
+      "miṭrāti"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003475.89.2",
+      "rinap/rinap3:Q003476.66.2",
+      "rinap/rinap3:Q003477.59.2",
+      "rinap/rinap3:Q003478.87.2",
+      "rinap/rinap3:Q003482.20.2",
+      "rinap/rinap3:Q003489.475.2",
+      "rinap/rinap3:Q003490.614.3",
+      "rinap/rinap3:Q003491.693.2",
+      "rinap/rinap3:Q003516.75.14",
+      "rinap/rinap3:Q003516.78.3",
+      "rinap/rinap3:Q003517.94.10",
+      "rinap/rinap3:Q003517.96.7",
+      "rinap/rinap3:Q003520.154.18",
+      "rinap/rinap3:Q003520.156.13",
+      "rinap/rinap3:Q003943.73.2",
+      "rinap/rinap3:Q003959.10.7",
+      "rinap/rinap3:Q003973.12.2"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "miṭirtu",
+      "watercourse"
+    ],
+    "sort": "['watercourse']",
+    "instances_count": 17
+  },
+  {
+    "gw": "waters",
+    "headword": "engur[waters]N",
+    "cf": "engur",
+    "icount": 17,
+    "id": "o0027037",
+    "senses_mng": [
+      "(cosmic) underground waters"
+    ],
+    "forms_n": [
+      "en-gu-ra",
+      "engur",
+      "engur-ra",
+      "engur{+en-gu-ra}-ra",
+      "engur-ra-ta"
+    ],
+    "norms_n": [
+      "engur",
+      "engur,a",
+      "engur,ak",
+      "engur,ak.ta"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Babylonian"
+    ],
+    "instances": [
+      "obel:P283773.31.3",
+      "obel:P342909.16.3",
+      "obel:P345439.3.2",
+      "obel:P345439.4.3",
+      "obel:P345439.5.5",
+      "obel:P345447.23.3",
+      "obel:P345447.24.4",
+      "obel:P355651.29.2",
+      "obel:P355674.166.2",
+      "obel:P355674.205.2",
+      "obel:P355674.218.2",
+      "obel:P355696.22.1",
+      "obel:P355702.395.2",
+      "obel:P355702.494.2",
+      "obel:P355702.496.2",
+      "obel:P355702.499.1",
+      "obel:P433192.9.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "engur",
+      "waters"
+    ],
+    "sort": "['waters']",
+    "instances_count": 17
+  },
+  {
+    "gw": "water channel",
+    "headword": "harru[water channel]N",
+    "cf": "harru",
+    "icount": 16,
+    "id": "x0002815",
+    "senses_mng": [
+      "water channel"
+    ],
+    "forms_n": [
+      "{ID₂}har-ra-ti-šu₂-un",
+      "har-ri",
+      "{ID₂}har-ri",
+      "{ID₂}har-ru"
+    ],
+    "norms_n": [
+      "harrāti",
+      "harri",
+      "harru",
+      "ḫarri"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003475.89.18",
+      "rinap/rinap3:Q003476.66.18",
+      "rinap/rinap3:Q003477.59.17",
+      "rinap/rinap3:Q003478.87.17",
+      "rinap/rinap3:Q003482.20.17",
+      "rinap/rinap3:Q003489.479.3",
+      "rinap/rinap3:Q003490.618.3",
+      "rinap/rinap3:Q003491.707.1",
+      "rinap/rinap3:Q003492.436.2",
+      "rinap/rinap3:Q003516.77.2",
+      "rinap/rinap3:Q003517.95.9",
+      "rinap/rinap3:Q003520.155.14",
+      "rinap/rinap3:Q003520.64.3",
+      "rinap/rinap3:Q003549.4.3",
+      "rinap/rinap3:Q003943.76.2",
+      "rinap/rinap4:Q003264.16.5"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "harru",
+      "water channel"
+    ],
+    "sort": "['water channel']",
+    "instances_count": 16
+  },
+  {
+    "gw": "watering place",
+    "headword": "mašqû[watering place]N",
+    "cf": "mašqû",
+    "icount": 11,
+    "id": "x0005819",
+    "senses_mng": [
+      "watering place"
+    ],
+    "forms_n": [
+      "ma-as-qe₂-e",
+      "mas-qe₂-e",
+      "maš-qe₂-e",
+      "maš-qi₂-ia"
+    ],
+    "norms_n": [
+      "masqê",
+      "mašqê",
+      "mašqîya"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003489.448.5",
+      "rinap/rinap3:Q003490.577.2",
+      "rinap/rinap3:Q003491.665.5",
+      "rinap/rinap3:Q003492.244.4",
+      "rinap/rinap3:Q003492.408.2",
+      "rinap/rinap3:Q003496.401.4",
+      "rinap/rinap3:Q003497.374.2",
+      "rinap/rinap3:Q003956.30.2",
+      "rinap/rinap5:Q003702.466.7",
+      "rinap/rinap5:Q003703.410.3",
+      "rinap/rinap5:Q003705.633.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "mašqû",
+      "watering place"
+    ],
+    "sort": "['watering place']",
+    "instances_count": 11
+  },
+  {
+    "gw": "subterranean waters",
+    "headword": "asurrakku[subterranean waters]N",
+    "cf": "asurrakku",
+    "icount": 10,
+    "id": "x0014978",
+    "senses_mng": [
+      "subterranean waters"
+    ],
+    "forms_n": [
+      "a-sur-rak-ki-ša₂",
+      "a-sur-rak-ku"
+    ],
+    "norms_n": [
+      "asurrakkiša",
+      "asurrakku"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003475.76.9",
+      "rinap/rinap3:Q003476.49.3",
+      "rinap/rinap3:Q003477.49.3",
+      "rinap/rinap3:Q003478.76.3",
+      "rinap/rinap3:Q003489.321.3",
+      "rinap/rinap3:Q003490.441.4",
+      "rinap/rinap3:Q003513.20.2",
+      "rinap/rinap3:Q003516.22.6",
+      "rinap/rinap3:Q003517.15.8",
+      "rinap/rinap3:Q003518.37.10"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "asurrakku",
+      "subterranean waters"
+    ],
+    "sort": "['subterranean waters']",
+    "instances_count": 10
+  },
+  {
+    "gw": "(water-)skin",
+    "headword": "nādu[(water-)skin]N",
+    "cf": "nādu",
+    "icount": 9,
+    "id": "x0007644",
+    "senses_mng": [
+      "(water-)skin"
+    ],
+    "forms_n": [
+      "{KUŠ}na-a-de",
+      "{KUŠ}na-a-di",
+      "{KUŠ}UMMU₃"
+    ],
+    "norms_n": [
+      "nāde",
+      "nādi"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.232.13",
+      "rinap/rinap3:Q003490.343.6",
+      "rinap/rinap3:Q003491.324.6",
+      "rinap/rinap3:Q003496.263.6",
+      "rinap/rinap3:Q003497.244.2",
+      "rinap/rinap3:Q003520.40.20",
+      "rinap/rinap3:Q004027.43.2",
+      "rinap/rinap4:Q003263.24.7",
+      "rinap/rinap4:Q003265.11.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "nādu",
+      "(water-)skin"
+    ],
+    "sort": "['(water-)skin']",
+    "instances_count": 9
+  },
+  {
+    "gw": "cosmic (underground) water",
+    "headword": "lalgar[cosmic (underground) water]N",
+    "cf": "lalgar",
+    "icount": 9,
+    "id": "x0016448",
+    "senses_mng": [
+      "cosmic (underground) water"
+    ],
+    "forms_n": [
+      "lal₃-gar"
+    ],
+    "norms_n": [
+      "lalgar"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003475.65.13",
+      "rinap/rinap3:Q003476.36.13",
+      "rinap/rinap3:Q003477.36.13",
+      "rinap/rinap3:Q003478.63.13",
+      "rinap/rinap3:Q003489.274.2",
+      "rinap/rinap3:Q003490.388.2",
+      "rinap/rinap3:Q003491.417.4",
+      "rinap/rinap3:Q003943.47.1",
+      "rinap/rinap5:Q003857.11.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "lalgar",
+      "cosmic (underground) water"
+    ],
+    "sort": "['cosmic (underground) water']",
+    "instances_count": 9
+  },
+  {
+    "gw": "(a water bird)",
+    "headword": "kumû[(a water bird)]N",
+    "cf": "kumû",
+    "icount": 8,
+    "id": "x0003641",
+    "senses_mng": [
+      "(a water bird)"
+    ],
+    "forms_n": [
+      "ku-me₂-e{MUŠEN}",
+      "{MUŠEN}ku-me₂-e",
+      "{MUŠEN}ku-mi-i"
+    ],
+    "norms_n": [
+      "kumê",
+      "kumî"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006482.347.2",
+      "rinap/rinap2:Q006483.215.7",
+      "rinap/rinap2:Q006488.129.11",
+      "rinap/rinap2:Q006555.273.2",
+      "rinap/rinap2:Q006567.7.3",
+      "rinap/rinap2:Q006592.38.10",
+      "rinap/rinap2:Q006594.13.10",
+      "rinap/rinap2:Q006595.2.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "kumû",
+      "(a water bird)"
+    ],
+    "sort": "['(a water bird)']",
+    "instances_count": 8
+  },
+  {
+    "gw": "water-channel",
+    "headword": "rāṭu[water-channel]N",
+    "cf": "rāṭu",
+    "icount": 8,
+    "id": "x0005135",
+    "senses_mng": [
+      "(a mathematical constant)"
+    ],
+    "forms_n": [
+      "ra-ṭe₄-em",
+      "ra-ṭu₃-um",
+      "ŠITA₃"
+    ],
+    "norms_n": [
+      "rāṭem",
+      "rāṭum"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "dccmt:P224928.13.5",
+      "dccmt:P224928.13.6",
+      "dccmt:P255026.24.2",
+      "dccmt:P255026.25.2",
+      "dccmt:P255026.26.2",
+      "dccmt:P255045.37.2",
+      "dccmt:P255045.39.2",
+      "dccmt:P255045.40.2"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "rāṭu",
+      "water-channel"
+    ],
+    "sort": "['water-channel']",
+    "instances_count": 8
+  },
+  {
+    "gw": "spring",
+    "headword": "idim[spring]N",
+    "cf": "idim",
+    "icount": 7,
+    "id": "o0030575",
+    "senses_mng": [
+      "spring, underground water"
+    ],
+    "forms_n": [
+      "idim",
+      "idim-ma"
+    ],
+    "norms_n": [
+      "idim",
+      "idim,ak"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "obel:P283764.15.2",
+      "obel:P344991.82.3",
+      "obel:P345352.155.1",
+      "obel:P345352.267.1",
+      "obel:P345736.78.3",
+      "obel:P345736.79.2",
+      "obel:P355696.22.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "idim",
+      "spring"
+    ],
+    "sort": "['spring']",
+    "instances_count": 7
+  },
+  {
+    "gw": "water-clock",
+    "headword": "ṣiṣṣippu[water-clock]N",
+    "cf": "ṣiṣṣippu",
+    "icount": 7,
+    "id": "x0004919",
+    "senses_mng": [
+      "water-clock"
+    ],
+    "forms_n": [
+      "{giš}DIB.DIB"
+    ],
+    "norms_n": [
+      "ṣiṣṣippim",
+      "ṣiṣṣippum"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "dccmt:P274707.103.1",
+      "dccmt:P274707.103.7",
+      "dccmt:P274707.87.1",
+      "dccmt:P274707.87.5",
+      "dccmt:P274707.90.8",
+      "dccmt:P274707.95.1",
+      "dccmt:P274707.97.8"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "ṣiṣṣippu",
+      "water-clock"
+    ],
+    "sort": "['water-clock']",
+    "instances_count": 7
+  },
+  {
+    "gw": "waters",
+    "headword": "berâtu[waters]N",
+    "cf": "berâtu",
+    "icount": 6,
+    "id": "x0007803",
+    "senses_mng": [
+      "waters"
+    ],
+    "forms_n": [
+      "be-ra-a-ti"
+    ],
+    "norms_n": [
+      "berâti"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006482.8.11",
+      "rinap/rinap2:Q006488.15.15",
+      "rinap/rinap2:Q006524.11.11",
+      "rinap/rinap2:Q006557.10.4",
+      "rinap/rinap2:Q006586.7.2",
+      "rinap/rinap2:Q006609.12.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "berâtu",
+      "waters"
+    ],
+    "sort": "['waters']",
+    "instances_count": 6
+  },
+  {
+    "gw": "waterskin",
+    "headword": "ummud[waterskin]N",
+    "cf": "ummud",
+    "icount": 6,
+    "id": "o0041520",
+    "senses_mng": [
+      "waterskin"
+    ],
+    "forms_n": [
+      "{kuš}ummu₃",
+      "{kuš}ummuₓ(|EDIN.LAL|){+um-mi}",
+      "{kuš}ummud",
+      "{kuš}ummud-da-na"
+    ],
+    "norms_n": [
+      "ummud",
+      "ummud,ani.a"
+    ],
+    "periods_p": [
+      "ED IIIa",
+      "Early Dynastic",
+      "Old Babylonian"
+    ],
+    "instances": [
+      "edlex:P010663.37.1",
+      "edlex:Q000006.61.2",
+      "obel:P274199.26.2",
+      "obel:P274199.27.2",
+      "obel:P274216.31.2",
+      "obel:P355696.3.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "ummud",
+      "waterskin"
+    ],
+    "sort": "['waterskin']",
+    "instances_count": 6
+  },
+  {
+    "gw": "wash water",
+    "headword": "rimku[wash water]N",
+    "cf": "rimku",
+    "icount": 5,
+    "id": "x0011648",
+    "senses_mng": [
+      "washing ceremony"
+    ],
+    "forms_n": [
+      "ri-im-ki-šu₂-nu",
+      "rim-ki"
+    ],
+    "norms_n": [
+      "rimki",
+      "rimkīšunu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q004014.17.2",
+      "rinap/rinap4:Q003289.51.2",
+      "rinap/rinap4:Q003412.5.2",
+      "rinap/rinap5:Q007627.14.4",
+      "rinap/rinap5:Q007628.102.6"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "rimku",
+      "wash water"
+    ],
+    "sort": "['wash water']",
+    "instances_count": 5
+  },
+  {
+    "gw": "water",
+    "headword": "aʾu[water]N",
+    "cf": "aʾu",
+    "icount": 5,
+    "id": "o0023271",
+    "senses_mng": [
+      "high water"
+    ],
+    "forms_n": [
+      "a-u₂",
+      "a-u₅",
+      "u₃-a",
+      "u₅-a"
+    ],
+    "norms_n": [
+      "aʾu"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Babylonian"
+    ],
+    "instances": [
+      "obel:P274202.42.2",
+      "obel:P274203.89.2",
+      "obel:P283775.41.1",
+      "obel:P342810.22.5",
+      "obel:P342931.41.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "aʾu",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 5
+  },
+  {
+    "gw": "break",
+    "headword": "haš[break]V/t",
+    "cf": "haš",
+    "icount": 4,
+    "id": "o0030003",
+    "senses_mng": [
+      "divert",
+      "to divert (water)"
+    ],
+    "forms_n": [
+      "ba-an-haš",
+      "mu-na-ab-ha-aš",
+      "mu-na-ab-haš",
+      "mu-un-na-ab-haš"
+    ],
+    "norms_n": [
+      "ba.n:haš",
+      "mu.na.b:haš"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P274202.43.6",
+      "obel:P274203.90.5",
+      "obel:P342931.42.6",
+      "obel:P345721.22.4"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "haš",
+      "break"
+    ],
+    "sort": "['break']",
+    "instances_count": 4
+  },
+  {
+    "gw": "draw (water)",
+    "headword": "habû[draw (water)]V",
+    "cf": "habû",
+    "icount": 4,
+    "id": "x0002053",
+    "senses_mng": [
+      "draw (water)"
+    ],
+    "forms_n": [
+      "ih-bu-ma",
+      "ih-bu-u₂"
+    ],
+    "norms_n": [
+      "ihbû",
+      "ihbûma"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.232.15",
+      "rinap/rinap5:Q003710.1050.5",
+      "rinap/rinap5:Q003721.42.6",
+      "rinap/rinap5:Q007602.155.5"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "habû",
+      "draw (water)"
+    ],
+    "sort": "['draw (water)']",
+    "instances_count": 4
+  },
+  {
+    "gw": "watering",
+    "headword": "šīqu[watering]N",
+    "cf": "šīqu",
+    "icount": 4,
+    "id": "x0013551",
+    "senses_mng": [
+      "irrigation"
+    ],
+    "forms_n": [
+      "ši-qa-a-ti",
+      "ši-qi"
+    ],
+    "norms_n": [
+      "šīqāti",
+      "šīqi"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003960.14.7",
+      "rinap/rinap3:Q003973.14.3",
+      "rinap/rinap3:Q003973.15.7",
+      "rinap/rinap3:Q004028.7.7"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "šīqu",
+      "watering"
+    ],
+    "sort": "['watering']",
+    "instances_count": 4
+  },
+  {
+    "gw": "vessel",
+    "headword": "tilimda[vessel]N",
+    "cf": "tilimda",
+    "icount": 3,
+    "id": "o0040376",
+    "senses_mng": [
+      "a water vessel"
+    ],
+    "forms_n": [
+      "di-li-im-da",
+      "ti-lim-da"
+    ],
+    "norms_n": [
+      "tilimda"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P315472.87.3",
+      "obel:P345506.22.1",
+      "obel:P355702.202.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "tilimda",
+      "vessel"
+    ],
+    "sort": "['vessel']",
+    "instances_count": 3
+  },
+  {
+    "gw": "water",
+    "headword": "asura[water]N",
+    "cf": "asura",
+    "icount": 3,
+    "id": "o0024539",
+    "senses_mng": [
+      "water from the depths",
+      "water"
+    ],
+    "forms_n": [
+      "a-su-ra-ba",
+      "a-sur-ra-na",
+      "sur-ra"
+    ],
+    "norms_n": [
+      "asura",
+      "asura,ani.a",
+      "asura,bi.ak"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P345347.65.4",
+      "obel:P355651.32.5",
+      "obel:P355680.44.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "asura",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 3
+  },
+  {
+    "gw": "zebu",
+    "headword": "abzaza[zebu]N",
+    "cf": "abzaza",
+    "icount": 3,
+    "id": "o0023441",
+    "senses_mng": [
+      "zebu, water buffalo"
+    ],
+    "forms_n": [
+      "ab-za-za"
+    ],
+    "norms_n": [
+      "abzaza"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P315472.7.5",
+      "obel:P315472.8.5",
+      "obel:P315472.9.4"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "abzaza",
+      "zebu"
+    ],
+    "sort": "['zebu']",
+    "instances_count": 3
+  },
+  {
+    "gw": "(water-) meadow",
+    "headword": "sahhu[(water-) meadow]N",
+    "cf": "sahhu",
+    "icount": 2,
+    "id": "x0010221",
+    "senses_mng": [
+      "like a meadow"
+    ],
+    "forms_n": [
+      "sah-hu"
+    ],
+    "norms_n": [
+      "sahhu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.242.9",
+      "rinap/rinap2:Q006590.30.11"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "sahhu",
+      "(water-) meadow"
+    ],
+    "sort": "['(water-) meadow']",
+    "instances_count": 2
+  },
+  {
+    "gw": "breach",
+    "headword": "aʾea[breach]N",
+    "cf": "aʾea",
+    "icount": 2,
+    "id": "o0023248",
+    "senses_mng": [
+      "breach, water outlet"
+    ],
+    "forms_n": [
+      "a-e₃"
+    ],
+    "norms_n": [
+      "aʾea"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P283740.23.1",
+      "obel:P283740.23.4"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "aʾea",
+      "breach"
+    ],
+    "sort": "['breach']",
+    "instances_count": 2
+  },
+  {
+    "gw": "water drawer",
+    "headword": "abala[water drawer]N",
+    "cf": "abala",
+    "icount": 2,
+    "id": "o0023325",
+    "senses_mng": [
+      "water drawer"
+    ],
+    "forms_n": [
+      "a-bala-ŋa₂"
+    ],
+    "norms_n": [
+      "abala,ŋu.ak"
+    ],
+    "periods_p": [
+      "Middle Babylonian"
+    ],
+    "instances": [
+      "obel:P260028.16.5",
+      "obel:P260028.18.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "abala",
+      "water drawer"
+    ],
+    "sort": "['water drawer']",
+    "instances_count": 2
+  },
+  {
+    "gw": "water-channel",
+    "headword": "šitan[water-channel]N",
+    "cf": "šitan",
+    "icount": 2,
+    "id": "o0039494",
+    "senses_mng": [
+      "water-channel, pipe"
+    ],
+    "forms_n": [
+      "ŋeš-šita₃",
+      "šita₃-na"
+    ],
+    "norms_n": [
+      "šitan",
+      "šitan,ak"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Old Babylonian"
+    ],
+    "instances": [
+      "edlex:Q000038.6.1",
+      "obel:P223481.23.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "šitan",
+      "water-channel"
+    ],
+    "sort": "['water-channel']",
+    "instances_count": 2
+  },
+  {
+    "gw": "bird",
+    "headword": "gamgam[bird]N",
+    "cf": "gamgam",
+    "icount": 1,
+    "id": "o0027804",
+    "senses_mng": [
+      "a water bird"
+    ],
+    "forms_n": [
+      "gam₃-gam₃{mušen}"
+    ],
+    "norms_n": [
+      "gamgam"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000018.36.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "gamgam",
+      "bird"
+    ],
+    "sort": "['bird']",
+    "instances_count": 1
+  },
+  {
+    "gw": "bird",
+    "headword": "um[bird]N",
+    "cf": "um",
+    "icount": 1,
+    "id": "o0041457",
+    "senses_mng": [
+      "a water bird"
+    ],
+    "forms_n": [
+      "um{mušen}"
+    ],
+    "norms_n": [
+      "um"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000018.41.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "um",
+      "bird"
+    ],
+    "sort": "['bird']",
+    "instances_count": 1
+  },
+  {
+    "gw": "channel",
+    "headword": "kuš[channel]N",
+    "cf": "kuš",
+    "icount": 1,
+    "id": "o0032729",
+    "senses_mng": [
+      "water channel"
+    ],
+    "forms_n": [
+      "kuš₃"
+    ],
+    "norms_n": [
+      "kuš"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P345459.36.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "kuš",
+      "channel"
+    ],
+    "sort": "['channel']",
+    "instances_count": 1
+  },
+  {
+    "gw": "fish",
+    "headword": "lub[fish]N",
+    "cf": "lub",
+    "icount": 1,
+    "id": "o0033287",
+    "senses_mng": [
+      "a salt-water fish"
+    ],
+    "forms_n": [
+      "lu-ub₂{ku₆}"
+    ],
+    "norms_n": [
+      "lub"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000014.77.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "lub",
+      "fish"
+    ],
+    "sort": "['fish']",
+    "instances_count": 1
+  },
+  {
+    "gw": "foam",
+    "headword": "imhur[foam]N",
+    "cf": "imhur",
+    "icount": 1,
+    "id": "o0030983",
+    "senses_mng": [
+      "foam on water"
+    ],
+    "forms_n": [
+      "imhur₄"
+    ],
+    "norms_n": [
+      "imhur"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P355694.11.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "imhur",
+      "foam"
+    ],
+    "sort": "['foam']",
+    "instances_count": 1
+  },
+  {
+    "gw": "sluice",
+    "headword": "natbaktu[sluice]N",
+    "cf": "natbaktu",
+    "icount": 1,
+    "id": "x0001964",
+    "senses_mng": [
+      "waterfall"
+    ],
+    "forms_n": [
+      "na-at-ba-kat₃"
+    ],
+    "norms_n": [
+      "natbakāt"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.344.1"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "natbaktu",
+      "sluice"
+    ],
+    "sort": "['sluice']",
+    "instances_count": 1
+  },
+  {
+    "gw": "water-table",
+    "headword": "anzanunzû[water-table]N",
+    "cf": "anzanunzû",
+    "icount": 1,
+    "id": "x0000011",
+    "senses_mng": [
+      "subterranean water"
+    ],
+    "forms_n": [
+      "an-za-nun-ze-e"
+    ],
+    "norms_n": [
+      "anzanunzê"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006603.15.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "anzanunzû",
+      "water-table"
+    ],
+    "sort": "['water-table']",
+    "instances_count": 1
+  }
+]

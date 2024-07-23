@@ -1,10 +1,10 @@
 {
-  "backend/search/king": {
+  "searches/search/king": {
     "hostname": "localhost",
     "pathname": "/search/king",
     "query": {}
   },
-  "backend/search/cow": {
+  "searches/search/cow": {
     "hostname": "localhost",
     "pathname": "/search/cow",
     "query": {}
@@ -24,14 +24,14 @@
     "pathname": "/neo/qpn/x000028130",
     "query": {}
   },
-  "oracc/neo/xis=qpn.r00002c/qpn": {
+  "oracc/neo/xis%3Dqpn.r00002c/qpn": {
     "hostname": "build-oracc.museum.upenn.edu",
     "pathname": "/neo/qpn",
     "query": {
       "xis": "qpn.r00002c"
     }
   },
-  "oracc/neo/ref=Q003478.36/xis=qpn.r00002c/qpn": {
+  "oracc/neo/ref%3DQ003478.36/xis%3Dqpn.r00002c/qpn": {
     "hostname": "build-oracc.museum.upenn.edu",
     "pathname": "/neo/qpn",
     "query": {
@@ -44,14 +44,14 @@
     "pathname": "/neo/sux/o0023294",
     "query": {}
   },
-  "oracc/neo/xis=sux.r000097/sux": {
+  "oracc/neo/xis%3Dsux.r000097/sux": {
     "hostname": "build-oracc.museum.upenn.edu",
     "pathname": "/neo/sux",
     "query": {
       "xis": "sux.r000097"
     }
   },
-  "oracc/neo/ref=Q000012.1/xis=sux.r000097/sux": {
+  "oracc/neo/ref%3DQ000012.1/xis%3Dsux.r000097/sux": {
     "hostname": "build-oracc.museum.upenn.edu",
     "pathname": "/neo/sux",
     "query": {
@@ -59,7 +59,7 @@
       "ref": "Q000012.1"
     }
   },
-  "oracc/neo/block=sb.Q000012.1/Q000012.1": {
+  "oracc/neo/block%3Dsb.Q000012.1/Q000012.1": {
     "hostname": "build-oracc.museum.upenn.edu",
     "pathname": "/neo/Q000012.1",
     "query": {

@@ -256,20 +256,10 @@ does not require the build-oracc server to be reachable or the
 
 ### Updating the backend stubs
 
-These fixtures can be updated automatically by deleting the
-`backend`, `oracc` and `suggests` directories, and replacing
-the contents of the `directory.json` function with the contents:
-
-```json
-{}
-```
-
-Also delete the `cypress/fixtures_new` directory. Then rerun the
-tests, with the build-oracc server reachable and the `oracc-rest`
-server running.. New files will be added to the
-`cypress/fixtures_new` directory. These can all be copied into
-`cypress/fixtures` (including overwriting the `directory.json` file
-created above), giving us the new stub responses.
+You can update the backend stubs by ensuring that the backend
+`oracc-rest` server is running and that the `build-oracc` server
+is reachable, then running the `./update-test-fixtures.sh`
+bash script.
 
 Any future runs will use these updated responses. These new
 files can be committed to source control.

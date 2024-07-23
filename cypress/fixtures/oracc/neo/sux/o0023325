@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
   <title>neo</title>    
 </head>
-  <body><div id="p4Pager" class="bborder-top list item dglo iart zoom default" data-proj="neo" data-glos="qpn" data-glet="A" data-gent="x000028130" data-prev="x000028120" data-item="x000028130" data-next="x000028150" data-bkmk="x000028130" data-lang="en">
+  <body><div id="p4Pager" class="bborder-top list item dglo iart zoom default" data-proj="neo" data-glos="sux" data-glet="A" data-gent="o0023325" data-prev="o0023307" data-item="o0023325" data-next="o0023342" data-bkmk="o0023325" data-lang="en">
   <div id="p4Masthead">
     <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
       <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
@@ -50,7 +50,7 @@
 
     <div id="p4Controls">
       
-  <div id="p4itemNav" class="p4items" data-ityp="ENTRY" data-inth="17" data-imax="710">
+  <div id="p4itemNav" class="p4items" data-ityp="ENTRY" data-inth="24" data-imax="233">
     <p class="bg-dk">
 
       
@@ -66,7 +66,7 @@
 	   alt="Item back" title="Item back"
 	   onclick="act_item_prev()"/>
       
-      <span id="p4ItemView"> [ENTRY 17 of 710] </span>
+      <span id="p4ItemView"> [ENTRY 24 of 233] </span>
       
       <img id="p4ItemNext" class="p4icon p4spread" src="/img/p3-forward.png"
 	   alt="Item forward" title="Item forward"
@@ -85,7 +85,7 @@
     </p>
   </div>
 
-  <div id="p4PageNav" class="p4pages" data-page="1" data-pmax="29" data-imax="710">
+  <div id="p4PageNav" class="p4pages" data-page="1" data-pmax="10" data-imax="233">
     <p class="p3toccenter bg-dk">
 
       <button id="p4Zoom" class="p4spread" onclick="act_zoom('0')">All Results</button>
@@ -101,9 +101,9 @@
 	   alt="Page forward" title="Page forward"
 	   onclick="act_next()"/>
 
-      710 entries
+      233 entries
       /
-      29 pages
+      10 pages
 
       <span id="p4SrchResultpages" class="p4srchresults">[0 matches]</span>
 
@@ -121,26 +121,35 @@
   </div>
   <div id="p4Data">
     <div id="p4Menu">
-<div id="p4Letters"><p class="all-letters"><a href="javascript://" onclick="act_letter('entry_ids')">ALL</a></p><p><a href="javascript://" onclick="act_letter('ʾ')"><span>ʾ</span></a></p><p><a href="javascript://" class="zoomed" onclick="act_letter('A')"><span>A</span></a></p><p><a href="javascript://" onclick="act_letter('B')"><span>B</span></a></p><p><a href="javascript://" onclick="act_letter('C')"><span>C</span></a></p><p><a href="javascript://" onclick="act_letter('D')"><span>D</span></a></p><p><a href="javascript://" onclick="act_letter('E')"><span>E</span></a></p><p><a href="javascript://" onclick="act_letter('G')"><span>G</span></a></p><p><a href="javascript://" onclick="act_letter('Ŋ')"><span>Ŋ</span></a></p><p><a href="javascript://" onclick="act_letter('H')"><span>H</span></a></p><p><a href="javascript://" onclick="act_letter('Ḫ')"><span>Ḫ</span></a></p><p><a href="javascript://" onclick="act_letter('I')"><span>I</span></a></p><p><a href="javascript://" onclick="act_letter('K')"><span>K</span></a></p><p><a href="javascript://" onclick="act_letter('L')"><span>L</span></a></p><p><a href="javascript://" onclick="act_letter('M')"><span>M</span></a></p><p><a href="javascript://" onclick="act_letter('N')"><span>N</span></a></p><p><a href="javascript://" onclick="act_letter('P')"><span>P</span></a></p><p><a href="javascript://" onclick="act_letter('Q')"><span>Q</span></a></p><p><a href="javascript://" onclick="act_letter('R')"><span>R</span></a></p><p><a href="javascript://" onclick="act_letter('S')"><span>S</span></a></p><p><a href="javascript://" onclick="act_letter('Ṣ')"><span>Ṣ</span></a></p><p><a href="javascript://" onclick="act_letter('Š')"><span>Š</span></a></p><p><a href="javascript://" onclick="act_letter('T')"><span>T</span></a></p><p><a href="javascript://" onclick="act_letter('Ṭ')"><span>Ṭ</span></a></p><p><a href="javascript://" onclick="act_letter('U')"><span>U</span></a></p><p><a href="javascript://" onclick="act_letter('W')"><span>W</span></a></p><p><a href="javascript://" onclick="act_letter('X')"><span>X</span></a></p><p><a href="javascript://" onclick="act_letter('Y')"><span>Y</span></a></p><p><a href="javascript://" onclick="act_letter('Z')"><span>Z</span></a></p></div></div>
+<div id="p4Letters"><p class="all-letters"><a href="javascript://" onclick="act_letter('entry_ids')">ALL</a></p><p><a href="javascript://" class="zoomed" onclick="act_letter('A')"><span>A</span></a></p><p><a href="javascript://" onclick="act_letter('B')"><span>B</span></a></p><p><a href="javascript://" onclick="act_letter('D')"><span>D</span></a></p><p><a href="javascript://" onclick="act_letter('E')"><span>E</span></a></p><p><a href="javascript://" onclick="act_letter('G')"><span>G</span></a></p><p><a href="javascript://" onclick="act_letter('Ŋ')"><span>Ŋ</span></a></p><p><a href="javascript://" onclick="act_letter('H')"><span>H</span></a></p><p><a href="javascript://" onclick="act_letter('I')"><span>I</span></a></p><p><a href="javascript://" onclick="act_letter('K')"><span>K</span></a></p><p><a href="javascript://" onclick="act_letter('L')"><span>L</span></a></p><p><a href="javascript://" onclick="act_letter('M')"><span>M</span></a></p><p><a href="javascript://" onclick="act_letter('N')"><span>N</span></a></p><p><a href="javascript://" onclick="act_letter('P')"><span>P</span></a></p><p><a href="javascript://" onclick="act_letter('R')"><span>R</span></a></p><p><a href="javascript://" onclick="act_letter('S')"><span>S</span></a></p><p><a href="javascript://" onclick="act_letter('Š')"><span>Š</span></a></p><p><a href="javascript://" onclick="act_letter('T')"><span>T</span></a></p><p><a href="javascript://" onclick="act_letter('U')"><span>U</span></a></p><p><a href="javascript://" onclick="act_letter('Y')"><span>Y</span></a></p><p><a href="javascript://" onclick="act_letter('Z')"><span>Z</span></a></p></div></div>
 
     <div id="p4Content">
       <div id="p4Item" class="glo">
   <div id="p4GlossaryEntry">
 <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="header">
-      <h1 class="entry heading border-top"><span class="cf qpn">Abdi-Liʾti</span><span class="gw"> [KING OF ARWAD]</span> <span class="pos">(RN)</span></h1>
+      <h1 class="entry heading border-top"><span class="cf sux">abala</span><span class="gw"> [WATER DRAWER]</span> <span class="pos">(N)</span></h1>
       <p class="icount">
-        <a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c">6 instances</a>
+        <a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0000c5">2 instances</a>
       </p>
     </div>
+<p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="norms"><span class="iheader">Base forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0000c5"><span class="orth1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">a</span>-<span x="3" class="sux">bala</span></span></span></a>.</p>
 <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="forms">
-      <p class="forms"><span class="iheader">Written forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><sup class="sux">m</sup><span x="3" class="akk">ab</span>-<span x="3" class="akk">di</span>-<span x="3" class="akk">li</span>-<span x="3" class="akk">iʾ</span>-<span x="3" class="akk">ti</span></span></a>.</p>
+      <p class="forms"><span class="iheader">Written forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0000c5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">a</span>-<span x="3" class="sux">bala</span>-<span x="3" class="sux">ŋa₂</span></span></a>.</p>
     </div>
-<p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="norms"><span class="iheader">Normalized forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c">Abdi-Liʾti</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><sup class="sux">m</sup><span x="3" class="akk">ab</span>-<span x="3" class="akk">di</span>-<span x="3" class="akk">li</span>-<span x="3" class="akk">iʾ</span>-<span x="3" class="akk">ti</span></span></a>).</p>
+<p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="norms"><span class="iheader">Normalized forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0000c5">abala,ŋu.ak</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0000c5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">a</span>-<span x="3" class="sux">bala</span>-<span x="3" class="sux">ŋa₂</span></span></a>).</p>
+<div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="morphs">
+      <span class="iheader">Morphological forms:</span>
+      <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0000c5">~,ŋu.ak</a>
+      <span class="punct-sc">.</span>
+    </div>
 <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="senses">
-      <h3 class="sense"><span class="sensenum">1.</span> king of Arwad<a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c"> (6x/100%)</a></h3>
+      <h3 class="sense"><span class="sensenum">1.</span> water drawer<a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r0000c5"> (2x/100%)</a></h3>
     </div>
 <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="purl">
-      <p>ID=http://oracc.org/neo/</p>
+      <p>ID=http://oracc.org/neo/o0023325</p>
+      <p>
+        <a href="http://oracc.org/epsd2/o0023325">See full ePSD2 article for abala[water drawer]N</a>
+      </p>
     </div>
 <hr xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="article"/>
 </div>
@@ -160,7 +169,7 @@
   
   <p>The pager was invoked as:</p>
   
-  <pre id="p4Invoked">/home/oracc/bin/px web=1 proj=neo glos=qpn oxid=x000028130</pre>
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 proj=neo glos=sux oxid=o0023325</pre>
 
   <h2>Pager Status</h2>
   
@@ -173,16 +182,16 @@
 	show=(null)
 	project=neo
 	projdir=/home/oracc/neo
-	list_name=qpn.glo
+	list_name=sux.glo
 	op_nlevels=0
 	dors=0
 	perm=123
-	zoom=2
+	zoom=1
 	page=1
 	psiz=25
 	srch=(null)
-	glos=qpn
-	item=x000028130
+	glos=sux
+	item=o0023325
 	hili=(null)
 	item_replace=(null)
 	bkmk=(null)
@@ -217,18 +226,18 @@
 <h3>	struct isp_cache ip->cache</h3>
 		sys=/home/oracc/www/p4.d
 		project=/home/oracc/www/p4.d/neo
-		sub=/home/oracc/www/p4.d/neo/qpn.glo
-		out=/home/oracc/www/p4.d/neo/qpn.glo
-		list=/home/oracc/www/p4.d/neo/qpn.glo/list
+		sub=/home/oracc/www/p4.d/neo/sux.glo
+		out=/home/oracc/www/p4.d/neo/sux.glo
+		list=/home/oracc/www/p4.d/neo/sux.glo/list
 		sort=(null)
 		csi=(null)
 		tsv=(null)
 		max=(null)
 		mol=(null)
 		pkey=(null)
-		pgin=/home/oracc/www/p4.d/neo/qpn.glo/zentry_ids-p1.pag
-		page=/home/oracc/www/p4.d/neo/qpn.glo/zentry_ids-p1.div
-		zout=/home/oracc/www/p4.d/neo/qpn.glo/letters.div
+		pgin=/home/oracc/www/p4.d/neo/sux.glo/zentry_ids-p1.pag
+		page=/home/oracc/www/p4.d/neo/sux.glo/zentry_ids-p1.div
+		zout=/home/oracc/www/p4.d/neo/sux.glo/letters.div
 		item=(null)
 		prox=(null)
 		meta=(null)
@@ -261,18 +270,18 @@
 		cat_links=(null)
 		cat_widths=auto,17,17,17,17
 <h3>	struct isp_glosdata ip->glosdata</h3>
-		dir=/home/oracc/neo/02pub/cbd/qpn
-		web=/home/oracc/neo/02www/cbd/qpn
+		dir=/home/oracc/neo/02pub/cbd/sux
+		web=/home/oracc/neo/02www/cbd/sux
 		let=A
-		lmax=710
-		ent=x000028130
+		lmax=233
+		ent=o0023325
 		xis=(null)
-		ltab=ʾ
+		ltab=A
 		lbase=entry_ids
-		lpath=/home/oracc/pub/neo/cbd/qpn/entry_ids.lst
+		lpath=/home/oracc/pub/neo/cbd/sux/entry_ids.lst
 		ecpath=(null)
-		emax=4982
-		ipath=/home/oracc/neo/02www/cbd/qpn/x000028130.html
+		emax=2321
+		ipath=/home/oracc/neo/02www/cbd/sux/o0023325.html
 <h3>	struct isp_itemdata ip->itemdata</h3>
 		langs=(null)
 		nlangs=0
@@ -282,16 +291,16 @@
 		block=(null)
 		proj=(null)
 		htmd=(null)
-		html=/home/oracc/neo/02www/cbd/qpn/x000028130.html
+		html=/home/oracc/neo/02www/cbd/sux/o0023325.html
 		dots=(null)
-		index=18
+		index=24
 		page=1
 		pindex=(null)
-		zoom=2
+		zoom=1
 		zpag=1
-		zindex=17
-		prev=x000028120
-		next=x000028150
+		zindex=24
+		prev=o0023307
+		next=o0023342
 		tmax=(null)
 		xmdxsl=(null)
 		bld=(null)
@@ -302,7 +311,7 @@
 		method=file
 		dbpath=(null)
 		dbname=(null)
-		path=/home/oracc/pub/neo/cbd/qpn/entry_ids.lst
+		path=/home/oracc/pub/neo/cbd/sux/entry_ids.lst
 <h3>	struct isp_srchdata ip->srchdata</h3>
 		tmp=(null)
 		bar=(null)
@@ -344,18 +353,18 @@ ORACC_HOST=build-oracc.museum.upenn.edu
 ORACC_MODE=multi
 ORACC_USER=yes
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
-PATH_INFO=/neo/qpn/x000028130
-PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/qpn/x000028130
+PATH_INFO=/neo/sux/o0023325
+PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux/o0023325
 QUERY_STRING=
 REMOTE_ADDR=128.16.6.66
-REMOTE_PORT=47084
+REMOTE_PORT=48102
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
-REQUEST_URI=/neo/qpn/x000028130
+REQUEST_URI=/neo/sux/o0023325
 SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
 SCRIPT_NAME=
-SCRIPT_URI=https://build-oracc.museum.upenn.edu/neo/qpn/x000028130
-SCRIPT_URL=/neo/qpn/x000028130
+SCRIPT_URI=https://build-oracc.museum.upenn.edu/neo/sux/o0023325
+SCRIPT_URL=/neo/sux/o0023325
 SERVER_ADDR=130.91.81.219
 SERVER_ADMIN=stinney@upenn.edu
 SERVER_NAME=build-oracc.museum.upenn.edu
