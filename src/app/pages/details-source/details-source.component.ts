@@ -22,7 +22,7 @@ export class DetailsSourceComponent implements OnInit {
   public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
   public isTextPanelActive = window.innerWidth > 991 ? true : false;
   private isMobile: boolean;
-  private project: string = 'neo';
+  private data_project: string = 'neo';
 
   constructor(
     private getDataService: GetDataService,
@@ -50,8 +50,8 @@ export class DetailsSourceComponent implements OnInit {
 
   private populatePanels() {
     this.getDataService.getSourceData(
-      this.project,
-      this.route.snapshot.queryParams['iref'],
+      this.route.snapshot.queryParams['proj'],
+      this.route.snapshot.queryParams['ref'],
       this.route.snapshot.queryParams['bloc']
     ).subscribe((data: any) => {
       this.handleTextToHTMLConversion(data);
@@ -63,8 +63,8 @@ export class DetailsSourceComponent implements OnInit {
     const htmlData = parser.parseFromString(text, 'text/html');
     const pager = htmlData.getElementById('p4Pager');
     if (pager.hasAttribute('data-proj')) {
-      this.project = pager.getAttribute('data-proj');
-      console.log(`project: ${this.project}`);
+      this.data_project = pager.getAttribute('data-proj');
+      console.log(`project: ${this.data_project}`);
     } else {
       console.log('did not find a data-proj');
     }
@@ -109,6 +109,7 @@ export class DetailsSourceComponent implements OnInit {
           .replace(/'/g, '')
           .split(',');
 
+        console.log(`Don't want to do this? URL: ${this.router.url}`);
         this.getDataService.setSourceParams(queryParams);
         this.router.navigate([this.router.url], {
           state: { data: history.state.data }
@@ -152,7 +153,7 @@ export class DetailsSourceComponent implements OnInit {
 //        this.getDataService.setSourceParams(popupSourceQueryParams);
 //        this.router.navigate([this.router.url]);
 
-    console.log(`proj: ${this.project} sig: ${wsig}`);
+    console.log(`proj: ${this.data_project} sig: ${wsig}`);
     this.router.navigate([
       'search-results',
       this.route.snapshot.paramMap.get('word'),
@@ -161,7 +162,15 @@ export class DetailsSourceComponent implements OnInit {
       'source',
       anchorEl.innerText
     ], { queryParams: {
-      proj: this.project,
+      proj: this.route.snapshot.queryParams['proj'],
+      ga_lang: this.route.snapshot.queryParams['ga_lang'],
+      ga_isid: this.route.snapshot.queryParams['ga_isid'],
+      lang: this.route.snapshot.queryParams['lang'],
+      isid: this.route.snapshot.queryParams['isid'],
+      iref: this.route.snapshot.queryParams['iref'],
+      ref: this.route.snapshot.queryParams['ref'],
+      bloc: this.route.snapshot.queryParams['bloc'],
+      data_proj: this.data_project,
       wsig: wsig
     }});
   }

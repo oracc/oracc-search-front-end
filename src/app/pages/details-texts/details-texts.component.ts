@@ -211,7 +211,13 @@ export class DetailsTextsComponent implements OnInit {
           'source'
         ], {
           queryParams: {
-            iref: ref,
+            proj: this.project,
+            ga_lang: this.route.snapshot.queryParams['ga_lang'],
+            ga_isid: this.route.snapshot.queryParams['ga_isid'],
+            lang: this.route.snapshot.queryParams['lang'],
+            isid: this.route.snapshot.queryParams['isid'],
+            iref: this.route.snapshot.queryParams['iref'],
+            ref: ref,
             bloc: bloc
           }
         });
@@ -242,10 +248,14 @@ export class DetailsTextsComponent implements OnInit {
         anchorEl.innerText
       ],{
         queryParams: {
-        iref: ref,
-        lang: this.route.snapshot.queryParams['lang'],
-        isid: this.route.snapshot.queryParams['isid'],
-        wsig: wsig
+          proj: this.project,
+          ga_lang: this.route.snapshot.queryParams['ga_lang'],
+          ga_isid: this.route.snapshot.queryParams['ga_isid'],
+          lang: this.route.snapshot.queryParams['lang'],
+          isid: this.route.snapshot.queryParams['isid'],
+          iref: this.route.snapshot.queryParams['iref'],
+          ref: ref,
+          wsig: wsig
       }});
       // this is irrelevant now unless that subsequentPageVisit=true thing does anything
       console.log(`subsequent: ${wsig}`);
@@ -337,8 +347,8 @@ export class DetailsTextsComponent implements OnInit {
       this.handlePaginationBoundary(this.currentPage);
       this.getDataService.getDetailData2(
         this.project,
-        this.route.snapshot.queryParams['lang'],
-        this.route.snapshot.queryParams['isid'],
+        this.route.snapshot.queryParams['ga_lang'],
+        this.route.snapshot.queryParams['ga_isid'],
         { page: this.currentPage,
           ref: this.route.snapshot.queryParams['iref']
         }

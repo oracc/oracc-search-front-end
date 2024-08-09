@@ -67,6 +67,7 @@ export class GlossaryArticleTextsComponent implements OnInit {
           'occurrences'
         ],
         { queryParams: {
+          proj: this.project,
           lang: this.route.snapshot.queryParams['lang'],
           isid: this.route.snapshot.queryParams['isid']
         }}

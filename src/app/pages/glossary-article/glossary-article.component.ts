@@ -31,8 +31,8 @@ export class GlossaryArticleComponent implements OnInit {
 
   public getArticle() {
     this.getDataService.getGlossaryArticleData(
-      this.route.snapshot.queryParams['lang'],
-      this.route.snapshot.queryParams['isid']
+      this.route.snapshot.queryParams['ga_lang'],
+      this.route.snapshot.queryParams['ga_isid']
     ).subscribe((data) => {
       // @ts-ignore
       this.handleTextToHTMLConversion(data);
@@ -53,6 +53,9 @@ export class GlossaryArticleComponent implements OnInit {
       this.router.navigate(
         ['search-results', this.route.snapshot.paramMap.get('word'), 'occurrences'],
         { queryParams: {
+          proj: this.route.snapshot.queryParams['proj'],
+          ga_lang: this.route.snapshot.queryParams['ga_lang'],
+          ga_isid: this.route.snapshot.queryParams['ga_isid'],
           lang: anchorEl.getAttribute('data-lang'),
           isid: anchorEl.getAttribute('data-isid'),
         }}

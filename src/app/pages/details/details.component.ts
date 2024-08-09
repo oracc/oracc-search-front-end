@@ -124,10 +124,12 @@ export class DetailsComponent implements OnInit {
           'texts'
         ],
         { queryParams: {
-          iref: ref,
+          proj: this.project,
+          ga_lang: this.route.snapshot.queryParams['ga_lang'],
+          ga_isid: this.route.snapshot.queryParams['ga_isid'],
           lang: this.route.snapshot.queryParams['lang'],
           isid: this.route.snapshot.queryParams['isid'],
-          proj: this.project
+          iref: ref,
         }}
       );
     }

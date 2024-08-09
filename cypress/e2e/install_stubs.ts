@@ -47,8 +47,11 @@ export function install_stubs(
     });
     const entry_count = Object.keys(all_entries).length;
     if (0 < entry_count) {
-      cy.writeFile(`${output_dir}/${directory_name}.json`, all_entries);
-      cy.log(`written ${entry_count} entries`);
+      cy.fixture(`${directory_name}.json`).then((existing_entries) => {
+        const combined_entries = { ...existing_entries, ...all_entries };
+        cy.writeFile(`${output_dir}/${directory_name}.json`, combined_entries);
+      });
+      cy.log(`written ${entry_count} new entries`);
     } else {
       cy.log('All calls were stubbed');
     }

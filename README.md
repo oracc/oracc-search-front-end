@@ -258,8 +258,10 @@ does not require the build-oracc server to be reachable or the
 
 You can update the backend stubs by ensuring that the backend
 `oracc-rest` server is running and that the `build-oracc` server
-is reachable, then running the `./update-test-fixtures.sh`
-bash script.
+is reachable, then running the `./replace-test-fixtures.sh`
+bash script. If you want to keep the existing fixtures, you can
+instead run the `./update-test-fixtures.sh` to add only new
+fixtures.
 
 Any future runs will use these updated responses. These new
 files can be committed to source control.

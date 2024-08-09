@@ -22,6 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'search-results/:word',
+        // with query parameters proj, ga_lang, ga_isid
         component: GlossaryArticleComponent
       },
       {
@@ -30,14 +31,17 @@ const routes: Routes = [
       },
       {
         path: 'search-results/:word/occurrences/texts',
+        // adding iref
         component: DetailsTextsComponent
       },
       {
         path: 'search-results/:word/occurrences/texts/source',
+        // adding bloc
         component: DetailsSourceComponent
       },
       {
         path: 'search-results/:word/occurrences/texts/:sig',
+        // adding data_proj, wsig
         component: GlossaryArticleTextsComponent
       },
       {

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute, ActivatedRouteSnapshot, Route, Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
 
 @Component({

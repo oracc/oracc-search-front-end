@@ -11,7 +11,6 @@ import { composedPath, findAttribute } from '../../../utils/utils';
 })
 export class GlossaryArticleSourceComponent implements OnInit {
   public glossaryContent: any;
-  private pathnameArray: Array<string>;
   private project: string = 'neo';
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
@@ -22,7 +21,6 @@ export class GlossaryArticleSourceComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-    this.pathnameArray = this.router.url.split('/').filter(v => v != '');
     this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
@@ -36,7 +34,7 @@ export class GlossaryArticleSourceComponent implements OnInit {
 
   public getSubsequentArticle() {
     this.getDataService.getSubsequentGlossaryArticleData(
-      this.project,
+      this.route.snapshot.queryParams['data_proj'],
       this.route.snapshot.queryParams['wsig']
     ).subscribe((data) => {
       // @ts-ignore

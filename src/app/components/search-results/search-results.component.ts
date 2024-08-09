@@ -167,8 +167,9 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
 
     // navigates to glossary article component
     this.router.navigate(['search-results', wordClean], {queryParams: {
-      lang: lang,
-      isid: id
+      proj: 'neo',
+      ga_lang: lang,
+      ga_isid: id
     }});
   }
 }
