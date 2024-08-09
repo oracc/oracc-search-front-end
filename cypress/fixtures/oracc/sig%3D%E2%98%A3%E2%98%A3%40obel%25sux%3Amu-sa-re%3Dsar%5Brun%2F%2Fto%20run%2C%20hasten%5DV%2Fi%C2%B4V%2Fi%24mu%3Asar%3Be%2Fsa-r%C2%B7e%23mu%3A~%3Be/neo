@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+  <meta name="generator" content="oracc/px p4article.xml "/>
   <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>

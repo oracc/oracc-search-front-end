@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+  <meta name="generator" content="oracc/px p4html.xml "/>
   <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
@@ -202,7 +203,6 @@
 	srch=(null)
 	glos=sux
 	item=o0023294
-	hili=(null)
 	item_replace=(null)
 	bkmk=(null)
 	ceid=xtf
@@ -222,10 +222,13 @@
 	tmp_dir=(null)
 	err=(null)
 	errx=(null)
+	pui=p4html.xml
 	nowhat=0
 	force=0
 	olev=0
 	debug=0
+	hdr_done=1
+	noheader=0
 	pub_output=0
 	verbose=0
 	web=1
@@ -298,6 +301,7 @@
 		xtflang=(null)
 		lmem=(null)
 		item=(null)
+		fullitem=(null)
 		block=(null)
 		proj=(null)
 		htmd=(null)
@@ -314,6 +318,7 @@
 		tmax=(null)
 		xmdxsl=(null)
 		bld=(null)
+		hili=(null)
 		not=0
 <h3>	struct isp_list_loc ip->lloc</h3>
 		type=glo
@@ -366,8 +371,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/sux/o0023294
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux/o0023294
 QUERY_STRING=
-REMOTE_ADDR=128.16.6.66
-REMOTE_PORT=47084
+REMOTE_ADDR=86.12.69.28
+REMOTE_PORT=46108
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/sux/o0023294

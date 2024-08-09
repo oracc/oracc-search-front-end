@@ -3,7 +3,7 @@
     "gw": "cow",
     "headword": "ab[cow]N",
     "cf": "ab",
-    "icount": 85,
+    "icount": 86,
     "id": "o0023294",
     "senses_mng": [
       "cow"
@@ -96,6 +96,7 @@
       "obel:P274275.21.2",
       "obel:P276671.39.2",
       "obel:P278426.14.5",
+      "obel:P283757.19.1",
       "obel:P283775.123.3",
       "obel:P302741.85.1",
       "obel:P342816.75.6",
@@ -127,7 +128,7 @@
       "cow"
     ],
     "sort": "['cow']",
-    "instances_count": 85
+    "instances_count": 86
   },
   {
     "gw": "cow",
@@ -202,7 +203,7 @@
     "gw": "stone",
     "headword": "šuba[stone]N",
     "cf": "šuba",
-    "icount": 31,
+    "icount": 32,
     "id": "o0039743",
     "senses_mng": [
       "a precious stone",
@@ -215,6 +216,7 @@
       "šuba{+ba}",
       "šuba",
       "šuba{bi}",
+      "{na₄}šuba₂",
       "šuba₂",
       "šuba₂-gin₇",
       "šuba₄{+ba}",
@@ -263,6 +265,7 @@
       "obel:P345778.17.3",
       "obel:P345779.19.2",
       "obel:P345791.55.1",
+      "obel:P355660.11.1",
       "obel:P355702.509.2",
       "obel:P355702.53.2"
     ],
@@ -273,7 +276,7 @@
       "stone"
     ],
     "sort": "['stone']",
-    "instances_count": 31
+    "instances_count": 32
   },
   {
     "gw": "cow",

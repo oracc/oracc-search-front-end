@@ -72,13 +72,5 @@
     "query": {
       "sig": "☣☣@obel%sux:gada=gada[flax//linen]N´N$gada/gada#~"
     }
-  },
-  "oracc/neo/ref%3Dundefined/xis%3Dsux.r0000c5/sux": {
-    "hostname": "build-oracc.museum.upenn.edu",
-    "pathname": "/neo/sux",
-    "query": {
-      "xis": "sux.r0000c5",
-      "ref": "undefined"
-    }
   }
 }

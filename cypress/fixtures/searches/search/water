@@ -3,7 +3,7 @@
     "gw": "water",
     "headword": "a[water]N",
     "cf": "a",
-    "icount": 302,
+    "icount": 303,
     "id": "o0023102",
     "senses_mng": [
       "semen, sperm",
@@ -199,6 +199,7 @@
       "obel:P342842.42.1",
       "obel:P342842.44.1",
       "obel:P342842.46.1",
+      "obel:P342886.53.3",
       "obel:P342902.57.3",
       "obel:P342921.3.3",
       "obel:P342925.10.2",
@@ -223,9 +224,9 @@
       "obel:P345337.8.1",
       "obel:P345345.36.3",
       "obel:P345347.19.2",
-      "obel:P345347.36.1",
-      "obel:P345347.36.3",
-      "obel:P345347.49.3",
+      "obel:P345347.38.1",
+      "obel:P345347.38.3",
+      "obel:P345347.51.3",
       "obel:P345352.111.4",
       "obel:P345352.113.5",
       "obel:P345352.115.5",
@@ -366,7 +367,7 @@
       "water"
     ],
     "sort": "['water']",
-    "instances_count": 302
+    "instances_count": 303
   },
   {
     "gw": "water",
@@ -1189,8 +1190,8 @@
     ],
     "norms_n": [
       "mīlêša",
-      "mīli",
       "mīlī",
+      "mīli",
       "mīliša",
       "mīlišina",
       "mīlišu",
@@ -1742,8 +1743,8 @@
     ],
     "norms_n": [
       "kuppāni",
-      "kuppi",
       "kuppī",
+      "kuppi",
       "kuppīšu",
       "kuppīya"
     ],
@@ -2567,7 +2568,7 @@
       "Old Babylonian"
     ],
     "instances": [
-      "obel:P345347.65.4",
+      "obel:P345347.67.4",
       "obel:P355651.32.5",
       "obel:P355680.44.2"
     ],
