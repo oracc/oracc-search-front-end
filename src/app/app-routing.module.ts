@@ -24,28 +24,36 @@ const routes: Routes = [
         path: 'search-results/:word',
         // with query parameters proj, ga_lang, ga_isid
         component: GlossaryArticleComponent
+        // contains links to DetailsComponent
       },
       {
         path: 'search-results/:word/occurrences',
+        // adding lang, isid
         component: DetailsComponent
+        // contains links to DetailsTextsComponent
       },
       {
         path: 'search-results/:word/occurrences/texts',
         // adding iref
         component: DetailsTextsComponent
+        // contains links to DetailsSourceComponent
+        // and GlossaryArticleTextsComponent
       },
       {
         path: 'search-results/:word/occurrences/texts/source',
         // adding bloc
         component: DetailsSourceComponent
+        // contains links to GlossaryArticleSourceComponent
       },
       {
         path: 'search-results/:word/occurrences/texts/:sig',
         // adding data_proj, wsig
         component: GlossaryArticleTextsComponent
+        // contains links back to DetailsComponent
       },
       {
         path: 'search-results/:word/occurrences/texts/source/:sig',
+        // adding data_proj, wsig
         component: GlossaryArticleSourceComponent
       }
     ]

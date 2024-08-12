@@ -122,13 +122,13 @@ For the `oracc2` machine the equivalent would be `ng build -c oracc2`
 Now we can redirect this link:
 
 ```sh
-rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.3 /home/oracc/www/new
+rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.3 /home/oracc/www/search
 ```
 
 In case of trouble, we can roll back to the old version using the same command with the old version number we found out earlier:
 
 ```sh
-rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.2 /home/oracc/www/new
+rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.2 /home/oracc/www/search
 ```
 
 The production server will instantly begin serving this

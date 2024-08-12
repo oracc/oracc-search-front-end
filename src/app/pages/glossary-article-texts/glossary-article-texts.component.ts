@@ -63,13 +63,15 @@ export class GlossaryArticleTextsComponent implements OnInit {
       this.getDataService.setChosenTermText(anchorElText);
       this.router.navigate(
         [ 'search-results',
-          this.route.snapshot.paramMap.get('word'),
+          anchorElText,
           'occurrences'
         ],
         { queryParams: {
           proj: this.project,
-          lang: this.route.snapshot.queryParams['lang'],
-          isid: this.route.snapshot.queryParams['isid']
+          ga_lang: this.route.snapshot.queryParams['ga_lang'],
+          ga_isid: this.route.snapshot.queryParams['ga_isid'],
+          lang: anchorEl.getAttribute('data-lang'),
+          isid: anchorEl.getAttribute('data-isid')
         }}
       );
     }

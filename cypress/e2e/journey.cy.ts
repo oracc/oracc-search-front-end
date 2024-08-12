@@ -15,7 +15,9 @@ describe('Journey', () => {
 
   for (const config of configs) {
     describe(`${config.name}:`, () => {
-      before(() => {
+      // we need beforeEach not before because failing tests
+      // can mess with the viewport for some reason.
+      beforeEach(() => {
         cy.log(`Configuration: ${JSON.stringify(config)}`);
         const vp = config.viewport;
         cy.viewport(vp.width, vp.height);
@@ -85,7 +87,7 @@ describe('Journey', () => {
           const transliteration_word = "gada";
           const expected_form = "gada,gin";
           cy.visit("/");
-          check_page_is_search();
+          check_page_is_search(config);
           cy.get('.search__input').type(`${input}{enter}`);
           check_page_is_search_results();
           cy.get('span.results__table-cell').contains(result).click();
@@ -110,8 +112,58 @@ describe('Journey', () => {
           check_page_is_search_results();
           cy.get('span.results__table-cell').contains(result);
           cy.get('ul.bcrumbs__list li:nth-of-type(1)').click();
-          check_page_is_search();
+          check_page_is_search(config);
         });
+      });
+
+      it('can get to occurences/tests/source', () => {
+        const input = "cow";
+        const result = "ab";
+        const ref = "(ED Animals A 1)";
+        const source = "ur₃";
+        cy.visit("/");
+        check_page_is_search(config);
+        cy.get('.search__input').type(`${input}{enter}`);
+        check_page_is_search_results();
+        cy.get('span.results__table-cell').contains(result).click();
+        check_page_is_search_result();
+        // click on the (86x/100%) link
+        cy.get('.sense a.icount').click();
+        check_page_is_details();
+        cy.get('.details__panel-main').contains(ref).click();
+        check_page_is_details_texts();
+        cy.get('.details__panel-main tr.l .lnum').contains("1").click();
+        check_page_is_details_source();
+        cy.get('table.score_block tr.l td.tlit a').contains(source).click();
+        check_page_is_glossary_article_source();
+        cy.get('.senses').contains("/100%)");
+      });
+
+      it('can navigate back to result after switching to occurences text', () => {
+        const input = "water";
+        const result = "abala";
+        const form = "a-bala";
+        const ref = "CBS 3656 o 25";
+        const transliteration_word = "gada";
+        const expected_form = "gada,gin";
+        const expected_ref = "(H 002 KXXIII.15)";
+        cy.visit("/");
+        check_page_is_search(config);
+        cy.get('.search__input').type(`${input}{enter}`);
+        check_page_is_search_results();
+        cy.get('span.results__table-cell').contains(result).click();
+        check_page_is_search_result();
+        cy.get('p.norms span').contains(form).click();
+        check_page_is_details();
+        cy.get('.details__panel-main').contains(ref).click();
+        check_page_is_details_texts();
+        cy.get('table.transliteration tr.l a.cbd span').contains(transliteration_word).click();
+        check_page_is_glossary_article_texts();
+        cy.get('#p4GlossaryEntry').contains(expected_form).click();
+        cy.get('.ce-label').contains(expected_ref);
+        cy.get('ul.bcrumbs__list li:nth-of-type(3)').click();
+        check_page_is_search_result();
+        cy.get('p.norms span').contains(form);
       });
 
       describe('search suggestion box', () => {
@@ -149,8 +201,11 @@ describe('Journey', () => {
 });
 
 // First page: search.component
-function check_page_is_search() {
-  cy.get('.search__title').contains('Search Oracc').should('be.visible');
+function check_page_is_search(config) {
+  if (!config.is_mobile) {
+    cy.get('.search__title').contains('Search Oracc').should('be.visible');
+  }
+  cy.get('input.search__input').should('be.visible');
   cy.get('app-search div.search__content div.search__form').next().next().should("not.exist");
 }
 
@@ -174,7 +229,17 @@ function check_page_is_details_texts() {
   cy.get('section.details--texts');
 }
 
+// Alternate fifth page: details-source.component
+function check_page_is_details_source() {
+  cy.get('section.details--source');
+}
+
 // Sixth page: glossary-article-texts.component
 function check_page_is_glossary_article_texts() {
   cy.get('div.glossary-article-text');
+}
+
+// Alternate sixth page: glossary-article-source.component
+function check_page_is_glossary_article_source() {
+  cy.get('div.glossary-article-source');
 }
