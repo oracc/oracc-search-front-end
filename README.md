@@ -147,7 +147,7 @@ The Oracc server runs on Ubuntu and exposes the Oracc website via an Apache web 
 
 The following rules need to exist in the file `/etc/apache2/sites-enabled/oracc-vhost-ssl.conf`:
 
-1. The angular app should be served at `/new`
+1. The angular app should be served at `/search`
 2. The oracc-rest API should be served at `/oracc-rest-api/`
 
 These rules look like this:
@@ -256,12 +256,25 @@ does not require the build-oracc server to be reachable or the
 
 ### Updating the backend stubs
 
-You can update the backend stubs by ensuring that the backend
-`oracc-rest` server is running and that the `build-oracc` server
-is reachable, then running the `./replace-test-fixtures.sh`
-bash script. If you want to keep the existing fixtures, you can
-instead run the `./update-test-fixtures.sh` to add only new
-fixtures.
+The last log line on the logs for each spec (`.cy.ts` file) either
+says `log  All calls were stubbed` or `log written <n> new entries`.
+If it says `written <n> new entries` for any spec then
+you can copy all the files from `cypress/fixtures_new` to
+`cypress/fixtures`:
+
+```sh
+cp -rt cypress/fixtures cypress/fixtures_new/*
+```
+
+It is a good idea to clean the `cypress/fixtures_new` directory before
+running all the tests so that meaningless files aren't copied into the
+`fixtures` directory. The backend `oracc-rest` server will need to be
+running and the `build-oracc` server will need to be reachable for the
+tests to pass for these new fixtures to be generated.
+
+All of this is automated in the `./update-test-fixtures.sh`
+bash script. If you want to delete the existing fixtures first,
+run the `./replace-test-fixtures.sh` script.
 
 Any future runs will use these updated responses. These new
 files can be committed to source control.

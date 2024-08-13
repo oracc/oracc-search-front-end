@@ -72,5 +72,56 @@
     "query": {
       "sig": "☣☣@obel%sux:gada=gada[flax//linen]N´N$gada/gada#~"
     }
+  },
+  "searches/search/cow": {
+    "hostname": "localhost",
+    "pathname": "/search/cow",
+    "query": {}
+  },
+  "suggests/suggest_all/cow": {
+    "hostname": "localhost",
+    "pathname": "/suggest_all/cow",
+    "query": {}
+  },
+  "oracc/neo/sux/o0023294": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux/o0023294",
+    "query": {}
+  },
+  "oracc/neo/xis%3Dsux.r000097/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r000097"
+    }
+  },
+  "oracc/neo/ref%3DQ000012.1/xis%3Dsux.r000097/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r000097",
+      "ref": "Q000012.1"
+    }
+  },
+  "oracc/neo/block%3Dsb.Q000012.1/Q000012.1": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/Q000012.1",
+    "query": {
+      "block": "sb.Q000012.1"
+    }
+  },
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40edlex%25sux%3Aur%E2%82%83%3Dur%5Bharness%2F%2Fharness%5DN%C2%B4N%24ur%2Fur%E2%82%83%23~/edlex": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/edlex",
+    "query": {
+      "sig": "☣☣@edlex%sux:ur₃=ur[harness//harness]N´N$ur/ur₃#~"
+    }
+  },
+  "oracc/neo/xis%3Dsux.r0014d2/sux": {
+    "hostname": "build-oracc.museum.upenn.edu",
+    "pathname": "/neo/sux",
+    "query": {
+      "xis": "sux.r0014d2"
+    }
   }
 }
