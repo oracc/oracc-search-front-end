@@ -30,6 +30,7 @@ export class DetailsComponent implements OnInit {
   private paginationSliceEnd: number = 7;
   private project: string = 'neo';
   private isMobile: boolean;
+  private zoom: number | null = null;
 
   constructor(
     private getDataService: GetDataService,
@@ -58,10 +59,7 @@ export class DetailsComponent implements OnInit {
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
-  private handleTextToHTMLConversion(text: string) {
-    const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, 'text/html');
-    const metadataPanelInput = htmlData.getElementById('p4MenuOutline');
+  private setMiddlePanel(htmlData : Document) {
     const middlePanelInput = htmlData.getElementById('p4Content');
 
     const controlsInput = htmlData.getElementById('p4PageNav');
@@ -82,25 +80,28 @@ export class DetailsComponent implements OnInit {
       this.paginationSliceStart,
       this.paginationSliceEnd
     );
-
-    this.isTermDataShown = false;
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       middlePanelInput.innerHTML
     );
+  }
+
+  private handleTextToHTMLConversion(text: string) {
+    const parser = new DOMParser();
+    const htmlData = parser.parseFromString(text, 'text/html');
+    const metadataPanelInput = htmlData.getElementById('p4MenuOutline');
+
+    this.isTermDataShown = false;
 
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
       metadataPanelInput.innerHTML
     );
+    this.setMiddlePanel(htmlData);
   }
 
   private handleTextToHTMLConversionOnPageChange(text) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const middlePanelInput = htmlData.getElementById('p4Content');
-
-    this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
-      middlePanelInput.innerHTML
-    );
+    this.setMiddlePanel(htmlData);
   }
 
   public handleDetailsClick(e) {
@@ -135,17 +136,22 @@ export class DetailsComponent implements OnInit {
     }
   }
 
+  private updateForZoom() {
+    this.getDataService.getDetailData2(
+      this.project,
+      this.route.snapshot.queryParams['lang'],
+      this.route.snapshot.queryParams['isid'], {
+        page: this.currentPage,
+        zoom: this.zoom
+      }
+    ).subscribe(data => this.handleTextToHTMLConversionOnPageChange(data));
+  }
+
   public handleMetadataClick(e) {
     e.preventDefault();
     if (e.target.tagName === "A" && e.target.hasAttribute('data-zoom')) {
-      const zoom = parseInt(e.target.getAttribute('data-zoom'), 10);
-      this.getDataService.getDetailData2(
-        this.project,
-        this.route.snapshot.queryParams['lang'],
-        this.route.snapshot.queryParams['isid'], {
-          zoom: zoom
-        }
-    ).subscribe(data => this.handleTextToHTMLConversionOnPageChange(data));
+      this.zoom = parseInt(e.target.getAttribute('data-zoom'), 10);
+      this.updateForZoom();
     }
     if (this.getDataService.p3ZoomGx(e.target, (data) => {
       this.handleTextToHTMLConversionOnPageChange(data);
@@ -155,13 +161,12 @@ export class DetailsComponent implements OnInit {
   }
 
   public handleResetZoom(e) {
-    this.getDataService.resetDetailZoom((data) => {
-      this.handleTextToHTMLConversionOnPageChange(data);
-    });
+    this.zoom = null;
+    this.updateForZoom();
   }
 
   public isZoomed() {
-    return this.getDataService.isZoomed();
+    return this.zoom != null;
   }
 
   public togglePanel(e, panelType) {
@@ -208,14 +213,7 @@ export class DetailsComponent implements OnInit {
     }
     if (oldPage !== this.currentPage) {
       this.handlePaginationBoundary(this.currentPage);
-      this.getDataService.getDetailData2(
-        this.project,
-        this.route.snapshot.queryParams['lang'],
-        this.route.snapshot.queryParams['isid'],
-        { page: this.currentPage }
-      ).subscribe((data) => {
-        this.handleTextToHTMLConversionOnPageChange(data);
-      });
+      this.updateForZoom();
     }
   }
 }

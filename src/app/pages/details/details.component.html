@@ -27,7 +27,7 @@
       <div class="details__panel-col">
         <div class="details__panel-top">
           <span class="details__panel-top-text">
-            <span
+            <span class="item-count"
               [innerHTML]="isTermDataShown ? totalTexts : totalLines"
             ></span>
             <span> {{ isTermDataShown ? "Texts" : "Lines" }}</span>
@@ -35,7 +35,9 @@
           <span
             *ngIf="isZoomed()"
             (click)="handleResetZoom($event)"
-          ><a href="javascript://">{{ "details.resetZoom" | translate }}</a></span>
+          ><a class="reset-zoom" href="javascript://">
+            {{ "details.resetZoom" | translate }}
+          </a></span>
           <div class="details__panel-pagination">
             <span
               class="details__panel-left"

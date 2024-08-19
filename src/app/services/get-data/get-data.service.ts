@@ -120,7 +120,7 @@ export class GetDataService {
   public getDetailData2(project, language, isid, options) {
     let url: string = `${this.oraccBaseUrl}/${project}/${language}?xis=${isid}`;
     ['ref', 'zoom', 'page'].forEach(v => {
-      if (v in options) {
+      if (v in options && options[v] !== null) {
         url += `&${v}=${options[v]}`;
       }
     });

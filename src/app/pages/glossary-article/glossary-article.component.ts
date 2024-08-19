@@ -66,7 +66,13 @@ export class GlossaryArticleComponent implements OnInit {
   private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const glossaryContentInput = htmlData.getElementById('p4Content');
+    let glossaryContentInput = htmlData.getElementById('p4Content');
+    // Occasionally the server returns just the the content without
+    // the surrounding furniture. So if we can't find #p4Content we'll
+    // just use the entire <body>
+    if (glossaryContentInput === null) {
+      glossaryContentInput = htmlData.getElementsByTagName('body')[0];
+    }
 
     this.glossaryContent = this.sanitizer.bypassSecurityTrustHtml(
       glossaryContentInput.innerHTML
