@@ -18,7 +18,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public dataRecieved = false;
   public noRecievedData = false;
   public waitForData = false;
-  public p = 1;
+  public currentPage = 1;
   public sortField = 'cf';
   public itemsPerPage = 10;
   public results: number;
@@ -28,16 +28,10 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public isDescending = false;
   public clickedHeaderIndex = 5;
   private translationDataPure: any = [];
-  private resultsTable: Element;
-  private criteriaHead: NodeListOf<Element>;
-  private sortArrow: NodeListOf<Element>;
   private tableHeadItems: NodeListOf<Element>;
   private tableCells: NodeListOf<Element>;
   private tableHeadFirstItem: Element;
   private tableHead: Element;
-  private glossaryArticle: Document;
-  private noResults = false;
-  private searchMsg = false;
   private navigationSubscription;
 
   @Output() public wordClickEvent = new EventEmitter();
@@ -56,9 +50,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.criteriaHead = document.querySelectorAll('.results__table-head-item');
-    this.sortArrow = document.querySelectorAll('.js-table-head i');
-    this.resultsTable = document.querySelector('.js-results');
     this.isMobile = window.innerWidth < 991 ? true : false;
     this.isMobile && (this.clickedHeaderIndex = 0);
   }

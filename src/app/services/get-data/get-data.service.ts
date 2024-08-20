@@ -50,6 +50,7 @@ export class GetDataService {
     });
   }
 
+  // Shares the search term between search-suggestions, search and search-results
   public setSearchParam(searchParam: string) {
     this.searchParam = searchParam;
   }
@@ -62,7 +63,7 @@ export class GetDataService {
   // - zoom: The zoom item (if the metadata was clicked)
   // - page: The page number for pagination (from 1)
   // - ref: The item ref, such as P405163.13
-  public getDetailData2(project, language, isid, options) {
+  public getDetailData(project, language, isid, options) {
     let url: string = `${this.oraccBaseUrl}/${project}/${language}?xis=${isid}`;
     ['ref', 'zoom', 'page'].forEach(v => {
       if (v in options && options[v] !== null) {

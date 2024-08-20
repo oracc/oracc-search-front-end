@@ -27,7 +27,6 @@ export class DetailsComponent implements OnInit {
   private paginationSliceStart: number = 0;
   private paginationSliceEnd: number = 7;
   private project: string = 'neo';
-  private isMobile: boolean;
   private zoom: number | null = null;
 
   constructor(
@@ -45,7 +44,7 @@ export class DetailsComponent implements OnInit {
     if (proj) {
       this.project = proj;
     }
-    this.getDataService.getDetailData2(
+    this.getDataService.getDetailData(
       this.project,
       this.route.snapshot.queryParams['lang'],
       this.route.snapshot.queryParams['isid'],
@@ -54,7 +53,6 @@ export class DetailsComponent implements OnInit {
       this.handleTextToHTMLConversion(data);
     });
     this.chosenTermText = this.route.snapshot.paramMap.get('word');
-    this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
   private setMiddlePanel(htmlData : Document) {
@@ -133,7 +131,7 @@ export class DetailsComponent implements OnInit {
   }
 
   private updateForZoom() {
-    this.getDataService.getDetailData2(
+    this.getDataService.getDetailData(
       this.project,
       this.route.snapshot.queryParams['lang'],
       this.route.snapshot.queryParams['isid'], {

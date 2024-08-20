@@ -61,7 +61,7 @@ export class DetailsTextsComponent implements OnInit {
         this.handleTextToHTMLConversion(data, true);
       });
     } else {
-      this.getDataService.getDetailData2(
+      this.getDataService.getDetailData(
         this.project,
         this.route.snapshot.queryParams['lang'],
         this.route.snapshot.queryParams['isid'],
@@ -262,7 +262,7 @@ export class DetailsTextsComponent implements OnInit {
     }
     const zoom = clickedLink.getAttribute('data-zoom');
     if (zoom) {
-      this.getDataService.getDetailData2(
+      this.getDataService.getDetailData(
         this.project,
         this.route.snapshot.queryParams['lang'],
         this.route.snapshot.queryParams['isid'], {
@@ -335,7 +335,7 @@ export class DetailsTextsComponent implements OnInit {
     }
     if (oldPage !== this.currentPage) {
       this.handlePaginationBoundary(this.currentPage);
-      this.getDataService.getDetailData2(
+      this.getDataService.getDetailData(
         this.project,
         this.route.snapshot.queryParams['ga_lang'],
         this.route.snapshot.queryParams['ga_isid'],
