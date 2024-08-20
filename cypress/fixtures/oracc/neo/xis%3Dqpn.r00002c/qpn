@@ -293,7 +293,7 @@
 		proj=(null)
 		htmd=(null)
 		html=(null)
-		dots=(null)
+		dotted=(null)
 		index=(null)
 		page=(null)
 		pindex=(null)
@@ -311,6 +311,7 @@
 		type=xis
 		lang=qpn
 		method=xisdb
+		key=(null)
 		dbpath=/home/oracc/pub/neo/cbd/qpn
 		dbname=tis
 		path=/home/oracc/www/p4.d/neo/qpn/qpn.r00002c/list
@@ -359,8 +360,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/qpn
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/qpn
 QUERY_STRING=xis=qpn.r00002c
-REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=46108
+REMOTE_ADDR=144.82.8.169
+REMOTE_PORT=51034
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/qpn?xis=qpn.r00002c

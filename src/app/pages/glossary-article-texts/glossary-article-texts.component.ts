@@ -60,7 +60,6 @@ export class GlossaryArticleTextsComponent implements OnInit {
       e.preventDefault();
       //...
 
-      this.getDataService.setChosenTermText(anchorElText);
       this.router.navigate(
         [ 'search-results',
           anchorElText,

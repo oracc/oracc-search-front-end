@@ -22,11 +22,10 @@ import { environment } from 'src/environments/environment';
 })
 export class DetailsTextsComponent implements OnInit {
   public metadataPanel: any = "<i class='fas fa-spinner'></i>";
+  public chosenTermText: string = "";
   public currentPage = 1;
   public textPanel: any;
-  public chosenTermText: string;
   public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
-  public totalTexts: number;
   public totalPages: any;
   public paginatedPages: any;
   public middlePanel: any = "<i class='fas fa-spinner'></i>";
@@ -34,8 +33,7 @@ export class DetailsTextsComponent implements OnInit {
   public shouldShowPaginationArrows: boolean;
   private paginationSliceStart: number = 0;
   private paginationSliceEnd: number = 7;
-  private totalLines: number;
-  private isTermDataShown: boolean;
+  public totalLines: number;
   private project: string = 'neo';
   private isMobile: boolean;
   private item: string = '';
@@ -63,10 +61,6 @@ export class DetailsTextsComponent implements OnInit {
         this.handleTextToHTMLConversion(data, true);
       });
     } else {
-      // user accesses project texts via the search functionality
-      //this.getDataService.getTermData().subscribe((data) => {
-      //  this.handleTextToHTMLConversion(data, true);
-      //});
       this.getDataService.getDetailData2(
         this.project,
         this.route.snapshot.queryParams['lang'],
@@ -75,9 +69,8 @@ export class DetailsTextsComponent implements OnInit {
       ).subscribe((data) => {
         this.handleTextToHTMLConversionP4(data, true);
       });
-      this.chosenTermText = this.getDataService.getChosenTermText();
     }
-
+    this.chosenTermText = this.route.snapshot.paramMap.get('word');
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
@@ -242,7 +235,7 @@ export class DetailsTextsComponent implements OnInit {
     if (wsig && ref) {
       this.router.navigate([
         'search-results',
-        this.route.snapshot.paramMap.get('word'),
+        this.chosenTermText,
         'occurrences',
         'texts',
         anchorEl.innerText
@@ -257,9 +250,6 @@ export class DetailsTextsComponent implements OnInit {
           ref: ref,
           wsig: wsig
       }});
-      // this is irrelevant now unless that subsequentPageVisit=true thing does anything
-      console.log(`subsequent: ${wsig}`);
-      this.getDataService.setSubsequentGlossaryArticleParam(wsig);
       return;
     }
   }

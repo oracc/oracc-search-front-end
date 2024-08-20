@@ -63,13 +63,6 @@ export class GlossaryArticleSourceComponent implements OnInit {
         .replace(/'/g, '')
         .split(',');
 
-      this.getDataService.setDetailsPageParams(
-        queryParams[0],
-        queryParams[1],
-        queryParams[2]
-      );
-
-      this.getDataService.setChosenTermText(anchorElText);
       this.router.navigate([
         'search-results',
         anchorElText,

@@ -436,8 +436,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/akk
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/akk
 QUERY_STRING=xis=akk.r003b17&zoom=4&page=2
-REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=42254
+REMOTE_ADDR=144.82.8.169
+REMOTE_PORT=51034
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/akk?xis=akk.r003b17&zoom=4&page=2

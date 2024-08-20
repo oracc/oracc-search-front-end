@@ -61,8 +61,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.resultsTable = document.querySelector('.js-results');
     this.isMobile = window.innerWidth < 991 ? true : false;
     this.isMobile && (this.clickedHeaderIndex = 0);
-    //this.search();
-    this.getDataService.setIsSubsequentPageVisit(false);
   }
 
   ngOnDestroy() {
@@ -162,9 +160,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   public showGlossaryArticle(lang: string, id: string, word: string) {
-    this.getDataService.setGlossaryLangAndId(lang, id);
     const wordClean = word.replace(' ', '-');
-
     // navigates to glossary article component
     this.router.navigate(['search-results', wordClean], {queryParams: {
       proj: 'neo',

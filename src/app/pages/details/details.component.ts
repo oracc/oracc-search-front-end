@@ -14,12 +14,10 @@ import { DIRECTION, PANEL_TYPE } from '../../../utils/consts';
 })
 export class DetailsComponent implements OnInit {
   public metadataPanel: any = "<i class='fas fa-spinner'></i>";
+  public chosenTermText: string = "";
   public currentPage = 1;
   public textPanel: any;
-  public chosenTermText: string;
   public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
-  public isTermDataShown: boolean;
-  public totalTexts: number;
   public totalLines: number;
   public totalPages: any;
   public paginatedPages: any;
@@ -55,7 +53,7 @@ export class DetailsComponent implements OnInit {
     ).subscribe((data) => {
       this.handleTextToHTMLConversion(data);
     });
-    this.chosenTermText = this.getDataService.getChosenTermText();
+    this.chosenTermText = this.route.snapshot.paramMap.get('word');
     this.isMobile = window.innerWidth < 991 ? true : false;
   }
 
@@ -90,8 +88,6 @@ export class DetailsComponent implements OnInit {
     const htmlData = parser.parseFromString(text, 'text/html');
     const metadataPanelInput = htmlData.getElementById('p4MenuOutline');
 
-    this.isTermDataShown = false;
-
     this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
       metadataPanelInput.innerHTML
     );
@@ -120,7 +116,7 @@ export class DetailsComponent implements OnInit {
       // navigates to details texts component
       this.router.navigate(
         [ 'search-results',
-          this.route.snapshot.paramMap.get('word'),
+          this.chosenTermText,
           'occurrences',
           'texts'
         ],
@@ -152,11 +148,6 @@ export class DetailsComponent implements OnInit {
     if (e.target.tagName === "A" && e.target.hasAttribute('data-zoom')) {
       this.zoom = parseInt(e.target.getAttribute('data-zoom'), 10);
       this.updateForZoom();
-    }
-    if (this.getDataService.p3ZoomGx(e.target, (data) => {
-      this.handleTextToHTMLConversionOnPageChange(data);
-    })) {
-      e.preventDefault();
     }
   }
 

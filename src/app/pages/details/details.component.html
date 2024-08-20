@@ -27,10 +27,8 @@
       <div class="details__panel-col">
         <div class="details__panel-top">
           <span class="details__panel-top-text">
-            <span class="item-count"
-              [innerHTML]="isTermDataShown ? totalTexts : totalLines"
-            ></span>
-            <span> {{ isTermDataShown ? "Texts" : "Lines" }}</span>
+            <span class="item-count">{{ totalLines }}</span>
+            <span>&nbsp;Lines</span>
           </span>
           <span
             *ngIf="isZoomed()"

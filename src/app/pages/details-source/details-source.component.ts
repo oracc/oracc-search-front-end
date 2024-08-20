@@ -110,7 +110,6 @@ export class DetailsSourceComponent implements OnInit {
           .split(',');
 
         console.log(`Don't want to do this? URL: ${this.router.url}`);
-        this.getDataService.setSourceParams(queryParams);
         this.router.navigate([this.router.url], {
           state: { data: history.state.data }
         });
@@ -138,20 +137,6 @@ export class DetailsSourceComponent implements OnInit {
     e.preventDefault();
     const anchorEl = findAncestorByTag(e.target, 'a');
     const wsig = findAttribute(e.target, 'data-wsig');
-
-// what is this showexemplar thing?...
-//      if (anchorEl.href.includes('showexemplar')) {
-//        const popupSourceQueryParams = !!anchorEl.attributes[0]
-//          ? anchorEl.attributes[0].nodeValue
-//              .split('(')
-//              .slice(1)
-//              .join()
-//              .slice(0, -1)
-//              .replace(/'/g, '')
-//              .split(',')
-//          : [];
-//        this.getDataService.setSourceParams(popupSourceQueryParams);
-//        this.router.navigate([this.router.url]);
 
     console.log(`proj: ${this.data_project} sig: ${wsig}`);
     this.router.navigate([

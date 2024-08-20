@@ -29,6 +29,7 @@ export function install_stubs(
     cy.fixture(`${directory_name}.json`).then((dir) => {
       Object.keys(dir).forEach((fixture_path) => {
         cy.intercept(dir[fixture_path], (req) => {
+          console.log(`replying to ${req.url} with ${fixture_path}`);
           req.reply({ fixture: fixture_path });
         });
       });
@@ -62,13 +63,10 @@ function interceptData(
   req: CyHttpMessages.IncomingHttpRequest,
   res: CyHttpMessages.IncomingHttpResponse
 ): InterceptData {
-  const url = new URL(req.url);
   return {
     response: res,
     routeMatcher: {
-      hostname: url.hostname,
-      pathname: url.pathname,
-      query: Object.fromEntries(url.searchParams.entries())
+      url: req.url
     }
   };
 }
@@ -81,8 +79,7 @@ function writeCapturedResponses(
   let r = new Map<string, RouteMatcher>();
   captured.forEach((intercept_data) => {
     const loc: string = urlToFilePath(
-      (intercept_data.routeMatcher as RouteMatcherOptionsGeneric<string>).pathname,
-      (intercept_data.routeMatcher as RouteMatcherOptionsGeneric<string>).query,
+      (intercept_data.routeMatcher as RouteMatcherOptionsGeneric<string>).url,
       [name]
     );
     cy.writeFile(`${fixture_dir}/${loc}`, intercept_data.response.body);
@@ -91,7 +88,10 @@ function writeCapturedResponses(
   return r;
 }
 
-function urlToFilePath(pathname: string, query: any, initial: string[]) {
+function urlToFilePath(url_string: string, initial: string[]) {
+  const url = new URL(url_string);
+  const pathname = url.pathname;
+  const query = Object.fromEntries(url.searchParams.entries())
   const params = Object.keys(query).sort();
   let qs = params.map((param) => `${param}=${query[param]}`);
   let path = pathname.split('/').slice(1); // initial '/' produces initial ''

@@ -278,7 +278,7 @@
 		proj=(null)
 		htmd=(null)
 		html=(null)
-		dots=(null)
+		dotted=(null)
 		index=(null)
 		page=(null)
 		pindex=(null)
@@ -296,6 +296,7 @@
 		type=xis
 		lang=sux
 		method=xisdb
+		key=(null)
 		dbpath=/home/oracc/pub/neo/cbd/sux
 		dbname=tis
 		path=/home/oracc/www/p4.d/neo/sux/sux.r0014d2/list
@@ -321,18 +322,18 @@ GATEWAY_INTERFACE=CGI/1.1
 HTTPS=on
 HTTP_ACCEPT=application/json, text/plain, */*
 HTTP_ACCEPT_ENCODING=gzip
-HTTP_ACCEPT_LANGUAGE=en-GB,en-US;q=0.9,en;q=0.8
+HTTP_ACCEPT_LANGUAGE=en-GB
 HTTP_CONNECTION=keep-alive
 HTTP_HOST=build-oracc.museum.upenn.edu
 HTTP_ORIGIN=http://localhost:4200
 HTTP_REFERER=http://localhost:4200/
-HTTP_SEC_CH_UA="Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+HTTP_SEC_CH_UA="Not=A?Brand";v="99", "Chromium";v="118"
 HTTP_SEC_CH_UA_MOBILE=?0
 HTTP_SEC_CH_UA_PLATFORM="Linux"
 HTTP_SEC_FETCH_DEST=empty
 HTTP_SEC_FETCH_MODE=cors
 HTTP_SEC_FETCH_SITE=cross-site
-HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.13.1 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
 ORACC=/home/oracc
 ORACC_BUILDS=/home/oracc
 ORACC_HOME=/home/oracc
@@ -344,8 +345,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/sux
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux
 QUERY_STRING=xis=sux.r0014d2
-REMOTE_ADDR=128.16.6.66
-REMOTE_PORT=34436
+REMOTE_ADDR=144.82.8.169
+REMOTE_PORT=56282
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/sux?xis=sux.r0014d2

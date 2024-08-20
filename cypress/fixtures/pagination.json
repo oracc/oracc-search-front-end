@@ -1,50 +1,23 @@
 {
   "searches/search/mithartu": {
-    "hostname": "localhost",
-    "pathname": "/search/mithartu",
-    "query": {}
+    "url": "http://localhost:8000/search/mithartu"
   },
   "suggests/suggest_all/mithartu": {
-    "hostname": "localhost",
-    "pathname": "/suggest_all/mithartu",
-    "query": {}
+    "url": "http://localhost:8000/suggest_all/mithartu"
   },
   "oracc/neo/akk/x0002458": {
-    "hostname": "build-oracc.museum.upenn.edu",
-    "pathname": "/neo/akk/x0002458",
-    "query": {}
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk/x0002458"
   },
   "oracc/neo/xis%3Dakk.r003b17/akk": {
-    "hostname": "build-oracc.museum.upenn.edu",
-    "pathname": "/neo/akk",
-    "query": {
-      "xis": "akk.r003b17"
-    }
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r003b17"
   },
   "oracc/neo/page%3D1/xis%3Dakk.r003b17/zoom%3D4/akk": {
-    "hostname": "build-oracc.museum.upenn.edu",
-    "pathname": "/neo/akk",
-    "query": {
-      "xis": "akk.r003b17",
-      "zoom": "4",
-      "page": "1"
-    }
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r003b17&zoom=4&page=1"
   },
   "oracc/neo/page%3D2/xis%3Dakk.r003b17/zoom%3D4/akk": {
-    "hostname": "build-oracc.museum.upenn.edu",
-    "pathname": "/neo/akk",
-    "query": {
-      "xis": "akk.r003b17",
-      "zoom": "4",
-      "page": "2"
-    }
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r003b17&zoom=4&page=2"
   },
   "oracc/neo/page%3D2/xis%3Dakk.r003b17/akk": {
-    "hostname": "build-oracc.museum.upenn.edu",
-    "pathname": "/neo/akk",
-    "query": {
-      "xis": "akk.r003b17",
-      "page": "2"
-    }
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r003b17&page=2"
   }
 }

@@ -277,7 +277,7 @@
 		proj=(null)
 		htmd=(null)
 		html=(null)
-		dots=(null)
+		dotted=(null)
 		index=(null)
 		page=(null)
 		pindex=(null)
@@ -295,6 +295,7 @@
 		type=xis
 		lang=sux
 		method=xisdb
+		key=(null)
 		dbpath=/home/oracc/pub/neo/cbd/sux
 		dbname=tis
 		path=/home/oracc/www/p4.d/neo/sux/sux.r0000c5/list
@@ -343,8 +344,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/sux
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux
 QUERY_STRING=xis=sux.r0000c5
-REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=34406
+REMOTE_ADDR=144.82.8.169
+REMOTE_PORT=55206
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/sux?xis=sux.r0000c5

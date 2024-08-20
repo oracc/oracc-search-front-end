@@ -17,6 +17,7 @@ describe('Pagination', () => {
       // this reference should be somewhere on the next_page of
       // the unzoomed list.
       const next_page_ref = "IM 52916 o 11";
+      const zoomed_next_page_ref = "IM 52916 o 21";
       const reset_filter_text = "Reset Filter";
       cy.get('.search__input').type(`${search}{enter}`);
       cy.get('.results__table-cell').contains(search).click();
@@ -34,6 +35,8 @@ describe('Pagination', () => {
       cy.get('.details__panel-pagination .details__panel-list-item').contains(
         next_page.toString()
       ).click();
+      // wait until we're definitely on the next page
+      cy.get('#p4CElineContent .ce-label').contains(zoomed_next_page_ref);
       cy.get('.details__panel-top-text .item-count').contains(zoomed_line_count.toString());
       cy.get('.details__panel-top').contains(reset_filter_text);
       cy.get('.ce-heading').first().contains(zoom_item);

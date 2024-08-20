@@ -27,12 +27,12 @@
       <div class="details__panel-col">
         <div class="details__panel-top">
           <span class="details__panel-top-text">
-            <span [innerHTML]="totalTexts"></span>
-            <span>
+            <span>{{ totalLines }}</span>
+            <span>&nbsp;
               {{
-                totalTexts > 1
+                (totalLines > 1
                   ? "details.textPluralText"
-                  : ("details.textSingularText" | translate)
+                  : "details.textSingularText") | translate
               }}</span
             >
           </span>

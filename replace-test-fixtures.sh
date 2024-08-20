@@ -1,3 +1,4 @@
+set -eu
 # Delete each directory in cypress/fixtures/
 for f in cypress/fixtures/*
 do
