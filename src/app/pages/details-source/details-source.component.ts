@@ -5,6 +5,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { composedPath, findAncestorByTag, findAttribute, splitOutEnums } from '../../../utils/utils';
 import { PANEL_TYPE } from '../../../utils/consts';
+import { ThreePanel } from 'src/app/components/three-panel.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-details-source',
@@ -12,55 +14,21 @@ import { PANEL_TYPE } from '../../../utils/consts';
   styleUrls: ['./details-source.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DetailsSourceComponent implements OnInit {
-  public metadataPanel: any = "<i class='fas fa-spinner'></i>";
-  public middlePanel: any = "<i class='fas fa-spinner'></i>";
-  public textPanel: any;
+export class DetailsSourceComponent extends ThreePanel {
   public isDetailsPopupActive: boolean;
   public detailsPopupContent: any;
   public detailsPopupTitle: any;
-  public isMetadataPanelActive = window.innerWidth > 991 ? true : false;
-  public isTextPanelActive = window.innerWidth > 991 ? true : false;
-  private isMobile: boolean;
   private data_project: string = 'neo';
 
-  constructor(
-    private getDataService: GetDataService,
-    private breadcrumbsService: HandleBreadcrumbsService,
-    private sanitizer: DomSanitizer,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {
-    this.breadcrumbsService.setBreadcrumbs(this.router);
-    this.metadataPanel = this.sanitizer.bypassSecurityTrustHtml(
-      '<div/>'
-    );
-    // this seems to fire no matter which page we are on
-    //this.router.events.subscribe((event) => {
-    //  if (event instanceof NavigationEnd) {
-    //    this.populatePanels();
-    //  }
-    //});
-  }
-
-  ngOnInit() {
-    this.populatePanels();
-    this.isMobile = window.innerWidth < 991 ? true : false;
-  }
-
-  private populatePanels() {
-    this.getDataService.getSourceData(
+  override getBackendData(): Observable<string> {
+    return this.getDataService.getSourceData(
       this.route.snapshot.queryParams['proj'],
       this.route.snapshot.queryParams['ref'],
       this.route.snapshot.queryParams['bloc']
-    ).subscribe((data: any) => {
-      this.handleTextToHTMLConversion(data);
-    });
+    );
   }
 
-  private handleTextToHTMLConversion(text: string) {
-    const parser = new DOMParser();
-    const htmlData = parser.parseFromString(text, 'text/html');
+  override setMiddlePanel(htmlData : Document) {
     const pager = htmlData.getElementById('p4Pager');
     if (pager.hasAttribute('data-proj')) {
       this.data_project = pager.getAttribute('data-proj');
@@ -70,24 +38,13 @@ export class DetailsSourceComponent implements OnInit {
     }
     const textPanelInput = splitOutEnums(pager);
 
-    this.middlePanel = "<i class='fas fa-spinner'></i>";
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       pager.innerHTML
     );
 
-    this.textPanel = "<i class='fas fa-spinner'></i>";
     this.textPanel = this.sanitizer.bypassSecurityTrustHtml(
       textPanelInput.innerHTML
     );
-  }
-
-  public togglePanel(e, panelType) {
-    if (panelType === PANEL_TYPE.METADATA) {
-      this.isMetadataPanelActive = !this.isMetadataPanelActive;
-    }
-    if (panelType === PANEL_TYPE.TEXT) {
-      this.isTextPanelActive = !this.isTextPanelActive;
-    }
   }
 
   public handleMetadataClick(e) {
