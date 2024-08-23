@@ -42,11 +42,12 @@
   },
   "details": {
     "metadataText": "Metadata",
-    "showText": "Show translation",
+    "showText": "Show Text",
     "textSingularText": "Text",
     "textPluralText": "Texts",
     "linesText": "Lines",
     "sourceText": "Source",
+    "scoreText": "Score",
     "resetZoom": "Reset Filter"
   }
 }

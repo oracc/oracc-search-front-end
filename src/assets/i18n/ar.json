@@ -47,6 +47,7 @@
     "textPluralText": "Texts",
     "linesText": "Lines",
     "sourceText": "Source",
+    "scoreText": "Score",
     "resetZoom": "Reset Filter"
   }
 }

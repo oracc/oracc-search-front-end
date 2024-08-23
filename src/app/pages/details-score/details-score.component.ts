@@ -1,27 +1,22 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { GetDataService } from '../../services/get-data/get-data.service';
-import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
 import { composedPath, findAncestorByTag, findAttribute, splitOutEnums } from '../../../utils/utils';
-import { PANEL_TYPE } from '../../../utils/consts';
 import { ThreePanel } from 'src/app/components/three-panel.component';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-details-source',
-  templateUrl: './details-source.component.html',
-  styleUrls: ['./details-source.component.scss'],
+  selector: 'app-details-score',
+  templateUrl: './details-score.component.html',
+  styleUrls: ['./details-score.component.scss', '../details/details.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DetailsSourceComponent extends ThreePanel {
+export class DetailsScoreComponent extends ThreePanel {
   public isDetailsPopupActive: boolean;
   public detailsPopupContent: any;
   public detailsPopupTitle: any;
   private data_project: string = 'neo';
 
   override getBackendData(): Observable<string> {
-    return this.getDataService.getSourceData(
+    return this.getDataService.getScoreData(
       this.route.snapshot.queryParams['proj'],
       this.route.snapshot.queryParams['ref'],
       this.route.snapshot.queryParams['bloc']
@@ -48,32 +43,6 @@ export class DetailsSourceComponent extends ThreePanel {
   }
 
   public handleMetadataClick(e) {
-    e.preventDefault();
-    const clickedLink = e.path
-      ? e.path.find((el) => {
-          return el.href;
-        })
-      : composedPath(e.target).find((el) => {
-          return el.href;
-        });
-    if (!!clickedLink) {
-      if (clickedLink.href.startsWith('javascript')) {
-        const queryParams = clickedLink.href
-          .split('(')
-          .slice(1)
-          .join()
-          .slice(0, -1)
-          .replace(/'/g, '')
-          .split(',');
-
-        console.log(`Don't want to do this? URL: ${this.router.url}`);
-        this.router.navigate([this.router.url], {
-          state: { data: history.state.data }
-        });
-      } else {
-        window.open(clickedLink.href);
-      }
-    }
   }
 
   private handlePopupDataInputHTMLConversion(text: string) {
@@ -101,7 +70,7 @@ export class DetailsSourceComponent extends ThreePanel {
       this.route.snapshot.paramMap.get('word'),
       'occurrences',
       'texts',
-      'source',
+      'score',
       anchorEl.innerText
     ], { queryParams: {
       proj: this.route.snapshot.queryParams['proj'],
@@ -121,36 +90,27 @@ export class DetailsSourceComponent extends ThreePanel {
     this.isDetailsPopupActive = false;
   }
 
-  public handleTranslationClick(e) {
-    const clickedLine = e.path
-      ? e.path.find((el) => {
-          return el.localName === 'tr';
-        })
-      : composedPath(e.target).find((el) => {
-          return el.localName === 'tr';
-        });
-
-    if (!!clickedLine) {
-      const centralPanelLine: HTMLElement = clickedLine.id
-        ? document.getElementById(clickedLine.id)
-        : document.querySelector('.js-panel-central');
-      const centralPanel = document.querySelector('.js-panel-central');
-      const rightPanel = document.querySelector('.js-panel-right');
-
-      this.isMobile
-        ? centralPanelLine.scrollIntoView()
-        : centralPanel.scroll({
-            top: centralPanelLine.offsetTop - 50,
-            behavior: 'smooth'
-          });
-      rightPanel.querySelectorAll('tr').forEach((el) => {
-        el.classList.remove('selected');
-      });
-      centralPanel.querySelectorAll('tr').forEach((el) => {
-        el.classList.remove('selected');
-      });
-      clickedLine.classList.add('selected');
-      centralPanelLine.classList.add('selected');
+  public handleTextClick(e) {
+    if (e.target.hasAttribute('data-iref')) {
+      this.router.navigate([
+        'search-results',
+        this.route.snapshot.paramMap.get('word'),
+        'occurrences',
+        'texts',
+        'score',
+        'project',
+        this.data_project,
+        e.target.getAttribute('data-iref')
+        ], { queryParams: {
+        proj: this.route.snapshot.queryParams['proj'],
+        ga_lang: this.route.snapshot.queryParams['ga_lang'],
+        ga_isid: this.route.snapshot.queryParams['ga_isid'],
+        lang: this.route.snapshot.queryParams['lang'],
+        isid: this.route.snapshot.queryParams['isid'],
+        iref: this.route.snapshot.queryParams['iref'],
+        ref: this.route.snapshot.queryParams['ref'],
+        bloc: this.route.snapshot.queryParams['bloc']
+      }})
     }
   }
 }

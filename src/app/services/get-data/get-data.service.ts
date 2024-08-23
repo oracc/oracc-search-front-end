@@ -31,12 +31,8 @@ export class GetDataService {
     });
   }
 
-  public getProjectTextData(params: ParamMap) {
-    const projectId = params.get('projectId');
-    const textId = params.get('textId');
-
-    const url = `${this.oraccBaseUrl}/${projectId}/${textId}?html`;
-
+  public getProjectTextData(project_id: string, text_id: string) {
+    const url = `${this.oraccBaseUrl}/${project_id}/${text_id}`;
     return this.http.get(url, {
       responseType: 'text'
     });
@@ -73,7 +69,7 @@ export class GetDataService {
     return this.http.get(url, { responseType: 'text' });
   }
 
-  public getSourceData(project: string, ref: string, bloc: string) {
+  public getScoreData(project: string, ref: string, bloc: string) {
     // actually score?
     let url = `${this.oraccBaseUrl}/${project}/${ref}?block=${bloc}`;
     return this.http.get(url, {

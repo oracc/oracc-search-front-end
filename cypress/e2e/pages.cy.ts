@@ -38,7 +38,7 @@ describe('Pages', () => {
       const translit = /^ab$/;
       const ref = "(ED Animals A 1)";
       const score = "1";
-      const title = "Source"; // should be Score?
+      const title = "Score";
       const score1 = "ab";
       cy.visit("/");
       cy.get('.search__input').type(search + "{enter}");

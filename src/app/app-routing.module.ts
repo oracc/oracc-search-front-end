@@ -6,8 +6,9 @@ import { GlossaryArticleComponent } from './pages/glossary-article/glossary-arti
 import { GlossaryArticleTextsComponent } from './pages/glossary-article-texts/glossary-article-texts.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { DetailsTextsComponent } from './pages/details-texts/details-texts.component';
-import { DetailsSourceComponent } from './pages/details-source/details-source.component';
-import { GlossaryArticleSourceComponent } from './pages/glossary-article-source/glossary-article-source.component';
+import { DetailsScoreComponent } from './pages/details-score/details-score.component';
+import { GlossaryArticleScoreComponent } from './pages/glossary-article-score/glossary-article-score.component';
+import { ProjectTextComponent } from './pages/details-texts/project-text.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 // duplicated routes are to handle both desktop and mobile versions
@@ -36,14 +37,14 @@ const routes: Routes = [
         path: 'search-results/:word/occurrences/texts',
         // adding iref
         component: DetailsTextsComponent
-        // contains links to DetailsSourceComponent
+        // contains links to DetailsScoreComponent
         // and GlossaryArticleTextsComponent
       },
       {
-        path: 'search-results/:word/occurrences/texts/source',
-        // adding bloc
-        component: DetailsSourceComponent
-        // contains links to GlossaryArticleSourceComponent
+        path: 'search-results/:word/occurrences/texts/score',
+        // adding ref, bloc
+        component: DetailsScoreComponent
+        // contains links to GlossaryArticleScoreComponent
       },
       {
         path: 'search-results/:word/occurrences/texts/:sig',
@@ -52,17 +53,15 @@ const routes: Routes = [
         // contains links back to DetailsComponent
       },
       {
-        path: 'search-results/:word/occurrences/texts/source/:sig',
+        path: 'search-results/:word/occurrences/texts/score/:sig',
         // adding data_proj, wsig
-        component: GlossaryArticleSourceComponent
+        component: GlossaryArticleScoreComponent
+      },
+      {
+        path: 'search-results/:word/occurrences/texts/score/project/:projectId/:textId',
+        component: ProjectTextComponent
       }
     ]
-  },
-
-  // routes for manually entereded URL's
-  {
-    path: ':projectId/:textId',
-    component: DetailsTextsComponent
   },
 
   // fallback routes

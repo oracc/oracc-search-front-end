@@ -6,10 +6,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { composedPath, findAttribute } from '../../../utils/utils';
 
 @Component({
-  selector: 'app-glossary-article-source',
-  templateUrl: './glossary-article-source.component.html'
+  selector: 'app-glossary-article-score',
+  templateUrl: './glossary-article-score.component.html'
 })
-export class GlossaryArticleSourceComponent implements OnInit {
+export class GlossaryArticleScoreComponent implements OnInit {
   public glossaryContent: any;
   private project: string = 'neo';
 

@@ -81,14 +81,14 @@ export class ThreePanel implements OnInit {
     this.setMiddlePanel(htmlData);
     const controlsInput = htmlData.getElementById('p4PageNav');
     // set total lines, if we know
-    if (controlsInput.hasAttribute('data-imax')) {
+    if (controlsInput && controlsInput.hasAttribute('data-imax')) {
       this.totalLines = parseInt(
         controlsInput.getAttribute('data-imax'),
         10
       );
     }
     // set pagination controls, if we know how many pages
-    if (!controlsInput.hasAttribute('data-pmax')) {
+    if (!controlsInput || !controlsInput.hasAttribute('data-pmax')) {
       return;
     }
     const pageCount = parseInt(

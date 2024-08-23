@@ -116,11 +116,11 @@ describe('Journey', () => {
         });
       });
 
-      it('can get to occurences/tests/source', () => {
+      it('can get to occurences/tests/score', () => {
         const input = "cow";
         const result = "ab";
         const ref = "(ED Animals A 1)";
-        const source = "ur₃";
+        const score = "ur₃";
         cy.visit("/");
         check_page_is_search(config);
         cy.get('.search__input').type(`${input}{enter}`);
@@ -133,9 +133,9 @@ describe('Journey', () => {
         cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
         cy.get('.details__panel-main tr.l .lnum').contains("1").click();
-        check_page_is_details_source();
-        cy.get('table.score_block tr.l td.tlit a').contains(source).click();
-        check_page_is_glossary_article_source();
+        check_page_is_details_score();
+        cy.get('table.score_block tr.l td.tlit a').contains(score).click();
+        check_page_is_glossary_article_score();
         cy.get('.senses').contains("/100%)");
       });
 
@@ -229,9 +229,9 @@ function check_page_is_details_texts() {
   cy.get('section.details--texts');
 }
 
-// Alternate fifth page: details-source.component
-function check_page_is_details_source() {
-  cy.get('section.details--source');
+// Alternate fifth page: details-score.component
+function check_page_is_details_score() {
+  cy.get('section.details--score');
 }
 
 // Sixth page: glossary-article-texts.component
@@ -239,7 +239,7 @@ function check_page_is_glossary_article_texts() {
   cy.get('div.glossary-article-text');
 }
 
-// Alternate sixth page: glossary-article-source.component
-function check_page_is_glossary_article_source() {
-  cy.get('div.glossary-article-source');
+// Alternate sixth page: glossary-article-score.component
+function check_page_is_glossary_article_score() {
+  cy.get('div.glossary-article-score');
 }

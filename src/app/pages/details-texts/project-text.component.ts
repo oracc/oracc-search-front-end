@@ -14,21 +14,19 @@ import { environment } from 'src/environments/environment';
 import { ThreePanel } from 'src/app/components/three-panel.component';
 
 @Component({
-  selector: 'app-details-texts',
+  selector: 'app-project-text',
   templateUrl: './details-texts.component.html',
   styleUrls: ['../details/details.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DetailsTextsComponent extends ThreePanel {
+export class ProjectTextComponent extends ThreePanel {
   private item: string = '';
 
   override getBackendData(): Observable<string> {
     const paramMap = this.route.snapshot.paramMap;
-    return this.getDataService.getDetailData(
-      this.project,
-      this.route.snapshot.queryParams['lang'],
-      this.route.snapshot.queryParams['isid'],
-      {ref: this.route.snapshot.queryParams['iref']}
+    return this.getDataService.getProjectTextData(
+      paramMap.get('projectId'),
+      paramMap.get('textId')
     );
   }
 
