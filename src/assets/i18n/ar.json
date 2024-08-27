@@ -43,9 +43,8 @@
   "details": {
     "metadataText": "Metadata",
     "showText": "Show text",
-    "textSingularText": "Text",
-    "textPluralText": "Texts",
-    "linesText": "Lines",
+    "textText": "{0, plural, one {{0} Text} other {{0} Texts}}",
+    "linesText": "{0, plural, one {{0} Line} other {{0} Lines}}",
     "sourceText": "Source",
     "scoreText": "Score",
     "resetZoom": "Reset Filter"

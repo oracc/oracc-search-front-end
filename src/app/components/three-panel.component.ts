@@ -7,6 +7,7 @@ import { DIRECTION, PANEL_TYPE } from '../../utils/consts';
 import { GetDataService } from '../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 // ThreePanel is a base class for all pages that have the
 // Metadata/Details/Texts panels.
@@ -21,6 +22,7 @@ export class ThreePanel implements OnInit {
   public getDataService: GetDataService = inject(GetDataService);
   private breadcrumbsService: HandleBreadcrumbsService = inject(HandleBreadcrumbsService);
   public sanitizer: DomSanitizer = inject(DomSanitizer);
+  public translate: TranslateService = inject(TranslateService);
   public metadataPanel: SafeHtml = "";
   public middlePanel: SafeHtml = "";
   public textPanel: SafeHtml = "";
@@ -37,6 +39,7 @@ export class ThreePanel implements OnInit {
   public paginationSliceStart: number = 1;
   public paginationSliceEnd: number = 7;
   public totalLines: number;
+  public topText: string;
 
   public ngOnInit(): void {
     // Are we on a narrow (probably mobile) screen?
@@ -92,13 +95,19 @@ export class ThreePanel implements OnInit {
   public setMiddlePanelAndPages(htmlData) {
     this.setMiddlePanel(htmlData);
     const controlsInput = htmlData.getElementById('p4PageNav');
+    let topTextArguments = [];
     // set total lines, if we know
     if (controlsInput && controlsInput.hasAttribute('data-imax')) {
       this.totalLines = parseInt(
         controlsInput.getAttribute('data-imax'),
         10
       );
+      topTextArguments = [this.totalLines];
     }
+    this.translate.get(
+      this.detailsPanelTopText(),
+      topTextArguments
+    ).subscribe(text => { this.topText = text; });
     // set pagination controls, if we know how many pages
     if (!controlsInput || !controlsInput.hasAttribute('data-pmax')) {
       return;
@@ -192,6 +201,12 @@ export class ThreePanel implements OnInit {
     );
   }
 
+  // override this to set the internationalization key for the top
+  // text of the details (middle) panel
+  public detailsPanelTopText(): string {
+    return "details.textText";
+  }
+
   // One of the page change buttons was clicked
   public handlePageChange($e: MouseEvent, to_index: number) {
     $e.preventDefault();
@@ -208,5 +223,9 @@ export class ThreePanel implements OnInit {
 
   public isZoomed() {
     return this.zoom != null;
+  }
+
+  // override this to handle the user clicking the Text (third) panel
+  public handleTextClick(e) {
   }
 }

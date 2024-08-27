@@ -25,6 +25,10 @@ export class DetailsComponent extends ThreePanel {
     );
   }
 
+  override detailsPanelTopText(): string {
+    return "details.linesText";
+  }
+
   public handleDetailsClick(e) {
     e.preventDefault();
     const anchorEl = e.path

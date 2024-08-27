@@ -15,7 +15,7 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 
 @Component({
   selector: 'app-details-texts',
-  templateUrl: './details-texts.component.html',
+  templateUrl: '../details/details.component.html',
   styleUrls: ['../details/details.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
@@ -30,6 +30,10 @@ export class DetailsTextsComponent extends ThreePanel {
       this.route.snapshot.queryParams['isid'],
       {ref: this.route.snapshot.queryParams['iref']}
     );
+  }
+
+  override detailsPanelTopText(): string {
+    return "details.linesText";
   }
 
   override setMetadataPanel(htmlData: Document) {
@@ -172,7 +176,7 @@ export class DetailsTextsComponent extends ThreePanel {
     window.open(clickedLink.getAttribute('href'));
   }
 
-  public handleTextClick(e) {
+  override handleTextClick(e) {
     const clickedLine = e.path
       ? e.path.find((el) => {
           return el.localName === 'tr';

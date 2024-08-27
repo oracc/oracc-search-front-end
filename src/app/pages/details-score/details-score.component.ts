@@ -41,6 +41,10 @@ export class DetailsScoreComponent extends ThreePanel {
     );
   }
 
+  override detailsPanelTopText(): string {
+    return "details.scoreText";
+  }
+
   public handleMetadataClick(e) {
   }
 
@@ -89,7 +93,7 @@ export class DetailsScoreComponent extends ThreePanel {
     this.isDetailsPopupActive = false;
   }
 
-  public handleTextClick(e) {
+  override handleTextClick(e) {
     if (e.target.hasAttribute('data-iref')) {
       this.router.navigate([
         'search-results',

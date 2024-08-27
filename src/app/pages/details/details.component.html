@@ -26,10 +26,7 @@
 
       <div class="details__panel-col">
         <div class="details__panel-top">
-          <span class="details__panel-top-text">
-            <span class="item-count">{{ totalLines }}</span>
-            <span>&nbsp;Lines</span>
-          </span>
+          <span class="details__panel-top-text item-count">{{ topText }}</span>
           <span
             *ngIf="isZoomed()"
             (click)="handleResetZoom($event)"
@@ -66,6 +63,7 @@
           </div>
         </div>
         <div
+          id="central-panel"
           class="details__panel-main js-panel-central ls"
           [innerHTML]="middlePanel"
           (click)="handleDetailsClick($event)"
@@ -89,6 +87,7 @@
           class="details__panel-main details__panel-main--right js-panel-right"
           *ngIf="isTextPanelActive"
           [innerHTML]="textPanel"
+          (click)="handleTextClick($event)"
         ></div>
       </div>
     </div>
