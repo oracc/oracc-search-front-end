@@ -8,6 +8,8 @@ import { GetDataService } from '../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
+// ThreePanel is a base class for all pages that have the
+// Metadata/Details/Texts panels.
 @Component({
   selector: 'three-panel-base',
   template: '<p>base component, not to be rendered</p>',
@@ -29,29 +31,36 @@ export class ThreePanel implements OnInit {
   public chosenTermText: string = "";
   public currentPage: number | null = null;
   public zoom: number | null = null;
+  readonly paginationButtonCount = 6;
+  public pageCount = 1;
   public paginatedPages: number[] = [];
-  public totalPages: number[] = [];
-  public shouldShowPaginationArrows: boolean;
-  private paginationSliceStart: number = 0;
-  private paginationSliceEnd: number = 7;
+  public paginationSliceStart: number = 1;
+  public paginationSliceEnd: number = 7;
   public totalLines: number;
 
   public ngOnInit(): void {
+    // Are we on a narrow (probably mobile) screen?
     this.isMobile = window.innerWidth < 991;
+    // The metadata (first) and text (third) panels should be
+    // collapsed by default on mobile (the three panels are
+    // vertically stacked in this case).
     this.isMetadataPanelActive = !this.isMobile;
     this.isTextPanelActive = !this.isMobile;
-      this.breadcrumbsService.setBreadcrumbs(this.router);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
     const proj = this.route.snapshot.queryParams['proj'];
     if (proj) {
       this.project = proj;
     }
+    // no page chosen, no zoom
     this.currentPage = null;
     this.zoom = null;
     this.chosenTermText = this.route.snapshot.paramMap.get('word');
+    // All three panels need the spinner
     const spinner = "<i class='fas fa-spinner'></i>";
     this.metadataPanel = spinner;
     this.middlePanel = spinner;
     this.textPanel = spinner;
+    // Initialize the three panels with data from the backend
     this.getBackendData().subscribe((text) => {
       const parser = new DOMParser();
       const htmlData = parser.parseFromString(text, 'text/html');
@@ -60,6 +69,7 @@ export class ThreePanel implements OnInit {
     });
   }
 
+  // Update just the middle panel on page change or zoom
   public updateMiddlePanel() {
     this.getBackendData().subscribe((text) => {
       const parser = new DOMParser();
@@ -77,6 +87,8 @@ export class ThreePanel implements OnInit {
     this.updateMiddlePanel();
   }
 
+  // update the middle panel with HTML received from the backend, and
+  // set the page buttons appropriately for how many pages there are.
   public setMiddlePanelAndPages(htmlData) {
     this.setMiddlePanel(htmlData);
     const controlsInput = htmlData.getElementById('p4PageNav');
@@ -91,23 +103,44 @@ export class ThreePanel implements OnInit {
     if (!controlsInput || !controlsInput.hasAttribute('data-pmax')) {
       return;
     }
-    const pageCount = parseInt(
+    this.pageCount = parseInt(
       controlsInput.getAttribute('data-pmax'),
       10
     );
-    this.totalPages = Array(pageCount - this.paginationSliceStart)
-      .fill(1)
-      .map((e, i) => i + 1);
-    this.shouldShowPaginationArrows = this.totalPages.length > 6;
-    this.paginatedPages = this.totalPages.slice(
-      this.paginationSliceStart,
-      this.paginationSliceEnd
-    );
     if (this.currentPage === null) {
       this.currentPage = 1;
-    } else if (pageCount < this.currentPage) {
-      this.currentPage = pageCount;
+    } else if (this.pageCount < this.currentPage) {
+      this.currentPage = this.pageCount;
     }
+    this.updatePaginationPages();
+  }
+
+  // Update the page buttons after page change or zoom
+  private updatePaginationPages() {
+    const minRequiredPage = Math.max(this.currentPage - 1, 1);
+    const maxRequiredPage = Math.min(this.currentPage + 1, this.pageCount);
+    const requiredSize = Math.min(this.pageCount, this.paginationButtonCount);
+    if (this.paginationSliceEnd - this.paginationSliceStart !== requiredSize) {
+      // we seem to have changed to a different set of pages
+      this.paginationSliceStart = 1;
+      this.paginationSliceEnd = Math.min(this.pageCount, this.paginationButtonCount) + 1;
+    }
+    if (minRequiredPage < this.paginationSliceStart) {
+      this.paginationSliceStart = minRequiredPage;
+      this.paginationSliceEnd = Math.min(
+        this.paginationSliceStart + this.paginationButtonCount,
+        this.pageCount + 1
+      );
+    } else if (this.paginationSliceEnd <= maxRequiredPage) {
+      this.paginationSliceEnd = maxRequiredPage + 1;
+      this.paginationSliceStart = Math.max(
+        this.paginationSliceEnd - this.paginationButtonCount,
+        1
+      )
+    }
+    this.paginatedPages = Array(this.paginationSliceEnd - this.paginationSliceStart)
+      .fill(1)
+      .map((e, i) => i + this.paginationSliceStart);
   }
 
   // override this with code to fetch data from the backend,
@@ -124,6 +157,7 @@ export class ThreePanel implements OnInit {
     );
   }
 
+  // Toggle metadata or text panel expand/collapse
   public togglePanel(e, panelType) {
     if (panelType === PANEL_TYPE.METADATA) {
       this.isMetadataPanelActive = !this.isMetadataPanelActive;
@@ -158,43 +192,12 @@ export class ThreePanel implements OnInit {
     );
   }
 
-
-  public handlePageChange(e, direction?: string) {
-    const oldPage = this.currentPage;
-    if (!direction) {
-      this.currentPage = parseInt(e.target.innerHTML, 10);
-    }
-    if (direction === DIRECTION.BACK && this.currentPage >= 1) {
-      this.currentPage = this.currentPage - 1 || 1;
-    }
-    if (
-      direction === DIRECTION.FORWARD &&
-      this.totalPages.length !== this.currentPage
-    ) {
-      this.currentPage = this.currentPage + 1;
-    }
-    if (oldPage !== this.currentPage) {
-      this.handlePaginationBoundary(this.currentPage);
+  // One of the page change buttons was clicked
+  public handlePageChange($e: MouseEvent, to_index: number) {
+    $e.preventDefault();
+    if (to_index !== this.currentPage) {
+      this.currentPage = to_index;
       this.updateMiddlePanel();
-    }
-  }
-
-  private handlePaginationBoundary(currentPage: number) {
-    const indexOfCurrentPage = this.paginatedPages.indexOf(currentPage);
-    if (
-      indexOfCurrentPage === 6 &&
-      currentPage < this.totalPages[this.totalPages.length - 1]
-    ) {
-      this.paginatedPages = this.totalPages.slice(
-        (this.paginationSliceStart += 1),
-        (this.paginationSliceEnd += 1)
-      );
-    }
-    if (indexOfCurrentPage === 0 && currentPage > 1) {
-      this.paginatedPages = this.totalPages.slice(
-        (this.paginationSliceStart -= 1),
-        (this.paginationSliceEnd -= 1)
-      );
     }
   }
 

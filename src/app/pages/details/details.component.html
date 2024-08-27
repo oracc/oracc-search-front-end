@@ -39,8 +39,8 @@
           <div class="details__panel-pagination">
             <span
               class="details__panel-left"
-              (click)="handlePageChange($event, 'back')"
-              *ngIf="shouldShowPaginationArrows"
+              (click)="handlePageChange($event, currentPage - 1)"
+              *ngIf="1 < paginationSliceStart"
             >
               ←
             </span>
@@ -50,7 +50,7 @@
                 [ngClass]="{
                   active: page === currentPage
                 }"
-                (click)="handlePageChange($event)"
+                (click)="handlePageChange($event, page)"
                 *ngFor="let page of paginatedPages; let i = index"
               >
                 {{ page }}
@@ -58,8 +58,8 @@
             </ul>
             <span
               class="details__panel-right"
-              (click)="handlePageChange($event, 'forward')"
-              *ngIf="shouldShowPaginationArrows"
+              (click)="handlePageChange($event, currentPage + 1)"
+              *ngIf="paginationSliceEnd < pageCount"
             >
               →
             </span>
