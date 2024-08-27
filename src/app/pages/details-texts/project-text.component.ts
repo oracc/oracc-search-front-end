@@ -23,10 +23,9 @@ export class ProjectTextComponent extends ThreePanel {
   private item: string = '';
 
   override getBackendData(): Observable<string> {
-    const paramMap = this.route.snapshot.paramMap;
     return this.getDataService.getProjectTextData(
-      paramMap.get('projectId'),
-      paramMap.get('textId')
+      this.route.snapshot.queryParams['project_id'],
+      this.route.snapshot.queryParams['text_id']
     );
   }
 
@@ -100,7 +99,7 @@ export class ProjectTextComponent extends ThreePanel {
     const wsig = anchorEl.getAttribute('data-wsig');
     const ref = findAttributeBy(e.target, 'id', (el) => el.classList.contains('w'));
 
-    if (this.route.snapshot.paramMap.get('projectId') !== null) {
+    if (this.route.snapshot.queryParams['project_id'] !== null) {
       // set the navigation link manually when searching for project text id's in the url bar
       // slightly different routes are used for desktop and mobile
       // need to test this, I doubt it works...

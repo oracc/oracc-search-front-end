@@ -139,6 +139,39 @@ describe('Journey', () => {
         cy.get('.senses').contains("/100%)");
       });
 
+      it('can get to project texts', () => {
+        const input = "cow";
+        const result = "ab";
+        const ref = "(ED Animals A 1)";
+        const score = "3";
+        const text = "Archaic Animals A 3";
+        cy.visit("/");
+        check_page_is_search(config);
+        cy.get('.search__input').type(`${input}{enter}`);
+        check_page_is_search_results();
+        cy.get('span.results__table-cell').contains(result).click();
+        check_page_is_search_result();
+        // click on the (86x/100%) link
+        cy.get('.sense a.icount').click();
+        check_page_is_details();
+        cy.get('.details__panel-main').contains(ref).click();
+        check_page_is_details_texts();
+        cy.get('.details__panel-main a[data-bloc] .xlabel').contains(score).click();
+        check_page_is_details_score();
+        if (config.is_mobile) {
+          // open the details panel
+          cy.get('.text-expand').click();
+        }
+        cy.get('.score_block tr').contains(text).click();
+        check_page_is_project_texts();
+        cy.get('ul.bcrumbs__list li:nth-of-type(6)').click();
+        check_page_is_details_score();
+        if (config.is_mobile) {
+          cy.get('.text-expand').click();
+        }
+        cy.get('.score_block tr').contains(text);
+      });
+
       it('can navigate back to result after switching to occurences text', () => {
         const input = "water";
         const result = "abala";
@@ -222,11 +255,13 @@ function check_page_is_search_result() {
 // Fourth page: details.component
 function check_page_is_details() {
   cy.get('section.details--main');
+  cy.get('.details__panel-top-text').contains('Line');
 }
 
 // Fifth page: details-texts.component
 function check_page_is_details_texts() {
   cy.get('section.details--texts');
+  cy.get('.details__panel-top-text').contains('Text');
 }
 
 // Alternate fifth page: details-score.component
@@ -242,4 +277,12 @@ function check_page_is_glossary_article_texts() {
 // Alternate sixth page: glossary-article-score.component
 function check_page_is_glossary_article_score() {
   cy.get('div.glossary-article-score');
+}
+
+// Seventh page: project-texts.component
+function check_page_is_project_texts() {
+  // Don't have a way to differentiate between project-texts and
+  // glossary-article-texts at the moment
+  cy.get('section.details--texts');
+  cy.get('.details__panel-top-text').contains('Text');
 }

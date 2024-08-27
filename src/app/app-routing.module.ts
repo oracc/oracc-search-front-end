@@ -44,7 +44,7 @@ const routes: Routes = [
         path: 'search-results/:word/occurrences/texts/score',
         // adding ref, bloc
         component: DetailsScoreComponent
-        // contains links to GlossaryArticleScoreComponent
+        // contains links to GlossaryArticleScoreComponent and ProjectTextComponent
       },
       {
         path: 'search-results/:word/occurrences/texts/:sig',
@@ -53,13 +53,14 @@ const routes: Routes = [
         // contains links back to DetailsComponent
       },
       {
+        path: 'search-results/:word/occurrences/texts/score/project',
+        // adding project_id and text_id
+        component: ProjectTextComponent
+      },
+      {
         path: 'search-results/:word/occurrences/texts/score/:sig',
         // adding data_proj, wsig
         component: GlossaryArticleScoreComponent
-      },
-      {
-        path: 'search-results/:word/occurrences/texts/score/project/:projectId/:textId',
-        component: ProjectTextComponent
       }
     ]
   },

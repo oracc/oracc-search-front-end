@@ -27,7 +27,6 @@ export class DetailsScoreComponent extends ThreePanel {
     const pager = htmlData.getElementById('p4Pager');
     if (pager.hasAttribute('data-proj')) {
       this.data_project = pager.getAttribute('data-proj');
-      console.log(`project: ${this.data_project}`);
     } else {
       console.log('did not find a data-proj');
     }
@@ -98,9 +97,7 @@ export class DetailsScoreComponent extends ThreePanel {
         'occurrences',
         'texts',
         'score',
-        'project',
-        this.data_project,
-        e.target.getAttribute('data-iref')
+        'project'
         ], { queryParams: {
         proj: this.route.snapshot.queryParams['proj'],
         ga_lang: this.route.snapshot.queryParams['ga_lang'],
@@ -109,7 +106,9 @@ export class DetailsScoreComponent extends ThreePanel {
         isid: this.route.snapshot.queryParams['isid'],
         iref: this.route.snapshot.queryParams['iref'],
         ref: this.route.snapshot.queryParams['ref'],
-        bloc: this.route.snapshot.queryParams['bloc']
+        bloc: this.route.snapshot.queryParams['bloc'],
+        project_id: this.data_project,
+        text_id: e.target.getAttribute('data-iref')
       }})
     }
   }
