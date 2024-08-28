@@ -93,12 +93,6 @@
         margin-right: 0;
       }
     }
-    .details__panel-list-item {
-      &:first-of-type,
-      &:last-of-type {
-        transform: rotateZ(180deg);
-      }
-    }
   }
   .cookies {
     .cookies__text {
