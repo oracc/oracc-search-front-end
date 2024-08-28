@@ -58,5 +58,11 @@
   },
   "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Amu-sa-re%3Dsar%5Brun%2F%2Fto%20run%2C%20hasten%5DV%2Fi%C2%B4V%2Fi%24mu%3Asar%3Be%2Fsa-r%C2%B7e%23mu%3A~%3Be/neo": {
     "url": "https://build-oracc.museum.upenn.edu/neo?sig=%E2%98%A3%E2%98%A3%40obel%25sux%3Amu-sa-re%3Dsar%5Brun%2F%2Fto%20run%2C%20hasten%5DV%2Fi%C2%B4V%2Fi%24mu%3Asar%3Be%2Fsa-r%C2%B7e%23mu%3A~%3Be"
+  },
+  "oracc/neo/block%3Dsb.Q000012.3/Q000012.3": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/Q000012.3?block=sb.Q000012.3"
+  },
+  "oracc/edlex/Q000011.3": {
+    "url": "https://build-oracc.museum.upenn.edu/edlex/Q000011.3"
   }
 }
