@@ -6,13 +6,13 @@ import { GlossaryArticleComponent } from './pages/glossary-article/glossary-arti
 import { GlossaryArticleTextsComponent } from './pages/glossary-article-texts/glossary-article-texts.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { DetailsTextsComponent } from './pages/details-texts/details-texts.component';
-import { DetailsSourceComponent } from './pages/details-source/details-source.component';
-import { GlossaryArticleSourceComponent } from './pages/glossary-article-source/glossary-article-source.component';
+import { DetailsScoreComponent } from './pages/details-score/details-score.component';
+import { GlossaryArticleScoreComponent } from './pages/glossary-article-score/glossary-article-score.component';
+import { ProjectTextComponent } from './pages/details-texts/project-text.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 // duplicated routes are to handle both desktop and mobile versions
 const routes: Routes = [
-  // routes for desktop
   {
     path: '',
     component: SearchComponent,
@@ -22,70 +22,47 @@ const routes: Routes = [
         component: SearchResultsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb',
+        path: 'search-results/:word',
+        // with query parameters proj, ga_lang, ga_isid
         component: GlossaryArticleComponent
+        // contains links to DetailsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences',
+        path: 'search-results/:word/occurrences',
+        // adding lang, isid
         component: DetailsComponent
+        // contains links to DetailsTextsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts',
+        path: 'search-results/:word/occurrences/texts',
+        // adding iref
         component: DetailsTextsComponent
+        // contains links to DetailsScoreComponent
+        // and GlossaryArticleTextsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts/source',
-        component: DetailsSourceComponent
+        path: 'search-results/:word/occurrences/texts/score',
+        // adding ref, bloc
+        component: DetailsScoreComponent
+        // contains links to GlossaryArticleScoreComponent and ProjectTextComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts/:id:breadcrumb',
+        path: 'search-results/:word/occurrences/texts/:sig',
+        // adding data_proj, wsig
         component: GlossaryArticleTextsComponent
+        // contains links back to DetailsComponent
       },
       {
-        path: 'search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb',
-        component: GlossaryArticleSourceComponent
+        path: 'search-results/:word/occurrences/texts/score/project',
+        // adding project_id and text_id
+        component: ProjectTextComponent
+      },
+      {
+        path: 'search-results/:word/occurrences/texts/score/:sig',
+        // adding data_proj, wsig
+        component: GlossaryArticleScoreComponent
       }
     ]
-  },
-
-  // routes for mobile
-  {
-    path: 'search-results',
-    component: SearchResultsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb',
-    component: GlossaryArticleComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences',
-    component: DetailsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts',
-    component: DetailsTextsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts/source',
-    component: DetailsSourceComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts/:id:breadcrumb',
-    component: GlossaryArticleTextsComponent
-  },
-  {
-    path: 'search-results/:id:breadcrumb/occurrences/texts/source/:id:breadcrumb',
-    component: GlossaryArticleSourceComponent
-  },
-
-  // routes for manually entereded URL's
-  {
-    path: ':projectId/:textId',
-    component: DetailsTextsComponent
-  },
-  {
-    path: ':projectId/:subprojectId/:textId',
-    component: DetailsTextsComponent
   },
 
   // fallback routes

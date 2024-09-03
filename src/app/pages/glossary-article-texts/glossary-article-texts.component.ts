@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { Router } from '@angular/router';
-import { composedPath, getBreadcrumbs } from '../../../utils/utils';
+import { ActivatedRoute, Router } from '@angular/router';
+import { composedPath } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-texts',
@@ -13,25 +13,32 @@ import { composedPath, getBreadcrumbs } from '../../../utils/utils';
 })
 export class GlossaryArticleTextsComponent implements OnInit {
   public glossaryContent: any;
-  private pathnameArray: Array<string>;
+  private project: string = 'neo';
 
   @ViewChild('glossary', { static: false }) glossaryWraper;
   constructor(
     private getDataService: GetDataService,
     private sanitizer: DomSanitizer,
     private breadcrumbsService: HandleBreadcrumbsService,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.router);
-    this.pathnameArray = this.router.url.split('/').filter(v => v != '');
   }
 
   ngOnInit() {
+    const proj = this.route.snapshot.queryParams['proj'];
+    if (proj) {
+      this.project = proj;
+    }
     this.getSubsequentArticle();
   }
 
   public getSubsequentArticle() {
-    this.getDataService.getSubsequentGlossaryArticleData().subscribe((data) => {
+    this.getDataService.getSubsequentGlossaryArticleData(
+      this.project,
+      this.route.snapshot.queryParams['wsig']
+    ).subscribe((data) => {
       // @ts-ignore
       this.handleTextToHTMLConversion(data);
     });
@@ -51,25 +58,21 @@ export class GlossaryArticleTextsComponent implements OnInit {
         ? anchorEl.querySelector('span').innerText
         : anchorEl.innerText;
       e.preventDefault();
-      const queryParams = anchorEl.href
-        .split('(')
-        .slice(1)
-        .join()
-        .slice(0, -1)
-        .replace(/'/g, '')
-        .split(',');
+      //...
 
-      this.getDataService.setDetailsPageParams(
-        queryParams[0],
-        queryParams[1],
-        queryParams[2]
+      this.router.navigate(
+        [ 'search-results',
+          anchorElText,
+          'occurrences'
+        ],
+        { queryParams: {
+          proj: this.project,
+          ga_lang: this.route.snapshot.queryParams['ga_lang'],
+          ga_isid: this.route.snapshot.queryParams['ga_isid'],
+          lang: anchorEl.getAttribute('data-lang'),
+          isid: anchorEl.getAttribute('data-isid')
+        }}
       );
-
-      this.getDataService.setChosenTermText(anchorElText);
-      this.router.navigate([
-        `/search-results/${decodeURI(this.pathnameArray[1])}`,
-        'occurrences'
-      ]);
     }
   }
 

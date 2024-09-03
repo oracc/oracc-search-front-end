@@ -1,0 +1,68 @@
+{
+  "searches/search/cow": {
+    "url": "http://localhost:8000/search/cow"
+  },
+  "searches/search/water": {
+    "url": "http://localhost:8000/search/water"
+  },
+  "suggests/suggest_all/cow": {
+    "url": "http://localhost:8000/suggest_all/cow"
+  },
+  "suggests/suggest_all/water": {
+    "url": "http://localhost:8000/suggest_all/water"
+  },
+  "suggests/suggest_all/wat": {
+    "url": "http://localhost:8000/suggest_all/wat"
+  },
+  "suggests/suggest_all/wa": {
+    "url": "http://localhost:8000/suggest_all/wa"
+  },
+  "oracc/neo/sux/o0023294": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023294"
+  },
+  "oracc/neo/xis%3Dsux.r000097/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000097"
+  },
+  "oracc/neo/ref%3DQ000012.1/xis%3Dsux.r000097/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000097&ref=Q000012.1"
+  },
+  "oracc/neo/block%3Dsb.Q000012.1/Q000012.1": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/Q000012.1?block=sb.Q000012.1"
+  },
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40edlex%25sux%3Aur%E2%82%83%3Dur%5Bharness%2F%2Fharness%5DN%C2%B4N%24ur%2Fur%E2%82%83%23~/edlex": {
+    "url": "https://build-oracc.museum.upenn.edu/edlex?sig=%E2%98%A3%E2%98%A3%40edlex%25sux%3Aur%E2%82%83%3Dur%5Bharness%2F%2Fharness%5DN%C2%B4N%24ur%2Fur%E2%82%83%23~"
+  },
+  "oracc/neo/sux/o0023325": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023325"
+  },
+  "oracc/neo/xis%3Dsux.r0000c5/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0000c5"
+  },
+  "oracc/neo/ref%3DP260028.16/xis%3Dsux.r0000c5/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0000c5&ref=P260028.16"
+  },
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Agada%3Dgada%5Bflax%2F%2Flinen%5DN%C2%B4N%24gada%2Fgada%23~/neo": {
+    "url": "https://build-oracc.museum.upenn.edu/neo?sig=%E2%98%A3%E2%98%A3%40obel%25sux%3Agada%3Dgada%5Bflax%2F%2Flinen%5DN%C2%B4N%24gada%2Fgada%23~"
+  },
+  "oracc/neo/xis%3Dsux.r0014d2/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0014d2"
+  },
+  "oracc/neo/sux/o0023441": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023441"
+  },
+  "oracc/neo/xis%3Dsux.r0000fa/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0000fa"
+  },
+  "oracc/neo/ref%3DP315472.7/xis%3Dsux.r0000fa/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0000fa&ref=P315472.7"
+  },
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Amu-sa-re%3Dsar%5Brun%2F%2Fto%20run%2C%20hasten%5DV%2Fi%C2%B4V%2Fi%24mu%3Asar%3Be%2Fsa-r%C2%B7e%23mu%3A~%3Be/neo": {
+    "url": "https://build-oracc.museum.upenn.edu/neo?sig=%E2%98%A3%E2%98%A3%40obel%25sux%3Amu-sa-re%3Dsar%5Brun%2F%2Fto%20run%2C%20hasten%5DV%2Fi%C2%B4V%2Fi%24mu%3Asar%3Be%2Fsa-r%C2%B7e%23mu%3A~%3Be"
+  },
+  "oracc/neo/block%3Dsb.Q000012.3/Q000012.3": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/Q000012.3?block=sb.Q000012.3"
+  },
+  "oracc/edlex/Q000011.3": {
+    "url": "https://build-oracc.museum.upenn.edu/edlex/Q000011.3"
+  }
+}

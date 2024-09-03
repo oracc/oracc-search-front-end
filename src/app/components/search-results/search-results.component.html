@@ -80,7 +80,7 @@
         *ngFor="
           let entry of translationData
             | sort : sortField : isDescending
-            | paginate : { itemsPerPage: itemsPerPage, currentPage: p };
+            | paginate : { itemsPerPage: itemsPerPage, currentPage: currentPage };
           let i = index
         "
         (click)="showGlossaryArticle(entry.lang, entry.id, entry.cf)"
@@ -129,7 +129,7 @@
       </div>
     </div>
     <pagination-controls
-      (pageChange)="p = $event"
+      (pageChange)="currentPage = $event"
       previousLabel="&larr;"
       nextLabel="&rarr;"
       [autoHide]="true"

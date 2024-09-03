@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateCompiler } from '@ngx-translate/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -18,8 +18,9 @@ import { GlossaryArticleComponent } from './pages/glossary-article/glossary-arti
 import { DetailsComponent } from './pages/details/details.component';
 import { GlossaryArticleTextsComponent } from './pages/glossary-article-texts/glossary-article-texts.component';
 import { DetailsTextsComponent } from './pages/details-texts/details-texts.component';
-import { DetailsSourceComponent } from './pages/details-source/details-source.component';
-import { GlossaryArticleSourceComponent } from './pages/glossary-article-source/glossary-article-source.component';
+import { DetailsScoreComponent } from './pages/details-score/details-score.component';
+import { GlossaryArticleScoreComponent } from './pages/glossary-article-score/glossary-article-score.component';
+import { ProjectTextComponent } from './pages/details-texts/project-text.component';
 
 // components
 import { HeaderComponent } from './components/header/header.component';
@@ -34,6 +35,7 @@ import { GetDataService } from './services/get-data/get-data.service';
 
 // pipes
 import { SortPipe } from './pipes/sort.pipe';
+import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/');
@@ -49,8 +51,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsComponent,
     GlossaryArticleTextsComponent,
     DetailsTextsComponent,
-    DetailsSourceComponent,
-    GlossaryArticleSourceComponent,
+    DetailsScoreComponent,
+    GlossaryArticleScoreComponent,
+    ProjectTextComponent,
     PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
@@ -70,6 +73,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
+      },
+      compiler: {
+        provide: TranslateCompiler,
+        useClass: TranslateMessageFormatCompiler
       }
     })
   ],

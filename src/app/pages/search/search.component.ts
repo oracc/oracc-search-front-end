@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { getBreadcrumbs } from 'src/utils/utils';
 
 @Component({
   selector: 'app-search',
@@ -51,5 +50,14 @@ export class SearchComponent implements OnInit {
 
   setShowSuggestions(showSuggestions: boolean) {
     this.showSuggestions = showSuggestions;
+  }
+
+  focusSuggestions() {
+    if (this.showSuggestions) {
+      const suggestions = document.getElementsByClassName('suggestion');
+      if (suggestions.length != 0) {
+        (suggestions[0] as HTMLElement).focus();
+      }
+    }
   }
 }
