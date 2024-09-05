@@ -29,7 +29,7 @@
 
 .footer__logo-link {
   color: $white;
-  font-size: 23px;
+  font-size: 1.4rem;
   transition: $dur $ease;
   &:hover {
     color: $blueLight;
@@ -40,9 +40,8 @@
 }
 
 .footer__center-text {
-  font-size: 12px;
+  font-size: 0.75rem;
   @media only screen and (max-width: 600px) {
-    font-size: 9px;
     text-align: center;
     display: block;
     margin-bottom: 16px;
@@ -68,7 +67,7 @@
 .footer__social-link {
   color: $white;
   margin-left: 42px;
-  font-size: 18px;
+  font-size: 1.2rem;
   transition: $dur $ease;
   &:hover {
     color: $blueLight;

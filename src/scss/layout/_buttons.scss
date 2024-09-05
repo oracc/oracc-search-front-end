@@ -3,7 +3,7 @@
 .btn {
   font-family: $fontSecondary;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.3rem;
   width: 145px;
   height: 50px;
   color: $white;
@@ -16,7 +16,7 @@
     background-color: lighten($blueLight, 20%);
   }
   @media only screen and (max-width: 600px) {
-    font-size: 12px;
+    font-size: 0.8rem;
     width: 125px;
     height: 30px;
   }

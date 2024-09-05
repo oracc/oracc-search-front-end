@@ -15,13 +15,13 @@
 .details__word {
   display: block;
   color: $red;
-  font-size: 27px;
+  font-size: 1.7rem;
   margin-top: -8px;
   margin-bottom: 45px;
   font-weight: 700;
   @media only screen and (max-width: 600px) {
     margin-bottom: 25px;
-    font-size: 24px;
+    font-size: 1.6rem;
   }
 }
 
@@ -71,12 +71,12 @@
   align-items: center;
   color: $blueDark;
   font-weight: 700;
-  font-size: 19px;
+  font-size: 1.2rem;
   padding: 0 20px;
   margin-bottom: 12px;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
-    font-size: 16px;
+    font-size: 1.1rem;
   }
 }
 
@@ -102,13 +102,13 @@
       margin-bottom: 3px;
     }
     .xtr-label {
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: bold;
     }
   }
   .fa-spinner {
     @media only screen and (max-width: 600px) {
-      font-size: 20px;
+      font-size: 1.3rem;
     }
   }
   a {
@@ -125,21 +125,21 @@
     &.level0 {
       h2 {
         color: $red;
-        font-size: 12px;
+        font-size: 0.75rem;
         margin-bottom: 7px;
       }
     }
     .level1 {
       padding-left: 6px;
       h3 {
-        font-size: 12px;
+        font-size: 0.75rem;
         margin-bottom: 4px;
       }
     }
     .level2 {
       margin-bottom: 31px;
       a {
-        font-size: 12px;
+        font-size: 0.75rem;
         color: $grayBorder;
         font-weight: normal;
       }
@@ -148,7 +148,7 @@
 
   .xmdoutline {
     h3 {
-      font-size: 12px;
+      font-size: 0.75rem;
       margin-bottom: 4px;
     }
     ul {
@@ -156,7 +156,7 @@
     }
     li,
     p {
-      font-size: 12px;
+      font-size: 0.75rem;
       color: $grayBorder;
       font-weight: normal;
     }
@@ -164,12 +164,12 @@
 
   .xtloutline {
     h3 {
-      font-size: 12px;
+      font-size: 0.75rem;
       margin-bottom: 1px;
     }
     p {
       a {
-        font-size: 12px;
+        font-size: 0.75rem;
       }
     }
     .xol2 {
@@ -185,38 +185,38 @@
       display: none;
     }
     .xlabel {
-      font-size: 12px;
+      font-size: 0.75rem;
       color: $grayBorder;
     }
     .cbd,
     .sign {
-      font-size: 14px;
+      font-size: 0.8rem;
       @media only screen and (max-width: 600px) {
-        font-size: 12px;
+        font-size: 0.75rem;
       }
     }
     .heading {
-      font-size: 18px;
+      font-size: 1.2rem;
       @media only screen and (max-width: 600px) {
-        font-size: 14px;
+        font-size: 1rem;
       }
     }
     .column,
     .surface,
     .nonlbody,
     p {
-      font-size: 14px;
+      font-size: 0.8rem;
       color: $grayBorder;
     }
   }
 
   .ce-heading {
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-bottom: 7px;
   }
   .ce-result,
   .ce-label {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: $grayBorder;
     font-weight: normal;
     .selected {
@@ -308,7 +308,7 @@
 
 .details__panel-list-item {
   font-family: "OpenSans", sans-serif;
-  font-size: 25px;
+  font-size: 1.5rem;
   text-align: center;
   color: $blueLight;
   &.active {
@@ -321,7 +321,7 @@
 
 .details__panel-left,
 .details__panel-right {
-  font-size: 25px;
+  font-size: 1.5rem;
 }
 
 .details__panel-pagination {
@@ -355,14 +355,14 @@
   }
   a,
   span {
-    font-size: 14px;
+    font-size: 0.8rem;
   }
 }
 .details__popup-close {
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 25px;
+  font-size: 1.5rem;
   display: block;
   position: absolute;
   color: $blueLight;
@@ -375,5 +375,5 @@
 .details__popup-title {
   text-align: center;
   padding: 0 20px 10px;
-  font-size: 18px;
+  font-size: 1.1rem;
 }

@@ -18,7 +18,7 @@
 }
 
 .search__title {
-  font-size: 30px;
+  font-size: 1.8rem;
   font-weight: 700;
   color: $grayDark;
   margin-bottom: 26px;
@@ -26,7 +26,7 @@
 
 .search__intro {
   color: $red;
-  font-size: 12px;
+  font-size: 0.75rem;
   display: block;
   margin-bottom: 15px;
 }
@@ -118,7 +118,7 @@ img {
     color: $grayDark;
     background-color: $white;
     .fa-search {
-      font-size: 23px;
+      font-size: 1.3rem;
       margin-right: 0;
     }
   }
@@ -131,7 +131,7 @@ img {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .search__input {
     width: 241px;
   }

@@ -28,7 +28,7 @@
     .icountu {
       font-weight: normal;
       @media only screen and (max-width: 600px) {
-        font-size: 14px;
+        font-size: 1rem;
       }
       &:hover {
         color: $blueLight;
@@ -41,11 +41,11 @@
       text-align: right;
       font-weight: 700;
       color: $blueDark;
-      font-size: 18px;
+      font-size: 1.1rem;
       @media only screen and (max-width: 600px) {
         display: block;
         text-align: left;
-        font-size: 14px;
+        font-size: 1rem;
       }
     }
   }
@@ -53,18 +53,18 @@
     margin-left: 242px;
     @media only screen and (max-width: 600px) {
       margin-left: 0;
-      font-size: 14px;
+      font-size: 1rem;
     }
     .sense,
     .icount {
       font-weight: normal;
       @media only screen and (max-width: 600px) {
-        font-size: 14px;
+        font-size: 1rem;
       }
     }
     .sensenum {
       @media only screen and (max-width: 600px) {
-        font-size: 14px;
+        font-size: 1rem;
       }
     }
   }

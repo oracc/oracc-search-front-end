@@ -2,13 +2,13 @@
   margin-bottom: 30px !important;
   text-align: center;
   .pagination-previous {
-    font-size: 25px;
+    font-size: 1.5rem;
     font-family: $fontSecondary;
     &::before {
       content: none !important;
     }
     a {
-      font-size: 25px !important;
+      font-size: 1.5rem !important;
       &::before {
         content: none !important;
       }
@@ -16,13 +16,13 @@
   }
 
   .pagination-next {
-    font-size: 25px;
+    font-size: 1.5rem;
     font-family: $fontSecondary;
     &::after {
       content: none !important;
     }
     a {
-      font-size: 25px !important;
+      font-size: 1.5rem !important;
       &::after {
         content: none !important;
       }
@@ -30,7 +30,7 @@
   }
   a {
     font-family: $fontSecondary;
-    font-size: 18px !important;
+    font-size: 1.1rem !important;
     color: $blueLight !important;
     &:hover {
       background-color: inherit !important;
@@ -41,7 +41,7 @@
     background-color: inherit !important;
     color: $blueDark !important;
     font-family: $fontSecondary !important;
-    font-size: 18px !important;
+    font-size: 1.1rem !important;
     font-weight: 700 !important;
   }
   .disabled {
@@ -54,7 +54,7 @@
 
   .small-screen {
     font-family: $fontSecondary;
-    font-size: 18px !important;
+    font-size: 1.1rem !important;
     color: $blueLight !important;
     font-weight: 700;
   }
