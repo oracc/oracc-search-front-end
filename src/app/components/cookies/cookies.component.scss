@@ -9,7 +9,7 @@
   width: 100%;
   box-shadow: 0 7px 10px -10px inset $grayDark;
   transition: $dur $ease;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     box-shadow: none;
   }
 }
@@ -27,7 +27,7 @@
 
 .cookies__text {
   font-size: 14px;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     font-size: 9px;
     margin-right: 35px;
   }

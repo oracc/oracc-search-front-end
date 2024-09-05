@@ -7,7 +7,7 @@
   color: $white;
   margin-bottom: 80px;
   transition: $dur $ease;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     height: auto;
     padding-top: 23px;
   }
@@ -22,7 +22,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
   }
 }
@@ -34,14 +34,14 @@
   &:hover {
     color: $blueLight;
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     display: none;
   }
 }
 
 .footer__center-text {
   font-size: 12px;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     font-size: 9px;
     text-align: center;
     display: block;
@@ -57,7 +57,7 @@
 }
 
 .footer__social {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     min-width: 120px;
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@
   &:hover {
     color: $blueLight;
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-left: 0;
   }
 }

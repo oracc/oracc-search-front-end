@@ -2,7 +2,7 @@
 
 .glossary {
   text-align: left;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     min-height: 100vh;
   }
   .container {
@@ -10,7 +10,7 @@
   }
   .entry.heading {
     margin-bottom: 30px;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       margin-bottom: 20px;
     }
   }
@@ -22,12 +22,12 @@
   .morphs {
     display: table;
     margin-bottom: 15px;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       display: block;
     }
     .icountu {
       font-weight: normal;
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         font-size: 14px;
       }
       &:hover {
@@ -42,7 +42,7 @@
       font-weight: 700;
       color: $blueDark;
       font-size: 18px;
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         display: block;
         text-align: left;
         font-size: 14px;
@@ -51,19 +51,19 @@
   }
   .senses {
     margin-left: 242px;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       margin-left: 0;
       font-size: 14px;
     }
     .sense,
     .icount {
       font-weight: normal;
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         font-size: 14px;
       }
     }
     .sensenum {
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         font-size: 14px;
       }
     }

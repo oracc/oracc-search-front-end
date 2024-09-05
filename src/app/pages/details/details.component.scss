@@ -3,7 +3,7 @@
 
 .details {
   text-align: left;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     padding: 20px;
   }
 }
@@ -19,7 +19,7 @@
   margin-top: -8px;
   margin-bottom: 45px;
   font-weight: 700;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-bottom: 25px;
     font-size: 24px;
   }
@@ -28,7 +28,7 @@
 .details__panel {
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
   }
 }
@@ -39,7 +39,7 @@
     width: 19%;
     flex-grow: 0;
     flex-shrink: 0;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       width: 100%;
     }
   }
@@ -50,13 +50,13 @@
     width: 29%;
     flex-grow: 0;
     flex-shrink: 0;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       width: 100%;
     }
   }
   &:not(:last-of-type) {
     margin-right: 17px;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       margin-right: 0;
       margin-bottom: 20px;
     }
@@ -75,7 +75,7 @@
   padding: 0 20px;
   margin-bottom: 12px;
   cursor: pointer;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     font-size: 16px;
   }
 }
@@ -86,7 +86,7 @@
   padding: 14px 20px;
   position: relative;
   overflow: scroll;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     height: inherit;
     max-height: 500px;
     min-height: 80px;
@@ -107,7 +107,7 @@
     }
   }
   .fa-spinner {
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       font-size: 20px;
     }
   }
@@ -191,13 +191,13 @@
     .cbd,
     .sign {
       font-size: 14px;
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         font-size: 12px;
       }
     }
     .heading {
       font-size: 18px;
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         font-size: 14px;
       }
     }

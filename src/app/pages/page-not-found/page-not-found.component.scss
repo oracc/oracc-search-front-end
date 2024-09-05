@@ -3,7 +3,7 @@
 .page-not-found {
   text-align: center;
   padding-top: 110px;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     padding-top: 0;
   }
 }
@@ -11,7 +11,7 @@
 .page-not-found__content {
   overflow: hidden;
   padding-bottom: 200px;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     padding-top: 40px;
     padding-bottom: 20px;
   }
@@ -20,7 +20,7 @@
 .page-not-found__text {
   max-width: 780px;
   margin: 0 auto;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     max-width: 86%;
   }
 }

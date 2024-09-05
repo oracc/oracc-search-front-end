@@ -15,7 +15,7 @@
   &:hover {
     background-color: lighten($blueLight, 20%);
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     font-size: 12px;
     width: 125px;
     height: 30px;

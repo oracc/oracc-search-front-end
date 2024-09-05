@@ -3,7 +3,7 @@
 .results {
   margin-left: 10px;
   margin-right: 10px;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     padding-bottom: 30px;
     background-color: $grayLight;
     box-shadow: 0 -17px 0 20px $grayLight;
@@ -25,7 +25,7 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: 47px;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     justify-content: center;
     margin-bottom: 30px;
   }
@@ -39,7 +39,7 @@
   top: -7px;
   left: 50%;
   transform: translateX(-50%);
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     display: block;
     font-size: 18px;
     position: relative;
@@ -70,7 +70,7 @@
   &:hover {
     color: $blueDark;
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     display: none;
   }
 }
@@ -139,7 +139,7 @@
   }
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: 600px) {
   .fa-sort-down {
     display: none;
   }
@@ -174,7 +174,7 @@
 
 .results__table-head-item--wide,
 .results__table-cel--wide {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     width: 50%;
   }
 }
@@ -183,12 +183,12 @@
 .results__table-row-drop {
   display: flex;
   width: 100%;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     width: 50%;
   }
   .results__table-head-item,
   .results__table-cell {
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       width: 100% !important;
     }
     &:first-of-type {
@@ -212,19 +212,19 @@
 
 .results__table-row-drop {
   .results__table-cell {
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       width: 100% !important;
     }
   }
 }
 
 .results__table-head-drop {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
     position: relative;
   }
   .results__table-head-item {
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       position: absolute;
       font-size: 11px;
       background-color: $white;
@@ -321,13 +321,13 @@
   padding-bottom: 23px;
   box-sizing: border-box;
   cursor: pointer;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-right: 0;
   }
 }
 
 .results__table-cell--wide {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     width: 50%;
     margin-right: 10px;
   }
@@ -342,7 +342,7 @@
   font-size: 20px;
   color: $grayDark;
   font-weight: 700;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     display: block;
     min-height: 100vh;
   }
