@@ -87,9 +87,17 @@ img {
     display: none;
   }
   .search__form {
-    padding-bottom: 20px;
+    padding: 20px 0;
     position: relative;
-    &::after {
+    // some fading so the search section doesn't have hard edges
+    background: radial-gradient(
+      ellipse 50% 50% at 50% 50%,
+      $white 80%,
+      rgba($white, 0) 100%
+    );
+    
+
+    &::after { // this is the divider
       content: "";
       display: block;
       position: absolute;
@@ -113,8 +121,10 @@ img {
   .search__btn {
     height: 32px;
     font-size: 0;
-    color: $grayDark;
+    color: $blueDark;
     background-color: $white;
+    vertical-align: middle;
+    align-self: center;
     .fa-search {
       font-size: 1.3rem;
       margin-right: 0;
