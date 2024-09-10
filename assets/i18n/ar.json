@@ -1,10 +1,9 @@
 {
   "header": {
-    "linkText1": "Search",
-    "linkText2": "Projects",
-    "linkText3": "Tools",
-    "linkText4": "About",
-    "linkText5": "Help",
+    "linkText1": "Projects",
+    "linkText2": "Tools",
+    "linkText3": "About",
+    "linkText4": "Help",
     "langText1": "English",
     "langText2": "Arabic",
     "langAbbrText1": "EN",
@@ -18,7 +17,7 @@
     "introText": "Welcome to",
     "logoText": "Oracc",
     "paraText1": "اوراك هو جهد تعاوني لتطوير مجموعة كاملة من الكتابات المسمارية والتي تدعم بتعليقاتها التوضيحية الغنية، وترخيصها المفتوح الجيل القادم من الأبحاث العلمية. قام ستيف تيني بإنشاء اوراك، ويديرها جيمي نوفوتني ، إليانور روبسون ، تيني ، ونيك فيلدهويس.",
-    "paraText2": "من الروابط أعلاه ، يمكنك <a href='/search' class='js-search-home'>البحث</a> في مسرد اوراك للعثور على الكلمات التي تهمك. يمكنك أيضًا تصفح <a href='http://oracc.museum.upenn.edu/projectlist.html' target='_blank'>المشروعات</a> الفردية (بالتنسيق القديم) واستخدام <a href='http://oracc.museum.upenn.edu/doc/tools/index.html' target='_blank'>أدوات</a> الويب الخاصة باوراك للتحرير. اختر العنوان <a href='http://oracc.museum.upenn.edu/doc/about/index.html' target='_blank'>حول</a> أو <a href='http://oracc.museum.upenn.edu/doc/help/index.html' target='_blank'>المساعدة</a> إذا كنت بحاجة إلى مزيد من الإرشادات."
+    "paraText2": "من الروابط أعلاه ، يمكنك <a href='/' class='js-search-home'>البحث</a> في مسرد اوراك للعثور على الكلمات التي تهمك. يمكنك أيضًا تصفح <a href='http://oracc.museum.upenn.edu/projectlist.html' target='_blank'>المشروعات</a> الفردية (بالتنسيق القديم) واستخدام <a href='http://oracc.museum.upenn.edu/doc/tools/index.html' target='_blank'>أدوات</a> الويب الخاصة باوراك للتحرير. اختر العنوان <a href='http://oracc.museum.upenn.edu/doc/about/index.html' target='_blank'>حول</a> أو <a href='http://oracc.museum.upenn.edu/doc/help/index.html' target='_blank'>المساعدة</a> إذا كنت بحاجة إلى مزيد من الإرشادات."
   },
   "search": {
     "titleText": "Search Oracc",
@@ -44,9 +43,10 @@
   "details": {
     "metadataText": "Metadata",
     "showText": "Show text",
-    "textSingularText": "Text",
-    "textPluralText": "Texts",
-    "linesText": "Lines",
-    "sourceText": "Source"
+    "textText": "{0, plural, one {{0} Text} other {{0} Texts}}",
+    "linesText": "{0, plural, one {{0} Line} other {{0} Lines}}",
+    "sourceText": "Source",
+    "scoreText": "Score",
+    "resetZoom": "Reset Filter"
   }
 }
