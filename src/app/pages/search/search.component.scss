@@ -2,7 +2,7 @@
 
 .search {
   padding-top: 57px;
-  // background-color: $grayLight;
+  background-color: $grayLight;
   &:not(.search--mob) {
     @media only screen and (max-width: 600px) {
       display: none;
