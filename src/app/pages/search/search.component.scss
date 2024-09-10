@@ -2,7 +2,6 @@
 
 .search {
   padding-top: 57px;
-  background-color: $grayLight;
   &:not(.search--mob) {
     @media only screen and (max-width: 600px) {
       display: none;
@@ -79,7 +78,6 @@ img {
 
 .search--mob {
   padding-top: 20px;
-  background-color: $white;
   z-index: 2;
   .content {
     min-height: 0;
