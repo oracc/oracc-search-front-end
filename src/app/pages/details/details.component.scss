@@ -65,7 +65,7 @@
 
 .details__panel-top {
   background-color: $white;
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05);;
   height: 48px;
   display: flex;
   justify-content: space-between;
@@ -84,7 +84,7 @@
 .details__panel-main {
   height: 500px;
   background-color: $white;
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05);;
   padding: 14px 20px;
   position: relative;
   overflow: scroll;
@@ -194,13 +194,14 @@
     .sign {
       font-size: 0.8rem;
       @media only screen and (max-width: 600px) {
-        font-size: 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
       }
     }
     .heading {
       font-size: 1.2rem;
       @media only screen and (max-width: 600px) {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
     }
     .column,
