@@ -1,4 +1,4 @@
-:lang(ar) {
+[lang="ar"] {
   .header {
     .header__nav-lang-link {
       &:first-of-type {
@@ -91,12 +91,6 @@
       }
       &:first-of-type {
         margin-right: 0;
-      }
-    }
-    .details__panel-list-item {
-      &:first-of-type,
-      &:last-of-type {
-        transform: rotateZ(180deg);
       }
     }
   }

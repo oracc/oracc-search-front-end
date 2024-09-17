@@ -29,7 +29,7 @@
               "src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": ["src/scripts/p3.js"]
+            "scripts": ["src/scripts/p4.js"]
           },
           "configurations": {
             "github-pages": {
@@ -42,6 +42,7 @@
               ]
             },
             "build-oracc": {
+              "baseHref": "/search/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

@@ -10,7 +10,10 @@ export class HandleBreadcrumbsService {
   constructor() {}
 
   public setBreadcrumbs(router: Router) {
-    const urlSegments = router.url.split('/').filter((segment) => segment !== ''); // Split URL and remove empty segments
+    // Split URL and remove empty segments
+    const urlSegments = router.url.split('?')[0].split('/').filter(
+      (segment) => segment !== ''
+    );
     let currentPath = '/';
 
     urlSegments.forEach((segment, index) => {
@@ -19,7 +22,7 @@ export class HandleBreadcrumbsService {
       currentPath += `${decodedPath}/`;
       if (this.breadcrumbsLinks.length <= index || this.breadcrumbsLinks[index].url !== currentPath) {
         this.breadcrumbsLinks.splice(index, Infinity, {
-          name: decodedPath.replace('-', ' '),
+          name: decodedPath.replaceAll('-', ' '),
           url: currentPath
         });
       }

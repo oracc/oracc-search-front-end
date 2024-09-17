@@ -13,6 +13,7 @@
           [(ngModel)]="searchParam"
           (ngModelChange)="setShowSuggestions(true)"
           (keyup.enter)="searchOnEnter($event)"
+          (keyup.arrowdown)="focusSuggestions()"
         />
         <app-search-suggestions
           *ngIf="showSuggestions"

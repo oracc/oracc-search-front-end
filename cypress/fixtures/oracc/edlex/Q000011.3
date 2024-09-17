@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta name="generator" content="oracc/px p4html.xml "/>
+  <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
+  <link rel="stylesheet" type="text/css" href="/edlex/css/p3colours.css"/>
+  <link rel="stylesheet" type="text/css" href="/edlex/css/projcss.css"/>
+  <script type="text/javascript" src="/js/p4.js">&#160;</script>
+  <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
+  <title>edlex</title>    
+</head>
+  <body onload="onloadScroll()"><div id="p4Pager" class="bborder-top list item dcat itxt zoom special" data-proj="edlex" data-list="outlined.lst" data-zoom="2" data-sort="12" data-prev="Q000265" data-item="Q000011.3" data-next="Q000017" data-bkmk="Q000011.3" data-lang="en" data-hili="Q000011.3">
+  <div id="p4Masthead">
+    <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
+      <a href="/">Oracc:</a> <a href="/edlex">edlex &#x2014; Early Dynastic Lexical Texts</a>
+    </p>
+  </div>
+  <div id="p4Header" class="menu banner bborder-bot">
+    <p id="p4Banner">
+      <span id="p4Icons">
+	
+  <img class="p4icon" src="/img/p3-dd.png"
+       alt="Toggle menu drop-down" title="Toggle menu drop-down"
+       onclick="toggle_dd()"/>
+  <img id="p4HelpIcon" class="p4icon"
+       src="/img/p3-help.png" alt="Help" title="Help"
+       onclick="window.location='/doc/help/visitingoracc/gettingstarted/index.html'"/>
+  <img id="p4ResetIcon" class="p4icon"
+       src="/img/p3-reset.png" alt="Reset pager" title="Reset pager"
+       onclick="resetPager()"/>
+  <img id="p4MoreIcon" class="p4icon"
+       src="/img/p3-plus.png" alt="More resources" title="More resources"
+       onclick="window.location='/edlex/hub.html'"/>
+
+      </span>
+    </p>
+    <div id="p4Search">
+  <form action="javascript://" onsubmit="act_srch()">
+    <p>
+      <!--Oracc Search:-->
+      <input id="p4SrchBox" type="text" size="30"
+	     value=""/>
+      <input type="submit" style="display: none"/>
+      <img id="p4SrchGo" class="p4icon" src="/img/p3-search.png"
+	   alt="Search" title="Search" onclick="act_srch()"/>
+    </p>
+    <p id="p4SrchChars">(j=ŋ&#xa0;sz=š&#xa0;s,=ṣ&#xa0;t,=ṭ&#xa0;0-9=₀-₉; &apos;=alef)</p>
+  </form>
+</div>
+
+    <div id="p4Controls">
+      
+  <div id="p4itemNav" class="p4items" data-ityp="ITEM" data-inth="1" data-imax="13">
+    <p class="bg-dk">
+
+      
+      <img id="p4ToggleMeta" class="p4icon" src="/img/p3-full.png"
+	   alt="Toggle metadata pane" title="Toggle metadata pane" onclick="toggle_md()"/>
+      
+      <img id="p4PageItem" class="p4icon p4spread" src="/img/p3-pageitem.png"
+	   alt="Toggle Page/Item view" title="Return to Page view"
+	   onclick="toggle_pi()"/>
+
+      <!--Item-->
+      <img id="p4ItemPrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Item back" title="Item back"
+	   onclick="act_item_prev()"/>
+      
+      <span id="p4ItemView"> [ITEM 1 of 13] </span>
+      
+      <img id="p4ItemNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Item forward" title="Item forward"
+	   onclick="act_item_next()"/>
+
+      <span id="p4SrchResults" class="p4srchresults" data-tmax="" data-rmax="0">
+	 Texts [0 matches]
+      </span>
+
+      <span id="p4Translations">
+	<span>
+          <select id="p4TransSelect" onchange="act_translation()">
+            <option value="none">(none)</option>
+          </select>
+        </span>
+
+	<input id="p4Transonly" type="checkbox" onchange="toggle_to()"
+	       value="@@pui_transonly()@@"/>&#xa0;only
+      </span>
+
+    </p>
+  </div>
+
+  <div id="p4PageNav" class="p4pages" data-page="1" data-pmax="1" data-imax="13">
+    <p class="p3toccenter bg-dk">
+
+      <button id="p4Zoom" class="p4spread" onclick="act_zoom('0')">All Results</button>
+
+      <img id="p4PagePrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Page back" title="Page back"
+	   onclick="act_prev()"/>
+      
+      <!--Page-->
+      <input id="p4Pageset" type="text" onchange="act_page()" size="3" value="1"/>
+
+      <img id="p4PageNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Page forward" title="Page forward"
+	   onclick="act_next()"/>
+
+      13 items
+      /
+      1 page
+
+      <span id="p4SrchResultpages" class="p4srchresults">[0 matches]</span>
+
+      <span id="p4CeType" class="cetype"><select id="p4CESelect" onchange="act_ce_switch(event)" value="line">
+  <option value="line" selected="selected">Line</option>
+  <option value="unit">Sentence</option>
+  <option value="kwic">KWIC</option>
+</select>
+</span>
+    </p>
+  </div>
+
+
+    </div>
+  </div>
+  <div id="p4Data">
+    <div id="p4Menu">
+<div id="p4MenuSorter">
+<select id="p4MenuSelect" onchange="act_sorter()" value="12">
+<option value="12" selected="selected">period/subgenre</option>
+<option value="21">subgenre/period</option>
+</select>
+</div>
+<div id="p4MenuOutline" class="pgotl level0" data-zmax="6"><h2>Archaic</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(1)" data-zoom="1">Other Word Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(2)" data-zoom="2" class="zoomed">Thematic Word Lists [13]</a></p></div><h2>Early Dynastic IIIa</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(3)" data-zoom="3">Thematic Word Lists [16]</a></p></div><h2>Early Dynastic IIIb</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(4)" data-zoom="4">Other Vocabularies [1]</a></p><p><a href="javascript://" onclick="act_zoom(5)" data-zoom="5">Sign Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(6)" data-zoom="6">Thematic Word Lists [4]</a></p></div></div></div>
+
+    <div id="p4Content">
+      <div id="p4Item" class="xtf">
+  <div id="p4XtfMeta"><div xmlns="http://www.w3.org/1999/xhtml">
+  <div class="xmdoutline border-top border-bottom">
+    <h3 class="h3">Names</h3>
+    <ul>
+      <li>Archaic Animals A</li>
+    </ul>
+    <h3 class="h3">Numbers</h3>
+    <ul>
+      <li>Q000011</li>
+      <li>ATU 3, 89-93</li>
+    </ul>
+    <h3 class="h3">View</h3>
+    <ul>
+      <li>Catalogue entry</li>
+      <li>
+        <a href="http://build-oracc.museum.upenn.edu/edlex/Q000011/html">Print text</a>
+      </li>
+      <li>
+        <a href="javascript://" onclick="act_score(event)">Score</a>
+      </li>
+      <li>
+        <a href="javascript://" onclick="act_sources(event)">Sources table</a>
+      </li>
+    </ul>
+    <h3 class="h3">Details</h3>
+    <ul>
+      <li>Archaic</li>
+      <li>Lexical</li>
+      <li>Thematic Word Lists</li>
+    </ul>
+  </div>
+  <div class="xtloutline border-top border-bottom">
+    <div id="Sources">
+      <h3 class="xtl h3">Sources</h3>
+      <div class="xol2">
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000133/image" class="haveimg">IMG</a> [EX001] <a href="javascript:showcdli('P000133')">W 16728,2</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000142/image" class="haveimg">IMG</a> [EX002] <a href="javascript:showcdli('P000142')">W 16918,a</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000146/image" class="haveimg">IMG</a> [EX003] <a href="javascript:showcdli('P000146')">W 16918,e</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000193/image" class="haveimg">IMG</a> [EX004] <a href="javascript:showcdli('P000193')">W 19780</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000199/image" class="haveimg">IMG</a> [EX005] <a href="javascript:showcdli('P000199')">W 19948,22</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000299/image" class="haveimg">IMG</a> [EX006] <a href="javascript:showcdli('P000299')">W 20266,53</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000300/image" class="haveimg">IMG</a> [EX007] <a href="javascript:showcdli('P000300')">W 20266,54</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000301/image" class="haveimg">IMG</a> [EX008] <a href="javascript:showcdli('P000301')">W 20266,55</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000302/image" class="haveimg">IMG</a> [EX009] <a href="javascript:showcdli('P000302')">W 20266,56</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000396/image" class="haveimg">IMG</a> [EX010] <a href="javascript:showcdli('P000396')">W 20266,151</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000400/image" class="haveimg">IMG</a> [EX011] <a href="javascript:showcdli('P000400')">W 20266,155</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000403/image" class="haveimg">IMG</a> [EX012] <a href="javascript:showcdli('P000403')">W 20266,158</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000404/image" class="haveimg">IMG</a> [EX013] <a href="javascript:showcdli('P000404')">W 20266,159</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000407/image" class="haveimg">IMG</a> [EX014] <a href="javascript:showcdli('P000407')">W 20266,162</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000458/image" class="haveimg">IMG</a> [EX015] <a href="javascript:showcdli('P000458')">W 20514,4</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000466/image" class="haveimg">IMG</a> [EX016] <a href="javascript:showcdli('P000466')">W 20521,3</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000479/image" class="haveimg">IMG</a> [EX017] <a href="javascript:showcdli('P000479')">W 20593,17b</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000543/image" class="haveimg">IMG</a> [EX018] <a href="javascript:showcdli('P000543')">W 21208,27</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000677/image" class="haveimg">IMG</a> [EX019] <a href="javascript:showcdli('P000677')">W 24016,1</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000695/image" class="haveimg">IMG</a> [EX020] <a href="javascript:showcdli('P000695')">W 24209</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000698/image" class="haveimg">IMG</a> [EX021] <a href="javascript:showcdli('P000698')">W 24219,1</a></p>
+        <p class="xo withimg"><a target="_blank" href="http://oracc.museum.upenn.edu/cdli/P000710/image" class="haveimg">IMG</a> [EX022] <a href="javascript:showcdli('P000710')">ATU 7, pl. 94, HD 10</a></p>
+      </div>
+    </div>
+    <div id="Parallels">
+      <h3 class="xtl h3">Parallels</h3>
+      <div class="xol2">
+        <p class="xo sansimg">
+          <span class="noimg"> </span>
+          <a href="javascript:showcdli('Q000012')">ED Animals A</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <div id="p4XtfData"><div xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://dublincore.org/documents/2003/06/02/dces/" dc:title="edlex Q000011" class="text"><h1 class="p3h2 heading border-top">Archaic Animals A</h1><table class="composite"><tr class="l p1"><td class="lnum"> </td><td class="tlit"> </td></tr><tr id="Q000011.1" class="l"><td class="lnum "><a name="a.Q000011.1" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.1" class=" "><span class="xlabel ">1</span><span class="lnum ">1</span></a></td><td class="tlit"><span x="1" id="Q000011.1.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.1.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.2" class="l"><td class="lnum "><a name="a.Q000011.2" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.2" class=" "><span class="xlabel ">2</span><span class="lnum ">2</span></a></td><td class="tlit"><span x="1" id="Q000011.2.1" class="w qpc  "><span class="sign  ">NE<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.2.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.3" class="l selected"><td class="lnum "><a name="a.Q000011.3" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.3" class=" "><span class="xlabel ">3</span><span class="lnum ">3</span></a></td><td class="tlit"><span x="1" id="Q000011.3.1" class="w qpc  "><span class="sign  ">U₄</span></span> <span x="1" id="Q000011.3.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.4" class="l"><td class="lnum "><a name="a.Q000011.4" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.4" class=" "><span class="xlabel ">4</span><span class="lnum ">4</span></a></td><td class="tlit"><span x="1" id="Q000011.4.1" class="w qpc  "><span class="sign  ">GI₆</span></span> <span x="1" id="Q000011.4.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.5" class="nonl"><td class="nonlnum "></td><td colspan="1" class="nonlbody"><span class="noncl ">5. vacat</span></td></tr><tr id="Q000011.6" class="l"><td class="lnum "><a name="a.Q000011.6" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.6" class=" "><span class="xlabel ">6</span><span class="lnum ">6</span></a></td><td class="tlit"><span x="1" id="Q000011.6.1" class="w qpc  "><span class="sign  ">ŠU</span></span> <span x="1" id="Q000011.6.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.7" class="l"><td class="lnum "><a name="a.Q000011.7" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.7" class=" "><span class="xlabel ">7</span><span class="lnum ">7</span></a></td><td class="tlit"><span x="1" id="Q000011.7.1" class="w qpc  "><span class="sign  ">ŠU</span></span> <span x="1" id="Q000011.7.2" class="w qpc  "><span class="sign  ">BAR</span></span> <span x="1" id="Q000011.7.3" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.8" class="l"><td class="lnum "><a name="a.Q000011.8" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.8" class=" "><span class="xlabel ">8</span><span class="lnum ">8</span></a></td><td class="tlit"><span x="1" id="Q000011.8.1" class="w qpc  "><span class="sign  ">GI</span></span> <span x="1" id="Q000011.8.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.9" class="l"><td class="lnum "><a name="a.Q000011.9" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.9" class=" "><span class="xlabel ">9</span><span class="lnum ">9</span></a></td><td class="tlit"><span x="1" id="Q000011.9.1" class="w qpc  "><span class="sign  ">GI</span></span> <span x="1" id="Q000011.9.2" class="w qpc  "><span class="sign  ">BAR</span></span> <span x="1" id="Q000011.9.3" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.10" class="l"><td class="lnum "><a name="a.Q000011.10" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.10" class=" "><span class="xlabel ">10</span><span class="lnum ">10</span></a></td><td class="tlit"><span x="1" id="Q000011.10.1" class="w qpc  "><span class="sign  ">BAR</span></span> <span x="1" id="Q000011.10.2" class="w qpc  "><span class="sign  ">MUL</span></span> <span x="1" id="Q000011.10.3" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.11" class="l"><td class="lnum "><a name="a.Q000011.11" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.11" class=" "><span class="xlabel ">11</span><span class="lnum ">11</span></a></td><td class="tlit"><span x="1" id="Q000011.11.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.11.2" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.11.3" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.12" class="l"><td class="lnum "><a name="a.Q000011.12" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.12" class=" "><span class="xlabel ">12</span><span class="lnum ">12</span></a></td><td class="tlit"><span x="1" id="Q000011.12.1" class="w qpc  "><span class="sign  ">DARA₄<sub class=" ">a1</sub></span></span> <span x="1" id="Q000011.12.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.13" class="l"><td class="lnum "><a name="a.Q000011.13" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.13" class=" "><span class="xlabel ">14</span><span class="lnum ">14</span></a></td><td class="tlit"><span x="1" id="Q000011.13.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.13.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.14" class="l"><td class="lnum "><a name="a.Q000011.14" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.14" class=" "><span class="xlabel ">15</span><span class="lnum ">15</span></a></td><td class="tlit"><span x="1" id="Q000011.14.1" class="w qpc  "><span class="sign  ">SIG₇</span></span> <span x="1" id="Q000011.14.2" class="w qpc  "><span class="sign  ">SIG₂<sub class=" ">a2</sub></span></span> <span x="1" id="Q000011.14.3" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.15" class="l"><td class="lnum "><a name="a.Q000011.15" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.15" class=" "><span class="xlabel ">16</span><span class="lnum ">16</span></a></td><td class="tlit"><span x="1" id="Q000011.15.1" class="w qpc  "><span class="sign  ">SIG₇</span></span> <span x="1" id="Q000011.15.2" class="w qpc  "><span class="sign  ">SIG₂<sub class=" ">a2</sub></span></span> <span x="1" id="Q000011.15.3" class="w qpc  "><span class="sign  ">GI₆</span></span> <span x="1" id="Q000011.15.4" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.16" class="nonl"><td class="nonlnum "></td><td colspan="1" class="nonlbody"><span class="noncl "> (4 lines missing)</span></td></tr><tr id="Q000011.17" class="l"><td class="lnum "><a name="a.Q000011.17" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.17" class=" "><span class="xlabel ">20</span><span class="lnum ">20</span></a></td><td class="tlit"><span x="1" id="Q000011.17.1" class="w qpc  "><span class="sign  ">ŠAḪ₂<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.17.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.18" class="l"><td class="lnum "><a name="a.Q000011.18" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.18" class=" "><span class="xlabel ">21</span><span class="lnum ">21</span></a></td><td class="tlit"><span x="1" id="Q000011.18.1" class="w qpc  ">3(<span class="sign  ">N₅₇</span>)</span> <span x="1" id="Q000011.18.2" class="w qpc  "><span class="sign  ">ZAG<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.18.3" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.19" class="l"><td class="lnum "><a name="a.Q000011.19" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.19" class=" "><span class="xlabel ">22</span><span class="lnum ">22</span></a></td><td class="tlit"><span x="1" id="Q000011.19.1" class="w qpc  "><span class="sign  ">DARA₄<sub class=" ">a1</sub></span></span> <span x="1" id="Q000011.19.2" class="w qpc  "><span class="sign  ">ZAG<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.19.3" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.20" class="l"><td class="lnum "><a name="a.Q000011.20" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.20" class=" "><span class="xlabel ">23</span><span class="lnum ">23</span></a></td><td class="tlit"><span x="1" id="Q000011.20.1" class="w qpc  "><span class="sign  ">ḪI</span></span> <span x="1" id="Q000011.20.2" class="w qpc  "><span class="sign  ">SAG</span></span> <span x="1" id="Q000011.20.3" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.21" class="l"><td class="lnum "><a name="a.Q000011.21" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.21" class=" "><span class="xlabel ">24</span><span class="lnum ">24</span></a></td><td class="tlit"><span x="1" id="Q000011.21.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.22" class="l"><td class="lnum "><a name="a.Q000011.22" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.22" class=" "><span class="xlabel ">25</span><span class="lnum ">25</span></a></td><td class="tlit"><span x="1" id="Q000011.22.1" class="w qpc  "><span class="sign  ">AB₂</span></span> <span x="1" id="Q000011.22.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.23" class="l"><td class="lnum "><a name="a.Q000011.23" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.23" class=" "><span class="xlabel ">26</span><span class="lnum ">26</span></a></td><td class="tlit"><span x="1" id="Q000011.23.1" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.23.2" class="w qpc  "><span class="sign  ">AB₂</span></span></td></tr><tr id="Q000011.24" class="l"><td class="lnum "><a name="a.Q000011.24" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.24" class=" "><span class="xlabel ">27</span><span class="lnum ">27</span></a></td><td class="tlit"><span x="1" id="Q000011.24.1" class="w qpc  "><span class="sign  ">E₂<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.24.2" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.25" class="l"><td class="lnum "><a name="a.Q000011.25" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.25" class=" "><span class="xlabel ">28</span><span class="lnum ">28</span></a></td><td class="tlit"><span x="1" id="Q000011.25.1" class="w qpc  "><span class="sign  ">NE<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.25.2" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.26" class="l"><td class="lnum "><a name="a.Q000011.26" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.26" class=" "><span class="xlabel ">29</span><span class="lnum ">29</span></a></td><td class="tlit"><span x="1" id="Q000011.26.1" class="w qpc  "><span class="sign  ">U₄</span></span> <span x="1" id="Q000011.26.2" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.27" class="l"><td class="lnum "><a name="a.Q000011.27" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.27" class=" "><span class="xlabel ">30</span><span class="lnum ">30</span></a></td><td class="tlit"><span x="1" id="Q000011.27.1" class="w qpc  "><span class="sign  ">GI₆</span></span> <span x="1" id="Q000011.27.2" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.28" class="l"><td class="lnum "><a name="a.Q000011.28" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.28" class=" "><span class="xlabel ">32</span><span class="lnum ">32</span></a></td><td class="tlit"><span x="1" id="Q000011.28.1" class="w qpc  "><span class="sign  ">ŠU</span></span> <span x="1" id="Q000011.28.2" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.29" class="l"><td class="lnum "><a name="a.Q000011.29" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.29" class=" "><span class="xlabel ">33</span><span class="lnum ">33</span></a></td><td class="tlit"><span x="1" id="Q000011.29.1" class="w qpc  "><span class="sign  ">ŠU</span></span> <span x="1" id="Q000011.29.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.30" class="l"><td class="lnum "><a name="a.Q000011.30" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.30" class=" "><span class="xlabel ">34</span><span class="lnum ">34</span></a></td><td class="tlit"><span x="1" id="Q000011.30.1" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.30.2" class="w qpc  "><span class="sux ">⸢</span><span class="sign  ">GU₄</span><span class="sux ">⸣</span></span></td></tr><tr id="Q000011.31" class="l"><td class="lnum "><a name="a.Q000011.31" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.31" class=" "><span class="xlabel ">40</span><span class="lnum ">40</span></a></td><td class="tlit"><span x="1" id="Q000011.31.1" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.31.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.32" class="l"><td class="lnum "><a name="a.Q000011.32" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.32" class=" "><span class="xlabel ">41</span><span class="lnum ">41</span></a></td><td class="tlit"><span x="1" id="Q000011.32.1" class="w qpc  "><span class="sign  ">SIG₇</span></span> <span x="1" id="Q000011.32.2" class="w qpc  "><span class="sign  ">DU₈<sub class=" ">c</sub><sup class=" ">g</sup></span></span> <span x="1" id="Q000011.32.3" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.33" class="l"><td class="lnum "><a name="a.Q000011.33" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.33" class=" "><span class="xlabel ">42</span><span class="lnum ">42</span></a></td><td class="tlit"><span x="1" id="Q000011.33.1" class="w qpc  "><span class="sign  ">SIG₇</span></span> <span x="1" id="Q000011.33.2" class="w qpc  "><span class="sign  ">DU₈<sub class=" ">c</sub><sup class=" ">g</sup></span></span> <span x="1" id="Q000011.33.3" class="w qpc  "><span class="sign  ">GI₆</span></span> <span x="1" id="Q000011.33.4" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.34" class="l"><td class="lnum "><a name="a.Q000011.34" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.34" class=" "><span class="xlabel ">43</span><span class="lnum ">43</span></a></td><td class="tlit"><span x="1" id="Q000011.34.1" class="w qpc  "><span class="sux ">⸢</span><span class="sign  ">DILMUN</span><sup class="sux ">?</sup><span class="sux ">⸣</span></span> <span x="1" id="Q000011.34.2" class="w qpc  "><span class="sign  ">GU₇</span></span></td></tr><tr id="Q000011.35" class="l"><td class="lnum "><a name="a.Q000011.35" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.35" class=" "><span class="xlabel ">44</span><span class="lnum ">44</span></a></td><td class="tlit"><span x="1" id="Q000011.35.1" class="w qpc  "><span class="sign  ">GU₄</span></span> <span x="1" id="Q000011.35.2" class="w qpc  "><span class="sign  ">X</span></span></td></tr><tr id="Q000011.36" class="l"><td class="lnum "><a name="a.Q000011.36" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.36" class=" "><span class="xlabel ">45</span><span class="lnum ">45</span></a></td><td class="tlit"><span x="1" id="Q000011.36.1" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.36.2" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.37" class="l"><td class="lnum "><a name="a.Q000011.37" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.37" class=" "><span class="xlabel ">46</span><span class="lnum ">46</span></a></td><td class="tlit"><span x="1" id="Q000011.37.1" class="w qpc  "><span class="sign  ">ŠAḪ₂<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.37.2" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.38" class="l"><td class="lnum "><a name="a.Q000011.38" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.38" class=" "><span class="xlabel ">47</span><span class="lnum ">47</span></a></td><td class="tlit"><span x="1" id="Q000011.38.1" class="w qpc  ">3(<span class="sign  ">N₅₇</span>)</span> <span x="1" id="Q000011.38.2" class="w qpc  "><span class="sign  ">ZAG<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.38.3" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.39" class="l"><td class="lnum "><a name="a.Q000011.39" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.39" class=" "><span class="xlabel ">48</span><span class="lnum ">48</span></a></td><td class="tlit"><span x="1" id="Q000011.39.1" class="w qpc  ">3(<span class="sign  ">N₅₇</span>)</span> <span x="1" id="Q000011.39.2" class="w qpc  "><span class="sign  ">DARA₄<sub class=" ">a1</sub></span></span> <span x="1" id="Q000011.39.3" class="w qpc  "><span class="sign  ">ZAG<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.39.4" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.40" class="l"><td class="lnum "><a name="a.Q000011.40" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.40" class=" "><span class="xlabel ">49</span><span class="lnum ">49</span></a></td><td class="tlit"><span x="1" id="Q000011.40.1" class="w qpc  "><span class="sign  ">SAG</span></span> <span x="1" id="Q000011.40.2" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.40.3" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.41" class="l"><td class="lnum "><a name="a.Q000011.41" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.41" class=" "><span class="xlabel ">50</span><span class="lnum ">50</span></a></td><td class="tlit"><span x="1" id="Q000011.41.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.42" class="l"><td class="lnum "><a name="a.Q000011.42" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.42" class=" "><span class="xlabel ">51</span><span class="lnum ">51</span></a></td><td class="tlit"><span x="1" id="Q000011.42.1" class="w qpc  "><span class="sign  ">U₄</span></span> <span x="1" id="Q000011.42.2" class="w qpc  "><span class="sign  ">AL</span></span> <span x="1" id="Q000011.42.3" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.42.4" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.43" class="l"><td class="lnum "><a name="a.Q000011.43" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.43" class=" "><span class="xlabel ">52</span><span class="lnum ">52</span></a></td><td class="tlit"><span x="1" id="Q000011.43.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.43.2" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.43.3" class="w qpc  "><span class="sign  ">GU₄</span></span></td></tr><tr id="Q000011.44" class="l"><td class="lnum "><a name="a.Q000011.44" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.44" class=" "><span class="xlabel ">53</span><span class="lnum ">53</span></a></td><td class="tlit"><span x="1" id="Q000011.44.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.44.2" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.45" class="l"><td class="lnum "><a name="a.Q000011.45" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.45" class=" "><span class="xlabel ">54</span><span class="lnum ">54</span></a></td><td class="tlit"><span x="1" id="Q000011.45.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.45.2" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.46" class="l"><td class="lnum "><a name="a.Q000011.46" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.46" class=" "><span class="xlabel ">60</span><span class="lnum ">60</span></a></td><td class="tlit"><span x="1" id="Q000011.46.1" class="w qpc  "><span class="sign  ">GI</span></span> <span x="1" id="Q000011.46.2" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.47" class="l"><td class="lnum "><a name="a.Q000011.47" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.47" class=" "><span class="xlabel ">61</span><span class="lnum ">61</span></a></td><td class="tlit"><span x="1" id="Q000011.47.1" class="w qpc  "><span class="sign  ">GI</span></span> <span x="1" id="Q000011.47.2" class="w qpc  "><span class="sign  ">BAR</span></span> <span x="1" id="Q000011.47.3" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.48" class="l"><td class="lnum "><a name="a.Q000011.48" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.48" class=" "><span class="xlabel ">63</span><span class="lnum ">63</span></a></td><td class="tlit"><span x="1" id="Q000011.48.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.49" class="l"><td class="lnum "><a name="a.Q000011.49" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.49" class=" "><span class="xlabel ">64</span><span class="lnum ">64</span></a></td><td class="tlit"><span x="1" id="Q000011.49.1" class="w qpc  "><span class="sign  ">DARA₄<sub class=" ">a1</sub></span></span> <span x="1" id="Q000011.49.2" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.50" class="l"><td class="lnum "><a name="a.Q000011.50" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.50" class=" "><span class="xlabel ">65</span><span class="lnum ">65</span></a></td><td class="tlit"><span x="1" id="Q000011.50.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.50.2" class="w qpc  "><span class="sign  ">DARA₄<sub class=" ">a1</sub></span></span> <span x="1" id="Q000011.50.3" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.51" class="l"><td class="lnum "><a name="a.Q000011.51" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.51" class=" "><span class="xlabel ">66</span><span class="lnum ">66</span></a></td><td class="tlit"><span x="1" id="Q000011.51.1" class="w qpc  "><span class="sign  ">BALA<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.51.2" class="w qpc  "><span class="sign  ">DARA₄<sub class=" ">a1</sub></span></span> <span x="1" id="Q000011.51.3" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.52" class="l"><td class="lnum "><a name="a.Q000011.52" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.52" class=" "><span class="xlabel ">71</span><span class="lnum ">71</span></a></td><td class="tlit"><span x="1" id="Q000011.52.1" class="w qpc  "><span class="sign  ">GA<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.52.2" class="w qpc  ">1(<span class="sign  ">N₀₂</span>)</span> <span x="1" id="Q000011.52.3" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.52.4" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.53" class="l"><td class="lnum "><a name="a.Q000011.53" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.53" class=" "><span class="xlabel ">72</span><span class="lnum ">72</span></a></td><td class="tlit"><span x="1" id="Q000011.53.1" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.53.2" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.53.3" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.54" class="l"><td class="lnum "><a name="a.Q000011.54" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.54" class=" "><span class="xlabel ">73</span><span class="lnum ">73</span></a></td><td class="tlit"><span x="1" id="Q000011.54.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.54.2" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.55" class="l"><td class="lnum "><a name="a.Q000011.55" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.55" class=" "><span class="xlabel ">74</span><span class="lnum ">74</span></a></td><td class="tlit"><span x="1" id="Q000011.55.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.55.2" class="w qpc  "><span class="sign  ">ZAG<sub class=" ">a</sub></span></span> <span x="1" id="Q000011.55.3" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.56" class="l"><td class="lnum "><a name="a.Q000011.56" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.56" class=" "><span class="xlabel ">75</span><span class="lnum ">75</span></a></td><td class="tlit"><span x="1" id="Q000011.56.1" class="w qpc  "><span class="sign  ">SAG</span></span> <span x="1" id="Q000011.56.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.56.3" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.57" class="l"><td class="lnum "><a name="a.Q000011.57" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.57" class=" "><span class="xlabel ">76</span><span class="lnum ">76</span></a></td><td class="tlit"><span x="1" id="Q000011.57.1" class="w qpc  "><span class="sign  ">SAG</span></span> <span x="1" id="Q000011.57.2" class="w qpc  "><span class="sign  ">DARA₄<sub class=" ">a1</sub></span></span> <span x="1" id="Q000011.57.3" class="w qpc  "><span class="sign  ">AMAR</span></span></td></tr><tr id="Q000011.58" class="l"><td class="lnum "><a name="a.Q000011.58" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.58" class=" "><span class="xlabel ">77</span><span class="lnum ">77</span></a></td><td class="tlit"><span x="1" id="Q000011.58.1" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.58.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.59" class="l"><td class="lnum "><a name="a.Q000011.59" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.59" class=" "><span class="xlabel ">79</span><span class="lnum ">79</span></a></td><td class="tlit"><span x="1" id="Q000011.59.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span> <span x="1" id="Q000011.59.2" class="w qpc  "><span class="sign  ">AM<sub class=" ">b</sub></span></span></td></tr><tr id="Q000011.60" class="l"><td class="lnum "><a name="a.Q000011.60" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.60" class=" "><span class="xlabel ">83</span><span class="lnum ">83</span></a></td><td class="tlit"><span x="1" id="Q000011.60.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.61" class="l"><td class="lnum "><a name="a.Q000011.61" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.61" class=" "><span class="xlabel ">84</span><span class="lnum ">84</span></a></td><td class="tlit"><span x="1" id="Q000011.61.1" class="w qpc  "><span class="sign  ">X</span></span> <span x="1" id="Q000011.61.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.62" class="l"><td class="lnum "><a name="a.Q000011.62" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.62" class=" "><span class="xlabel ">85</span><span class="lnum ">85</span></a></td><td class="tlit"><span x="1" id="Q000011.62.1" class="w qpc  "><span class="sign  ">ŠU</span></span> <span x="1" id="Q000011.62.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.63" class="l"><td class="lnum "><a name="a.Q000011.63" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.63" class=" "><span class="xlabel ">86</span><span class="lnum ">86</span></a></td><td class="tlit"><span x="1" id="Q000011.63.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.64" class="l"><td class="lnum "><a name="a.Q000011.64" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.64" class=" "><span class="xlabel ">87</span><span class="lnum ">87</span></a></td><td class="tlit"><span x="1" id="Q000011.64.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.65" class="l"><td class="lnum "><a name="a.Q000011.65" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.65" class=" "><span class="xlabel ">88</span><span class="lnum ">88</span></a></td><td class="tlit"><span x="1" id="Q000011.65.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.66" class="l"><td class="lnum "><a name="a.Q000011.66" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.66" class=" "><span class="xlabel ">89</span><span class="lnum ">89</span></a></td><td class="tlit"><span x="1" id="Q000011.66.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.67" class="l"><td class="lnum "><a name="a.Q000011.67" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.67" class=" "><span class="xlabel ">90</span><span class="lnum ">90</span></a></td><td class="tlit"><span x="1" id="Q000011.67.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.68" class="l"><td class="lnum "><a name="a.Q000011.68" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.68" class=" "><span class="xlabel ">91</span><span class="lnum ">91</span></a></td><td class="tlit"><span x="1" id="Q000011.68.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.69" class="l"><td class="lnum "><a name="a.Q000011.69" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.69" class=" "><span class="xlabel ">92</span><span class="lnum ">92</span></a></td><td class="tlit"><span x="1" id="Q000011.69.1" class="w qpc  "><span class="sux ">⸢</span><span class="sign  ">ŠU</span><span class="sux ">⸣</span></span> <span x="1" id="Q000011.69.2" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.70" class="l"><td class="lnum "><a name="a.Q000011.70" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.70" class=" "><span class="xlabel ">93</span><span class="lnum ">93</span></a></td><td class="tlit"><span x="1" id="Q000011.70.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.71" class="l"><td class="lnum "><a name="a.Q000011.71" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.71" class=" "><span class="xlabel ">94</span><span class="lnum ">94</span></a></td><td class="tlit"><span x="1" id="Q000011.71.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr><tr id="Q000011.72" class="l"><td class="lnum "><a name="a.Q000011.72" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000011.72" class=" "><span class="xlabel ">95</span><span class="lnum ">95</span></a></td><td class="tlit"><span x="1" id="Q000011.72.1" class="w qpc  "><span class="r ">[...<span class="sux ">]</span></span></span></td></tr></table><div class="p3notes"><p class="(null)"></p></div><hr class="credits"></hr><p class="(null)"></p></div></div>
+</div>
+
+    </div>
+  </div>
+  <div id="p4Footer">
+    
+
+  </div>
+  <div id="p4Debug">
+  <h1>Debugging Information</h1>
+
+  <h2>Invocation</h2>
+  
+  <p>The pager was invoked as:</p>
+  
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 proj=edlex pxid=Q000011%2E3</pre>
+
+  <h2>Pager Status</h2>
+  
+  <p>The pager reported status as:</p>
+
+  <pre id="p4Status"><h2>Internal Data Structure State (Isp *ip)</h2>
+	oracc=/home/oracc
+	from=list
+	data=dcat
+	show=rcat
+	project=edlex
+	projdir=/home/oracc/edlex
+	list_name=outlined.lst
+	op_nlevels=0
+	dors=1
+	perm=12
+	zoom=2
+	page=1
+	psiz=25
+	srch=(null)
+	glos=(null)
+	item=Q000011.3
+	item_replace=(null)
+	bkmk=(null)
+	ceid=xmd
+	cemd=ccat
+	lang=en
+	xhmd=html
+	part=(null)
+	form=(null)
+	what=pager
+	wrap=(null)
+	uimd=(null)
+	pack=asis
+	host=(null)
+	aapi=rest
+	host_path=(null)
+	sig=(null)
+	tmp_dir=(null)
+	err=(null)
+	errx=(null)
+	pui=p4html.xml
+	nowhat=0
+	force=0
+	olev=0
+	debug=0
+	hdr_done=1
+	noheader=0
+	pub_output=0
+	verbose=0
+	web=1
+	zlev=2
+	argc=4
+	referer=(null)
+	tmpdir=(null)
+<h3>	struct isp_cache ip->cache</h3>
+		sys=/home/oracc/www/p4.d
+		project=/home/oracc/www/p4.d/edlex
+		sub=/home/oracc/edlex/02pub/p4.d/outlined.lst
+		out=/home/oracc/www/p4.d/edlex/outlined.lst/12
+		list=/home/oracc/edlex/02pub/p4.d/outlined.lst/list
+		sort=/home/oracc/edlex/02pub/p4.d/outlined.lst/12
+		csi=(null)
+		tsv=/home/oracc/edlex/02pub/p4.d/outlined.lst/12/pag.tsv
+		max=/home/oracc/edlex/02pub/p4.d/outlined.lst/12/max.tsv
+		mol=/home/oracc/edlex/02pub/p4.d/outlined.lst/12/zoom.mol
+		pkey=(null)
+		pgin=(null)
+		page=/home/oracc/www/p4.d/edlex/outlined.lst/12/12-z2-p1.div
+		zout=/home/oracc/www/p4.d/edlex/outlined.lst/12/12-z2.otl
+		item=/home/oracc/www/p4.d/htm/edlex/Q000/Q000011
+		prox=/home/oracc/www/p4.d/htm/edlex/Q000/Q000011
+		meta=/home/oracc/www/p4.d/htm/edlex/Q000/Q000011/meta.xml
+		html=(null)
+		ltab=(null)
+		hilite=(null)
+		pub=/home/oracc/edlex/02pub/p4.d
+		use=/home/oracc/edlex/02pub/p4.d
+		txtindex=(null)
+		t_sort=(null)
+		t_tsv=(null)
+		t_max=(null)
+		t_mol=(null)
+<h3>	struct isp_config ip->default_cfg</h3>
+		leftmenu=1
+		select=1
+		sort_fields=period,subgenre,provenience
+		sort_labels=Time,Genre,Place
+		head_template=1 2 3
+		cat_fields=designation,primary_publication,museum_no|excavation_no|accession_no,subgenre,subgenre_remarks,text_remarks
+		cat_links=(null)
+		cat_widths=10,15,20,20,7,25
+<h3>	struct isp_config ip->special_cfg</h3>
+		leftmenu=1
+		select=1
+		sort_fields=period,subgenre
+		sort_labels=period,subgenre
+		head_template=1 2 3
+		cat_fields=designation,subgenre,keywords
+		cat_links=(null)
+		cat_widths=30,25,41
+<h3>	struct isp_glosdata ip->glosdata</h3>
+		dir=(null)
+		web=(null)
+		let=(null)
+		lmax=(null)
+		ent=(null)
+		xis=(null)
+		ltab=(null)
+		lbase=(null)
+		lpath=(null)
+		ecpath=(null)
+		emax=(null)
+		ipath=(null)
+<h3>	struct isp_itemdata ip->itemdata</h3>
+		langs=
+		nlangs=0
+		xtflang=en
+		lmem=(null)
+		item=Q000011
+		fullitem=(null)
+		block=(null)
+		proj=edlex
+		htmd=/home/oracc/www/p4.d/htm
+		html=/home/oracc/www/p4.d/htm/edlex/Q000/Q000011/Q000011.html
+		dotted=Q000011.3
+		index=2
+		page=1
+		pindex=2
+		zoom=2
+		zpag=1
+		zindex=1
+		prev=Q000265
+		next=Q000017
+		tmax=(null)
+		xmdxsl=/home/oracc/lib/scripts/p4-xmd-div.xsl
+		bld=/home/oracc/www/p4.d/htm/edlex/Q000/Q000011/Q000011.html
+		hili=Q000011.3
+		not=0
+<h3>	struct isp_list_loc ip->lloc</h3>
+		type=www
+		lang=(null)
+		method=file
+		key=(null)
+		dbpath=(null)
+		dbname=(null)
+		path=/home/oracc/bld/edlex/lists/outlined.lst
+<h3>	struct isp_srchdata ip->srchdata</h3>
+		tmp=(null)
+		bar=(null)
+		count=0
+		gran=(null)
+		list=(null)
+		new=0
+		adhoc=0
+	zmax=13
+</pre>
+
+  <h2>Environment</h2>
+
+  <p>HTTP environment variables:</p>
+
+  <pre id="p4Environment">CONTEXT_DOCUMENT_ROOT=/home/oracc/www
+CONTEXT_PREFIX=
+DOCUMENT_ROOT=/home/oracc/www
+GATEWAY_INTERFACE=CGI/1.1
+HTTPS=on
+HTTP_ACCEPT=application/json, text/plain, */*
+HTTP_ACCEPT_ENCODING=gzip
+HTTP_ACCEPT_LANGUAGE=en-GB
+HTTP_CONNECTION=keep-alive
+HTTP_HOST=build-oracc.museum.upenn.edu
+HTTP_ORIGIN=http://localhost:4200
+HTTP_REFERER=http://localhost:4200/
+HTTP_SEC_CH_UA="Not=A?Brand";v="99", "Chromium";v="118"
+HTTP_SEC_CH_UA_MOBILE=?0
+HTTP_SEC_CH_UA_PLATFORM="Linux"
+HTTP_SEC_FETCH_DEST=empty
+HTTP_SEC_FETCH_MODE=cors
+HTTP_SEC_FETCH_SITE=cross-site
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.13.3 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+ORACC=/home/oracc
+ORACC_BUILDS=/home/oracc
+ORACC_HOME=/home/oracc
+ORACC_HOST=build-oracc.museum.upenn.edu
+ORACC_MODE=multi
+ORACC_USER=yes
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+PATH_INFO=/edlex/Q000011.3
+PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/edlex/Q000011.3
+QUERY_STRING=
+REMOTE_ADDR=86.12.69.28
+REMOTE_PORT=38128
+REQUEST_METHOD=GET
+REQUEST_SCHEME=https
+REQUEST_URI=/edlex/Q000011.3
+SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
+SCRIPT_NAME=
+SCRIPT_URI=https://build-oracc.museum.upenn.edu/edlex/Q000011.3
+SCRIPT_URL=/edlex/Q000011.3
+SERVER_ADDR=130.91.81.219
+SERVER_ADMIN=stinney@upenn.edu
+SERVER_NAME=build-oracc.museum.upenn.edu
+SERVER_PORT=443
+SERVER_PROTOCOL=HTTP/1.1
+SERVER_SIGNATURE=<address>Apache/2.4.52 (Ubuntu) Server at build-oracc.museum.upenn.edu Port 443</address>
+
+SERVER_SOFTWARE=Apache/2.4.52 (Ubuntu)
+SSL_TLS_SNI=build-oracc.museum.upenn.edu
+</pre>
+
+</div>
+
+</div>
+</body>
+</html>

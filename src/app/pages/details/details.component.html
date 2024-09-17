@@ -20,22 +20,24 @@
           class="details__panel-main ps"
           [innerHTML]="metadataPanel"
           *ngIf="isMetadataPanelActive"
+          (click)="handleMetadataClick($event)"
         ></div>
       </div>
 
       <div class="details__panel-col">
         <div class="details__panel-top">
-          <span class="details__panel-top-text">
-            <span
-              [innerHTML]="isTermDataShown ? totalTexts : totalLines"
-            ></span>
-            <span> {{ isTermDataShown ? "Texts" : "Lines" }}</span>
-          </span>
+          <span class="details__panel-top-text item-count">{{ topText }}</span>
+          <span
+            *ngIf="isZoomed()"
+            (click)="handleResetZoom($event)"
+          ><a class="reset-zoom" href="javascript://">
+            {{ "details.resetZoom" | translate }}
+          </a></span>
           <div class="details__panel-pagination">
             <span
               class="details__panel-left"
-              (click)="handlePageChange($event, 'back')"
-              *ngIf="shouldShowPaginationArrows"
+              (click)="handlePageChange($event, currentPage - 1)"
+              *ngIf="1 < paginationSliceStart"
             >
               ←
             </span>
@@ -45,7 +47,7 @@
                 [ngClass]="{
                   active: page === currentPage
                 }"
-                (click)="handlePageChange($event)"
+                (click)="handlePageChange($event, page)"
                 *ngFor="let page of paginatedPages; let i = index"
               >
                 {{ page }}
@@ -53,14 +55,15 @@
             </ul>
             <span
               class="details__panel-right"
-              (click)="handlePageChange($event, 'forward')"
-              *ngIf="shouldShowPaginationArrows"
+              (click)="handlePageChange($event, currentPage + 1)"
+              *ngIf="paginationSliceEnd < pageCount"
             >
               →
             </span>
           </div>
         </div>
         <div
+          id="central-panel"
           class="details__panel-main js-panel-central ls"
           [innerHTML]="middlePanel"
           (click)="handleDetailsClick($event)"
@@ -84,6 +87,7 @@
           class="details__panel-main details__panel-main--right js-panel-right"
           *ngIf="isTextPanelActive"
           [innerHTML]="textPanel"
+          (click)="handleTextClick($event)"
         ></div>
       </div>
     </div>

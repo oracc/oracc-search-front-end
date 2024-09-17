@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { Router } from '@angular/router';
-import { composedPath, getBreadcrumbs } from '../../../utils/utils';
+import { ActivatedRoute, Router } from '@angular/router';
+import { composedPath } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article',
@@ -19,6 +19,7 @@ export class GlossaryArticleComponent implements OnInit {
     private getDataService: GetDataService,
     private sanitizer: DomSanitizer,
     private breadcrumbsService: HandleBreadcrumbsService,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.breadcrumbsService.setBreadcrumbs(this.router);
@@ -29,7 +30,10 @@ export class GlossaryArticleComponent implements OnInit {
   }
 
   public getArticle() {
-    this.getDataService.getGlossaryArticleData().subscribe((data) => {
+    this.getDataService.getGlossaryArticleData(
+      this.route.snapshot.queryParams['ga_lang'],
+      this.route.snapshot.queryParams['ga_isid']
+    ).subscribe((data) => {
       // @ts-ignore
       this.handleTextToHTMLConversion(data);
     });
@@ -45,41 +49,30 @@ export class GlossaryArticleComponent implements OnInit {
         });
 
     if (!!anchorEl) {
-      const anchorElText = anchorEl.querySelector('span')
-        ? anchorEl.querySelector('span').innerText
-        : anchorEl.innerText;
       e.preventDefault();
-      const queryParams = anchorEl.href
-        .split('(')
-        .slice(1)
-        .join()
-        .slice(0, -1)
-        .replace(/'/g, '')
-        .split(',');
-      const filteredText = anchorElText.match('%')
-        ? Array.prototype.slice
-            .call(anchorEl.parentNode.childNodes)
-            .filter((node) => {
-              return node.nodeType === 3 ? node : '';
-            })[0].textContent
-        : anchorElText;
-
-      this.getDataService.setDetailsPageParams(
-        queryParams[0],
-        queryParams[1],
-        queryParams[2]
+      this.router.navigate(
+        ['search-results', this.route.snapshot.paramMap.get('word'), 'occurrences'],
+        { queryParams: {
+          proj: this.route.snapshot.queryParams['proj'],
+          ga_lang: this.route.snapshot.queryParams['ga_lang'],
+          ga_isid: this.route.snapshot.queryParams['ga_isid'],
+          lang: anchorEl.getAttribute('data-lang'),
+          isid: anchorEl.getAttribute('data-isid'),
+        }}
       );
-      this.getDataService.setChosenTermText(filteredText);
-
-      // navigates to details component
-      this.router.navigate([decodeURI(this.router.url), 'occurrences']);
     }
   }
 
   private handleTextToHTMLConversion(text: string) {
     const parser = new DOMParser();
     const htmlData = parser.parseFromString(text, 'text/html');
-    const glossaryContentInput = htmlData.getElementsByTagName('body')[0];
+    let glossaryContentInput = htmlData.getElementById('p4Content');
+    // Occasionally the server returns just the the content without
+    // the surrounding furniture. So if we can't find #p4Content we'll
+    // just use the entire <body>
+    if (glossaryContentInput === null) {
+      glossaryContentInput = htmlData.getElementsByTagName('body')[0];
+    }
 
     this.glossaryContent = this.sanitizer.bypassSecurityTrustHtml(
       glossaryContentInput.innerHTML

@@ -1,0 +1,737 @@
+[
+  {
+    "gw": "cow",
+    "headword": "ab[cow]N",
+    "cf": "ab",
+    "icount": 86,
+    "id": "o0023294",
+    "senses_mng": [
+      "cow"
+    ],
+    "forms_n": [
+      "ab-bi",
+      "ab₂",
+      "ab₂-a-na",
+      "ab₂-ab₂",
+      "ab₂-ba",
+      "ab₂-e",
+      "ab₂-gin₇"
+    ],
+    "norms_n": [
+      "ab",
+      "ab,ani.a",
+      "ab,bi",
+      "ab,bi.a",
+      "ab,e",
+      "ab,gin"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Early Old Babylonian",
+      "Old Babylonian",
+      "Middle Babylonian",
+      "Neo-Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "edlex:Q000010.40.3",
+      "edlex:Q000012.1.1",
+      "edlex:Q000012.10.1",
+      "edlex:Q000012.109.1",
+      "edlex:Q000012.11.1",
+      "edlex:Q000012.110.1",
+      "edlex:Q000012.111.1",
+      "edlex:Q000012.112.1",
+      "edlex:Q000012.113.1",
+      "edlex:Q000012.114.1",
+      "edlex:Q000012.12.1",
+      "edlex:Q000012.13.1",
+      "edlex:Q000012.14.1",
+      "edlex:Q000012.15.1",
+      "edlex:Q000012.16.1",
+      "edlex:Q000012.17.1",
+      "edlex:Q000012.18.1",
+      "edlex:Q000012.19.1",
+      "edlex:Q000012.2.1",
+      "edlex:Q000012.20.1",
+      "edlex:Q000012.21.1",
+      "edlex:Q000012.22.1",
+      "edlex:Q000012.23.1",
+      "edlex:Q000012.24.1",
+      "edlex:Q000012.25.1",
+      "edlex:Q000012.26.1",
+      "edlex:Q000012.3.1",
+      "edlex:Q000012.4.1",
+      "edlex:Q000012.5.1",
+      "edlex:Q000012.6.1",
+      "edlex:Q000012.7.1",
+      "edlex:Q000012.8.1",
+      "edlex:Q000012.9.1",
+      "edlex:Q000027.70.2",
+      "edlex:Q000027.71.3",
+      "edlex:Q000029.57.2",
+      "edlex:Q000029.80.2",
+      "edlex:Q000031.12.2",
+      "edlex:Q000031.22.2",
+      "edlex:Q000031.41.2",
+      "edlex:Q000031.51.2",
+      "edlex:Q000038.98.1",
+      "edlex:Q000268.62.1",
+      "obel:P256178.30.1",
+      "obel:P256178.33.1",
+      "obel:P257610.43.2",
+      "obel:P259270.20.3",
+      "obel:P259294.23.4",
+      "obel:P264319.8.1",
+      "obel:P264320.24.1",
+      "obel:P265634.11.1",
+      "obel:P265634.12.2",
+      "obel:P266495.10.3",
+      "obel:P274200.30.2",
+      "obel:P274200.31.1",
+      "obel:P274200.4.1",
+      "obel:P274200.4.4",
+      "obel:P274200.6.1",
+      "obel:P274234.76.4",
+      "obel:P274275.21.2",
+      "obel:P276671.39.2",
+      "obel:P278426.14.5",
+      "obel:P283757.19.1",
+      "obel:P283775.123.3",
+      "obel:P302741.85.1",
+      "obel:P342816.75.6",
+      "obel:P342834.51.2",
+      "obel:P342834.52.1",
+      "obel:P342887.27.3",
+      "obel:P342934.13.1",
+      "obel:P342934.13.3",
+      "obel:P342934.14.1",
+      "obel:P342934.15.1",
+      "obel:P344288.18.1",
+      "obel:P345452.16.4",
+      "obel:P345459.49.3",
+      "obel:P345461.27.3",
+      "obel:P345504.24.3",
+      "obel:P345721.14.3",
+      "obel:P345721.35.2",
+      "obel:P355675.7.2",
+      "obel:P355680.47.1",
+      "obel:P412174.36.3",
+      "obel:P412174.5.1",
+      "obel:P424008.24.4",
+      "obel:P433192.24.14"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "ab",
+      "cow"
+    ],
+    "sort": "['cow']",
+    "instances_count": 86
+  },
+  {
+    "gw": "cow",
+    "headword": "sumun[cow]N",
+    "cf": "sumun",
+    "icount": 34,
+    "id": "o0038426",
+    "senses_mng": [
+      "wild cow"
+    ],
+    "forms_n": [
+      "{gud}sumun₂",
+      "sumun₂",
+      "sumun₂-na-ke₄",
+      "sun₂"
+    ],
+    "norms_n": [
+      "sumun",
+      "sumun,ak.e"
+    ],
+    "periods_p": [
+      "ED IIIa",
+      "Early Dynastic",
+      "Old Babylonian"
+    ],
+    "instances": [
+      "edlex:P010717.59.1",
+      "edlex:Q000038.39.1",
+      "obel:P278047.10.4",
+      "obel:P290067.2.2",
+      "obel:P290067.3.3",
+      "obel:P290067.4.4",
+      "obel:P290067.5.4",
+      "obel:P290067.6.3",
+      "obel:P290067.7.4",
+      "obel:P290067.70.3",
+      "obel:P290067.8.4",
+      "obel:P290067.9.4",
+      "obel:P310399.4.1",
+      "obel:P310399.5.1",
+      "obel:P345413.11.5",
+      "obel:P345413.12.1",
+      "obel:P345413.13.4",
+      "obel:P355670.10.5",
+      "obel:P355670.11.3",
+      "obel:P355670.28.1",
+      "obel:P355670.28.3",
+      "obel:P355670.29.5",
+      "obel:P355670.30.3",
+      "obel:P355670.46.1",
+      "obel:P355670.46.3",
+      "obel:P355670.47.5",
+      "obel:P355670.48.3",
+      "obel:P355670.9.1",
+      "obel:P355670.9.3",
+      "obel:P355673.113.5",
+      "obel:P355673.114.2",
+      "obel:P355702.418.5",
+      "obel:P355702.419.1",
+      "obel:P355702.420.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "sumun",
+      "cow"
+    ],
+    "sort": "['cow']",
+    "instances_count": 34
+  },
+  {
+    "gw": "stone",
+    "headword": "šuba[stone]N",
+    "cf": "šuba",
+    "icount": 32,
+    "id": "o0039743",
+    "senses_mng": [
+      "a precious stone",
+      "cowry or conch shell"
+    ],
+    "forms_n": [
+      "su-bi",
+      "su-bi-a",
+      "su-bi₂",
+      "šuba{+ba}",
+      "šuba",
+      "šuba{bi}",
+      "{na₄}šuba₂",
+      "šuba₂",
+      "šuba₂-gin₇",
+      "šuba₄{+ba}",
+      "šuba₄{+e}-ŋu₁₀",
+      "zu-bi₂"
+    ],
+    "norms_n": [
+      "šuba",
+      "šuba,ak",
+      "šuba,gin",
+      "šuba,ŋu"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Old Babylonian",
+      "Neo-Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "edlex:Q000268.129.2",
+      "obel:P227377.30.2",
+      "obel:P266518.56.2",
+      "obel:P274215.123.1",
+      "obel:P274215.123.3",
+      "obel:P274215.123.5",
+      "obel:P274215.124.3",
+      "obel:P274215.124.5",
+      "obel:P274215.141.3",
+      "obel:P274215.144.2",
+      "obel:P274230.14.2",
+      "obel:P274231.15.1",
+      "obel:P274231.5.2",
+      "obel:P283739.95.2",
+      "obel:P283775.13.2",
+      "obel:P342811.26.4",
+      "obel:P342839.22.3",
+      "obel:P342925.13.1",
+      "obel:P342925.7.3",
+      "obel:P342931.12.4",
+      "obel:P342990.6.2",
+      "obel:P343583.17.5",
+      "obel:P343588.30.2",
+      "obel:P345521.14.2",
+      "obel:P345521.15.1",
+      "obel:P345767.6.2",
+      "obel:P345778.17.3",
+      "obel:P345779.19.2",
+      "obel:P345791.55.1",
+      "obel:P355660.11.1",
+      "obel:P355702.509.2",
+      "obel:P355702.53.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "šuba",
+      "stone"
+    ],
+    "sort": "['stone']",
+    "instances_count": 32
+  },
+  {
+    "gw": "cow",
+    "headword": "immal[cow]N",
+    "cf": "immal",
+    "icount": 17,
+    "id": "o0031010",
+    "senses_mng": [
+      "cow, wild cow",
+      "cow"
+    ],
+    "forms_n": [
+      "i-ma-al",
+      "im-ma-al",
+      "im-ma-al-e",
+      "im-ma-al-la",
+      "im-ma-la",
+      "immal(|DIŠ+NUN.LAGAR|)"
+    ],
+    "norms_n": [
+      "immal",
+      "immal,ak",
+      "immal,e"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Old Babylonian"
+    ],
+    "instances": [
+      "edlex:Q000012.107.1",
+      "edlex:Q000012.108.1",
+      "edlex:Q000012.123.1",
+      "edlex:Q000012.124.1",
+      "obel:P266534.30.1",
+      "obel:P274200.34.1",
+      "obel:P302741.103.6",
+      "obel:P302741.113.1",
+      "obel:P342833.168.1",
+      "obel:P345338.13.1",
+      "obel:P345412.23.6",
+      "obel:P345504.53.1",
+      "obel:P345509.95.1",
+      "obel:P345509.95.4",
+      "obel:P345509.99.4",
+      "obel:P345767.8.3",
+      "obel:P345845.24.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "immal",
+      "cow"
+    ],
+    "sort": "['cow']",
+    "instances_count": 17
+  },
+  {
+    "gw": "cow",
+    "headword": "šilam[cow]N",
+    "cf": "šilam",
+    "icount": 11,
+    "id": "o0039353",
+    "senses_mng": [
+      "cow"
+    ],
+    "forms_n": [
+      "ši-el-am",
+      "šilam",
+      "šilam-gin₇",
+      "šilamₓ(|NUN.LAGAR|)",
+      "šilamₓ(TUR₃)"
+    ],
+    "norms_n": [
+      "šilam",
+      "šilam,gin"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Old Babylonian"
+    ],
+    "instances": [
+      "edlex:Q000003.28.1",
+      "edlex:Q000012.105.1",
+      "edlex:Q000012.106.1",
+      "edlex:Q000012.121.1",
+      "edlex:Q000012.122.1",
+      "edlex:Q000038.11.1",
+      "obel:P264320.60.1",
+      "obel:P342833.378.1",
+      "obel:P345446.24.1",
+      "obel:P355653.39.1",
+      "obel:P527055.18.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "šilam",
+      "cow"
+    ],
+    "sort": "['cow']",
+    "instances_count": 11
+  },
+  {
+    "gw": "~cow",
+    "headword": "IGI@g[~cow]N",
+    "cf": "IGI@g",
+    "icount": 8,
+    "id": "o0078308",
+    "senses_mng": [
+      "a designation of cows"
+    ],
+    "forms_n": [
+      "IGI@g"
+    ],
+    "norms_n": [
+      "IGI@g"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000012.15.2",
+      "edlex:Q000012.16.2",
+      "edlex:Q000012.41.2",
+      "edlex:Q000012.42.2",
+      "edlex:Q000012.67.2",
+      "edlex:Q000012.68.2",
+      "edlex:Q000012.93.2",
+      "edlex:Q000012.94.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "IGI@g",
+      "~cow"
+    ],
+    "sort": "['~cow']",
+    "instances_count": 8
+  },
+  {
+    "gw": "~cow",
+    "headword": "zageš[~cow]N",
+    "cf": "zageš",
+    "icount": 8,
+    "id": "o0042387",
+    "senses_mng": [
+      "a designation of cows"
+    ],
+    "forms_n": [
+      "zag-eš"
+    ],
+    "norms_n": [
+      "zageš"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000012.100.2",
+      "edlex:Q000012.21.2",
+      "edlex:Q000012.22.2",
+      "edlex:Q000012.47.2",
+      "edlex:Q000012.48.2",
+      "edlex:Q000012.73.2",
+      "edlex:Q000012.74.2",
+      "edlex:Q000012.99.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "zageš",
+      "~cow"
+    ],
+    "sort": "['~cow']",
+    "instances_count": 8
+  },
+  {
+    "gw": "cowherd",
+    "headword": "unud[cowherd]N",
+    "cf": "unud",
+    "icount": 7,
+    "id": "o0041601",
+    "senses_mng": [
+      "cowherd, cattle herder"
+    ],
+    "forms_n": [
+      "unud"
+    ],
+    "norms_n": [
+      "unud"
+    ],
+    "periods_p": [
+      "ED IIIa",
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:P010632.52.1",
+      "edlex:Q000003.92.1",
+      "edlex:Q000003.93.1",
+      "edlex:Q000003.94.1",
+      "edlex:Q000008.57.1",
+      "edlex:Q000008.58.2",
+      "edlex:Q000268.62.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "unud",
+      "cowherd"
+    ],
+    "sort": "['cowherd']",
+    "instances_count": 7
+  },
+  {
+    "gw": "~cow",
+    "headword": "šar[~cow]N",
+    "cf": "šar",
+    "icount": 6,
+    "id": "o0038890",
+    "senses_mng": [
+      "a designation of cows"
+    ],
+    "forms_n": [
+      "ša-ra-ta",
+      "šar₉",
+      "šar₉-ra"
+    ],
+    "norms_n": [
+      "šar",
+      "šar,ta"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Old Babylonian"
+    ],
+    "instances": [
+      "edlex:Q000012.2.2",
+      "edlex:Q000012.28.2",
+      "edlex:Q000012.54.2",
+      "edlex:Q000012.80.2",
+      "obel:P342816.75.7",
+      "obel:P345452.16.5"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "šar",
+      "~cow"
+    ],
+    "sort": "['~cow']",
+    "instances_count": 6
+  },
+  {
+    "gw": "mature",
+    "headword": "mah[mature]V/i",
+    "cf": "mah",
+    "icount": 5,
+    "id": "o0033800",
+    "senses_mng": [
+      "(to be) mature, milk producing (of cows)"
+    ],
+    "forms_n": [
+      "mah₂",
+      "mah₂-gin₇"
+    ],
+    "norms_n": [
+      "mah",
+      "mah;*a,gin"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Old Babylonian"
+    ],
+    "instances": [
+      "edlex:Q000012.17.2",
+      "edlex:Q000012.43.2",
+      "edlex:Q000012.69.2",
+      "edlex:Q000012.95.2",
+      "obel:P257610.43.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "mah",
+      "mature"
+    ],
+    "sort": "['mature']",
+    "instances_count": 5
+  },
+  {
+    "gw": "cow",
+    "headword": "arhu[cow]N",
+    "cf": "arhu",
+    "icount": 3,
+    "id": "x0001684",
+    "senses_mng": [
+      "cow"
+    ],
+    "forms_n": [
+      "GU₄.AB₂"
+    ],
+    "norms_n": [
+      "arhū"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006482.135.10",
+      "rinap/rinap2:Q006544.60.5",
+      "rinap/rinap2:Q006546.419.4"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "arhu",
+      "cow"
+    ],
+    "sort": "['cow']",
+    "instances_count": 3
+  },
+  {
+    "gw": "cow",
+    "headword": "lītu[cow]N",
+    "cf": "lītu",
+    "icount": 3,
+    "id": "x0000737",
+    "senses_mng": [
+      "cow"
+    ],
+    "forms_n": [
+      "AB₂",
+      "AB₂.GU₄.HI.A"
+    ],
+    "norms_n": [
+      "lâti",
+      "liātum"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "obta:P412471.3.1",
+      "obta:P412481.3.2",
+      "rinap/rinap4:Q003382.6.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "lītu",
+      "cow"
+    ],
+    "sort": "['cow']",
+    "instances_count": 3
+  },
+  {
+    "gw": "cow",
+    "headword": "abur[cow]N",
+    "cf": "abur",
+    "icount": 3,
+    "id": "o0023431",
+    "senses_mng": [
+      "rear cow"
+    ],
+    "forms_n": [
+      "ab-ur₂",
+      "ab₂-ur₂",
+      "ab₂-ur₃"
+    ],
+    "norms_n": [
+      "abur"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P342811.69.2",
+      "obel:P342816.75.5",
+      "obel:P345452.16.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "abur",
+      "cow"
+    ],
+    "sort": "['cow']",
+    "instances_count": 3
+  },
+  {
+    "gw": "drover",
+    "headword": "gudeʾusa[drover]N",
+    "cf": "gudeʾusa",
+    "icount": 3,
+    "id": "o0028721",
+    "senses_mng": [
+      "drover, ox-driver, cowherd"
+    ],
+    "forms_n": [
+      "gud-us₂"
+    ],
+    "norms_n": [
+      "gudeʾusa"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Ebla"
+    ],
+    "instances": [
+      "edlex:P242176.16.1",
+      "edlex:Q000006.31.1",
+      "edlex:Q000010.13.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "gudeʾusa",
+      "drover"
+    ],
+    "sort": "['drover']",
+    "instances_count": 3
+  },
+  {
+    "gw": "wild cow",
+    "headword": "rīmtu[wild cow]N",
+    "cf": "rīmtu",
+    "icount": 3,
+    "id": "x0020346",
+    "senses_mng": [
+      "wild cow"
+    ],
+    "forms_n": [
+      "ri-im-tu₂",
+      "ri-im-tum"
+    ],
+    "norms_n": [
+      "rīmtu",
+      "rīmtum"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap5:Q003710.1146.2",
+      "rinap/rinap5:Q003722.7.4",
+      "rinap/rinap5:Q007617.4.1"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "rīmtu",
+      "wild cow"
+    ],
+    "sort": "['wild cow']",
+    "instances_count": 3
+  }
+]

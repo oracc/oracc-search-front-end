@@ -92,13 +92,14 @@ Now we can use `rsync` to push this new version to the
 production server. Let's say our new version is `1.2.3`:
 
 ```sh
+ng build -c build-oracc
 rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-end/1.2.3
 ```
 
 ### Switch to the new assets
 
-The website is currently served from a `/new` directory on the production server. This is achieved through a
-symlink from `/home/oracc/www/new` to the directory
+The website is currently served from a `/search` directory on the production server. This is achieved through a
+symlink from `/home/oracc/www/search` to the directory
 containing the assets.
 
 Use the `main` git branch for production deployments.
@@ -110,8 +111,8 @@ I'm also showing a possible result of the ls command):
 
 ```sh
 $ ssh rits@build-oracc.museum.upenn.edu
-rits@build-oracc:~$ ls -l /home/oracc/www/new
-lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/new -> /home/rits/www/oracc-search-front-end/1.2.2
+rits@build-oracc:~$ ls -l /home/oracc/www/search
+lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/search -> /home/rits/www/oracc-search-front-end/1.2.2
 ```
 
 Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
@@ -121,13 +122,13 @@ For the `oracc2` machine the equivalent would be `ng build -c oracc2`
 Now we can redirect this link:
 
 ```sh
-rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.3 /home/oracc/www/new
+rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.3 /home/oracc/www/search
 ```
 
 In case of trouble, we can roll back to the old version using the same command with the old version number we found out earlier:
 
 ```sh
-rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.2 /home/oracc/www/new
+rits@build-oracc:~$ sudo ln -sfT /home/rits/www/oracc-search-front-end/1.2.2 /home/oracc/www/search
 ```
 
 The production server will instantly begin serving this
@@ -146,7 +147,7 @@ The Oracc server runs on Ubuntu and exposes the Oracc website via an Apache web 
 
 The following rules need to exist in the file `/etc/apache2/sites-enabled/oracc-vhost-ssl.conf`:
 
-1. The angular app should be served at `/new`
+1. The angular app should be served at `/search`
 2. The oracc-rest API should be served at `/oracc-rest-api/`
 
 These rules look like this:
@@ -232,10 +233,60 @@ It is also possible to define the `baseHref` property using a custom build confi
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Although there are not unit tests at the moment.
 
 ## Running end-to-end tests
 
 This project also uses Cypress for testing. Ensure you've got the backend and frontend apps running before attempting the tests. To run the tests without a window, run `npx cypress run` or `npm run cypress:run`. To open a window and see the tests run (more helpful when writing the tests and debugging), run `npx cypress open` or `npm run cypress:open` and choose the tests you'd like to run through the GUI.
+
+`ng serve` (or equivalent) should be running while these tests
+are run.
+
+The `oracc-rest` server should also be running and the
+build-oracc server should be reachable for those tests that
+are not using stubbed calls.
+
+### Backend stubs
+
+Certain parts of the test now stub calls to the backend
+(`oracc-rest` and build-oracc) servers using fixtures in the
+`cypress/fixtures` directory. Running these tests, therefore,
+does not require the build-oracc server to be reachable or the
+`oracc-rest` server to be running.
+
+### Updating the backend stubs
+
+The last log line on the logs for each spec (`.cy.ts` file) either
+says `log  All calls were stubbed` or `log written <n> new entries`.
+If it says `written <n> new entries` for any spec then
+you can copy all the files from `cypress/fixtures_new` to
+`cypress/fixtures`:
+
+```sh
+cp -rt cypress/fixtures cypress/fixtures_new/*
+```
+
+It is a good idea to clean the `cypress/fixtures_new` directory before
+running all the tests so that meaningless files aren't copied into the
+`fixtures` directory. The backend `oracc-rest` server will need to be
+running and the `build-oracc` server will need to be reachable for the
+tests to pass for these new fixtures to be generated.
+
+All of this is automated in the `./update-test-fixtures.sh`
+bash script. If you want to delete the existing fixtures first,
+run the `./replace-test-fixtures.sh` script.
+
+Any future runs will use these updated responses. These new
+files can be committed to source control.
+
+### Debugging
+
+Cypress is not interested in giving us a way to debug Cypress tests
+in a normal IDE. Instead, we place a breakpoint by inserting
+`cy.pause()` in the code, then run `npx cypress open` or
+`npm run cypress:open`. You can't use `cypress:run`; you have to
+use the GUI front end because this is how the debugger is displayed.
+You then have "Resume" and "Next" buttons to click.
 
 ## Further help
 

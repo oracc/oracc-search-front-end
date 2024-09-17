@@ -8,19 +8,6 @@ import { environment } from '../../../environments/environment';
 })
 export class GetDataService {
   private searchParam: string;
-  private lang: string;
-  private id: string;
-
-  private urlParam: string;
-  private language: string;
-  private queryString: string;
-
-  private chosenTerm: string;
-  private termDataParam: string;
-  private sourceParams: string[];
-
-  private glossaryArticleParam: string;
-  private subsequentPageVisit = false;
 
   private baseUrl = environment.apiUrl;
   private searchURL = `${this.baseUrl}/search/`;
@@ -38,126 +25,55 @@ export class GetDataService {
     return this.http.get(this.searchSuggestionsUrl + partialSearchTerm);
   }
 
-  public getGlossaryArticleData() {
-    return this.http.get(this.glossaryArticleURL + this.lang + '/' + this.id, {
+  public getGlossaryArticleData(lang: string, isid: string) {
+    return this.http.get(`${this.glossaryArticleURL}${lang}/${isid}`, {
       responseType: 'text'
     });
   }
 
-  public getProjectTextData(params: ParamMap) {
-    const projectId = params.get('projectId');
-    const subProjectId = params.get('subprojectId');
-    const textId = params.get('textId');
-
-    const url = subProjectId
-      ? `${this.oraccBaseUrl}/${projectId}/${subProjectId}/${textId}`
-      : `${this.oraccBaseUrl}/${projectId}/${textId}`;
-
+  public getProjectTextData(project_id: string, text_id: string) {
+    const url = `${this.oraccBaseUrl}/${project_id}/${text_id}`;
     return this.http.get(url, {
       responseType: 'text'
     });
   }
 
-  public setSubsequentGlossaryArticleParam(param: string) {
-    this.glossaryArticleParam = param;
-    this.subsequentPageVisit = true;
-  }
-
-  public isSubsequentPageVisit() {
-    return this.subsequentPageVisit;
-  }
-
-  public setIsSubsequentPageVisit(isSubsequent: boolean) {
-    this.subsequentPageVisit = isSubsequent;
-  }
-
-  public getSubsequentGlossaryArticleData() {
+  public getSubsequentGlossaryArticleData(project: string, sig: string) {
     const bio = '\u2623'; // force encoding always to be utf8
-    const encodedString = encodeURIComponent(bio + this.glossaryArticleParam);
-    return this.http.get(this.glossaryArticleURL + 'sig?' + encodedString, {
+    const encodedString = encodeURIComponent(bio + sig);
+    return this.http.get(`${environment.glossaryArticleURL}/${project}?sig=${encodedString}`, {
       responseType: 'text'
     });
   }
 
+  // Shares the search term between search-suggestions, search and search-results
   public setSearchParam(searchParam: string) {
     this.searchParam = searchParam;
   }
 
-  public setGlossaryLangAndId(lang: string, id: string) {
-    this.lang = lang;
-    this.id = id;
-  }
-
-  public getDetailData() {
-    return this.http.get(
-      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}?xis=${this.queryString}`,
-      {
-        responseType: 'text'
+  // Get information from the oracc server.
+  // project is neo or rimanum or whatever.
+  // language is language code, such as akk or sux.
+  // isid is the instance set ID, such as sux.r000003
+  // options has the following possible keys:
+  // - zoom: The zoom item (if the metadata was clicked)
+  // - page: The page number for pagination (from 1)
+  // - ref: The item ref, such as P405163.13
+  public getDetailData(project, language, isid, options) {
+    let url: string = `${this.oraccBaseUrl}/${project}/${language}?xis=${isid}`;
+    ['ref', 'zoom', 'page'].forEach(v => {
+      if (v in options && options[v] !== null) {
+        url += `&${v}=${options[v]}`;
       }
-    );
+    });
+    return this.http.get(url, { responseType: 'text' });
   }
 
-  public getDetailDataPage(pageNumber) {
-    return this.http.get(
-      `${this.oraccBaseUrl}/${this.urlParam}/${this.language}/${this.queryString}?page=${pageNumber}`,
-      {
-        responseType: 'text'
-      }
-    );
-  }
-
-  public setDetailsPageParams(
-    urlParam: string,
-    language: string,
-    queryString: string
-  ) {
-    this.urlParam = urlParam;
-    this.language = language;
-    this.queryString = queryString;
-  }
-
-  public setChosenTermText(term: string) {
-    this.chosenTerm = term;
-  }
-
-  public getChosenTermText() {
-    return this.chosenTerm;
-  }
-
-  public setTermDataParam(param: string) {
-    this.termDataParam = param;
-  }
-
-  public getTermData() {
-    return this.http.get(`${this.glossaryArticleURL}${this.termDataParam}`, {
+  public getScoreData(project: string, ref: string, bloc: string) {
+    // actually score?
+    let url = `${this.oraccBaseUrl}/${project}/${ref}?block=${bloc}`;
+    return this.http.get(url, {
       responseType: 'text'
     });
-  }
-
-  public setSourceParams(params: string[]) {
-    this.sourceParams = params;
-  }
-
-  public getSourceData() {
-    let sourceDataURL = `${this.oraccBaseUrl}/${this.sourceParams[0]}/${this.sourceParams[1]}/html`;
-
-    if (this.sourceParams[2].length > 0) {
-      sourceDataURL = sourceDataURL + '?' + this.sourceParams[2];
-      if (this.sourceParams[3].length > 0) {
-        sourceDataURL = sourceDataURL + ',' + this.sourceParams[3];
-      }
-    }
-    return this.http.get(sourceDataURL, {
-      responseType: 'text'
-    });
-  }
-
-  public getPopupData(project: string, item: string, blockId: string) {
-    return this.http.get(
-      `${this.oraccBaseUrl}/${project}/${item}/score?${blockId}`,
-      {
-        responseType: 'text'
-      }
-    );
   }
 }
