@@ -72,7 +72,7 @@ From the main project directory run: `npm run gh-pages-deploy`
 
 This will run the `gh-pages-deploy` script defined in `package.json`. It will build the project using the `github-pages` build target defined in `angular.json`. This sets a custom `baseHref` property (which is the name of your github repo) and also sets the custom environment variables.
 
-The project will automatically be deployed to github-pages.
+The project will automatically be deployed to [github-pages](https://oracc.github.io/oracc-search-front-end).
 
 ---
 
