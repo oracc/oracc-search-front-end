@@ -181,7 +181,9 @@
   span.marker {
     margin-inline-start: 3vw;
     border-radius: 50%;
-    border: 1px solid $greenLight;
+    color: $white;
+    background-color: $teal;
+    border: 1px solid $teal;
     padding: 0.01rem 0.2rem;
   }
 
