@@ -6,7 +6,7 @@
   box-shadow: 0 0 8px 0 $grayDark;
   position: relative;
   z-index: 2;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     min-height: 70px;
     box-shadow: none;
     border-bottom: 1px solid $gray;
@@ -24,7 +24,7 @@
   justify-content: space-between;
   height: 100px;
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     order: 3;
     height: 70px;
   }
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     position: absolute;
     align-items: flex-start;
     left: -100%;
@@ -48,14 +48,14 @@
 }
 
 .header__nav-bar--active {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     left: 0;
     right: 0;
   }
 }
 
 .header__logo {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     order: 2;
     position: absolute;
     left: 50%;
@@ -66,14 +66,14 @@
 .header__logo-link {
   color: $red;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .header__nav-list {
   margin-right: 81px;
   display: flex;
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
     margin-right: 0;
     width: 100%;
@@ -85,7 +85,7 @@
   align-items: center;
   margin-left: 30px;
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     border-bottom: 1px solid $grayDark;
     margin-left: 0;
     padding-bottom: 18px;
@@ -104,7 +104,7 @@
     color: $red;
   }
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     display: block;
     width: 100%;
   }
@@ -118,7 +118,7 @@
   display: flex;
   align-items: center;
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-right: 18px;
     margin-bottom: 10px;
   }
@@ -134,13 +134,13 @@
   &:hover {
     color: darken($grayLight, 10%);
   }
-  @media only screen and (max-width: 991px) {
-    font-size: 12px;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.75rem;
   }
   &:first-of-type {
     margin-right: 48px;
     position: relative;
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 600px) {
       margin-right: 12px;
     }
     &::after {
@@ -152,7 +152,7 @@
       width: 1px;
       height: 100%;
       background-color: $grayDark;
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         height: 78%;
         right: -7px;
       }
@@ -176,7 +176,7 @@
   z-index: 2;
   margin-left: 18px;
 
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     order: 1;
     display: flex;
   }
