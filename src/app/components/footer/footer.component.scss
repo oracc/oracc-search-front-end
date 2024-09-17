@@ -7,7 +7,7 @@
   color: $white;
   margin-bottom: 80px;
   transition: $dur $ease;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     height: auto;
     padding-top: 23px;
   }
@@ -21,8 +21,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // height: 100%;
-  @media only screen and (max-width: 991px) {
+  height: 100%;
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
   }
 }
@@ -38,23 +38,25 @@
   flex-direction: column;
   row-gap: 0.5rem;
 }
+.footer__logo {
+  margin-left: 8vw;
+}
 
 .footer__logo-link {
   color: $white;
-  font-size: 23px;
+  font-size: 1.4rem;
   transition: $dur $ease;
   &:hover {
     color: $blueLight;
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     display: none;
   }
 }
 
 .footer__center-text {
-  font-size: 12px;
-  @media only screen and (max-width: 991px) {
-    font-size: 9px;
+  font-size: 0.75rem;
+  @media only screen and (max-width: 600px) {
     text-align: center;
     display: block;
     margin-bottom: 16px;
@@ -69,7 +71,7 @@
 }
 
 .footer__social {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     min-width: 120px;
     display: flex;
     justify-content: space-around;
@@ -80,12 +82,12 @@
 .footer__social-link {
   color: $white;
   margin-left: 42px;
-  font-size: 18px;
+  font-size: 1.2rem;
   transition: $dur $ease;
   &:hover {
     color: $blueLight;
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-left: 0;
   }
 }

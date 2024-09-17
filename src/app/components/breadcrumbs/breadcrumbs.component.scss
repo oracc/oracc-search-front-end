@@ -8,7 +8,7 @@
   height: 50px;
   display: flex;
   align-items: center;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-bottom: 20px;
   }
 }
@@ -24,8 +24,8 @@
     color: $grayDark;
     cursor: default;
   }
-  @media only screen and (max-width: 991px) {
-    font-size: 10px;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.75rem;
     line-height: 18px;
   }
 }
@@ -36,7 +36,7 @@
   position: relative;
   top: 1px;
   color: $blueLight;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-left: 10px;
     margin-right: 10px;
   }
