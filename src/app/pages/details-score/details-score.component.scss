@@ -3,13 +3,13 @@
 
 .details--score {
   .heading {
-    font-size: 18px;
-    @media only screen and (max-width: 991px) {
-      font-size: 14px;
+    font-size: 1.1rem;
+    @media only screen and (max-width: 600px) {
+      font-size: 1rem;
     }
   }
   .transliteration {
-    font-size: 14px;
+    font-size: 0.8rem;
   }
   .noncl,
   .xlabel,
