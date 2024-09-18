@@ -147,7 +147,7 @@
       }
     }
   }
-
+ 
   .xmdoutline {
     h3 {
       font-size: 0.75rem;
@@ -178,7 +178,18 @@
       margin-bottom: 15px;
     }
   }
+  span.marker {
+    margin-inline-start: 3vw;
+    border-radius: 50%;
+    color: $white;
+    background-color: $teal;
+    border: 1px solid $teal;
+    padding: 0.01rem 0.2rem;
+  }
 
+  tr.l{
+    line-height: 1.8;
+  }
   .text {
     tr.selected {
       background-color: $blueSky;
@@ -186,8 +197,9 @@
     span.lnum {
       display: none;
     }
+    
     .xlabel {
-      font-size: 0.75rem;
+      font-size: 0.9rem;
       color: $grayBorder;
     }
     a>.xlabel {
@@ -195,9 +207,9 @@
     }
     .cbd,
     .sign {
-      font-size: 0.8rem;
+      font-size: 1rem;
       @media only screen and (max-width: 600px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 600;
       }
     }
@@ -337,7 +349,7 @@
   user-select: none;
 }
 .details__popup {
-  width: 450px;
+  width: 350px;
   height: 200px;
   background-color: $white;
   padding: 15px;
@@ -349,7 +361,7 @@
   box-shadow: 0px 0px 12px 0px $grayBorder;
   box-sizing: border-box;
   overflow: auto;
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 600px) {
     width: 90%;
     height: 60%;
   }
