@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isDesktop = window.innerWidth < 600 ? false : true;
   routerLinks = document.querySelectorAll('[routerLink]');
   isMenuOpen = false;
-  imgURL: string = '/assets/img/oracc-header.jpeg';
+  imgURL: string = 'assets/img/oracc-header.jpeg';
 
   constructor(public translate: TranslateService) {
     translate.addLangs([LANGUAGE.ENGLISH, LANGUAGE.ARABIC]);
