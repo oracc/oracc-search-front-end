@@ -1,7 +1,7 @@
 @import "../../../scss/config/variables";
 
 .footer {
-  height: 60px;
+  height: 120px;
   width: 100%;
   background-color: $blueDark;
   color: $white;
@@ -27,6 +27,17 @@
   }
 }
 
+.site__description {
+  margin-inline: 5vw;
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 0.5rem;
+  color: $grayLight;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
 .footer__logo {
   margin-left: 8vw;
 }
@@ -63,7 +74,7 @@
   @media only screen and (max-width: 600px) {
     min-width: 120px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 24px;
   }
 }

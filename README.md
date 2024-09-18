@@ -115,10 +115,6 @@ rits@build-oracc:~$ ls -l /home/oracc/www/search
 lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/search -> /home/rits/www/oracc-search-front-end/1.2.2
 ```
 
-Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
-
-For the `oracc2` machine the equivalent would be `ng build -c oracc2`
-
 Now we can redirect this link:
 
 ```sh

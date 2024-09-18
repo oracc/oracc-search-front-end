@@ -26,9 +26,19 @@ describe('Pages', () => {
       cy.get('.forms .icountu').click();
       cy.get('.details__panel-main').contains(ref).click();
 
+      // mouse activation of popups
       cy.get('p.note').should('not.be.visible');
       cy.get('span.marker').first().trigger('mouseover');
       cy.get('p.note').should('be.visible').should('not.be.empty');
+      cy.get('span.marker').first().trigger('mouseout');
+      cy.get('p.note').should('not.be.visible');
+
+      // mobile activation of popups
+      cy.get('span.marker').first().trigger('touchstart');
+      cy.get('span.marker').first().trigger('touchend');
+      cy.get('p.note').should('be.visible').should('not.be.empty');
+      cy.get('p.note').first().click();
+      cy.get('p.note').should('not.be.visible');
     });
   });
 

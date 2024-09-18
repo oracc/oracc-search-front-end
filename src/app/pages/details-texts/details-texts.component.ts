@@ -23,7 +23,6 @@ export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
 
   override getBackendData(): Observable<string> {
-    const paramMap = this.route.snapshot.paramMap;
     return this.getDataService.getDetailData(
       this.project,
       this.route.snapshot.queryParams['lang'],
@@ -51,7 +50,16 @@ export class DetailsTextsComponent extends ThreePanel {
   }
 
   private handleTextToHTMLConversionText(htmlData: Document, middleId: string) {
-    let middlePanelInput = htmlData.getElementById(middleId);
+    const middlePanelInput = htmlData.getElementById(middleId);
+    // Add touch control to footnotes
+    const noteMarkers = middlePanelInput.getElementsByClassName("marker");
+    for (let i = 0; i !== noteMarkers.length; ++i) {
+      const marker = noteMarkers.item(i);
+      const code = findAttribute(marker, "onmouseover");
+      if (code) {
+        marker.setAttribute("ontouchstart", code);
+      }
+    }
     const textPanelInput = splitOutTranslations(middlePanelInput);
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       middlePanelInput.innerHTML

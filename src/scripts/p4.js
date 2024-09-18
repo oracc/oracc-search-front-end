@@ -12,9 +12,9 @@ function hideNote(_e,nid) {
 }
 
 function showNote(e, nid) {
+    e.preventDefault();
+    e.stopPropagation();
     var target = e.target.getBoundingClientRect();
-    var x = target.right;
-    var y = (target.top + target.bottom)/2;
     var note = document.getElementById(nid);
 
     if (note.style.visibility === "visible") {
@@ -28,10 +28,14 @@ function showNote(e, nid) {
     var cp_top = central_panel.top;
     var cp_bottom = central_panel.bottom;
 
+    var width = central_panel.width * 0.65;
+    var max_right = central_panel.right;
+    var x = Math.min(max_right - width, target.right);
+    var y = (target.top + target.bottom)/2;
     var posy = Math.min(Math.max(cp_top, y - note_half), cp_bottom - note_height);
-
     note.style.top = posy + "px";
     note.style.left = x + "px";
+    note.style.width = width + "px";
     note.style.visibility = "visible";
     note.style.zIndex = 3;
 }
