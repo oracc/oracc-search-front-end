@@ -50,7 +50,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 991 ? true : false;
+    this.isMobile = window.innerWidth < 600 ? true : false;
     this.isMobile && (this.clickedHeaderIndex = 0);
   }
 
@@ -89,7 +89,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   public handleHeaderClick(e, hasDropdown = true) {
-    if (window.innerWidth < 991 && hasDropdown) {
+    if (window.innerWidth < 600 && hasDropdown) {
       this.tableHeadItems = document.querySelectorAll('.js-table-head-item');
       this.tableHeadFirstItem = document.querySelector(
         '.js-table-head-item:first-of-type'

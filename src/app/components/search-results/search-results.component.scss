@@ -32,12 +32,9 @@
 }
 
 .results__count {
-  position: absolute;
   color: $grayDark;
   font-size: 1.6rem;
   font-weight: 700;
-  top: -7px;
-  left: 50%;
   transform: translateX(-50%);
   @media only screen and (max-width: 600px) {
     display: block;
@@ -48,7 +45,9 @@
     top: 0;
   }
 }
-
+.results__show-count{
+  align-content: center;
+}
 .results__show-count-link {
   font-size: 1.2rem;
   font-weight: 100;
@@ -139,7 +138,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .fa-sort-down {
     display: none;
   }
@@ -192,10 +191,7 @@
       width: 100% !important;
     }
     &:first-of-type {
-      width: 11.4%;
-    }
-    &:nth-child(2) {
-      width: 4.4%;
+      width: 12.5%;
     }
     &:nth-child(3) {
       width: 29.6%;
