@@ -1,7 +1,6 @@
 @import "../../../scss/config/variables";
 
 .footer {
-  height: 120px;
   width: 100%;
   background-color: $blueDark;
   color: $white;
@@ -37,9 +36,6 @@
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
-}
-.footer__logo {
-  margin-left: 8vw;
 }
 
 .footer__logo-link {

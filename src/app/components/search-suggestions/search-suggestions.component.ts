@@ -35,7 +35,7 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
   constructor(private getDataService: GetDataService) {}
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 991 ? true : false;
+    this.isMobile = window.innerWidth < 600 ? true : false;
     this.suggestionsCategory = SuggestionsCategories.COMPLETIONS;
   }
 

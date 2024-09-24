@@ -24,6 +24,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 991;
+    this.isMobile = window.innerWidth < 600;
   }
 }
