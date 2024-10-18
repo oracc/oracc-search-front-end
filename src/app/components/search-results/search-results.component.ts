@@ -24,9 +24,8 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public results: number;
   public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
-  public isMobile: boolean;
   public isDescending = false;
-  public clickedHeaderIndex = 5;
+  public clickedHeaderIndex = 0;
   private translationDataPure: any = [];
   private tableHeadItems: NodeListOf<Element>;
   private tableCells: NodeListOf<Element>;
@@ -50,8 +49,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 600 ? true : false;
-    this.isMobile && (this.clickedHeaderIndex = 0);
   }
 
   ngOnDestroy() {
@@ -88,22 +85,24 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.itemsPerPage = items;
   }
 
-  public handleHeaderClick(e, hasDropdown = true) {
+  public handleHeaderClick(e, index, hasDropdown = true) {
+    console.log(`clicky ${e.target.tagName}`);
+    if (e.target.tagName === "INPUT") {
+      // Allow the user to use the text input for filtering by period
+      return;
+    }
     if (window.innerWidth < 600 && hasDropdown) {
       this.tableHeadItems = document.querySelectorAll('.js-table-head-item');
       this.tableHeadFirstItem = document.querySelector(
         '.js-table-head-item:first-of-type'
       );
       this.tableHead = document.querySelector('.js-table-head');
+      this.tableHead.classList.toggle('active');
       this.tableCells = document.querySelectorAll('.js-table-cell');
-      this.tableHeadItems.forEach((item) => {
-        item.classList.toggle('active');
-      });
       if (e.target !== this.tableHeadFirstItem) {
-        this.tableHead.prepend(e.target);
         this.tableCells.forEach((cell) => {
           cell.classList.remove('active');
-          if (cell.getAttribute('data-id') === e.target.id) {
+          if (cell.getAttribute('data-id') === index) {
             cell.classList.add('active');
           }
         });
@@ -130,16 +129,13 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
       }
       this.isDescending = !this.isDescending;
     }
-    this.clickedHeaderIndex =
-      parseInt(e.target.id, 10) === 5 && this.isMobile
-        ? this.clickedHeaderIndex
-        : parseInt(e.target.id, 10);
+    this.clickedHeaderIndex = index;
   }
 
   public filterPeriods(e) {
     this.translationData = this.translationDataPure.filter((entry: any) => {
       const hasPeriod = !!entry.periods_p.filter((period: string) => {
-        return period.toLowerCase().includes(e.target.value);
+        return period.toLowerCase().includes(e.target.value.toLowerCase());
       }).length;
       if (hasPeriod) {
         return true;

@@ -88,6 +88,11 @@
   margin-bottom: 10px;
 }
 
+.results__table-head-drop.active {
+  .results__table-head-input {
+    display: none;
+  }
+}
 .results__table-head-item {
   display: flex;
   align-items: center;
@@ -123,18 +128,13 @@
     margin-right: 7px;
   }
   .results__table-head-input {
-    display: none;
+    display: block;
     margin-left: 20px;
     border-radius: 5px;
     height: 66%;
     width: 100%;
     border: none;
     padding: 0 10px;
-  }
-  &:last-child {
-    .results__table-head-input {
-      display: block;
-    }
   }
 }
 
@@ -215,21 +215,33 @@
 }
 
 .results__table-head-drop {
+  .results__table-head-item {
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+.results__table-head-drop {
+  .results__table-head-item.header-active {
+    @media only screen and (max-width: 600px) {
+      display: block;
+    }
+  }
+}
+.results__table-head-drop.active {
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     position: relative;
   }
   .results__table-head-item {
     @media only screen and (max-width: 600px) {
+      display: block;
       position: absolute;
       font-size: 0.75rem;
       background-color: $white;
       color: $grayBorder;
       border-left: 1px solid $grayBorder;
       border-right: 1px solid $grayBorder;
-      opacity: 0;
-      visibility: hidden;
-      z-index: -1;
       .fa-sort-down {
         display: none;
       }
@@ -243,13 +255,10 @@
         height: 1px;
         background-color: $grayBorder;
       }
-      &:first-of-type {
+      &.header-active {
         background-color: $blueLight;
         color: $white;
         border: none;
-        opacity: 1;
-        visibility: visible;
-        z-index: 1;
         &::after {
           content: none;
         }
@@ -277,11 +286,6 @@
           content: none;
         }
       }
-    }
-    &.active {
-      opacity: 1;
-      visibility: visible;
-      z-index: 1;
     }
   }
 }
@@ -319,6 +323,9 @@
   cursor: pointer;
   @media only screen and (max-width: 600px) {
     margin-right: 0;
+    &.cell-hidden {
+      display: none;
+    }
   }
 }
 

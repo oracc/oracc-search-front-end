@@ -33,7 +33,7 @@
       <div class="results__table-head">
         <span
           class="results__table-head-item results__table-head-item--wide"
-          (click)="handleHeaderClick($event, false)"
+          (click)="handleHeaderClick($event, 5, false)"
           id="5"
           >{{ "search.ancientWordText" | translate
           }}<i
@@ -49,8 +49,9 @@
           <li
             class="results__table-head-item js-table-head-item"
             *ngFor="let heading of tableHeadings; let i = index"
-            (click)="handleHeaderClick($event)"
-            data-id="{{ i }}"
+            (click)="handleHeaderClick($event, i, true)"
+            [ngClass]="{'header-active': clickedHeaderIndex == i}"
+          data-id="{{ i }}"
           >
             <i class="fas fa-list"></i>
             {{ heading }}
@@ -66,9 +67,9 @@
               name="filter-periods"
               class="results__table-head-input"
               type="text"
-              *ngIf="!isMobile"
               (keyup)="filterPeriods($event)"
               data-id="{{ i }}"
+              *ngIf="i == 4"
               [placeholder]="'search.placeholderTextFilter' | translate"
             />
           </li>
@@ -93,35 +94,35 @@
           <li
             class="results__table-cell js-table-cell"
             data-id="0"
-            *ngIf="clickedHeaderIndex == 0 || !isMobile"
+            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 0}"
           >
             {{ entry.gw }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="1"
-            *ngIf="clickedHeaderIndex == 1 || !isMobile"
+            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 1}"
           >
             {{ entry.icount }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="2"
-            *ngIf="clickedHeaderIndex == 2 || !isMobile"
+            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 2}"
           >
             {{ entry.senses_mng.join(", ") }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="3"
-            *ngIf="clickedHeaderIndex == 3 || !isMobile"
+            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 3}"
           >
             {{ entry.lang }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="4"
-            *ngIf="clickedHeaderIndex == 4 || !isMobile"
+            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 4}"
           >
             {{ entry.periods_p.join(", ") }}
           </li>
