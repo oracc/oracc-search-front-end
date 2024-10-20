@@ -37,10 +37,10 @@
           id="5"
           >{{ "search.ancientWordText" | translate
           }}<i
-            class="fas fa-sort-down"
+            class="fas fa-sort-down forced-visible"
             [ngClass]="{
               descending: isDescending,
-              'header-active': clickedHeaderIndex == 5
+              'header-active': clickedHeaderIndex == 5,
             }"
           ></i
         ></span>
@@ -50,7 +50,10 @@
             class="results__table-head-item js-table-head-item"
             *ngFor="let heading of tableHeadings; let i = index"
             (click)="handleHeaderClick($event, i, true)"
-            [ngClass]="{'header-active': clickedHeaderIndex == i}"
+            [ngClass]="{
+              'header-active': clickedHeaderIndex == i,
+              'forced-visible': clickedSecondaryHeaderIndex == i
+            }"
           data-id="{{ i }}"
           >
             <i class="fas fa-list"></i>
@@ -59,7 +62,7 @@
               class="fas fa-sort-down"
               [ngClass]="{
                 descending: isDescending,
-                'header-active': clickedHeaderIndex == i
+                'header-active': clickedSecondaryHeaderIndex == i
               }"
             ></i>
             <input
@@ -94,35 +97,35 @@
           <li
             class="results__table-cell js-table-cell"
             data-id="0"
-            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 0}"
+            [ngClass]="{'cell-hidden': clickedSecondaryHeaderIndex !== 0}"
           >
             {{ entry.gw }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="1"
-            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 1}"
+            [ngClass]="{'cell-hidden': clickedSecondaryHeaderIndex !== 1}"
           >
             {{ entry.icount }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="2"
-            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 2}"
+            [ngClass]="{'cell-hidden': clickedSecondaryHeaderIndex !== 2}"
           >
             {{ entry.senses_mng.join(", ") }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="3"
-            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 3}"
+            [ngClass]="{'cell-hidden': clickedSecondaryHeaderIndex !== 3}"
           >
             {{ entry.lang }}
           </li>
           <li
             class="results__table-cell js-table-cell"
             data-id="4"
-            [ngClass]="{'cell-hidden': clickedHeaderIndex !== 4}"
+            [ngClass]="{'cell-hidden': clickedSecondaryHeaderIndex !== 4}"
           >
             {{ entry.periods_p.join(", ") }}
           </li>

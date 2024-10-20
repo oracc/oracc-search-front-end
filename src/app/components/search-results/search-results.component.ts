@@ -25,7 +25,8 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
   public isDescending = false;
-  public clickedHeaderIndex = 0;
+  public clickedHeaderIndex = 5;
+  public clickedSecondaryHeaderIndex = 0;
   private translationDataPure: any = [];
   private tableHeadItems: NodeListOf<Element>;
   private tableCells: NodeListOf<Element>;
@@ -85,8 +86,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.itemsPerPage = items;
   }
 
-  public handleHeaderClick(e, index, hasDropdown = true) {
-    console.log(`clicky ${e.target.tagName}`);
+  public handleHeaderClick(e, index, hasDropdown) {
     if (e.target.tagName === "INPUT") {
       // Allow the user to use the text input for filtering by period
       return;
@@ -130,6 +130,9 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
       this.isDescending = !this.isDescending;
     }
     this.clickedHeaderIndex = index;
+    if (hasDropdown) {
+      this.clickedSecondaryHeaderIndex = index;
+    }
   }
 
   public filterPeriods(e) {
