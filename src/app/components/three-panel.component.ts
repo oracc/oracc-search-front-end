@@ -43,7 +43,7 @@ export class ThreePanel implements OnInit {
 
   public ngOnInit(): void {
     // Are we on a narrow (probably mobile) screen?
-    this.isMobile = window.innerWidth < 600;
+    this.isMobile = window.innerWidth <= 600;
     // The metadata (first) and text (third) panels should be
     // collapsed by default on mobile (the three panels are
     // vertically stacked in this case).

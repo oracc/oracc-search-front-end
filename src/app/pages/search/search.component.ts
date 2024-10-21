@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.routerLink = 'search-results';
-    this.isMobile = window.innerWidth < 600 ? true : false;
+    this.isMobile = window.innerWidth <= 600;
     this.searchInput = document.querySelector('.js-search-input');
     this.searchButton = document.querySelector('.js-search-btn');
   }

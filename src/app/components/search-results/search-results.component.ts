@@ -91,7 +91,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
       // Allow the user to use the text input for filtering by period
       return;
     }
-    if (window.innerWidth < 600 && hasDropdown) {
+    if (window.innerWidth <= 600 && hasDropdown) {
       this.tableHeadItems = document.querySelectorAll('.js-table-head-item');
       this.tableHeadFirstItem = document.querySelector(
         '.js-table-head-item:first-of-type'
