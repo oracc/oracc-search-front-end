@@ -25,10 +25,12 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
   public isDescending = false;
-  public clickedHeaderIndex = 5;
-  public clickedSecondaryHeaderIndex = 0;
+  // The last clicked header; so where the sort arrow is.
+  public sortedColumn = 5;
+  // The last clicked header that wasn't the first header, so
+  // this one is forced to be visible.
+  public forcedVisibleColumn = 0;
   private translationDataPure: any = [];
-  private tableHeadItems: NodeListOf<Element>;
   private tableCells: NodeListOf<Element>;
   private tableHeadFirstItem: Element;
   private tableHead: Element;
@@ -92,7 +94,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
       return;
     }
     if (window.innerWidth <= 600 && hasDropdown) {
-      this.tableHeadItems = document.querySelectorAll('.js-table-head-item');
       this.tableHeadFirstItem = document.querySelector(
         '.js-table-head-item:first-of-type'
       );
@@ -107,31 +108,18 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
           }
         });
       }
-    } else {
-      switch (parseInt(e.target.id, 10)) {
-        case 0:
-          this.sortField = 'gw';
-          break;
-        case 1:
-          this.sortField = 'icount';
-          break;
-        case 2:
-          this.sortField = 'senses_mng';
-          break;
-        case 3:
-          this.sortField = 'lang';
-          break;
-        case 4:
-          this.sortField = null;
-          break;
-        default:
-          this.sortField = 'cf';
-      }
-      this.isDescending = !this.isDescending;
     }
-    this.clickedHeaderIndex = index;
+    const sortField = ['gw', 'icount', null, 'lang', null, 'cf'][index];
+    if (sortField) {
+      if (this.sortField === sortField) {
+        this.isDescending = !this.isDescending;
+      } else {
+        this.sortField = sortField;
+      }
+      this.sortedColumn = index;
+    }
     if (hasDropdown) {
-      this.clickedSecondaryHeaderIndex = index;
+      this.forcedVisibleColumn = index;
     }
   }
 
