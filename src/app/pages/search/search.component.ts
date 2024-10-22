@@ -9,10 +9,8 @@ import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/hand
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  private searchInput: Element;
   private searchButton: HTMLElement;
   public placeholderText: string;
-  public isMobile: boolean;
   public routerLink: string;
   public searchParam: string;
   public showSuggestions = false;
@@ -27,8 +25,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.routerLink = 'search-results';
-    this.isMobile = window.innerWidth <= 600;
-    this.searchInput = document.querySelector('.js-search-input');
     this.searchButton = document.querySelector('.js-search-btn');
   }
 

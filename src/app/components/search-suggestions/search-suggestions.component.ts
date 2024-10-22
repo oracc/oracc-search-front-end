@@ -30,12 +30,10 @@ export class SearchSuggestionsComponent implements OnInit, OnChanges {
   public searchSuggestions: {};
   public suggestionsCategory: SuggestionsCategories;
   public timer;
-  public isMobile: boolean;
 
   constructor(private getDataService: GetDataService) {}
 
   ngOnInit() {
-    this.isMobile = window.innerWidth <= 600;
     this.suggestionsCategory = SuggestionsCategories.COMPLETIONS;
   }
 
