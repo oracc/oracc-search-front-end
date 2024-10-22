@@ -2,11 +2,6 @@
 
 .search {
   padding-top: 57px;
-  &:not(.search--mob) {
-    @media only screen and (max-width: 600px) {
-      display: none;
-    }
-  }
 }
 
 .search__content {
@@ -76,10 +71,12 @@ img {
 
 /// Mobile devices styles
 
-.search--mob {
-  padding-top: 20px;
-  z-index: 2;
-  .content {
+@media only screen and (max-width: 600px) {
+  .search {
+    padding-top: 20px;
+    z-index: 2;
+  }
+  .search .content {
     min-height: 0;
   }
   .search__title,

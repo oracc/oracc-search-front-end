@@ -33,14 +33,14 @@
       <div class="results__table-head">
         <span
           class="results__table-head-item results__table-head-item--wide"
-          (click)="handleHeaderClick($event, false)"
-          id="5"
+          (click)="handleHeaderClick($event, 5, false)"
+          id="header-5"
           >{{ "search.ancientWordText" | translate
           }}<i
-            class="fas fa-sort-down"
+            class="fas fa-sort-down forced-visible"
             [ngClass]="{
               descending: isDescending,
-              'header-active': clickedHeaderIndex == 5
+              'header-active': sortedColumn == 5,
             }"
           ></i
         ></span>
@@ -49,16 +49,22 @@
           <li
             class="results__table-head-item js-table-head-item"
             *ngFor="let heading of tableHeadings; let i = index"
-            (click)="handleHeaderClick($event)"
-            data-id="{{ i }}"
+            (click)="handleHeaderClick($event, i, true)"
+            [ngClass]="{
+              'forced-visible': forcedVisibleColumn == i
+            }"
+          data-id="header-{{ i }}"
           >
-            <i class="fas fa-list"></i>
+            <i
+              class="fas fa-list"
+              (click)="handleDropDown($event, i)"
+            ></i>
             {{ heading }}
             <i
               class="fas fa-sort-down"
               [ngClass]="{
                 descending: isDescending,
-                'header-active': clickedHeaderIndex == i
+                'header-active': sortedColumn == i
               }"
             ></i>
             <input
@@ -66,9 +72,8 @@
               name="filter-periods"
               class="results__table-head-input"
               type="text"
-              *ngIf="!isMobile"
               (keyup)="filterPeriods($event)"
-              data-id="{{ i }}"
+              *ngIf="i == 4"
               [placeholder]="'search.placeholderTextFilter' | translate"
             />
           </li>
@@ -92,36 +97,31 @@
         <ul class="results__table-row-drop">
           <li
             class="results__table-cell js-table-cell"
-            data-id="0"
-            *ngIf="clickedHeaderIndex == 0 || !isMobile"
+            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 0}"
           >
             {{ entry.gw }}
           </li>
           <li
             class="results__table-cell js-table-cell"
-            data-id="1"
-            *ngIf="clickedHeaderIndex == 1 || !isMobile"
+            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 1}"
           >
             {{ entry.icount }}
           </li>
           <li
             class="results__table-cell js-table-cell"
-            data-id="2"
-            *ngIf="clickedHeaderIndex == 2 || !isMobile"
+            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 2}"
           >
             {{ entry.senses_mng.join(", ") }}
           </li>
           <li
             class="results__table-cell js-table-cell"
-            data-id="3"
-            *ngIf="clickedHeaderIndex == 3 || !isMobile"
+            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 3}"
           >
             {{ entry.lang }}
           </li>
           <li
             class="results__table-cell js-table-cell"
-            data-id="4"
-            *ngIf="clickedHeaderIndex == 4 || !isMobile"
+            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 4}"
           >
             {{ entry.periods_p.join(", ") }}
           </li>

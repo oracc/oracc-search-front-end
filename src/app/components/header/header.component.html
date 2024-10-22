@@ -1,7 +1,14 @@
 <header class="header">
   <div class="container header__content" (click)="closeNavPanel($event)">
     <div class="header__logo">
-      <a routerLink="/" class="header__logo-link">Oracc</a>
+      <a routerLink="/" class="header__logo-link"
+        ><img
+          *ngIf="isDesktop; else mobileLogo"
+          class="header__logo-image"
+          [src]="imgURL"
+          alt="ORACC: The Open Richly Annotated Cuneiform Corpus"
+      /></a>
+      <ng-template #mobileLogo> Oracc </ng-template>
     </div>
     <div class="header__nav">
       <nav class="header__nav-bar" [class.header__nav-bar--active]="isMenuOpen">
@@ -9,7 +16,7 @@
           <li class="header__nav-list-item" *ngIf="isDesktop">
             <a
               routerLink="/"
-              routerLinkActive="header__nav-list-link--active"
+              routerLinkActive="header__nav-list-link"
               class="header__nav-list-link"
               >{{ "header.linkText1" | translate }}</a
             >
@@ -40,7 +47,7 @@
           </li>
         </ul>
       </nav>
-      <div class="header__nav-lang" *ngIf="isDesktop; else isMobile">
+      <div class="header__nav-lang">
         <a
           #enLang
           href="javascript:;"
@@ -58,26 +65,6 @@
           >{{ "header.langText2" | translate }}</a
         >
       </div>
-      <ng-template #isMobile>
-        <div class="header__nav-lang">
-          <a
-            #enLang
-            href="javascript:;"
-            id="en"
-            class="header__nav-lang-link header__nav-lang-link--active"
-            (click)="changeLang(enLang)"
-            >{{ "header.langAbbrText1" | translate }}</a
-          >
-          <a
-            #arLang
-            href="javascript:;"
-            id="ar"
-            class="header__nav-lang-link"
-            (click)="changeLang(arLang)"
-            >{{ "header.langAbbrText2" | translate }}</a
-          >
-        </div>
-      </ng-template>
     </div>
     <div
       class="header__menu-btn"
