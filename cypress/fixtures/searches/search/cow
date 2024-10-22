@@ -200,85 +200,6 @@
     "instances_count": 34
   },
   {
-    "gw": "stone",
-    "headword": "šuba[stone]N",
-    "cf": "šuba",
-    "icount": 32,
-    "id": "o0039743",
-    "senses_mng": [
-      "a precious stone",
-      "cowry or conch shell"
-    ],
-    "forms_n": [
-      "su-bi",
-      "su-bi-a",
-      "su-bi₂",
-      "šuba{+ba}",
-      "šuba",
-      "šuba{bi}",
-      "{na₄}šuba₂",
-      "šuba₂",
-      "šuba₂-gin₇",
-      "šuba₄{+ba}",
-      "šuba₄{+e}-ŋu₁₀",
-      "zu-bi₂"
-    ],
-    "norms_n": [
-      "šuba",
-      "šuba,ak",
-      "šuba,gin",
-      "šuba,ŋu"
-    ],
-    "periods_p": [
-      "Early Dynastic",
-      "Old Babylonian",
-      "Neo-Babylonian",
-      "unknown"
-    ],
-    "instances": [
-      "edlex:Q000268.129.2",
-      "obel:P227377.30.2",
-      "obel:P266518.56.2",
-      "obel:P274215.123.1",
-      "obel:P274215.123.3",
-      "obel:P274215.123.5",
-      "obel:P274215.124.3",
-      "obel:P274215.124.5",
-      "obel:P274215.141.3",
-      "obel:P274215.144.2",
-      "obel:P274230.14.2",
-      "obel:P274231.15.1",
-      "obel:P274231.5.2",
-      "obel:P283739.95.2",
-      "obel:P283775.13.2",
-      "obel:P342811.26.4",
-      "obel:P342839.22.3",
-      "obel:P342925.13.1",
-      "obel:P342925.7.3",
-      "obel:P342931.12.4",
-      "obel:P342990.6.2",
-      "obel:P343583.17.5",
-      "obel:P343588.30.2",
-      "obel:P345521.14.2",
-      "obel:P345521.15.1",
-      "obel:P345767.6.2",
-      "obel:P345778.17.3",
-      "obel:P345779.19.2",
-      "obel:P345791.55.1",
-      "obel:P355660.11.1",
-      "obel:P355702.509.2",
-      "obel:P355702.53.2"
-    ],
-    "project": "neo",
-    "lang": "sux",
-    "completions": [
-      "šuba",
-      "stone"
-    ],
-    "sort": "['stone']",
-    "instances_count": 32
-  },
-  {
     "gw": "cow",
     "headword": "immal[cow]N",
     "cf": "immal",
@@ -454,43 +375,6 @@
     "instances_count": 8
   },
   {
-    "gw": "cowherd",
-    "headword": "unud[cowherd]N",
-    "cf": "unud",
-    "icount": 7,
-    "id": "o0041601",
-    "senses_mng": [
-      "cowherd, cattle herder"
-    ],
-    "forms_n": [
-      "unud"
-    ],
-    "norms_n": [
-      "unud"
-    ],
-    "periods_p": [
-      "ED IIIa",
-      "Early Dynastic"
-    ],
-    "instances": [
-      "edlex:P010632.52.1",
-      "edlex:Q000003.92.1",
-      "edlex:Q000003.93.1",
-      "edlex:Q000003.94.1",
-      "edlex:Q000008.57.1",
-      "edlex:Q000008.58.2",
-      "edlex:Q000268.62.2"
-    ],
-    "project": "neo",
-    "lang": "sux",
-    "completions": [
-      "unud",
-      "cowherd"
-    ],
-    "sort": "['cowherd']",
-    "instances_count": 7
-  },
-  {
     "gw": "~cow",
     "headword": "šar[~cow]N",
     "cf": "šar",
@@ -528,43 +412,6 @@
     ],
     "sort": "['~cow']",
     "instances_count": 6
-  },
-  {
-    "gw": "mature",
-    "headword": "mah[mature]V/i",
-    "cf": "mah",
-    "icount": 5,
-    "id": "o0033800",
-    "senses_mng": [
-      "(to be) mature, milk producing (of cows)"
-    ],
-    "forms_n": [
-      "mah₂",
-      "mah₂-gin₇"
-    ],
-    "norms_n": [
-      "mah",
-      "mah;*a,gin"
-    ],
-    "periods_p": [
-      "Early Dynastic",
-      "Old Babylonian"
-    ],
-    "instances": [
-      "edlex:Q000012.17.2",
-      "edlex:Q000012.43.2",
-      "edlex:Q000012.69.2",
-      "edlex:Q000012.95.2",
-      "obel:P257610.43.3"
-    ],
-    "project": "neo",
-    "lang": "sux",
-    "completions": [
-      "mah",
-      "mature"
-    ],
-    "sort": "['mature']",
-    "instances_count": 5
   },
   {
     "gw": "cow",
@@ -665,39 +512,6 @@
       "cow"
     ],
     "sort": "['cow']",
-    "instances_count": 3
-  },
-  {
-    "gw": "drover",
-    "headword": "gudeʾusa[drover]N",
-    "cf": "gudeʾusa",
-    "icount": 3,
-    "id": "o0028721",
-    "senses_mng": [
-      "drover, ox-driver, cowherd"
-    ],
-    "forms_n": [
-      "gud-us₂"
-    ],
-    "norms_n": [
-      "gudeʾusa"
-    ],
-    "periods_p": [
-      "Early Dynastic",
-      "Ebla"
-    ],
-    "instances": [
-      "edlex:P242176.16.1",
-      "edlex:Q000006.31.1",
-      "edlex:Q000010.13.1"
-    ],
-    "project": "neo",
-    "lang": "sux",
-    "completions": [
-      "gudeʾusa",
-      "drover"
-    ],
-    "sort": "['drover']",
     "instances_count": 3
   },
   {
