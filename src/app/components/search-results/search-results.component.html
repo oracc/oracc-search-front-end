@@ -55,7 +55,10 @@
             }"
           data-id="header-{{ i }}"
           >
-            <i class="fas fa-list"></i>
+            <i
+              class="fas fa-list"
+              (click)="handleDropDown($event, i)"
+            ></i>
             {{ heading }}
             <i
               class="fas fa-sort-down"

@@ -32,7 +32,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public forcedVisibleColumn = 0;
   private translationDataPure: any = [];
   private tableCells: NodeListOf<Element>;
-  private tableHeadFirstItem: Element;
   private tableHead: Element;
   private navigationSubscription;
 
@@ -88,19 +87,24 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.itemsPerPage = items;
   }
 
+  public handleDropDown(e, index) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.tableHead = document.querySelector('.js-table-head');
+    this.tableHead.classList.add('active');
+  }
+
   public handleHeaderClick(e, index, hasDropdown) {
     if (e.target.tagName === "INPUT") {
       // Allow the user to use the text input for filtering by period
       return;
     }
-    if (window.innerWidth <= 600 && hasDropdown) {
-      this.tableHeadFirstItem = document.querySelector(
-        '.js-table-head-item:first-of-type'
-      );
+    // Are we removing the dropdown?
+    if (hasDropdown) {
       this.tableHead = document.querySelector('.js-table-head');
-      this.tableHead.classList.toggle('active');
-      this.tableCells = document.querySelectorAll('.js-table-cell');
-      if (e.target !== this.tableHeadFirstItem) {
+      if (this.tableHead.classList.contains('active')) {
+        this.tableHead.classList.remove('active')
+        this.tableCells = document.querySelectorAll('.js-table-cell');
         this.tableCells.forEach((cell) => {
           cell.classList.remove('active');
           if (cell.getAttribute('data-id') === index) {
