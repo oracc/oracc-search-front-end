@@ -55,8 +55,13 @@ export class ThreePanel implements OnInit {
         this.setup();
       }
     });
+    this.initialize();
     this.setup();
   }
+
+  // override this to capture information from the route before
+  // getBackendData, for example.
+  public initialize() {}
 
   public setup() : void {
     this.breadcrumbsService.setBreadcrumbs(this.router);

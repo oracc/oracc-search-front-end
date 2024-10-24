@@ -21,13 +21,18 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 })
 export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
+  private ref: string;
+
+  override initialize() {
+    this.ref = this.route.snapshot.queryParams['iref'];
+  }
 
   override getBackendData(): Observable<string> {
     return this.getDataService.getDetailData(
       this.project,
       this.route.snapshot.queryParams['lang'],
       this.route.snapshot.queryParams['isid'],
-      {ref: this.route.snapshot.queryParams['iref']}
+      { ref: this.ref }
     );
   }
 
@@ -215,21 +220,9 @@ export class DetailsTextsComponent extends ThreePanel {
       centralPanelLine.classList.add('selected');
     }
   }
+
   override changeText(item: string) {
-    this.router.navigate(
-      [ 'search-results',
-        this.chosenTermText,
-        'occurrences',
-        'texts'
-      ],
-      { queryParams: {
-        proj: this.project,
-        ga_lang: this.route.snapshot.queryParams['ga_lang'],
-        ga_isid: this.route.snapshot.queryParams['ga_isid'],
-        lang: this.route.snapshot.queryParams['lang'],
-        isid: this.route.snapshot.queryParams['isid'],
-        iref: item,
-      }}
-    );
+    this.ref = item;
+    this.setup();
   }
 }
