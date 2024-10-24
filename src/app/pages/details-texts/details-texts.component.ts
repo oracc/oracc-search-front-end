@@ -186,7 +186,12 @@ export class DetailsTextsComponent extends ThreePanel {
       window.open(`${environment.glossaryArticleURL}/${this.project}/${this.item}?sources`);
       return;
     }
-    window.open(clickedLink.getAttribute('href'));
+    let href = clickedLink.getAttribute('href');
+    const r = RegExp("javascript:viewsBuyBook\\([\"'](.*)[\"']\\)").exec(href);
+    if (r) {
+      href = r[1];
+    }
+    window.open(href);
   }
 
   override handleTextClick(e) {
