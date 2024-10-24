@@ -42,6 +42,44 @@ describe('Pages', () => {
     });
   });
 
+  function heading_of_ref(ref: string) {
+    const [text, volume] = ref.split(" ", 2);
+    const vol = Number(volume);
+    const rendered = Intl.NumberFormat('en', {
+      minimumIntegerDigits: 3,
+      useGrouping: false
+    }).format(vol);
+    return `${text} ${rendered}`;
+  }
+
+  describe('occurrences texts', () => {
+    it('can be navigated between', () => {
+      cy.visit("/");
+      const search = "king";
+      const result = "Abdi-Li\u02beti";
+      const ref1 = "Sennacherib 4 36";
+      const ref2 = "Sennacherib 16 iii 17";
+      const ref3 = "Sennacherib 17 ii 77";
+      cy.get('.search__input').type(search);
+      cy.get('.suggestion').contains(search).click();
+      cy.get('.results__table-row').contains(result).click();
+      cy.get('.forms .icountu').click();
+      cy.get('.details__panel-main').contains(ref3);
+      cy.get('.details__panel-main').contains(ref2);
+      cy.get('.details__panel-main').contains(ref1).click();
+      cy.get('#central-panel .heading').should('have.text', heading_of_ref(ref1));
+      cy.get('.item-nav.fa-arrow-right').click();
+      cy.get('#central-panel .heading').should('have.text', heading_of_ref(ref2));
+      cy.get('.item-nav.fa-arrow-right').click();
+      cy.get('#central-panel .heading').should('have.text', heading_of_ref(ref3));
+      cy.get('.item-nav.fa-arrow-left').click();
+      cy.get('#central-panel .heading').should('have.text', heading_of_ref(ref2));
+      cy.get('.item-nav.fa-arrow-left').click();
+      cy.get('#central-panel .heading').should('have.text', heading_of_ref(ref1));
+      cy.get('.item-nav.fa-arrow-left').should('not.be.visible');
+    });
+  });
+
   describe('score page', () => {
     it('is reachable', () => {
       const search = "cow";

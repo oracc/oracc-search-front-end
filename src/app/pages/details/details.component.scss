@@ -395,3 +395,11 @@
   padding: 0 20px 10px;
   font-size: 1.1rem;
 }
+
+.item-nav {
+  display: none;
+}
+
+.item-nav.active {
+  display: block;
+}

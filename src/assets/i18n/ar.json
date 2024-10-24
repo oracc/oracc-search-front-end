@@ -43,7 +43,7 @@
   "details": {
     "metadataText": "Metadata",
     "showText": "Show text",
-    "textText": "{0, plural, one {{0} Text} other {{0} Texts}}",
+    "textText": "Text {1} of {0}",
     "linesText": "{0, plural, one {{0} Line} other {{0} Lines}}",
     "sourceText": "Source",
     "scoreText": "Score",
