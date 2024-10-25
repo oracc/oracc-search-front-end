@@ -15,30 +15,39 @@ describe('Pages', () => {
   });
 
   describe('footnote popup', () => {
-    it('works properly', () => {
+    it('appears with mouseover', () => {
       cy.visit("/");
       const search = "king";
       const result = "Abdi-Li\u02beti";
       const ref = "Sennacherib 4 36";
-      cy.get('.search__input').type(search);
-      cy.get('.suggestion').contains(search).click();
+      cy.get('.search__input').type(`${search}{enter}`);
       cy.get('.results__table-row').contains(result).click();
       cy.get('.forms .icountu').click();
       cy.get('.details__panel-main').contains(ref).click();
 
-      // mouse activation of popups
-      cy.get('p.note').should('not.be.visible');
+      cy.get('p#n066.note').should('not.be.visible');
       cy.get('span.marker').first().trigger('mouseover');
-      cy.get('p.note').should('be.visible').should('not.be.empty');
-      cy.get('span.marker').first().trigger('mouseout');
-      cy.get('p.note').should('not.be.visible');
+      cy.get('p#n066.note').should('be.visible').should('not.be.empty');
+      cy.get('p#n066.note').first().click();
+      cy.get('p#n066.note').should('not.be.visible');
+    });
 
-      // mobile activation of popups
+    // For some reason Cypress cannot simulate touch events of Firefox
+    it('appears with touch tap', { browser: ["chrome", "chromium", "electron"] }, () => {
+      cy.visit("/");
+      const search = "king";
+      const result = "Abdi-Li\u02beti";
+      const ref = "Sennacherib 4 36";
+      cy.get('.search__input').type(`${search}{enter}`);
+      cy.get('.results__table-row').contains(result).click();
+      cy.get('.forms .icountu').click();
+      cy.get('.details__panel-main').contains(ref).click();
+
       cy.get('span.marker').first().trigger('touchstart');
       cy.get('span.marker').first().trigger('touchend');
-      cy.get('p.note').should('be.visible').should('not.be.empty');
-      cy.get('p.note').first().click();
-      cy.get('p.note').should('not.be.visible');
+      cy.get('p#n066.note').should('be.visible').should('not.be.empty');
+      cy.get('p#n066.note').first().click();
+      cy.get('p#n066.note').should('not.be.visible');
     });
   });
 

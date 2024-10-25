@@ -4,8 +4,11 @@ function act_wsig() {}
 function act_block() {}
 function act_zoom() {}
 
-function hideNote(_e,nid) {
+function hideNote(e,nid) {
     var note = document.getElementById(nid);
+    if (e.target !== note || e.target.contains(e.relatedTarget)) {
+        return 0;
+    }
     note.style.visibility = "hidden";
     note.style.zIndex = 0;
     return 1;
