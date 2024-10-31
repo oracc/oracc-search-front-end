@@ -2,6 +2,9 @@
 
 .search {
   padding-top: 57px;
+  @media only screen and (max-height: 600px) {
+    padding-top: 7px;
+  }
 }
 
 .search__content {
@@ -16,6 +19,12 @@
   font-weight: 700;
   color: $grayDark;
   margin-bottom: 26px;
+  @media only screen and (max-height: 600px), (max-width: 600px) {
+    margin-bottom: 8px;
+  }
+  @media only screen and (max-height: 600px) {
+    display: inline;
+  }
 }
 
 .search__intro {
@@ -23,15 +32,23 @@
   font-size: 0.75rem;
   display: block;
   margin-bottom: 15px;
+  @media only screen and (max-height: 600px) {
+    display: inline;
+    margin: 15px;
+  }
 }
 
 .search__form {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 7px;
   margin-bottom: 38px;
   @media only screen and (max-width: 600px) {
     margin-bottom: 0;
+  }
+  @media only screen and (max-height: 600px) {
+    margin-bottom: 7px;
   }
 }
 

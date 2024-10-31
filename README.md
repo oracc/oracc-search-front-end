@@ -32,6 +32,8 @@ npm install -g @angular/cli
 
 This will allow you to run the necessary `ng` commands for performing several Angular tasks.
 
+Alternatively, you can run `npx ng` instead of `ng`.
+
 ## Running a development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
