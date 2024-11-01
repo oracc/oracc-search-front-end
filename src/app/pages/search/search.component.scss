@@ -1,16 +1,27 @@
 @import "../../../scss/config/variables";
 
 .search {
-  padding-top: 57px;
+  padding-top: 2rem;
   @media only screen and (max-height: 600px) {
-    padding-top: 7px;
+    padding-top: 0;
   }
 }
 
 .search__content {
   text-align: center;
   @media only screen and (max-width: 600px) {
-    padding: 0 10px;
+    padding: 0 0.6rem;
+  }
+}
+
+.search__heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  @media only screen and (max-width: 600px) {
+    gap: 0.4rem;
+    font-size: 0.4rem;
   }
 }
 
@@ -18,12 +29,8 @@
   font-size: 1.8rem;
   font-weight: 700;
   color: $grayDark;
-  margin-bottom: 26px;
-  @media only screen and (max-height: 600px), (max-width: 600px) {
-    margin-bottom: 8px;
-  }
-  @media only screen and (max-height: 600px) {
-    display: inline;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.8rem;
   }
 }
 
@@ -31,10 +38,8 @@
   color: $red;
   font-size: 0.75rem;
   display: block;
-  margin-bottom: 15px;
-  @media only screen and (max-height: 600px) {
-    display: inline;
-    margin: 15px;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.4rem;
   }
 }
 
@@ -45,19 +50,21 @@
   margin-top: 7px;
   margin-bottom: 38px;
   @media only screen and (max-width: 600px) {
-    margin-bottom: 0;
-  }
-  @media only screen and (max-height: 600px) {
-    margin-bottom: 7px;
+    padding-top: 0.2rem; 
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.2rem;
   }
 }
 
 .search-input__container {
   margin-right: 15px;
   width: 100%;
-  max-width: 346px;
+  max-width: 21rem;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 600px) {
+    width: unset;
+  }
 }
 
 .search__input {
@@ -74,9 +81,13 @@
   .fa-search {
     margin-right: 10px;
   }
+  @media only screen and (max-width: 600px) {
+    width: 2.4rem; 
+  }
 }
 
 img {
+  // what is this for?
   width: 30px;
   font-weight: 900;
   stroke-width: 1px;
@@ -89,27 +100,13 @@ img {
 /// Mobile devices styles
 
 @media only screen and (max-width: 600px) {
-  .search {
-    padding-top: 20px;
-    z-index: 2;
-  }
   .search .content {
     min-height: 0;
   }
-  .search__title,
-  .search__intro {
-    display: none;
-  }
   .search__form {
-    padding: 20px 0;
     position: relative;
-    // some fading so the search section doesn't have hard edges
-    background: radial-gradient(
-      ellipse 50% 50% at 50% 50%,
-      $white 80%,
-      rgba($white, 0) 100%
-    );
-    
+    display: flex;
+    justify-content: center;
 
     &::after { // this is the divider
       content: "";
@@ -117,7 +114,7 @@ img {
       position: absolute;
       left: -10px;
       right: -10px;
-      bottom: 0;
+      bottom: -20px;
       height: 1px;
       background-color: $gray;
     }
@@ -126,7 +123,7 @@ img {
     border: 1px solid $grayDark;
     min-width: 220px;
     padding-left: 11px;
-    padding-right: 11px;
+    background-color: $white;
     &::placeholder {
       font-family: $fontPrimary;
       font-style: italic;
@@ -136,7 +133,7 @@ img {
     height: 32px;
     font-size: 0;
     color: $blueDark;
-    background-color: $white;
+    background-color: transparent;
     vertical-align: middle;
     align-self: center;
     .fa-search {
@@ -146,12 +143,7 @@ img {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .search-input__container {
-    margin-left: 18px;
-    margin-right: 6px;
-  }
-}
+
 
 @media only screen and (max-width: 600px) {
   .search__input {
