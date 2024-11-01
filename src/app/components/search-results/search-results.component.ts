@@ -1,8 +1,6 @@
 import {
   Component,
   OnInit,
-  Output,
-  EventEmitter,
   OnDestroy
 } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
@@ -34,8 +32,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   private tableCells: NodeListOf<Element>;
   private tableHead: Element;
   private navigationSubscription;
-
-  @Output() public wordClickEvent = new EventEmitter();
 
   constructor(
     private getDataService: GetDataService,
@@ -80,6 +76,22 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
       this.dataRecieved = false;
       this.waitForData = false;
       this.noRecievedData = true;
+    }
+  }
+
+  onResultsInit() {
+    const header = document.getElementById("header-5");
+    if (header) {
+      const hrect = header.getBoundingClientRect();
+      const bottom_delta = hrect.bottom - window.innerHeight + 50;
+      console.log(`delta ${bottom_delta}`);
+      if (0 < bottom_delta) {
+        window.scrollBy({
+          top: bottom_delta,
+          left: 0,
+          behavior: "smooth"
+        });
+      }
     }
   }
 
