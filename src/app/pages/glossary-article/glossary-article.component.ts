@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { composedPath } from '../../../utils/utils';
+import { findAncestorBy } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article',
@@ -40,26 +40,28 @@ export class GlossaryArticleComponent implements OnInit {
   }
 
   public handleTermClick(e) {
-    const anchorEl = e.path
-      ? e.path.find((el) => {
-          return !!el.className ? el.className.match('icount') : '';
-        })
-      : composedPath(e.target).find((el) => {
-          return !!el.className ? el.className.match('icount') : '';
-        });
-
-    if (!!anchorEl) {
+    const texts = findAncestorBy(
+      e.target,
+      e => e.hasAttribute('data-isid') && e.hasAttribute('data-lang')
+    );
+    if (texts) {
       e.preventDefault();
+      const isid = texts.getAttribute('data-isid');
+      const lang = texts.getAttribute('data-lang');
+      const ga_proj = this.route.snapshot.queryParams['proj'];
+      const proj = texts.hasAttribute('data-proj')?
+        texts.getAttribute('data-proj') : ga_proj;
       this.router.navigate(
         ['search-results', this.route.snapshot.paramMap.get('word'), 'occurrences'],
         { queryParams: {
-          proj: this.route.snapshot.queryParams['proj'],
+          proj: proj,
           ga_lang: this.route.snapshot.queryParams['ga_lang'],
           ga_isid: this.route.snapshot.queryParams['ga_isid'],
-          lang: anchorEl.getAttribute('data-lang'),
-          isid: anchorEl.getAttribute('data-isid'),
+          lang: lang,
+          isid: isid,
         }}
       );
+      return;
     }
   }
 
