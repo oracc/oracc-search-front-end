@@ -112,6 +112,11 @@
   padding-right: 8px;
   box-sizing: border-box;
   cursor: pointer;
+
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    font-size: 0.55rem;
+  }
+
   &:hover {
     background-color: $blueDark;
   }
@@ -231,7 +236,7 @@
     @media only screen and (max-width: 600px) {
       display: block;
       .fa-list {
-        display: block;
+        display: inline-block;
       }
     }
   }
