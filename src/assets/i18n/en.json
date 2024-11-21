@@ -1,9 +1,9 @@
 {
   "header": {
-    "linkText1": "Projects",
-    "linkText2": "Tools",
-    "linkText3": "About",
-    "linkText4": "Help",
+    "linkTextProject": "Projects",
+    "linkTextTools": "Tools",
+    "linkTextAbout": "About",
+    "linkTextHelp": "Help",
     "langText1": "English",
     "langText2": "Arabic",
     "langAbbrText1": "EN",
