@@ -21,18 +21,23 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 })
 export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
+  private ref: string;
+
+  override initialize() {
+    this.ref = this.route.snapshot.queryParams['iref'];
+  }
 
   override getBackendData(): Observable<string> {
     return this.getDataService.getDetailData(
       this.project,
       this.route.snapshot.queryParams['lang'],
       this.route.snapshot.queryParams['isid'],
-      {ref: this.route.snapshot.queryParams['iref']}
+      { ref: this.ref }
     );
   }
 
   override detailsPanelTopText(): string {
-    return "details.linesText";
+    return "details.textText";
   }
 
   override setMetadataPanel(htmlData: Document) {
@@ -181,7 +186,12 @@ export class DetailsTextsComponent extends ThreePanel {
       window.open(`${environment.glossaryArticleURL}/${this.project}/${this.item}?sources`);
       return;
     }
-    window.open(clickedLink.getAttribute('href'));
+    let href = clickedLink.getAttribute('href');
+    const r = RegExp("javascript:viewsBuyBook\\([\"'](.*)[\"']\\)").exec(href);
+    if (r) {
+      href = r[1];
+    }
+    window.open(href);
   }
 
   override handleTextClick(e) {
@@ -214,5 +224,10 @@ export class DetailsTextsComponent extends ThreePanel {
       clickedLine.classList.add('selected');
       centralPanelLine.classList.add('selected');
     }
+  }
+
+  override changeText(item: string) {
+    this.ref = item;
+    this.setup();
   }
 }

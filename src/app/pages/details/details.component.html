@@ -26,6 +26,11 @@
 
       <div class="details__panel-col">
         <div class="details__panel-top">
+          <span
+            class="item-nav fas fa-arrow-left"
+            [ngClass]="{active: prev_item}"
+            (click)="handlePrevious()"
+          ></span>
           <span class="details__panel-top-text item-count">{{ topText }}</span>
           <span
             *ngIf="isZoomed()"
@@ -33,6 +38,11 @@
           ><a class="reset-zoom" href="javascript://">
             {{ "details.resetZoom" | translate }}
           </a></span>
+          <span
+            class="item-nav fas fa-arrow-right"
+            [ngClass]="{active: next_item}"
+            (click)="handleNext()"
+          ></span>
           <div class="details__panel-pagination">
             <span
               class="details__panel-left"

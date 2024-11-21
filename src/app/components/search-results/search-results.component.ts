@@ -70,12 +70,20 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     });
   }
 
+  private dataUpdated() {
+    this.results = this.translationData.length;
+    const max_page = Math.ceil(this.results / this.itemsPerPage);
+    if (max_page < this.currentPage) {
+      this.currentPage = max_page;
+    }
+  }
+
   private checkIfDataRecieved(data) {
     if (data) {
-      this.results = data.length;
       this.dataRecieved = true;
       this.waitForData = false;
       this.noRecievedData = false;
+      this.dataUpdated();
     } else {
       this.dataRecieved = false;
       this.waitForData = false;
@@ -85,6 +93,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
 
   public setItemsPerPage(e, items) {
     this.itemsPerPage = items;
+    this.dataUpdated();
   }
 
   public handleDropDown(e, index) {
@@ -138,7 +147,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
         return false;
       }
     });
-    this.results = this.translationData.length;
+    this.dataUpdated();
   }
 
   public showGlossaryArticle(lang: string, id: string, word: string) {

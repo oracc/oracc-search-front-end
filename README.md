@@ -286,6 +286,17 @@ in a normal IDE. Instead, we place a breakpoint by inserting
 use the GUI front end because this is how the debugger is displayed.
 You then have "Resume" and "Next" buttons to click.
 
+### Running tests in different browsers
+
+You can specify a different browser with the `-b` option:
+`npx cypress run -b firefox` or `npx cypress run -b /usr/bin/firefox`.
+For a browser within a snap, you might have to specify a very specific
+binary, such as:
+`npx cypress run -b /snap/chromium/current/usr/lib/chromium-browser/chrome`
+or
+`npx cypress run -b /snap/firefox/current/usr/lib/firefox/firefox`.
+Running these snaps within `cpyress open` does not seem to work, sadly.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
