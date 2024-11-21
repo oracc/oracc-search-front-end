@@ -19,11 +19,13 @@ describe('Responsive', () => {
 
   enum Direction { Ascending, Descending }
 
+  const collate = new Intl.Collator("en").compare;
+
   function assert_column_is_sorted(
     selector: string,
     transform: (text : string) => any,
     pair_assertion: (previous : any, n : any) => any
-) {
+  ) {
     let previous = null;
     cy.get(selector).each(
       ($li) => {
@@ -60,9 +62,9 @@ describe('Responsive', () => {
       t => t,
       dir == Direction.Ascending?
       (previous, n) => {
-        assert(previous <= n);
+        assert(collate(previous, n) <= 0);
       } : (previous, n) => {
-        assert(n <= previous);
+        assert(collate(n, previous) <= 0);
       }
     );
   }
