@@ -29,6 +29,7 @@ import { CookiesComponent } from './components/cookies/cookies.component';
 import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { NgInitDirective } from 'src/utils/directives';
 
 // services
 import { GetDataService } from './services/get-data/get-data.service';
@@ -59,6 +60,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     CookiesComponent,
     BreadcrumbsComponent,
+    NgInitDirective,
     SortPipe
   ],
   imports: [

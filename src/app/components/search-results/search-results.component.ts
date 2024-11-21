@@ -1,8 +1,6 @@
 import {
   Component,
   OnInit,
-  Output,
-  EventEmitter,
   OnDestroy
 } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
@@ -24,6 +22,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public results: number;
   public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
+  public errorText : string | null = null;
   public isDescending = false;
   // The last clicked header; so where the sort arrow is.
   public sortedColumn = 5;
@@ -34,8 +33,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   private tableCells: NodeListOf<Element>;
   private tableHead: Element;
   private navigationSubscription;
-
-  @Output() public wordClickEvent = new EventEmitter();
 
   constructor(
     private getDataService: GetDataService,
@@ -62,11 +59,18 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public search() {
     this.dataRecieved = false;
     this.waitForData = true;
-    this.getDataService.getSearchData().subscribe((data) => {
-      // @ts-ignore
-      this.translationData = data;
-      this.translationDataPure = data;
-      this.checkIfDataRecieved(this.translationData);
+    this.errorText = null;
+    this.noRecievedData = false;
+    this.getDataService.getSearchData().subscribe({
+      next: (data) => {
+        // @ts-ignore
+        this.translationData = data;
+        this.translationDataPure = data;
+        this.checkIfDataRecieved(this.translationData);
+      }, error: (err) => {
+        this.waitForData = false;
+        this.errorText = "search.error.down";
+      }
     });
   }
 
@@ -88,6 +92,21 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
       this.dataRecieved = false;
       this.waitForData = false;
       this.noRecievedData = true;
+    }
+  }
+
+  onResultsInit() {
+    const header = document.getElementById("header-5");
+    if (header) {
+      const hrect = header.getBoundingClientRect();
+      const bottom_delta = hrect.bottom - window.innerHeight + 50;
+      if (0 < bottom_delta) {
+        window.scrollBy({
+          top: bottom_delta,
+          left: 0,
+          behavior: "smooth"
+        });
+      }
     }
   }
 

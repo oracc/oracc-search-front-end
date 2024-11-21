@@ -1,6 +1,7 @@
 <section class="results js-results">
+  <div class="error__content" *ngIf="errorText">{{ errorText | translate }}</div>
   <div class="results__content" *ngIf="dataRecieved">
-    <div class="results__top">
+    <div class="results__top" (ngInit)="onResultsInit()">
       <span class="results__count"
         >{{ "search.resultsText" | translate }}: {{ results }}</span
       >

@@ -1,13 +1,27 @@
-// Find ancestor with a particular tag. Returns false if there isn't one.
-export function findAncestorByTag(element: HTMLElement, tag: string) : HTMLElement | null {
-  tag = tag.toUpperCase();
+// Find ancestor that matches `filterBy`. Returns false if there isn't one.
+export function findAncestorBy(
+  element: HTMLElement,
+  filterBy: (e : Element) => boolean
+) : HTMLElement | null {
   while (element) {
-    if (element.tagName == tag) {
+    if (filterBy(element)) {
       return element;
     }
     element = element.parentElement;
   }
   return null;
+}
+
+// Find ancestor with a particular tag. Returns false if there isn't one.
+export function findAncestorByTag(element: HTMLElement, tag: string) : HTMLElement | null {
+  tag = tag.toUpperCase();
+  return findAncestorBy(element, e => e.tagName == tag);
+}
+
+// Returns the ancestor of `element` that has the specified class.
+// Returns null if there is no ancestor with this class.
+export function findAncestorWithClass(element: HTMLElement, className: string) : HTMLElement | null {
+  return findAncestorBy(element, e => e.classList.contains(className));
 }
 
 // Find ancestor with a particular attribute that filterBy also returns true for.
