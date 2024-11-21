@@ -22,6 +22,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public results: number;
   public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
+  public errorText : string | null = null;
   public isDescending = false;
   // The last clicked header; so where the sort arrow is.
   public sortedColumn = 5;
@@ -58,11 +59,18 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public search() {
     this.dataRecieved = false;
     this.waitForData = true;
-    this.getDataService.getSearchData().subscribe((data) => {
-      // @ts-ignore
-      this.translationData = data;
-      this.translationDataPure = data;
-      this.checkIfDataRecieved(this.translationData);
+    this.errorText = null;
+    this.noRecievedData = false;
+    this.getDataService.getSearchData().subscribe({
+      next: (data) => {
+        // @ts-ignore
+        this.translationData = data;
+        this.translationDataPure = data;
+        this.checkIfDataRecieved(this.translationData);
+      }, error: (err) => {
+        this.waitForData = false;
+        this.errorText = "search.error.down";
+      }
     });
   }
 
@@ -84,7 +92,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     if (header) {
       const hrect = header.getBoundingClientRect();
       const bottom_delta = hrect.bottom - window.innerHeight + 50;
-      console.log(`delta ${bottom_delta}`);
       if (0 < bottom_delta) {
         window.scrollBy({
           top: bottom_delta,

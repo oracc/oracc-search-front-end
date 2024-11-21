@@ -28,7 +28,10 @@
     "ancientWordText": "Ancient word",
     "noResultsText": "No results for given word.",
     "placeholderText": "Search Oracc",
-    "placeholderTextFilter": "Filter periods"
+    "placeholderTextFilter": "Filter periods",
+    "error": {
+      "down": "Oracc search is currently unavailable, please try again later."
+    }
   },
   "cookies": {
     "text1": "Oracc uses cookies only to collect Google Analytics data. Read more",
