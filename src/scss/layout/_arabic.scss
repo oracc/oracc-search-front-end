@@ -1,4 +1,4 @@
-:lang(ar) {
+[lang="ar"] {
   .header {
     .header__nav-lang-link {
       &:first-of-type {
@@ -7,7 +7,7 @@
           left: -15px;
           right: initial;
         }
-        @media only screen and (max-width: 991px) {
+        @media only screen and (max-width: 600px) {
           margin-left: 15px;
           &::after {
             left: -9px;
@@ -16,12 +16,12 @@
       }
     }
     .header__nav-bar {
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         left: 100%;
       }
     }
     .header__nav-bar--active {
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         left: 0;
       }
     }
@@ -30,7 +30,7 @@
     .footer__social-link {
       margin-left: 0;
       margin-right: 42px;
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         margin-right: 0;
       }
     }
@@ -93,16 +93,10 @@
         margin-right: 0;
       }
     }
-    .details__panel-list-item {
-      &:first-of-type,
-      &:last-of-type {
-        transform: rotateZ(180deg);
-      }
-    }
   }
   .cookies {
     .cookies__text {
-      @media only screen and (max-width: 991px) {
+      @media only screen and (max-width: 600px) {
         margin-right: 0;
         margin-left: 35px;
       }

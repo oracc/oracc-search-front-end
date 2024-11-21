@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>neo/qpn/Abdi-Liʾti[king of Arwad]</title>
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/p4.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/p3colours.css" media="screen" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"> </script>
+    <script src="/js/p4.js" type="text/javascript"> </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-0QKC3P5HJ1"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0QKC3P5HJ1');
+
+</script>
+  </head>
+  <body>
+    <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="header">
+      <h1 class="entry heading border-top"><span class="cf qpn">Abdi-Liʾti</span><span class="gw"> [KING OF ARWAD]</span> <span class="pos">(RN)</span></h1>
+      <p class="icount">
+        <a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c">6 instances</a>
+      </p>
+    </div>
+    <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="forms">
+      <p class="forms"><span class="iheader">Written forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><sup class="sux">m</sup><span x="3" class="akk">ab</span>-<span x="3" class="akk">di</span>-<span x="3" class="akk">li</span>-<span x="3" class="akk">iʾ</span>-<span x="3" class="akk">ti</span></span></a>.</p>
+    </div>
+    <p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="norms"><span class="iheader">Normalized forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c">Abdi-Liʾti</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><sup class="sux">m</sup><span x="3" class="akk">ab</span>-<span x="3" class="akk">di</span>-<span x="3" class="akk">li</span>-<span x="3" class="akk">iʾ</span>-<span x="3" class="akk">ti</span></span></a>).</p>
+    <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="senses">
+      <h3 class="sense"><span class="sensenum">1.</span> king of Arwad<a class="icount" href="javascript://" onclick="act_isid(event)" data-lang="qpn" data-isid="qpn.r00002c"> (6x/100%)</a></h3>
+    </div>
+    <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="purl">
+      <p>ID=http://oracc.org/neo/</p>
+    </div>
+    <hr xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="article" />
+  </body>
+</html>

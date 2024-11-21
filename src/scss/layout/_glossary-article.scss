@@ -1,10 +1,10 @@
 .glossary__content {
   .heading {
-    font-size: 26px;
+    font-size: 1.5rem;
     color: $grayDark;
     margin-bottom: 10px;
-    @media only screen and (max-width: 991px) {
-      font-size: 20px;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.3rem;
     }
     span.cf {
       color: $red;
@@ -21,7 +21,7 @@
     .icount {
       font-family: $fontPrimary;
       color: $blueDark;
-      font-size: 18px;
+      font-size: 1.2rem;
       font-weight: 700;
     }
     .forms {

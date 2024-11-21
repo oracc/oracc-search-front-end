@@ -58,10 +58,10 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .search__suggestions {
     max-width: 241px;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .search__suggestions p {

@@ -1,13 +1,12 @@
 @import "../../../scss/config/variables";
 
 .footer {
-  height: 60px;
   width: 100%;
   background-color: $blueDark;
   color: $white;
   margin-bottom: 80px;
   transition: $dur $ease;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     height: auto;
     padding-top: 23px;
   }
@@ -22,27 +21,38 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
   }
 }
 
+.site__description {
+  margin-inline: 5vw;
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 0.5rem;
+  color: $grayLight;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
 .footer__logo-link {
   color: $white;
-  font-size: 23px;
+  font-size: 1.4rem;
   transition: $dur $ease;
   &:hover {
     color: $blueLight;
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     display: none;
   }
 }
 
 .footer__center-text {
-  font-size: 12px;
-  @media only screen and (max-width: 991px) {
-    font-size: 9px;
+  font-size: 0.75rem;
+  @media only screen and (max-width: 600px) {
     text-align: center;
     display: block;
     margin-bottom: 16px;
@@ -57,10 +67,10 @@
 }
 
 .footer__social {
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     min-width: 120px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 24px;
   }
 }
@@ -68,12 +78,12 @@
 .footer__social-link {
   color: $white;
   margin-left: 42px;
-  font-size: 18px;
+  font-size: 1.2rem;
   transition: $dur $ease;
   &:hover {
     color: $blueLight;
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 600px) {
     margin-left: 0;
   }
 }

@@ -1,0 +1,33 @@
+@import "../../../scss/config/variables";
+//@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+.details--score {
+  .heading {
+    font-size: 1.1rem;
+    @media only screen and (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
+  .transliteration {
+    font-size: 0.8rem;
+  }
+  .noncl,
+  .xlabel,
+  .lnum,
+  .h2 {
+    color: $grayBorder;
+  }
+  td {
+    padding-right: 20px;
+  }
+  tr {
+    &.selected {
+      background-color: $blueSky;
+    }
+  }
+  .details__panel-main--right {
+    tr {
+      color: $grayBorder;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+name: End-to-end tests
+run-name: Run all Cypress tests
+on: [push]
+jobs:
+  Cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+      - run: echo "Running end-to-end tests on ${{ github.ref }}"
+      - run: npm install
+      - run: npm install -g @angular/cli
+      - name: Run server
+        run: ng serve&
+      - name: Run Cypress tests
+        run: npx cypress run
+      - run: echo "Status is ${{ job.status }}"

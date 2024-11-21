@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GetDataService } from '../../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
-import { getBreadcrumbs } from 'src/utils/utils';
 
 @Component({
   selector: 'app-search',
@@ -9,27 +9,22 @@ import { getBreadcrumbs } from 'src/utils/utils';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  private searchInput: Element;
   private searchButton: HTMLElement;
   public placeholderText: string;
-  public isMobile: boolean;
   public routerLink: string;
   public searchParam: string;
   public showSuggestions = false;
-  public breadcrumbLink =  getBreadcrumbs();
 
   constructor(
+    private router: Router,
     private getDataService: GetDataService,
     private breadcrumbsService: HandleBreadcrumbsService
   ) {
-    this.breadcrumbsService.setBreadcrumbs(this.breadcrumbLink);
+    this.breadcrumbsService.setBreadcrumbs(this.router);
   }
 
   ngOnInit() {
-    this.routerLink =
-      window.innerWidth < 991 ? 'search/search-results' : 'search-results';
-    this.isMobile = window.innerWidth < 991 ? true : false;
-    this.searchInput = document.querySelector('.js-search-input');
+    this.routerLink = 'search-results';
     this.searchButton = document.querySelector('.js-search-btn');
   }
 
@@ -51,5 +46,14 @@ export class SearchComponent implements OnInit {
 
   setShowSuggestions(showSuggestions: boolean) {
     this.showSuggestions = showSuggestions;
+  }
+
+  focusSuggestions() {
+    if (this.showSuggestions) {
+      const suggestions = document.getElementsByClassName('suggestion');
+      if (suggestions.length != 0) {
+        (suggestions[0] as HTMLElement).focus();
+      }
+    }
   }
 }
