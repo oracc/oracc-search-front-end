@@ -18,10 +18,10 @@ export function findAncestorByTag(element: HTMLElement, tag: string) : HTMLEleme
   return findAncestorBy(element, e => e.tagName == tag);
 }
 
-// Returns the ancestor of `element` that has the specified class.
-// Returns null if there is no ancestor with this class.
-export function findAncestorWithClass(element: HTMLElement, className: string) : HTMLElement | null {
-  return findAncestorBy(element, e => e.classList.contains(className));
+// Returns the ancestor of `element` that has the specified attribute.
+// Returns null if there is no ancestor with this attribute.
+export function findAncestorWithAttribute(element: HTMLElement, attrName: string) : HTMLElement | null {
+  return findAncestorBy(element, e => e.hasAttribute(attrName));
 }
 
 // Find ancestor with a particular attribute that filterBy also returns true for.

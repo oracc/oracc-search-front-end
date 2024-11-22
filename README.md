@@ -222,7 +222,7 @@ You can learn more about Apache configurations for an Angular app [here](https:/
 
 ### Angular config for serving the app under a custom url directory
 
-As explained above, the production and staging apps are configured to run under a `/new` directory while the gh-pages deployment and development environment just run from the root directory `/`. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
+As explained above, the production and staging apps are configured to run under a `/search` directory while the gh-pages deployment and development environment just run from the root directory `/`. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/search/"` value accordingly.
 
 It is also possible to define the `baseHref` property using a custom build configuration if desired. You can do this by setting a custom field within the `configurations` object within `angular.json`. For instance, we currently have set the `github-pages` configuration which sets a custom `baseHref`and is run with `ng build --configuration=github-pages`.
 

@@ -119,6 +119,7 @@ describe('Journey', () => {
       it('can get to occurences/tests/score', () => {
         const input = "cow";
         const result = "ab";
+        const meaning = "harness"
         const ref = "(ED Animals A 1)";
         const score = "ur₃";
         cy.visit("/");
@@ -127,15 +128,14 @@ describe('Journey', () => {
         check_page_is_search_results();
         cy.get('span.results__table-cell').contains(result).click();
         check_page_is_search_result();
-        // click on the (86x/100%) link
-        cy.get('.sense a.icount').click();
+        cy.get('.lex-phra').contains(meaning).click();
         check_page_is_details();
         cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
         cy.get('.details__panel-main tr.l .lnum').contains("1").click();
         check_page_is_details_score();
         cy.get('table.score_block tr.l td.tlit a').contains(score).click();
-        check_page_is_glossary_article_score();
+        check_page_is_glossary_article_score(score);
         cy.get('.senses').contains("/100%)");
       });
 
@@ -143,6 +143,7 @@ describe('Journey', () => {
         const input = "cow";
         const result = "ab";
         const ref = "(ED Animals A 1)";
+        const meaning = "harness"
         const score = "3";
         const text = "Archaic Animals A 3";
         cy.visit("/");
@@ -151,8 +152,7 @@ describe('Journey', () => {
         check_page_is_search_results();
         cy.get('span.results__table-cell').contains(result).click();
         check_page_is_search_result();
-        // click on the (86x/100%) link
-        cy.get('.sense a.icount').click();
+        cy.get('.lex-phra').contains(meaning).click();
         check_page_is_details();
         cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
@@ -179,7 +179,7 @@ describe('Journey', () => {
         const ref = "CBS 3656 o 25";
         const transliteration_word = "gada";
         const expected_form = "gada,gin";
-        const expected_ref = "(H 002 KXXIII.15)";
+        const expected_ref = "(BM 120011 r 18)";
         cy.visit("/");
         check_page_is_search(config);
         cy.get('.search__input').type(`${input}{enter}`);
@@ -271,12 +271,17 @@ function check_page_is_details_score() {
 
 // Sixth page: glossary-article-texts.component
 function check_page_is_glossary_article_texts() {
-  cy.get('div.glossary-article-text');
+  cy.location().should(loc => {
+    expect(loc.pathname).to.contain('occurrences/texts/');
+    expect(loc.pathname).not.to.contain('texts/score/');
+  });
 }
 
 // Alternate sixth page: glossary-article-score.component
-function check_page_is_glossary_article_score() {
-  cy.get('div.glossary-article-score');
+function check_page_is_glossary_article_score(score) {
+  cy.location().should(loc => {
+    expect(loc.pathname).to.contain(`texts/score/${encodeURIComponent(score)}`);
+  });
 }
 
 // Seventh page: project-texts.component

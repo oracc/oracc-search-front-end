@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { findAttribute, findAncestorWithClass } from '../../../utils/utils';
+import { findAttribute, findAncestorWithAttribute } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-score',
@@ -43,7 +43,7 @@ export class GlossaryArticleScoreComponent implements OnInit {
   }
 
   public handleTermClick(e) {
-    const anchorEl = findAncestorWithClass(e.target, 'icount');
+    const anchorEl = findAncestorWithAttribute(e.target, 'data-isid');
     if (!anchorEl) {
       return;
     }

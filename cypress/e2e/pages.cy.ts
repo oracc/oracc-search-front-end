@@ -65,14 +65,14 @@ describe('Pages', () => {
     it('can be navigated between', () => {
       cy.visit("/");
       const search = "king";
-      const result = "Abdi-Li\u02beti";
-      const ref1 = "Sennacherib 4 36";
-      const ref2 = "Sennacherib 16 iii 17";
-      const ref3 = "Sennacherib 17 ii 77";
+      const result = "Abdi-milkuti";
+      const ref1 = "Esarhaddon 1 ii 65";
+      const ref2 = "Esarhaddon 2 i 19";
+      const ref3 = "Esarhaddon 3 ii 2'";
       cy.get('.search__input').type(search);
       cy.get('.suggestion').contains(search).click();
       cy.get('.results__table-row').contains(result).click();
-      cy.get('.forms .icountu').click();
+      cy.get('#periods .icountu').click();
       cy.get('.details__panel-main').contains(ref3);
       cy.get('.details__panel-main').contains(ref2);
       cy.get('.details__panel-main').contains(ref1).click();
@@ -91,9 +91,9 @@ describe('Pages', () => {
 
   describe('score page', () => {
     it('is reachable', () => {
-      const search = "cow";
-      const translit = /^ab$/;
-      const ref = "(ED Animals A 1)";
+      const search = "harness";
+      const translit = /^ur$/;
+      const ref = "ED Animals A 1";
       const score = "1";
       const title = "Score";
       const score1 = "ab";
@@ -101,7 +101,7 @@ describe('Pages', () => {
       cy.get('.search__input').type(search + "{enter}");
       cy.get('span.results__table-cell').contains(translit).click();
       // click the (86x/100%) link
-      cy.get('.icount').should('be.visible').contains('%').click();
+      cy.get('.icountu').should('be.visible').contains('%').click();
       cy.get('a').contains(ref).click();
       // Now we should have score links (line numbers in Text panel)
       cy.get('td.lnum a').contains(score).click();
