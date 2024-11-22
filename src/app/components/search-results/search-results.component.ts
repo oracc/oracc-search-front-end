@@ -13,8 +13,8 @@ import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/hand
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit, OnDestroy {
-  public dataRecieved = false;
-  public noRecievedData = false;
+  public dataReceived = false;
+  public noReceivedData = false;
   public waitForData = false;
   public currentPage = 1;
   public sortField = 'cf';
@@ -57,16 +57,16 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   public search() {
-    this.dataRecieved = false;
+    this.dataReceived = false;
     this.waitForData = true;
     this.errorText = null;
-    this.noRecievedData = false;
+    this.noReceivedData = false;
     this.getDataService.getSearchData().subscribe({
       next: (data) => {
         // @ts-ignore
         this.translationData = data;
         this.translationDataPure = data;
-        this.checkIfDataRecieved(this.translationData);
+        this.checkIfDataReceived(this.translationData);
       }, error: (err) => {
         this.waitForData = false;
         this.errorText = "search.error.down";
@@ -82,16 +82,16 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     }
   }
 
-  private checkIfDataRecieved(data) {
+  private checkIfDataReceived(data) {
     if (data) {
-      this.dataRecieved = true;
+      this.dataReceived = true;
       this.waitForData = false;
-      this.noRecievedData = false;
+      this.noReceivedData = false;
       this.dataUpdated();
     } else {
-      this.dataRecieved = false;
+      this.dataReceived = false;
       this.waitForData = false;
-      this.noRecievedData = true;
+      this.noReceivedData = true;
     }
   }
 

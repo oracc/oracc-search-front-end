@@ -1,6 +1,6 @@
 <section class="results js-results">
   <div class="error__content" *ngIf="errorText">{{ errorText | translate }}</div>
-  <div class="results__content" *ngIf="dataRecieved">
+  <div class="results__content" *ngIf="dataReceived">
     <div class="results__top" (ngInit)="onResultsInit()">
       <span class="results__count"
         >{{ "search.resultsText" | translate }}: {{ results }}</span
@@ -140,7 +140,7 @@
   <div class="results__fetching" *ngIf="waitForData">
     <i class="fas fa-spinner"></i>
   </div>
-  <span class="results__none" *ngIf="noRecievedData">{{
+  <span class="results__none" *ngIf="noReceivedData">{{
     "search.noResultsText" | translate
   }}</span>
 </section>
