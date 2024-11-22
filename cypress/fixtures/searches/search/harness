@@ -1,0 +1,285 @@
+[
+  {
+    "gw": "harness",
+    "headword": "sur[harness]V/t",
+    "cf": "sur",
+    "icount": 5,
+    "id": "o0038478",
+    "senses_mng": [
+      "to harness, tie, tie up"
+    ],
+    "forms_n": [
+      "im-ta-sur₅-sur₅",
+      "im-ta-zur{+su-ur}-zur{+su-ur}",
+      "mi-ni-sur-ra",
+      "mi-ni-sur-ra-ŋu₁₀",
+      "surₓ(ERIN₂)"
+    ],
+    "norms_n": [
+      "mu.ni:sur;a",
+      "mu.ni:sur;a,ŋu",
+      "sur",
+      "V.m.ta:sur",
+      "Vm.ta:sur"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Old Babylonian",
+      "Neo-Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "edlex:Q000031.82.2",
+      "obel:P266485.31.3",
+      "obel:P266485.52.3",
+      "obel:P283778.14.3",
+      "obel:P345457.35.3"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "sur",
+      "harness"
+    ],
+    "sort": "['harness']",
+    "instances_count": 5
+  },
+  {
+    "gw": "joined",
+    "headword": "rukkusu[joined]AJ",
+    "cf": "rukkusu",
+    "icount": 5,
+    "id": "x0009405",
+    "senses_mng": [
+      "harnessed"
+    ],
+    "forms_n": [
+      "ru-uk-ku-sa",
+      "ru-uk-ku-sa-ma",
+      "ru-uk-ku-su",
+      "ruk-ku-sa"
+    ],
+    "norms_n": [
+      "rukkusā",
+      "rukkusāma",
+      "rukkusū"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006482.121.3",
+      "rinap/rinap2:Q006546.262.11",
+      "rinap/rinap2:Q006546.284.12",
+      "rinap/rinap3:Q003496.427.1",
+      "rinap/rinap3:Q003508.52.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "rukkusu",
+      "joined"
+    ],
+    "sort": "['joined']",
+    "instances_count": 5
+  },
+  {
+    "gw": "tie up",
+    "headword": "ṣamādu[tie up]V",
+    "cf": "ṣamādu",
+    "icount": 4,
+    "id": "x0016322",
+    "senses_mng": [
+      "cause to bind up",
+      "harness",
+      "tie up"
+    ],
+    "forms_n": [
+      "aṣ-mid-su-nu-ti",
+      "LAL-su-nu-ti",
+      "ta-ṣa-am-mi-di",
+      "u₂-ša₂-aṣ-mid-su-ma"
+    ],
+    "norms_n": [
+      "aṣmissunūti",
+      "taṣammidī",
+      "ušaṣmidsuma"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "obel:P345533.40.11",
+      "rinap/rinap5:Q003722.121.3",
+      "rinap/rinap5:Q003758.10.3",
+      "rinap/rinap5:Q007565.15.4"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "ṣamādu",
+      "tie up"
+    ],
+    "sort": "['tie up']",
+    "instances_count": 4
+  },
+  {
+    "gw": "bound up",
+    "headword": "ṣamdu[bound up]AJ",
+    "cf": "ṣamdu",
+    "icount": 2,
+    "id": "x0008604",
+    "senses_mng": [
+      "equipped",
+      "harnessed"
+    ],
+    "forms_n": [
+      "ṣa-an-du"
+    ],
+    "norms_n": [
+      "ṣandu",
+      "ṣandū"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003965.8.11",
+      "rinap/rinap4:Q003230.357.3"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "ṣamdu",
+      "bound up"
+    ],
+    "sort": "['bound up']",
+    "instances_count": 2
+  },
+  {
+    "gw": "harness",
+    "headword": "ibbaru[harness]N",
+    "cf": "ibbaru",
+    "icount": 2,
+    "id": "o0030523",
+    "senses_mng": [
+      "harness"
+    ],
+    "forms_n": [
+      "i-ba-ru",
+      "{tug₂}ib₂-ba-ru-e"
+    ],
+    "norms_n": [
+      "ibbaru",
+      "ibbaru,e"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Babylonian"
+    ],
+    "instances": [
+      "obel:P283745.28.3",
+      "obel:P342931.16.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "ibbaru",
+      "harness"
+    ],
+    "sort": "['harness']",
+    "instances_count": 2
+  },
+  {
+    "gw": "harness",
+    "headword": "ur[harness]N",
+    "cf": "ur",
+    "icount": 2,
+    "id": "o0041669",
+    "senses_mng": [
+      "harness"
+    ],
+    "forms_n": [
+      "ur₃"
+    ],
+    "norms_n": [
+      "ur"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000012.1.2",
+      "edlex:Q000038.57.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "ur",
+      "harness"
+    ],
+    "sort": "['harness']",
+    "instances_count": 2
+  },
+  {
+    "gw": "harness",
+    "headword": "naṣmadu[harness]N",
+    "cf": "naṣmadu",
+    "icount": 1,
+    "id": "x0020846",
+    "senses_mng": [
+      "yoked team"
+    ],
+    "forms_n": [
+      "na-aṣ-ma-di"
+    ],
+    "norms_n": [
+      "naṣmadī"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003496.499.1"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "naṣmadu",
+      "harness"
+    ],
+    "sort": "['harness']",
+    "instances_count": 1
+  },
+  {
+    "gw": "~harness",
+    "headword": "adtab[~harness]N",
+    "cf": "adtab",
+    "icount": 1,
+    "id": "o0023605",
+    "senses_mng": [
+      "collar"
+    ],
+    "forms_n": [
+      "ad-tab"
+    ],
+    "norms_n": [
+      "adtab"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P355694.35.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "adtab",
+      "~harness"
+    ],
+    "sort": "['~harness']",
+    "instances_count": 1
+  }
+]
