@@ -126,3 +126,56 @@ export function findInCollection(collection: HTMLCollection, predicate: (Element
   }
   return null;
 }
+
+// add k: e.getAttribute(v) to params for the first element that has
+// such an attribute.
+function addParam(params, elements, k, v) {
+  for (let e of elements) {
+    if (e.hasAttribute(v)) {
+      params[k] = e.getAttribute(v);
+      return;
+    }
+  }
+}
+
+// Adds elements to params based on the attributes of elements.
+// for each item (k, v) in dict, find the first (if any) of elements
+// that has v as an attribute and if so adds k: e.getAttribute(v)
+// to params.
+// Ignores nulls in the elements list.
+export function addParams(params, elements, dict) {
+  const es = elements.filter(e => e);
+  for (let k in dict) {
+    const v = dict[k];
+    addParam(params, elements, k, v);
+  }
+}
+
+// Adds gw (guideword) and pos (part of speech) to params
+// if #p4Article is in the document and has the associated
+// attributes.
+export function addArticleParams(params) {
+  const article = document.getElementById('p4Article')
+  if (!article) {
+    return;
+  }
+  if (article.hasAttribute('data-gw')) {
+    params['gw'] = article.getAttribute('data-gw');
+  }
+  if (article.hasAttribute('data-pos')) {
+    params['pos'] = article.getAttribute('data-pos');
+  }
+}
+
+export function mergeParams(base, queryParams, keys) {
+  console.log(queryParams);
+  for (let key of keys) {
+    if (key in queryParams) {
+      base[key] = queryParams[key];
+    } else {
+      console.log(`no key ${key}`);
+    }
+  }
+  console.log(base);
+  return base;
+}

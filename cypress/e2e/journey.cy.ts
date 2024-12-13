@@ -199,6 +199,51 @@ describe('Journey', () => {
         cy.get('p.norms span').contains(form);
       });
 
+      describe('search results page', () => {
+        describe('type of result', () => {
+          it('shows morphological form', () => {
+            const input = "eden";
+            const result = "plain";
+            const form = "~,ak";
+            cy.visit("/");
+            cy.get('.search__input').type(`${input}{enter}`);
+            cy.get('.results__table-cell').contains(result).click();
+            cy.get('div.morphs .icountu').contains(form).click();
+            cy.get('div.title-word').contains(`${input} [${result}] morphology: ${form}`);
+          });
+        });
+
+        describe('lexical association', () => {
+          it('goes to the correct next page', () => {
+            const input = "eden";
+            const result = "plain";
+            const lexphra = "qatnu[thin]AJ";
+            const text = "LTBA 1, 40 o iii 45'";
+            cy.visit("/");
+            cy.get('.search__input').type(`${input}{enter}`);
+            cy.get('.results__table-cell').contains(result).click();
+            cy.get('#lexphrases h2.lex-phra').contains(lexphra).click();
+            cy.get('#p4CElineContent .ce-label').contains(text);
+          });
+
+          it('text jumps forward two pages', () => {
+            const input = "eden";
+            const result = "plain";
+            const text = "LTBA 1, 40 o iii 45'";
+            const textTitle = "LTBA 1, 40";
+            cy.visit("/");
+            cy.get('.search__input').type(`${input}{enter}`);
+            cy.get('.results__table-cell').contains(result).click();
+            cy.get('#lexphrases .lex-line').contains(text).click();
+            check_page_is_details_texts();
+            cy.get('.p3h2').contains(textTitle);
+            cy.get('.bcrumbs__list .bcrumbs__list-item').contains('occurrences').click();
+            check_page_is_details();
+            cy.get('#p4CElineContent .ce-label').contains(text);
+          });
+        });
+      });
+
       describe('search suggestion box', () => {
         it('is navigable with up and down arrow keys', () => {
           const search = "wa";

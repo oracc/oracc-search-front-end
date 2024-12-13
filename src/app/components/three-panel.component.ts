@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import {  PANEL_TYPE } from '../../utils/consts';
 import { GetDataService } from '../services/get-data/get-data.service';
@@ -31,6 +31,10 @@ export class ThreePanel implements OnInit {
   public isMobile: boolean = false;
   public project: string = 'neo';
   public chosenTermText: string = "";
+  public chosenTermGw: string | null;
+  public chosenTermType: string | null;
+  public chosenTermName: string | null;
+  public chosenTermPos: string | null;
   public currentPage: number | null = null;
   public zoom: number | null = null;
   readonly paginationButtonCount = 6;
@@ -39,8 +43,9 @@ export class ThreePanel implements OnInit {
   public paginationSliceStart: number = 1;
   public paginationSliceEnd: number = 7;
   public topText: string;
-  public prev_item : string | null = null;
-  public next_item : string | null = null;
+  public prev_item: string | null = null;
+  public next_item: string | null = null;
+  public endObserver: Subscription;
 
   public ngOnInit(): void {
     // Are we on a narrow (probably mobile) screen?
@@ -50,13 +55,17 @@ export class ThreePanel implements OnInit {
     // vertically stacked in this case).
     this.isMetadataPanelActive = !this.isMobile;
     this.isTextPanelActive = !this.isMobile;
-    this.router.events.subscribe((val) => {
+    this.endObserver = this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.setup();
       }
     });
     this.initialize();
     this.setup();
+  }
+
+  public ngOnDestroy() : void {
+    this.endObserver.unsubscribe()
   }
 
   // override this to capture information from the route before
@@ -73,6 +82,10 @@ export class ThreePanel implements OnInit {
     this.currentPage = null;
     this.zoom = null;
     this.chosenTermText = this.route.snapshot.paramMap.get('word');
+    this.chosenTermGw = this.route.snapshot.queryParamMap.get('gw');
+    this.chosenTermType = this.route.snapshot.queryParamMap.get('type');
+    this.chosenTermName = this.route.snapshot.queryParamMap.get('name');
+    this.chosenTermPos = this.route.snapshot.queryParamMap.get('pos');
     // All three panels need the spinner
     const spinner = "<i class='fas fa-spinner'></i>";
     this.metadataPanel = spinner;
@@ -123,7 +136,6 @@ export class ThreePanel implements OnInit {
         }
       }
     }
-    console.log(`pager ${pager} ${this.prev_item} ${this.next_item}`);
     this.setMiddlePanel(htmlData);
     const itemControls = htmlData.getElementById('p4itemNav');
     let topTextArguments = [];

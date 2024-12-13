@@ -29,7 +29,9 @@ const routes: Routes = [
       },
       {
         path: 'search-results/:word/occurrences',
-        // adding lang, isid
+        // adding lang, isid, gw (guideword),
+        // type (what classification type we are restricting to),
+        // name (what we are restricting to), pos (part of speech)
         component: DetailsComponent
         // contains links to DetailsTextsComponent
       },

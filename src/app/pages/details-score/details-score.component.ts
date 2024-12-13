@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { composedPath, findAncestorByTag, findAttribute, splitOutEnums } from '../../../utils/utils';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { findAncestorByTag, findAttribute, splitOutEnums } from '../../../utils/utils';
 import { ThreePanel } from 'src/app/components/three-panel.component';
 import { Observable } from 'rxjs';
+import { mergeParams } from '../../../utils/utils';
 
 @Component({
   selector: 'app-details-score',
@@ -67,7 +68,6 @@ export class DetailsScoreComponent extends ThreePanel {
     const anchorEl = findAncestorByTag(e.target, 'a');
     const wsig = findAttribute(e.target, 'data-wsig');
 
-    console.log(`proj: ${this.data_project} sig: ${wsig}`);
     this.router.navigate([
       'search-results',
       this.route.snapshot.paramMap.get('word'),
@@ -75,18 +75,14 @@ export class DetailsScoreComponent extends ThreePanel {
       'texts',
       'score',
       anchorEl.innerText
-    ], { queryParams: {
-      proj: this.route.snapshot.queryParams['proj'],
-      ga_lang: this.route.snapshot.queryParams['ga_lang'],
-      ga_isid: this.route.snapshot.queryParams['ga_isid'],
-      lang: this.route.snapshot.queryParams['lang'],
-      isid: this.route.snapshot.queryParams['isid'],
-      iref: this.route.snapshot.queryParams['iref'],
-      ref: this.route.snapshot.queryParams['ref'],
-      bloc: this.route.snapshot.queryParams['bloc'],
-      data_proj: this.data_project,
-      wsig: wsig
-    }});
+    ], { queryParams: mergeParams(
+      {
+        data_proj: this.data_project,
+        wsig: wsig,
+      },
+      this.route.snapshot.queryParams,
+      ['ga_lang', 'ga_isid', 'lang', 'isid', 'iref', 'ref', 'bloc', 'gw', 'type', 'name', 'pos']
+    )});
   }
 
   public handleDetailsPopupClose() {
@@ -102,18 +98,15 @@ export class DetailsScoreComponent extends ThreePanel {
         'texts',
         'score',
         'project'
-        ], { queryParams: {
-        proj: this.route.snapshot.queryParams['proj'],
-        ga_lang: this.route.snapshot.queryParams['ga_lang'],
-        ga_isid: this.route.snapshot.queryParams['ga_isid'],
-        lang: this.route.snapshot.queryParams['lang'],
-        isid: this.route.snapshot.queryParams['isid'],
-        iref: this.route.snapshot.queryParams['iref'],
-        ref: this.route.snapshot.queryParams['ref'],
-        bloc: this.route.snapshot.queryParams['bloc'],
-        project_id: this.data_project,
-        text_id: e.target.getAttribute('data-iref')
-      }})
+        ], { queryParams: mergeParams(
+          {
+            project_id: this.data_project,
+            text_id: e.target.getAttribute('data-iref')
+          },
+          this.route.snapshot.queryParams,
+          ['proj', 'ga_lang', 'ga_isid', 'lang', 'isid', 'iref', 'ref', 'bloc', 'gw', 'type', 'name', 'pos']
+        )
+      })
     }
   }
 }

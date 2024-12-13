@@ -3,7 +3,7 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { findAncestorWithAttribute } from '../../../utils/utils';
+import { findAncestorWithAttribute, mergeParams } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-texts',
@@ -58,13 +58,15 @@ export class GlossaryArticleTextsComponent implements OnInit {
         anchorElText,
         'occurrences'
       ],
-      { queryParams: {
-        proj: this.project,
-        ga_lang: this.route.snapshot.queryParams['ga_lang'],
-        ga_isid: this.route.snapshot.queryParams['ga_isid'],
-        lang: anchorEl.getAttribute('data-lang'),
-        isid: anchorEl.getAttribute('data-isid')
-      }}
+      { queryParams: mergeParams(
+        {
+          proj: this.project,
+          lang: anchorEl.getAttribute('data-lang'),
+          isid: anchorEl.getAttribute('data-isid')
+        },
+        this.route.snapshot.queryParams,
+        ['ga_lang', 'ga_isid', 'gw', 'type', 'name', 'pos'])
+      }
     );
   }
 

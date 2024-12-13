@@ -1,7 +1,12 @@
 <section class="details details--main">
   <div class="container content details__content">
-    <span class="details__word">{{ chosenTermText }}</span>
-
+    <div class="title-word">
+      <span class="details__word">{{ chosenTermText }} </span>
+      <span *ngIf="chosenTermGw" class="details__gw">[{{ chosenTermGw }}] </span>
+      <span *ngIf="chosenTermType" class="details__type">{{ ("details.wordType." + chosenTermType) | translate }}: </span>
+      <span *ngIf="chosenTermName" class="details__name">{{ chosenTermName }} </span>
+      <span *ngIf="chosenTermPos" class="details__pos">({{ chosenTermPos }})</span>
+    </div>
     <div class="details__panel">
       <div class="details__panel-col">
         <div

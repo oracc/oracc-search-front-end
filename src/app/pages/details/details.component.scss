@@ -12,17 +12,20 @@
   padding: 0;
 }
 
-.details__word {
+.title-word {
   display: block;
-  color: $red;
   font-size: 1.7rem;
   margin-top: -8px;
   margin-bottom: 45px;
-  font-weight: 700;
   @media only screen and (max-width: 600px) {
     margin-bottom: 25px;
     font-size: 1.6rem;
   }
+}
+
+.details__word {
+  color: $red;
+  font-weight: 700;
 }
 
 .details__panel {

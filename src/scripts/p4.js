@@ -1,3 +1,4 @@
+function act_ilnk() {}
 function act_isid() {}
 function act_iref() {}
 function act_wsig() {}

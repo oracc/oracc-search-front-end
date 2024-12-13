@@ -50,6 +50,14 @@
     "linesText": "{0, plural, one {{0} Line} other {{0} Lines}}",
     "sourceText": "Source",
     "scoreText": "Score",
-    "resetZoom": "Reset Filter"
+    "resetZoom": "Reset Filter",
+    "wordType": {
+      "forms": "form",
+      "morphology": "morphology",
+      "norm": "normalized",
+      "period": "period",
+      "sense": "sense",
+      "verbal prefix": "verbal prefix"
+    }
   }
 }
