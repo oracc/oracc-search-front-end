@@ -8,11 +8,10 @@
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
   <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
-  <script type="text/javascript" src="/js/p4-cuneify.js">&#160;</script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
   <title>neo</title>    
 </head>
-  <body><div id="p4Pager" class="bborder-top list item dglo iart zoom default" data-proj="neo" data-glos="qpn" data-glet="A" data-gent="x000028690" data-prev="x000028700" data-item="x000028690" data-next="x000014770" data-bkmk="x000028690" data-lang="en">
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list item dglo iart zoom default" data-proj="neo" data-glos="qpn" data-glet="A" data-gent="x000028690" data-prev="x000028700" data-item="x000028690" data-next="x000014770" data-bkmk="x000028690" data-lang="en">
   <div id="p4Masthead">
     <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
       <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
@@ -144,7 +143,7 @@
         <div class="ns-glo-sec" id="periods">
           <h1>Attested in the following periods:</h1>
           <h2>
-            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="" data-lang="qpn" data-isid="qpn.r00002e.p.s000">Neo-Assyrian (7x/100%)</a>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Neo-Assyrian" data-lang="qpn" data-isid="qpn.r00002e.p.s000">Neo-Assyrian (7x/100%)</a>
           </h2>
         </div>
         <div class="ns-glo-sec" id="senses">
@@ -302,6 +301,8 @@
 		proj=(null)
 		htmd=(null)
 		html=/home/oracc/neo/02www/cbd/qpn/x000028690.html
+		cfy=(null)
+		img=(null)
 		dotted=(null)
 		index=20
 		page=1
@@ -357,7 +358,7 @@ HTTP_SEC_CH_UA_PLATFORM="Linux"
 HTTP_SEC_FETCH_DEST=empty
 HTTP_SEC_FETCH_MODE=cors
 HTTP_SEC_FETCH_SITE=cross-site
-HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.13.3 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.15.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
 ORACC=/home/oracc
 ORACC_BUILDS=/home/oracc
 ORACC_HOME=/home/oracc
@@ -369,7 +370,7 @@ PATH_INFO=/neo/qpn/x000028690
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/qpn/x000028690
 QUERY_STRING=
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=44300
+REMOTE_PORT=51304
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/qpn/x000028690

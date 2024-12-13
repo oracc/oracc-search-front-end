@@ -8,16 +8,16 @@
   "oracc/neo/akk/x0000307": {
     "url": "https://build-oracc.museum.upenn.edu/neo/akk/x0000307"
   },
-  "oracc/neo/xis%3Dakk.r004064/akk": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004064"
+  "oracc/neo/xis%3Dakk.r004091/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004091"
   },
-  "oracc/neo/xis%3Dakk.r004064/zoom%3D5/akk": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004064&zoom=5"
+  "oracc/neo/xis%3Dakk.r004091/zoom%3D5/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004091&zoom=5"
   },
-  "oracc/neo/page%3D2/xis%3Dakk.r004064/zoom%3D5/akk": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004064&zoom=5&page=2"
+  "oracc/neo/page%3D2/xis%3Dakk.r004091/zoom%3D5/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004091&zoom=5&page=2"
   },
-  "oracc/neo/page%3D2/xis%3Dakk.r004064/akk": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004064&page=2"
+  "oracc/neo/page%3D2/xis%3Dakk.r004091/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r004091&page=2"
   }
 }

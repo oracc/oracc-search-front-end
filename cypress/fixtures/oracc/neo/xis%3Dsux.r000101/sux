@@ -8,11 +8,10 @@
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
   <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
-  <script type="text/javascript" src="/js/p4-cuneify.js">&#160;</script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
   <title>neo</title>    
 </head>
-  <body><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="sux" data-glet="entry_ids" data-gxis="sux.r0000c8" data-zoom="0" data-sort="123">
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="sux" data-glet="entry_ids" data-gxis="sux.r000101" data-zoom="0" data-sort="123">
   <div id="p4Masthead">
     <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
       <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
@@ -124,14 +123,14 @@
   </div>
   <div id="p4Data">
     <div id="p4Menu">
-<div id="p4MenuOutline" class="pgotl level0" data-zmax="1"><h2>Middle Babylonian</h2><div class="pgotl level1"><h3>unknown</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(1)" data-zoom="1">Nippur (mod. Nuffar) [1]</a></p></div></div></div></div>
+<div id="p4MenuOutline" class="pgotl level0" data-zmax="1"><h2>Old Babylonian</h2><div class="pgotl level1"><h3>unknown</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(1)" data-zoom="1">Girsu (mod. Tello) [1]</a></p></div></div></div></div>
 
     <div id="p4Content">
       <div xmlns="http://www.w3.org/1999/xhtml" class="ce" id="p4CElineContent">
-  <h2 class="ce-heading h2 border-top heading">Middle Babylonian/unknown/Nippur (mod. Nuffar)</h2>
-  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">a</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ŋuruš</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">šu</span>-<span x="3" class="">si</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">me</span>-<span class="sux">⸢</span><span x="3" class="">ri</span>-<span x="3" class="">a</span>-<span x="3" class="">zu</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sux">[</span><span x="3" class="">a</span><sup class="sux">?</sup><span class="sux">]</span>-<span class="sux">⸢</span><span x="3" class="">bala</span><span class="sux">⸣</span>-<span x="3" class="">ŋa₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">na</span>-<span x="3" class="">nam</span></span> </p>
+  <h2 class="ce-heading h2 border-top heading">Old Babylonian/unknown/Girsu (mod. Tello)</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><sup class="sux">d</sup><span x="3" class="">en</span><span class="sux">]</span>-<span class="sux">⸢</span><span x="3" class="">lil₂</span><span class="sux">⸣</span>-<span x="3" class="">la₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">e₂</span>-<span x="3" class="">kur</span>-<span class="sux">⸢</span><span x="3" class="">ra</span><span class="sux">⸣</span></span> /  <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span><span x="3" class="">x</span><span class="sux">⸣</span>-<span x="3" class="">ŋa₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ša₃</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ab</span><sup class="sux">*</sup>-<span x="3" class="">za</span>-<span x="3" class="">za</span><sup class="sux">!</sup></span> /  <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ḫu</span>-<span x="3" class="">ŋe₆</span></span> </p>
   <p class="ce-label">
-    <a href="javascript://" onclick="act_iref(event)" data-iref="P260028.16">(CBS 3656 o 25)</a>
+    <a href="javascript://" onclick="act_iref(event)" data-iref="P315472.7">(NFT 204-206 (AO 4328 (+) 4330) o i 2')</a>
   </p>
 </div>
 
@@ -148,7 +147,7 @@
   
   <p>The pager was invoked as:</p>
   
-  <pre id="p4Invoked">/home/oracc/bin/px web=1 xis=sux%2Er0000c8 glos=sux project=neo</pre>
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 xis=sux%2Er000101 glos=sux project=neo</pre>
 
   <h2>Pager Status</h2>
   
@@ -207,18 +206,18 @@
 <h3>	struct isp_cache ip->cache</h3>
 		sys=/home/oracc/www/p4.d
 		project=/home/oracc/www/p4.d/neo
-		sub=/home/oracc/www/p4.d/neo/sux/sux.r0000c8
-		out=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123
-		list=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/list
-		sort=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123
+		sub=/home/oracc/www/p4.d/neo/sux/sux.r000101
+		out=/home/oracc/www/p4.d/neo/sux/sux.r000101/123
+		list=/home/oracc/www/p4.d/neo/sux/sux.r000101/list
+		sort=/home/oracc/www/p4.d/neo/sux/sux.r000101/123
 		csi=(null)
-		tsv=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123/pag.tsv
-		max=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123/max.tsv
-		mol=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123/zoom.mol
+		tsv=/home/oracc/www/p4.d/neo/sux/sux.r000101/123/pag.tsv
+		max=/home/oracc/www/p4.d/neo/sux/sux.r000101/123/max.tsv
+		mol=/home/oracc/www/p4.d/neo/sux/sux.r000101/123/zoom.mol
 		pkey=z0p1
 		pgin=(null)
-		page=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123/123-z0-p1.div
-		zout=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123/123-z0.otl
+		page=/home/oracc/www/p4.d/neo/sux/sux.r000101/123/123-z0-p1.div
+		zout=/home/oracc/www/p4.d/neo/sux/sux.r000101/123/123-z0.otl
 		item=(null)
 		prox=(null)
 		meta=(null)
@@ -226,12 +225,12 @@
 		ltab=(null)
 		hilite=(null)
 		pub=/home/oracc/neo/02pub/p4.d
-		use=/home/oracc/www/p4.d/neo/sux/sux.r0000c8
+		use=/home/oracc/www/p4.d/neo/sux/sux.r000101
 		txtindex=(null)
-		t_sort=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123/t
+		t_sort=/home/oracc/www/p4.d/neo/sux/sux.r000101/123/t
 		t_tsv=(null)
 		t_max=(null)
-		t_mol=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/123/t/zoom.mol
+		t_mol=/home/oracc/www/p4.d/neo/sux/sux.r000101/123/t/zoom.mol
 <h3>	struct isp_config ip->default_cfg</h3>
 		leftmenu=1
 		select=1
@@ -256,13 +255,13 @@
 		let=entry_ids
 		lmax=(null)
 		ent=(null)
-		xis=sux.r0000c8
+		xis=sux.r000101
 		ltab=A	L000	B	L001	D	L002	E	L003	G	L004	Ŋ	L005	H	L006	I	L007	K	L008	L	L009	M	L010	N	L011	P	L012	R	L013	S	L014	Š	L015	T	L016	U	L017	Y	L018	Z	L019	
 
 		lbase=entry_ids
 		lpath=/home/oracc/pub/neo/cbd/sux/entry_ids.lst
 		ecpath=(null)
-		emax=2404
+		emax=2406
 		ipath=(null)
 <h3>	struct isp_itemdata ip->itemdata</h3>
 		langs=(null)
@@ -275,6 +274,8 @@
 		proj=(null)
 		htmd=(null)
 		html=(null)
+		cfy=(null)
+		img=(null)
 		dotted=(null)
 		index=(null)
 		page=(null)
@@ -296,7 +297,7 @@
 		key=(null)
 		dbpath=/home/oracc/pub/neo/cbd/sux
 		dbname=tis
-		path=/home/oracc/www/p4.d/neo/sux/sux.r0000c8/list
+		path=/home/oracc/www/p4.d/neo/sux/sux.r000101/list
 <h3>	struct isp_srchdata ip->srchdata</h3>
 		tmp=(null)
 		bar=(null)
@@ -330,7 +331,7 @@ HTTP_SEC_CH_UA_PLATFORM="Linux"
 HTTP_SEC_FETCH_DEST=empty
 HTTP_SEC_FETCH_MODE=cors
 HTTP_SEC_FETCH_SITE=cross-site
-HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.13.3 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.15.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
 ORACC=/home/oracc
 ORACC_BUILDS=/home/oracc
 ORACC_HOME=/home/oracc
@@ -341,12 +342,12 @@ ORACC_USER=yes
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/sux
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux
-QUERY_STRING=xis=sux.r0000c8
+QUERY_STRING=xis=sux.r000101
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=44082
+REMOTE_PORT=35802
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
-REQUEST_URI=/neo/sux?xis=sux.r0000c8
+REQUEST_URI=/neo/sux?xis=sux.r000101
 SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
 SCRIPT_NAME=
 SCRIPT_URI=https://build-oracc.museum.upenn.edu/neo/sux

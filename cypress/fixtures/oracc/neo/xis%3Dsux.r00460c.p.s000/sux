@@ -8,11 +8,10 @@
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
   <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
-  <script type="text/javascript" src="/js/p4-cuneify.js">&#160;</script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
   <title>neo</title>    
 </head>
-  <body><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="sux" data-glet="entry_ids" data-gxis="sux.r0016be" data-zoom="0" data-sort="123">
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="sux" data-glet="entry_ids" data-gxis="sux.r00460c.p.s000" data-zoom="0" data-sort="123">
   <div id="p4Masthead">
     <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
       <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
@@ -53,7 +52,7 @@
 
     <div id="p4Controls">
       
-  <div id="p4itemNav" class="p4items" data-ityp="TEXT" data-inth="" data-imax="1">
+  <div id="p4itemNav" class="p4items" data-ityp="TEXT" data-inth="" data-imax="2">
     <p class="bg-dk">
 
       
@@ -69,7 +68,7 @@
 	   alt="Item back" title="Item back"
 	   onclick="act_item_prev()"/>
       
-      <span id="p4ItemView"> [TEXT  of 1] </span>
+      <span id="p4ItemView"> [TEXT  of 2] </span>
       
       <img id="p4ItemNext" class="p4icon p4spread" src="/img/p3-forward.png"
 	   alt="Item forward" title="Item forward"
@@ -88,7 +87,7 @@
     </p>
   </div>
 
-  <div id="p4PageNav" class="p4pages" data-page="1" data-pmax="1" data-imax="1">
+  <div id="p4PageNav" class="p4pages" data-page="1" data-pmax="1" data-imax="2">
     <p class="p3toccenter bg-dk">
 
       <button id="p4Zoom" class="p4spread" onclick="act_zoom('0')">All Results</button>
@@ -104,7 +103,7 @@
 	   alt="Page forward" title="Page forward"
 	   onclick="act_next()"/>
 
-      1 ref
+      2 refs
       /
       1 page
 
@@ -124,14 +123,19 @@
   </div>
   <div id="p4Data">
     <div id="p4Menu">
-<div id="p4MenuOutline" class="pgotl level0" data-zmax="1"><h2>Old Babylonian</h2><div class="pgotl level1"><h3>unknown</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(1)" data-zoom="1">uncertain (mod. uncertain) [1]</a></p></div></div></div></div>
+<div id="p4MenuOutline" class="pgotl level0" data-zmax="2"><h2>Early Dynastic</h2><div class="pgotl level1"><h3>Sign Lists</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(1)" data-zoom="1">unclear [1]</a></p></div><h3>Thematic Word Lists</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(2)" data-zoom="2">unclear [1]</a></p></div></div></div></div>
 
     <div id="p4Content">
       <div xmlns="http://www.w3.org/1999/xhtml" class="ce" id="p4CElineContent">
-  <h2 class="ce-heading h2 border-top heading">Old Babylonian/unknown/uncertain (mod. uncertain)</h2>
-  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">gu₃</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">šu</span>-<span x="3" class="">niŋin₂</span>-<span x="3" class="">na</span>-<span x="3" class="">ni</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">an</span>-<span x="3" class="">ur₂</span>-<span x="3" class="">ra</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">tug₂</span>-<span x="3" class="">gin₇</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span><span x="3" class="">im</span>-<span x="3" class="">mi</span>-<span x="3" class="">in</span><span class="sux">⸣</span>-<span x="3" class="">dul</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">gada</span>-<span x="3" class="">gin₇</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">im</span>-<span x="3" class="">mi</span>-<span x="3" class="">in</span>-<span x="3" class="">bur₂</span></span> </p>
+  <h2 class="ce-heading h2 border-top heading">Early Dynastic/Sign Lists/unclear</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ur₃</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="compound"><span class="sign ">GA₂</span>×<span class="sign ">NUN</span>&amp;<span class="sign ">NUN</span></span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u₉</span>-<span x="3" class="">ru₁₂</span>-<span x="3" class="">um</span></span> </p>
   <p class="ce-label">
-    <a href="javascript://" onclick="act_iref(event)" data-iref="P355681.64">(BM 120011 r 18)</a>
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q000038.57">(Ebla Sign List 57)</a>
+  </p>
+  <h2 class="ce-heading h2 border-top heading">Early Dynastic/Thematic Word Lists/unclear</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ab₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ur₃</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q000012.1">(ED Animals A 1)</a>
   </p>
 </div>
 
@@ -148,7 +152,7 @@
   
   <p>The pager was invoked as:</p>
   
-  <pre id="p4Invoked">/home/oracc/bin/px web=1 xis=sux%2Er0016be glos=sux project=neo</pre>
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 xis=sux%2Er00460c%2Ep%2Es000 glos=sux project=neo</pre>
 
   <h2>Pager Status</h2>
   
@@ -207,18 +211,18 @@
 <h3>	struct isp_cache ip->cache</h3>
 		sys=/home/oracc/www/p4.d
 		project=/home/oracc/www/p4.d/neo
-		sub=/home/oracc/www/p4.d/neo/sux/sux.r0016be
-		out=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123
-		list=/home/oracc/www/p4.d/neo/sux/sux.r0016be/list
-		sort=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123
-		csi=(null)
-		tsv=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123/pag.tsv
-		max=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123/max.tsv
-		mol=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123/zoom.mol
+		sub=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000
+		out=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123
+		list=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/list
+		sort=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123
+		csi=/home/oracc/pub/neo/sortinfo.csi
+		tsv=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/pag.tsv
+		max=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/max.tsv
+		mol=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/zoom.mol
 		pkey=z0p1
 		pgin=(null)
-		page=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123/123-z0-p1.div
-		zout=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123/123-z0.otl
+		page=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/123-z0-p1.div
+		zout=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/123-z0.otl
 		item=(null)
 		prox=(null)
 		meta=(null)
@@ -226,12 +230,12 @@
 		ltab=(null)
 		hilite=(null)
 		pub=/home/oracc/neo/02pub/p4.d
-		use=/home/oracc/www/p4.d/neo/sux/sux.r0016be
+		use=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000
 		txtindex=(null)
-		t_sort=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123/t
-		t_tsv=(null)
-		t_max=(null)
-		t_mol=/home/oracc/www/p4.d/neo/sux/sux.r0016be/123/t/zoom.mol
+		t_sort=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/t
+		t_tsv=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/t/pag.tsv
+		t_max=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/t/max.tsv
+		t_mol=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/123/t/zoom.mol
 <h3>	struct isp_config ip->default_cfg</h3>
 		leftmenu=1
 		select=1
@@ -256,13 +260,13 @@
 		let=entry_ids
 		lmax=(null)
 		ent=(null)
-		xis=sux.r0016be
+		xis=sux.r00460c.p.s000
 		ltab=A	L000	B	L001	D	L002	E	L003	G	L004	Ŋ	L005	H	L006	I	L007	K	L008	L	L009	M	L010	N	L011	P	L012	R	L013	S	L014	Š	L015	T	L016	U	L017	Y	L018	Z	L019	
 
 		lbase=entry_ids
 		lpath=/home/oracc/pub/neo/cbd/sux/entry_ids.lst
 		ecpath=(null)
-		emax=2404
+		emax=2406
 		ipath=(null)
 <h3>	struct isp_itemdata ip->itemdata</h3>
 		langs=(null)
@@ -275,6 +279,8 @@
 		proj=(null)
 		htmd=(null)
 		html=(null)
+		cfy=(null)
+		img=(null)
 		dotted=(null)
 		index=(null)
 		page=(null)
@@ -296,7 +302,7 @@
 		key=(null)
 		dbpath=/home/oracc/pub/neo/cbd/sux
 		dbname=tis
-		path=/home/oracc/www/p4.d/neo/sux/sux.r0016be/list
+		path=/home/oracc/www/p4.d/neo/sux/sux.r00460c.p.s000/list
 <h3>	struct isp_srchdata ip->srchdata</h3>
 		tmp=(null)
 		bar=(null)
@@ -305,7 +311,7 @@
 		list=(null)
 		new=0
 		adhoc=0
-	zmax=1
+	zmax=2
 </pre>
 
   <h2>Environment</h2>
@@ -330,7 +336,7 @@ HTTP_SEC_CH_UA_PLATFORM="Linux"
 HTTP_SEC_FETCH_DEST=empty
 HTTP_SEC_FETCH_MODE=cors
 HTTP_SEC_FETCH_SITE=cross-site
-HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.13.3 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.15.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
 ORACC=/home/oracc
 ORACC_BUILDS=/home/oracc
 ORACC_HOME=/home/oracc
@@ -341,12 +347,12 @@ ORACC_USER=yes
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/sux
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux
-QUERY_STRING=xis=sux.r0016be
+QUERY_STRING=xis=sux.r00460c.p.s000
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=37180
+REMOTE_PORT=51304
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
-REQUEST_URI=/neo/sux?xis=sux.r0016be
+REQUEST_URI=/neo/sux?xis=sux.r00460c.p.s000
 SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
 SCRIPT_NAME=
 SCRIPT_URI=https://build-oracc.museum.upenn.edu/neo/sux

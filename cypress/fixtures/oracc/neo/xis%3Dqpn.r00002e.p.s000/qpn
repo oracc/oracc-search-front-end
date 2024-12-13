@@ -8,11 +8,10 @@
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
   <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
-  <script type="text/javascript" src="/js/p4-cuneify.js">&#160;</script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
   <title>neo</title>    
 </head>
-  <body><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="qpn" data-glet="entry_ids" data-gxis="qpn.r00002e.p.s000" data-zoom="0" data-sort="123">
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="qpn" data-glet="entry_ids" data-gxis="qpn.r00002e.p.s000" data-zoom="0" data-sort="123">
   <div id="p4Masthead">
     <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
       <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
@@ -235,7 +234,7 @@
 		out=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123
 		list=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/list
 		sort=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123
-		csi=(null)
+		csi=/home/oracc/pub/neo/sortinfo.csi
 		tsv=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/pag.tsv
 		max=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/max.tsv
 		mol=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/zoom.mol
@@ -253,8 +252,8 @@
 		use=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000
 		txtindex=(null)
 		t_sort=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t
-		t_tsv=(null)
-		t_max=(null)
+		t_tsv=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t/pag.tsv
+		t_max=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t/max.tsv
 		t_mol=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t/zoom.mol
 <h3>	struct isp_config ip->default_cfg</h3>
 		leftmenu=1
@@ -299,6 +298,8 @@
 		proj=(null)
 		htmd=(null)
 		html=(null)
+		cfy=(null)
+		img=(null)
 		dotted=(null)
 		index=(null)
 		page=(null)
@@ -354,7 +355,7 @@ HTTP_SEC_CH_UA_PLATFORM="Linux"
 HTTP_SEC_FETCH_DEST=empty
 HTTP_SEC_FETCH_MODE=cors
 HTTP_SEC_FETCH_SITE=cross-site
-HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.13.3 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.15.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
 ORACC=/home/oracc
 ORACC_BUILDS=/home/oracc
 ORACC_HOME=/home/oracc
@@ -367,7 +368,7 @@ PATH_INFO=/neo/qpn
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/qpn
 QUERY_STRING=xis=qpn.r00002e.p.s000
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=44300
+REMOTE_PORT=51304
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/qpn?xis=qpn.r00002e.p.s000

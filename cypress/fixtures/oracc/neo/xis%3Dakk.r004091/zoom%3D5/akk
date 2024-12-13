@@ -8,11 +8,10 @@
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
   <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
-  <script type="text/javascript" src="/js/p4-cuneify.js">&#160;</script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
   <title>neo</title>    
 </head>
-  <body><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="akk" data-glet="entry_ids" data-gxis="akk.r004064" data-zoom="5" data-sort="123">
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="akk" data-glet="entry_ids" data-gxis="akk.r004091" data-zoom="5" data-sort="123">
   <div id="p4Masthead">
     <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
       <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
@@ -244,7 +243,7 @@
   
   <p>The pager was invoked as:</p>
   
-  <pre id="p4Invoked">/home/oracc/bin/px web=1 xis=akk%2Er004064 zoom=5 glos=akk project=neo</pre>
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 xis=akk%2Er004091 zoom=5 glos=akk project=neo</pre>
 
   <h2>Pager Status</h2>
   
@@ -303,18 +302,18 @@
 <h3>	struct isp_cache ip->cache</h3>
 		sys=/home/oracc/www/p4.d
 		project=/home/oracc/www/p4.d/neo
-		sub=/home/oracc/www/p4.d/neo/akk/akk.r004064
-		out=/home/oracc/www/p4.d/neo/akk/akk.r004064/123
-		list=/home/oracc/www/p4.d/neo/akk/akk.r004064/list
-		sort=/home/oracc/www/p4.d/neo/akk/akk.r004064/123
+		sub=/home/oracc/www/p4.d/neo/akk/akk.r004091
+		out=/home/oracc/www/p4.d/neo/akk/akk.r004091/123
+		list=/home/oracc/www/p4.d/neo/akk/akk.r004091/list
+		sort=/home/oracc/www/p4.d/neo/akk/akk.r004091/123
 		csi=(null)
-		tsv=/home/oracc/www/p4.d/neo/akk/akk.r004064/123/pag.tsv
-		max=/home/oracc/www/p4.d/neo/akk/akk.r004064/123/max.tsv
-		mol=/home/oracc/www/p4.d/neo/akk/akk.r004064/123/zoom.mol
+		tsv=/home/oracc/www/p4.d/neo/akk/akk.r004091/123/pag.tsv
+		max=/home/oracc/www/p4.d/neo/akk/akk.r004091/123/max.tsv
+		mol=/home/oracc/www/p4.d/neo/akk/akk.r004091/123/zoom.mol
 		pkey=z5p1
 		pgin=(null)
-		page=/home/oracc/www/p4.d/neo/akk/akk.r004064/123/123-z5-p1.div
-		zout=/home/oracc/www/p4.d/neo/akk/akk.r004064/123/123-z5.otl
+		page=/home/oracc/www/p4.d/neo/akk/akk.r004091/123/123-z5-p1.div
+		zout=/home/oracc/www/p4.d/neo/akk/akk.r004091/123/123-z5.otl
 		item=(null)
 		prox=(null)
 		meta=(null)
@@ -322,12 +321,12 @@
 		ltab=(null)
 		hilite=(null)
 		pub=/home/oracc/neo/02pub/p4.d
-		use=/home/oracc/www/p4.d/neo/akk/akk.r004064
+		use=/home/oracc/www/p4.d/neo/akk/akk.r004091
 		txtindex=(null)
-		t_sort=/home/oracc/www/p4.d/neo/akk/akk.r004064/123/t
+		t_sort=/home/oracc/www/p4.d/neo/akk/akk.r004091/123/t
 		t_tsv=(null)
 		t_max=(null)
-		t_mol=/home/oracc/www/p4.d/neo/akk/akk.r004064/123/t/zoom.mol
+		t_mol=/home/oracc/www/p4.d/neo/akk/akk.r004091/123/t/zoom.mol
 <h3>	struct isp_config ip->default_cfg</h3>
 		leftmenu=1
 		select=1
@@ -352,7 +351,7 @@
 		let=(null)
 		lmax=(null)
 		ent=(null)
-		xis=akk.r004064
+		xis=akk.r004091
 		ltab=A	L000	B	L001	D	L002	E	L003	G	L004	H	L005	I	L006	K	L007	L	L008	M	L009	N	L010	P	L011	Q	L012	R	L013	S	L014	Ṣ	L015	Š	L016	T	L017	Ṭ	L018	U	L019	W	L020	Y	L021	Z	L022	
 
 		lbase=entry_ids
@@ -371,6 +370,8 @@
 		proj=(null)
 		htmd=(null)
 		html=(null)
+		cfy=(null)
+		img=(null)
 		dotted=(null)
 		index=(null)
 		page=(null)
@@ -392,7 +393,7 @@
 		key=(null)
 		dbpath=/home/oracc/pub/neo/cbd/akk
 		dbname=tis
-		path=/home/oracc/www/p4.d/neo/akk/akk.r004064/list
+		path=/home/oracc/www/p4.d/neo/akk/akk.r004091/list
 <h3>	struct isp_srchdata ip->srchdata</h3>
 		tmp=(null)
 		bar=(null)
@@ -426,7 +427,7 @@ HTTP_SEC_CH_UA_PLATFORM="Linux"
 HTTP_SEC_FETCH_DEST=empty
 HTTP_SEC_FETCH_MODE=cors
 HTTP_SEC_FETCH_SITE=cross-site
-HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.13.3 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.15.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
 ORACC=/home/oracc
 ORACC_BUILDS=/home/oracc
 ORACC_HOME=/home/oracc
@@ -437,12 +438,12 @@ ORACC_USER=yes
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/akk
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/akk
-QUERY_STRING=xis=akk.r004064&zoom=5
+QUERY_STRING=xis=akk.r004091&zoom=5
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=43786
+REMOTE_PORT=40542
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
-REQUEST_URI=/neo/akk?xis=akk.r004064&zoom=5
+REQUEST_URI=/neo/akk?xis=akk.r004091&zoom=5
 SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
 SCRIPT_NAME=
 SCRIPT_URI=https://build-oracc.museum.upenn.edu/neo/akk
