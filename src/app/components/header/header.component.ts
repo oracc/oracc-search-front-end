@@ -9,9 +9,10 @@ import { LANGUAGE } from 'src/utils/consts';
 })
 export class HeaderComponent implements OnInit {
   htmlTag: HTMLElement = document.getElementsByTagName('html')[0];
-  isDesktop = window.innerWidth < 991 ? false : true;
+  isDesktop = 600 < window.innerWidth;
   routerLinks = document.querySelectorAll('[routerLink]');
   isMenuOpen = false;
+  imgURL: string = 'assets/img/oracc-header.jpeg';
 
   constructor(public translate: TranslateService) {
     translate.addLangs([LANGUAGE.ENGLISH, LANGUAGE.ARABIC]);
@@ -49,7 +50,7 @@ export class HeaderComponent implements OnInit {
   public closeNavPanel(e) {
     if (
       e.target.hasAttribute('routerLink') &&
-      window.innerWidth < 991 &&
+      window.innerWidth <= 600 &&
       this.isMenuOpen
     ) {
       this.toggleNavPanel();

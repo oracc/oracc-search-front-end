@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta name="generator" content="oracc/px p4html.xml "/>
+  <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/p4-cuneify.css"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
+  <script type="text/javascript" src="/js/p4.js">&#160;</script>
+  <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
+  <title>neo</title>    
+</head>
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list item dglo iart zoom default" data-proj="neo" data-glos="akk" data-glet="M" data-gent="x0000307" data-prev="x0008465" data-item="x0000307" data-next="x0002706" data-bkmk="x0000307" data-lang="en">
+  <div id="p4Masthead">
+    <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
+      <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
+    </p>
+  </div>
+  <div id="p4Header" class="menu banner bborder-bot">
+    <p id="p4Banner">
+      <span id="p4Icons">
+	
+  <img class="p4icon" src="/img/p3-dd.png"
+       alt="Toggle menu drop-down" title="Toggle menu drop-down"
+       onclick="toggle_dd()"/>
+  <img id="p4HelpIcon" class="p4icon"
+       src="/img/p3-help.png" alt="Help" title="Help"
+       onclick="window.location='/doc/help/visitingoracc/gettingstarted/index.html'"/>
+  <img id="p4ResetIcon" class="p4icon"
+       src="/img/p3-reset.png" alt="Reset pager" title="Reset pager"
+       onclick="resetPager()"/>
+  <img id="p4MoreIcon" class="p4icon"
+       src="/img/p3-plus.png" alt="More resources" title="More resources"
+       onclick="window.location='/neo/hub.html'"/>
+
+      </span>
+    </p>
+    <div id="p4Search">
+  <form action="javascript://" onsubmit="act_srch()">
+    <p>
+      <!--Oracc Search:-->
+      <input id="p4SrchBox" type="text" size="30"
+	     value=""/>
+      <input type="submit" style="display: none"/>
+      <img id="p4SrchGo" class="p4icon" src="/img/p3-search.png"
+	   alt="Search" title="Search" onclick="act_srch()"/>
+    </p>
+    <p id="p4SrchChars">(j=ŋ&#xa0;sz=š&#xa0;s,=ṣ&#xa0;t,=ṭ&#xa0;0-9=₀-₉; &apos;=alef)</p>
+  </form>
+</div>
+
+    <div id="p4Controls">
+      
+  <div id="p4itemNav" class="p4items" data-ityp="ENTRY" data-inth="176" data-imax="511">
+    <p class="bg-dk">
+
+      
+      <img id="p4ToggleMeta" class="p4icon" src="/img/p3-full.png"
+	   alt="Toggle metadata pane" title="Toggle metadata pane" onclick="toggle_md()"/>
+      
+      <img id="p4PageItem" class="p4icon p4spread" src="/img/p3-pageitem.png"
+	   alt="Toggle Page/Item view" title="Return to Page view"
+	   onclick="toggle_pi()"/>
+
+      <!--Item-->
+      <img id="p4ItemPrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Item back" title="Item back"
+	   onclick="act_item_prev()"/>
+      
+      <span id="p4ItemView"> [ENTRY 176 of 511] </span>
+      
+      <img id="p4ItemNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Item forward" title="Item forward"
+	   onclick="act_item_next()"/>
+
+      <span id="p4SrchResults" class="p4srchresults" data-tmax="" data-rmax="0">
+	 Texts [0 matches]
+      </span>
+
+      <span id="p4Translations">
+	
+	<input id="p4Transonly" type="checkbox" onchange="toggle_to()"
+	       value="@@pui_transonly()@@"/>&#xa0;only
+      </span>
+
+    </p>
+  </div>
+
+  <div id="p4PageNav" class="p4pages" data-page="8" data-pmax="21" data-imax="511">
+    <p class="p3toccenter bg-dk">
+
+      <button id="p4Zoom" class="p4spread" onclick="act_zoom('0')">All Results</button>
+
+      <img id="p4PagePrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Page back" title="Page back"
+	   onclick="act_prev()"/>
+      
+      <!--Page-->
+      <input id="p4Pageset" type="text" onchange="act_page()" size="3" value="8"/>
+
+      <img id="p4PageNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Page forward" title="Page forward"
+	   onclick="act_next()"/>
+
+      511 entries
+      /
+      21 pages
+
+      <span id="p4SrchResultpages" class="p4srchresults">[0 matches]</span>
+
+      <span id="p4CeType" class="cetype"><select id="p4CESelect" onchange="act_ce_switch(event)" value="line">
+  <option value="line" selected="selected">Line</option>
+  <option value="unit">Sentence</option>
+  <option value="kwic">KWIC</option>
+</select>
+</span>
+    </p>
+  </div>
+
+
+    </div>
+  </div>
+  <div id="p4Data">
+    <div id="p4Menu">
+<div id="p4Letters"><p class="all-letters"><a href="javascript://" onclick="act_letter('entry_ids')">ALL</a></p><p><a href="javascript://" onclick="act_letter('A')"><span>A</span></a></p><p><a href="javascript://" onclick="act_letter('B')"><span>B</span></a></p><p><a href="javascript://" onclick="act_letter('D')"><span>D</span></a></p><p><a href="javascript://" onclick="act_letter('E')"><span>E</span></a></p><p><a href="javascript://" onclick="act_letter('G')"><span>G</span></a></p><p><a href="javascript://" onclick="act_letter('H')"><span>H</span></a></p><p><a href="javascript://" onclick="act_letter('I')"><span>I</span></a></p><p><a href="javascript://" onclick="act_letter('K')"><span>K</span></a></p><p><a href="javascript://" onclick="act_letter('L')"><span>L</span></a></p><p><a href="javascript://" class="zoomed" onclick="act_letter('M')"><span>M</span></a></p><p><a href="javascript://" onclick="act_letter('N')"><span>N</span></a></p><p><a href="javascript://" onclick="act_letter('P')"><span>P</span></a></p><p><a href="javascript://" onclick="act_letter('Q')"><span>Q</span></a></p><p><a href="javascript://" onclick="act_letter('R')"><span>R</span></a></p><p><a href="javascript://" onclick="act_letter('S')"><span>S</span></a></p><p><a href="javascript://" onclick="act_letter('Ṣ')"><span>Ṣ</span></a></p><p><a href="javascript://" onclick="act_letter('Š')"><span>Š</span></a></p><p><a href="javascript://" onclick="act_letter('T')"><span>T</span></a></p><p><a href="javascript://" onclick="act_letter('Ṭ')"><span>Ṭ</span></a></p><p><a href="javascript://" onclick="act_letter('U')"><span>U</span></a></p><p><a href="javascript://" onclick="act_letter('W')"><span>W</span></a></p><p><a href="javascript://" onclick="act_letter('Y')"><span>Y</span></a></p><p><a href="javascript://" onclick="act_letter('Z')"><span>Z</span></a></p></div></div>
+
+    <div id="p4Content">
+      <div id="p4Item" class="glo">
+  <div id="p4GlossaryEntry">
+<div class="body" id="p4Article" name="neo/akk/mātu[land]N" data-cf="mātu" data-gw="land" data-pos="N">
+      <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="ns-glo" id="top">
+        <div class="header">
+          <h1 class="entry heading border-top"><span class="cf akk">mātu</span><span class="gw"> [LAND]</span> <span class="pos">(N)</span></h1>
+          <p class="icount">
+            <a class="icount" href="javascript://" onclick="act_isid(event)" data-type="instances" data-name="mātu[land]N" data-lang="akk" data-isid="akk.r004091">133 instances</a>
+          </p>
+        </div>
+        <div class="forms" id="forms">
+          <p class="forms"><span class="iheader">Written forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="GAR.KUR" data-lang="akk" data-isid="akk.r004092"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">GAR</span>.<span class="sign sux">KUR</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="šakin māti" data-lang="akk" data-isid="akk.r004092">šakin māti</a>]</span>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="{LU₂}GAR.KUR" data-lang="akk" data-isid="akk.r004093"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">GAR</span>.<span class="sign sux">KUR</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="šakin māti" data-lang="akk" data-isid="akk.r004093">šakin māti</a>]</span>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="{LU₂}GAR.KUR.MEŠ" data-lang="akk" data-isid="akk.r004094"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">GAR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="šakin mātāti" data-lang="akk" data-isid="akk.r004094">šakin mātāti</a>]</span>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KALAM" data-lang="akk" data-isid="akk.r004095"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KALAM</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR" data-lang="akk" data-isid="akk.r004096"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ia" data-lang="akk" data-isid="akk.r004097"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ia</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ka" data-lang="akk" data-isid="akk.r004098"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ka</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR" data-lang="akk" data-isid="akk.r004099"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR.MEŠ" data-lang="akk" data-isid="akk.r00409a"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR.RA" data-lang="akk" data-isid="akk.r00409b"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">RA</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR.RE" data-lang="akk" data-isid="akk.r00409c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">RE</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR-šu₂-nu" data-lang="akk" data-isid="akk.r00409d"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.ME-šu₂-un" data-lang="akk" data-isid="akk.r00409e"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">ME</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-MEŠ" data-lang="akk" data-isid="akk.r00409f"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span class="sign sux">MEŠ</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ" data-lang="akk" data-isid="akk.r0040a0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ-šu₂-nu" data-lang="akk" data-isid="akk.r0040a1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ-šu₂-un" data-lang="akk" data-isid="akk.r0040a2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ-te" data-lang="akk" data-isid="akk.r0040a3"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="akk">te</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-su" data-lang="akk" data-isid="akk.r0040a4"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">su</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-su-nu" data-lang="akk" data-isid="akk.r0040a5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">su</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ša₂" data-lang="akk" data-isid="akk.r0040a6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ša₂</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu" data-lang="akk" data-isid="akk.r0040a7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu-nu" data-lang="akk" data-isid="akk.r0040a8"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu-un" data-lang="akk" data-isid="akk.r0040a9"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu₂" data-lang="akk" data-isid="akk.r0040aa"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu₂-nu" data-lang="akk" data-isid="akk.r0040ab"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu₂-un" data-lang="akk" data-isid="akk.r0040ac"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ti-ša₂" data-lang="akk" data-isid="akk.r0040ad"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">ša₂</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ti-šu₂-un" data-lang="akk" data-isid="akk.r0040ae"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-tim-ma" data-lang="akk" data-isid="akk.r0040af"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">tim</span>-<span x="3" class="akk">ma</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-uš-šu" data-lang="akk" data-isid="akk.r0040b0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-uš-šu₂-un" data-lang="akk" data-isid="akk.r0040b1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-su" data-lang="akk" data-isid="akk.r0040b2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">su</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-te" data-lang="akk" data-isid="akk.r0040b3"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">te</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-ti" data-lang="akk" data-isid="akk.r0040b4"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-ti-šu₂-un" data-lang="akk" data-isid="akk.r0040b5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tim" data-lang="akk" data-isid="akk.r0040b6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tim</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tu" data-lang="akk" data-isid="akk.r0040b7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tu₂" data-lang="akk" data-isid="akk.r0040b8"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tu₂</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tum" data-lang="akk" data-isid="akk.r0040b9"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tum</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-at" data-lang="akk" data-isid="akk.r0040ba"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">at</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="MA.DA" data-lang="akk" data-isid="akk.r0040bb"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">MA</span>.<span class="sign sux">DA</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-te" data-lang="akk" data-isid="akk.r0040bc"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">te</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-ti" data-lang="akk" data-isid="akk.r0040bd"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-ti-šu-nu" data-lang="akk" data-isid="akk.r0040be"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-ti-šu₂-nu" data-lang="akk" data-isid="akk.r0040bf"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-tu" data-lang="akk" data-isid="akk.r0040c0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">tu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tam" data-lang="akk" data-isid="akk.r0040c1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tam</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti" data-lang="akk" data-isid="akk.r0040c2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-ia" data-lang="akk" data-isid="akk.r0040c3"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">ia</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-šu" data-lang="akk" data-isid="akk.r0040c4"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-šu₂" data-lang="akk" data-isid="akk.r0040c5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-šu₂-un" data-lang="akk" data-isid="akk.r0040c6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tim" data-lang="akk" data-isid="akk.r0040c7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tim</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tu-uš-šu" data-lang="akk" data-isid="akk.r0040c8"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tu</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tu-uš-šu₂-un" data-lang="akk" data-isid="akk.r0040c9"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tu</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>.</p>
+        </div>
+        <p class="norms"><span class="iheader">Normalized forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="māssu" data-lang="akk" data-isid="akk.r0040ca">māssu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-su" data-lang="akk" data-isid="akk.r0040a4"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">su</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-su" data-lang="akk" data-isid="akk.r0040b2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">su</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="māssunu" data-lang="akk" data-isid="akk.r0040a5">māssunu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-su-nu" data-lang="akk" data-isid="akk.r0040a5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">su</span>-<span x="3" class="akk">nu</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="māt" data-lang="akk" data-isid="akk.r0040cb">māt</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR" data-lang="akk" data-isid="akk.r004096"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-at" data-lang="akk" data-isid="akk.r0040ba"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">at</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="māta" data-lang="akk" data-isid="akk.r0040cd">māta</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR" data-lang="akk" data-isid="akk.r004096"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātam" data-lang="akk" data-isid="akk.r0040c1">mātam</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tam" data-lang="akk" data-isid="akk.r0040c1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tam</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātāt" data-lang="akk" data-isid="akk.r0040ce">mātāt</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ" data-lang="akk" data-isid="akk.r0040a0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātāte" data-lang="akk" data-isid="akk.r0040cf">mātāte</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ-te" data-lang="akk" data-isid="akk.r0040a3"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="akk">te</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-te" data-lang="akk" data-isid="akk.r0040bc"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">te</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātāti" data-lang="akk" data-isid="akk.r0040d0">mātāti</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-MEŠ" data-lang="akk" data-isid="akk.r00409f"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span class="sign sux">MEŠ</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR" data-lang="akk" data-isid="akk.r004099"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR.MEŠ" data-lang="akk" data-isid="akk.r00409a"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR.RA" data-lang="akk" data-isid="akk.r00409b"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">RA</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR.RE" data-lang="akk" data-isid="akk.r00409c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">RE</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ" data-lang="akk" data-isid="akk.r0040a0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-ti" data-lang="akk" data-isid="akk.r0040bd"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="{LU₂}GAR.KUR.MEŠ" data-lang="akk" data-isid="akk.r004094"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">GAR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="šakin mātāti" data-lang="akk" data-isid="akk.r004094">šakin mātāti</a>]</span>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātātišun" data-lang="akk" data-isid="akk.r0040d2">mātātišun</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.ME-šu₂-un" data-lang="akk" data-isid="akk.r00409e"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">ME</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ-šu₂-un" data-lang="akk" data-isid="akk.r0040a2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātātišunu" data-lang="akk" data-isid="akk.r0040d3">mātātišunu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.KUR-šu₂-nu" data-lang="akk" data-isid="akk.r00409d"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ-šu₂-nu" data-lang="akk" data-isid="akk.r0040a1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-ti-šu-nu" data-lang="akk" data-isid="akk.r0040be"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu</span>-<span x="3" class="akk">nu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-a-ti-šu₂-nu" data-lang="akk" data-isid="akk.r0040bf"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātātu" data-lang="akk" data-isid="akk.r0040d4">mātātu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR.MEŠ" data-lang="akk" data-isid="akk.r0040a0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ta-tu" data-lang="akk" data-isid="akk.r0040c0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ta</span>-<span x="3" class="akk">tu</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="māte" data-lang="akk" data-isid="akk.r0040d6">māte</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR" data-lang="akk" data-isid="akk.r004096"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-te" data-lang="akk" data-isid="akk.r0040b3"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">te</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātī" data-lang="akk" data-isid="akk.r0040d8">mātī</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-ti" data-lang="akk" data-isid="akk.r0040b4"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti" data-lang="akk" data-isid="akk.r0040c2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="māti" data-lang="akk" data-isid="akk.r0040db">māti</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="GAR.KUR" data-lang="akk" data-isid="akk.r004092"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">GAR</span>.<span class="sign sux">KUR</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="šakin māti" data-lang="akk" data-isid="akk.r004092">šakin māti</a>]</span><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KALAM" data-lang="akk" data-isid="akk.r004095"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KALAM</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR" data-lang="akk" data-isid="akk.r004096"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-ti" data-lang="akk" data-isid="akk.r0040b4"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti" data-lang="akk" data-isid="akk.r0040c2"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="{LU₂}GAR.KUR" data-lang="akk" data-isid="akk.r004093"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">GAR</span>.<span class="sign sux">KUR</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="šakin māti" data-lang="akk" data-isid="akk.r004093">šakin māti</a>]</span>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātika" data-lang="akk" data-isid="akk.r004098">mātika</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ka" data-lang="akk" data-isid="akk.r004098"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ka</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātim" data-lang="akk" data-isid="akk.r0040df">mātim</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="MA.DA" data-lang="akk" data-isid="akk.r0040bb"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">MA</span>.<span class="sign sux">DA</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tim" data-lang="akk" data-isid="akk.r0040b6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tim</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tim" data-lang="akk" data-isid="akk.r0040c7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tim</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātimma" data-lang="akk" data-isid="akk.r0040af">mātimma</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-tim-ma" data-lang="akk" data-isid="akk.r0040af"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">tim</span>-<span x="3" class="akk">ma</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātiša" data-lang="akk" data-isid="akk.r0040e0">mātiša</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ti-ša₂" data-lang="akk" data-isid="akk.r0040ad"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">ša₂</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ša₂" data-lang="akk" data-isid="akk.r0040a6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ša₂</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātišu" data-lang="akk" data-isid="akk.r0040e1">mātišu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu" data-lang="akk" data-isid="akk.r0040a7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu₂" data-lang="akk" data-isid="akk.r0040aa"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-šu" data-lang="akk" data-isid="akk.r0040c4"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-šu₂" data-lang="akk" data-isid="akk.r0040c5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātišun" data-lang="akk" data-isid="akk.r0040e2">mātišun</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ti-šu₂-un" data-lang="akk" data-isid="akk.r0040ae"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu-un" data-lang="akk" data-isid="akk.r0040a9"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu</span>-<span x="3" class="akk">un</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu₂-un" data-lang="akk" data-isid="akk.r0040ac"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-ti-šu₂-un" data-lang="akk" data-isid="akk.r0040b5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-šu₂-un" data-lang="akk" data-isid="akk.r0040c6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātišunu" data-lang="akk" data-isid="akk.r0040e3">mātišunu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu-nu" data-lang="akk" data-isid="akk.r0040a8"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu</span>-<span x="3" class="akk">nu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-šu₂-nu" data-lang="akk" data-isid="akk.r0040ab"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātiya" data-lang="akk" data-isid="akk.r0040e4">mātiya</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-ia" data-lang="akk" data-isid="akk.r004097"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">ia</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-ti-ia" data-lang="akk" data-isid="akk.r0040c3"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">ti</span>-<span x="3" class="akk">ia</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātu" data-lang="akk" data-isid="akk.r0040e5">mātu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR" data-lang="akk" data-isid="akk.r004096"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tu" data-lang="akk" data-isid="akk.r0040b7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tu₂" data-lang="akk" data-isid="akk.r0040b8"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tu₂</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātum" data-lang="akk" data-isid="akk.r0040b9">mātum</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-a-tum" data-lang="akk" data-isid="akk.r0040b9"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">a</span>-<span x="3" class="akk">tum</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātuššu" data-lang="akk" data-isid="akk.r0040e7">mātuššu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-uš-šu" data-lang="akk" data-isid="akk.r0040b0"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tu-uš-šu" data-lang="akk" data-isid="akk.r0040c8"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tu</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="mātuššun" data-lang="akk" data-isid="akk.r0040e8">mātuššun</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="KUR-uš-šu₂-un" data-lang="akk" data-isid="akk.r0040b1"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span class="sign sux">KUR</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ma-tu-uš-šu₂-un" data-lang="akk" data-isid="akk.r0040c9"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ma</span>-<span x="3" class="akk">tu</span>-<span x="3" class="akk">uš</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">un</span></span></a>).</p>
+        <div class="ns-glo-sec" id="periods">
+          <h1>Attested in the following periods:</h1>
+          <h2>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Old Babylonian" data-lang="akk" data-isid="akk.r004091.p.s000">Old Babylonian (4x/3%)</a>
+          </h2>
+          <h2>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Neo-Assyrian" data-lang="akk" data-isid="akk.r004091.p.s001">Neo-Assyrian (125x/94%)</a>
+          </h2>
+          <h2>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Hellenistic" data-lang="akk" data-isid="akk.r004091.p.s002">Hellenistic (3x/2%)</a>
+          </h2>
+          <h2>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="unknown" data-lang="akk" data-isid="akk.r004091.p.s003">unknown (1x/1%)</a>
+          </h2>
+        </div>
+        <div class="ns-glo-sec" id="senses">
+          <h1>Senses:</h1>
+          <div class="senses">
+            <h2 class="sense">
+              <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="akk" data-isid="akk.r004091" data-sense="land" data-epos="N"><span class="sensenum">1.</span> land (133x/100%)</a>
+            </h2>
+          </div>
+        </div>
+        <LEXDATA xmlns=""/>
+        <hr class="article"/>
+      </div>
+    </div>
+</div>
+
+</div>
+
+    </div>
+  </div>
+  <div id="p4Footer">
+    
+
+  </div>
+  <div id="p4Debug">
+  <h1>Debugging Information</h1>
+
+  <h2>Invocation</h2>
+  
+  <p>The pager was invoked as:</p>
+  
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 proj=neo glos=akk oxid=x0000307</pre>
+
+  <h2>Pager Status</h2>
+  
+  <p>The pager reported status as:</p>
+
+  <pre id="p4Status"><h2>Internal Data Structure State (Isp *ip)</h2>
+	oracc=/home/oracc
+	from=list
+	data=dglo
+	show=(null)
+	project=neo
+	projdir=/home/oracc/neo
+	list_name=akk.glo
+	op_nlevels=0
+	dors=0
+	perm=123
+	zoom=10
+	page=8
+	psiz=25
+	srch=(null)
+	glos=akk
+	item=x0000307
+	item_replace=(null)
+	bkmk=(null)
+	ceid=xtf
+	cemd=cglo
+	lang=en
+	xhmd=html
+	part=(null)
+	form=(null)
+	what=pager
+	wrap=(null)
+	uimd=(null)
+	pack=asis
+	host=(null)
+	aapi=rest
+	host_path=(null)
+	sig=(null)
+	tmp_dir=(null)
+	err=(null)
+	errx=(null)
+	pui=p4html.xml
+	nowhat=0
+	force=0
+	olev=0
+	debug=0
+	hdr_done=1
+	noheader=0
+	pub_output=0
+	verbose=0
+	web=1
+	zlev=3
+	argc=5
+	referer=(null)
+	tmpdir=(null)
+<h3>	struct isp_cache ip->cache</h3>
+		sys=/home/oracc/www/p4.d
+		project=/home/oracc/www/p4.d/neo
+		sub=/home/oracc/www/p4.d/neo/akk.glo
+		out=/home/oracc/www/p4.d/neo/akk.glo
+		list=/home/oracc/www/p4.d/neo/akk.glo/list
+		sort=(null)
+		csi=(null)
+		tsv=(null)
+		max=(null)
+		mol=(null)
+		pkey=(null)
+		pgin=/home/oracc/www/p4.d/neo/akk.glo/zentry_ids-p8.pag
+		page=/home/oracc/www/p4.d/neo/akk.glo/zentry_ids-p8.div
+		zout=/home/oracc/www/p4.d/neo/akk.glo/letters.div
+		item=(null)
+		prox=(null)
+		meta=(null)
+		html=(null)
+		ltab=(null)
+		hilite=(null)
+		pub=/home/oracc/neo/02pub/p4.d
+		use=/home/oracc/www/p4.d/neo
+		txtindex=(null)
+		t_sort=(null)
+		t_tsv=(null)
+		t_max=(null)
+		t_mol=(null)
+<h3>	struct isp_config ip->default_cfg</h3>
+		leftmenu=1
+		select=1
+		sort_fields=period,subgenre,provenience
+		sort_labels=Time,Genre,Place
+		head_template=1 2 3
+		cat_fields=designation,primary_publication,subgenre|genre,period,place|provenience
+		cat_links=(null)
+		cat_widths=auto,17,17,17,17
+<h3>	struct isp_config ip->special_cfg</h3>
+		leftmenu=1
+		select=0
+		sort_fields=period,genre,provenience
+		sort_labels=Time,Genre,Place
+		head_template=1 2 3
+		cat_fields=designation,primary_publication,subgenre|genre,period,place|provenience
+		cat_links=(null)
+		cat_widths=auto,17,17,17,17
+<h3>	struct isp_glosdata ip->glosdata</h3>
+		dir=/home/oracc/neo/02pub/cbd/akk
+		web=/home/oracc/neo/02www/cbd/akk
+		let=M
+		lmax=511
+		ent=x0000307
+		xis=(null)
+		ltab=A
+		lbase=entry_ids
+		lpath=/home/oracc/pub/neo/cbd/akk/entry_ids.lst
+		ecpath=(null)
+		emax=4368
+		ipath=/home/oracc/neo/02www/cbd/akk/x0000307.html
+<h3>	struct isp_itemdata ip->itemdata</h3>
+		langs=(null)
+		nlangs=0
+		xtflang=(null)
+		lmem=(null)
+		item=(null)
+		fullitem=(null)
+		block=(null)
+		proj=(null)
+		htmd=(null)
+		html=/home/oracc/neo/02www/cbd/akk/x0000307.html
+		cfy=(null)
+		img=(null)
+		dotted=(null)
+		index=1849
+		page=74
+		pindex=(null)
+		zoom=10
+		zpag=8
+		zindex=176
+		prev=x0008465
+		next=x0002706
+		tmax=(null)
+		xmdxsl=(null)
+		bld=(null)
+		hili=(null)
+		not=0
+<h3>	struct isp_list_loc ip->lloc</h3>
+		type=glo
+		lang=(null)
+		method=file
+		key=(null)
+		dbpath=(null)
+		dbname=(null)
+		path=/home/oracc/pub/neo/cbd/akk/entry_ids.lst
+<h3>	struct isp_srchdata ip->srchdata</h3>
+		tmp=(null)
+		bar=(null)
+		count=0
+		gran=(null)
+		list=(null)
+		new=0
+		adhoc=0
+	zmax=0
+</pre>
+
+  <h2>Environment</h2>
+
+  <p>HTTP environment variables:</p>
+
+  <pre id="p4Environment">CONTEXT_DOCUMENT_ROOT=/home/oracc/www
+CONTEXT_PREFIX=
+DOCUMENT_ROOT=/home/oracc/www
+GATEWAY_INTERFACE=CGI/1.1
+HTTPS=on
+HTTP_ACCEPT=application/json, text/plain, */*
+HTTP_ACCEPT_ENCODING=gzip
+HTTP_ACCEPT_LANGUAGE=en-US
+HTTP_CONNECTION=keep-alive
+HTTP_HOST=build-oracc.museum.upenn.edu
+HTTP_ORIGIN=http://localhost:4200
+HTTP_REFERER=http://localhost:4200/
+HTTP_SEC_CH_UA="Not=A?Brand";v="99", "Chromium";v="118"
+HTTP_SEC_CH_UA_MOBILE=?0
+HTTP_SEC_CH_UA_PLATFORM="Linux"
+HTTP_SEC_FETCH_DEST=empty
+HTTP_SEC_FETCH_MODE=cors
+HTTP_SEC_FETCH_SITE=cross-site
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.15.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+ORACC=/home/oracc
+ORACC_BUILDS=/home/oracc
+ORACC_HOME=/home/oracc
+ORACC_HOST=build-oracc.museum.upenn.edu
+ORACC_MODE=multi
+ORACC_USER=yes
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+PATH_INFO=/neo/akk/x0000307
+PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/akk/x0000307
+QUERY_STRING=
+REMOTE_ADDR=86.12.69.28
+REMOTE_PORT=40542
+REQUEST_METHOD=GET
+REQUEST_SCHEME=https
+REQUEST_URI=/neo/akk/x0000307
+SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
+SCRIPT_NAME=
+SCRIPT_URI=https://build-oracc.museum.upenn.edu/neo/akk/x0000307
+SCRIPT_URL=/neo/akk/x0000307
+SERVER_ADDR=130.91.81.219
+SERVER_ADMIN=stinney@upenn.edu
+SERVER_NAME=build-oracc.museum.upenn.edu
+SERVER_PORT=443
+SERVER_PROTOCOL=HTTP/1.1
+SERVER_SIGNATURE=<address>Apache/2.4.52 (Ubuntu) Server at build-oracc.museum.upenn.edu Port 443</address>
+
+SERVER_SOFTWARE=Apache/2.4.52 (Ubuntu)
+SSL_TLS_SNI=build-oracc.museum.upenn.edu
+</pre>
+
+</div>
+
+</div>
+</body>
+</html>

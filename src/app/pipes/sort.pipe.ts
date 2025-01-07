@@ -1,5 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+const collate = new Intl.Collator("en").compare
+function collate_or_compare(a, b) {
+  if (typeof(a) === "number" && typeof(b) === "number") {
+    return a - b;
+  }
+  return collate(a, b)
+}
+
 @Pipe({
   name: 'sort'
 })
@@ -8,28 +16,14 @@ export class SortPipe implements PipeTransform {
     if (!Array.isArray(array)) {
       return;
     }
-    if (desc) {
-      array.sort((a: any, b: any) => {
-        if (a[field] > b[field]) {
-          return -1;
-        } else if (a[field] < b[field]) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      return array;
-    } else {
-      array.sort((a: any, b: any) => {
-        if (a[field] < b[field]) {
-          return -1;
-        } else if (a[field] > b[field]) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      return array;
-    }
+    const fn = desc?
+      function(x, y) {
+        return collate_or_compare(y[field], x[field])
+      } :
+      function(x, y) {
+        return collate_or_compare(x[field], y[field])
+      };
+    array.sort(fn);
+    return array;
   }
 }

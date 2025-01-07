@@ -1,8 +1,6 @@
 import {
   Component,
   OnInit,
-  Output,
-  EventEmitter,
   OnDestroy
 } from '@angular/core';
 import { GetDataService } from '../../services/get-data/get-data.service';
@@ -15,8 +13,8 @@ import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/hand
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit, OnDestroy {
-  public dataRecieved = false;
-  public noRecievedData = false;
+  public dataReceived = false;
+  public noReceivedData = false;
   public waitForData = false;
   public currentPage = 1;
   public sortField = 'cf';
@@ -24,17 +22,17 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public results: number;
   public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
-  public isMobile: boolean;
+  public errorText : string | null = null;
   public isDescending = false;
-  public clickedHeaderIndex = 5;
+  // The last clicked header; so where the sort arrow is.
+  public sortedColumn = 5;
+  // The last clicked header that wasn't the first header, so
+  // this one is forced to be visible.
+  public forcedVisibleColumn = 0;
   private translationDataPure: any = [];
-  private tableHeadItems: NodeListOf<Element>;
   private tableCells: NodeListOf<Element>;
-  private tableHeadFirstItem: Element;
   private tableHead: Element;
   private navigationSubscription;
-
-  @Output() public wordClickEvent = new EventEmitter();
 
   constructor(
     private getDataService: GetDataService,
@@ -50,8 +48,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 991 ? true : false;
-    this.isMobile && (this.clickedHeaderIndex = 0);
   }
 
   ngOnDestroy() {
@@ -61,85 +57,108 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   public search() {
-    this.dataRecieved = false;
+    this.dataReceived = false;
     this.waitForData = true;
-    this.getDataService.getSearchData().subscribe((data) => {
-      // @ts-ignore
-      this.translationData = data;
-      this.translationDataPure = data;
-      this.checkIfDataRecieved(this.translationData);
+    this.errorText = null;
+    this.noReceivedData = false;
+    this.getDataService.getSearchData().subscribe({
+      next: (data) => {
+        // @ts-ignore
+        this.translationData = data;
+        this.translationDataPure = data;
+        this.checkIfDataReceived(this.translationData);
+      }, error: (err) => {
+        this.waitForData = false;
+        this.errorText = "search.error.down";
+      }
     });
   }
 
-  private checkIfDataRecieved(data) {
+  private dataUpdated() {
+    this.results = this.translationData.length;
+    const max_page = Math.ceil(this.results / this.itemsPerPage);
+    if (max_page < this.currentPage) {
+      this.currentPage = max_page;
+    }
+  }
+
+  private checkIfDataReceived(data) {
     if (data) {
-      this.results = data.length;
-      this.dataRecieved = true;
+      this.dataReceived = true;
       this.waitForData = false;
-      this.noRecievedData = false;
+      this.noReceivedData = false;
+      this.dataUpdated();
     } else {
-      this.dataRecieved = false;
+      this.dataReceived = false;
       this.waitForData = false;
-      this.noRecievedData = true;
+      this.noReceivedData = true;
+    }
+  }
+
+  onResultsInit() {
+    const header = document.getElementById("header-5");
+    if (header) {
+      const hrect = header.getBoundingClientRect();
+      const bottom_delta = hrect.bottom - window.innerHeight + 50;
+      if (0 < bottom_delta) {
+        window.scrollBy({
+          top: bottom_delta,
+          left: 0,
+          behavior: "smooth"
+        });
+      }
     }
   }
 
   public setItemsPerPage(e, items) {
     this.itemsPerPage = items;
+    this.dataUpdated();
   }
 
-  public handleHeaderClick(e, hasDropdown = true) {
-    if (window.innerWidth < 991 && hasDropdown) {
-      this.tableHeadItems = document.querySelectorAll('.js-table-head-item');
-      this.tableHeadFirstItem = document.querySelector(
-        '.js-table-head-item:first-of-type'
-      );
+  public handleDropDown(e, index) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.tableHead = document.querySelector('.js-table-head');
+    this.tableHead.classList.add('active');
+  }
+
+  public handleHeaderClick(e, index, hasDropdown) {
+    if (e.target.tagName === "INPUT") {
+      // Allow the user to use the text input for filtering by period
+      return;
+    }
+    // Are we removing the dropdown?
+    if (hasDropdown) {
       this.tableHead = document.querySelector('.js-table-head');
-      this.tableCells = document.querySelectorAll('.js-table-cell');
-      this.tableHeadItems.forEach((item) => {
-        item.classList.toggle('active');
-      });
-      if (e.target !== this.tableHeadFirstItem) {
-        this.tableHead.prepend(e.target);
+      if (this.tableHead.classList.contains('active')) {
+        this.tableHead.classList.remove('active')
+        this.tableCells = document.querySelectorAll('.js-table-cell');
         this.tableCells.forEach((cell) => {
           cell.classList.remove('active');
-          if (cell.getAttribute('data-id') === e.target.id) {
+          if (cell.getAttribute('data-id') === index) {
             cell.classList.add('active');
           }
         });
       }
-    } else {
-      switch (parseInt(e.target.id, 10)) {
-        case 0:
-          this.sortField = 'gw';
-          break;
-        case 1:
-          this.sortField = 'icount';
-          break;
-        case 2:
-          this.sortField = 'senses_mng';
-          break;
-        case 3:
-          this.sortField = 'lang';
-          break;
-        case 4:
-          this.sortField = null;
-          break;
-        default:
-          this.sortField = 'cf';
-      }
-      this.isDescending = !this.isDescending;
     }
-    this.clickedHeaderIndex =
-      parseInt(e.target.id, 10) === 5 && this.isMobile
-        ? this.clickedHeaderIndex
-        : parseInt(e.target.id, 10);
+    const sortField = ['gw', 'icount', null, 'lang', null, 'cf'][index];
+    if (sortField) {
+      if (this.sortField === sortField) {
+        this.isDescending = !this.isDescending;
+      } else {
+        this.sortField = sortField;
+      }
+      this.sortedColumn = index;
+    }
+    if (hasDropdown) {
+      this.forcedVisibleColumn = index;
+    }
   }
 
   public filterPeriods(e) {
     this.translationData = this.translationDataPure.filter((entry: any) => {
       const hasPeriod = !!entry.periods_p.filter((period: string) => {
-        return period.toLowerCase().includes(e.target.value);
+        return period.toLowerCase().includes(e.target.value.toLowerCase());
       }).length;
       if (hasPeriod) {
         return true;
@@ -147,7 +166,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
         return false;
       }
     });
-    this.results = this.translationData.length;
+    this.dataUpdated();
   }
 
   public showGlossaryArticle(lang: string, id: string, word: string) {

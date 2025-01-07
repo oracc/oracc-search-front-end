@@ -8,7 +8,8 @@ import {
   findAttribute,
   findAttributeOnTag,
   findAttributeBy,
-  findAncestorByTag
+  findAncestorByTag,
+  mergeParams,
 } from '../../../utils/utils';
 import { environment } from 'src/environments/environment';
 import { ThreePanel } from 'src/app/components/three-panel.component';
@@ -84,18 +85,15 @@ export class ProjectTextComponent extends ThreePanel {
           'occurrences',
           'texts',
           'score'
-        ], {
-          queryParams: {
+        ], { queryParams: mergeParams(
+          {
             proj: this.project,
-            ga_lang: this.route.snapshot.queryParams['ga_lang'],
-            ga_isid: this.route.snapshot.queryParams['ga_isid'],
-            lang: this.route.snapshot.queryParams['lang'],
-            isid: this.route.snapshot.queryParams['isid'],
-            iref: this.route.snapshot.queryParams['iref'],
             ref: ref,
-            bloc: bloc
-          }
-        });
+            bloc: bloc,
+          },
+          this.route.snapshot.queryParams,
+          ['ga_lang', 'ga_isid', 'lang', 'isid', 'iref', 'gw', 'type', 'name', 'pos']
+        )});
       }
       console.log("Cannot find associated TR element for this data-bloc attribute");
       return;
@@ -121,17 +119,15 @@ export class ProjectTextComponent extends ThreePanel {
         'occurrences',
         'texts',
         anchorEl.innerText
-      ],{
-        queryParams: {
+      ], { queryParams: mergeParams(
+        {
           proj: this.project,
-          ga_lang: this.route.snapshot.queryParams['ga_lang'],
-          ga_isid: this.route.snapshot.queryParams['ga_isid'],
-          lang: this.route.snapshot.queryParams['lang'],
-          isid: this.route.snapshot.queryParams['isid'],
-          iref: this.route.snapshot.queryParams['iref'],
           ref: ref,
-          wsig: wsig
-      }});
+          wsig: wsig,
+        },
+        this.route.snapshot.queryParams,
+        ['ga_lang', 'ga_isid', 'lang', 'isid', 'iref', 'gw', 'type', 'name', 'pos']
+      )});
       return;
     }
   }
@@ -156,7 +152,6 @@ export class ProjectTextComponent extends ThreePanel {
         const parser = new DOMParser();
         const htmlData = parser.parseFromString(data, 'text/html');
         this.handleTextToHTMLConversionText(htmlData, 'p4XtfData');
-        console.log(`details texts component zoom: ${zoom}`);
       });
       return;
     }

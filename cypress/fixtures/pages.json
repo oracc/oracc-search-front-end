@@ -2,17 +2,17 @@
   "searches/search/king": {
     "url": "http://localhost:8000/search/king"
   },
-  "searches/search/cow": {
-    "url": "http://localhost:8000/search/cow"
+  "searches/search/harness": {
+    "url": "http://localhost:8000/search/harness"
   },
   "suggests/suggest_all/king": {
     "url": "http://localhost:8000/suggest_all/king"
   },
-  "suggests/suggest_all/cow": {
-    "url": "http://localhost:8000/suggest_all/cow"
+  "suggests/suggest_all/harness": {
+    "url": "http://localhost:8000/suggest_all/harness"
   },
-  "oracc/neo/qpn/x000028130": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/qpn/x000028130"
+  "oracc/neo/qpn/x000028680": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/qpn/x000028680"
   },
   "oracc/neo/xis%3Dqpn.r00002c/qpn": {
     "url": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002c"
@@ -20,14 +20,32 @@
   "oracc/neo/ref%3DQ003478.36/xis%3Dqpn.r00002c/qpn": {
     "url": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002c&ref=Q003478.36"
   },
-  "oracc/neo/sux/o0023294": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023294"
+  "oracc/neo/qpn/x000028690": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/qpn/x000028690"
   },
-  "oracc/neo/xis%3Dsux.r000097/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000097"
+  "oracc/neo/xis%3Dqpn.r00002e.p.s000/qpn": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002e.p.s000"
   },
-  "oracc/neo/ref%3DQ000012.1/xis%3Dsux.r000097/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000097&ref=Q000012.1"
+  "oracc/neo/ref%3DQ003230.157/xis%3Dqpn.r00002e.p.s000/qpn": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002e.p.s000&ref=Q003230.157"
+  },
+  "oracc/neo/ref%3DQ003231/xis%3Dqpn.r00002e.p.s000/qpn": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002e.p.s000&ref=Q003231"
+  },
+  "oracc/neo/ref%3DQ003232/xis%3Dqpn.r00002e.p.s000/qpn": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002e.p.s000&ref=Q003232"
+  },
+  "oracc/neo/ref%3DQ003230/xis%3Dqpn.r00002e.p.s000/qpn": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/qpn?xis=qpn.r00002e.p.s000&ref=Q003230"
+  },
+  "oracc/neo/sux/o0041669": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0041669"
+  },
+  "oracc/neo/xis%3Dsux.r00460c.p.s000/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r00460c.p.s000"
+  },
+  "oracc/neo/ref%3DQ000012.1/xis%3Dsux.r00460c.p.s000/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r00460c.p.s000&ref=Q000012.1"
   },
   "oracc/neo/block%3Dsb.Q000012.1/Q000012.1": {
     "url": "https://build-oracc.museum.upenn.edu/neo/Q000012.1?block=sb.Q000012.1"

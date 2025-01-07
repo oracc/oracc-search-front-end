@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'oracc';
 
   public adjustFooter = false;
-  public isMobile: boolean;
   public isHome: boolean;
   public isPageNotFound: boolean;
 
@@ -24,6 +23,5 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth < 991;
   }
 }

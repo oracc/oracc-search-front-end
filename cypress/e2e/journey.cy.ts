@@ -119,6 +119,7 @@ describe('Journey', () => {
       it('can get to occurences/tests/score', () => {
         const input = "cow";
         const result = "ab";
+        const meaning = "harness"
         const ref = "(ED Animals A 1)";
         const score = "ur₃";
         cy.visit("/");
@@ -127,15 +128,14 @@ describe('Journey', () => {
         check_page_is_search_results();
         cy.get('span.results__table-cell').contains(result).click();
         check_page_is_search_result();
-        // click on the (86x/100%) link
-        cy.get('.sense a.icount').click();
+        cy.get('.lex-phra').contains(meaning).click();
         check_page_is_details();
         cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
         cy.get('.details__panel-main tr.l .lnum').contains("1").click();
         check_page_is_details_score();
         cy.get('table.score_block tr.l td.tlit a').contains(score).click();
-        check_page_is_glossary_article_score();
+        check_page_is_glossary_article_score(score);
         cy.get('.senses').contains("/100%)");
       });
 
@@ -143,6 +143,7 @@ describe('Journey', () => {
         const input = "cow";
         const result = "ab";
         const ref = "(ED Animals A 1)";
+        const meaning = "harness"
         const score = "3";
         const text = "Archaic Animals A 3";
         cy.visit("/");
@@ -151,8 +152,7 @@ describe('Journey', () => {
         check_page_is_search_results();
         cy.get('span.results__table-cell').contains(result).click();
         check_page_is_search_result();
-        // click on the (86x/100%) link
-        cy.get('.sense a.icount').click();
+        cy.get('.lex-phra').contains(meaning).click();
         check_page_is_details();
         cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
@@ -179,7 +179,7 @@ describe('Journey', () => {
         const ref = "CBS 3656 o 25";
         const transliteration_word = "gada";
         const expected_form = "gada,gin";
-        const expected_ref = "(H 002 KXXIII.15)";
+        const expected_ref = "(BM 120011 r 18)";
         cy.visit("/");
         check_page_is_search(config);
         cy.get('.search__input').type(`${input}{enter}`);
@@ -197,6 +197,51 @@ describe('Journey', () => {
         cy.get('ul.bcrumbs__list li:nth-of-type(3)').click();
         check_page_is_search_result();
         cy.get('p.norms span').contains(form);
+      });
+
+      describe('search results page', () => {
+        describe('type of result', () => {
+          it('shows morphological form', () => {
+            const input = "eden";
+            const result = "plain";
+            const form = "~,ak";
+            cy.visit("/");
+            cy.get('.search__input').type(`${input}{enter}`);
+            cy.get('.results__table-cell').contains(result).click();
+            cy.get('div.morphs .icountu').contains(form).click();
+            cy.get('div.title-word').contains(`${input} [${result}] morphology: ${form}`);
+          });
+        });
+
+        describe('lexical association', () => {
+          it('goes to the correct next page', () => {
+            const input = "eden";
+            const result = "plain";
+            const lexphra = "qatnu[thin]AJ";
+            const text = "LTBA 1, 40 o iii 45'";
+            cy.visit("/");
+            cy.get('.search__input').type(`${input}{enter}`);
+            cy.get('.results__table-cell').contains(result).click();
+            cy.get('#lexphrases h2.lex-phra').contains(lexphra).click();
+            cy.get('#p4CElineContent .ce-label').contains(text);
+          });
+
+          it('text jumps forward two pages', () => {
+            const input = "eden";
+            const result = "plain";
+            const text = "LTBA 1, 40 o iii 45'";
+            const textTitle = "LTBA 1, 40";
+            cy.visit("/");
+            cy.get('.search__input').type(`${input}{enter}`);
+            cy.get('.results__table-cell').contains(result).click();
+            cy.get('#lexphrases .lex-line').contains(text).click();
+            check_page_is_details_texts();
+            cy.get('.p3h2').contains(textTitle);
+            cy.get('.bcrumbs__list .bcrumbs__list-item').contains('occurrences').click();
+            check_page_is_details();
+            cy.get('#p4CElineContent .ce-label').contains(text);
+          });
+        });
       });
 
       describe('search suggestion box', () => {
@@ -271,12 +316,17 @@ function check_page_is_details_score() {
 
 // Sixth page: glossary-article-texts.component
 function check_page_is_glossary_article_texts() {
-  cy.get('div.glossary-article-text');
+  cy.location().should(loc => {
+    expect(loc.pathname).to.contain('occurrences/texts/');
+    expect(loc.pathname).not.to.contain('texts/score/');
+  });
 }
 
 // Alternate sixth page: glossary-article-score.component
-function check_page_is_glossary_article_score() {
-  cy.get('div.glossary-article-score');
+function check_page_is_glossary_article_score(score) {
+  cy.location().should(loc => {
+    expect(loc.pathname).to.contain(`texts/score/${encodeURIComponent(score)}`);
+  });
 }
 
 // Seventh page: project-texts.component

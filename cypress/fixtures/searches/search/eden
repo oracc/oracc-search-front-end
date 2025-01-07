@@ -1,0 +1,313 @@
+[
+  {
+    "gw": "plain",
+    "headword": "eden[plain]N",
+    "cf": "eden",
+    "icount": 33,
+    "id": "o0026684",
+    "senses_mng": [
+      "plain, steppe, open country"
+    ],
+    "forms_n": [
+      "de₃-na",
+      "di-na",
+      "e-di",
+      "e-di-na",
+      "e-di-ni",
+      "eden",
+      "eden-ba",
+      "eden-bi-re",
+      "eden-bi-še",
+      "eden-bi-še₃",
+      "eden-da",
+      "eden-e",
+      "eden-ŋu₁₀",
+      "eden-ki",
+      "eden-na",
+      "eden-na-bi",
+      "eden-na-gin₇",
+      "eden-na-ŋu₁₀",
+      "eden-na-ke₄",
+      "eden-na-ne",
+      "eden-na-ni",
+      "eden-na-ra",
+      "eden-na-še₃",
+      "eden-na-ta",
+      "eden-ne",
+      "eden-ne₂",
+      "eden-še₃",
+      "eden-ta",
+      "edin",
+      "edin-e",
+      "edin-na",
+      "edin-še₃"
+    ],
+    "norms_n": [
+      "eden",
+      "eden,a",
+      "eden,ak",
+      "eden,ak.bi",
+      "eden,ak.e",
+      "eden,ak.eše",
+      "eden,ak.gin",
+      "eden,ak.ŋu",
+      "eden,ak.ta",
+      "eden,ani",
+      "eden,bi.ak",
+      "eden,bi.eše",
+      "eden,bi.re",
+      "eden,da",
+      "eden,e",
+      "eden,eše",
+      "eden,ŋu",
+      "eden,ta",
+      "eden;ak.ra"
+    ],
+    "periods_p": [
+      "Early Dynastic",
+      "Early Old Babylonian",
+      "Old Babylonian",
+      "Middle Babylonian",
+      "unknown"
+    ],
+    "instances": [
+      "edlex:Q000038.55.1",
+      "obel:P255232.8.6",
+      "obel:P257600.2.3",
+      "obel:P259270.19.2",
+      "obel:P263346.27.3",
+      "obel:P264319.8.5",
+      "obel:P264320.17.4",
+      "obel:P266518.26.3",
+      "obel:P266534.59.2",
+      "obel:P274198.92.2",
+      "obel:P274234.101.4",
+      "obel:P289914.12.2",
+      "obel:P297213.20.3",
+      "obel:P315472.36.1",
+      "obel:P342809.87.1",
+      "obel:P342809.87.3",
+      "obel:P342819.62.3",
+      "obel:P342839.103.7",
+      "obel:P342839.53.2",
+      "obel:P342839.59.1",
+      "obel:P342931.33.2",
+      "obel:P342931.55.1",
+      "obel:P345347.34.4",
+      "obel:P345347.78.3",
+      "obel:P345450.30.3",
+      "obel:P345524.14.2",
+      "obel:P355642.9.1",
+      "obel:P355651.41.4",
+      "obel:P355660.10.1",
+      "obel:P355660.6.1",
+      "obel:P355676.11.2",
+      "obel:P355698.108.2",
+      "obel:P430946.15.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "eden",
+      "plain"
+    ],
+    "sort": "['plain']",
+    "instances_count": 33
+  },
+  {
+    "gw": "alone",
+    "headword": "ēdēnu[alone]AV",
+    "cf": "ēdēnu",
+    "icount": 5,
+    "id": "x0000561",
+    "senses_mng": [
+      "alone"
+    ],
+    "forms_n": [
+      "e-da-nu-a",
+      "e-da-nu-uš-šu",
+      "e-de-nu-uš-šu",
+      "e-de-nu-uš-šu₂",
+      "e-den-nu-uš-šu₂"
+    ],
+    "norms_n": [
+      "ēdānuššu",
+      "ēdānuya",
+      "ēdennuššu",
+      "ēdēnuššu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap1:Q003426.17.5",
+      "rinap/rinap1:Q003433.10.6",
+      "rinap/rinap2:Q006482.30.7",
+      "rinap/rinap2:Q006483.281.5",
+      "rinap/rinap4:Q003262.90.5"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "ēdēnu",
+      "alone"
+    ],
+    "sort": "['alone']",
+    "instances_count": 5
+  },
+  {
+    "gw": "back",
+    "headword": "eden[back]N",
+    "cf": "eden",
+    "icount": 3,
+    "id": "o0026680",
+    "senses_mng": [
+      "back, upper side"
+    ],
+    "forms_n": [
+      "eden",
+      "eden-na-ke₄",
+      "edin"
+    ],
+    "norms_n": [
+      "eden",
+      "eden,ak.e"
+    ],
+    "periods_p": [
+      "Old Babylonian"
+    ],
+    "instances": [
+      "obel:P264320.62.2",
+      "obel:P274200.35.4",
+      "obel:P342931.46.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "eden",
+      "back"
+    ],
+    "sort": "['back']",
+    "instances_count": 3
+  },
+  {
+    "gw": "bird",
+    "headword": "eden.X[bird]N",
+    "cf": "eden.X",
+    "icount": 1,
+    "id": "o0026688",
+    "senses_mng": [
+      "a bird"
+    ],
+    "forms_n": [
+      "eden-x{mušen}"
+    ],
+    "norms_n": [
+      "eden.X"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000018.53.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "eden.X",
+      "bird"
+    ],
+    "sort": "['bird']",
+    "instances_count": 1
+  },
+  {
+    "gw": "desert",
+    "headword": "edenlil[desert]N",
+    "cf": "edenlil",
+    "icount": 1,
+    "id": "o0026686",
+    "senses_mng": [
+      "haunted desert"
+    ],
+    "forms_n": [
+      "eden-lil₂-la₂"
+    ],
+    "norms_n": [
+      "edenlil,ak"
+    ],
+    "periods_p": [
+      "Old Akkadian"
+    ],
+    "instances": [
+      "obel:P265559.7.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "edenlil",
+      "desert"
+    ],
+    "sort": "['desert']",
+    "instances_count": 1
+  },
+  {
+    "gw": "single",
+    "headword": "ēdēnû[single]AJ",
+    "cf": "ēdēnû",
+    "icount": 1,
+    "id": "x0016205",
+    "senses_mng": [
+      "sole"
+    ],
+    "forms_n": [
+      "e-de-ni-ti"
+    ],
+    "norms_n": [
+      "ēdēnīti"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.141.4"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "ēdēnû",
+      "single"
+    ],
+    "sort": "['single']",
+    "instances_count": 1
+  },
+  {
+    "gw": "single",
+    "headword": "ēdēnu[single]AJ",
+    "cf": "ēdēnu",
+    "icount": 1,
+    "id": "x0003511",
+    "senses_mng": [
+      "single"
+    ],
+    "forms_n": [
+      "e-de-nu-u₂"
+    ],
+    "norms_n": [
+      "ēdēnu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006546.330.8"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "ēdēnu",
+      "single"
+    ],
+    "sort": "['single']",
+    "instances_count": 1
+  }
+]

@@ -3,11 +3,11 @@ import { GetDataService } from '../../services/get-data/get-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HandleBreadcrumbsService } from '../../services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { composedPath, findAttribute } from '../../../utils/utils';
+import { findAttribute, findAncestorWithAttribute } from '../../../utils/utils';
 
 @Component({
   selector: 'app-glossary-article-score',
-  templateUrl: './glossary-article-score.component.html'
+  templateUrl: '../glossary-article/glossary-article.component.html'
 })
 export class GlossaryArticleScoreComponent implements OnInit {
   public glossaryContent: any;
@@ -43,36 +43,23 @@ export class GlossaryArticleScoreComponent implements OnInit {
   }
 
   public handleTermClick(e) {
-    const anchorEl = e.path
-      ? e.path.find((el) => {
-          return !!el.className ? el.className.match('icount') : '';
-        })
-      : composedPath(e.target).find((el) => {
-          return !!el.className ? el.className.match('icount') : '';
-        });
-    if (anchorEl) {
-      const anchorElText = anchorEl.querySelector('span')
-        ? anchorEl.querySelector('span').innerText
-        : anchorEl.innerText;
-      e.preventDefault();
-      const queryParams = anchorEl.href
-        .split('(')
-        .slice(1)
-        .join()
-        .slice(0, -1)
-        .replace(/'/g, '')
-        .split(',');
-
-      this.router.navigate([
-        'search-results',
-        anchorElText,
-        'occurrences'
-      ], { queryParams: {
-        lang: findAttribute(anchorEl, 'data-lang'),
-        isid: findAttribute(anchorEl, 'data-isid'),
-        proj: this.project
-      }});
+    const anchorEl = findAncestorWithAttribute(e.target, 'data-isid');
+    if (!anchorEl) {
+      return;
     }
+    const anchorElText = anchorEl.querySelector('span')
+      ? anchorEl.querySelector('span').innerText
+      : anchorEl.innerText;
+    e.preventDefault();
+    this.router.navigate([
+      'search-results',
+      anchorElText,
+      'occurrences'
+    ], { queryParams: {
+      lang: findAttribute(anchorEl, 'data-lang'),
+      isid: findAttribute(anchorEl, 'data-isid'),
+      proj: this.project
+    }});
   }
 
   private handleTextToHTMLConversion(text: string) {

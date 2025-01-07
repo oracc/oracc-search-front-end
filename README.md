@@ -32,6 +32,8 @@ npm install -g @angular/cli
 
 This will allow you to run the necessary `ng` commands for performing several Angular tasks.
 
+Alternatively, you can run `npx ng` instead of `ng`.
+
 ## Running a development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -92,7 +94,7 @@ Now we can use `rsync` to push this new version to the
 production server. Let's say our new version is `1.2.3`:
 
 ```sh
-ng build -c build-oracc
+npx ng build -c build-oracc
 rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-end/1.2.3
 ```
 
@@ -114,10 +116,6 @@ $ ssh rits@build-oracc.museum.upenn.edu
 rits@build-oracc:~$ ls -l /home/oracc/www/search
 lrwxrwxrwx 1 root root 44 Nov 27 16:41 /home/oracc/www/search -> /home/rits/www/oracc-search-front-end/1.2.2
 ```
-
-Inside `/home/rits/oracc-search-front-end` you need to run `npm install` to set up the Angular project. Then run `ng build` to build the production version of the website suitable for the `build-oracc` machine. This will create a `dist/oracc` folder where the production ready files exist.
-
-For the `oracc2` machine the equivalent would be `ng build -c oracc2`
 
 Now we can redirect this link:
 
@@ -224,7 +222,7 @@ You can learn more about Apache configurations for an Angular app [here](https:/
 
 ### Angular config for serving the app under a custom url directory
 
-As explained above, the production and staging apps are configured to run under a `/new` directory while the gh-pages deployment and development environment just run from the root directory `/`. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/new/"` value accordingly.
+As explained above, the production and staging apps are configured to run under a `/search` directory while the gh-pages deployment and development environment just run from the root directory `/`. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/search/"` value accordingly.
 
 It is also possible to define the `baseHref` property using a custom build configuration if desired. You can do this by setting a custom field within the `configurations` object within `angular.json`. For instance, we currently have set the `github-pages` configuration which sets a custom `baseHref`and is run with `ng build --configuration=github-pages`.
 
@@ -287,6 +285,17 @@ in a normal IDE. Instead, we place a breakpoint by inserting
 `npm run cypress:open`. You can't use `cypress:run`; you have to
 use the GUI front end because this is how the debugger is displayed.
 You then have "Resume" and "Next" buttons to click.
+
+### Running tests in different browsers
+
+You can specify a different browser with the `-b` option:
+`npx cypress run -b firefox` or `npx cypress run -b /usr/bin/firefox`.
+For a browser within a snap, you might have to specify a very specific
+binary, such as:
+`npx cypress run -b /snap/chromium/current/usr/lib/chromium-browser/chrome`
+or
+`npx cypress run -b /snap/firefox/current/usr/lib/firefox/firefox`.
+Running these snaps within `cpyress open` does not seem to work, sadly.
 
 ## Further help
 

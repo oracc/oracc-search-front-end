@@ -1,7 +1,12 @@
 <section class="details details--main">
   <div class="container content details__content">
-    <span class="details__word">{{ chosenTermText }}</span>
-
+    <div class="title-word">
+      <span class="details__word">{{ chosenTermText }} </span>
+      <span *ngIf="chosenTermGw" class="details__gw">[{{ chosenTermGw }}] </span>
+      <span *ngIf="chosenTermType" class="details__type">{{ ("details.wordType." + chosenTermType) | translate }}: </span>
+      <span *ngIf="chosenTermName" class="details__name">{{ chosenTermName }} </span>
+      <span *ngIf="chosenTermPos" class="details__pos">({{ chosenTermPos }})</span>
+    </div>
     <div class="details__panel">
       <div class="details__panel-col">
         <div
@@ -26,6 +31,11 @@
 
       <div class="details__panel-col">
         <div class="details__panel-top">
+          <span
+            class="item-nav fas fa-arrow-left"
+            [ngClass]="{active: prev_item}"
+            (click)="handlePrevious()"
+          ></span>
           <span class="details__panel-top-text item-count">{{ topText }}</span>
           <span
             *ngIf="isZoomed()"
@@ -33,6 +43,11 @@
           ><a class="reset-zoom" href="javascript://">
             {{ "details.resetZoom" | translate }}
           </a></span>
+          <span
+            class="item-nav fas fa-arrow-right"
+            [ngClass]="{active: next_item}"
+            (click)="handleNext()"
+          ></span>
           <div class="details__panel-pagination">
             <span
               class="details__panel-left"

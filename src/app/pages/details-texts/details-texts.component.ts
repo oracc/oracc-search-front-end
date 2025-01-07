@@ -8,7 +8,8 @@ import {
   findAttribute,
   findAttributeOnTag,
   findAttributeBy,
-  findAncestorByTag
+  findAncestorByTag,
+  mergeParams,
 } from '../../../utils/utils';
 import { environment } from 'src/environments/environment';
 import { ThreePanel } from 'src/app/components/three-panel.component';
@@ -21,19 +22,23 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 })
 export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
+  private ref: string;
+
+  override initialize() {
+    this.ref = this.route.snapshot.queryParams['iref'];
+  }
 
   override getBackendData(): Observable<string> {
-    const paramMap = this.route.snapshot.paramMap;
     return this.getDataService.getDetailData(
       this.project,
       this.route.snapshot.queryParams['lang'],
       this.route.snapshot.queryParams['isid'],
-      {ref: this.route.snapshot.queryParams['iref']}
+      { ref: this.ref }
     );
   }
 
   override detailsPanelTopText(): string {
-    return "details.linesText";
+    return "details.textText";
   }
 
   override setMetadataPanel(htmlData: Document) {
@@ -51,7 +56,16 @@ export class DetailsTextsComponent extends ThreePanel {
   }
 
   private handleTextToHTMLConversionText(htmlData: Document, middleId: string) {
-    let middlePanelInput = htmlData.getElementById(middleId);
+    const middlePanelInput = htmlData.getElementById(middleId);
+    // Add touch control to footnotes
+    const noteMarkers = middlePanelInput.getElementsByClassName("marker");
+    for (let i = 0; i !== noteMarkers.length; ++i) {
+      const marker = noteMarkers.item(i);
+      const code = findAttribute(marker, "onmouseover");
+      if (code) {
+        marker.setAttribute("ontouchstart", code);
+      }
+    }
     const textPanelInput = splitOutTranslations(middlePanelInput);
     this.middlePanel = this.sanitizer.bypassSecurityTrustHtml(
       middlePanelInput.innerHTML
@@ -88,16 +102,15 @@ export class DetailsTextsComponent extends ThreePanel {
           'texts',
           'score'
         ], {
-          queryParams: {
-            proj: this.project,
-            ga_lang: this.route.snapshot.queryParams['ga_lang'],
-            ga_isid: this.route.snapshot.queryParams['ga_isid'],
-            lang: this.route.snapshot.queryParams['lang'],
-            isid: this.route.snapshot.queryParams['isid'],
-            iref: this.route.snapshot.queryParams['iref'],
-            ref: ref,
-            bloc: bloc
-          }
+          queryParams: mergeParams(
+            {
+              proj: this.project,
+              ref: ref,
+              bloc: bloc
+            },
+            this.route.snapshot.queryParams,
+            ['ga_lang', 'ga_isid', 'lang', 'isid', 'iref', 'gw', 'type', 'name', 'pos']
+          )
         });
       }
       console.log("Cannot find associated TR element for this data-bloc attribute");
@@ -125,16 +138,16 @@ export class DetailsTextsComponent extends ThreePanel {
         'texts',
         anchorEl.innerText
       ],{
-        queryParams: {
-          proj: this.project,
-          ga_lang: this.route.snapshot.queryParams['ga_lang'],
-          ga_isid: this.route.snapshot.queryParams['ga_isid'],
-          lang: this.route.snapshot.queryParams['lang'],
-          isid: this.route.snapshot.queryParams['isid'],
-          iref: this.route.snapshot.queryParams['iref'],
-          ref: ref,
-          wsig: wsig
-      }});
+        queryParams: mergeParams(
+          {
+            proj: this.project,
+            ref: ref,
+            wsig: wsig
+          },
+          this.route.snapshot.queryParams,
+          ['ga_lang', 'ga_isid', 'lang', 'isid', 'iref', 'gw', 'type', 'name', 'pos']
+        )
+      });
       return;
     }
   }
@@ -159,7 +172,6 @@ export class DetailsTextsComponent extends ThreePanel {
         const parser = new DOMParser();
         const htmlData = parser.parseFromString(data, 'text/html');
         this.handleTextToHTMLConversionText(htmlData, 'p4XtfData');
-        console.log(`details texts component zoom: ${zoom}`);
       });
       return;
     }
@@ -173,7 +185,12 @@ export class DetailsTextsComponent extends ThreePanel {
       window.open(`${environment.glossaryArticleURL}/${this.project}/${this.item}?sources`);
       return;
     }
-    window.open(clickedLink.getAttribute('href'));
+    let href = clickedLink.getAttribute('href');
+    const r = RegExp("javascript:viewsBuyBook\\([\"'](.*)[\"']\\)").exec(href);
+    if (r) {
+      href = r[1];
+    }
+    window.open(href);
   }
 
   override handleTextClick(e) {
@@ -206,5 +223,10 @@ export class DetailsTextsComponent extends ThreePanel {
       clickedLine.classList.add('selected');
       centralPanelLine.classList.add('selected');
     }
+  }
+
+  override changeText(item: string) {
+    this.ref = item;
+    this.setup();
   }
 }

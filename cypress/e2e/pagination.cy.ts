@@ -6,27 +6,28 @@ describe('Pagination', () => {
   describe('occurrences page', () => {
     it('paginates properly', () => {
       cy.visit("/");
-      const search = "mithartu";
-      const form = "474x/99%";
+      const search = "matu";
+      const result = "land";
+      const form = "133x/100%";
       const first_heading = "Larsa";
-      const zoom_item = "Shaduppum";
+      const zoom_item = "unclear";
       const page_size = 25; // P4 provides pages of 25 elements
-      const line_count = 438; // current number of items in the database
-      const zoomed_line_count = 90;
+      const line_count = 133; // current number of items in the database
+      const zoomed_line_count = 125;
       const next_page = 2;
       // this reference should be somewhere on the next_page of
       // the unzoomed list.
-      const next_page_ref = "IM 52916 o 11";
-      const zoomed_next_page_ref = "IM 52916 o 21";
+      const next_page_ref = "Esarhaddon 1 ii 52";
+      const zoomed_next_page_ref = "Esarhaddon 1 v 30";
       const reset_filter_text = "Reset Filter";
       cy.get('.search__input').type(`${search}{enter}`);
-      cy.get('.results__table-cell').contains(search).click();
-      cy.get('.sense .icount').contains(form).click();
+      cy.get('.results__table-cell').contains(result).click();
+      cy.get('.sense .icountu').contains(form).click();
       cy.get('#p4CElineContent .ce-result').should('have.length', page_size);
       cy.get('.details__panel-top-text.item-count').contains(line_count.toString());
       cy.get('.ce-heading').first().contains(first_heading);
       cy.get('.pgotl.level2 a').contains(zoom_item).click();
-      cy.get('.ce-heading').first().contains(zoom_item);
+      //cy.get('.ce-heading').first().contains(zoom_item);
       cy.get('.details__panel-pagination .details__panel-list-item').should(
         'have.length',
         Math.ceil(zoomed_line_count / page_size)

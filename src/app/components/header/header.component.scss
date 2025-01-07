@@ -2,26 +2,52 @@
 
 .header {
   min-height: 100px;
-  background-color: $white;
   box-shadow: 0 0 8px 0 $grayDark;
   position: relative;
   z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(143 84 23) 0%,
+    rgba(239, 198, 140, 1) 8%,
+    rgba(243, 222, 186, 1) 14%,
+    rgba(252, 249, 219, 1) 42%,
+    rgba(252, 249, 219, 1) 100%
+  );
   @media only screen and (max-width: 600px) {
     min-height: 70px;
     box-shadow: none;
     border-bottom: 1px solid $gray;
+    background: linear-gradient(
+      90deg,
+      rgba(210, 149, 86, 1) 0%,
+      rgba(239, 198, 140, 1) 10%,
+      rgba(243, 222, 186, 1) 24%,
+      rgba(252, 249, 219, 1) 62%,
+      rgba(252, 249, 219, 1) 100%
+    );
+  }
+
+  .container{
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 }
 
 .header__content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .header__nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 100px;
 
   @media only screen and (max-width: 600px) {
@@ -63,14 +89,26 @@
   }
 }
 
-.header__logo-link {
+.header__logo-text {
   color: $red;
   font-weight: 700;
   font-size: 2.5rem;
+  font-size: 40px;
+  @media only screen and (min-width: 860px) {
+   display: none;
+  }
+}
+
+.header__logo-image {
+  position: relative;
+  left: 0;
+  max-width: 40vw;
+  @media only screen and (max-width: 860px) {
+    display: none;
+   }
 }
 
 .header__nav-list {
-  margin-right: 81px;
   display: flex;
 
   @media only screen and (max-width: 600px) {
@@ -132,7 +170,7 @@
   top: 7px;
   transition: $dur $ease;
   &:hover {
-    color: darken($grayLight, 10%);
+    color: darken($grayLight, 20%);
   }
   @media only screen and (max-width: 600px) {
     font-size: 0.75rem;
@@ -161,7 +199,7 @@
 }
 
 .header__nav-lang-link--active {
-  color: darken($grayLight, 10%);
+  color: darken($grayLight, 30%);
 }
 
 /// Header mob menu toggle button

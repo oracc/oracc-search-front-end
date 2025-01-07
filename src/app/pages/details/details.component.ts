@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { composedPath } from '../../../utils/utils';
 import { ThreePanel } from 'src/app/components/three-panel.component';
+import { mergeParams } from '../../../utils/utils';
 
 @Component({
   selector: 'app-details',
@@ -39,9 +40,11 @@ export class DetailsComponent extends ThreePanel {
           return el.localName === 'a';
         });
 
-    const ref = anchorEl.getAttribute('data-iref');
+    const iref = anchorEl.getAttribute('data-iref');
+    const proj = anchorEl.hasAttribute('data-proj')?
+        anchorEl.getAttribute('data-proj') : this.project;
 
-    if (ref) {
+    if (iref) {
       // navigates to details texts component
       this.router.navigate(
         [ 'search-results',
@@ -49,14 +52,14 @@ export class DetailsComponent extends ThreePanel {
           'occurrences',
           'texts'
         ],
-        { queryParams: {
-          proj: this.project,
-          ga_lang: this.route.snapshot.queryParams['ga_lang'],
-          ga_isid: this.route.snapshot.queryParams['ga_isid'],
-          lang: this.route.snapshot.queryParams['lang'],
-          isid: this.route.snapshot.queryParams['isid'],
-          iref: ref,
-        }}
+        { queryParams: mergeParams(
+          {
+            proj: proj,
+            iref: iref,
+          },
+          this.route.snapshot.queryParams,
+          ['ga_lang', 'ga_isid', 'lang', 'isid', 'gw', 'type', 'name', 'pos']
+        )}
       );
     }
   }

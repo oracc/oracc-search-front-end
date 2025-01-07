@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
-import { DIRECTION, PANEL_TYPE } from '../../utils/consts';
+import {  PANEL_TYPE } from '../../utils/consts';
 import { GetDataService } from '../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -31,6 +31,10 @@ export class ThreePanel implements OnInit {
   public isMobile: boolean = false;
   public project: string = 'neo';
   public chosenTermText: string = "";
+  public chosenTermGw: string | null;
+  public chosenTermType: string | null;
+  public chosenTermName: string | null;
+  public chosenTermPos: string | null;
   public currentPage: number | null = null;
   public zoom: number | null = null;
   readonly paginationButtonCount = 6;
@@ -38,17 +42,37 @@ export class ThreePanel implements OnInit {
   public paginatedPages: number[] = [];
   public paginationSliceStart: number = 1;
   public paginationSliceEnd: number = 7;
-  public totalLines: number;
   public topText: string;
+  public prev_item: string | null = null;
+  public next_item: string | null = null;
+  public endObserver: Subscription;
 
   public ngOnInit(): void {
     // Are we on a narrow (probably mobile) screen?
-    this.isMobile = window.innerWidth < 991;
+    this.isMobile = window.innerWidth <= 600;
     // The metadata (first) and text (third) panels should be
     // collapsed by default on mobile (the three panels are
     // vertically stacked in this case).
     this.isMetadataPanelActive = !this.isMobile;
     this.isTextPanelActive = !this.isMobile;
+    this.endObserver = this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.setup();
+      }
+    });
+    this.initialize();
+    this.setup();
+  }
+
+  public ngOnDestroy() : void {
+    this.endObserver.unsubscribe()
+  }
+
+  // override this to capture information from the route before
+  // getBackendData, for example.
+  public initialize() {}
+
+  public setup() : void {
     this.breadcrumbsService.setBreadcrumbs(this.router);
     const proj = this.route.snapshot.queryParams['proj'];
     if (proj) {
@@ -58,6 +82,10 @@ export class ThreePanel implements OnInit {
     this.currentPage = null;
     this.zoom = null;
     this.chosenTermText = this.route.snapshot.paramMap.get('word');
+    this.chosenTermGw = this.route.snapshot.queryParamMap.get('gw');
+    this.chosenTermType = this.route.snapshot.queryParamMap.get('type');
+    this.chosenTermName = this.route.snapshot.queryParamMap.get('name');
+    this.chosenTermPos = this.route.snapshot.queryParamMap.get('pos');
     // All three panels need the spinner
     const spinner = "<i class='fas fa-spinner'></i>";
     this.metadataPanel = spinner;
@@ -93,27 +121,42 @@ export class ThreePanel implements OnInit {
   // update the middle panel with HTML received from the backend, and
   // set the page buttons appropriately for how many pages there are.
   public setMiddlePanelAndPages(htmlData) {
+    const pager = htmlData.getElementById('p4Pager');
+    if (pager) {
+      if (pager.hasAttribute('data-prev')) {
+        this.prev_item = pager.getAttribute('data-prev');
+        if (this.prev_item == "") {
+          this.prev_item = null;
+        }
+      }
+      if (pager.hasAttribute('data-next')) {
+        this.next_item = pager.getAttribute('data-next');
+        if (this.next_item == "") {
+          this.next_item = null;
+        }
+      }
+    }
     this.setMiddlePanel(htmlData);
-    const controlsInput = htmlData.getElementById('p4PageNav');
+    const itemControls = htmlData.getElementById('p4itemNav');
     let topTextArguments = [];
     // set total lines, if we know
-    if (controlsInput && controlsInput.hasAttribute('data-imax')) {
-      this.totalLines = parseInt(
-        controlsInput.getAttribute('data-imax'),
-        10
-      );
-      topTextArguments = [this.totalLines];
+    if (itemControls && itemControls.hasAttribute('data-imax')) {
+      const total = parseInt(itemControls.getAttribute('data-imax'), 10);
+      const index = itemControls.hasAttribute('data-inth')?
+        parseInt(itemControls.getAttribute('data-inth'), 10) : null;
+      topTextArguments = [total, index];
     }
     this.translate.get(
       this.detailsPanelTopText(),
       topTextArguments
     ).subscribe(text => { this.topText = text; });
     // set pagination controls, if we know how many pages
-    if (!controlsInput || !controlsInput.hasAttribute('data-pmax')) {
+    const navControls = htmlData.getElementById('p4PageNav');
+    if (!navControls || !navControls.hasAttribute('data-pmax')) {
       return;
     }
     this.pageCount = parseInt(
-      controlsInput.getAttribute('data-pmax'),
+      navControls.getAttribute('data-pmax'),
       10
     );
     if (this.currentPage === null) {
@@ -227,5 +270,22 @@ export class ThreePanel implements OnInit {
 
   // override this to handle the user clicking the Text (third) panel
   public handleTextClick(e) {
+  }
+
+  // override this to handle prev/next buttons
+  public changeText(item: string) {
+    console.warn(`moving to ${item} not implemented`);
+  }
+
+  public handlePrevious() {
+    if (this.prev_item) {
+      this.changeText(this.prev_item);
+    }
+  }
+
+  public handleNext() {
+    if (this.next_item) {
+      this.changeText(this.next_item);
+    }
   }
 }
