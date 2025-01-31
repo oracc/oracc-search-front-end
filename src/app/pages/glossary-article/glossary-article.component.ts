@@ -111,7 +111,6 @@ export class GlossaryArticleComponent implements OnInit {
     }
 
     if (anchorEl.hasAttribute('data-iref')) {
-      console.log("have data-iref");
       // we go to a different place than neo;
       // neo goes to GlossaryArticleTextsComponent, but for us we would have
       // a lot of missing details that would make breadcrumbs fail.
@@ -133,11 +132,8 @@ export class GlossaryArticleComponent implements OnInit {
           proj: 'data-proj',
         }
       )
-      console.log("aunt?");
       const aunt = this.lexicalAssociationTitleElement(anchorEl);
-      console.log(`aunt! ${aunt}`);
       addArticleParams(params);
-      console.log(`params! ${params}`);
       this.router.navigate(
         [ 'search-results',
           this.route.snapshot.paramMap.get('word'),

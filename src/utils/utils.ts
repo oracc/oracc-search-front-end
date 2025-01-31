@@ -168,7 +168,6 @@ export function addArticleParams(params) {
 }
 
 export function mergeParams(base, queryParams, keys) {
-  console.log(queryParams);
   for (let key of keys) {
     if (key in queryParams) {
       base[key] = queryParams[key];
@@ -176,6 +175,5 @@ export function mergeParams(base, queryParams, keys) {
       console.log(`no key ${key}`);
     }
   }
-  console.log(base);
   return base;
 }

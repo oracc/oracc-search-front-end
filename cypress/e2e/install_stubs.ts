@@ -29,7 +29,6 @@ export function install_stubs(
     cy.fixture(`${directory_name}.json`).then((dir) => {
       Object.keys(dir).forEach((fixture_path) => {
         cy.intercept(dir[fixture_path], (req) => {
-          console.log(`replying to ${req.url} with ${fixture_path}`);
           req.reply({ fixture: fixture_path });
         });
       });
