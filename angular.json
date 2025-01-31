@@ -51,13 +51,13 @@
               ]
             },
             "oracc2": {
+              "baseHref": "/search/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.oracc2.ts"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "production": {
               "budgets": [
@@ -68,8 +68,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "7kb"
+                  "maximumWarning": "8kb",
+                  "maximumError": "16kb"
                 }
               ],
               "outputHashing": "all"

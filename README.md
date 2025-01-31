@@ -22,37 +22,45 @@ This will install all of the project dependencies that are specified in `package
 
 You can update the version numbers of individual packages in the `package.json` file when necessary. Running `npm install` again will install the specified dependencies.
 
-## Install the Angular CLI
-
-To install the Angular CLi run the following:
-
-```shell script
-npm install -g @angular/cli
-```
-
-This will allow you to run the necessary `ng` commands for performing several Angular tasks.
-
-Alternatively, you can run `npx ng` instead of `ng`.
-
 ## Running a development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npx ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Development server on mobile
 
-Run `ng serve --host 0.0.0.0`. Find your local IP address. Navigate to `<local IP address>:4200/`.
+Run `npx ng serve --host 0.0.0.0`. Find your local IP address. Navigate to `<local IP address>:4200/`.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npx ng generate component component-name` to generate a new component. You can also use `npx ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ---
 
 ## Build the production ready website files
 
-Run `ng build` to build the project for `oracc-build`. The build artifacts will be stored in the `dist` directory.
+Run `npx ng build --optimize -c build-oracc` to build the project for `build-oracc`. The build artifacts will be stored in the `dist` directory.
 
-To build for `oracc2` use `ng build -c oracc2`.
+To build for `oracc2` use `npx ng build --optimize -c oracc2`.
+
+The configurations for these builds are files in the `src/environments`
+directory. These are referenced in `angular.json`, in the key
+`projects/oracc/architect/build/configurations`. Therefore you can add
+more configurations by adding a new file to `src/environments` and
+adding a reference to this file in `angular.json` in the place just
+described.
+
+Similarly, altering the files in the `src/environments` directory
+will alter aspects of the builds. Currently the aspects that can be
+configured are:
+
+* `production`: This affects the behaviour of `npx ng serve` which we don't use on production servers, so it can be set to `false` everywhere, but I suppose it doesn't hurt to set it to `true` for production builds.
+* `apiUrl`: Where the front end can find the back end. This should match where Apache has configured it to be available.
+* `glossaryArticleURL`: Where the front end can find the projects it needs to read from.
+
+If you want to change the path the front end lives on (changing `/new/`
+to `/search/` for example) you don't just change where you deploy it to,
+you must also change the `baseHref` value within the appropriate
+configuration within the `angular.json` file.
 
 ---
 
@@ -76,25 +84,26 @@ This will run the `gh-pages-deploy` script defined in `package.json`. It will bu
 
 The project will automatically be deployed to [github-pages](https://oracc.github.io/oracc-search-front-end).
 
----
 
-## _to-do: add build instructions for the build-oracc server separate to oracc2_
-
----
-
-## Deploy to the Oracc build server (for production)
+## Deploy to the build-oracc or oracc2 server or (for production)
 
 The application is currently deployed for production to the Oracc build server (more details [here](https://github.com/oracc/website/wiki/ORACC-Server)) which runs on Ubuntu and exposes an Apache web server. Ask a senior team member or Steve Tinney to get access to this server.
 
-### Push the new assets to the server
+### Build the assets
 
 Once we are happy with our front end code, we must update
-the version number in `package.json`, then call `ng build`.
+the version number in `package.json`, then call `ng build`:
+
+* For build-oracc: `npx ng build --optimize -c build-oracc`
+* For oracc2: `npx ng build --optimize -c oracc2`
+
+### Push the new assets to the server
+
 Now we can use `rsync` to push this new version to the
-production server. Let's say our new version is `1.2.3`:
+production server. Let's say our new version is `1.2.3` and
+we're pushing to `build-oracc`:
 
 ```sh
-npx ng build -c build-oracc
 rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-end/1.2.3
 ```
 
@@ -103,8 +112,6 @@ rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-en
 The website is currently served from a `/search` directory on the production server. This is achieved through a
 symlink from `/home/oracc/www/search` to the directory
 containing the assets.
-
-Use the `main` git branch for production deployments.
 
 Firstly we need to ssh into the build-oracc server. If you want to be able to restore the current version,
 take a note of the current link's target (only type the
@@ -164,13 +171,13 @@ These rules look like this:
     RewriteCond %{REQUEST_URI} "^/oracc-rest-api/"
     RewriteRule ^ - [L]
 
-    # Angular website config - rewrites routes back to /new/index.html
-    RewriteCond %{REQUEST_FILENAME} "^/new/?"
+    # Angular website config - rewrites routes back to /search/index.html
+    RewriteCond %{REQUEST_FILENAME} "^/search/?"
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
     RewriteRule ^ - [L]
-    RewriteCond %{REQUEST_FILENAME} "^/new(/.*)?$"
-    RewriteRule ^ /new/index.html [L]
+    RewriteCond %{REQUEST_FILENAME} "^/search(/.*)?$"
+    RewriteRule ^ /search/index.html [L]
 
 ...
 </VirtualHost>
@@ -230,14 +237,14 @@ It is also possible to define the `baseHref` property using a custom build confi
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npx ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 Although there are not unit tests at the moment.
 
 ## Running end-to-end tests
 
 This project also uses Cypress for testing. Ensure you've got the backend and frontend apps running before attempting the tests. To run the tests without a window, run `npx cypress run` or `npm run cypress:run`. To open a window and see the tests run (more helpful when writing the tests and debugging), run `npx cypress open` or `npm run cypress:open` and choose the tests you'd like to run through the GUI.
 
-`ng serve` (or equivalent) should be running while these tests
+`npx ng serve` (or equivalent) should be running while these tests
 are run.
 
 The `oracc-rest` server should also be running and the
@@ -299,4 +306,4 @@ Running these snaps within `cpyress open` does not seem to work, sadly.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `npx ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
