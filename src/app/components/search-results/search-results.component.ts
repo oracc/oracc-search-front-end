@@ -17,15 +17,16 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public noReceivedData = false;
   public waitForData = false;
   public currentPage = 1;
-  public sortField = 'cf';
   public itemsPerPage = 10;
   public results: number;
   public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
   public translationData = [];
   public errorText : string | null = null;
-  public isDescending = false;
+  public isDescending = true;
   // The last clicked header; so where the sort arrow is.
-  public sortedColumn = 5;
+  public sortedColumn = 1;
+  // The name of the data in sortedColumn
+  public sortField = 'icount';
   // The last clicked header that wasn't the first header, so
   // this one is forced to be visible.
   public forcedVisibleColumn = 0;
@@ -139,6 +140,8 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
             cell.classList.add('active');
           }
         });
+        this.forcedVisibleColumn = index;
+        return;
       }
     }
     const sortField = ['gw', 'icount', null, 'lang', null, 'cf'][index];
@@ -150,7 +153,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
       }
       this.sortedColumn = index;
     }
-    if (hasDropdown) {
+    if (index < 5) {
       this.forcedVisibleColumn = index;
     }
   }

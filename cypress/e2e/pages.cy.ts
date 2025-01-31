@@ -17,7 +17,7 @@ describe('Pages', () => {
   describe('footnote popup', () => {
     it('appears with mouseover', () => {
       cy.visit("/");
-      const search = "king";
+      const search = "arwad";
       const result = "Abdi-Li\u02beti";
       const ref = "Sennacherib 4 36";
       cy.get('.search__input').type(`${search}{enter}`);
@@ -35,7 +35,7 @@ describe('Pages', () => {
     // For some reason Cypress cannot simulate touch events of Firefox
     it('appears with touch tap', { browser: ["chrome", "chromium", "electron"] }, () => {
       cy.visit("/");
-      const search = "king";
+      const search = "arwad";
       const result = "Abdi-Li\u02beti";
       const ref = "Sennacherib 4 36";
       cy.get('.search__input').type(`${search}{enter}`);
@@ -64,7 +64,7 @@ describe('Pages', () => {
   describe('occurrences texts', () => {
     it('can be navigated between', () => {
       cy.visit("/");
-      const search = "king";
+      const search = "Sidon";
       const result = "Abdi-milkuti";
       const ref1 = "Esarhaddon 1 ii 65";
       const ref2 = "Esarhaddon 2 i 19";

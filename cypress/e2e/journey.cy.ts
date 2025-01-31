@@ -26,12 +26,12 @@ describe('Journey', () => {
         it('shows the correct pages', () => {
           const search = "wat";
           const suggestion = "water";
-          const result = "zebu";
-          const form = "ab-za-za";
-          const ref = "NFT 204-206 (AO 4328 (+) 4330) o i 2";
-          const translation = "the enemy has a furious heart";
+          const result = "nagbu";
+          const form = "nagab";
+          const ref = "Sennacherib 42 6";
+          const translation = " father of the gods, looked steadfastly upon me among all of the rulers";
           // part of the transliteration that matches this translation
-          const transliteration = "mu-sa-re";
+          const transliteration = "ma-li-ki";
 
           cy.visit("/");
           // do a search for "water" and check suggestions show
@@ -42,7 +42,7 @@ describe('Journey', () => {
           // check water results table displays and click `result`
           cy.get('.results').should('be.visible');
           cy.get('.bcrumbs').should('be.visible');
-          cy.get('li.results__table-cell').contains(result).click();
+          cy.get('.results__table-cell').contains(result).click();
 
           // expect details
           cy.get('.glossary').should('be.visible');
@@ -68,7 +68,7 @@ describe('Journey', () => {
           // check clicking the "original" text (not translation) goes on to provide details for that word
           translit_element.click();
           cy.get('.bcrumbs').should('be.visible');
-          const breadcrumb1 = form.replaceAll('-', '');
+          const breadcrumb1 = result.replaceAll('-', '');
           cy.get('.bcrumbs__list-item').contains(breadcrumb1).should('be.visible');
           const breadcrumb2 = transliteration.replaceAll('-', ' ');
           cy.get('.bcrumbs__list-item').contains(breadcrumb2).should('be.visible');
@@ -81,11 +81,11 @@ describe('Journey', () => {
 
         it('is navigable via breadcrumbs', () => {
           const input = "water";
-          const result = "abala";
-          const form = "a-bala";
-          const ref = "CBS 3656 o 25";
-          const transliteration_word = "gada";
-          const expected_form = "gada,gin";
+          const result = "abzu";
+          const form = "ab-su";
+          const ref = "VAT 607+ (VS 2, 11) (+) AO 3924 (TCL 15, pl.3) o ii 7'";
+          const transliteration_word = "ab-su-ra";
+          const expected_form = "ab-su-a";
           cy.visit("/");
           check_page_is_search(config);
           cy.get('.search__input').type(`${input}{enter}`);
@@ -96,12 +96,12 @@ describe('Journey', () => {
           check_page_is_details();
           cy.get('.details__panel-main').contains(ref).click();
           check_page_is_details_texts();
-          cy.get('table.transliteration tr.l a.cbd span').contains(transliteration_word).click();
+          cy.get('table.transliteration tr.l a.cbd').contains(transliteration_word).click();
           check_page_is_glossary_article_texts();
           cy.get('#p4GlossaryEntry').contains(expected_form);
           cy.get('ul.bcrumbs__list li:nth-of-type(5)').click();
           check_page_is_details_texts();
-          cy.get('table.transliteration tr.l a.cbd span').contains(transliteration_word);
+          cy.get('table.transliteration tr.l a.cbd').contains(transliteration_word);
           cy.get('ul.bcrumbs__list li:nth-of-type(4)').click();
           check_page_is_details();
           cy.get('.details__panel-main').contains(ref);
@@ -174,12 +174,12 @@ describe('Journey', () => {
 
       it('can navigate back to result after switching to occurences text', () => {
         const input = "water";
-        const result = "abala";
-        const form = "a-bala";
-        const ref = "CBS 3656 o 25";
-        const transliteration_word = "gada";
-        const expected_form = "gada,gin";
-        const expected_ref = "(BM 120011 r 18)";
+        const result = "abzu";
+        const form = "ab-su";
+        const ref = "VAT 607+ (VS 2, 11) (+) AO 3924 (TCL 15, pl.3) o ii 7'";
+        const transliteration_word = "ab-su-ra";
+        const expected_form = "ab-su-a";
+        const expected_ref = "(VAT 1338 + VAT 1348 + VAT 1406 + 2164 + VAT 3702 o ii 18)";
         cy.visit("/");
         check_page_is_search(config);
         cy.get('.search__input').type(`${input}{enter}`);
@@ -190,7 +190,7 @@ describe('Journey', () => {
         check_page_is_details();
         cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
-        cy.get('table.transliteration tr.l a.cbd span').contains(transliteration_word).click();
+        cy.get('table.transliteration tr.l a.cbd').contains(transliteration_word).click();
         check_page_is_glossary_article_texts();
         cy.get('#p4GlossaryEntry').contains(expected_form).click();
         cy.get('.ce-label').contains(expected_ref);
