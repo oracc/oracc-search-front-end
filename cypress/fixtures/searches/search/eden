@@ -3,7 +3,7 @@
     "gw": "plain",
     "headword": "eden[plain]N",
     "cf": "eden",
-    "icount": 33,
+    "icount": 34,
     "id": "o0026684",
     "senses_mng": [
       "plain, steppe, open country"
@@ -40,6 +40,7 @@
       "edin",
       "edin-e",
       "edin-na",
+      "edin-še",
       "edin-še₃"
     ],
     "norms_n": [
@@ -93,6 +94,7 @@
       "obel:P342839.59.1",
       "obel:P342931.33.2",
       "obel:P342931.55.1",
+      "obel:P345023.24.4",
       "obel:P345347.34.4",
       "obel:P345347.78.3",
       "obel:P345450.30.3",
@@ -112,7 +114,7 @@
       "plain"
     ],
     "sort": "['plain']",
-    "instances_count": 33
+    "instances_count": 34
   },
   {
     "gw": "alone",
@@ -308,6 +310,36 @@
       "single"
     ],
     "sort": "['single']",
+    "instances_count": 1
+  },
+  {
+    "gw": "steppe",
+    "headword": "eden[steppe]N",
+    "cf": "eden",
+    "icount": 1,
+    "id": "x000008080",
+    "senses_mng": [
+      "plain, steppe, open country"
+    ],
+    "forms_n": [
+      "e₂-di-na"
+    ],
+    "norms_n": [
+      "eden,ak"
+    ],
+    "periods_p": [
+      "unknown"
+    ],
+    "instances": [
+      "obel:P344925.7.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "eden",
+      "steppe"
+    ],
+    "sort": "['steppe']",
     "instances_count": 1
   }
 ]

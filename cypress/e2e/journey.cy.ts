@@ -145,7 +145,7 @@ describe('Journey', () => {
         const ref = "(ED Animals A 1)";
         const meaning = "harness"
         const score = "3";
-        const text = "Archaic Animals A 3";
+        const text = "SF 081 o i 3";
         cy.visit("/");
         check_page_is_search(config);
         cy.get('.search__input').type(`${input}{enter}`);

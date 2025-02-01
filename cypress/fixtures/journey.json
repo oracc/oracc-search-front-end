@@ -26,11 +26,11 @@
   "oracc/neo/sux/o0023294": {
     "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023294"
   },
-  "oracc/dcclt/xis%3Dlx.wd.9354/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.9354"
+  "oracc/dcclt/xis%3Dlx.wd.10031/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.10031"
   },
-  "oracc/dcclt/ref%3DQ000012.1/xis%3Dlx.wd.9354/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.9354&ref=Q000012.1"
+  "oracc/dcclt/ref%3DQ000012.1/xis%3Dlx.wd.10031/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.10031&ref=Q000012.1"
   },
   "oracc/dcclt/block%3Dsb.Q000012.1/Q000012.1": {
     "url": "https://build-oracc.museum.upenn.edu/dcclt/Q000012.1?block=sb.Q000012.1"
@@ -41,43 +41,43 @@
   "oracc/dcclt/block%3Dsb.Q000012.3/Q000012.3": {
     "url": "https://build-oracc.museum.upenn.edu/dcclt/Q000012.3?block=sb.Q000012.3"
   },
-  "oracc/dcclt/Q000011.3": {
-    "url": "https://build-oracc.museum.upenn.edu/dcclt/Q000011.3"
+  "oracc/dcclt/P010677.6": {
+    "url": "https://build-oracc.museum.upenn.edu/dcclt/P010677.6"
   },
-  "oracc/neo/sux/o0023325": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023325"
+  "oracc/neo/sux/o0023444": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023444"
   },
-  "oracc/neo/xis%3Dsux.r0000c9/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0000c9"
+  "oracc/neo/xis%3Dsux.r000106/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000106"
   },
-  "oracc/neo/ref%3DP260028.16/xis%3Dsux.r0000c9/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0000c9&ref=P260028.16"
+  "oracc/neo/ref%3DP342819.27/xis%3Dsux.r000106/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000106&ref=P342819.27"
   },
-  "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Agada%3Dgada%5Bflax%2F%2Flinen%5DN%C2%B4N%24gada%2Fgada%23~/neo": {
-    "url": "https://build-oracc.museum.upenn.edu/neo?sig=%E2%98%A3%E2%98%A3%40obel%25sux%3Agada%3Dgada%5Bflax%2F%2Flinen%5DN%C2%B4N%24gada%2Fgada%23~"
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Aap-su-ra%3Dabzu%5Bwater%2F%2Fwater%5DN%C2%B4N%24abzu%2Cra%2Fab-su%23~%2Cra/neo": {
+    "url": "https://build-oracc.museum.upenn.edu/neo?sig=%E2%98%A3%E2%98%A3%40obel%25sux%3Aap-su-ra%3Dabzu%5Bwater%2F%2Fwater%5DN%C2%B4N%24abzu%2Cra%2Fab-su%23~%2Cra"
   },
-  "oracc/neo/xis%3Dsux.r0016e2/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r0016e2"
+  "oracc/neo/xis%3Dsux.r000107/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000107"
   },
-  "oracc/neo/sux/o0023441": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0023441"
+  "oracc/neo/akk/x0021429": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk/x0021429"
   },
-  "oracc/neo/xis%3Dsux.r000101/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000101"
+  "oracc/neo/xis%3Dakk.r00450b/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r00450b"
   },
-  "oracc/neo/ref%3DP315472.7/xis%3Dsux.r000101/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/neo/sux?xis=sux.r000101&ref=P315472.7"
+  "oracc/neo/ref%3DQ003516.6/xis%3Dakk.r00450b/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r00450b&ref=Q003516.6"
   },
-  "oracc/sig%3D%E2%98%A3%E2%98%A3%40obel%25sux%3Amu-sa-re%3Dsar%5Brun%2F%2Fto%20run%2C%20hasten%5DV%2Fi%C2%B4V%2Fi%24mu%3Asar%3Be%2Fsa-r%C2%B7e%23mu%3A~%3Be/neo": {
-    "url": "https://build-oracc.museum.upenn.edu/neo?sig=%E2%98%A3%E2%98%A3%40obel%25sux%3Amu-sa-re%3Dsar%5Brun%2F%2Fto%20run%2C%20hasten%5DV%2Fi%C2%B4V%2Fi%24mu%3Asar%3Be%2Fsa-r%C2%B7e%23mu%3A~%3Be"
+  "oracc/sig%3D%E2%98%A3%E2%98%A3%40rinap%2Frinap3%25akk%3Ama-li-ki%3Dmalku%5Bprince%2F%2Fruler%5DN%C2%B4N%24malik%C4%AB/neo": {
+    "url": "https://build-oracc.museum.upenn.edu/neo?sig=%E2%98%A3%E2%98%A3%40rinap%2Frinap3%25akk%3Ama-li-ki%3Dmalku%5Bprince%2F%2Fruler%5DN%C2%B4N%24malik%C4%AB"
   },
   "oracc/neo/sux/o0026684": {
     "url": "https://build-oracc.museum.upenn.edu/neo/sux/o0026684"
   },
-  "oracc/dcclt/xis%3Dlx.wd.24961/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.24961"
+  "oracc/dcclt/xis%3Dlx.wd.25917/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.25917"
   },
-  "oracc/dcclt/ref%3DP370363.214/xis%3Dlx.wd.24961/sux": {
-    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.24961&ref=P370363.214"
+  "oracc/dcclt/ref%3DP370363.214/xis%3Dlx.wd.25917/sux": {
+    "url": "https://build-oracc.museum.upenn.edu/dcclt/sux?xis=lx.wd.25917&ref=P370363.214"
   }
 }

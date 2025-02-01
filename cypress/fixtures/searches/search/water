@@ -194,7 +194,7 @@
     "gw": "water",
     "headword": "a[water]N",
     "cf": "a",
-    "icount": 23,
+    "icount": 25,
     "id": "o0023102",
     "senses_mng": [
       "semen, sperm",
@@ -208,6 +208,7 @@
       "a-e",
       "a-gin₇",
       "a-ŋu₁₀",
+      "a-i",
       "a-na",
       "a-ni",
       "a-še₃",
@@ -221,7 +222,8 @@
       "e-ta",
       "e₂",
       "e₂-be₂",
-      "e₂-e"
+      "e₂-e",
+      "e₄"
     ],
     "norms_n": [
       "a",
@@ -262,6 +264,8 @@
       "obel:P344926.19.3",
       "obel:P344926.44.3",
       "obel:P344926.72.1",
+      "obel:P345003.6.3",
+      "obel:P345023.4.3",
       "obel:P345347.38.3",
       "obel:P345449.22.3",
       "obel:P345523.17.1",
@@ -275,7 +279,7 @@
       "water"
     ],
     "sort": "['water']",
-    "instances_count": 23
+    "instances_count": 25
   },
   {
     "gw": "underground water",
@@ -339,6 +343,62 @@
     "instances_count": 19
   },
   {
+    "gw": "water",
+    "headword": "mû[water]N",
+    "cf": "mû",
+    "icount": 17,
+    "id": "x0006937",
+    "senses_mng": [
+      "water"
+    ],
+    "forms_n": [
+      "A",
+      "A.MEŠ",
+      "A.MEŠ-ša₂",
+      "A.MEŠ-šu₂",
+      "me-e",
+      "mu-u₂"
+    ],
+    "norms_n": [
+      "mê",
+      "mêša",
+      "mû",
+      "mûša",
+      "mûšu"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "dccmt:P254439.6.6",
+      "dccmt:P255026.35.4",
+      "dccmt:P255045.33.2",
+      "obel:P513802.20.1001",
+      "rimanum:P296278.14.3",
+      "rinap/rinap1:Q003418.6.6",
+      "rinap/rinap1:Q003450.52.4",
+      "rinap/rinap2:Q006482.345.2",
+      "rinap/rinap3:Q003482.23.4",
+      "rinap/rinap3:Q003491.690.5",
+      "rinap/rinap3:Q003520.77.8",
+      "rinap/rinap3:Q004071.17.6",
+      "rinap/rinap4:Q003230.52.5",
+      "rinap/rinap4:Q003263.17.6",
+      "rinap/rinap5:Q003702.144.1",
+      "rinap/rinap5:Q003708.149.1",
+      "rinap/rinap5:Q003708.381.7"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "mû",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 17
+  },
+  {
     "gw": "high water",
     "headword": "mīlu[high water]N",
     "cf": "mīlu",
@@ -359,8 +419,8 @@
     ],
     "norms_n": [
       "mīlêša",
-      "mīli",
       "mīlī",
+      "mīli",
       "mīliša",
       "mīlišina",
       "mīlišu",
@@ -395,61 +455,6 @@
       "high water"
     ],
     "sort": "['high water']",
-    "instances_count": 16
-  },
-  {
-    "gw": "water",
-    "headword": "mû[water]N",
-    "cf": "mû",
-    "icount": 16,
-    "id": "x0006937",
-    "senses_mng": [
-      "water"
-    ],
-    "forms_n": [
-      "A",
-      "A.MEŠ",
-      "A.MEŠ-ša₂",
-      "A.MEŠ-šu₂",
-      "me-e",
-      "mu-u₂"
-    ],
-    "norms_n": [
-      "mê",
-      "mêša",
-      "mû",
-      "mûša",
-      "mûšu"
-    ],
-    "periods_p": [
-      "Old Babylonian",
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "dccmt:P254439.6.6",
-      "dccmt:P255026.35.4",
-      "dccmt:P255045.33.2",
-      "rimanum:P296278.14.3",
-      "rinap/rinap1:Q003418.6.6",
-      "rinap/rinap1:Q003450.52.4",
-      "rinap/rinap2:Q006482.345.2",
-      "rinap/rinap3:Q003482.23.4",
-      "rinap/rinap3:Q003491.690.5",
-      "rinap/rinap3:Q003520.77.8",
-      "rinap/rinap3:Q004071.17.6",
-      "rinap/rinap4:Q003230.52.5",
-      "rinap/rinap4:Q003263.17.6",
-      "rinap/rinap5:Q003702.144.1",
-      "rinap/rinap5:Q003708.149.1",
-      "rinap/rinap5:Q003708.381.7"
-    ],
-    "project": "neo",
-    "lang": "akk",
-    "completions": [
-      "mû",
-      "water"
-    ],
-    "sort": "['water']",
     "instances_count": 16
   },
   {
@@ -514,6 +519,62 @@
     ],
     "sort": "['water']",
     "instances_count": 14
+  },
+  {
+    "gw": "drink",
+    "headword": "šatû[drink]V",
+    "cf": "šatû",
+    "icount": 10,
+    "id": "x0017427",
+    "senses_mng": [
+      "be watered",
+      "constantly drink",
+      "drink",
+      "to drink"
+    ],
+    "forms_n": [
+      "aš-ti",
+      "aš-tu-u₂",
+      "aš₂-ti",
+      "i-šat-tu-u",
+      "i-šat-tu-u₂",
+      "iš-ta-at-tu-u",
+      "iš-tu-u",
+      "iš-tu-u₂",
+      "ši-ti"
+    ],
+    "norms_n": [
+      "ašti",
+      "aštû",
+      "išattû",
+      "ištattû",
+      "ištû",
+      "šiti"
+    ],
+    "periods_p": [
+      "Old Babylonian",
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "obel:P513802.20.1006",
+      "obel:P513802.23.1006",
+      "rinap/rinap2:Q006546.213.9",
+      "rinap/rinap3:Q003490.344.5",
+      "rinap/rinap3:Q003492.442.3",
+      "rinap/rinap3:Q003492.443.2",
+      "rinap/rinap5:Q003702.442.5",
+      "rinap/rinap5:Q003706.817.3",
+      "rinap/rinap5:Q003708.341.1",
+      "rinap/rinap5:Q003710.712.4"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "šatû",
+      "drink"
+    ],
+    "sort": "['drink']",
+    "instances_count": 10
   },
   {
     "gw": "go along",
@@ -689,8 +750,8 @@
     ],
     "norms_n": [
       "kuppāni",
-      "kuppi",
       "kuppī",
+      "kuppi",
       "kuppīšu",
       "kuppīya"
     ],
@@ -766,55 +827,6 @@
     ],
     "sort": "['watering place']",
     "instances_count": 9
-  },
-  {
-    "gw": "drink",
-    "headword": "šatû[drink]V",
-    "cf": "šatû",
-    "icount": 8,
-    "id": "x0017427",
-    "senses_mng": [
-      "be watered",
-      "constantly drink",
-      "drink"
-    ],
-    "forms_n": [
-      "aš₂-ti",
-      "i-šat-tu-u",
-      "i-šat-tu-u₂",
-      "iš-ta-at-tu-u",
-      "iš-tu-u",
-      "iš-tu-u₂",
-      "ši-ti"
-    ],
-    "norms_n": [
-      "ašti",
-      "išattû",
-      "ištattû",
-      "ištû",
-      "šiti"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap2:Q006546.213.9",
-      "rinap/rinap3:Q003490.344.5",
-      "rinap/rinap3:Q003492.442.3",
-      "rinap/rinap3:Q003492.443.2",
-      "rinap/rinap5:Q003702.442.5",
-      "rinap/rinap5:Q003706.817.3",
-      "rinap/rinap5:Q003708.341.1",
-      "rinap/rinap5:Q003710.712.4"
-    ],
-    "project": "neo",
-    "lang": "akk",
-    "completions": [
-      "šatû",
-      "drink"
-    ],
-    "sort": "['drink']",
-    "instances_count": 8
   },
   {
     "gw": "water channel",

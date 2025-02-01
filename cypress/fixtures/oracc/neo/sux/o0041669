@@ -4,6 +4,7 @@
   <meta name="generator" content="oracc/px p4html.xml "/>
   <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
   <link rel="stylesheet" type="text/css" href="/css/p4-cuneify.css"/>
+  <link rel="stylesheet" type="text/css" href="@@pui_cfy_fam()@@"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
@@ -133,30 +134,30 @@
         <div class="header">
           <h1 class="entry heading border-top"><span class="cf sux">ur</span><span class="gw"> [HARNESS]</span> <span class="pos">(N)</span></h1>
           <p class="icount">
-            <a class="icount" href="javascript://" onclick="act_isid(event)" data-type="instances" data-name="ur[harness]N" data-lang="sux" data-isid="sux.r00460c">2 instances</a>
+            <a class="icount" href="javascript://" onclick="act_isid(event)" data-type="instances" data-name="ur[harness]N" data-lang="sux" data-isid="sux.r004770">2 instances</a>
           </p>
         </div>
         <div class="forms" id="forms">
-          <p class="forms"><span class="iheader">Written forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ur₃" data-lang="sux" data-isid="sux.r00460c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></a>.</p>
+          <p class="forms"><span class="iheader">Written forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ur₃" data-lang="sux" data-isid="sux.r004770"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></a>.</p>
         </div>
-        <p class="norms"><span class="iheader">Normalized forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="ur" data-lang="sux" data-isid="sux.r00460c">ur</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ur₃" data-lang="sux" data-isid="sux.r00460c"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></a>).</p>
+        <p class="norms"><span class="iheader">Normalized forms:</span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="ur" data-lang="sux" data-isid="sux.r004770">ur</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ur₃" data-lang="sux" data-isid="sux.r004770"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></a>).</p>
         <div class="morphs">
           <span class="iheader">Morphological forms:</span>
           <p class="norms">
-            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="morphology" data-name="~" data-lang="sux" data-isid="sux.r00460c">~</a>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="morphology" data-name="~" data-lang="sux" data-isid="sux.r004770">~</a>
           </p>
         </div>
         <div class="ns-glo-sec" id="periods">
           <h1>Attested in the following periods:</h1>
           <h2>
-            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Early Dynastic" data-lang="sux" data-isid="sux.r00460c.p.s000">Early Dynastic (2x/100%)</a>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Early Dynastic" data-lang="sux" data-isid="sux.r004770.p.s000">Early Dynastic (2x/100%)</a>
           </h2>
         </div>
         <div class="ns-glo-sec" id="senses">
           <h1>Senses:</h1>
           <div class="senses">
             <h2 class="sense">
-              <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r00460c" data-sense="harness" data-epos="N"><span class="sensenum">1.</span> harness (2x/100%)</a>
+              <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="sux" data-isid="sux.r004770" data-sense="harness" data-epos="N"><span class="sensenum">1.</span> harness (2x/100%)</a>
             </h2>
           </div>
         </div>
@@ -166,13 +167,13 @@
     </h3>
     <div class="lex-phra" title="alpu[bull]N warkû[rear]AJ">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.31255">alpu[bull]N warkû[rear]AJ (// gud[ox] a[arm] ur[harness])</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.32346">alpu[bull]N warkû[rear]AJ (// gud[ox] a[arm] ur[harness])</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">a₂</span></span> <span x="1" class="w sux " id=""><span class="sux">⸢</span><span x="3" class="sux">ur₃</span><span class="sux">⸣</span>-<span x="3" class="sux">ra</span></span> = <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">a</span>-<span x="3" class="akk">lap</span></span> <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">ar</span>-<span class="sux">⸢</span><span x="3" class="akk">ku</span><sup class="sux">?</sup><span class="sux">⸣</span>-<span class="sux">[</span><span x="3" class="akk">u₂</span><sup class="sux">?</sup><span class="sux">]</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="P247827.19">MSL SS 1, 042 o 14</a>; <a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000088.241">Ura 13 Seg.1, 234</a>).</p>
     </div>
     <div class="lex-phra" title="alpu[bull]N erbettu[team of four]N">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.31258">alpu[bull]N erbettu[team of four]N (// gud[ox] a[arm] ur[harness] dili[single])</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.32349">alpu[bull]N erbettu[team of four]N (// gud[ox] a[arm] ur[harness] dili[single])</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">a₂</span></span> <span x="1" class="w sux " id=""><span class="sux">⸢</span><span x="3" class="sux">ur₃</span><span class="sux">⸣</span>-<span x="3" class="sux">ra</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">dili</span></span> = <span x="1" class="w akk-x-stdbab " id=""><span class="sign ">MIN</span>&lt;(<span x="3" class="akk">a</span>-<span x="3" class="akk">lap</span>)&gt;</span> <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">er</span>-<span x="3" class="akk">bet</span>-<span class="sux">⸢</span><span x="3" class="akk">ti</span><sup class="sux">?</sup><span class="sux">⸣</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="P247827.20">MSL SS 1, 042 o 15</a>).</p>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">a₂</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span>-<span x="3" class="sux">ra</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">dili</span></span> = <span x="1" class="w akk-x-stdbab " id=""><span class="sign ">MIN</span>&lt;(<span x="3" class="akk">a</span>-<span x="3" class="akk">lap</span>)&gt;</span> <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">er</span>-<span x="3" class="akk">bet</span>-<span x="3" class="akk">tum</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000088.242">Ura 13 Seg.1, 235</a>).</p>
@@ -186,39 +187,39 @@
     </h3>
     <div class="lex-phra" title="ab[cow] ur[harness]">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.9354">ab[cow] ur[harness]</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.10031">ab[cow] ur[harness]</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">ab₂</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000012.1">ED Animals A 1</a>).</p>
     </div>
     <div class="lex-phra" title="am[bull] ur[harness]">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.11442">am[bull] ur[harness]</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.12150">am[bull] ur[harness]</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">am</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000012.79">ED Animals A 79</a>).</p>
     </div>
     <div class="lex-phra" title="amar[young] ur[harness]">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.11801">amar[young] ur[harness]</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.12517">amar[young] ur[harness]</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">amar</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000012.53">ED Animals A 53</a>).</p>
     </div>
     <div class="lex-phra" title="gud[ox] a[arm] ur[harness]">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.31249">gud[ox] a[arm] ur[harness]</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.32340">gud[ox] a[arm] ur[harness]</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">a₂</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span>-<span class="sux">⸢</span><span x="3" class="sux">ra</span><span class="sux">⸣</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="P229962.105">HS 1799 b ii 14</a>; <a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="P229115.8">SLT 051 o i 5'</a>; <a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000001.175">OB Nippur Ura 3 175</a>; <a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="P411682.16">CUNES 52-10-161 a ii 3'</a>).</p>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">a₂</span></span> <span x="1" class="w sux " id=""><span class="sux">⸢</span><span x="3" class="sux">ur₃</span><span class="sux">⸣</span>-<span x="3" class="sux">ra</span></span> = <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">a</span>-<span x="3" class="akk">lap</span></span> <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">ar</span>-<span class="sux">⸢</span><span x="3" class="akk">ku</span><sup class="sux">?</sup><span class="sux">⸣</span>-<span class="sux">[</span><span x="3" class="akk">u₂</span><sup class="sux">?</sup><span class="sux">]</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="P247827.19">MSL SS 1, 042 o 14</a>; <a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000088.241">Ura 13 Seg.1, 234</a>).</p>
     </div>
     <div class="lex-phra" title="gud[ox] a[arm] ur[harness] dili[single]">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.31258">gud[ox] a[arm] ur[harness] dili[single]</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.32349">gud[ox] a[arm] ur[harness] dili[single]</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">a₂</span></span> <span x="1" class="w sux " id=""><span class="sux">⸢</span><span x="3" class="sux">ur₃</span><span class="sux">⸣</span>-<span x="3" class="sux">ra</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">dili</span></span> = <span x="1" class="w akk-x-stdbab " id=""><span class="sign ">MIN</span>&lt;(<span x="3" class="akk">a</span>-<span x="3" class="akk">lap</span>)&gt;</span> <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">er</span>-<span x="3" class="akk">bet</span>-<span class="sux">⸢</span><span x="3" class="akk">ti</span><sup class="sux">?</sup><span class="sux">⸣</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="P247827.20">MSL SS 1, 042 o 15</a>).</p>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">a₂</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span>-<span x="3" class="sux">ra</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">dili</span></span> = <span x="1" class="w akk-x-stdbab " id=""><span class="sign ">MIN</span>&lt;(<span x="3" class="akk">a</span>-<span x="3" class="akk">lap</span>)&gt;</span> <span x="1" class="w akk-x-stdbab " id=""><span x="3" class="akk">er</span>-<span x="3" class="akk">bet</span>-<span x="3" class="akk">tum</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000088.242">Ura 13 Seg.1, 235</a>).</p>
     </div>
     <div class="lex-phra" title="gud[ox] ur[harness]">
       <h2 class="lex-phra">
-        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.31492">gud[ox] ur[harness]</a>
+        <a href="javascript://" onclick="act_isid(event)" data-proj="dcclt" data-lang="sux" data-isid="lx.wd.32583">gud[ox] ur[harness]</a>
       </h2>
       <p class="lex-line"><span class="lex-line"><span x="1" class="w sux " id=""><span x="3" class="sux">gud</span></span> <span x="1" class="w sux " id=""><span x="3" class="sux">ur₃</span></span></span> (<a href="javascript://" onclick="act_ilnk(event)" title="dcclt on Oracc" data-proj="dcclt" data-iref="Q000012.27">ED Animals A 27</a>).</p>
     </div>
@@ -356,7 +357,7 @@
 		lbase=entry_ids
 		lpath=/home/oracc/pub/neo/cbd/sux/entry_ids.lst
 		ecpath=(null)
-		emax=2406
+		emax=2415
 		ipath=/home/oracc/neo/02www/cbd/sux/o0041669.html
 <h3>	struct isp_itemdata ip->itemdata</h3>
 		langs=(null)
@@ -372,8 +373,8 @@
 		cfy=(null)
 		img=(null)
 		dotted=(null)
-		index=2274
-		page=91
+		index=2283
+		page=92
 		pindex=(null)
 		zoom=18
 		zpag=6
@@ -438,7 +439,7 @@ PATH_INFO=/neo/sux/o0041669
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux/o0041669
 QUERY_STRING=
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=51304
+REMOTE_PORT=59474
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/sux/o0041669

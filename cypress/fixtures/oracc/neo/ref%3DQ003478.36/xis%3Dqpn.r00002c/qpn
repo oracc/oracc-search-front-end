@@ -4,6 +4,7 @@
   <meta name="generator" content="oracc/px p4html.xml "/>
   <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
   <link rel="stylesheet" type="text/css" href="/css/p4-cuneify.css"/>
+  <link rel="stylesheet" type="text/css" href="@@pui_cfy_fam()@@"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
@@ -398,7 +399,7 @@
 		lbase=entry_ids
 		lpath=/home/oracc/pub/neo/cbd/qpn/entry_ids.lst
 		ecpath=(null)
-		emax=5057
+		emax=5082
 		ipath=(null)
 <h3>	struct isp_itemdata ip->itemdata</h3>
 		langs=en
@@ -481,7 +482,7 @@ PATH_INFO=/neo/qpn
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/qpn
 QUERY_STRING=xis=qpn.r00002c&ref=Q003478.36
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=51304
+REMOTE_PORT=59474
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/qpn?xis=qpn.r00002c&ref=Q003478.36

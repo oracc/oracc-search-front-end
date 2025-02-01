@@ -4,6 +4,7 @@
   <meta name="generator" content="oracc/px p4html.xml "/>
   <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
   <link rel="stylesheet" type="text/css" href="/css/p4-cuneify.css"/>
+  <link rel="stylesheet" type="text/css" href="@@pui_cfy_fam()@@"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
   <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
   <script type="text/javascript" src="/js/p4.js">&#160;</script>
@@ -234,7 +235,7 @@
 		out=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123
 		list=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/list
 		sort=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123
-		csi=/home/oracc/pub/neo/sortinfo.csi
+		csi=(null)
 		tsv=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/pag.tsv
 		max=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/max.tsv
 		mol=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/zoom.mol
@@ -252,8 +253,8 @@
 		use=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000
 		txtindex=(null)
 		t_sort=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t
-		t_tsv=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t/pag.tsv
-		t_max=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t/max.tsv
+		t_tsv=(null)
+		t_max=(null)
 		t_mol=/home/oracc/www/p4.d/neo/qpn/qpn.r00002e.p.s000/123/t/zoom.mol
 <h3>	struct isp_config ip->default_cfg</h3>
 		leftmenu=1
@@ -285,7 +286,7 @@
 		lbase=entry_ids
 		lpath=/home/oracc/pub/neo/cbd/qpn/entry_ids.lst
 		ecpath=(null)
-		emax=5057
+		emax=5082
 		ipath=(null)
 <h3>	struct isp_itemdata ip->itemdata</h3>
 		langs=(null)
@@ -368,7 +369,7 @@ PATH_INFO=/neo/qpn
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/qpn
 QUERY_STRING=xis=qpn.r00002e.p.s000
 REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=51304
+REMOTE_PORT=59474
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/qpn?xis=qpn.r00002e.p.s000

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta name="generator" content="oracc/px p4html.xml "/>
+  <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/p4-cuneify.css"/>
+  <link rel="stylesheet" type="text/css" href="@@pui_cfy_fam()@@"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
+  <script type="text/javascript" src="/js/p4.js">&#160;</script>
+  <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
+  <title>neo</title>    
+</head>
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list page dglo rref zoom default" data-proj="neo" data-glos="akk" data-glet="entry_ids" data-gxis="akk.r0040cc" data-zoom="0" data-sort="123">
+  <div id="p4Masthead">
+    <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
+      <a href="/">Oracc:</a> <a href="/neo">NEO &#x2014; New Easier Oracc</a>
+    </p>
+  </div>
+  <div id="p4Header" class="menu banner bborder-bot">
+    <p id="p4Banner">
+      <span id="p4Icons">
+	
+  <img class="p4icon" src="/img/p3-dd.png"
+       alt="Toggle menu drop-down" title="Toggle menu drop-down"
+       onclick="toggle_dd()"/>
+  <img id="p4HelpIcon" class="p4icon"
+       src="/img/p3-help.png" alt="Help" title="Help"
+       onclick="window.location='/doc/help/visitingoracc/gettingstarted/index.html'"/>
+  <img id="p4ResetIcon" class="p4icon"
+       src="/img/p3-reset.png" alt="Reset pager" title="Reset pager"
+       onclick="resetPager()"/>
+  <img id="p4MoreIcon" class="p4icon"
+       src="/img/p3-plus.png" alt="More resources" title="More resources"
+       onclick="window.location='/neo/hub.html'"/>
+
+      </span>
+    </p>
+    <div id="p4Search">
+  <form action="javascript://" onsubmit="act_srch()">
+    <p>
+      <!--Oracc Search:-->
+      <input id="p4SrchBox" type="text" size="30"
+	     value=""/>
+      <input type="submit" style="display: none"/>
+      <img id="p4SrchGo" class="p4icon" src="/img/p3-search.png"
+	   alt="Search" title="Search" onclick="act_srch()"/>
+    </p>
+    <p id="p4SrchChars">(j=ŋ&#xa0;sz=š&#xa0;s,=ṣ&#xa0;t,=ṭ&#xa0;0-9=₀-₉; &apos;=alef)</p>
+  </form>
+</div>
+
+    <div id="p4Controls">
+      
+  <div id="p4itemNav" class="p4items" data-ityp="TEXT" data-inth="" data-imax="133">
+    <p class="bg-dk">
+
+      
+      <img id="p4ToggleMeta" class="p4icon" src="/img/p3-full.png"
+	   alt="Toggle metadata pane" title="Toggle metadata pane" onclick="toggle_md()"/>
+      
+      <img id="p4PageItem" class="p4icon p4spread" src="/img/p3-pageitem.png"
+	   alt="Toggle Page/Item view" title="Return to Page view"
+	   onclick="toggle_pi()"/>
+
+      <!--Item-->
+      <img id="p4ItemPrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Item back" title="Item back"
+	   onclick="act_item_prev()"/>
+      
+      <span id="p4ItemView"> [TEXT  of 133] </span>
+      
+      <img id="p4ItemNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Item forward" title="Item forward"
+	   onclick="act_item_next()"/>
+
+      <span id="p4SrchResults" class="p4srchresults" data-tmax="" data-rmax="0">
+	 Texts [0 matches]
+      </span>
+
+      <span id="p4Translations">
+	
+	<input id="p4Transonly" type="checkbox" onchange="toggle_to()"
+	       value="@@pui_transonly()@@"/>&#xa0;only
+      </span>
+
+    </p>
+  </div>
+
+  <div id="p4PageNav" class="p4pages" data-page="1" data-pmax="6" data-imax="133">
+    <p class="p3toccenter bg-dk">
+
+      <button id="p4Zoom" class="p4spread" onclick="act_zoom('0')">All Results</button>
+
+      <img id="p4PagePrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Page back" title="Page back"
+	   onclick="act_prev()"/>
+      
+      <!--Page-->
+      <input id="p4Pageset" type="text" onchange="act_page()" size="3" value="1"/>
+
+      <img id="p4PageNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Page forward" title="Page forward"
+	   onclick="act_next()"/>
+
+      133 refs
+      /
+      6 pages
+
+      <span id="p4SrchResultpages" class="p4srchresults">[0 matches]</span>
+
+      <span id="p4CeType" class="cetype"><select id="p4CESelect" onchange="act_ce_switch(event)" value="line">
+  <option value="line" selected="selected">Line</option>
+  <option value="unit">Sentence</option>
+  <option value="kwic">KWIC</option>
+</select>
+</span>
+    </p>
+  </div>
+
+
+    </div>
+  </div>
+  <div id="p4Data">
+    <div id="p4Menu">
+<div id="p4MenuOutline" class="pgotl level0" data-zmax="7"><h2>Old Babylonian</h2><div class="pgotl level1"><h3>unknown</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(1)" data-zoom="1">Larsa (mod. Tell as-Senkereh) [1]</a></p><p><a href="javascript://" onclick="act_zoom(2)" data-zoom="2">Sippar-Yahrurum (mod. Tell Abu Habbah) [1]</a></p><p><a href="javascript://" onclick="act_zoom(3)" data-zoom="3">Uruk (mod. Warka) [1]</a></p><p><a href="javascript://" onclick="act_zoom(4)" data-zoom="4">uncertain (mod. uncertain) [1]</a></p></div></div><h2>Neo-Assyrian</h2><div class="pgotl level1"><h3>unknown</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(5)" data-zoom="5">unclear [125]</a></p></div></div><h2>Hellenistic</h2><div class="pgotl level1"><h3>unknown</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(6)" data-zoom="6">Uruk (mod. Warka) [3]</a></p></div></div><h2>unknown</h2><div class="pgotl level1"><h3>unknown</h3><div class="pgotl level2"><p><a href="javascript://" onclick="act_zoom(7)" data-zoom="7">Bābili (mod. Babylon) [1]</a></p></div></div></div></div>
+
+    <div id="p4Content">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="ce" id="p4CElineContent">
+  <h2 class="ce-heading h2 border-top heading">Old Babylonian/unknown/Larsa (mod. Tell as-Senkereh)</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span>3(<span class="sign ">BURʾU</span>)<sup class="sux">?</sup><span class="sux">]</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">3(<span class="sign ">BUR₃</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">1/2(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">BURʾU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">9(<span class="sign ">BUR₃</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">EŠE₃</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">1(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">1/2(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">4(<span class="sign ">BURʾU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">8(<span class="sign ">BUR₃</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">1/2(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span>3(<span class="sign ">BURʾU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">6(<span class="sign ">BUR₃</span>)<sup class="sux">?</sup><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">EŠE₃</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">3(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">1/2(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">ŠAR₂</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">BURʾU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">7(<span class="sign ">BUR₃</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">2(<span class="sign ">EŠE₃</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id="">4(<span class="sign ">IKU</span>)</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">IRI</span>.<span class="sign sux">DIDLI</span><sup class="sux">ki</sup></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">MA</span>.<span class="sign sux">DA</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="P412465.8">(BM 085205 o 4)</a>
+  </p>
+  <h2 class="ce-heading h2 border-top heading">Old Babylonian/unknown/Sippar-Yahrurum (mod. Tell Abu Habbah)</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">e</span>-<span x="3" class="">ŋu₁₀</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">kur</span>-<span x="3" class="">kur</span>-<span x="3" class="">ra</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">bi</span>-<span x="3" class="">si</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ama</span>-<span x="3" class="">ŋu₁₀</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">mu</span>-<span x="3" class="">si</span>-<span x="3" class="">si</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">pi₂</span>-<span x="3" class="">iš</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ma</span>-<span x="3" class="">ta</span>-<span x="3" class="">tu</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">i</span>-<span x="3" class="">ta</span>-<span x="3" class="">aḫ</span>-<span x="3" class="">da</span>-<span x="3" class="">ra</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">AMA</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">&lt;</span><span x="3" class="">i</span><span class="sux">&gt;</span>-<span x="3" class="">ta</span>-<span x="3" class="">aḫ</span>-<span x="3" class="">da</span>-<span x="3" class="">ra</span>-<span x="3" class="">ni</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="P342987.9">(VS 10, 179 o 8)</a>
+  </p>
+  <h2 class="ce-heading h2 border-top heading">Old Babylonian/unknown/Uruk (mod. Warka)</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ša</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">i</span>-<span x="3" class="">na</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ma</span>-<span x="3" class="">at</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">I₃</span>.<span class="sign sux">SI</span>.<span class="sign sux">IN</span><sup class="sux">ki</sup></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="P372803.7">(VS 13, 050 o 5)</a>
+  </p>
+  <h2 class="ce-heading h2 border-top heading">Old Babylonian/unknown/uncertain (mod. uncertain)</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">in</span>-<span x="3" class="">nin₉</span>-<span class="sux">⸢</span><span x="3" class="">na</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><sup class="sux">d</sup><span x="3" class="">inana</span></span> <sup xmlns:note="http://oracc.org/ns/note/1.0"><span x="1" class="w  " id=""><span x="3" class="">eš₄</span>-<span x="3" class="">tar₂</span></span></sup><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ku₃</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><sup class="sux">d</sup><span x="3" class="">inana</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">kur</span>-<span x="3" class="">ra</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">diri</span>-<span class="sux">⸢</span><span x="3" class="">ga</span><sup class="sux">?</sup></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ŋen</span><span class="sux">⸣</span></span> <sup xmlns:note="http://oracc.org/ns/note/1.0"><span x="1" class="w  " id=""><span x="3" class="">ša₃</span></span> <span x="1" class="w  " id=""><span x="3" class="">i</span>-<span x="3" class="">na</span></span> <span x="1" class="w selected  " id=""><span x="3" class="">ma</span><sup class="sux">?</sup>-<span x="3" class="">tim</span><sup class="sux">?</sup></span> <span x="1" class="w  " id=""><span x="3" class="">šu</span>-<span x="3" class="">tu</span>-<span x="3" class="">ra</span>-<span class="sux">⸢</span><span x="3" class="">at</span><span class="sux">⸣</span></span></sup></p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="P345413.28">(TCL 16, 69 r 2')</a>
+  </p>
+  <h2 class="ce-heading h2 border-top heading">Neo-Assyrian/unknown/unclear</h2>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><span x="3" class="">a</span>-<span x="3" class="">na</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">qe₂</span><span class="sux">]</span>-<span x="3" class="">reb</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">aš</span>-<span x="3" class="">šur</span>.<span class="sign sux">KI</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003700.6">(Ashurbanipal 1 vi 4)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><span class="sign sux">UN</span>.<span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ḫu</span>-<span x="3" class="">bu</span>-<span x="3" class="">ut</span><span class="sux">]</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span><span class="sign sux">GIŠ</span><span class="sux">⸣</span>.<span class="sign sux">PAN</span>-<span x="3" class="">ia</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ša</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ša₂</span>-<span x="3" class="">ni</span>-<span x="3" class="">tim</span>-<span x="3" class="">ma</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003700.11">(Ashurbanipal 1 vi 9)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">a</span>-<span x="3" class="">na</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">mi</span>-<span x="3" class="">ṣir</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span>-<span x="3" class="">ia</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">UN</span>.<span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">KUR</span>-<span x="3" class="">ia</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">i</span>-<span x="3" class="">mu</span>-<span x="3" class="">ru</span>-<span x="3" class="">šu</span>-<span x="3" class="">ma</span></span><a href="javascript://" onmouseover="showNote(event,'n016')" onmouseout="hideNote(event,'n016')"><span class="marker">4</span></a> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003700.22">(Ashurbanipal 1 vi 3')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ul</span>-<span x="3" class="">tu</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">mi</span>-<span x="3" class="">ṣir</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span>-<span x="3" class="">šu₂</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003700.33">(Ashurbanipal 1 vi 14')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="r">[...<span class="sux">]</span></span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">EN</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">DINGIR</span>-<span x="3" class="">u</span>-<span x="3" class="">a</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003700.47">(Ashurbanipal 1 vi 28')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sux">[</span><span class="sign sux">KUR</span><sup class="sux">?</sup><span class="sux">]</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span><span x="3" class="">šu</span><span class="sux">⸣</span>-<span x="3" class="">a</span>-<span x="3" class="">tu</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ina</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">si</span>-<span x="3" class="">ḫir</span>-<span x="3" class="">ti</span>-<span x="3" class="">ša₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">i</span>-<span x="3" class="">be</span>-<span x="3" class="">el</span>-<span x="3" class="">ma</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003701.57">(Ashurbanipal 2 iii 14)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span><span x="3" class="">ša</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">pa</span>-<span x="3" class="">a</span>-<span class="sux">⸢</span><span x="3" class="">ṭi</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span>-<span x="3" class="">šu₂</span>-<span x="3" class="">un</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003701.173">(Ashurbanipal 2 v 17')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u₂</span>-<span x="3" class="">šat</span>-<span x="3" class="">lim</span>-<span x="3" class="">u</span>-<span x="3" class="">ni</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ma</span>-<span x="3" class="">ta</span>-<span x="3" class="">a</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">la</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ma</span>-<span x="3" class="">gi</span>-<span x="3" class="">re</span>-<span class="sux">⸢</span><span x="3" class="">ia</span><span class="sux">⸣</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003702.13">(Ashurbanipal 3 i 12)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">i</span>-<span x="3" class="">be</span>-<span class="sux">⸢</span><span x="3" class="">lu</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span>-<span x="3" class="">su</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">da</span>-<span x="3" class="">na</span>-<span x="3" class="">an</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">AN</span>.<span class="sign sux">ŠAR₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><sup class="sux">d</sup>15</span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">DINGIR</span>.<span class="sux">⸢</span><span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">GAL</span><span class="sux">⸣</span>.<span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">EN</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="">ia</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003702.54">(Ashurbanipal 3 i 52)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">GAR</span>.<span class="sux">⸢</span><span class="sign sux">KUR</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">URU</span>.<span x="3" class="">gar</span>-<span x="3" class="">ga</span>-<span x="3" class="">miš</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003702.761">(Ashurbanipal 3 viii 95B)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">it</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ḫu</span>-<span x="3" class="">bu</span>-<span x="3" class="">ut</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sux">[</span><span class="sign sux">KUR</span>-<span x="3" class="">ša₂</span><sup class="sux">?</sup><span class="sux">]</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003707.401">(Ashurbanipal 8 ix 5'')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">GAR</span>.<span class="sign sux">KUR</span>.<span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">TIL</span>.<span class="sign sux">GID₂</span>.<span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ši</span>-<span x="3" class="">kin</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">ŠU</span>.<span class="sign sux">II</span>-<span x="3" class="">ia</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003710.520">(Ashurbanipal 11 iv 104)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><span class="sign sux">ŠU</span>.<span class="sign sux">II</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">GIR₃</span>.<span class="sign sux">II</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">bi</span>-<span x="3" class="">re</span>-<span x="3" class="">tu₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">AN</span>.<span class="sign sux">BAR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ad</span>-<span x="3" class="">di</span>-<span x="3" class="">šu₂</span>-<span x="3" class="">nu</span><span class="sux">]</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">it</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">šal</span>-<span x="3" class="">lat</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span>-<span x="3" class="">šu₂</span>-<span x="3" class="">nu</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span><span x="3" class="">al</span><span class="sux">⸣</span>-<span class="sux">[</span><span x="3" class="">qa</span>-<span x="3" class="">aš₂</span>-<span x="3" class="">šu₂</span>-<span x="3" class="">nu</span><span class="sux">]</span>-<span class="sux">⸢</span><span x="3" class="">ti</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ana</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">KUR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">AN</span>.<span class="sign sux">ŠAR₂</span>.<span class="sign sux">KI</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003721.50">(Ashurbanipal 22 i' 5'')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><sup class="sux">m</sup><span class="sign sux">UR</span>-<span x="3" class="">da</span>-<span x="3" class="">ma</span><span class="sux">]</span>-<span class="sux">⸢</span><span x="3" class="">ne₂</span><span class="sux">⸣</span>-<span x="3" class="">e</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">⸢</span><span class="sign sux">DUMU</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">NIN₉</span>-<span class="sux">⸢</span><span x="3" class="">šu₂</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><span x="3" class="">ina</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">GIŠ</span>.<span class="sign sux">GU</span>.<span class="sign sux">ZA</span>-<span x="3" class="">šu₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u₂</span>-<span x="3" class="">šib</span>-<span x="3" class="">ma</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u₂</span>-<span x="3" class="">ma</span>-<span x="3" class="">ʾe</span>-<span x="3" class="">er</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ma</span>-<span x="3" class="">a</span>-<span x="3" class="">tum</span><span class="sux">]</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003821.5">(Ashurbanipal 122 4')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><sup class="sux">d</sup><span class="sux">]</span><span class="sux">⸢</span><span class="sign sux">NIN</span><span class="sux">⸣</span>.<span class="sign sux">LIL₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">AMA</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">GAL</span>-<span x="3" class="">tu</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">a</span>-<span x="3" class="">na</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">be</span>-<span x="3" class="">lut</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KALAM</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">UN</span>.<span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">taz</span>-<span class="sux">⸢</span><span x="3" class="">ku</span>-<span x="3" class="">ra</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sux">[</span><span x="3" class="">šu</span>-<span x="3" class="">mi₃</span><sup class="sux">?</sup><span class="sux">]</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q007628.8">(Ashurbanipal 220 i 6')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ma</span>-<span x="3" class="">a</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">liš</span>-<span x="3" class="">tam</span>-<span x="3" class="">dil</span>-<span x="3" class="">ma</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">liš</span>-<span x="3" class="">mu</span>-<span x="3" class="">ḫa</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">UN</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="">u</span>-<span class="sux">⸢</span><span x="3" class="">a</span><span class="sux">⸣</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="r">[...<span class="sux">]</span></span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q007633.33">(Ashurbanipal 225 r 11')</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">e₂</span>-<span x="3" class="">gi</span>-<span x="3" class="">gu</span>-<span x="3" class="">nu</span>-<span x="3" class="">u₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ṣa</span>-<span x="3" class="">ad</span>-<span x="3" class="">di</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ma</span>-<span x="3" class="">a</span>-<span x="3" class="">tim</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ḫa</span>-<span x="3" class="">diš</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ina</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">nap</span>-<span class="sux">⸢</span><span x="3" class="">lu</span><span class="sux">⸣</span>-<span class="sux">[</span><span x="3" class="">si</span>-<span x="3" class="">šu₂</span><span class="sux">]</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q008347.21">(Ashurbanipal 258 21)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">a</span>-<span x="3" class="">na</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span x="3" class="">ma</span>-<span x="3" class="">ti</span>-<span x="3" class="">šu₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">uš</span>-<span x="3" class="">tab</span>-<span x="3" class="">ru</span>-<span x="3" class="">u₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ina</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ṭuḫ</span>-<span x="3" class="">du</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">u</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">meš</span>-<span x="3" class="">re</span>-<span x="3" class="">e</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">iš</span>-<span x="3" class="">te</span>-<span x="3" class="">ne₂</span>-<span x="3" class="">ʾu</span>-<span x="3" class="">u₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">UN</span>.<span class="sign sux">MEŠ</span>-<span x="3" class="">šu₂</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q008352.12">(Ashurbanipal 263 12)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">LUGAL</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">kiš</span>-<span x="3" class="">ša₂</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">LUGAL</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">aš</span>-<span x="3" class="">šur</span>.<span class="sign sux">KI</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">GIR₃</span>.<span class="sign sux">NITA₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">KA₂</span>.<span class="sign sux">DINGIR</span>.<span class="sign sux">RA</span>.<span class="sign sux">KI</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003230.3">(Esarhaddon 1 i 2)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ša₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">qe₂</span>-<span x="3" class="">reb</span>-<span x="3" class="">e</span>-<span x="3" class="">šu₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ša</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">DINGIR</span>.<span class="sign sux">MEŠ</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">KUR</span>.<span class="sign sux">KUR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">šal</span>-<span x="3" class="">lu</span>-<span x="3" class="">u</span>-<span x="3" class="">ti</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ul</span>-<span x="3" class="">tu</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">qe₂</span>-<span x="3" class="">reb</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">URU</span>.<span x="3" class="">aš</span>-<span x="3" class="">šur</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003230.113">(Esarhaddon 1 ii 23)</a>
+  </p>
+  <p class="ce-result"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w selected  " id=""><span class="sign sux">LU₂</span>.<span class="sign sux">GAR</span>.<span class="sign sux">KUR</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">ŠEŠ</span>.<span class="sign sux">UNUG</span>.<span class="sign sux">KI</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span class="sign sux">ARAD</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">da</span>-<span x="3" class="">gil₂</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">pa</span>-<span x="3" class="">ni</span>-<span x="3" class="">ia</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">ni</span>-<span x="3" class="">i</span>-<span x="3" class="">tu</span></span> <span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w  " id=""><span x="3" class="">il</span>-<span x="3" class="">me</span>-<span x="3" class="">šu</span>-<span x="3" class="">ma</span></span> </p>
+  <p class="ce-label">
+    <a href="javascript://" onclick="act_iref(event)" data-iref="Q003230.135">(Esarhaddon 1 ii 44)</a>
+  </p>
+</div>
+
+    </div>
+  </div>
+  <div id="p4Footer">
+    
+
+  </div>
+  <div id="p4Debug">
+  <h1>Debugging Information</h1>
+
+  <h2>Invocation</h2>
+  
+  <p>The pager was invoked as:</p>
+  
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 xis=akk%2Er0040cc glos=akk project=neo</pre>
+
+  <h2>Pager Status</h2>
+  
+  <p>The pager reported status as:</p>
+
+  <pre id="p4Status"><h2>Internal Data Structure State (Isp *ip)</h2>
+	oracc=/home/oracc
+	from=list
+	data=dglo
+	show=rref
+	project=neo
+	projdir=/home/oracc/neo
+	list_name=list
+	op_nlevels=0
+	dors=0
+	perm=123
+	zoom=0
+	page=1
+	psiz=25
+	srch=(null)
+	glos=akk
+	item=(null)
+	item_replace=(null)
+	bkmk=(null)
+	ceid=xtf
+	cemd=line
+	lang=en
+	xhmd=html
+	part=(null)
+	form=(null)
+	what=pager
+	wrap=(null)
+	uimd=(null)
+	pack=asis
+	host=(null)
+	aapi=rest
+	host_path=(null)
+	sig=(null)
+	tmp_dir=(null)
+	err=(null)
+	errx=(null)
+	pui=p4html.xml
+	nowhat=0
+	force=0
+	olev=0
+	debug=0
+	hdr_done=1
+	noheader=0
+	pub_output=0
+	verbose=0
+	web=1
+	zlev=3
+	argc=5
+	referer=(null)
+	tmpdir=(null)
+<h3>	struct isp_cache ip->cache</h3>
+		sys=/home/oracc/www/p4.d
+		project=/home/oracc/www/p4.d/neo
+		sub=/home/oracc/www/p4.d/neo/akk/akk.r0040cc
+		out=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123
+		list=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/list
+		sort=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123
+		csi=(null)
+		tsv=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123/pag.tsv
+		max=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123/max.tsv
+		mol=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123/zoom.mol
+		pkey=z0p1
+		pgin=(null)
+		page=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123/123-z0-p1.div
+		zout=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123/123-z0.otl
+		item=(null)
+		prox=(null)
+		meta=(null)
+		html=(null)
+		ltab=(null)
+		hilite=(null)
+		pub=/home/oracc/neo/02pub/p4.d
+		use=/home/oracc/www/p4.d/neo/akk/akk.r0040cc
+		txtindex=(null)
+		t_sort=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123/t
+		t_tsv=(null)
+		t_max=(null)
+		t_mol=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/123/t/zoom.mol
+<h3>	struct isp_config ip->default_cfg</h3>
+		leftmenu=1
+		select=1
+		sort_fields=period,subgenre,provenience
+		sort_labels=Time,Genre,Place
+		head_template=1 2 3
+		cat_fields=designation,primary_publication,subgenre|genre,period,place|provenience
+		cat_links=(null)
+		cat_widths=auto,17,17,17,17
+<h3>	struct isp_config ip->special_cfg</h3>
+		leftmenu=1
+		select=0
+		sort_fields=period,genre,provenience
+		sort_labels=Time,Genre,Place
+		head_template=1 2 3
+		cat_fields=designation,primary_publication,subgenre|genre,period,place|provenience
+		cat_links=(null)
+		cat_widths=auto,17,17,17,17
+<h3>	struct isp_glosdata ip->glosdata</h3>
+		dir=/home/oracc/neo/02pub/cbd/akk
+		web=(null)
+		let=entry_ids
+		lmax=(null)
+		ent=(null)
+		xis=akk.r0040cc
+		ltab=A	L000	B	L001	D	L002	E	L003	G	L004	H	L005	I	L006	K	L007	L	L008	M	L009	N	L010	P	L011	Q	L012	R	L013	S	L014	Ṣ	L015	Š	L016	T	L017	Ṭ	L018	U	L019	W	L020	Y	L021	Z	L022	
+
+		lbase=entry_ids
+		lpath=/home/oracc/pub/neo/cbd/akk/entry_ids.lst
+		ecpath=(null)
+		emax=4392
+		ipath=(null)
+<h3>	struct isp_itemdata ip->itemdata</h3>
+		langs=(null)
+		nlangs=0
+		xtflang=(null)
+		lmem=(null)
+		item=(null)
+		fullitem=(null)
+		block=(null)
+		proj=(null)
+		htmd=(null)
+		html=(null)
+		cfy=(null)
+		img=(null)
+		dotted=(null)
+		index=(null)
+		page=(null)
+		pindex=(null)
+		zoom=(null)
+		zpag=(null)
+		zindex=(null)
+		prev=(null)
+		next=(null)
+		tmax=(null)
+		xmdxsl=(null)
+		bld=(null)
+		hili=(null)
+		not=0
+<h3>	struct isp_list_loc ip->lloc</h3>
+		type=xis
+		lang=akk
+		method=xisdb
+		key=(null)
+		dbpath=/home/oracc/pub/neo/cbd/akk
+		dbname=tis
+		path=/home/oracc/www/p4.d/neo/akk/akk.r0040cc/list
+<h3>	struct isp_srchdata ip->srchdata</h3>
+		tmp=(null)
+		bar=(null)
+		count=0
+		gran=(null)
+		list=(null)
+		new=0
+		adhoc=0
+	zmax=133
+</pre>
+
+  <h2>Environment</h2>
+
+  <p>HTTP environment variables:</p>
+
+  <pre id="p4Environment">CONTEXT_DOCUMENT_ROOT=/home/oracc/www
+CONTEXT_PREFIX=
+DOCUMENT_ROOT=/home/oracc/www
+GATEWAY_INTERFACE=CGI/1.1
+HTTPS=on
+HTTP_ACCEPT=application/json, text/plain, */*
+HTTP_ACCEPT_ENCODING=gzip
+HTTP_ACCEPT_LANGUAGE=en-US
+HTTP_CONNECTION=keep-alive
+HTTP_HOST=build-oracc.museum.upenn.edu
+HTTP_ORIGIN=http://localhost:4200
+HTTP_REFERER=http://localhost:4200/
+HTTP_SEC_CH_UA="Not=A?Brand";v="99", "Chromium";v="118"
+HTTP_SEC_CH_UA_MOBILE=?0
+HTTP_SEC_CH_UA_PLATFORM="Linux"
+HTTP_SEC_FETCH_DEST=empty
+HTTP_SEC_FETCH_MODE=cors
+HTTP_SEC_FETCH_SITE=cross-site
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.15.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36
+ORACC=/home/oracc
+ORACC_BUILDS=/home/oracc
+ORACC_HOME=/home/oracc
+ORACC_HOST=build-oracc.museum.upenn.edu
+ORACC_MODE=multi
+ORACC_PROJECT=neo
+ORACC_USER=yes
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+PATH_INFO=/neo/akk
+PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/akk
+QUERY_STRING=xis=akk.r0040cc
+REMOTE_ADDR=86.12.69.28
+REMOTE_PORT=59474
+REQUEST_METHOD=GET
+REQUEST_SCHEME=https
+REQUEST_URI=/neo/akk?xis=akk.r0040cc
+SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
+SCRIPT_NAME=
+SCRIPT_URI=https://build-oracc.museum.upenn.edu/neo/akk
+SERVER_ADDR=130.91.81.219
+SERVER_ADMIN=stinney@upenn.edu
+SERVER_NAME=build-oracc.museum.upenn.edu
+SERVER_PORT=443
+SERVER_PROTOCOL=HTTP/1.1
+SERVER_SIGNATURE=<address>Apache/2.4.52 (Ubuntu) Server at build-oracc.museum.upenn.edu Port 443</address>
+
+SERVER_SOFTWARE=Apache/2.4.52 (Ubuntu)
+SSL_TLS_SNI=build-oracc.museum.upenn.edu
+</pre>
+
+</div>
+
+</div>
+</body>
+</html>
