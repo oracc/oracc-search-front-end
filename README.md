@@ -38,9 +38,9 @@ Run `npx ng generate component component-name` to generate a new component. You 
 
 ## Build the production ready website files
 
-Run `npx ng build --optimize -c build-oracc` to build the project for `build-oracc`. The build artifacts will be stored in the `dist` directory.
+Run `npx ng build --optimization -c build-oracc` to build the project for `build-oracc`. The build artifacts will be stored in the `dist` directory.
 
-To build for `oracc2` use `npx ng build --optimize -c oracc2`.
+To build for `oracc2` use `npx ng build --optimization -c oracc2`.
 
 The configurations for these builds are files in the `src/environments`
 directory. These are referenced in `angular.json`, in the key
@@ -94,8 +94,8 @@ The application is currently deployed for production to the Oracc build server (
 Once we are happy with our front end code, we must update
 the version number in `package.json`, then call `ng build`:
 
-* For build-oracc: `npx ng build --optimize -c build-oracc`
-* For oracc2: `npx ng build --optimize -c oracc2`
+* For build-oracc: `npx ng build --optimization -c build-oracc`
+* For oracc2: `npx ng build --optimization -c oracc2`
 
 ### Push the new assets to the server
 
