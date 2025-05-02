@@ -55,5 +55,20 @@
   },
   "oracc/neo/block%3Dsb.Q000012.1/Q000012.1": {
     "url": "https://build-oracc.museum.upenn.edu/neo/Q000012.1?block=sb.Q000012.1"
+  },
+  "searches/search/king": {
+    "url": "http://localhost:8000/search/king"
+  },
+  "suggests/suggest_all/king": {
+    "url": "http://localhost:8000/suggest_all/king"
+  },
+  "oracc/neo/akk/x0021873": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk/x0021873"
+  },
+  "oracc/neo/xis%3Dakk.r007bed/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r007bed"
+  },
+  "oracc/neo/ref%3DQ003701.18/xis%3Dakk.r007bed/akk": {
+    "url": "https://build-oracc.museum.upenn.edu/neo/akk?xis=akk.r007bed&ref=Q003701.18"
   }
 }
