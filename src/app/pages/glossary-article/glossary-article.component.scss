@@ -14,8 +14,11 @@
       margin-bottom: 20px;
     }
   }
+  .header {
+    display: flex;
+  }
   p.icount {
-    display: none;
+    margin-left: auto;
   }
   .forms,
   .norms,

@@ -15,6 +15,18 @@ describe('Pages', () => {
   });
 
   describe('footnote popup', () => {
+    it('does not appear on the details page', () => {
+      cy.visit("/")
+      const search = "king";
+      const result = "šarrūtu"
+      cy.get('.search__input').type(`${search}{enter}`);
+      cy.get('.results__table-row').contains(result).click();
+      cy.get('.header a.icount').click();
+      cy.get('.marker').should('not.be.visible');
+      cy.get('a').contains("Ashurbanipal 2 i 2'").click();
+      cy.get('.marker').first().scrollIntoView().should('be.visible');
+    });
+
     it('appears with mouseover', () => {
       cy.visit("/");
       const search = "arwad";
