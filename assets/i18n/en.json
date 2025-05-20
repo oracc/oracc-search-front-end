@@ -1,9 +1,9 @@
 {
   "header": {
-    "linkText1": "Projects",
-    "linkText2": "Tools",
-    "linkText3": "About",
-    "linkText4": "Help",
+    "linkTextProject": "Projects",
+    "linkTextTools": "Tools",
+    "linkTextAbout": "About",
+    "linkTextHelp": "Help",
     "langText1": "English",
     "langText2": "Arabic",
     "langAbbrText1": "EN",
@@ -28,7 +28,10 @@
     "ancientWordText": "Ancient word",
     "noResultsText": "No results for given word.",
     "placeholderText": "Search Oracc",
-    "placeholderTextFilter": "Filter periods"
+    "placeholderTextFilter": "Filter periods",
+    "error": {
+      "down": "Oracc search is currently unavailable, please try again later."
+    }
   },
   "cookies": {
     "text1": "Oracc uses cookies only to collect Google Analytics data. Read more",
@@ -43,10 +46,18 @@
   "details": {
     "metadataText": "Metadata",
     "showText": "Show Text",
-    "textText": "{0, plural, one {{0} Text} other {{0} Texts}}",
+    "textText": "Text {1} of {0}",
     "linesText": "{0, plural, one {{0} Line} other {{0} Lines}}",
     "sourceText": "Source",
     "scoreText": "Score",
-    "resetZoom": "Reset Filter"
+    "resetZoom": "Reset Filter",
+    "wordType": {
+      "forms": "form",
+      "morphology": "morphology",
+      "norm": "normalized",
+      "period": "period",
+      "sense": "sense",
+      "verbal prefix": "verbal prefix"
+    }
   }
 }
