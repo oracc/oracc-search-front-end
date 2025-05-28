@@ -35,8 +35,8 @@
     flex-direction: column;
   }
 
-  table.transliteration .tt .selected {
-    background-color: #ecc835d3;
+  table .selected {
+    background-color: $highlight;
   }
 }
 
