@@ -248,6 +248,9 @@
       background-color: $blueSky;
     }
   }
+  .ce-result>a>span.marker{
+    display: none;
+  }
   .ce-label {
     a:hover {
       color: $blueDark;
