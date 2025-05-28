@@ -47,7 +47,7 @@
     "metadataText": "Metadata",
     "showText": "Show text",
     "textText": "Text {1} of {0}",
-    "linesText": "{0, plural, one {{0} Line} other {{0} Lines}}",
+    "linesText": "{0, plural, one {{0} Reference} other {{0} References}}",
     "sourceText": "Source",
     "scoreText": "Score",
     "resetZoom": "Reset Filter",
