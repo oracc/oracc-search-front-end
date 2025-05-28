@@ -1,9 +1,6 @@
 import {
   Component,
   ViewEncapsulation,
-  ElementRef,
-  ViewChild,
-  AfterViewInit
 } from '@angular/core';
 import { composedPath } from '../../../utils/utils';
 import { ThreePanel } from 'src/app/components/three-panel.component';
@@ -15,11 +12,7 @@ import { mergeParams } from '../../../utils/utils';
   styleUrls: ['./details.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DetailsComponent extends ThreePanel implements AfterViewInit {
-  @ViewChild('scrollContainer') private scrollContainer: ElementRef;
-  ngAfterViewInit(): void {
-    this.scrollToSelected();
-  }
+export class DetailsComponent extends ThreePanel {
 
   override setMiddlePanel(htmlData: Document) {
     const middlePanelInput = htmlData.getElementById('p4Content');
@@ -28,6 +21,10 @@ export class DetailsComponent extends ThreePanel implements AfterViewInit {
       middlePanelInput.innerHTML
     );
     this.setTextPanel(htmlData);
+
+    setTimeout(() => {
+      this.scrollToSelected();
+    });
   }
 
   override setMetadataPanel(htmlData: Document) {
@@ -72,6 +69,7 @@ export class DetailsComponent extends ThreePanel implements AfterViewInit {
         }
       );
     }
+    this.scrollToSelected();
   }
 
   public handleMetadataClick(e) {
@@ -82,16 +80,17 @@ export class DetailsComponent extends ThreePanel implements AfterViewInit {
   }
 
   private scrollToSelected(): void {
+    console.log('scrolling to selected');
     // Being doubly sure the element should be rendered, might not need the timeout
-    setTimeout(() => {
-      const container = this.scrollContainer.nativeElement;
-      const selectedElement = container.querySelector('.selected');
-      if (selectedElement) {
-        selectedElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest'
-        });
-      }
-    });
+    let container = document.querySelector('.transliteration');
+    console.log("container: ", container, document.querySelector('.selected'));
+    let selectedElement = container?.querySelector('.selected');
+    if (selectedElement) {
+      console.log("selected elem: ", selectedElement);
+      selectedElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   }
 }
