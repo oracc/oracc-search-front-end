@@ -177,7 +177,7 @@ export class ThreePanel implements OnInit {
     if (selectedElement) {
       selectedElement.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'nearest'
       });
     }
   }
