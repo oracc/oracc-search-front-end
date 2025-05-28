@@ -21,10 +21,6 @@ export class DetailsComponent extends ThreePanel {
       middlePanelInput.innerHTML
     );
     this.setTextPanel(htmlData);
-
-    setTimeout(() => {
-      this.scrollToSelected();
-    });
   }
 
   override setMetadataPanel(htmlData: Document) {
@@ -69,7 +65,6 @@ export class DetailsComponent extends ThreePanel {
         }
       );
     }
-    this.scrollToSelected();
   }
 
   public handleMetadataClick(e) {
@@ -79,18 +74,5 @@ export class DetailsComponent extends ThreePanel {
     }
   }
 
-  private scrollToSelected(): void {
-    console.log('scrolling to selected');
-    // Being doubly sure the element should be rendered, might not need the timeout
-    let container = document.querySelector('.transliteration');
-    console.log("container: ", container, document.querySelector('.selected'));
-    let selectedElement = container?.querySelector('.selected');
-    if (selectedElement) {
-      console.log("selected elem: ", selectedElement);
-      selectedElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }
+
 }
