@@ -97,6 +97,7 @@ export class ThreePanel implements OnInit {
       const htmlData = parser.parseFromString(text, 'text/html');
       this.setMetadataPanel(htmlData);
       this.setMiddlePanelAndPages(htmlData);
+      console.log("htmlData: ", htmlData);
     });
   }
 
@@ -165,6 +166,20 @@ export class ThreePanel implements OnInit {
       this.currentPage = this.pageCount;
     }
     this.updatePaginationPages();
+
+    setTimeout(() => { this.scrollToSelected(); }, 100);
+  }
+
+    private scrollToSelected(): void {
+    // need to do this after the request for the content has completed
+    let container = document.querySelector('table.transliteration');
+    let selectedElement = container?.querySelector('.selected');
+    if (selectedElement) {
+      selectedElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
   }
 
   // Update the page buttons after page change or zoom

@@ -300,13 +300,15 @@ function check_page_is_search_result() {
 // Fourth page: details.component
 function check_page_is_details() {
   cy.get('section.details--main');
-  cy.get('.details__panel-top-text').contains('Line');
+  cy.get('.details__panel-top-text').contains('Reference');
+  checkSelectedWordIsHighlighted();
 }
 
 // Fifth page: details-texts.component
 function check_page_is_details_texts() {
   cy.get('section.details');
   cy.get('.details__panel-top-text').contains('Text');
+  checkSelectedWordIsHighlighted();
 }
 
 // Alternate fifth page: details-score.component
@@ -335,4 +337,23 @@ function check_page_is_project_texts() {
   // glossary-article-texts at the moment
   cy.get('section.details');
   cy.get('.details__panel-top-text').contains('Text');
+}
+
+function checkSelectedWordIsHighlighted(){
+  cy.get('span.selected').should('be.visible').then(($selected) => {
+  // if ($selected.hasClass('sux')) {
+  //   // If the 'span.selected' has the '.sux' class, it should be the highlight
+  //   expect($selected).to.have.css('background-color', 'rgba(236, 200, 53, 0.827)');
+  // } else {
+  //    // If the 'span.selected' doesn't have '.sux', check for blueSky
+  //   expect($selected).to.have.css('background-color', 'rgb(223, 238, 247)');
+  // }
+  if ($selected.parents('table.transliteration').length) {
+    // If the 'span.selected' is within a 'table.transliteration', check for yellow
+    expect($selected).to.have.css('background-color', 'rgba(236, 200, 53, 0.827)');
+  } else if ($selected.parents('.ce-result').length) {
+    // If the 'span.selected' is within a '.ce-result', check for blue
+    expect($selected).to.have.css('background-color', 'rgb(223, 238, 247)');
+  }
+});
 }
