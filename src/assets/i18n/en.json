@@ -48,7 +48,10 @@
     "buttonText": "Got it!"
   },
   "breadcrumbs": {
-    "homeText": "Home"
+    "homeText": "Home",
+    "search results": "Search Results",
+    "occurrences": "Occurrences",
+    "texts": "Texts"
   },
   "details": {
     "metadataText": "Metadata",

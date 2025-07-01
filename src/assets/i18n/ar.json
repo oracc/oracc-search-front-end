@@ -48,7 +48,10 @@
     "buttonText": "حصلت عليه شكرا!"
   },
   "breadcrumbs": {
-    "homeText": "الصفحة الرئيسية"
+    "homeText": "الصفحة الرئيسية",
+    "search results": "Search Results",
+    "occurrences": "Occurrences",
+    "texts": "Texts"
   },
   "details": {
     "metadataText": "البيانات الوصفية",
