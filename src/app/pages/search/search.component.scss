@@ -73,12 +73,13 @@
   padding-right: 15px;
   outline: none;
   height: 50px;
+  direction: ltr;
 }
 
 .search__btn {
   align-self: baseline;
   .fa-search {
-    margin-right: 10px;
+    margin-inline-end: 10px;
   }
   @media only screen and (max-width: 600px) {
     width: 2.4rem; 
@@ -137,7 +138,7 @@ img {
     align-self: center;
     .fa-search {
       font-size: 1.3rem;
-      margin-right: 0;
+      margin-inline-end: 0;
     }
   }
 }

@@ -168,6 +168,7 @@
   font-weight: 600;
   position: relative;
   top: 7px;
+  margin-inline: 30px;
   transition: $dur $ease;
   &:hover {
     color: darken($grayLight, 20%);
@@ -176,23 +177,21 @@
     font-size: 0.75rem;
   }
   &:first-of-type {
-    margin-right: 48px;
     position: relative;
     @media only screen and (max-width: 600px) {
-      margin-right: 12px;
+      margin-inline:12px;
     }
     &::after {
       content: "";
       position: absolute;
-      display: block;
       top: 0;
-      right: -27px;
+      margin-inline: 30px;
       width: 1px;
       height: 100%;
       background-color: $grayDark;
       @media only screen and (max-width: 600px) {
         height: 78%;
-        right: -7px;
+        margin-inline: 12px;
       }
     }
   }

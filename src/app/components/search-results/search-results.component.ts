@@ -19,7 +19,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   public currentPage = 1;
   public itemsPerPage = 10;
   public results: number;
-  public tableHeadings = ['Translation', 'Hits', 'Meanings', 'Lang', 'Period'];
+  public tableHeadings = ['translation', 'hits', 'meanings', 'language', 'period'];
   public translationData = [];
   public errorText : string | null = null;
   public isDescending = true;

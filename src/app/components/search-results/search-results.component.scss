@@ -56,19 +56,20 @@
 .results__show-count-link {
   font-size: 1.2rem;
   font-weight: 100;
-  margin-left: 30px;
+  margin-inline-start: 30px;
   position: relative;
-  &:not(:last-of-type) {
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 18px;
-      width: 1px;
-      right: -15px;
-      bottom: 2px;
-      background-color: $grayDark;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 18px;
+    width: 1px;
+    right: -15px;
+    bottom: 2px;
+    background-color: $grayDark;
+  }
+  &:last-of-type::after {
+    display: none;
   }
   &.active,
   &:hover {
@@ -124,7 +125,7 @@
   .fa-sort-down {
     font-size: 1.2rem;
     position: relative;
-    left: 5px;
+    margin-inline-start: 5px;
     top: -3px;
     pointer-events: none;
     transform-origin: 50% 70%;
@@ -139,7 +140,7 @@
   }
   .results__table-head-input {
     display: block;
-    margin-left: 20px;
+    margin-inline-start: 20px;
     border-radius: 5px;
     height: 66%;
     width: 100%;
@@ -205,7 +206,7 @@
     }
     &:nth-child(5) {
       flex-grow: 1;
-      margin-right: 0;
+      margin-inline-end: 0;
     }
   }
 }

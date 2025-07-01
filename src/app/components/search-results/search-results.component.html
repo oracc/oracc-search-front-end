@@ -60,7 +60,7 @@
               class="fas fa-list"
               (click)="handleDropDown($event, i)"
             ></i>
-            {{ heading }}
+            {{ ("search.tableHeadings." + heading) | translate }}
             <i
               class="fas fa-sort-down"
               [ngClass]="{

@@ -4,7 +4,7 @@
     "linkTextTools": "المعدات",
     "linkTextAbout": "التفصيل",
     "linkTextHelp": "المساعدة",
-    "langText1": "الإنجليزية",
+    "langText1": "English",
     "langText2": "العربية",
     "langAbbrText1": "EN",
     "langAbbrText2": "AR"
@@ -20,14 +20,21 @@
     "paraText2": "من الروابط أعلاه ، يمكنك <a href='/' class='js-search-home'>البحث</a> في مسرد اوراك للعثور على الكلمات التي تهمك. يمكنك أيضًا تصفح <a href='http://oracc.museum.upenn.edu/projectlist.html' target='_blank'>المشروعات</a> الفردية (بالتنسيق القديم) واستخدام <a href='http://oracc.museum.upenn.edu/doc/tools/index.html' target='_blank'>أدوات</a> الويب الخاصة باوراك للتحرير. اختر العنوان <a href='http://oracc.museum.upenn.edu/doc/about/index.html' target='_blank'>حول</a> أو <a href='http://oracc.museum.upenn.edu/doc/help/index.html' target='_blank'>المساعدة</a> إذا كنت بحاجة إلى مزيد من الإرشادات."
   },
   "search": {
-    "titleText": "Oracc ابحث في ",
+    "titleText": "ابحث في Oracc",
     "introText": "أدخل استعلامًا للبحث عنه. يمكنك فرز النتائج بالنقر على عناوين الأعمدة.",
     "buttonText": "ابحث",
     "resultsText": "النتائج",
     "showText": "إظهار",
     "ancientWordText": "كلمة قديمة",
+    "tableHeadings": {
+      "translation": "الترجمة",
+      "hits": "عدد النتائج",
+      "meanings": "المعاني",
+      "language": "اللغة",
+      "period": "العصر"
+    },
     "noResultsText": "لا توجد نتائج لهذه الكلمة.",
-    "placeholderText": "Oracc ابحث في",
+    "placeholderText": "ابحث في Oracc",
     "placeholderTextFilter": "العصور",
     "error": {
       "down": "البحث Oracc غير متاح حاليًا، يرجى المحاولة مرة أخرى لاحقًا."
@@ -47,7 +54,7 @@
     "metadataText": "البيانات الوصفية",
     "showText": "إظهار النص",
     "textText": " النص {1} في {0}",
-    "linesText": "{0, plural, one {{0} سطر} other {{0} أسطر}}",
+    "linesText": "{0, plural, one {{0} سطر} two {{0} شطرين} other {{0} أسطر}}",
     "sourceText": "المصدر",
     "scoreText": "النوتة",
     "resetZoom": "إعادة تعيين الفلتر",

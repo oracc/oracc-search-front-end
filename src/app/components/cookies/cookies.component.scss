@@ -12,6 +12,11 @@
   @media only screen and (max-width: 600px) {
     box-shadow: none;
   }
+
+  .btn {
+    width: fit-content;
+    padding: 0px 35px;
+  }
 }
 
 .cookies__hide {
@@ -29,6 +34,6 @@
   font-size: 0.87rem;
   @media only screen and (max-width: 600px) {
     font-size: 0.65rem;
-    margin-right: 35px;
+    margin-inline-end: 35px;
   }
 }
