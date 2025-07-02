@@ -16,6 +16,12 @@
   .btn {
     width: fit-content;
     padding: 0px 35px;
+    font-size: medium;
+    @media only screen and (max-width: 600px) {
+      padding: 0px 10px;
+      height: auto;
+      line-height: 1.4;
+    }
   }
 }
 

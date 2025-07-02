@@ -1,16 +1,4 @@
 [lang="ar"] {
-  .header {
-    .header__nav-bar {
-      @media only screen and (max-width: 600px) {
-        left: 100%;
-      }
-    }
-    .header__nav-bar--active {
-      @media only screen and (max-width: 600px) {
-        left: 0;
-      }
-    }
-  }
   .results {
     .results__show-count-link {
       &:last-of-type::after {
@@ -36,6 +24,12 @@
   .details {
     .details__word {
       text-align: right;
+    }
+  }
+  .cookies .btn {
+    min-width: 250px;
+    @media only screen and (max-width: 600px) {
+      min-width: auto;
     }
   }
 }

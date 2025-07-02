@@ -51,7 +51,7 @@ describe('Journey', () => {
 
           // check breadcrumbs show the correct level of traceback and detail page shown
           cy.get('.bcrumbs').should('be.visible');
-          cy.get('.bcrumbs__list-item').contains('occurrences').should('be.visible');
+          cy.get('.bcrumbs__list-item').contains('Occurrences').should('be.visible');
           cy.get('.details').should('be.visible');
 
           // check clicking on an entry reveals the translation and changes the main column to that entry
@@ -75,7 +75,7 @@ describe('Journey', () => {
           cy.get('.norms').should('be.visible');
 
           // check breadcrumbs work in a deep search
-          cy.get('.bcrumbs__list-item').contains('texts').click();
+          cy.get('.bcrumbs__list-item').contains('Texts').click();
           cy.get('.details').should('be.visible');
         });
 
@@ -237,7 +237,7 @@ describe('Journey', () => {
             cy.get('#lexphrases .lex-line').contains(text).click();
             check_page_is_details_texts();
             cy.get('.p3h2').contains(textTitle);
-            cy.get('.bcrumbs__list .bcrumbs__list-item').contains('occurrences').click();
+            cy.get('.bcrumbs__list .bcrumbs__list-item').contains('Occurrences').click();
             check_page_is_details();
             cy.get('#p4CElineContent .ce-label').contains(text);
           });

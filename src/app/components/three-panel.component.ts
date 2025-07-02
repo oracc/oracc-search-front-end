@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, inject, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { Observable, Subscription } from 'rxjs';
@@ -16,7 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
   template: '<p>base component, not to be rendered</p>',
   styles: []
 })
-export class ThreePanel implements OnInit {
+export class ThreePanel implements OnInit, AfterViewChecked {
   public route: ActivatedRoute = inject(ActivatedRoute);
   public router: Router = inject(Router);
   public getDataService: GetDataService = inject(GetDataService);
@@ -97,7 +97,6 @@ export class ThreePanel implements OnInit {
       const htmlData = parser.parseFromString(text, 'text/html');
       this.setMetadataPanel(htmlData);
       this.setMiddlePanelAndPages(htmlData);
-      console.log("htmlData: ", htmlData);
     });
   }
 
@@ -166,11 +165,13 @@ export class ThreePanel implements OnInit {
       this.currentPage = this.pageCount;
     }
     this.updatePaginationPages();
-
-    setTimeout(() => { this.scrollToSelected(); }, 100);
   }
 
-    private scrollToSelected(): void {
+  public ngAfterViewChecked(): void {
+    this.scrollToSelected();
+  }
+
+  private scrollToSelected(): void {
     // need to do this after the request for the content has completed
     let container = document.querySelector('table.transliteration');
     let selectedElement = container?.querySelector('.selected');
