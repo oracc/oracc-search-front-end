@@ -46,6 +46,7 @@ export class ThreePanel implements OnInit, AfterViewChecked {
   public prev_item: string | null = null;
   public next_item: string | null = null;
   public endObserver: Subscription;
+  public hasNewMiddlePanelText: boolean = false;
 
   public ngOnInit(): void {
     // Are we on a narrow (probably mobile) screen?
@@ -137,6 +138,7 @@ export class ThreePanel implements OnInit, AfterViewChecked {
       }
     }
     this.setMiddlePanel(htmlData);
+    this.hasNewMiddlePanelText = true;
     const itemControls = htmlData.getElementById('p4itemNav');
     let topTextArguments = [];
     // set total lines, if we know
@@ -168,7 +170,11 @@ export class ThreePanel implements OnInit, AfterViewChecked {
   }
 
   public ngAfterViewChecked(): void {
-    this.scrollToSelected();
+    console.log(`after view checked: ${this.hasNewMiddlePanelText}`);
+    if (this.hasNewMiddlePanelText) {
+      this.scrollToSelected();
+      this.hasNewMiddlePanelText = false;
+    }
   }
 
   private scrollToSelected(): void {
@@ -178,7 +184,7 @@ export class ThreePanel implements OnInit, AfterViewChecked {
     if (selectedElement) {
       selectedElement.scrollIntoView({
         behavior: 'smooth',
-        block: 'nearest'
+        block: 'center',
       });
     }
   }
