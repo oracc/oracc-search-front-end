@@ -49,9 +49,9 @@
   },
   "breadcrumbs": {
     "homeText": "الصفحة الرئيسية",
-    "search results": "Search Results",
-    "occurrences": "Occurrences",
-    "texts": "Texts"
+    "search results": "نتائج البحث",
+    "occurrences": " الحدوث",
+    "texts": "النصوص"
   },
   "details": {
     "metadataText": "البيانات الوصفية",
