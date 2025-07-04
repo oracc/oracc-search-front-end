@@ -1,63 +1,73 @@
 {
   "header": {
-    "linkTextProject": "Projects",
-    "linkTextTools": "Tools",
-    "linkTextAbout": "About",
-    "linkTextHelp": "Help",
+    "linkTextProject": "المشاريع",
+    "linkTextTools": "المعدات",
+    "linkTextAbout": "التفصيل",
+    "linkTextHelp": "المساعدة",
     "langText1": "English",
-    "langText2": "Arabic",
+    "langText2": "العربية",
     "langAbbrText1": "EN",
     "langAbbrText2": "AR"
   },
   "footer": {
-    "licenceText": "This work is licensed under a",
-    "licenceLinkText": "Creative Commons Attribution-ShareAlike 4.0 International License. 2024."
+    "licenceText": "هذا العمل مرخص بموجب ",
+    "licenceLinkText": "رخصة المشاع الإبداعي المنسوبة للمؤلف - الترخيص بالمثل 4.0 الدولي. 2024"
   },
   "home": {
-    "introText": "Welcome to",
+    "introText": "مرحبا بك في",
     "logoText": "Oracc",
     "paraText1": "اوراك هو جهد تعاوني لتطوير مجموعة كاملة من الكتابات المسمارية والتي تدعم بتعليقاتها التوضيحية الغنية، وترخيصها المفتوح الجيل القادم من الأبحاث العلمية. قام ستيف تيني بإنشاء اوراك، ويديرها جيمي نوفوتني ، إليانور روبسون ، تيني ، ونيك فيلدهويس.",
     "paraText2": "من الروابط أعلاه ، يمكنك <a href='/' class='js-search-home'>البحث</a> في مسرد اوراك للعثور على الكلمات التي تهمك. يمكنك أيضًا تصفح <a href='http://oracc.museum.upenn.edu/projectlist.html' target='_blank'>المشروعات</a> الفردية (بالتنسيق القديم) واستخدام <a href='http://oracc.museum.upenn.edu/doc/tools/index.html' target='_blank'>أدوات</a> الويب الخاصة باوراك للتحرير. اختر العنوان <a href='http://oracc.museum.upenn.edu/doc/about/index.html' target='_blank'>حول</a> أو <a href='http://oracc.museum.upenn.edu/doc/help/index.html' target='_blank'>المساعدة</a> إذا كنت بحاجة إلى مزيد من الإرشادات."
   },
   "search": {
-    "titleText": "Search Oracc",
-    "introText": "Enter a query to search for. You can sort the results by clicking on the column headings.",
-    "buttonText": "Search",
-    "resultsText": "Results",
-    "showText": "Show",
-    "ancientWordText": "Ancient word",
-    "noResultsText": "No results for given word.",
-    "placeholderText": "Search Oracc",
-    "placeholderTextFilter": "Filter periods",
+    "titleText": "ابحث في Oracc",
+    "introText": "أدخل استعلامًا للبحث عنه. يمكنك فرز النتائج بالنقر على عناوين الأعمدة.",
+    "buttonText": "ابحث",
+    "resultsText": "النتائج",
+    "showText": "إظهار",
+    "ancientWordText": "كلمة قديمة",
+    "tableHeadings": {
+      "translation": "الترجمة",
+      "hits": "عدد النتائج",
+      "meanings": "المعاني",
+      "language": "اللغة",
+      "period": "العصر"
+    },
+    "noResultsText": "لا توجد نتائج لهذه الكلمة.",
+    "placeholderText": "\u202bابحث في Oracc\u202c",
+    "placeholderTextFilter": "العصور",
     "error": {
-      "down": "Oracc search is currently unavailable, please try again later."
+      "down": "البحث Oracc غير متاح حاليًا، يرجى المحاولة مرة أخرى لاحقًا."
     }
   },
   "cookies": {
-    "text1": "Oracc uses cookies only to collect Google Analytics data. Read more",
-    "text2": "see the stats",
-    "text3": "opt out",
-    "hereText": "here",
-    "buttonText": "Got it!"
+    "text1": "تستخدم Oracc ملفات تعريف الارتباط فقط لجمع بيانات Google Analytics. اقرأ المزيد",
+    "text2": "انظر الإحصائيات",
+    "text3": "والاستمرار",
+    "hereText": "هنا",
+    "buttonText": "حصلت عليه شكرا!"
   },
   "breadcrumbs": {
-    "homeText": "Home"
+    "homeText": "الصفحة الرئيسية",
+    "search results": "نتائج البحث",
+    "occurrences": " الحدوث",
+    "texts": "النصوص"
   },
   "details": {
-    "metadataText": "Metadata",
-    "showText": "Show text",
-    "textText": "Text {1} of {0}",
-    "linesText": "{0, plural, one {{0} Reference} other {{0} References}}",
-    "sourceText": "Source",
-    "scoreText": "Score",
-    "resetZoom": "Reset Filter",
+    "metadataText": "البيانات الوصفية",
+    "showText": "إظهار النص",
+    "textText": " النص {1} في {0}",
+    "linesText": "{0, plural, one {{0} سطر} two {{0} شطرين} other {{0} أسطر}}",
+    "sourceText": "المصدر",
+    "scoreText": "النوتة",
+    "resetZoom": "إعادة تعيين الفلتر",
     "wordType": {
-      "forms": "form",
-      "morphology": "morphology",
-      "norm": "normalized",
-      "period": "period",
-      "sense": "sense",
-      "verbal prefix": "verbal prefix"
+      "forms": "الشكل",
+      "morphology": "المرفولوجيا",
+      "norm": "الطبيع",
+      "period": "العصر",
+      "sense": " المعنى",
+      "verbal prefix": "بادئة الفعل"
     }
   }
 }
