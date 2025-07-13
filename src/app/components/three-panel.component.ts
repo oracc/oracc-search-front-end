@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, inject, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, effect, inject, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { Observable, Subscription } from 'rxjs';
@@ -8,6 +8,7 @@ import { GetDataService } from '../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
+import { ShareLanguageService } from '../services/share-language-service';
 
 // ThreePanel is a base class for all pages that have the
 // Metadata/Details/Texts panels.
@@ -43,12 +44,26 @@ export class ThreePanel implements OnInit, AfterViewChecked {
   public paginationSliceStart: number = 1;
   public paginationSliceEnd: number = 7;
   public topText: string;
+  public topTextArguments = [0, 0];
   public prev_item: string | null = null;
   public next_item: string | null = null;
   public endObserver: Subscription;
   public scrollIsDone: boolean = false;
   private scrollTimer: NodeJS.Timeout | null = null;
+  private shareLangaugeService = inject(ShareLanguageService);
 
+  constructor() {
+    effect(() => {
+      // read the signal
+      this.shareLangaugeService.language();
+      this.translate.get(
+        this.detailsPanelTopText(),
+        this.topTextArguments
+      ).subscribe(text => {
+        this.topText = text;
+      });
+    });
+  }
   public ngOnInit(): void {
     // Are we on a narrow (probably mobile) screen?
     this.isMobile = window.innerWidth <= 600;
@@ -140,17 +155,17 @@ export class ThreePanel implements OnInit, AfterViewChecked {
     }
     this.setMiddlePanel(htmlData);
     const itemControls = htmlData.getElementById('p4itemNav');
-    let topTextArguments = [];
+    this.topTextArguments = [];
     // set total lines, if we know
     if (itemControls && itemControls.hasAttribute('data-imax')) {
       const total = parseInt(itemControls.getAttribute('data-imax'), 10);
       const index = itemControls.hasAttribute('data-inth')?
         parseInt(itemControls.getAttribute('data-inth'), 10) : null;
-      topTextArguments = [total, index];
+      this.topTextArguments = [total, index];
     }
     this.translate.get(
       this.detailsPanelTopText(),
-      topTextArguments
+      this.topTextArguments
     ).subscribe(text => {
       this.topText = text;
       this.scrollIsDone = false;
