@@ -16,9 +16,10 @@ enum SuggestionsCategories {
 }
 
 @Component({
-  selector: 'app-search-suggestions',
-  templateUrl: './search-suggestions.component.html',
-  styleUrls: ['./search-suggestions.component.scss']
+    selector: 'app-search-suggestions',
+    templateUrl: './search-suggestions.component.html',
+    styleUrls: ['./search-suggestions.component.scss'],
+    standalone: false
 })
 export class SearchSuggestionsComponent implements OnInit, OnChanges {
   @Input() searchParam: string;

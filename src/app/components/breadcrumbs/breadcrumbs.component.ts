@@ -3,9 +3,10 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { HandleBreadcrumbsService } from "../../services/handle-breadcrumbs/handle-breadcrumbs.service";
 
 @Component({
-  selector: "app-breadcrumbs",
-  templateUrl: "./breadcrumbs.component.html",
-  styleUrls: ["./breadcrumbs.component.scss"]
+    selector: "app-breadcrumbs",
+    templateUrl: "./breadcrumbs.component.html",
+    styleUrls: ["./breadcrumbs.component.scss"],
+    standalone: false
 })
 export class BreadcrumbsComponent {
   public breadcrumbsLinks = [];

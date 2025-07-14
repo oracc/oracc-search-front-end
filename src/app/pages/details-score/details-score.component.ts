@@ -5,10 +5,11 @@ import { Observable } from 'rxjs';
 import { mergeParams } from '../../../utils/utils';
 
 @Component({
-  selector: 'app-details-score',
-  templateUrl: './details-score.component.html',
-  styleUrls: ['./details-score.component.scss', '../details/details.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-details-score',
+    templateUrl: './details-score.component.html',
+    styleUrls: ['./details-score.component.scss', '../details/details.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DetailsScoreComponent extends ThreePanel {
   public isDetailsPopupActive: boolean;

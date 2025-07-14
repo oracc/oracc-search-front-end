@@ -13,9 +13,10 @@ import { ShareLanguageService } from '../services/share-language-service';
 // ThreePanel is a base class for all pages that have the
 // Metadata/Details/Texts panels.
 @Component({
-  selector: 'three-panel-base',
-  template: '<p>base component, not to be rendered</p>',
-  styles: []
+    selector: 'three-panel-base',
+    template: '<p>base component, not to be rendered</p>',
+    styles: [],
+    standalone: false
 })
 export class ThreePanel implements OnInit, AfterViewChecked {
   public route: ActivatedRoute = inject(ActivatedRoute);

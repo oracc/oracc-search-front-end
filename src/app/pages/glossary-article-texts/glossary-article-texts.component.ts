@@ -6,10 +6,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { findAncestorWithAttribute, mergeParams } from '../../../utils/utils';
 
 @Component({
-  selector: 'app-glossary-article-texts',
-  templateUrl: '../glossary-article/glossary-article.component.html',
-  styleUrls: ['../glossary-article/glossary-article.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-glossary-article-texts',
+    templateUrl: '../glossary-article/glossary-article.component.html',
+    styleUrls: ['../glossary-article/glossary-article.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class GlossaryArticleTextsComponent implements OnInit {
   public glossaryContent: any;

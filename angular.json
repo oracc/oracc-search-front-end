@@ -15,12 +15,13 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "baseHref": "/",
-            "outputPath": "dist/oracc",
+            "outputPath": {
+              "base": "dist/oracc"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -29,7 +30,10 @@
               "src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": ["src/scripts/p4.js"]
+            "scripts": [
+              "src/scripts/p4.js"
+            ],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "github-pages": {
@@ -76,9 +80,7 @@
             },
             "development": {
               "baseHref": "/",
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true,

@@ -15,10 +15,11 @@ import { environment } from 'src/environments/environment';
 import { ThreePanel } from 'src/app/components/three-panel.component';
 
 @Component({
-  selector: 'app-details-texts',
-  templateUrl: '../details/details.component.html',
-  styleUrls: ['../details/details.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-details-texts',
+    templateUrl: '../details/details.component.html',
+    styleUrls: ['../details/details.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
