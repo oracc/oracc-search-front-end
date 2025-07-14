@@ -369,7 +369,7 @@ function check_page_is_project_texts() {
 
 function checkSelectedWordIsHighlighted(){
   // annoyingly, cy.get() stops the scroll, so we have to wait for the scroll to finish first
-  cy.wait(350);
+  cy.wait(500);
   cy.get('span.selected').should('be.visible').then(($selected) => {
     if ($selected.parents('table.transliteration').length) {
       // If the 'span.selected' is within a 'table.transliteration', check for yellow
