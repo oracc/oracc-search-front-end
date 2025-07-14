@@ -1,9 +1,11 @@
+@use "../config/variables";
+
 .ngx-pagination {
   margin-bottom: 30px !important;
   text-align: center;
   .pagination-previous {
     font-size: 1.5rem;
-    font-family: $fontSecondary;
+    font-family: variables.$fontSecondary;
     &::before {
       content: none !important;
     }
@@ -17,7 +19,7 @@
 
   .pagination-next {
     font-size: 1.5rem;
-    font-family: $fontSecondary;
+    font-family: variables.$fontSecondary;
     &::after {
       content: none !important;
     }
@@ -29,23 +31,23 @@
     }
   }
   a {
-    font-family: $fontSecondary;
+    font-family: variables.$fontSecondary;
     font-size: 1.1rem !important;
-    color: $blueLight !important;
+    color: variables.$blueLight !important;
     &:hover {
       background-color: inherit !important;
-      color: $blueDark !important;
+      color: variables.$blueDark !important;
     }
   }
   .current {
     background-color: inherit !important;
-    color: $blueDark !important;
-    font-family: $fontSecondary !important;
+    color: variables.$blueDark !important;
+    font-family: variables.$fontSecondary !important;
     font-size: 1.1rem !important;
     font-weight: 700 !important;
   }
   .disabled {
-    color: $blueDark !important;
+    color: variables.$blueDark !important;
     span {
       border-radius: 0;
       display: block;
@@ -53,9 +55,9 @@
   }
 
   .small-screen {
-    font-family: $fontSecondary;
+    font-family: variables.$fontSecondary;
     font-size: 1.1rem !important;
-    color: $blueLight !important;
+    color: variables.$blueLight !important;
     font-weight: 700;
   }
 }

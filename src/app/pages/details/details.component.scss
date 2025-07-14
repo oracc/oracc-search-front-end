@@ -1,5 +1,5 @@
-@import "../../../scss/config/variables";
-//@import "perfect-scrollbar/css/perfect-scrollbar.css";
+@use "../../../scss/config/variables";
+//@use "perfect-scrollbar/css/perfect-scrollbar.css";
 
 .details {
   text-align: left;
@@ -24,7 +24,7 @@
 }
 
 .details__word {
-  color: $red;
+  color: variables.$red;
   font-weight: 700;
 }
 
@@ -36,7 +36,7 @@
   }
 
   table .selected {
-    background-color: $highlight;
+    background-color: variables.$highlight;
   }
 }
 
@@ -71,13 +71,13 @@
 }
 
 .details__panel-top {
-  background-color: $white;
+  background-color: variables.$white;
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05);
   height: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: $blueDark;
+  color: variables.$blueDark;
   font-weight: 700;
   font-size: 1.2rem;
   padding: 0 20px;
@@ -90,7 +90,7 @@
 
 .details__panel-main {
   height: 500px;
-  background-color: $white;
+  background-color: variables.$white;
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05);
   padding: 14px 20px;
   position: relative;
@@ -128,12 +128,12 @@
     margin-bottom: 15px;
   }
   .haveimg {
-    background-color: $blueSky;
+    background-color: variables.$blueSky;
   }
   .pgotl {
     &.level0 {
       h2 {
-        color: $red;
+        color: variables.$red;
         font-size: 0.75rem;
         margin-bottom: 7px;
       }
@@ -149,7 +149,7 @@
       margin-bottom: 31px;
       a {
         font-size: 0.75rem;
-        color: $grayBorder;
+        color: variables.$grayBorder;
         font-weight: normal;
       }
     }
@@ -166,7 +166,7 @@
     li,
     p {
       font-size: 0.75rem;
-      color: $grayBorder;
+      color: variables.$grayBorder;
       font-weight: normal;
     }
   }
@@ -188,9 +188,9 @@
   span.marker {
     margin-inline-start: 3vw;
     border-radius: 50%;
-    color: $white;
-    background-color: $teal;
-    border: 1px solid $teal;
+    color: variables.$white;
+    background-color: variables.$teal;
+    border: 1px solid variables.$teal;
     padding: 0.01rem 0.2rem;
   }
 
@@ -199,7 +199,7 @@
   }
   .text {
     tr.selected {
-      background-color: $blueSky;
+      background-color: variables.$blueSky;
     }
     span.lnum {
       display: none;
@@ -207,10 +207,10 @@
 
     .xlabel {
       font-size: 0.9rem;
-      color: $grayBorder;
+      color: variables.$grayBorder;
     }
     a > .xlabel {
-      color: $blueLight;
+      color: variables.$blueLight;
     }
     .cbd,
     .sign {
@@ -231,7 +231,7 @@
     .nonlbody,
     p {
       font-size: 0.8rem;
-      color: $grayBorder;
+      color: variables.$grayBorder;
     }
   }
 
@@ -242,10 +242,10 @@
   .ce-result,
   .ce-label {
     font-size: 1rem;
-    color: $grayBorder;
+    color: variables.$grayBorder;
     font-weight: normal;
     .selected {
-      background-color: $blueSky;
+      background-color: variables.$blueSky;
     }
   }
   .ce-result>a>span.marker{
@@ -253,14 +253,14 @@
   }
   .ce-label {
     a:hover {
-      color: $blueDark;
+      color: variables.$blueDark;
     }
     text-align: right;
   }
   .p3notes {
     .notemark {
       display: inline-block;
-      color: $blueDark;
+      color: variables.$blueDark;
       margin-right: 5px;
       font-weight: bold;
     }
@@ -269,10 +269,10 @@
       position: fixed;
       width: 450px;
       height: 200px;
-      background-color: $white;
+      background-color: variables.$white;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0px 0px 12px 0px $grayBorder;
+      box-shadow: 0px 0px 12px 0px variables.$grayBorder;
       box-sizing: border-box;
       overflow: auto;
     }
@@ -281,17 +281,17 @@
 
 .details__panel-main--right {
   a {
-    color: $grayBorder;
+    color: variables.$grayBorder;
     font-weight: normal;
   }
   tr {
     &:hover {
-      background-color: $blueSky;
+      background-color: variables.$blueSky;
       cursor: pointer;
     }
   }
   .xtr-label {
-    color: $blueLight;
+    color: variables.$blueLight;
   }
   .foreign,
   .uncertain {
@@ -304,14 +304,14 @@
   position: relative;
   width: 16px;
   height: 5px;
-  background-color: $blueLight;
+  background-color: variables.$blueLight;
   &::before {
     content: "";
     display: block;
     position: absolute;
     height: 15px;
     width: 5px;
-    background-color: $blueLight;
+    background-color: variables.$blueLight;
     left: 50%;
     top: -5px;
     transform-origin: center;
@@ -339,9 +339,9 @@
   font-family: "OpenSans", sans-serif;
   font-size: 1.5rem;
   text-align: center;
-  color: $blueLight;
+  color: variables.$blueLight;
   &.active {
-    color: $blueDark;
+    color: variables.$blueDark;
   }
   &.hidden {
     display: none;
@@ -362,14 +362,14 @@
 .details__popup {
   width: 350px;
   height: 200px;
-  background-color: $white;
+  background-color: variables.$white;
   padding: 15px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  box-shadow: 0px 0px 12px 0px $grayBorder;
+  box-shadow: 0px 0px 12px 0px variables.$grayBorder;
   box-sizing: border-box;
   overflow: auto;
   @media only screen and (max-width: 600px) {
@@ -394,11 +394,11 @@
   font-size: 1.5rem;
   display: block;
   position: absolute;
-  color: $blueLight;
+  color: variables.$blueLight;
   right: 5px;
   top: 5px;
   &:hover {
-    color: $red;
+    color: variables.$red;
   }
 }
 .details__popup-title {

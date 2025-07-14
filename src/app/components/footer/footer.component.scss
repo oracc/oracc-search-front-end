@@ -1,11 +1,12 @@
-@import "../../../scss/config/variables";
+@use "sass:color";
+@use "../../../scss/config/variables";
 
 .footer {
   width: 100%;
-  background-color: $blueDark;
-  color: $white;
+  background-color: variables.$blueDark;
+  color: variables.$white;
   margin-bottom: 80px;
-  transition: $dur $ease;
+  transition: variables.$dur variables.$ease;
   @media only screen and (max-width: 600px) {
     height: auto;
     padding-top: 23px;
@@ -31,7 +32,7 @@
   text-align: center;
   padding-top: 2vh;
   padding-bottom: 0.5rem;
-  color: $grayLight;
+  color: variables.$grayLight;
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -39,11 +40,11 @@
 }
 
 .footer__logo-link {
-  color: $white;
+  color: variables.$white;
   font-size: 1.4rem;
-  transition: $dur $ease;
+  transition: variables.$dur variables.$ease;
   &:hover {
-    color: $blueLight;
+    color: variables.$blueLight;
   }
   @media only screen and (max-width: 600px) {
     display: none;
@@ -60,9 +61,9 @@
 }
 
 .footer__center-text-link {
-  transition: $dur $ease;
+  transition: variables.$dur variables.$ease;
   &:hover {
-    color: lighten($blueLight, 20%);
+    color: color.adjust(variables.$blueLight, $lightness: 20%);
   }
 }
 
@@ -76,12 +77,12 @@
 }
 
 .footer__social-link {
-  color: $white;
+  color: variables.$white;
   margin-inline-start: 42px;
   font-size: 1.2rem;
-  transition: $dur $ease;
+  transition: variables.$dur variables.$ease;
   &:hover {
-    color: $blueLight;
+    color: variables.$blueLight;
   }
   @media only screen and (max-width: 600px) {
     margin-inline-start: 0;

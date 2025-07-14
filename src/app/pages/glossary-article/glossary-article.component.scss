@@ -1,4 +1,4 @@
-@import "../../../scss/config/variables";
+@use "../../../scss/config/variables";
 
 .glossary {
   text-align: left;
@@ -34,7 +34,7 @@
         font-size: 1rem;
       }
       &:hover {
-        color: $blueLight;
+        color: variables.$blueLight;
       }
     }
     .iheader {
@@ -43,7 +43,7 @@
       min-width: 250px;
       text-align: right;
       font-weight: 700;
-      color: $blueDark;
+      color: variables.$blueDark;
       font-size: 1.1rem;
       @media only screen and (max-width: 600px) {
         display: block;

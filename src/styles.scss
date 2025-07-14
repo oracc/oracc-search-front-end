@@ -1,27 +1,27 @@
 /*--------------------------------------------------------------
 # Config
 --------------------------------------------------------------*/
-@import "scss/config/reset";
-@import "scss/config/variables";
-@import "scss/config/keyframes";
+@use "scss/config/reset";
+@use "scss/config/variables";
+@use "scss/config/keyframes";
 
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-@import "scss/base/layout";
-@import "scss/base/fonts";
-@import "scss/base/typography";
+@use "scss/base/layout";
+@use "scss/base/fonts";
+@use "scss/base/typography";
 
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-@import "scss/layout/buttons";
-@import "scss/layout/lists";
-@import "scss/layout/general";
-@import "scss/layout/arabic";
-@import "scss/layout/pagination";
-@import "scss/layout/loader";
-@import "scss/layout/glossary-article";
+@use "scss/layout/buttons";
+@use "scss/layout/lists";
+@use "scss/layout/general";
+@use "scss/layout/arabic";
+@use "scss/layout/pagination";
+@use "scss/layout/loader";
+@use "scss/layout/glossary-article";
 
 svg {
 	path {

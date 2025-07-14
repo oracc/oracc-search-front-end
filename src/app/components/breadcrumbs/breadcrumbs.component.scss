@@ -1,9 +1,9 @@
-@import "../../../scss/config/variables";
+@use "../../../scss/config/variables";
 
 .bcrumbs {
-  background-color: $white;
-  font-family: $fontSecondary;
-  color: $blueLight;
+  background-color: variables.$white;
+  font-family: variables.$fontSecondary;
+  color: variables.$blueLight;
   position: relative;
   height: 50px;
   display: flex;
@@ -21,7 +21,7 @@
 .bcrumbs__list-item {
   cursor: pointer;
   &:last-of-type {
-    color: $grayDark;
+    color: variables.$grayDark;
     cursor: default;
   }
   @media only screen and (max-width: 600px) {
@@ -35,7 +35,7 @@
   margin-right: 20px;
   position: relative;
   top: 1px;
-  color: $blueLight;
+  color: variables.$blueLight;
   @media only screen and (max-width: 600px) {
     margin-left: 10px;
     margin-right: 10px;

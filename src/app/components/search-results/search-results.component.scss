@@ -1,12 +1,12 @@
-@import "../../../scss/config/variables";
+@use "../../../scss/config/variables";
 
 .results {
   margin-left: 10px;
   margin-right: 10px;
   @media only screen and (max-width: 600px) {
     padding-bottom: 30px;
-    background-color: $grayLight;
-    box-shadow: 0 -17px 0 20px $grayLight;
+    background-color: variables.$grayLight;
+    box-shadow: 0 -17px 0 20px variables.$grayLight;
     min-height: max-content;
     margin-top: 1.2rem;
   }
@@ -36,7 +36,7 @@
 }
 
 .results__count {
-  color: $grayDark;
+  color: variables.$grayDark;
   font-size: 1.6rem;
   font-weight: 700;
   padding-left: 50px;
@@ -66,14 +66,14 @@
     width: 1px;
     right: -15px;
     bottom: 2px;
-    background-color: $grayDark;
+    background-color: variables.$grayDark;
   }
   &:last-of-type::after {
     display: none;
   }
   &.active,
   &:hover {
-    color: $blueDark;
+    color: variables.$blueDark;
   }
   @media only screen and (max-width: 600px) {
     display: none;
@@ -83,7 +83,7 @@
 .results__table {
   margin-bottom: 30px;
   font-weight: 700;
-  color: $grayDark;
+  color: variables.$grayDark;
   position: relative;
   width: 100%;
 }
@@ -102,13 +102,13 @@
 .results__table-head-item {
   display: flex;
   align-items: center;
-  background-color: $blueLight;
-  font-family: $fontSecondary;
+  background-color: variables.$blueLight;
+  font-family: variables.$fontSecondary;
   font-size: 0.75rem;
   text-align: left;
   width: 9.6%;
   height: 35px;
-  color: $white;
+  color: variables.$white;
   margin-right: 10px;
   padding-left: 8px;
   padding-right: 8px;
@@ -120,7 +120,7 @@
   }
 
   &:hover {
-    background-color: $blueDark;
+    background-color: variables.$blueDark;
   }
   .fa-sort-down {
     font-size: 1.2rem;
@@ -129,7 +129,7 @@
     top: -3px;
     pointer-events: none;
     transform-origin: 50% 70%;
-    transition: $dur $ease;
+    transition: variables.$dur variables.$ease;
     &.descending {
       transform: rotate(180deg);
     }
@@ -170,9 +170,9 @@
 }
 
 .results__table-head-item--active {
-  background-color: $blueDark;
+  background-color: variables.$blueDark;
   .fa-sort-down {
-    color: $blueLight;
+    color: variables.$blueLight;
   }
 }
 
@@ -258,10 +258,10 @@
       display: block;
       position: absolute;
       font-size: 0.75rem;
-      background-color: $white;
-      color: $grayBorder;
-      border-left: 1px solid $grayBorder;
-      border-right: 1px solid $grayBorder;
+      background-color: variables.$white;
+      color: variables.$grayBorder;
+      border-left: 1px solid variables.$grayBorder;
+      border-right: 1px solid variables.$grayBorder;
       .fa-sort-down {
         display: none;
       }
@@ -273,11 +273,11 @@
         left: 8px;
         right: 8px;
         height: 1px;
-        background-color: $grayBorder;
+        background-color: variables.$grayBorder;
       }
       &.header-active {
-        background-color: $blueLight;
-        color: $white;
+        background-color: variables.$blueLight;
+        color: variables.$white;
         border: none;
         &::after {
           content: none;
@@ -298,7 +298,7 @@
       &:nth-child(5) {
         height: 55px;
         top: calc(400% + 60px);
-        border-bottom: 1px solid $grayBorder;
+        border-bottom: 1px solid variables.$grayBorder;
         &::after {
           content: none;
         }
@@ -310,10 +310,10 @@
       display: block;
       position: absolute;
       font-size: 0.75rem;
-      background-color: $blueLight;
-      color: $white;
-      border-left: 1px solid $grayBorder;
-      border-right: 1px solid $grayBorder;
+      background-color: variables.$blueLight;
+      color: variables.$white;
+      border-left: 1px solid variables.$grayBorder;
+      border-right: 1px solid variables.$grayBorder;
     }
   }
 }
@@ -324,17 +324,17 @@
   margin-bottom: 10px;
   &:nth-child(odd) {
     .results__table-cell {
-      background-color: $grayTable;
+      background-color: variables.$grayTable;
     }
   }
   &:nth-child(even) {
     .results__table-cell {
-      background-color: $white;
+      background-color: variables.$white;
     }
   }
   &:hover {
     .results__table-cell {
-      background-color: $blueSky;
+      background-color: variables.$blueSky;
     }
   }
 }
@@ -371,7 +371,7 @@
 .results__none,
 .reults__none-search {
   font-size: 1.4rem;
-  color: $grayDark;
+  color: variables.$grayDark;
   font-weight: 700;
   @media only screen and (max-width: 600px) {
     display: block;

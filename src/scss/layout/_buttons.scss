@@ -1,19 +1,20 @@
-@import "../../scss/config/variables";
+@use "sass:color";
+@use "../../scss/config/variables";
 
 .btn {
-  font-family: $fontSecondary;
+  font-family: variables.$fontSecondary;
   font-weight: 600;
   font-size: 1.3rem;
   width: 145px;
   height: 50px;
-  color: $white;
-  background-color: $blueLight;
+  color: variables.$white;
+  background-color: variables.$blueLight;
   border: none;
   border-radius: 5px;
   outline: none;
-  transition: $dur $ease;
+  transition: variables.$dur variables.$ease;
   &:hover {
-    background-color: lighten($blueLight, 20%);
+    background-color: color.adjust(variables.$blueLight, $lightness: 20%);
   }
   @media only screen and (max-width: 600px) {
     font-size: 0.8rem;

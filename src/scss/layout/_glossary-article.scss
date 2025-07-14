@@ -1,13 +1,15 @@
+@use "../config/variables";
+
 .glossary__content {
   .heading {
     font-size: 1.5rem;
-    color: $grayDark;
+    color: variables.$grayDark;
     margin-bottom: 10px;
     @media only screen and (max-width: 600px) {
       font-size: 1.3rem;
     }
     span.cf {
-      color: $red;
+      color: variables.$red;
     }
   }
   .header,
@@ -19,8 +21,8 @@
     .sensenum,
     .sense,
     .icount {
-      font-family: $fontPrimary;
-      color: $blueDark;
+      font-family: variables.$fontPrimary;
+      color: variables.$blueDark;
       font-size: 1.2rem;
       font-weight: 700;
     }
