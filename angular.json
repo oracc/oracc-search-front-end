@@ -96,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "oracc:build:production"
+              "buildTarget": "oracc:build:production"
             },
             "development": {
-              "browserTarget": "oracc:build:development"
+              "buildTarget": "oracc:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,7 +107,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "oracc:build"
+            "buildTarget": "oracc:build"
           }
         },
         "test": {
