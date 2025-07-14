@@ -4,16 +4,20 @@
       <li class="bcrumbs__list-item" routerLink="/">
         {{ "breadcrumbs.homeText" | translate }}
       </li>
-      <li
-        class="bcrumbs__list-item js-list-item"
-        *ngFor="let link of breadcrumbsLinks; let i = index"
-        (click)="handleBreadcrumbClick(i)"
-        data-id="{{ link.url }}"
-      >
-        <i class="fas fa-arrow-left bcrumbs__list-icon"></i>
-        <span *ngIf="['search results', 'occurrences', 'texts'].includes(link.name); else notTranslated">{{ "breadcrumbs." + link.name | translate }}</span>
-        <ng-template #notTranslated>{{ link.name }}</ng-template>
-      </li>
+      @for (link of breadcrumbsLinks; track link; let i = $index) {
+        <li
+          class="bcrumbs__list-item js-list-item"
+          (click)="handleBreadcrumbClick(i)"
+          data-id="{{ link.url }}"
+          >
+          <i class="fas fa-arrow-left bcrumbs__list-icon"></i>
+          @if (['search results', 'occurrences', 'texts'].includes(link.name)) {
+            <span>{{ "breadcrumbs." + link.name | translate }}</span>
+          } @else {
+            {{ link.name }}
+          }
+        </li>
+      }
     </ul>
   </div>
 </div>

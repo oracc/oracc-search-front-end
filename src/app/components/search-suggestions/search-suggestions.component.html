@@ -1,42 +1,45 @@
-<div *ngIf="!loading && showSuggestions" class="search__suggestions">
-  <div class="suggestions-content">
-    <div class="suggestions-category-select">
-      <div
-        [ngClass]="suggestionsCategory === 'completions' ? 'active' : ''"
-        (click)="setSuggestionsCategory($event)"
-      >
-        Completions
+@if (!loading && showSuggestions) {
+  <div class="search__suggestions">
+    <div class="suggestions-content">
+      <div class="suggestions-category-select">
+        <div
+          [ngClass]="suggestionsCategory === 'completions' ? 'active' : ''"
+          (click)="setSuggestionsCategory($event)"
+          >
+          Completions
+        </div>
+        <div
+          [ngClass]="suggestionsCategory === 'suggestions' ? 'active' : ''"
+          (click)="setSuggestionsCategory($event)"
+          >
+          Suggestions
+        </div>
       </div>
-
-      <div
-        [ngClass]="suggestionsCategory === 'suggestions' ? 'active' : ''"
-        (click)="setSuggestionsCategory($event)"
-      >
-        Suggestions
-      </div>
+      @for (suggestion of searchSuggestions[suggestionsCategory]; track suggestion) {
+        <p
+          class="suggestion"
+          (click)="setSearchParam(suggestion)"
+          (keyup.enter)="setSearchParam(suggestion)"
+          (keydown.arrowup)="prevSuggestion(); $event.stopPropagation()"
+          (keydown.arrowdown)="nextSuggestion(); $event.stopPropagation()"
+          tabindex="0"
+          >
+          {{ suggestion }}
+        </p>
+      }
     </div>
-
-    <p
-      *ngFor="let suggestion of searchSuggestions[suggestionsCategory]"
-      class="suggestion"
-      (click)="setSearchParam(suggestion)"
-      (keyup.enter)="setSearchParam(suggestion)"
-      (keydown.arrowup)="prevSuggestion(); $event.stopPropagation()"
-      (keydown.arrowdown)="nextSuggestion(); $event.stopPropagation()"
-      tabindex="0"
-    >
-      {{ suggestion }}
-    </p>
+    @if (searchSuggestions[suggestionsCategory].length === 0) {
+      <p
+        class="suggestions-fallback"
+        >
+        No items to display
+      </p>
+    }
   </div>
+}
 
-  <p
-    class="suggestions-fallback"
-    *ngIf="searchSuggestions[suggestionsCategory].length === 0"
-  >
-    No items to display
-  </p>
-</div>
-
-<div class="search__suggestions" *ngIf="loading && showSuggestions">
-  <p class="suggestions-fetching">Fetching suggestions...</p>
-</div>
+@if (loading && showSuggestions) {
+  <div class="search__suggestions">
+    <p class="suggestions-fetching">Fetching suggestions...</p>
+  </div>
+}
