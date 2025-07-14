@@ -10,7 +10,7 @@ const configs = [{
   viewport: {width: 600, height: 1000}
 }];
 
-describe('Journey', () => {
+  describe('Journey', () => {
   oracc_stubs('journey');
 
   for (const config of configs) {
@@ -51,7 +51,7 @@ describe('Journey', () => {
 
           // check breadcrumbs show the correct level of traceback and detail page shown
           cy.get('.bcrumbs').should('be.visible');
-          cy.get('.bcrumbs__list-item').contains('occurrences').should('be.visible');
+          cy.get('.bcrumbs__list-item').contains('Occurrences').should('be.visible');
           cy.get('.details').should('be.visible');
 
           // check clicking on an entry reveals the translation and changes the main column to that entry
@@ -75,7 +75,7 @@ describe('Journey', () => {
           cy.get('.norms').should('be.visible');
 
           // check breadcrumbs work in a deep search
-          cy.get('.bcrumbs__list-item').contains('texts').click();
+          cy.get('.bcrumbs__list-item').contains('Texts').click();
           cy.get('.details').should('be.visible');
         });
 
@@ -235,11 +235,39 @@ describe('Journey', () => {
             cy.get('.search__input').type(`${input}{enter}`);
             cy.get('.results__table-cell').contains(result).click();
             cy.get('#lexphrases .lex-line').contains(text).click();
+            cy.log('Going forwards two pages');
             check_page_is_details_texts();
             cy.get('.p3h2').contains(textTitle);
-            cy.get('.bcrumbs__list .bcrumbs__list-item').contains('occurrences').click();
+            cy.get('.bcrumbs__list .bcrumbs__list-item').contains('Occurrences').click();
+            cy.log('Going back to details (occurrences) page we skipped over');
             check_page_is_details();
             cy.get('#p4CElineContent .ce-label').contains(text);
+          });
+
+          it('does not interrupt search box typing', () => {
+            const input = "eden";
+            const result = "plain";
+            const lexphra = "qatnu[thin]AJ";
+            const text = "LTBA 1, 40 o iii 45'";
+            cy.visit("/");
+            cy.get('.search__input').type(`${input}{enter}`);
+            cy.get('.results__table-cell').contains(result).scrollIntoView().click();
+            cy.get('#lexphrases .lex-line').contains(text).scrollIntoView().click();
+            cy.log('Going forwards two pages');
+            check_page_is_details_texts();
+            cy.get('#central-panel').scrollTo('top', {duration: 100});
+            cy.wait(200);
+            cy.get('#central-panel').then($panel => {
+              const y = $panel.scrollTop();
+              cy.get('.search__input').then($input => {
+                cy.wrap($input).type('{backspace}{backspace}{backspace}{backspace}cow');
+                // allow any (incorrect) scroll to happen...
+                cy.wait(750);
+                cy.get('#central-panel').then($panel => {
+                  expect($panel.scrollTop()).to.be.equal(y);
+                });
+              })
+            });
           });
         });
       });
@@ -340,20 +368,15 @@ function check_page_is_project_texts() {
 }
 
 function checkSelectedWordIsHighlighted(){
+  // annoyingly, cy.get() stops the scroll, so we have to wait for the scroll to finish first
+  cy.wait(350);
   cy.get('span.selected').should('be.visible').then(($selected) => {
-  // if ($selected.hasClass('sux')) {
-  //   // If the 'span.selected' has the '.sux' class, it should be the highlight
-  //   expect($selected).to.have.css('background-color', 'rgba(236, 200, 53, 0.827)');
-  // } else {
-  //    // If the 'span.selected' doesn't have '.sux', check for blueSky
-  //   expect($selected).to.have.css('background-color', 'rgb(223, 238, 247)');
-  // }
-  if ($selected.parents('table.transliteration').length) {
-    // If the 'span.selected' is within a 'table.transliteration', check for yellow
-    expect($selected).to.have.css('background-color', 'rgba(236, 200, 53, 0.827)');
-  } else if ($selected.parents('.ce-result').length) {
-    // If the 'span.selected' is within a '.ce-result', check for blue
-    expect($selected).to.have.css('background-color', 'rgb(223, 238, 247)');
-  }
-});
+    if ($selected.parents('table.transliteration').length) {
+      // If the 'span.selected' is within a 'table.transliteration', check for yellow
+      expect($selected).to.have.css('background-color', 'rgba(236, 200, 53, 0.827)');
+    } else if ($selected.parents('.ce-result').length) {
+      // If the 'span.selected' is within a '.ce-result', check for blue
+      expect($selected).to.have.css('background-color', 'rgb(223, 238, 247)');
+    }
+  });
 }

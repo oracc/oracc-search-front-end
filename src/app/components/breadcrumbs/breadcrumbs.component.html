@@ -10,7 +10,9 @@
         (click)="handleBreadcrumbClick(i)"
         data-id="{{ link.url }}"
       >
-        <i class="fas fa-arrow-left bcrumbs__list-icon"></i>{{ link.name }}
+        <i class="fas fa-arrow-left bcrumbs__list-icon"></i>
+        <span *ngIf="['search results', 'occurrences', 'texts'].includes(link.name); else notTranslated">{{ "breadcrumbs." + link.name | translate }}</span>
+        <ng-template #notTranslated>{{ link.name }}</ng-template>
       </li>
     </ul>
   </div>

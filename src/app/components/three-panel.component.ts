@@ -1,13 +1,14 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, effect, inject, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { Observable, Subscription } from 'rxjs';
 
-import {  PANEL_TYPE } from '../../utils/consts';
+import { PANEL_TYPE } from '../../utils/consts';
 import { GetDataService } from '../services/get-data/get-data.service';
 import { HandleBreadcrumbsService } from 'src/app/services/handle-breadcrumbs/handle-breadcrumbs.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
+import { ShareLanguageService } from '../services/share-language-service';
 
 // ThreePanel is a base class for all pages that have the
 // Metadata/Details/Texts panels.
@@ -16,7 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
   template: '<p>base component, not to be rendered</p>',
   styles: []
 })
-export class ThreePanel implements OnInit {
+export class ThreePanel implements OnInit, AfterViewChecked {
   public route: ActivatedRoute = inject(ActivatedRoute);
   public router: Router = inject(Router);
   public getDataService: GetDataService = inject(GetDataService);
@@ -43,10 +44,26 @@ export class ThreePanel implements OnInit {
   public paginationSliceStart: number = 1;
   public paginationSliceEnd: number = 7;
   public topText: string;
+  public topTextArguments = [0, 0];
   public prev_item: string | null = null;
   public next_item: string | null = null;
   public endObserver: Subscription;
+  public scrollIsDone: boolean = false;
+  private scrollTimer: NodeJS.Timeout | null = null;
+  private shareLangaugeService = inject(ShareLanguageService);
 
+  constructor() {
+    effect(() => {
+      // read the signal
+      this.shareLangaugeService.language();
+      this.translate.get(
+        this.detailsPanelTopText(),
+        this.topTextArguments
+      ).subscribe(text => {
+        this.topText = text;
+      });
+    });
+  }
   public ngOnInit(): void {
     // Are we on a narrow (probably mobile) screen?
     this.isMobile = window.innerWidth <= 600;
@@ -97,7 +114,6 @@ export class ThreePanel implements OnInit {
       const htmlData = parser.parseFromString(text, 'text/html');
       this.setMetadataPanel(htmlData);
       this.setMiddlePanelAndPages(htmlData);
-      console.log("htmlData: ", htmlData);
     });
   }
 
@@ -139,18 +155,21 @@ export class ThreePanel implements OnInit {
     }
     this.setMiddlePanel(htmlData);
     const itemControls = htmlData.getElementById('p4itemNav');
-    let topTextArguments = [];
+    this.topTextArguments = [];
     // set total lines, if we know
     if (itemControls && itemControls.hasAttribute('data-imax')) {
       const total = parseInt(itemControls.getAttribute('data-imax'), 10);
       const index = itemControls.hasAttribute('data-inth')?
         parseInt(itemControls.getAttribute('data-inth'), 10) : null;
-      topTextArguments = [total, index];
+      this.topTextArguments = [total, index];
     }
     this.translate.get(
       this.detailsPanelTopText(),
-      topTextArguments
-    ).subscribe(text => { this.topText = text; });
+      this.topTextArguments
+    ).subscribe(text => {
+      this.topText = text;
+      this.scrollIsDone = false;
+    });
     // set pagination controls, if we know how many pages
     const navControls = htmlData.getElementById('p4PageNav');
     if (!navControls || !navControls.hasAttribute('data-pmax')) {
@@ -166,19 +185,35 @@ export class ThreePanel implements OnInit {
       this.currentPage = this.pageCount;
     }
     this.updatePaginationPages();
-
-    setTimeout(() => { this.scrollToSelected(); }, 100);
   }
 
-    private scrollToSelected(): void {
+  public ngAfterViewChecked(): void {
+    if (!this.scrollIsDone) {
+      // Debounce scroll to selected
+      // We want just one call after the view settles
+      if (this.scrollTimer) {
+        clearTimeout(this.scrollTimer);
+      }
+      // we need a timeout function that doesn't use "this"
+      const that = this;
+      function doScroll() {
+        that.scrollToSelected();
+      }
+      this.scrollTimer = setTimeout(doScroll, 100);
+    }
+  }
+
+  private scrollToSelected(): void {
     // need to do this after the request for the content has completed
     let container = document.querySelector('table.transliteration');
     let selectedElement = container?.querySelector('.selected');
-    if (selectedElement) {
+   if (selectedElement) {
       selectedElement.scrollIntoView({
         behavior: 'smooth',
-        block: 'nearest'
+        block: 'center',
       });
+      this.scrollIsDone =  true;
+      this.scrollTimer = null;
     }
   }
 

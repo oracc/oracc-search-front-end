@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LANGUAGE } from 'src/utils/consts';
+import { ShareLanguageService } from 'src/app/services/share-language-service';
 
 @Component({
   selector: 'app-header',
@@ -13,12 +14,15 @@ export class HeaderComponent implements OnInit {
   routerLinks = document.querySelectorAll('[routerLink]');
   isMenuOpen = false;
   imgURL: string = 'assets/img/oracc-header.jpeg';
+  shareLanguageService = inject(ShareLanguageService);
 
   constructor(public translate: TranslateService) {
     translate.addLangs([LANGUAGE.ENGLISH, LANGUAGE.ARABIC]);
     translate.setDefaultLang(LANGUAGE.ENGLISH);
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|ar/) ? browserLang : LANGUAGE.ENGLISH);
+    const newLang = browserLang.match(/en|ar/) ? browserLang : LANGUAGE.ENGLISH;
+    translate.use(newLang);
+    this.shareLanguageService.setLanguage(newLang);
   }
 
   ngOnInit() {}
@@ -32,6 +36,7 @@ export class HeaderComponent implements OnInit {
         elem.classList.remove('header__nav-lang-link--active');
       });
       lang.classList.add('header__nav-lang-link--active');
+      this.shareLanguageService.setLanguage(LANGUAGE.ENGLISH);
     } else if (lang.id === LANGUAGE.ARABIC) {
       this.translate.use(LANGUAGE.ARABIC);
       this.htmlTag.setAttribute('dir', 'rtl');
@@ -40,6 +45,7 @@ export class HeaderComponent implements OnInit {
         elem.classList.remove('header__nav-lang-link--active');
       });
       lang.classList.add('header__nav-lang-link--active');
+      this.shareLanguageService.setLanguage(LANGUAGE.ARABIC);
     }
   }
 

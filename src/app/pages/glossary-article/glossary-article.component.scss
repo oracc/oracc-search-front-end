@@ -18,7 +18,7 @@
     display: flex;
   }
   p.icount {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
   .forms,
   .norms,
@@ -39,7 +39,7 @@
     }
     .iheader {
       display: table-cell;
-      padding-right: 12px;
+      padding-inline-end: 12px;
       min-width: 250px;
       text-align: right;
       font-weight: 700;
@@ -53,9 +53,9 @@
     }
   }
   .senses {
-    margin-left: 242px;
+    margin-inline-start: 242px;
     @media only screen and (max-width: 600px) {
-      margin-left: 0;
+      margin-inline-start: 0;
       font-size: 1rem;
     }
     .sense,

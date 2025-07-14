@@ -77,13 +77,13 @@
 
 .footer__social-link {
   color: $white;
-  margin-left: 42px;
+  margin-inline-start: 42px;
   font-size: 1.2rem;
   transition: $dur $ease;
   &:hover {
     color: $blueLight;
   }
   @media only screen and (max-width: 600px) {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 }

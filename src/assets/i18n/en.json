@@ -5,7 +5,7 @@
     "linkTextAbout": "About",
     "linkTextHelp": "Help",
     "langText1": "English",
-    "langText2": "Arabic",
+    "langText2": "العربية",
     "langAbbrText1": "EN",
     "langAbbrText2": "AR"
   },
@@ -26,6 +26,13 @@
     "resultsText": "Results",
     "showText": "Show",
     "ancientWordText": "Ancient word",
+    "tableHeadings": {
+      "translation": "Translation",
+      "hits": "Hits",
+      "meanings": "Meanings",
+      "language": "Lang",
+      "period": "Period"
+    },
     "noResultsText": "No results for given word.",
     "placeholderText": "Search Oracc",
     "placeholderTextFilter": "Filter periods",
@@ -41,7 +48,10 @@
     "buttonText": "Got it!"
   },
   "breadcrumbs": {
-    "homeText": "Home"
+    "homeText": "Home",
+    "search results": "Search Results",
+    "occurrences": "Occurrences",
+    "texts": "Texts"
   },
   "details": {
     "metadataText": "Metadata",
