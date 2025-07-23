@@ -16,20 +16,21 @@
           (ngModelChange)="setShowSuggestions(true)"
           (keyup.enter)="searchOnEnter($event)"
           (keyup.arrowdown)="focusSuggestions()"
-        />
-        <app-search-suggestions
-          *ngIf="showSuggestions"
-          [searchParam]="searchParam"
-          (setSuggestionSearchParam)="setSuggestionSearchParam($event)"
-          (setShowSuggestions)="setShowSuggestions($event)"
-        ></app-search-suggestions>
+          />
+        @if (showSuggestions) {
+          <app-search-suggestions
+            [searchParam]="searchParam"
+            (setSuggestionSearchParam)="setSuggestionSearchParam($event)"
+            (setShowSuggestions)="setShowSuggestions($event)"
+          ></app-search-suggestions>
+        }
       </div>
 
       <button
         class="btn search__btn js-search-btn"
         routerLink="search-results"
         (click)="setSearchParam(searchParam)"
-      >
+        >
         <i class="fa fa-search"></i>{{ "search.buttonText" | translate }}
       </button>
     </div>

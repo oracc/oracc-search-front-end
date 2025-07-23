@@ -4,9 +4,10 @@ import { LANGUAGE } from 'src/utils/consts';
 import { ShareLanguageService } from 'src/app/services/share-language-service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: false
 })
 export class HeaderComponent implements OnInit {
   htmlTag: HTMLElement = document.getElementsByTagName('html')[0];

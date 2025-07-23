@@ -9,7 +9,8 @@ function collate_or_compare(a, b) {
 }
 
 @Pipe({
-  name: 'sort'
+    name: 'sort',
+    standalone: false
 })
 export class SortPipe implements PipeTransform {
   transform(array: any, field: string, desc: boolean): any {

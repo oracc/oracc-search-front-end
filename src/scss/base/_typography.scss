@@ -1,11 +1,13 @@
+@use "../config/variables";
+
 a {
-  color: $blueLight;
+  color: variables.$blueLight;
   font-weight: 700;
   &:hover {
-    color: $blueDark;
+    color: variables.$blueDark;
   }
 }
 
 p {
-  font-family: $fontSecondary;
+  font-family: variables.$fontSecondary;
 }

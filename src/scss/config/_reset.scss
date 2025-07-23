@@ -1,4 +1,4 @@
-@import "./variables";
+@use "./variables";
 //----------  reset
 //------------------------------------------------------------------------------
 body,
@@ -68,10 +68,10 @@ html {
 body {
   font-size: 1rem;
   line-height: 1.35;
-  font-family: $fontPrimary;
+  font-family: variables.$fontPrimary;
   min-height: calc(100vh + 140px);
   position: relative;
-  background-color: $grayLight;
+  background-color: variables.$grayLight;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }

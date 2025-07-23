@@ -1,146 +1,153 @@
 <section class="results js-results">
-  <div class="error__content" *ngIf="errorText">{{ errorText | translate }}</div>
-  <div class="results__content" *ngIf="dataReceived">
-    <div class="results__top" (ngInit)="onResultsInit()">
-      <span class="results__count"
-        >{{ "search.resultsText" | translate }}: {{ results }}</span
-      >
-      <div class="results__show-count">
-        <a
-          href="javascript:;"
-          class="results__show-count-link"
-          [ngClass]="{ active: itemsPerPage === 10 }"
-          (click)="setItemsPerPage($event, 10)"
-          >{{ "search.showText" | translate }} 10</a
-        >
-        <a
-          href="javascript:;"
-          class="results__show-count-link"
-          [ngClass]="{ active: itemsPerPage === 25 }"
-          (click)="setItemsPerPage($event, 25)"
-          >{{ "search.showText" | translate }} 25</a
-        >
-        <a
-          href="javascript:;"
-          class="results__show-count-link"
-          [ngClass]="{ active: itemsPerPage === 50 }"
-          (click)="setItemsPerPage($event, 50)"
-          >{{ "search.showText" | translate }} 50</a
-        >
-      </div>
-    </div>
-
-    <div class="results__table js-results-table">
-      <div class="results__table-head">
-        <span
-          class="results__table-head-item results__table-head-item--wide"
-          (click)="handleHeaderClick($event, 5, false)"
-          id="header-5"
-          >{{ "search.ancientWordText" | translate
-          }}<i
-            class="fas fa-sort-down forced-visible"
+  @if (errorText) {
+    <div class="error__content">{{ errorText | translate }}</div>
+  }
+  @if (dataReceived) {
+    <div class="results__content">
+      <div class="results__top" (ngInit)="onResultsInit()">
+        <span class="results__count"
+          >{{ "search.resultsText" | translate }}: {{ results }}</span
+          >
+          <div class="results__show-count">
+            <a
+              href="javascript:;"
+              class="results__show-count-link"
+              [ngClass]="{ active: itemsPerPage === 10 }"
+              (click)="setItemsPerPage($event, 10)"
+              >{{ "search.showText" | translate }} 10</a
+              >
+              <a
+                href="javascript:;"
+                class="results__show-count-link"
+                [ngClass]="{ active: itemsPerPage === 25 }"
+                (click)="setItemsPerPage($event, 25)"
+                >{{ "search.showText" | translate }} 25</a
+                >
+                <a
+                  href="javascript:;"
+                  class="results__show-count-link"
+                  [ngClass]="{ active: itemsPerPage === 50 }"
+                  (click)="setItemsPerPage($event, 50)"
+                  >{{ "search.showText" | translate }} 50</a
+                  >
+                </div>
+              </div>
+              <div class="results__table js-results-table">
+                <div class="results__table-head">
+                  <span
+                    class="results__table-head-item results__table-head-item--wide"
+                    (click)="handleHeaderClick($event, 5, false)"
+                    id="header-5"
+                    >{{ "search.ancientWordText" | translate
+                    }}<i
+                    class="fas fa-sort-down forced-visible"
             [ngClass]="{
               descending: isDescending,
               'header-active': sortedColumn == 5,
             }"
-          ></i
-        ></span>
-
-        <ul class="results__table-head-drop js-table-head">
-          <li
-            class="results__table-head-item js-table-head-item"
-            *ngFor="let heading of tableHeadings; let i = index"
-            (click)="handleHeaderClick($event, i, true)"
+                    ></i
+                  ></span>
+                  <ul class="results__table-head-drop js-table-head">
+                    @for (heading of tableHeadings; track heading; let i = $index) {
+                      <li
+                        class="results__table-head-item js-table-head-item"
+                        (click)="handleHeaderClick($event, i, true)"
             [ngClass]="{
               'forced-visible': forcedVisibleColumn == i
             }"
-          data-id="header-{{ i }}"
-          >
-            <i
-              class="fas fa-list"
-              (click)="handleDropDown($event, i)"
-            ></i>
-            {{ ("search.tableHeadings." + heading) | translate }}
-            <i
-              class="fas fa-sort-down"
+                        data-id="header-{{ i }}"
+                        >
+                        <i
+                          class="fas fa-list"
+                          (click)="handleDropDown($event, i)"
+                        ></i>
+                        {{ ("search.tableHeadings." + heading) | translate }}
+                        <i
+                          class="fas fa-sort-down"
               [ngClass]="{
                 descending: isDescending,
                 'header-active': sortedColumn == i
               }"
-            ></i>
-            <input
-              type="text"
-              name="filter-periods"
-              class="results__table-head-input"
-              type="text"
-              (keyup)="filterPeriods($event)"
-              *ngIf="i == 4"
-              [placeholder]="'search.placeholderTextFilter' | translate"
-            />
-          </li>
-        </ul>
-      </div>
-
-      <div
-        class="results__table-row js-table-row"
-        *ngFor="
-          let entry of translationData
-            | sort : sortField : isDescending
-            | paginate : { itemsPerPage: itemsPerPage, currentPage: currentPage };
-          let i = index
-        "
-        (click)="showGlossaryArticle(entry.lang, entry.id, entry.cf)"
-        data-id="{{ entry.id }}"
-      >
-        <span class="results__table-cell results__table-cell--wide">{{
-          entry.cf
-        }}</span>
-        <ul class="results__table-row-drop">
-          <li
-            class="results__table-cell js-table-cell"
-            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 0}"
-          >
-            {{ entry.gw }}
-          </li>
-          <li
-            class="results__table-cell js-table-cell"
-            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 1}"
-          >
-            {{ entry.icount }}
-          </li>
-          <li
-            class="results__table-cell js-table-cell"
-            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 2}"
-          >
-            {{ entry.senses_mng.join(", ") }}
-          </li>
-          <li
-            class="results__table-cell js-table-cell"
-            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 3}"
-          >
-            {{ entry.lang }}
-          </li>
-          <li
-            class="results__table-cell js-table-cell"
-            [ngClass]="{'cell-hidden': forcedVisibleColumn !== 4}"
-          >
-            {{ entry.periods_p.join(", ") }}
-          </li>
-        </ul>
-      </div>
-    </div>
-    <pagination-controls
-      (pageChange)="currentPage = $event"
-      previousLabel="&larr;"
-      nextLabel="&rarr;"
-      [autoHide]="true"
-      [responsive]="true"
-    ></pagination-controls>
-  </div>
-  <div class="results__fetching" *ngIf="waitForData">
-    <i class="fas fa-spinner"></i>
-  </div>
-  <span class="results__none" *ngIf="noReceivedData">{{
-    "search.noResultsText" | translate
-  }}</span>
-</section>
+                        ></i>
+                        @if (i == 4) {
+                          <input
+                            type="text"
+                            name="filter-periods"
+                            class="results__table-head-input"
+                            type="text"
+                            (keyup)="filterPeriods($event)"
+                            [placeholder]="'search.placeholderTextFilter' | translate"
+                            />
+                        }
+                      </li>
+                    }
+                  </ul>
+                </div>
+                @for (
+                  entry of translationData
+                  | sort : sortField : isDescending
+                  | paginate : { itemsPerPage: itemsPerPage, currentPage: currentPage }; track
+                  entry; let i = $index) {
+                  <div
+                    class="results__table-row js-table-row"
+                    (click)="showGlossaryArticle(entry.lang, entry.id, entry.cf)"
+                    data-id="{{ entry.id }}"
+                    >
+                    <span class="results__table-cell results__table-cell--wide">{{
+                      entry.cf
+                    }}</span>
+                    <ul class="results__table-row-drop">
+                      <li
+                        class="results__table-cell js-table-cell"
+                        [ngClass]="{'cell-hidden': forcedVisibleColumn !== 0}"
+                        >
+                        {{ entry.gw }}
+                      </li>
+                      <li
+                        class="results__table-cell js-table-cell"
+                        [ngClass]="{'cell-hidden': forcedVisibleColumn !== 1}"
+                        >
+                        {{ entry.icount }}
+                      </li>
+                      <li
+                        class="results__table-cell js-table-cell"
+                        [ngClass]="{'cell-hidden': forcedVisibleColumn !== 2}"
+                        >
+                        {{ entry.senses_mng.join(", ") }}
+                      </li>
+                      <li
+                        class="results__table-cell js-table-cell"
+                        [ngClass]="{'cell-hidden': forcedVisibleColumn !== 3}"
+                        >
+                        {{ entry.lang }}
+                      </li>
+                      <li
+                        class="results__table-cell js-table-cell"
+                        [ngClass]="{'cell-hidden': forcedVisibleColumn !== 4}"
+                        >
+                        {{ entry.periods_p.join(", ") }}
+                      </li>
+                    </ul>
+                  </div>
+                }
+              </div>
+              <pagination-controls
+                (pageChange)="currentPage = $event"
+                previousLabel="&larr;"
+                nextLabel="&rarr;"
+                [autoHide]="true"
+                [responsive]="true"
+              ></pagination-controls>
+            </div>
+          }
+          @if (waitForData) {
+            <div class="results__fetching">
+              <i class="fas fa-spinner"></i>
+            </div>
+          }
+          @if (noReceivedData) {
+            <span class="results__none">{{
+              "search.noResultsText" | translate
+            }}</span>
+          }
+        </section>

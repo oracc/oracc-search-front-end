@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader, TranslateCompiler } from '@ngx-translate/core';
@@ -42,47 +42,40 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/');
 }
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    SearchComponent,
-    SearchSuggestionsComponent,
-    SearchResultsComponent,
-    GlossaryArticleComponent,
-    DetailsComponent,
-    GlossaryArticleTextsComponent,
-    DetailsTextsComponent,
-    DetailsScoreComponent,
-    GlossaryArticleScoreComponent,
-    ProjectTextComponent,
-    PageNotFoundComponent,
-    HeaderComponent,
-    FooterComponent,
-    CookiesComponent,
-    BreadcrumbsComponent,
-    NgInitDirective,
-    SortPipe
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FontAwesomeModule,
-    FormsModule,
-    NgxPaginationModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-      compiler: {
-        provide: TranslateCompiler,
-        useClass: TranslateMessageFormatCompiler
-      }
-    })
-  ],
-  providers: [GetDataService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        SearchComponent,
+        SearchSuggestionsComponent,
+        SearchResultsComponent,
+        GlossaryArticleComponent,
+        DetailsComponent,
+        GlossaryArticleTextsComponent,
+        DetailsTextsComponent,
+        DetailsScoreComponent,
+        GlossaryArticleScoreComponent,
+        ProjectTextComponent,
+        PageNotFoundComponent,
+        HeaderComponent,
+        FooterComponent,
+        CookiesComponent,
+        BreadcrumbsComponent,
+        NgInitDirective,
+        SortPipe
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        FormsModule,
+        NgxPaginationModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            },
+            compiler: {
+                provide: TranslateCompiler,
+                useClass: TranslateMessageFormatCompiler
+            }
+        })], providers: [GetDataService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}

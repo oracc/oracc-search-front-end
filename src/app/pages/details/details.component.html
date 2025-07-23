@@ -2,17 +2,25 @@
   <div class="container content details__content">
     <div class="title-word">
       <span class="details__word">{{ chosenTermText }} </span>
-      <span *ngIf="chosenTermGw" class="details__gw">[{{ chosenTermGw }}] </span>
-      <span *ngIf="chosenTermType" class="details__type">{{ ("details.wordType." + chosenTermType) | translate }}: </span>
-      <span *ngIf="chosenTermName" class="details__name">{{ chosenTermName }} </span>
-      <span *ngIf="chosenTermPos" class="details__pos">({{ chosenTermPos }})</span>
+      @if (chosenTermGw) {
+        <span class="details__gw">[{{ chosenTermGw }}] </span>
+      }
+      @if (chosenTermType) {
+        <span class="details__type">{{ ("details.wordType." + chosenTermType) | translate }}: </span>
+      }
+      @if (chosenTermName) {
+        <span class="details__name">{{ chosenTermName }} </span>
+      }
+      @if (chosenTermPos) {
+        <span class="details__pos">({{ chosenTermPos }})</span>
+      }
     </div>
     <div class="details__panel">
       <div class="details__panel-col">
         <div
           class="details__panel-top"
           (click)="togglePanel($event, 'metadataPanel')"
-        >
+          >
           <span class="details__panel-top-text">{{
             "details.metadataText" | translate
           }}</span>
@@ -21,12 +29,13 @@
             [ngClass]="{ active: isMetadataPanelActive }"
           ></span>
         </div>
-        <div
-          class="details__panel-main ps"
-          [innerHTML]="metadataPanel"
-          *ngIf="isMetadataPanelActive"
-          (click)="handleMetadataClick($event)"
-        ></div>
+        @if (isMetadataPanelActive) {
+          <div
+            class="details__panel-main ps"
+            [innerHTML]="metadataPanel"
+            (click)="handleMetadataClick($event)"
+          ></div>
+        }
       </div>
 
       <div class="details__panel-col">
@@ -37,44 +46,48 @@
             (click)="handlePrevious()"
           ></span>
           <span class="details__panel-top-text item-count">{{ topText }}</span>
-          <span
-            *ngIf="isZoomed()"
-            (click)="handleResetZoom($event)"
-          ><a class="reset-zoom" href="javascript://">
-            {{ "details.resetZoom" | translate }}
-          </a></span>
+          @if (isZoomed()) {
+            <span
+              (click)="handleResetZoom($event)"
+              ><a class="reset-zoom" href="javascript://">
+              {{ "details.resetZoom" | translate }}
+            </a></span>
+          }
           <span
             class="item-nav fas fa-arrow-right"
             [ngClass]="{active: next_item}"
             (click)="handleNext()"
           ></span>
           <div class="details__panel-pagination">
-            <span
-              class="details__panel-left"
-              (click)="handlePageChange($event, currentPage - 1)"
-              *ngIf="1 < paginationSliceStart"
-            >
-              ←
-            </span>
+            @if (1 < paginationSliceStart) {
+              <span
+                class="details__panel-left"
+                (click)="handlePageChange($event, currentPage - 1)"
+                >
+                ←
+              </span>
+            }
             <ul class="details__panel-list">
-              <li
-                class="details__panel-list-item"
+              @for (page of paginatedPages; track page; let i = $index) {
+                <li
+                  class="details__panel-list-item"
                 [ngClass]="{
                   active: page === currentPage
                 }"
-                (click)="handlePageChange($event, page)"
-                *ngFor="let page of paginatedPages; let i = index"
-              >
-                {{ page }}
-              </li>
+                  (click)="handlePageChange($event, page)"
+                  >
+                  {{ page }}
+                </li>
+              }
             </ul>
-            <span
-              class="details__panel-right"
-              (click)="handlePageChange($event, currentPage + 1)"
-              *ngIf="paginationSliceEnd < pageCount"
-            >
-              →
-            </span>
+            @if (paginationSliceEnd < pageCount) {
+              <span
+                class="details__panel-right"
+                (click)="handlePageChange($event, currentPage + 1)"
+                >
+                →
+              </span>
+            }
           </div>
         </div>
         <div
@@ -89,7 +102,7 @@
         <div
           class="details__panel-top"
           (click)="togglePanel($event, 'textPanel')"
-        >
+          >
           <span class="details__panel-top-text">{{
             "details.showText" | translate
           }}</span>
@@ -98,12 +111,13 @@
             [ngClass]="{ active: isTextPanelActive }"
           ></span>
         </div>
-        <div
-          class="details__panel-main details__panel-main--right js-panel-right"
-          *ngIf="isTextPanelActive"
-          [innerHTML]="textPanel"
-          (click)="handleTextClick($event)"
-        ></div>
+        @if (isTextPanelActive) {
+          <div
+            class="details__panel-main details__panel-main--right js-panel-right"
+            [innerHTML]="textPanel"
+            (click)="handleTextClick($event)"
+          ></div>
+        }
       </div>
     </div>
   </div>

@@ -7,9 +7,10 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-cookies',
-  templateUrl: './cookies.component.html',
-  styleUrls: ['./cookies.component.scss']
+    selector: 'app-cookies',
+    templateUrl: './cookies.component.html',
+    styleUrls: ['./cookies.component.scss'],
+    standalone: false
 })
 export class CookiesComponent implements OnInit {
   public isHidden = false;

@@ -1,4 +1,4 @@
-@import "../../../scss/config/variables";
+@use "../../../scss/config/variables";
 
 .search {
   padding-top: 2rem;
@@ -27,14 +27,14 @@
 .search__title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: $grayDark;
+  color: variables.$grayDark;
   @media only screen and (max-width: 600px) {
     font-size: 0.8rem;
   }
 }
 
 .search__intro {
-  color: $red;
+  color: variables.$red;
   font-size: 0.75rem;
   display: block;
   @media only screen and (max-width: 600px) {
@@ -67,7 +67,7 @@
 }
 
 .search__input {
-  border: 1px solid $grayDark;
+  border: 1px solid variables.$grayDark;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
@@ -116,23 +116,23 @@ img {
       right: -10px;
       bottom: -20px;
       height: 1px;
-      background-color: $gray;
+      background-color: variables.$gray;
     }
   }
   .search__input {
-    border: 1px solid $grayDark;
+    border: 1px solid variables.$grayDark;
     min-width: 220px;
     padding-left: 11px;
-    background-color: $white;
+    background-color: variables.$white;
     &::placeholder {
-      font-family: $fontPrimary;
+      font-family: variables.$fontPrimary;
       font-style: italic;
     }
   }
   .search__btn {
     height: 32px;
     font-size: 0;
-    color: $blueDark;
+    color: variables.$blueDark;
     background-color: transparent;
     vertical-align: middle;
     align-self: center;

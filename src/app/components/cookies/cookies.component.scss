@@ -1,14 +1,14 @@
-@import "../../../scss/config/variables";
+@use "../../../scss/config/variables";
 
 .cookies {
-  background-color: $white;
+  background-color: variables.$white;
   position: fixed;
-  font-family: $fontSecondary;
+  font-family: variables.$fontSecondary;
   bottom: 0;
   height: 80px;
   width: 100%;
-  box-shadow: 0 7px 10px -10px inset $grayDark;
-  transition: $dur $ease;
+  box-shadow: 0 7px 10px -10px inset variables.$grayDark;
+  transition: variables.$dur variables.$ease;
   @media only screen and (max-width: 600px) {
     box-shadow: none;
   }

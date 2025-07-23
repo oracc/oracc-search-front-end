@@ -1,8 +1,8 @@
-@import "../../../scss/config/variables";
+@use "../../../scss/config/variables";
 
 .search__suggestions {
   max-height: 200px;
-  border: 1px solid $grayDark;
+  border: 1px solid variables.$grayDark;
   border-radius: 5px;
   text-align: left;
   background-color: white;
@@ -34,11 +34,11 @@
 }
 
 .search__suggestions p {
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid variables.$gray;
   padding: 10px;
   font-size: 0.8rem;
   font-family: inherit;
-  color: $grayDark;
+  color: variables.$grayDark;
   cursor: pointer;
 }
 
@@ -51,7 +51,7 @@
   justify-content: flex-end;
   padding-top: 5px;
   padding-right: 5px;
-  color: $grayDark;
+  color: variables.$grayDark;
 }
 
 .close-suggestions span {

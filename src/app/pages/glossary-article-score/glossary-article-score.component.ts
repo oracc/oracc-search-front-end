@@ -6,8 +6,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { findAttribute, findAncestorWithAttribute } from '../../../utils/utils';
 
 @Component({
-  selector: 'app-glossary-article-score',
-  templateUrl: '../glossary-article/glossary-article.component.html'
+    selector: 'app-glossary-article-score',
+    templateUrl: '../glossary-article/glossary-article.component.html',
+    standalone: false
 })
 export class GlossaryArticleScoreComponent implements OnInit {
   public glossaryContent: any;

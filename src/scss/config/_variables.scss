@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Fonts
 $fontPrimary: "NotoSerif", "DroidSerif", serif;
 $fontSecondary: "OpenSans", sans-serif;
@@ -9,7 +11,7 @@ $blueLight: #0097e6;
 $blueSky: #dfeef7;
 $grayLight: #f8f8f8;
 $grayDark: #404040;
-$gray: lighten($grayDark, 50%);
+$gray: color.adjust($grayDark, $lightness: 50%);
 $grayTable: #f5f5f5;
 $grayBorder: #707070;
 $highlight: #ecc835d3;

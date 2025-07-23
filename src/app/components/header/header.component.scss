@@ -1,8 +1,9 @@
-@import "../../../scss/config/variables";
+@use "sass:color";
+@use "../../../scss/config/variables";
 
 .header {
   min-height: 100px;
-  box-shadow: 0 0 8px 0 $grayDark;
+  box-shadow: 0 0 8px 0 variables.$grayDark;
   position: relative;
   z-index: 2;
   background: linear-gradient(
@@ -16,7 +17,7 @@
   @media only screen and (max-width: 600px) {
     min-height: 70px;
     box-shadow: none;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid variables.$gray;
     background: linear-gradient(
       90deg,
       rgba(210, 149, 86, 1) 0%,
@@ -67,7 +68,7 @@
     top: 144px;
     bottom: 0;
     height: 100vh;
-    background-color: $white;
+    background-color: variables.$white;
     padding: 27px 34px 0;
     z-index: 1;
   }
@@ -90,7 +91,7 @@
 }
 
 .header__logo-text {
-  color: $red;
+  color: variables.$red;
   font-weight: 700;
   font-size: 2.5rem;
   font-size: 40px;
@@ -124,7 +125,7 @@
   margin-left: 30px;
 
   @media only screen and (max-width: 600px) {
-    border-bottom: 1px solid $grayDark;
+    border-bottom: 1px solid variables.$grayDark;
     margin-left: 0;
     padding-bottom: 18px;
     margin-bottom: 23px;
@@ -132,14 +133,14 @@
 }
 
 .header__nav-list-link {
-  font-family: $fontSecondary;
+  font-family: variables.$fontSecondary;
   font-weight: 600;
-  color: $grayDark;
+  color: variables.$grayDark;
   position: relative;
   top: 7px;
-  transition: $dur $ease;
+  transition: variables.$dur variables.$ease;
   &:hover {
-    color: $red;
+    color: variables.$red;
   }
 
   @media only screen and (max-width: 600px) {
@@ -149,7 +150,7 @@
 }
 
 .header__nav-list-link--active {
-  color: $red;
+  color: variables.$red;
 }
 
 .header__nav-lang {
@@ -163,15 +164,15 @@
 }
 
 .header__nav-lang-link {
-  font-family: $fontSecondary;
-  color: $grayDark;
+  font-family: variables.$fontSecondary;
+  color: variables.$grayDark;
   font-weight: 600;
   position: relative;
   top: 7px;
   margin-inline: 30px;
-  transition: $dur $ease;
+  transition: variables.$dur variables.$ease;
   &:hover {
-    color: darken($grayLight, 20%);
+    color: color.adjust(variables.$grayLight, $lightness: -20%);
   }
   @media only screen and (max-width: 600px) {
     font-size: 0.75rem;
@@ -188,7 +189,7 @@
       margin-inline: 30px;
       width: 1px;
       height: 100%;
-      background-color: $grayDark;
+      background-color: variables.$grayDark;
       @media only screen and (max-width: 600px) {
         height: 78%;
         margin-inline: 12px;
@@ -198,7 +199,7 @@
 }
 
 .header__nav-lang-link--active {
-  color: darken($grayLight, 30%);
+  color: color.adjust(variables.$grayLight, $lightness: -30%);
 }
 
 /// Header mob menu toggle button
@@ -227,8 +228,8 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: $grayDark;
-    transition: $dur $ease;
+    background-color: variables.$grayDark;
+    transition: variables.$dur variables.$ease;
   }
   &::after {
     content: "";
@@ -239,8 +240,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $grayDark;
-    transition: $dur $ease;
+    background-color: variables.$grayDark;
+    transition: variables.$dur variables.$ease;
   }
 }
 
@@ -262,6 +263,6 @@
   display: block;
   width: 100%;
   height: 3px;
-  background-color: $grayDark;
-  transition: $dur $ease;
+  background-color: variables.$grayDark;
+  transition: variables.$dur variables.$ease;
 }
