@@ -34,15 +34,6 @@
             "browser": "src/main.ts"
           },
           "configurations": {
-            "github-pages": {
-              "baseHref": "/oracc-search-front-end/",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.staging.ts"
-                }
-              ]
-            },
             "build-oracc": {
               "baseHref": "/search/",
               "fileReplacements": [
@@ -120,9 +111,6 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
