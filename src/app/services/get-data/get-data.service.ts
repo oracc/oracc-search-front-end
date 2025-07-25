@@ -38,8 +38,7 @@ export class GetDataService {
   }
 
   public getSubsequentGlossaryArticleData(project: string, sig: string) {
-    const bio = '\u2623'; // force encoding always to be utf8
-    const encodedString = encodeURIComponent(bio + sig);
+    const encodedString = encodeURIComponent(sig);
     return this.http.get(`${environment.glossaryArticleURL}/${project}?sig=${encodedString}`, {
       responseType: 'text'
     });

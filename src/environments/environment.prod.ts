@@ -1,13 +1,13 @@
 // Production environment file
 
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build -c oracc2` replaces `environment.ts` with `environment.oracc2.ts`.
+// `ng build -c oracc-prod` replaces `environment.ts` with `environment.oracc-prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
   production: true,
-  apiUrl: 'https://oracc2.museum.upenn.edu/oracc-rest-api',
-  glossaryArticleURL: 'https://oracc2.museum.upenn.edu'
+  apiUrl: 'https://oracc.museum.upenn.edu/oracc-rest-api',
+  glossaryArticleURL: 'https://oracc.museum.upenn.edu'
 };
 
 /*
