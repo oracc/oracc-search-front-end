@@ -43,3 +43,17 @@ function showNote(e, nid) {
     note.style.visibility = "visible";
     note.style.zIndex = 3;
 }
+
+function act_hide_show(evt) {
+    let n = evt.target;
+    while (!n.classList.contains('hsheader')) {
+        n = n.parentElement;
+        if (!n) {
+            return;
+        }
+    }
+    n.classList.toggle('hiding');
+    // this is the p.hide
+    n.nextElementSibling.classList.toggle('hide');
+    return;
+}

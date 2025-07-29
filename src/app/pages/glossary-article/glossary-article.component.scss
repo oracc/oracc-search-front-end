@@ -51,6 +51,9 @@
         font-size: 1rem;
       }
     }
+    .hide {
+      display: none;
+    }
   }
   .senses {
     margin-inline-start: 242px;
@@ -78,3 +81,6 @@
 .glossary__fallback {
   text-align: center;
 }
+
+.hsheader:after { content: "▲"; }
+.hsheader.hiding:after { content: "▼"; }
