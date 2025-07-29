@@ -13,5 +13,5 @@ jobs:
       - name: Run server
         run: ng serve&
       - name: Run Cypress tests
-        run: npx cypress run
+        run: npx cypress run --browser chrome
       - run: echo "Status is ${{ job.status }}"

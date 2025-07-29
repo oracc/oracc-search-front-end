@@ -8,21 +8,21 @@ describe('Pagination', () => {
       cy.visit("/");
       const search = "matu";
       const result = "land";
-      const form = "133x/100%";
-      const first_heading = "Larsa";
-      const zoom_item = "unclear";
+      const form = "Neo-Assyrian";
+      const first_heading = "Celestial";
+      const zoom_item = "Nineveh";
       const page_size = 25; // P4 provides pages of 25 elements
-      const line_count = 133; // current number of items in the database
-      const zoomed_line_count = 125;
+      const line_count = 193; // current number of items in the database
+      const zoomed_line_count = 102;
       const next_page = 2;
       // this reference should be somewhere on the next_page of
       // the unzoomed list.
-      const next_page_ref = "Esarhaddon 1 ii 52";
-      const zoomed_next_page_ref = "Esarhaddon 1 v 30";
+      const next_page_ref = "SAA 01 031 o 17";
+      const zoomed_next_page_ref = "SAA 16 140 r 8";
       const reset_filter_text = "Reset Filter";
       cy.get('.search__input').type(`${search}{enter}`);
       cy.get('.results__table-cell').contains(result).click();
-      cy.get('.sense .icountu').contains(form).click();
+      cy.get('.icountu').contains(form).click();
       cy.get('#p4CElineContent .ce-result').should('have.length', page_size);
       cy.get('.details__panel-top-text.item-count').contains(line_count.toString());
       cy.get('.ce-heading').first().contains(first_heading);

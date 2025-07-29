@@ -22,6 +22,16 @@ const configs = [{
         const vp = config.viewport;
         cy.viewport(vp.width, vp.height);
       });
+
+      function open_section(name) {
+        let hsheader = cy.get('.hsheader').contains(name);
+        hsheader.should($h => {
+          if ($h.hasClass('hiding')) {
+            cy.wrap($h).get('.hide-button').click().should('not.have.class', 'hiding');
+          }
+        });
+      }
+
       describe(`search process component journey`, () => {
         it('shows the correct pages', () => {
           const search = "wat";
@@ -80,12 +90,12 @@ const configs = [{
         });
 
         it('is navigable via breadcrumbs', () => {
-          const input = "water";
-          const result = "abzu";
-          const form = "ab-su";
-          const ref = "VAT 607+ (VS 2, 11) (+) AO 3924 (TCL 15, pl.3) o ii 7'";
-          const transliteration_word = "ab-su-ra";
-          const expected_form = "ab-su-a";
+          const input = "head";
+          const result = "qaqqadu";
+          const form = "kaq-qa-da-a-te";
+          const ref = "SAA 12 083 o 24'";
+          const transliteration_word = "ba-lat";
+          const expected_form = "baldukka";
           cy.visit("/");
           check_page_is_search(config);
           cy.get('.search__input').type(`${input}{enter}`);
@@ -173,26 +183,28 @@ const configs = [{
       });
 
       it('can navigate back to result after switching to occurences text', () => {
-        const input = "water";
-        const result = "abzu";
-        const form = "ab-su";
-        const ref = "VAT 607+ (VS 2, 11) (+) AO 3924 (TCL 15, pl.3) o ii 7'";
-        const transliteration_word = "ab-su-ra";
-        const expected_form = "ab-su-a";
-        const expected_ref = "(VAT 1338 + VAT 1348 + VAT 1406 + 2164 + VAT 3702 o ii 18)";
+        const input = "head";
+        const result = "qaqqadu";
+        const form = "kaq-qa-da-a-te";
+        const ref = "SAA 12 083 o 24'";
+        const transliteration_word = "ba-lat";
+        const expected_form = "baldukka";
+        const expected_ref = "(SAA 15 241 o 9)";
         cy.visit("/");
         check_page_is_search(config);
         cy.get('.search__input').type(`${input}{enter}`);
         check_page_is_search_results();
         cy.get('span.results__table-cell').contains(result).click();
         check_page_is_search_result();
+        open_section('Normalized forms');
         cy.get('p.norms span').contains(form).click();
         check_page_is_details();
         cy.get('.details__panel-main').contains(ref).click();
         check_page_is_details_texts();
         cy.get('table.transliteration tr.l a.cbd').contains(transliteration_word).click();
         check_page_is_glossary_article_texts();
-        cy.get('#p4GlossaryEntry').contains(expected_form).click();
+        open_section('Normalized forms');
+        cy.get('.norms a').contains(expected_form).click();
         cy.get('.ce-label').contains(expected_ref);
         cy.get('ul.bcrumbs__list li:nth-of-type(3)').click();
         check_page_is_search_result();

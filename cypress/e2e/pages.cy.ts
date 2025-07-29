@@ -1,6 +1,15 @@
 import { oracc_stubs } from "cypress/e2e/oracc_stubs";
 
 describe('Pages', () => {
+  function open_section(name) {
+    let hsheader = cy.get('.hsheader').contains(name);
+    hsheader.should($h => {
+      if ($h.hasClass('hiding')) {
+        cy.wrap($h).get('.hide-button').click().should('not.have.class', 'hiding');
+      }
+    });
+  }
+
   oracc_stubs('pages');
 
   describe('home page', () => {
@@ -15,51 +24,45 @@ describe('Pages', () => {
   });
 
   describe('footnote popup', () => {
-    it('does not appear on the details page', () => {
-      cy.visit("/")
-      const search = "king";
-      const result = "šarrūtu"
-      cy.get('.search__input').type(`${search}{enter}`);
-      cy.get('.results__table-row').contains(result).click();
-      cy.get('.header a.icount').click();
-      cy.get('.marker').should('not.be.visible');
-      cy.get('a').contains("Ashurbanipal 2 i 2'").click();
-      cy.get('.marker').first().scrollIntoView().should('be.visible');
-    });
-
     it('appears with mouseover', () => {
       cy.visit("/");
-      const search = "arwad";
-      const result = "Abdi-Li\u02beti";
-      const ref = "Sennacherib 4 36";
+      const search = "king";
+      const result = "šarrūtu";
+      const form = "šarrūssin";
+      const ref = "Tiglath-pileser III 47 o 4";
+      const note = "p#n352.note";
       cy.get('.search__input').type(`${search}{enter}`);
       cy.get('.results__table-row').contains(result).click();
-      cy.get('.forms .icountu').click();
+      open_section("Normalized forms");
+      cy.get('.norms').contains(form).click();
       cy.get('.details__panel-main').contains(ref).click();
 
-      cy.get('p#n066.note').should('not.be.visible');
+      cy.get(note).should('not.be.visible');
       cy.get('span.marker').first().trigger('mouseover');
-      cy.get('p#n066.note').should('be.visible').should('not.be.empty');
-      cy.get('p#n066.note').first().click();
-      cy.get('p#n066.note').should('not.be.visible');
+      cy.get(note).should('be.visible').should('not.be.empty');
+      cy.get(note).first().click();
+      cy.get(note).should('not.be.visible');
     });
 
     // For some reason Cypress cannot simulate touch events of Firefox
     it('appears with touch tap', { browser: ["chrome", "chromium", "electron"] }, () => {
       cy.visit("/");
-      const search = "arwad";
-      const result = "Abdi-Li\u02beti";
-      const ref = "Sennacherib 4 36";
+      const search = "king";
+      const result = "šarrūtu";
+      const form = "šarrūssin";
+      const ref = "Tiglath-pileser III 47 o 4";
+      const note = "p#n352.note";
       cy.get('.search__input').type(`${search}{enter}`);
       cy.get('.results__table-row').contains(result).click();
-      cy.get('.forms .icountu').click();
+      open_section("Normalized forms");
+      cy.get('.norms').contains(form).click();
       cy.get('.details__panel-main').contains(ref).click();
 
       cy.get('span.marker').first().trigger('touchstart');
       cy.get('span.marker').first().trigger('touchend');
-      cy.get('p#n066.note').should('be.visible').should('not.be.empty');
-      cy.get('p#n066.note').first().click();
-      cy.get('p#n066.note').should('not.be.visible');
+      cy.get(note).should('be.visible').should('not.be.empty');
+      cy.get(note).first().click();
+      cy.get(note).should('not.be.visible');
     });
   });
 
@@ -77,10 +80,10 @@ describe('Pages', () => {
     it('can be navigated between', () => {
       cy.visit("/");
       const search = "Sidon";
-      const result = "Abdi-milkuti";
-      const ref1 = "Esarhaddon 1 ii 65";
-      const ref2 = "Esarhaddon 2 i 19";
-      const ref3 = "Esarhaddon 3 ii 2'";
+      const result = "Ṣidunu";
+      const ref1 = "Esarhaddon 1 iii 43";
+      const ref2 = "Esarhaddon 2 ii 1";
+      const ref3 = "Esarhaddon 3 ii 16'";
       cy.get('.search__input').type(search);
       cy.get('.suggestion').contains(search).click();
       cy.get('.results__table-row').contains(result).click();

@@ -14,7 +14,7 @@ do
 done
 rm -rf cypress/fixtures_new
 # ...and replace it with fresh data
-npm run cypress:run
+npx cypress run --browser chrome
 # Now replace the old fixtures
 rm -rf cypress/fixtures
 mv cypress/fixtures_new cypress/fixtures
