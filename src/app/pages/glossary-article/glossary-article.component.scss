@@ -51,9 +51,11 @@
         font-size: 1rem;
       }
     }
-    .hide {
-      display: none;
-    }
+  }
+  .forms.hide,
+  .norms.hide,
+  .morphs.hide {
+    display: none;
   }
   .senses {
     margin-inline-start: 242px;
