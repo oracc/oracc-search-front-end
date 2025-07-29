@@ -2,12 +2,7 @@ import { oracc_stubs } from "cypress/e2e/oracc_stubs";
 
 describe('Pages', () => {
   function open_section(name) {
-    let hsheader = cy.get('.hsheader').contains(name);
-    hsheader.should($h => {
-      if ($h.hasClass('hiding')) {
-        cy.wrap($h).get('.hide-button').click().should('not.have.class', 'hiding');
-      }
-    });
+    cy.get('.hsheader').contains(name).click();
   }
 
   oracc_stubs('pages');

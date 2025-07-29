@@ -24,12 +24,7 @@ const configs = [{
       });
 
       function open_section(name) {
-        let hsheader = cy.get('.hsheader').contains(name);
-        hsheader.should($h => {
-          if ($h.hasClass('hiding')) {
-            cy.wrap($h).get('.hide-button').click().should('not.have.class', 'hiding');
-          }
-        });
+        cy.get('.hsheader').contains(name).click();
       }
 
       describe(`search process component journey`, () => {
@@ -56,6 +51,7 @@ const configs = [{
 
           // expect details
           cy.get('.glossary').should('be.visible');
+          open_section('Normalized forms');
           cy.get('.norms').should('be.visible');
           cy.get('.norms').contains(form).click();
 
@@ -82,6 +78,7 @@ const configs = [{
           cy.get('.bcrumbs__list-item').contains(breadcrumb1).should('be.visible');
           const breadcrumb2 = transliteration.replaceAll('-', ' ');
           cy.get('.bcrumbs__list-item').contains(breadcrumb2).should('be.visible');
+          open_section('Normalized forms');
           cy.get('.norms').should('be.visible');
 
           // check breadcrumbs work in a deep search
@@ -102,6 +99,7 @@ const configs = [{
           check_page_is_search_results();
           cy.get('span.results__table-cell').contains(result).click();
           check_page_is_search_result();
+          open_section('Normalized forms');
           cy.get('p.norms span').contains(form).click();
           check_page_is_details();
           cy.get('.details__panel-main').contains(ref).click();
@@ -117,6 +115,7 @@ const configs = [{
           cy.get('.details__panel-main').contains(ref);
           cy.get('ul.bcrumbs__list li:nth-of-type(3)').click();
           check_page_is_search_result();
+          open_section('Normalized forms');
           cy.get('p.norms span').contains(form);
           cy.get('ul.bcrumbs__list li:nth-of-type(2)').click();
           check_page_is_search_results();
