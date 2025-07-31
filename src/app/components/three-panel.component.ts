@@ -208,7 +208,7 @@ export class ThreePanel implements OnInit, AfterViewChecked {
     // need to do this after the request for the content has completed
     let container = document.querySelector('table.transliteration');
     let selectedElement = container?.querySelector('.selected');
-   if (selectedElement) {
+    if (selectedElement) {
       selectedElement.scrollIntoView({
         behavior: 'smooth',
         block: 'center',

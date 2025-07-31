@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="generator" content="oracc/px p4article.xml "/>
+  <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/p4-cuneify.css"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/p3colours.css"/>
+  <link rel="stylesheet" type="text/css" href="/neo/css/projcss.css"/>
+  <script type="text/javascript" src="/js/p4.js">&#160;</script>
+  <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
+  <title>neo</title>    
+</head>
+  <body id="p4Pager" class="bborder-top sig item dglo iart zoom default" data-proj="neo" data-glos="akk" data-glet="entry_ids" data-gent="x0007429" data-prev="" data-item="x0007429" data-next="" data-bkmk="x0007429" data-lang="en">
+    <div id="p4GlossaryEntry">
+<div class="body" id="p4Article" name="neo/akk/balāt[without]PRP" data-cf="balāt" data-gw="without" data-pos="PRP">
+      <div xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" class="ns-glo" id="top">
+        <div class="header">
+          <h1 class="entry heading border-top"><span class="cf akk">balāt</span><span class="gw"> [WITHOUT]</span> <span class="pos">(PRP)</span></h1>
+          <p class="icount">
+            <a class="icount" href="javascript://" onclick="act_isid(event)" data-type="instances" data-name="balāt[without]PRP" data-lang="akk" data-isid="akk.r0043d4">11 instances</a>
+          </p>
+        </div>
+        <div class="forms" id="forms">
+          <h2 class="hsheader hiding">
+            <a class="hide-button" href="javascript://" onclick="act_hide_show(event)">Written forms:</a>
+          </h2>
+          <p class="forms hide"><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="a-bal-duk-ka" data-lang="akk" data-isid="akk.r0022dc"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">a</span>-<span x="3" class="akk">bal</span>-<span x="3" class="akk">duk</span>-<span x="3" class="akk">ka</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ana baldukka" data-lang="akk" data-isid="akk.r0022dc">ana baldukka</a>]</span>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="a-bal-la-tuk-ka" data-lang="akk" data-isid="akk.r0022dd"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">a</span>-<span x="3" class="akk">bal</span>-<span x="3" class="akk">la</span>-<span x="3" class="akk">tuk</span>-<span x="3" class="akk">ka</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ana ballātukka" data-lang="akk" data-isid="akk.r0022dd">ana ballātukka</a>]</span>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ba-la-at" data-lang="akk" data-isid="akk.r0043d5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ba</span>-<span x="3" class="akk">la</span>-<span x="3" class="akk">at</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ba-la-tu-us-šu₂-nu" data-lang="akk" data-isid="akk.r0043d6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ba</span>-<span x="3" class="akk">la</span>-<span x="3" class="akk">tu</span>-<span x="3" class="akk">us</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>; <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ba-lat" data-lang="akk" data-isid="akk.r0043d7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ba</span>-<span x="3" class="akk">lat</span></span></a>.</p>
+        </div>
+        <h2 class="hsheader hiding">
+          <a class="hide-button" href="javascript://" onclick="act_hide_show(event)">Normalized forms:</a>
+        </h2>
+        <p class="norms hide"><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="balāt" data-lang="akk" data-isid="akk.r0043d8">balāt</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ba-la-at" data-lang="akk" data-isid="akk.r0043d5"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ba</span>-<span x="3" class="akk">la</span>-<span x="3" class="akk">at</span></span></a><span class="punct-c">, </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ba-lat" data-lang="akk" data-isid="akk.r0043d7"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ba</span>-<span x="3" class="akk">lat</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="balātuššunu" data-lang="akk" data-isid="akk.r0043d6">balātuššunu</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ba-la-tu-us-šu₂-nu" data-lang="akk" data-isid="akk.r0043d6"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">ba</span>-<span x="3" class="akk">la</span>-<span x="3" class="akk">tu</span>-<span x="3" class="akk">us</span>-<span x="3" class="akk">šu₂</span>-<span x="3" class="akk">nu</span></span></a>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="baldukka" data-lang="akk" data-isid="akk.r0022dc">baldukka</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="a-bal-duk-ka" data-lang="akk" data-isid="akk.r0022dc"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">a</span>-<span x="3" class="akk">bal</span>-<span x="3" class="akk">duk</span>-<span x="3" class="akk">ka</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ana baldukka" data-lang="akk" data-isid="akk.r0022dc">ana baldukka</a>]</span>)<span class="punct-sc">; </span><a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="norm" data-name="ballātukka" data-lang="akk" data-isid="akk.r0022dd">ballātukka</a> (<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="a-bal-la-tuk-ka" data-lang="akk" data-isid="akk.r0022dd"><span xmlns:note="http://oracc.org/ns/note/1.0" x="1" class="w akk " id=""><span x="3" class="akk">a</span>-<span x="3" class="akk">bal</span>-<span x="3" class="akk">la</span>-<span x="3" class="akk">tuk</span>-<span x="3" class="akk">ka</span></span></a><span class="cof-form-norm"> [<a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="forms" data-name="ana ballātukka" data-lang="akk" data-isid="akk.r0022dd">ana ballātukka</a>]</span>).</p>
+        <div class="ns-glo-sec" id="periods">
+          <h1>Attested in the following periods:</h1>
+          <h2>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Neo-Assyrian" data-lang="akk" data-isid="akk.r0043d4.p.s000">Neo-Assyrian (8x/73%)</a>
+          </h2>
+          <h2>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Kalhu" data-lang="akk" data-isid="akk.r0043d4.p.s001">Kalhu (1x/9%)</a>
+          </h2>
+          <h2>
+            <a class="icountu" href="javascript://" onclick="act_isid(event)" data-type="period" data-name="Nineveh" data-lang="akk" data-isid="akk.r0043d4.p.s002">Nineveh (2x/18%)</a>
+          </h2>
+        </div>
+        <div class="ns-glo-sec" id="senses">
+          <h1>Senses:</h1>
+          <div class="senses">
+            <h2 class="sense">
+              <a class="icountu" href="javascript://" onclick="act_isid(event)" data-lang="akk" data-isid="akk.r0043d4" data-sense="without" data-epos="PRP"><span class="sensenum">1.</span> without (11x/100%)</a>
+            </h2>
+          </div>
+        </div>
+        <LEXDATA xmlns=""/>
+        <hr class="article"/>
+      </div>
+    </div>
+</div>
+
+  </body>
+</html>

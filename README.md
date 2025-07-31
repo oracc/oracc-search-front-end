@@ -40,7 +40,7 @@ Run `npx ng generate component component-name` to generate a new component. You 
 
 Run `npx ng build --optimization -c build-oracc` to build the project for `build-oracc`. The build artifacts will be stored in the `dist` directory.
 
-To build for `oracc2` use `npx ng build --optimization -c oracc2`.
+To build for `oracc.museum` use `npx ng build --optimization -c oracc-prod`.
 
 The configurations for these builds are files in the `src/environments`
 directory. These are referenced in `angular.json`, in the key
@@ -85,7 +85,7 @@ This will run the `gh-pages-deploy` script defined in `package.json`. It will bu
 The project will automatically be deployed to [github-pages](https://oracc.github.io/oracc-search-front-end).
 
 
-## Deploy to the build-oracc or oracc2 server or (for production)
+## Deploy to the build-oracc or oracc.museum server or (for production)
 
 The application is currently deployed for production to the Oracc build server (more details [here](https://github.com/oracc/website/wiki/ORACC-Server)) which runs on Ubuntu and exposes an Apache web server. Ask a senior team member or Steve Tinney to get access to this server.
 
@@ -95,7 +95,7 @@ Once we are happy with our front end code, we must update
 the version number in `package.json`, then call `ng build`:
 
 * For build-oracc: `npx ng build --optimization -c build-oracc`
-* For oracc2: `npx ng build --optimization -c oracc2`
+* For oracc.museum: `npx ng build --optimization -c oracc-prod`
 
 ### Push the new assets to the server
 
@@ -104,7 +104,7 @@ production server. Let's say our new version is `1.2.3` and
 we're pushing to `build-oracc`:
 
 ```sh
-rsync -r dist/oracc/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-end/1.2.3
+rsync -r dist/oracc/browser/ rits@build-oracc.museum.upenn.edu:www/oracc-search-front-end/1.2.3
 ```
 
 ### Switch to the new assets
