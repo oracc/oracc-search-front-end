@@ -14,13 +14,12 @@
             [ngClass]="{ active: isMetadataPanelActive }"
           ></span>
         </div>
-        @if (isMetadataPanelActive) {
-          <div
-            class="details__panel-main ps"
-            [innerHTML]="metadataPanel"
-            (click)="handleMetadataClick($event)"
-          ></div>
-        }
+        <div
+          class="details__panel-main ps"
+          [ngClass]="{ hidden_if_narrow: !isMetadataPanelActive }"
+          [innerHTML]="metadataPanel"
+          (click)="handleMetadataClick($event)"
+        ></div>
       </div>
       <div class="details__panel-col">
         <div class="details__panel-top">
@@ -45,13 +44,12 @@
             [ngClass]="{ active: isTextPanelActive }"
           ></span>
         </div>
-        @if (isTextPanelActive) {
-          <div
-            class="details__panel-main details__panel-main--right js-panel-right"
-            [innerHTML]="textPanel"
-            (click)="handleTextClick($event)"
-          ></div>
-        }
+        <div
+          class="details__panel-main details__panel-main--right js-panel-right"
+          [ngClass]="{ hidden_if_narrow: !isTextPanelActive }"
+          [innerHTML]="textPanel"
+          (click)="handleTextClick($event)"
+        ></div>
       </div>
     </div>
   </div>
