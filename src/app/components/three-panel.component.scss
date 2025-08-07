@@ -302,14 +302,14 @@
 }
 
 .details__panel-top-exp {
-  display: block;
-  @media only screen and (min-width: 601px) {
-    display: none;
-  }
   position: relative;
   width: 16px;
   height: 5px;
   background-color: variables.$blueLight;
+  display: block;
+  @media only screen and (min-width: 601px) {
+    display: none;
+  }
   &::before {
     content: "";
     display: block;

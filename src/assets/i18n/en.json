@@ -56,6 +56,7 @@
   "details": {
     "metadataText": "Metadata",
     "showText": "Show Text",
+    "translationText": "Translation",
     "textText": "Text {1} of {0}",
     "linesText": "{0, plural, one {{0} Reference} other {{0} References}}",
     "sourceText": "Source",
