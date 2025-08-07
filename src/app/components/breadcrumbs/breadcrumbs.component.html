@@ -8,11 +8,13 @@
         <li
           class="bcrumbs__list-item js-list-item"
           (click)="handleBreadcrumbClick(i)"
+          (keydown.enter)="handleBreadcrumbClick(i)"
           data-id="{{ link.url }}"
+          tabindex="0"
           >
           <i class="fas fa-arrow-left bcrumbs__list-icon"></i>
           @if (['search results', 'occurrences', 'texts'].includes(link.name)) {
-            <span>{{ "breadcrumbs." + link.name | translate }}</span>
+            {{ "breadcrumbs." + link.name | translate }}
           } @else {
             {{ link.name }}
           }

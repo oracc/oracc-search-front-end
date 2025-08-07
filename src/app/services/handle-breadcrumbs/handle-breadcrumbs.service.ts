@@ -18,7 +18,7 @@ export class HandleBreadcrumbsService {
 
     urlSegments.forEach((segment, index) => {
       // decode the name and path segments to display special characters correctly
-      const decodedPath = decodeURI(segment);
+      const decodedPath = decodeURIComponent(segment);
       currentPath += `${decodedPath}/`;
       if (this.breadcrumbsLinks.length <= index || this.breadcrumbsLinks[index].url !== currentPath) {
         this.breadcrumbsLinks.splice(index, Infinity, {

@@ -84,5 +84,5 @@
   text-align: center;
 }
 
-.hsheader:after { content: "▲"; }
-.hsheader.hiding:after { content: "▼"; }
+.hsheader:after { content: "▲" / "close section"; }
+.hsheader.hiding:after { content: "▼" / "open section"; }
