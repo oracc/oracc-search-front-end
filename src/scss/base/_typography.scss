@@ -3,7 +3,7 @@
 a {
   color: variables.$blueLight;
   font-weight: 700;
-  &:hover {
+  &:hover, &:focus {
     color: variables.$blueDark;
   }
 }

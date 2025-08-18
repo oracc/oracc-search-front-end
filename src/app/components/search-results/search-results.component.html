@@ -90,7 +90,9 @@
                   entry; let i = $index) {
                   <div
                     class="results__table-row js-table-row"
+                    tabindex="0"
                     (click)="showGlossaryArticle(entry.lang, entry.id, entry.cf)"
+                    (keydown.enter)="showGlossaryArticle(entry.lang, entry.id, entry.cf)      "
                     data-id="{{ entry.id }}"
                     >
                     <span class="results__table-cell results__table-cell--wide">{{
