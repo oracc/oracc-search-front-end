@@ -84,5 +84,33 @@
   text-align: center;
 }
 
-.hsheader:after { content: "▲" / "close section"; }
-.hsheader.hiding:after { content: "▼" / "open section"; }
+.hsheader:after {
+  content: "▼" / "close section";
+  display: inline-block;
+  transform: rotate(0deg);
+  animation: open-hsheader 250ms linear;
+}
+.hsheader.hiding:after {
+  content: "▼" / "open section";
+  transform: rotate(90deg);
+  display: inline-block;
+  animation: close-hsheader 250ms linear;
+}
+
+@keyframes close-hsheader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes open-hsheader {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
