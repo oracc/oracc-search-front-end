@@ -319,8 +319,20 @@ export class ThreePanel implements OnInit, AfterViewChecked {
     return this.zoom != null;
   }
 
+  // override this to handle the user clicking the Details (second) panel
+  public handleDetailsClick(e) {
+  }
+
+  // override this to handle the user scrolling the Details (second) panel
+  public handleDetailsScroll(e) {
+  }
+
   // override this to handle the user clicking the Text (third) panel
   public handleTextClick(e) {
+  }
+
+  // override this to handle the user scrolling the Text (third) panel
+  public handleTextScroll(e) {
   }
 
   // override this to handle prev/next buttons

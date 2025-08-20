@@ -24,6 +24,9 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
   private ref: string;
+  private matchScrollTimer: NodeJS.Timeout;
+  private tlitIndex = 0;
+  private tlatIndex = 0;
 
   override initialize() {
     this.ref = this.route.snapshot.queryParams['iref'];
@@ -76,7 +79,7 @@ export class DetailsTextsComponent extends ThreePanel {
     );
   }
 
-  public handleDetailsClick(e) {
+  override handleDetailsClick(e) {
     e.preventDefault();
     const anchorEl = findAncestorByTag(e.target, 'a');
     if (!anchorEl) {
@@ -194,35 +197,206 @@ export class DetailsTextsComponent extends ThreePanel {
     window.open(href);
   }
 
-  override handleTextClick(e) {
-    const clickedLine = e.path
-      ? e.path.find((el) => {
-          return el.localName === 'tr';
+  override handleDetailsScroll(e) {
+    // Debounce scroll
+    if (this.matchScrollTimer) {
+      clearTimeout(this.matchScrollTimer);
+    }
+    // we need a timeout function that doesn't use "this"
+    const that = this;
+    function doScroll() {
+      that.scrollTranslationToMatchTransliteration();
+    }
+    this.matchScrollTimer = setTimeout(doScroll, 500);
+  }
+
+  override handleTextScroll(e) {
+    // Debounce scroll
+    if (this.matchScrollTimer) {
+      clearTimeout(this.matchScrollTimer);
+    }
+    // we need a timeout function that doesn't use "this"
+    const that = this;
+    function doScroll() {
+      that.scrollTransliterationToMatchTranslation();
+    }
+    this.matchScrollTimer = setTimeout(doScroll, 500);
+  }
+
+  private totalOffset(from: HTMLElement, toAncestor: Element): number {
+    let pe = from.offsetParent;
+    let offset = 0;
+    while (pe != toAncestor) {
+      const he = pe as HTMLElement;
+      if (he === null) {
+        return 0;
+      }
+      offset += he.offsetTop;
+      pe = he.offsetParent;
+    }
+    return offset;
+  }
+
+  private getNewIndex(
+    elementList: NodeListOf<HTMLElement>,
+    currentIndex: number,
+    panel: HTMLElement,
+  ): number | null {
+    if (elementList.length == 0) {
+      return null;
+    }
+    const topY = panel.scrollTop - this.totalOffset(elementList.item(0), panel);
+    const bottomY = topY + panel.offsetHeight;
+    // Let's binary chop elts to find the range within the panel
+    let start = 0;
+    let end = elementList.length
+    // Find the first element with a top within the panel
+    while (start != end) {
+      const mid = Math.floor(start + (end - start) / 2);
+      if (elementList.item(mid).offsetTop < topY) {
+        start = mid + 1;
+      } else {
+        end = mid;
+      }
+    }
+    let belowTop = end;
+    start = belowTop;
+    end = elementList.length;
+    // Find the last element with the bottom within the panel
+    while (start != end) {
+      const mid = Math.floor(start + (end - start) / 2);
+      const midElt = elementList.item(mid);
+      if (midElt.offsetTop + midElt.offsetHeight <= bottomY) {
+        start = mid + 1;
+      } else {
+        end = mid;
+      }
+    }
+    let aboveBottom = Math.max(end - 1, 0);
+    if (currentIndex < belowTop) {
+      // we are going down
+      return aboveBottom;
+    } else if (aboveBottom < currentIndex) {
+      // we are going up
+      return belowTop;
+    }
+    return null
+  }
+
+  private scrollPanelTo(scrollPanelId: string, elementToView: HTMLElement) {
+    const targetPanel = document.getElementById(scrollPanelId);
+    const panelOffset = this.totalOffset(elementToView, targetPanel);
+    const bottom = elementToView.offsetTop + elementToView.offsetHeight;
+    const panelTop = targetPanel.scrollTop - panelOffset;
+    const panelHeight = targetPanel.offsetHeight;
+    const panelBottom = panelTop + panelHeight;
+    if (elementToView.offsetTop < panelTop && bottom < panelBottom) {
+      targetPanel.scrollTo({
+        top: elementToView.offsetTop + panelOffset,
+        behavior: "smooth",
+      });
+    } else if (panelTop < elementToView.offsetTop && panelBottom < bottom) {
+      targetPanel.scrollTo({
+        top: bottom - panelHeight + panelOffset,
+        behavior: "smooth",
+      });
+    }
+  }
+
+  private scrollTranslationToMatchTransliteration() {
+    const panel = document.getElementById("central-panel");
+    const elts = panel.querySelectorAll<HTMLElement>("tr[data-tlat-ref]")
+    const tlitIndex = this.getNewIndex(
+      elts,
+      this.tlitIndex,
+      panel,
+    );
+    if (tlitIndex === null) {
+      return;
+    }
+    const id = elts.item(tlitIndex).getAttribute("data-tlat-ref");
+    const target =document.getElementById(id);
+    const tr = findAncestorByTag(target, "tr");
+    if (tr === null) {
+      return;
+    }
+    this.scrollPanelTo("right-panel", target);
+    document.querySelectorAll("#right-panel tr[data-tlit-id]").forEach((e, index) => {
+      if (e === tr) {
+        this.tlatIndex = index;
+        e.classList.add("selected");
+      } else {
+        e.classList.remove("selected");
+      }
+    })
+    elts.forEach((e, index) => {
+      if (index === tlitIndex) {
+        e.classList.add("selected");
+      } else {
+        e.classList.remove("selected");
+      }
+    });
+    this.tlitIndex = tlitIndex;
+  }
+
+  private scrollTransliterationToMatchTranslation() {
+    const panel = document.getElementById("right-panel");
+    const elts = panel.querySelectorAll<HTMLElement>("td[data-tlit-id]")
+    const tlatIndex = this.getNewIndex(
+      elts,
+      this.tlatIndex,
+      panel,
+    );
+    if (tlatIndex === null) {
+      return;
+    }
+    this.selectTlatAndAssociatedTlit(elts, elts.item(tlatIndex));
+  }
+
+  // elts is a list of TDs
+  // tdToSelect is the one of the TDs to select
+  private selectTlatAndAssociatedTlit(
+    tlats: NodeListOf<HTMLElement>,
+    tdToSelect: HTMLElement,
+  ): HTMLElement | null {
+    const id = tdToSelect.getAttribute("data-tlit-id");
+    const target =document.getElementById(id);
+    if (target === null) {
+      return null;
+    }
+    this.scrollPanelTo("central-panel", target);
+    document.querySelectorAll("#central-panel tr[data-tlat-ref]").forEach((e, index) => {
+      if (e === target) {
+        this.tlitIndex = index;
+        e.classList.add("selected");
+      } else {
+        e.classList.remove("selected");
+      }
+    })
+    tlats.forEach((td, index) => {
+      const e = findAncestorByTag(td, "tr");
+      if (td === tdToSelect) {
+        this.tlatIndex = index;
+        e.classList.add("selected");
+      } else {
+        e.classList.remove("selected");
+      }
+    });
+    return target;
+  }
+
+  override handleTextClick(e: Event) {
+    const clickedLine = findAncestorByTag(e.target  as HTMLElement, "tr");
+    const clickedTd = clickedLine.querySelector("td[data-tlit-id]") as HTMLElement;
+    if (clickedLine) {
+      const elts = document.querySelectorAll<HTMLElement>("#right-panel td[data-tlit-id]");
+      const tlit = this.selectTlatAndAssociatedTlit(elts, clickedTd);
+      if (tlit) {
+        tlit.scrollIntoView({
+          block: "nearest",
+          behavior: "smooth",
         })
-      : composedPath(e.target).find((el) => {
-          return el.localName === 'tr';
-        });
-
-    if (!!clickedLine) {
-      const centralPanelLine: HTMLElement = clickedLine.id
-        ? document.getElementById(clickedLine.id)
-        : document.querySelector('.js-panel-central');
-      const centralPanel = document.querySelector('.js-panel-central');
-      const rightPanel = document.querySelector('.js-panel-right');
-
-      this.isMobile
-        ? centralPanelLine.scrollIntoView()
-        : centralPanel.scroll({
-            top: centralPanelLine.offsetTop - 50
-          });
-      rightPanel.querySelectorAll('tr').forEach((el) => {
-        el.classList.remove('selected');
-      });
-      centralPanel.querySelectorAll('tr').forEach((el) => {
-        el.classList.remove('selected');
-      });
-      clickedLine.classList.add('selected');
-      centralPanelLine.classList.add('selected');
+      }
     }
   }
 

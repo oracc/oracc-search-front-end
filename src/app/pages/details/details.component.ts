@@ -35,7 +35,7 @@ export class DetailsComponent extends ThreePanel {
     return 'details.linesText';
   }
 
-  public handleDetailsClick(e) {
+  override handleDetailsClick(e) {
     e.preventDefault();
     const anchorEl = e.path
       ? e.path.find((el) => {

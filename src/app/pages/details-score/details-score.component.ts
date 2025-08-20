@@ -64,7 +64,7 @@ export class DetailsScoreComponent extends ThreePanel {
     );
   }
 
-  public handleDetailsClick(e) {
+  override handleDetailsClick(e) {
     e.preventDefault();
     const anchorEl = findAncestorByTag(e.target, 'a');
     const wsig = findAttribute(e.target, 'data-wsig');
