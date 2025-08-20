@@ -314,29 +314,42 @@ export class DetailsTextsComponent extends ThreePanel {
     if (tlitIndex === null) {
       return;
     }
-    const id = elts.item(tlitIndex).getAttribute("data-tlat-ref");
+    this.selectTlitAndAssociatedTlat(elts, elts.item(tlitIndex));
+  }
+
+  // tlits is a list of TRs (in the central panel)
+  // trToSelect is the one of the TRs to select
+  private selectTlitAndAssociatedTlat(
+    tlits: NodeListOf<HTMLElement>,
+    trToSelect: HTMLElement,
+  ): HTMLElement | null {
+    const id = trToSelect.getAttribute("data-tlat-ref");
+    if (!id) {
+      return null;
+    }
     const target =document.getElementById(id);
     const tr = findAncestorByTag(target, "tr");
     if (tr === null) {
-      return;
+      return null;
     }
     this.scrollPanelTo("right-panel", target);
-    document.querySelectorAll("#right-panel tr[data-tlit-id]").forEach((e, index) => {
+    document.querySelectorAll("#right-panel tr[data-tlat-ref]").forEach((e, index) => {
       if (e === tr) {
-        this.tlatIndex = index;
+        this.tlitIndex = index;
         e.classList.add("selected");
       } else {
         e.classList.remove("selected");
       }
     })
-    elts.forEach((e, index) => {
-      if (index === tlitIndex) {
+    tlits.forEach((e, index) => {
+      if (e === trToSelect) {
+        this.tlitIndex = index;
         e.classList.add("selected");
       } else {
         e.classList.remove("selected");
       }
     });
-    this.tlitIndex = tlitIndex;
+    return target;
   }
 
   private scrollTransliterationToMatchTranslation() {
@@ -353,7 +366,7 @@ export class DetailsTextsComponent extends ThreePanel {
     this.selectTlatAndAssociatedTlit(elts, elts.item(tlatIndex));
   }
 
-  // elts is a list of TDs
+  // tlats is a list of TDs
   // tdToSelect is the one of the TDs to select
   private selectTlatAndAssociatedTlit(
     tlats: NodeListOf<HTMLElement>,
@@ -386,7 +399,7 @@ export class DetailsTextsComponent extends ThreePanel {
   }
 
   override handleTextClick(e: Event) {
-    const clickedLine = findAncestorByTag(e.target  as HTMLElement, "tr");
+    const clickedLine = findAncestorByTag(e.target as HTMLElement, "tr");
     const clickedTd = clickedLine.querySelector("td[data-tlit-id]") as HTMLElement;
     if (clickedLine) {
       const elts = document.querySelectorAll<HTMLElement>("#right-panel td[data-tlit-id]");
@@ -398,6 +411,19 @@ export class DetailsTextsComponent extends ThreePanel {
         })
       }
     }
+  }
+
+  override doSelectInCentralPanel(element: HTMLElement): void {
+    const tr = findAncestorByTag(element, "tr");
+    const ref = tr.getAttribute("data-tlat-ref");
+    console.log(`ref: ${ref}`);
+    if (!ref) {
+      return;
+    }
+    this.selectTlitAndAssociatedTlat(
+      document.getElementById("central-panel").querySelectorAll("tr[data-tlat-ref]"),
+      tr,
+    );
   }
 
   override changeText(item: string) {
