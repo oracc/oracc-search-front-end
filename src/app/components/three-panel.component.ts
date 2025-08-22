@@ -209,17 +209,18 @@ export class ThreePanel implements OnInit, AfterViewChecked {
     let container = document.querySelector('table.transliteration');
     let selectedElement = container?.querySelector<HTMLElement>('.selected');
     if (selectedElement) {
-      selectedElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
       this.scrollIsDone =  true;
       this.scrollTimer = null;
       this.doSelectInCentralPanel(selectedElement);
     }
   }
 
-  public doSelectInCentralPanel(element: HTMLElement): void {}
+  public doSelectInCentralPanel(element: HTMLElement): void {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  }
 
   // Update the page buttons after page change or zoom
   private updatePaginationPages() {

@@ -1,8 +1,1 @@
-{
-  "searches/search/cow": {
-    "url": "http://localhost:8000/search/cow"
-  },
-  "suggests/suggest_all/cow": {
-    "url": "http://localhost:8000/suggest_all/cow"
-  }
-}
+{}

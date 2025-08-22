@@ -94,7 +94,7 @@
           class="details__panel-main js-panel-central ls"
           [innerHTML]="middlePanel"
           (click)="handleDetailsClick($event)"
-          (scroll)="handleDetailsScroll($event)"
+          (scrollend)="handleDetailsScroll($event)"
         ></div>
       </div>
 
@@ -117,7 +117,7 @@
           [ngClass]="{ hidden_if_narrow: !isTextPanelActive }"
           [innerHTML]="textPanel"
           (click)="handleTextClick($event)"
-          (scroll)="handleTextScroll($event)"
+          (scrollend)="handleTextScroll($event)"
         ></div>
       </div>
     </div>

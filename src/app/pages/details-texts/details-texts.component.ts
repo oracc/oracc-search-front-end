@@ -3,7 +3,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import {
-  composedPath,
   splitOutTranslations,
   findAttribute,
   findAttributeOnTag,
@@ -24,7 +23,8 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
   private ref: string;
-  private matchScrollTimer: NodeJS.Timeout;
+  private matchScrollTimer1: NodeJS.Timeout;
+  private matchScrollTimer2: NodeJS.Timeout;
   private tlitIndex = 0;
   private tlatIndex = 0;
 
@@ -199,28 +199,28 @@ export class DetailsTextsComponent extends ThreePanel {
 
   override handleDetailsScroll(e) {
     // Debounce scroll
-    if (this.matchScrollTimer) {
-      clearTimeout(this.matchScrollTimer);
+    if (this.matchScrollTimer1) {
+      clearTimeout(this.matchScrollTimer1);
     }
     // we need a timeout function that doesn't use "this"
     const that = this;
     function doScroll() {
       that.scrollTranslationToMatchTransliteration();
     }
-    this.matchScrollTimer = setTimeout(doScroll, 500);
+    this.matchScrollTimer1 = setTimeout(doScroll, 500);
   }
 
   override handleTextScroll(e) {
     // Debounce scroll
-    if (this.matchScrollTimer) {
-      clearTimeout(this.matchScrollTimer);
+    if (this.matchScrollTimer2) {
+      clearTimeout(this.matchScrollTimer2);
     }
     // we need a timeout function that doesn't use "this"
     const that = this;
     function doScroll() {
       that.scrollTransliterationToMatchTranslation();
     }
-    this.matchScrollTimer = setTimeout(doScroll, 500);
+    this.matchScrollTimer2 = setTimeout(doScroll, 500);
   }
 
   private totalOffset(from: HTMLElement, toAncestor: Element): number {
@@ -283,10 +283,14 @@ export class DetailsTextsComponent extends ThreePanel {
     return null
   }
 
-  private scrollPanelTo(scrollPanelId: string, elementToView: HTMLElement) {
+  private scrollPanelToHeight(
+    scrollPanelId: string,
+    elementToView: HTMLElement,
+    height: number,
+  ) {
     const targetPanel = document.getElementById(scrollPanelId);
     const panelOffset = this.totalOffset(elementToView, targetPanel);
-    const bottom = elementToView.offsetTop + elementToView.offsetHeight;
+    const bottom = elementToView.offsetTop + height;
     const panelTop = targetPanel.scrollTop - panelOffset;
     const panelHeight = targetPanel.offsetHeight;
     const panelBottom = panelTop + panelHeight;
@@ -301,6 +305,14 @@ export class DetailsTextsComponent extends ThreePanel {
         behavior: "smooth",
       });
     }
+  }
+
+  private scrollPanelTo(scrollPanelId: string, elementToView: HTMLElement) {
+    this.scrollPanelToHeight(
+      scrollPanelId,
+      elementToView,
+      elementToView.offsetHeight,
+    );
   }
 
   private scrollTranslationToMatchTransliteration() {
@@ -328,17 +340,17 @@ export class DetailsTextsComponent extends ThreePanel {
       return null;
     }
     const target =document.getElementById(id);
-    const tr = findAncestorByTag(target, "tr");
-    if (tr === null) {
+    if (target === null) {
       return null;
     }
     this.scrollPanelTo("right-panel", target);
-    document.querySelectorAll("#right-panel tr[data-tlat-ref]").forEach((e, index) => {
-      if (e === tr) {
-        this.tlitIndex = index;
-        e.classList.add("selected");
+    document.querySelectorAll("#right-panel td[data-tlit-id]").forEach((e, index) => {
+      const rtr = findAncestorByTag(e as HTMLElement, "tr");
+      if (e === target) {
+        this.tlatIndex = index;
+        rtr.classList.add("selected");
       } else {
-        e.classList.remove("selected");
+        rtr.classList.remove("selected");
       }
     })
     tlits.forEach((e, index) => {
@@ -413,16 +425,31 @@ export class DetailsTextsComponent extends ThreePanel {
     }
   }
 
-  override doSelectInCentralPanel(element: HTMLElement): void {
-    const tr = findAncestorByTag(element, "tr");
-    const ref = tr.getAttribute("data-tlat-ref");
-    console.log(`ref: ${ref}`);
-    if (!ref) {
-      return;
+  private findPreviousLinked(element: Element) {
+    const allSibs = element.parentElement.children;
+    let lastSeen = null;
+    const count = allSibs.length;
+    for (let index = 0; index !== count; ++index) {
+      const sib = allSibs.item(index);
+      if (sib.hasAttribute("data-tlat-ref")) {
+        lastSeen = sib;
+      }
+      if (sib === element) {
+        return lastSeen;
+      }
     }
-    this.selectTlitAndAssociatedTlat(
-      document.getElementById("central-panel").querySelectorAll("tr[data-tlat-ref]"),
+    return null;
+  }
+
+  override doSelectInCentralPanel(element: HTMLElement): void {
+    const selected = findAncestorByTag(element, "tr");
+    const tr = this.findPreviousLinked(selected);
+    const trs = document.getElementById("central-panel").querySelectorAll<HTMLElement>("tr[data-tlat-ref]");
+    this.selectTlitAndAssociatedTlat(trs, tr);
+    this.scrollPanelToHeight(
+      "central-panel",
       tr,
+      selected.offsetTop + selected.offsetHeight - tr.offsetTop,
     );
   }
 
