@@ -452,7 +452,7 @@ export class DetailsTextsComponent extends ThreePanel {
     this.selectTlitAndAssociatedTlat(trs, selected);
     this.scrollPanelToHeight(
       "central-panel",
-      tr,
+      selected,
       selected.offsetTop + selected.offsetHeight - selected.offsetTop,
     );
   }
