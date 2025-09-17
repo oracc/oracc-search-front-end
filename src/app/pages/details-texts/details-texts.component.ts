@@ -25,7 +25,10 @@ export class DetailsTextsComponent extends ThreePanel {
   private ref: string;
   private matchScrollTimer1: NodeJS.Timeout;
   private matchScrollTimer2: NodeJS.Timeout;
+  // The index of the selected TR in the transliteration (central) panel.
   private tlitIndex = 0;
+  // The index of the selected TR in the translation (right) panel,
+  // out of all those TRs that have a TD with a data-tlit-id attribute.
   private tlatIndex = 0;
 
   override initialize() {
@@ -317,7 +320,7 @@ export class DetailsTextsComponent extends ThreePanel {
 
   private scrollTranslationToMatchTransliteration() {
     const panel = document.getElementById("central-panel");
-    const elts = panel.querySelectorAll<HTMLElement>("tr[data-tlat-ref]")
+    const elts = panel.querySelectorAll<HTMLElement>("tr")
     const tlitIndex = this.getNewIndex(
       elts,
       this.tlitIndex,
@@ -335,7 +338,8 @@ export class DetailsTextsComponent extends ThreePanel {
     tlits: NodeListOf<HTMLElement>,
     trToSelect: HTMLElement,
   ): HTMLElement | null {
-    const id = trToSelect.getAttribute("data-tlat-ref");
+    const trHead = this.findPreviousLinked(trToSelect);
+    const id = trHead.getAttribute("data-tlat-ref");
     if (!id) {
       return null;
     }
@@ -352,7 +356,7 @@ export class DetailsTextsComponent extends ThreePanel {
       } else {
         rtr.classList.remove("selected");
       }
-    })
+    });
     tlits.forEach((e, index) => {
       if (e === trToSelect) {
         this.tlitIndex = index;
@@ -390,7 +394,7 @@ export class DetailsTextsComponent extends ThreePanel {
       return null;
     }
     this.scrollPanelTo("central-panel", target);
-    document.querySelectorAll("#central-panel tr[data-tlat-ref]").forEach((e, index) => {
+    document.querySelectorAll("#central-panel tr").forEach((e, index) => {
       if (e === target) {
         this.tlitIndex = index;
         e.classList.add("selected");
@@ -443,13 +447,13 @@ export class DetailsTextsComponent extends ThreePanel {
 
   override doSelectInCentralPanel(element: HTMLElement): void {
     const selected = findAncestorByTag(element, "tr");
-    const tr = this.findPreviousLinked(selected);
-    const trs = document.getElementById("central-panel").querySelectorAll<HTMLElement>("tr[data-tlat-ref]");
-    this.selectTlitAndAssociatedTlat(trs, tr);
+    const panel = document.getElementById("central-panel");
+    const trs = panel.querySelectorAll<HTMLElement>("tr");
+    this.selectTlitAndAssociatedTlat(trs, selected);
     this.scrollPanelToHeight(
       "central-panel",
       tr,
-      selected.offsetTop + selected.offsetHeight - tr.offsetTop,
+      selected.offsetTop + selected.offsetHeight - selected.offsetTop,
     );
   }
 
