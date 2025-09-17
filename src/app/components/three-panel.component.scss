@@ -1,0 +1,425 @@
+@use "../../scss/config/variables";
+//@use "perfect-scrollbar/css/perfect-scrollbar.css";
+
+.details {
+  text-align: left;
+  @media only screen and (max-width: 600px) {
+    padding: 20px;
+  }
+}
+
+.details__content {
+  padding: 0;
+}
+
+.title-word {
+  display: block;
+  font-size: 1.7rem;
+  margin-top: -8px;
+  margin-bottom: 45px;
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+  }
+}
+
+.details__word {
+  color: variables.$red;
+  font-weight: 700;
+}
+
+.details__panel {
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  table .selected {
+    background-color: variables.$highlight;
+  }
+}
+
+.details__panel-col {
+  flex-grow: 1;
+  &:first-of-type {
+    width: 19%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  &:last-of-type {
+    width: 29%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  &:not(:last-of-type) {
+    margin-inline-end: 17px;
+    @media only screen and (max-width: 600px) {
+      margin-inline-end: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.details__panel-top {
+  background-color: variables.$white;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05);
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: variables.$blueDark;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0 20px;
+  margin-bottom: 12px;
+  @media only screen and (max-width: 600px) {
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+}
+
+.details__panel-main {
+  height: 500px;
+  background-color: variables.$white;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05);
+  padding: 14px 20px;
+  position: relative;
+  overflow: scroll;
+  @media only screen and (max-width: 600px) {
+    height: inherit;
+    max-height: 500px;
+    min-height: 80px;
+    overflow-x: scroll;
+  }
+  .heading {
+    a {
+      pointer-events: none;
+    }
+  }
+  &:last-child {
+    .heading {
+      margin-bottom: 3px;
+    }
+    .xtr-label {
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  }
+  .fa-spinner {
+    @media only screen and (max-width: 600px) {
+      font-size: 1.3rem;
+    }
+  }
+  a {
+    cursor: pointer;
+  }
+  .cell {
+    display: block;
+    margin-bottom: 15px;
+  }
+  .haveimg {
+    background-color: variables.$blueSky;
+  }
+  .pgotl {
+    &.level0 {
+      h2 {
+        color: variables.$red;
+        font-size: 0.75rem;
+        margin-bottom: 7px;
+      }
+    }
+    .level1 {
+      padding-left: 6px;
+      h3 {
+        font-size: 0.75rem;
+        margin-bottom: 4px;
+      }
+    }
+    .level2 {
+      margin-bottom: 31px;
+      a {
+        font-size: 0.75rem;
+        color: variables.$grayBorder;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .xmdoutline {
+    h3 {
+      font-size: 0.75rem;
+      margin-bottom: 4px;
+    }
+    ul {
+      margin-bottom: 15px;
+    }
+    li,
+    p {
+      font-size: 0.75rem;
+      color: variables.$grayBorder;
+      font-weight: normal;
+    }
+  }
+
+  .xtloutline {
+    h3 {
+      font-size: 0.75rem;
+      margin-bottom: 1px;
+    }
+    p {
+      a {
+        font-size: 0.75rem;
+      }
+    }
+    .xol2 {
+      margin-bottom: 15px;
+    }
+  }
+  span.marker {
+    margin-inline-start: 3vw;
+    border-radius: 50%;
+    color: variables.$white;
+    background-color: variables.$teal;
+    border: 1px solid variables.$teal;
+    padding: 0.01rem 0.2rem;
+  }
+
+  tr.l {
+    line-height: 1.8;
+  }
+  .text {
+    tr.selected {
+      background-color: variables.$blueSky;
+    }
+    span.lnum {
+      display: none;
+    }
+
+    .xlabel {
+      font-size: 0.9rem;
+      color: variables.$grayBorder;
+    }
+    a > .xlabel {
+      color: variables.$blueLight;
+    }
+    .cbd,
+    .sign {
+      font-size: 1rem;
+      @media only screen and (max-width: 600px) {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+    .heading {
+      font-size: 1.2rem;
+      @media only screen and (max-width: 600px) {
+        font-size: 1.1rem;
+      }
+    }
+    .column,
+    .surface,
+    .nonlbody,
+    p {
+      font-size: 0.8rem;
+      color: variables.$grayBorder;
+    }
+  }
+
+  .ce-heading {
+    font-size: 1rem;
+    margin-bottom: 7px;
+  }
+  .ce-result,
+  .ce-label {
+    font-size: 1rem;
+    color: variables.$grayBorder;
+    font-weight: normal;
+    .selected {
+      background-color: variables.$blueSky;
+    }
+  }
+  .ce-result>a>span.marker{
+    display: none;
+  }
+  .ce-label {
+    a:hover {
+      color: variables.$blueDark;
+    }
+    text-align: right;
+  }
+  .p3notes {
+    .notemark {
+      display: inline-block;
+      color: variables.$blueDark;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+    .note {
+      display: block;
+      position: fixed;
+      width: 450px;
+      height: 200px;
+      background-color: variables.$white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 12px 0px variables.$grayBorder;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    &.hidden_if_narrow {
+      display: none;
+    }
+  }
+}
+
+.details__panel-main--right {
+  a {
+    color: variables.$grayBorder;
+    font-weight: normal;
+  }
+  tr {
+    &:hover {
+      background-color: variables.$blueSky;
+      cursor: pointer;
+    }
+  }
+  .xtr-label {
+    color: variables.$blueLight;
+  }
+  .foreign,
+  .uncertain {
+    font-style: italic;
+  }
+}
+
+.details__panel-top-exp {
+  position: relative;
+  width: 16px;
+  height: 5px;
+  background-color: variables.$blueLight;
+  display: block;
+  @media only screen and (min-width: 601px) {
+    display: none;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 15px;
+    width: 5px;
+    background-color: variables.$blueLight;
+    left: 50%;
+    top: -5px;
+    transform-origin: center;
+    transform: translateX(-50%);
+    transition: 150ms linear;
+  }
+  &.active {
+    &::before {
+      height: 0;
+      top: 0;
+    }
+  }
+}
+
+.details__panel-list {
+  display: flex;
+  align-items: center;
+  li {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+.details__panel-list-item {
+  font-family: "OpenSans", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  color: variables.$blueLight;
+  &.active {
+    color: variables.$blueDark;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+.details__panel-left,
+.details__panel-right {
+  font-size: 1.5rem;
+}
+
+.details__panel-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.details__popup {
+  width: 350px;
+  height: 200px;
+  background-color: variables.$white;
+  padding: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px 0px variables.$grayBorder;
+  box-sizing: border-box;
+  overflow: auto;
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+    height: 60%;
+  }
+  .lnum {
+    padding-right: 10px;
+  }
+  .enum {
+    padding-left: 10px;
+  }
+  a,
+  span {
+    font-size: 0.8rem;
+  }
+}
+.details__popup-close {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  display: block;
+  position: absolute;
+  color: variables.$blueLight;
+  right: 5px;
+  top: 5px;
+  &:hover {
+    color: variables.$red;
+  }
+}
+.details__popup-title {
+  text-align: center;
+  padding: 0 20px 10px;
+  font-size: 1.1rem;
+}
+
+.item-nav {
+  display: none;
+}
+
+.item-nav.active {
+  display: block;
+}
+
+app-details .marker {
+  display: none;
+}

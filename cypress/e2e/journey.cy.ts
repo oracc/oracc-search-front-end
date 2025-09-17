@@ -346,7 +346,7 @@ function check_page_is_details() {
 // Fifth page: details-texts.component
 function check_page_is_details_texts() {
   cy.get('section.details');
-  cy.get('.details__panel-top-text').contains('Text');
+  cy.get('.details__panel-top-text').contains('Translation');
   checkSelectedWordIsHighlighted();
 }
 
@@ -372,10 +372,8 @@ function check_page_is_glossary_article_score(score) {
 
 // Seventh page: project-texts.component
 function check_page_is_project_texts() {
-  // Don't have a way to differentiate between project-texts and
-  // glossary-article-texts at the moment
   cy.get('section.details');
-  cy.get('.details__panel-top-text').contains('Text');
+  cy.get('.details__panel-top-text').contains('Translation');
 }
 
 function checkSelectedWordIsHighlighted(){

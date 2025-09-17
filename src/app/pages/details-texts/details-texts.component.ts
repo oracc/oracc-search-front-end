@@ -16,8 +16,8 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 
 @Component({
     selector: 'app-details-texts',
-    templateUrl: '../details/details.component.html',
-    styleUrls: ['../details/details.component.scss'],
+    templateUrl: '../../components/three-panel.component.html',
+    styleUrls: ['../../components/three-panel.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: false
 })

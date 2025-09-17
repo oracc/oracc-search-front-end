@@ -7,7 +7,7 @@ import { mergeParams } from '../../../utils/utils';
 @Component({
     selector: 'app-details-score',
     templateUrl: './details-score.component.html',
-    styleUrls: ['./details-score.component.scss', '../details/details.component.scss'],
+    styleUrls: ['./details-score.component.scss', '../../components/three-panel.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: false
 })

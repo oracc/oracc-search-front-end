@@ -8,8 +8,8 @@ import { mergeParams } from '../../../utils/utils';
 
 @Component({
     selector: 'app-details',
-    templateUrl: './details.component.html',
-    styleUrls: ['./details.component.scss'],
+    templateUrl: '../../components/three-panel.component.html',
+    styleUrls: ['./details.component.scss', '../../components/three-panel.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: false
 })
