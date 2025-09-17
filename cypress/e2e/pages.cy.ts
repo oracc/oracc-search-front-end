@@ -68,7 +68,7 @@ describe('Pages', () => {
       const result = "šarrūtu";
       const form = "šarrūssin";
       const ref = "Tiglath-pileser III 47 o 4";
-      const translit_1 = '[id="Q003460.2"]';
+      const translit_4 = '[id="Q003460.5"]';
       const translat_1 = '[id="Q003460_project-en.0"]';
       cy.get('.search__input').type(`${search}{enter}`);
       cy.get('.results__table-row').contains(result).click();
@@ -77,12 +77,11 @@ describe('Pages', () => {
       cy.get('.details__panel-main').contains(ref).click();
 
       // Check that the first elements are visible
-      cy.get(translit_1).should('be.visible').should('have.class', 'selected');
+      cy.get(translit_4).should('be.visible').should('have.class', 'selected');
       cy.get(translat_1).should('be.visible').parent().should('have.class', 'selected');
       // Now scroll the transliterations
       cy.get("#central-panel").first().scrollTo(0, 1200).wait(0).trigger("scrollend");
       // and check that the translations scroll into view and match
-      cy.wait(600);
       cy.get("#central-panel tr.selected").should('have.length', 1).should('be.visible').then($e => {  
         cy.get("#right-panel tr.selected td").should(
           "have.id",

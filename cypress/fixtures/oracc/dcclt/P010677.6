@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="generator" content="oracc/px p4html.xml "/>
+  <link rel="stylesheet" type="text/css" href="/css/p4.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/p4-cuneify.css"/>
+  <link rel="stylesheet" type="text/css" href="/dcclt/css/p3colours.css"/>
+  <link rel="stylesheet" type="text/css" href="/dcclt/css/projcss.css"/>
+  <script type="text/javascript" src="/js/p4.js">&#160;</script>
+  <script type="text/javascript" src="/js/p4cbd.js">&#160;</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"><![CDATA[ ]]></script>
+  <title>dcclt</title>    
+</head>
+  <body onload="p4Onload()"><div id="p4Pager" class="bborder-top list item dcat itxt zoom special" data-proj="dcclt" data-list="outlined.lst" data-zoom="45" data-sort="12" data-prev="P427608" data-item="P010677.6" data-next="P010088" data-bkmk="P010677.6" data-lang="en" data-hili="P010677.6">
+  <div id="p4Masthead">
+    <p id="p4HeadTitle" class="banner bborder-top bborder1-bot">
+      <a href="/">Oracc:</a> <a href="/dcclt">dcclt &#x2014; Digital Corpus of Cuneiform Lexical Texts</a>
+    </p>
+  </div>
+  <div id="p4Header" class="menu banner bborder-bot">
+    <p id="p4Banner">
+      <span id="p4Icons">
+	
+  <img class="p4icon" src="/img/p3-dd.png"
+       alt="Toggle menu drop-down" title="Toggle menu drop-down"
+       onclick="toggle_dd()"/>
+  <img id="p4HelpIcon" class="p4icon"
+       src="/img/p3-help.png" alt="Help" title="Help"
+       onclick="window.location='/doc/help/visitingoracc/gettingstarted/index.html'"/>
+  <img id="p4ResetIcon" class="p4icon"
+       src="/img/p3-reset.png" alt="Reset pager" title="Reset pager"
+       onclick="resetPager()"/>
+  <img id="p4MoreIcon" class="p4icon"
+       src="/img/p3-plus.png" alt="More resources" title="More resources"
+       onclick="window.location='/dcclt/hub.html'"/>
+
+      </span>
+    </p>
+    <div id="p4Search">
+  <form action="javascript://" onsubmit="act_srch()">
+    <p>
+      <!--Oracc Search:-->
+      <input id="p4SrchBox" type="text" size="30"
+	     value=""/>
+      <input type="submit" style="display: none"/>
+      <img id="p4SrchGo" class="p4icon" src="/img/p3-search.png"
+	   alt="Search" title="Search" onclick="act_srch()"/>
+    </p>
+    <p id="p4SrchChars">(j=ŋ&#xa0;sz=š&#xa0;s,=ṣ&#xa0;t,=ṭ&#xa0;0-9=₀-₉; &apos;=alef)</p>
+  </form>
+</div>
+
+    <div id="p4Controls">
+      
+  <div id="p4itemNav" class="p4items" data-ityp="ITEM" data-inth="1" data-imax="1">
+    <p class="bg-dk">
+
+      
+      <img id="p4ToggleMeta" class="p4icon" src="/img/p3-full.png"
+	   alt="Toggle metadata pane" title="Toggle metadata pane" onclick="toggle_md()"/>
+      
+      <img id="p4PageItem" class="p4icon p4spread" src="/img/p3-pageitem.png"
+	   alt="Toggle Page/Item view" title="Return to Page view"
+	   onclick="toggle_pi()"/>
+
+      <!--Item-->
+      <img id="p4ItemPrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Item back" title="Item back"
+	   onclick="act_item_prev()"/>
+      
+      <span id="p4ItemView"> [ITEM 1 of 1] </span>
+      
+      <img id="p4ItemNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Item forward" title="Item forward"
+	   onclick="act_item_next()"/>
+
+      <span id="p4SrchResults" class="p4srchresults" data-tmax="" data-rmax="0">
+	 Texts [0 matches]
+      </span>
+
+      <span id="p4Translations">
+	<span>
+          <select id="p4TransSelect" onchange="act_translation()">
+            <option value="none">(none)</option>
+          </select>
+        </span>
+
+	<input id="p4Transonly" type="checkbox" onchange="toggle_to()"
+	       value="@@pui_transonly()@@"/>&#xa0;only
+      </span>
+
+    </p>
+  </div>
+
+  <div id="p4PageNav" class="p4pages" data-page="30" data-pmax="1" data-imax="1">
+    <p class="p3toccenter bg-dk">
+
+      <button id="p4Zoom" class="p4spread" onclick="act_zoom('0')">All Results</button>
+
+      <img id="p4PagePrev" class="p4icon p4spread" src="/img/p3-backward.png"
+	   alt="Page back" title="Page back"
+	   onclick="act_prev()"/>
+      
+      <!--Page-->
+      <input id="p4Pageset" type="text" onchange="act_page()" size="3" value="30"/>
+
+      <img id="p4PageNext" class="p4icon p4spread" src="/img/p3-forward.png"
+	   alt="Page forward" title="Page forward"
+	   onclick="act_next()"/>
+
+      1 item
+      /
+      1 page
+
+      <span id="p4SrchResultpages" class="p4srchresults">[0 matches]</span>
+
+      <span id="p4CeType" class="cetype"><select id="p4CESelect" onchange="act_ce_switch(event)" value="line">
+  <option value="line" selected="selected">Line</option>
+  <option value="unit">Sentence</option>
+  <option value="kwic">KWIC</option>
+</select>
+</span>
+    </p>
+  </div>
+
+
+    </div>
+  </div>
+  <div id="p4Data">
+    <div id="p4Menu">
+<div id="p4MenuSorter">
+<select id="p4MenuSelect" onchange="act_sorter()" value="12">
+<option value="12" selected="selected">period/subgenre</option>
+<option value="21">subgenre/period</option>
+</select>
+</div>
+<div id="p4MenuOutline" class="pgotl level0" data-zmax="25"><h2>Archaic</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(1)" data-zoom="1">Other Word Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(2)" data-zoom="2">Thematic Word Lists [12]</a></p></div><h2>Early Dynastic IIIa</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(3)" data-zoom="3">Other Vocabularies [1]</a></p><p><a href="javascript://" onclick="act_zoom(4)" data-zoom="4">Thematic Word Lists [15]</a></p></div><h2>Early Dynastic IIIb</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(5)" data-zoom="5">Acrographic Word Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(6)" data-zoom="6">Other Vocabularies [2]</a></p><p><a href="javascript://" onclick="act_zoom(7)" data-zoom="7">Sign Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(8)" data-zoom="8">Thematic Word Lists [8]</a></p></div><h2>Old Babylonian</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(9)" data-zoom="9">Acrographic Word Lists [9]</a></p><p><a href="javascript://" onclick="act_zoom(10)" data-zoom="10">Miscellaneous Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(11)" data-zoom="11">Sign Exercises [6]</a></p><p><a href="javascript://" onclick="act_zoom(12)" data-zoom="12">Sign Lists [7]</a></p><p><a href="javascript://" onclick="act_zoom(13)" data-zoom="13">Thematic Word Lists [18]</a></p></div><h2>Middle Assyrian</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(14)" data-zoom="14">Acrographic Word Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(15)" data-zoom="15">Sign Lists [1]</a></p></div><h2>Middle Babylonian</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(16)" data-zoom="16">Sign Exercises [1]</a></p><p><a href="javascript://" onclick="act_zoom(17)" data-zoom="17">Sign Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(18)" data-zoom="18">Thematic Word Lists [23]</a></p></div><h2>Neo-Assyrian</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(19)" data-zoom="19">Other Vocabularies [19]</a></p></div><h2>First Millennium</h2><div class="pgotl level1"><p><a href="javascript://" onclick="act_zoom(20)" data-zoom="20">Acrographic Word Lists [21]</a></p><p><a href="javascript://" onclick="act_zoom(21)" data-zoom="21">Miscellaneous Lists [1]</a></p><p><a href="javascript://" onclick="act_zoom(22)" data-zoom="22">Other Vocabularies [36]</a></p><p><a href="javascript://" onclick="act_zoom(23)" data-zoom="23">Sign Lists [57]</a></p><p><a href="javascript://" onclick="act_zoom(24)" data-zoom="24">Synonym Lists [12]</a></p><p><a href="javascript://" onclick="act_zoom(25)" data-zoom="25">Thematic Word Lists [40]</a></p></div></div></div>
+
+    <div id="p4Content">
+      <div id="p4Item" class="xtf">
+  <div id="p4XtfMeta"><div xmlns="http://www.w3.org/1999/xhtml">
+  <div class="xmdoutline border-top border-bottom">
+    <h3 class="h3">Names</h3>
+    <ul>
+      <li>SF 081</li>
+    </ul>
+    <h3 class="h3">Numbers</h3>
+    <ul>
+      <li>
+        <a href="https://cdli.earth/P010677" target="_blank">CDLI P010677</a>
+      </li>
+      <li>VAT 12806</li>
+      <li>SF 081</li>
+      <li>MEE 3, p. 47-56; 251f.; Krecher 1983</li>
+    </ul>
+    <h3 class="h3">View</h3>
+    <ul>
+      <li>Catalogue entry</li>
+      <li>
+        <a href="http://oracc.museum.upenn.edu/cdli/P010677/image" target="_blank">photo</a>
+      </li>
+      <li>
+        <a href="http://oracc.museum.upenn.edu/cdli/P010677/image" target="_blank">details</a>
+      </li>
+      <li>
+        <a href="http://dev-oracc.museum.upenn.edu/dcclt/P010677/html">Print text</a>
+      </li>
+      <li>
+        <a target="_blank" href="/dcclt/P010677/cuneify">Cuneified</a>
+      </li>
+    </ul>
+    <h3 class="h3">Details</h3>
+    <ul>
+      <li>ED IIIa</li>
+      <li>Shuruppak</li>
+      <li>Lexical</li>
+      <li>ED Animals A</li>
+    </ul>
+    <h3 class="h3">Bibliography</h3>
+    <p>MEE 3, p. 47-56; 251f.; Krecher 1983</p>
+  </div>
+  <div class="xtloutline border-top border-bottom">
+    <div id="Sources">
+      <h3 class="xtl h3">Sources</h3>
+      <div class="xol2">
+        <p class="xo sansimg"><span class="noimg"> </span> [A] <a href="javascript:showexemplar('dcclt','Q000012','','')">ED Animals A</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <div id="p4XtfData"><div xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://dublincore.org/documents/2003/06/02/dces/" dc:title="dcclt P010677" class="text"><h1 class="p3h2 border-top heading"><a href="http://cdli.earth/P010677" target="_blank" class="(null)">SF 081 [ED Animals A]</a><span class="via">[via dcclt]</span></h1><table class="transliteration"><tr class="l p1"><td class="lnum"> </td><td class="tlit"> </td></tr><tr id="P010677.o.2" class="h surface"><td colspan="1" class="(null)"><span class="h2 ">Obverse</span></td></tr><tr id="P010677.o.i.3" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column i</span></td></tr><tr id="P010677.4" class="l"><td class="lnum "><a name="a.P010677.4" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.1" class=" "><span class="xlabel ">o i 1</span><span class="lnum ">o i 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.4.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.4.2" class="w sux  "><span x="3" class="sux ">ur₃</span></span></p></td></tr><tr id="P010677.5" class="l"><td class="lnum "><a name="a.P010677.5" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.2" class=" "><span class="xlabel ">o i 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.5.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.5.2" class="w sux  "><span x="3" class="sux ">šar₉</span></span></p></td></tr><tr id="P010677.6" class="l selected"><td class="lnum "><a name="a.P010677.6" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.3" class=" "><span class="xlabel ">o i 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.6.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.6.2" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.7" class="l"><td class="lnum "><a name="a.P010677.7" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.4" class=" "><span class="xlabel ">o i 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.7.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.7.2" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.8" class="l"><td class="lnum "><a name="a.P010677.8" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.5" class=" "><span class="xlabel ">o i 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.8.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.8.2" class="w sux  "><span x="3" class="sux ">eš</span>(3(<span class="sign  ">AŠ<sup class=" ">t</sup></span>))</span></p></td></tr><tr id="P010677.9" class="l"><td class="lnum "><a name="a.P010677.9" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.6" class=" "><span class="xlabel ">o i 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.9.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.9.2" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.10" class="l"><td class="lnum "><a name="a.P010677.10" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.7" class=" "><span class="xlabel ">o i 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.10.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.10.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.10.3" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.11" class="l"><td class="lnum "><a name="a.P010677.11" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.8" class=" "><span class="xlabel ">o i 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.11.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.11.2" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.12" class="l"><td class="lnum "><a name="a.P010677.12" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.9" class=" "><span class="xlabel ">o i 9</span><span class="lnum ">9</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.12.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.12.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.12.3" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.13" class="l"><td class="lnum "><a name="a.P010677.13" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.10" class=" "><span class="xlabel ">o i 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.13.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.13.2" class="w sux  "><span x="3" class="sux ">šuḫub</span>(<span class="compound "><span class="sign  ">MUL</span>.<span class="sign  ">BAR</span></span>)</span></p></td></tr><tr id="P010677.14" class="l"><td class="lnum "><a name="a.P010677.14" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.11" class=" "><span class="xlabel ">o i 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.14.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.14.2" class="w sux  "><span x="3" class="sux ">su₄</span></span></p></td></tr><tr id="P010677.15" class="l"><td class="lnum "><a name="a.P010677.15" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.12" class=" "><span class="xlabel ">o i 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.15.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.15.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.16" class="l"><td class="lnum "><a name="a.P010677.16" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.13" class=" "><span class="xlabel ">o i 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.16.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.16.2" class="w sux  "><span x="3" class="sux ">šag₄</span></span> <span x="1" id="P010677.16.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.17" class="l"><td class="lnum "><a name="a.P010677.17" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.14" class=" "><span class="xlabel ">o i 14</span><span class="lnum ">14</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.17.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.17.2" class="w sux  "><span x="3" class="sux ">ti</span></span> <span x="1" id="P010677.17.3" class="w sux  "><span class="sux ">[</span><span x="3" class="sux ">dara₄</span><span class="sux ">]</span></span></p></td></tr><tr id="P010677.18" class="l"><td class="lnum "><a name="a.P010677.18" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.15" class=" "><span class="xlabel ">o i 15</span><span class="lnum ">15</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.18.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.18.2" class="w sux  "><span class="r ">[...<span class="sux ">]</span></span></span></p></td></tr><tr id="P010677.19" class="l"><td class="lnum "><a name="a.P010677.19" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.16" class=" "><span class="xlabel ">o i 16</span><span class="lnum ">16</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.19.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.19.2" class="w sux  "><span class="r ">[...<span class="sux ">]</span></span></span></p></td></tr><tr id="P010677.o.ii.20" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column ii</span></td></tr><tr id="P010677.21" class="l"><td class="lnum "><a name="a.P010677.21" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.17" class=" "><span class="xlabel ">o ii 1</span><span class="lnum ">o ii 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.21.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.21.2" class="w sux  "><span x="3" class="sux ">maḫ₂</span></span></p></td></tr><tr id="P010677.22" class="l"><td class="lnum "><a name="a.P010677.22" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.18" class=" "><span class="xlabel ">o ii 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.22.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.22.2" class="w sux  "><span x="3" class="sux ">kun</span></span> <span x="1" id="P010677.22.3" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.23" class="l"><td class="lnum "><a name="a.P010677.23" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.19" class=" "><span class="xlabel ">o ii 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.23.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.23.2" class="w sux  "><span x="3" class="sux ">ušₓ</span>(<span class="sign  ">MUNSUB</span>)-<span x="3" class="sux ">ga</span></span></p></td></tr><tr id="P010677.24" class="l"><td class="lnum "><a name="a.P010677.24" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.20" class=" "><span class="xlabel ">o ii 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.24.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.24.2" class="w sux  "><span x="3" class="sux ">šul</span></span></p></td></tr><tr id="P010677.25" class="l"><td class="lnum "><a name="a.P010677.25" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.21" class=" "><span class="xlabel ">o ii 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.25.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.25.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span></p></td></tr><tr id="P010677.26" class="l"><td class="lnum "><a name="a.P010677.26" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.22" class=" "><span class="xlabel ">o ii 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.26.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.26.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span> <span x="1" id="P010677.26.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.27" class="l"><td class="lnum "><a name="a.P010677.27" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.23" class=" "><span class="xlabel ">o ii 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.27.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.27.2" class="w sux  "><span x="3" class="sux ">saŋ</span></span></p></td></tr><tr id="P010677.28" class="l"><td class="lnum "><a name="a.P010677.28" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.24" class=" "><span class="xlabel ">o ii 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.28.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.28.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span> <span x="1" id="P010677.28.3" class="w sux  "><span x="3" class="sux ">saŋ</span></span></p></td></tr><tr id="P010677.29" class="l"><td class="lnum "><a name="a.P010677.29" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.25" class=" "><span class="xlabel ">o ii 9</span><span class="lnum ">9</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.29.1" class="w sux  "><span x="3" class="sux ">ab₂</span>-<span x="3" class="sux ">ab₂</span></span></p></td></tr><tr id="P010677.30" class="l"><td class="lnum "><a name="a.P010677.30" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.26" class=" "><span class="xlabel ">o ii 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.30.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.30.2" class="w sux  "><span class="sign  ">LAK050</span></span></p></td></tr><tr id="P010677.31" class="l"><td class="lnum "><a name="a.P010677.31" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.27" class=" "><span class="xlabel ">o ii 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.31.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.31.2" class="w sux  "><span x="3" class="sux ">ur₃</span></span></p></td></tr><tr id="P010677.32" class="l"><td class="lnum "><a name="a.P010677.32" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.28" class=" "><span class="xlabel ">o ii 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.32.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.32.2" class="w sux  "><span x="3" class="sux ">šar₉</span></span></p></td></tr><tr id="P010677.33" class="l"><td class="lnum "><a name="a.P010677.33" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.29" class=" "><span class="xlabel ">o ii 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.33.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.33.2" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.34" class="l"><td class="lnum "><a name="a.P010677.34" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.30" class=" "><span class="xlabel ">o ii 14</span><span class="lnum ">14</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.34.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.34.2" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.35" class="l"><td class="lnum "><a name="a.P010677.35" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.31" class=" "><span class="xlabel ">o ii 15</span><span class="lnum ">15</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.35.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.35.2" class="w sux  "><span x="3" class="sux ">eš</span>(3(<span class="sign  ">AŠ<sup class=" ">t</sup></span>))</span></p></td></tr><tr id="P010677.o.iii.36" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column iii</span></td></tr><tr id="P010677.37" class="l"><td class="lnum "><a name="a.P010677.37" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.32" class=" "><span class="xlabel ">o iii 1</span><span class="lnum ">o iii 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.37.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.37.2" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.38" class="l"><td class="lnum "><a name="a.P010677.38" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.33" class=" "><span class="xlabel ">o iii 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.38.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.38.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.38.3" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.39" class="l"><td class="lnum "><a name="a.P010677.39" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.34" class=" "><span class="xlabel ">o iii 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.39.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.39.2" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.40" class="l"><td class="lnum "><a name="a.P010677.40" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.35" class=" "><span class="xlabel ">o iii 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.40.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.40.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.40.3" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.41" class="l"><td class="lnum "><a name="a.P010677.41" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.36" class=" "><span class="xlabel ">o iii 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.41.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.41.2" class="w sux  "><span x="3" class="sux ">šuḫub</span>(<span class="compound "><span class="sign  ">MUL</span>.<span class="sign  ">BAR</span></span>)</span></p></td></tr><tr id="P010677.42" class="l"><td class="lnum "><a name="a.P010677.42" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.37" class=" "><span class="xlabel ">o iii 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.42.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.42.2" class="w sux  "><span x="3" class="sux ">su₄</span></span></p></td></tr><tr id="P010677.43" class="l"><td class="lnum "><a name="a.P010677.43" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.38" class=" "><span class="xlabel ">o iii 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.43.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.43.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.44" class="l"><td class="lnum "><a name="a.P010677.44" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.39" class=" "><span class="xlabel ">o iii 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.44.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.44.2" class="w sux  "><span x="3" class="sux ">šag₄</span></span> <span x="1" id="P010677.44.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.45" class="l"><td class="lnum "><a name="a.P010677.45" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.40" class=" "><span class="xlabel ">o iii 9</span><span class="lnum ">9</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.45.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.45.2" class="w sux  "><span x="3" class="sux ">ti</span></span> <span x="1" id="P010677.45.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.46" class="l"><td class="lnum "><a name="a.P010677.46" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.41" class=" "><span class="xlabel ">o iii 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.46.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.46.2" class="w sux  "><span class="sign  ">IGI<sup class=" ">g</sup></span></span></p></td></tr><tr id="P010677.47" class="l"><td class="lnum "><a name="a.P010677.47" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.42" class=" "><span class="xlabel ">o iii 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.47.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.47.2" class="w sux  "><span class="sign  ">IGI<sup class=" ">g</sup></span></span> <span x="1" id="P010677.47.3" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.48" class="l"><td class="lnum "><a name="a.P010677.48" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.43" class=" "><span class="xlabel ">o iii 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.48.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.48.2" class="w sux  "><span x="3" class="sux ">maḫ₂</span></span></p></td></tr><tr id="P010677.49" class="l"><td class="lnum "><a name="a.P010677.49" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.44" class=" "><span class="xlabel ">o iii 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.49.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.49.2" class="w sux  "><span x="3" class="sux ">kun</span></span> <span x="1" id="P010677.49.3" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.50" class="l"><td class="lnum "><a name="a.P010677.50" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.45" class=" "><span class="xlabel ">o iii 14</span><span class="lnum ">14</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.50.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.50.2" class="w sux  "><span x="3" class="sux ">ušₓ</span>(<span class="sign  ">UŠX</span>)-<span x="3" class="sux ">ga</span></span></p></td></tr><tr id="P010677.51" class="l"><td class="lnum "><a name="a.P010677.51" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.46" class=" "><span class="xlabel ">o iii 15</span><span class="lnum ">15</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.51.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.51.2" class="w sux  "><span x="3" class="sux ">šul</span></span></p></td></tr><tr id="P010677.52" class="l"><td class="lnum "><a name="a.P010677.52" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.47" class=" "><span class="xlabel ">o iii 16</span><span class="lnum ">16</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.52.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.52.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span></p></td></tr><tr id="P010677.53" class="l"><td class="lnum "><a name="a.P010677.53" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.48" class=" "><span class="xlabel ">o iii 17</span><span class="lnum ">17</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.53.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.53.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span> <span x="1" id="P010677.53.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.54" class="l"><td class="lnum "><a name="a.P010677.54" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.49" class=" "><span class="xlabel ">o iii 18</span><span class="lnum ">18</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.54.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.54.2" class="w sux  "><span x="3" class="sux ">saŋ</span></span></p></td></tr><tr id="P010677.o.iv.55" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column iv</span></td></tr><tr id="P010677.56" class="l"><td class="lnum "><a name="a.P010677.56" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.50" class=" "><span class="xlabel ">o iv 1</span><span class="lnum ">o iv 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.56.1" class="w sux  "><span class="sux ">[</span><span x="3" class="sux ">gud</span><span class="sux ">]</span></span> <span x="1" id="P010677.56.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span> <span x="1" id="P010677.56.3" class="w sux  "><span class="sux ">⸢</span><span x="3" class="sux ">saŋ</span><span class="sux ">⸣</span></span></p></td></tr><tr id="P010677.57" class="l"><td class="lnum "><a name="a.P010677.57" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.51" class=" "><span class="xlabel ">o iv 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.57.1" class="w sux  "><span x="3" class="sux ">gud</span>-<span x="3" class="sux ">gud</span></span></p></td></tr><tr id="P010677.58" class="l"><td class="lnum "><a name="a.P010677.58" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.52" class=" "><span class="xlabel ">o iv 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.58.1" class="w sux  "><span x="3" class="sux ">gud</span></span> <span x="1" id="P010677.58.2" class="w sux  "><span class="sign  ">LAK050</span></span></p></td></tr><tr id="P010677.59" class="l"><td class="lnum "><a name="a.P010677.59" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.53" class=" "><span class="xlabel ">o iv 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.59.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.59.2" class="w sux  "><span x="3" class="sux ">ur₃</span></span></p></td></tr><tr id="P010677.60" class="l"><td class="lnum "><a name="a.P010677.60" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.54" class=" "><span class="xlabel ">o iv 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.60.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.60.2" class="w sux  "><span x="3" class="sux ">šar₉</span></span></p></td></tr><tr id="P010677.61" class="l"><td class="lnum "><a name="a.P010677.61" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.55" class=" "><span class="xlabel ">o iv 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.61.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.61.2" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.62" class="l"><td class="lnum "><a name="a.P010677.62" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.56" class=" "><span class="xlabel ">o iv 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.62.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.62.2" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.63" class="l"><td class="lnum "><a name="a.P010677.63" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.57" class=" "><span class="xlabel ">o iv 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.63.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.63.2" class="w sux  "><span x="3" class="sux ">eš</span>(3(<span class="sign  ">AŠ<sup class=" ">t</sup></span>))</span></p></td></tr><tr id="P010677.64" class="l"><td class="lnum "><a name="a.P010677.64" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.58" class=" "><span class="xlabel ">o iv 9</span><span class="lnum ">9</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.64.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.64.2" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.65" class="l"><td class="lnum "><a name="a.P010677.65" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.59" class=" "><span class="xlabel ">o iv 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.65.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.65.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.65.3" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.66" class="l"><td class="lnum "><a name="a.P010677.66" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.60" class=" "><span class="xlabel ">o iv 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.66.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.66.2" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.67" class="l"><td class="lnum "><a name="a.P010677.67" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.61" class=" "><span class="xlabel ">o iv 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.67.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.67.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.67.3" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.68" class="l"><td class="lnum "><a name="a.P010677.68" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.62" class=" "><span class="xlabel ">o iv 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.68.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.68.2" class="w sux  "><span x="3" class="sux ">šuḫub</span>(<span class="compound "><span class="sign  ">MUL</span>.<span class="sign  ">BAR</span></span>)</span></p></td></tr><tr id="P010677.69" class="l"><td class="lnum "><a name="a.P010677.69" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.63" class=" "><span class="xlabel ">o iv 14</span><span class="lnum ">14</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.69.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.69.2" class="w sux  "><span x="3" class="sux ">su₄</span></span></p></td></tr><tr id="P010677.70" class="l"><td class="lnum "><a name="a.P010677.70" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.64" class=" "><span class="xlabel ">o iv 15</span><span class="lnum ">15</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.70.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.70.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.71" class="l"><td class="lnum "><a name="a.P010677.71" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.65" class=" "><span class="xlabel ">o iv 16</span><span class="lnum ">16</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.71.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.71.2" class="w sux  "><span x="3" class="sux ">šag₄</span></span> <span x="1" id="P010677.71.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.o.v.72" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column v</span></td></tr><tr id="P010677.73" class="l"><td class="lnum "><a name="a.P010677.73" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.66" class=" "><span class="xlabel ">o v 1</span><span class="lnum ">o v 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.73.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.73.2" class="w sux  "><span class="sux ">[</span><span x="3" class="sux ">ti</span><span class="sux ">]</span></span> <span x="1" id="P010677.73.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.74" class="l"><td class="lnum "><a name="a.P010677.74" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.67" class=" "><span class="xlabel ">o v 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.74.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.74.2" class="w sux  "><span class="sign  ">IGI<sup class=" ">g</sup></span></span></p></td></tr><tr id="P010677.75" class="l"><td class="lnum "><a name="a.P010677.75" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.68" class=" "><span class="xlabel ">o v 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.75.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.75.2" class="w sux  "><span class="sign  ">IGI<sup class=" ">g</sup></span></span> <span x="1" id="P010677.75.3" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.76" class="l"><td class="lnum "><a name="a.P010677.76" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.69" class=" "><span class="xlabel ">o v 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.76.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.76.2" class="w sux  "><span x="3" class="sux ">maḫ₂</span></span></p></td></tr><tr id="P010677.77" class="l"><td class="lnum "><a name="a.P010677.77" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.70" class=" "><span class="xlabel ">o v 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.77.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.77.2" class="w sux  "><span x="3" class="sux ">kun</span></span> <span x="1" id="P010677.77.3" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.78" class="l"><td class="lnum "><a name="a.P010677.78" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.71" class=" "><span class="xlabel ">o v 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.78.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.78.2" class="w sux  "><span x="3" class="sux ">ušₓ</span>(<span class="sign  ">UŠX</span>)-<span x="3" class="sux ">ga</span></span></p></td></tr><tr id="P010677.79" class="l"><td class="lnum "><a name="a.P010677.79" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.72" class=" "><span class="xlabel ">o v 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.79.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.79.2" class="w sux  "><span x="3" class="sux ">šul</span></span></p></td></tr><tr id="P010677.80" class="l"><td class="lnum "><a name="a.P010677.80" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.73" class=" "><span class="xlabel ">o v 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.80.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.80.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span></p></td></tr><tr id="P010677.81" class="l"><td class="lnum "><a name="a.P010677.81" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.74" class=" "><span class="xlabel ">o v 9</span><span class="lnum ">9</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.81.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.81.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span> <span x="1" id="P010677.81.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.82" class="l"><td class="lnum "><a name="a.P010677.82" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.75" class=" "><span class="xlabel ">o v 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.82.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.82.2" class="w sux  "><span x="3" class="sux ">saŋ</span></span></p></td></tr><tr id="P010677.83" class="l"><td class="lnum "><a name="a.P010677.83" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.76" class=" "><span class="xlabel ">o v 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.83.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.83.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span> <span x="1" id="P010677.83.3" class="w sux  "><span x="3" class="sux ">saŋ</span></span></p></td></tr><tr id="P010677.84" class="l"><td class="lnum "><a name="a.P010677.84" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.77" class=" "><span class="xlabel ">o v 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.84.1" class="w sux  "><span x="3" class="sux ">amar</span>-<span x="3" class="sux ">amar</span></span></p></td></tr><tr id="P010677.85" class="l"><td class="lnum "><a name="a.P010677.85" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.78" class=" "><span class="xlabel ">o v 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.85.1" class="w sux  "><span x="3" class="sux ">amar</span></span> <span x="1" id="P010677.85.2" class="w sux  "><span class="sign  ">LAK050</span></span></p></td></tr><tr id="P010677.86" class="l"><td class="lnum "><a name="a.P010677.86" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.79" class=" "><span class="xlabel ">o v 14</span><span class="lnum ">14</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.86.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.86.2" class="w sux  "><span x="3" class="sux ">ur₃</span></span></p></td></tr><tr id="P010677.87" class="l"><td class="lnum "><a name="a.P010677.87" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.80" class=" "><span class="xlabel ">o v 15</span><span class="lnum ">15</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.87.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.87.2" class="w sux  "><span x="3" class="sux ">šar₉</span></span></p></td></tr><tr id="P010677.88" class="l"><td class="lnum "><a name="a.P010677.88" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.81" class=" "><span class="xlabel ">o v 16</span><span class="lnum ">16</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.88.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.88.2" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.89" class="l"><td class="lnum "><a name="a.P010677.89" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.82" class=" "><span class="xlabel ">o v 17</span><span class="lnum ">17</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.89.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.89.2" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.o.vi.90" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column vi</span></td></tr><tr id="P010677.91" class="l"><td class="lnum "><a name="a.P010677.91" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.83" class=" "><span class="xlabel ">o vi 1</span><span class="lnum ">o vi 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.91.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.91.2" class="w sux  "><span x="3" class="sux ">eš</span>(3(<span class="sign  ">AŠ<sup class=" ">t</sup></span>))</span></p></td></tr><tr id="P010677.92" class="l"><td class="lnum "><a name="a.P010677.92" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.84" class=" "><span class="xlabel ">o vi 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.92.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.92.2" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.93" class="l"><td class="lnum "><a name="a.P010677.93" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.85" class=" "><span class="xlabel ">o vi 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.93.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.93.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.93.3" class="w sux  "><span x="3" class="sux ">šu</span></span></p></td></tr><tr id="P010677.94" class="l"><td class="lnum "><a name="a.P010677.94" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.86" class=" "><span class="xlabel ">o vi 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.94.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.94.2" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.95" class="l"><td class="lnum "><a name="a.P010677.95" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.87" class=" "><span class="xlabel ">o vi 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.95.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.95.2" class="w sux  "><span x="3" class="sux ">bar</span></span> <span x="1" id="P010677.95.3" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.96" class="l"><td class="lnum "><a name="a.P010677.96" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.88" class=" "><span class="xlabel ">o vi 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.96.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.96.2" class="w sux  "><span x="3" class="sux ">šuḫub</span>(<span class="compound "><span class="sign  ">MUL</span>.<span class="sign  ">BAR</span></span>)</span></p></td></tr><tr id="P010677.97" class="l"><td class="lnum "><a name="a.P010677.97" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.89" class=" "><span class="xlabel ">o vi 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.97.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.97.2" class="w sux  "><span x="3" class="sux ">su₄</span></span></p></td></tr><tr id="P010677.98" class="l"><td class="lnum "><a name="a.P010677.98" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.90" class=" "><span class="xlabel ">o vi 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.98.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.98.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.99" class="l"><td class="lnum "><a name="a.P010677.99" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.91" class=" "><span class="xlabel ">o vi 9</span><span class="lnum ">9</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.99.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.99.2" class="w sux  "><span x="3" class="sux ">šag₄</span></span> <span x="1" id="P010677.99.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.100" class="l"><td class="lnum "><a name="a.P010677.100" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.92" class=" "><span class="xlabel ">o vi 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.100.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.100.2" class="w sux  "><span x="3" class="sux ">ti</span></span> <span x="1" id="P010677.100.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.101" class="l"><td class="lnum "><a name="a.P010677.101" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.93" class=" "><span class="xlabel ">o vi 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.101.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.101.2" class="w sux  "><span class="sign  ">IGI<sup class=" ">g</sup></span></span></p></td></tr><tr id="P010677.102" class="l"><td class="lnum "><a name="a.P010677.102" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.94" class=" "><span class="xlabel ">o vi 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.102.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.102.2" class="w sux  "><span class="sign  ">IGI<sup class=" ">g</sup></span></span> <span x="1" id="P010677.102.3" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.103" class="l"><td class="lnum "><a name="a.P010677.103" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.95" class=" "><span class="xlabel ">o vi 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.103.1" class="w sux  "><span class="sux ">⸢</span><span x="3" class="sux ">am</span><span class="sux ">⸣</span></span> <span x="1" id="P010677.103.2" class="w sux  "><span x="3" class="sux ">maḫ₂</span></span></p></td></tr><tr id="P010677.104" class="l"><td class="lnum "><a name="a.P010677.104" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.96" class=" "><span class="xlabel ">o vi 14</span><span class="lnum ">14</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.104.1" class="w sux  "><span class="sux ">[</span><span x="3" class="sux ">am</span><span class="sux ">]</span></span> <span x="1" id="P010677.104.2" class="w sux  "><span class="sux ">⸢</span><span x="3" class="sux ">kun</span><span class="sux ">⸣</span></span> <span x="1" id="P010677.104.3" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.r.105" class="h surface"><td colspan="1" class="(null)"><span class="h2 ">Reverse</span></td></tr><tr id="P010677.r.i.106" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column i</span></td></tr><tr id="P010677.107" class="l"><td class="lnum "><a name="a.P010677.107" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.97" class=" "><span class="xlabel ">r i 1</span><span class="lnum ">r i 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.107.1" class="w sux  "><span class="sux ">[</span><span x="3" class="sux ">am</span><span class="sux ">]</span></span> <span x="1" id="P010677.107.2" class="w sux  "><span class="sux ">⸢</span><span x="3" class="sux ">ušₓ</span>(<span class="sign  ">UŠX</span>)-<span x="3" class="sux ">ga</span><span class="sux ">⸣</span></span></p></td></tr><tr id="P010677.108" class="l"><td class="lnum "><a name="a.P010677.108" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.98" class=" "><span class="xlabel ">r i 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.108.1" class="w sux  "><span class="sux ">⸢</span><span x="3" class="sux ">am</span><span class="sux ">⸣</span></span> <span x="1" id="P010677.108.2" class="w sux  "><span x="3" class="sux ">šul</span></span></p></td></tr><tr id="P010677.109" class="l"><td class="lnum "><a name="a.P010677.109" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.99" class=" "><span class="xlabel ">r i 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.109.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.109.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span></p></td></tr><tr id="P010677.110" class="l"><td class="lnum "><a name="a.P010677.110" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.100" class=" "><span class="xlabel ">r i 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.110.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.110.2" class="w sux  ">3(<span class="sign  ">AŠ<sup class=" ">a</sup></span>)+<span class="sign  ">ZAG</span></span> <span x="1" id="P010677.110.3" class="w sux  "><span x="3" class="sux ">dara₄</span></span></p></td></tr><tr id="P010677.111" class="l"><td class="lnum "><a name="a.P010677.111" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.101" class=" "><span class="xlabel ">r i 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.111.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.111.2" class="w sux  "><span x="3" class="sux ">saŋ</span></span></p></td></tr><tr id="P010677.112" class="l"><td class="lnum "><a name="a.P010677.112" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.102" class=" "><span class="xlabel ">r i 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.112.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.112.2" class="w sux  "><span x="3" class="sux ">dara₄</span></span> <span x="1" id="P010677.112.3" class="w sux  "><span x="3" class="sux ">saŋ</span></span></p></td></tr><tr id="P010677.113" class="l"><td class="lnum "><a name="a.P010677.113" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.103" class=" "><span class="xlabel ">r i 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.113.1" class="w sux  "><span x="3" class="sux ">am</span>-<span x="3" class="sux ">am</span></span></p></td></tr><tr id="P010677.114" class="l"><td class="lnum "><a name="a.P010677.114" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.104" class=" "><span class="xlabel ">r i 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.114.1" class="w sux  "><span x="3" class="sux ">am</span></span> <span x="1" id="P010677.114.2" class="w sux  "><span class="sign  ">LAK050</span></span></p></td></tr><tr id="P010677.115" class="l"><td class="lnum "><a name="a.P010677.115" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.105" class=" "><span class="xlabel ">r i 9</span><span class="lnum ">9</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.115.1" class="w sux  "><span x="3" class="sux ">šilamₓ</span>(<span class="compound "><span class="sign  ">NUN</span>.<span class="sign  ">LAGAR</span></span>)</span></p></td></tr><tr id="P010677.116" class="l"><td class="lnum "><a name="a.P010677.116" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.106" class=" "><span class="xlabel ">r i 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.116.1" class="w sux  "><span x="3" class="sux ">šilamₓ</span>(<span class="compound "><span class="sign  ">NUN</span>.<span class="sign  ">LAGAR</span></span>)</span> <span x="1" id="P010677.116.2" class="w sux  "><span x="3" class="sux ">gal</span></span></p></td></tr><tr id="P010677.117" class="l"><td class="lnum "><a name="a.P010677.117" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.107" class=" "><span class="xlabel ">r i 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.117.1" class="w sux  "><span x="3" class="sux ">immal</span>(<span class="compound "><span class="sign  ">DIŠ</span>+<span class="sign  ">NUN</span>.<span class="sign  ">LAGAR</span></span>)</span></p></td></tr><tr id="P010677.118" class="l"><td class="lnum "><a name="a.P010677.118" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.108" class=" "><span class="xlabel ">r i 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.118.1" class="w sux  "><span x="3" class="sux ">immal</span>(<span class="compound "><span class="sign  ">DIŠ</span>+<span class="sign  ">NUN</span>.<span class="sign  ">LAGAR</span></span>)</span> <span x="1" id="P010677.118.2" class="w sux  "><span x="3" class="sux ">gal</span></span></p></td></tr><tr id="P010677.119" class="l"><td class="lnum "><a name="a.P010677.119" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.109" class=" "><span class="xlabel ">r i 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.119.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.119.2" class="w sux  "><span x="3" class="sux ">munzerₓ</span>(<span class="compound "><span class="sign  ">ŠEŠ</span>.<span class="sign  ">KI</span>.<span class="sign  ">DIM</span>×<span class="sign  ">ŠE</span></span>)</span></p></td></tr><tr id="P010677.r.ii.120" class="h column"><td colspan="1" class="(null)"><span class="h2 ">Column ii</span></td></tr><tr id="P010677.121" class="l"><td class="lnum "><a name="a.P010677.121" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.110" class=" "><span class="xlabel ">r ii 1</span><span class="lnum ">r ii 1</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.121.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.121.2" class="w sux  "><span x="3" class="sux ">si</span></span> <span x="1" id="P010677.121.3" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.122" class="l"><td class="lnum "><a name="a.P010677.122" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.111" class=" "><span class="xlabel ">r ii 2</span><span class="lnum ">2</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.122.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.122.2" class="w sux  "><span x="3" class="sux ">si</span></span> <span x="1" id="P010677.122.3" class="w sux  "><span x="3" class="sux ">su₄</span></span></p></td></tr><tr id="P010677.123" class="l"><td class="lnum "><a name="a.P010677.123" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.112" class=" "><span class="xlabel ">r ii 3</span><span class="lnum ">3</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.123.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.123.2" class="w sux  "><span class="sign  ">NAGAR</span></span></p></td></tr><tr id="P010677.124" class="l"><td class="lnum "><a name="a.P010677.124" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.113" class=" "><span class="xlabel ">r ii 4</span><span class="lnum ">4</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.124.1" class="w sux  "><span x="3" class="sux ">ab₂</span></span> <span x="1" id="P010677.124.2" class="w sux  "><sup class="sux ">d</sup><span x="3" class="sux ">karkara</span>(<span class="sign  ">NI₂</span>)</span></p></td></tr><tr id="P010677.125" class="l"><td class="lnum "><a name="a.P010677.125" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.114" class=" "><span class="xlabel ">r ii 5</span><span class="lnum ">5</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.125.1" class="w sux  "><span x="3" class="sux ">naŋa</span></span> <span x="1" id="P010677.125.2" class="w sux  "><span class="sign  ">LU</span>-<span class="sign  ">AB₂</span></span></p></td></tr><tr id="P010677.126" class="l"><td class="lnum "><a name="a.P010677.126" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.115" class=" "><span class="xlabel ">r ii 6</span><span class="lnum ">6</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.126.1" class="w sux  "><span x="3" class="sux ">u₈</span></span> <span x="1" id="P010677.126.2" class="w sux  "><span x="3" class="sux ">kukku₅</span></span></p></td></tr><tr id="P010677.127" class="l"><td class="lnum "><a name="a.P010677.127" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.116" class=" "><span class="xlabel ">r ii 7</span><span class="lnum ">7</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.127.1" class="w sux  "><span x="3" class="sux ">u₈</span></span> <span x="1" id="P010677.127.2" class="w sux  "><span x="3" class="sux ">babbar</span></span></p></td></tr><tr id="P010677.128" class="l"><td class="lnum "><a name="a.P010677.128" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.117" class=" "><span class="xlabel ">r ii 8</span><span class="lnum ">8</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.128.1" class="w sux  "><span class="sux ">⸢</span><span x="3" class="sux ">u₈</span></span> <span x="1" id="P010677.128.2" class="w sux  "><span class="sign  ">GAM</span><sup class="sux ">?</sup><span class="sux ">⸣</span>-<span class="sign  ">GAM</span></span></p></td></tr><tr id="P010677.129" class="nonl"><td class="nonlnum "></td><td colspan="1" class="nonlbody"><span class="noncl "> (1 line missing)</span></td></tr><tr id="P010677.130" class="l"><td class="lnum "><a name="a.P010677.130" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.119" class=" "><span class="xlabel ">r ii 10</span><span class="lnum ">10</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.130.1" class="w sux  "><span class="sux ">⸢</span><span x="3" class="sux ">uz₃</span><span class="sux ">⸣</span></span> <span x="1" id="P010677.130.2" class="w sux  "><span x="3" class="sux ">gi</span></span></p></td></tr><tr id="P010677.131" class="l"><td class="lnum "><a name="a.P010677.131" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.120" class=" "><span class="xlabel ">r ii 11</span><span class="lnum ">11</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.131.1" class="w sux  "><span x="3" class="sux ">u₈</span></span> <span x="1" id="P010677.131.2" class="w sux  "><span class="sign  ">NE</span>-<span class="sign  ">NU</span></span></p></td></tr><tr id="P010677.132" class="l"><td class="lnum "><a name="a.P010677.132" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.121" class=" "><span class="xlabel ">r ii 12</span><span class="lnum ">12</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.132.1" class="w sux  "><span x="3" class="sux ">šilamₓ</span>(<span class="compound "><span class="sign  ">NUN</span>.<span class="sign  ">LAGAR</span></span>)</span></p></td></tr><tr id="P010677.133" class="l"><td class="lnum "><a name="a.P010677.133" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.122" class=" "><span class="xlabel ">r ii 13</span><span class="lnum ">13</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.133.1" class="w sux  "><span x="3" class="sux ">šilam</span></span> <span x="1" id="P010677.133.2" class="w sux  "><span x="3" class="sux ">kar</span></span></p></td></tr><tr id="P010677.134" class="l"><td class="lnum "><a name="a.P010677.134" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.123" class=" "><span class="xlabel ">r ii 14</span><span class="lnum ">14</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.134.1" class="w sux  "><span x="3" class="sux ">immal</span>(<span class="compound "><span class="sign  ">DIŠ</span>+<span class="sign  ">NUN</span>.<span class="sign  ">LAGAR</span></span>)</span></p></td></tr><tr id="P010677.135" class="l"><td class="lnum "><a name="a.P010677.135" href="javascript://" onclick="act_block(event)" data-bloc="sb.Q000012.124" class=" "><span class="xlabel ">r ii 15</span><span class="lnum ">15</span></a></td><td class="tlit"><p class="tt"><span x="1" id="P010677.135.1" class="w sux  "><span x="3" class="sux ">immal</span>(<span class="compound "><span class="sign  ">DIŠ</span>+<span class="sign  ">NUN</span>.<span class="sign  ">LAGAR</span></span>)</span> <span x="1" id="P010677.135.2" class="w sux  "><span x="3" class="sux ">kar</span></span></p></td></tr></table><div class="p3notes"><p class="(null)"></p></div><hr class="credits"></hr><p class="(null)"></p></div></div>
+  
+  
+</div>
+
+    </div>
+  </div>
+  <div id="p4Footer">
+    
+
+  </div>
+  <div id="p4Debug">
+  <h1>Debugging Information</h1>
+
+  <h2>Invocation</h2>
+  
+  <p>The pager was invoked as:</p>
+  
+  <pre id="p4Invoked">/home/oracc/bin/px web=1 proj=dcclt pxid=P010677%2E6</pre>
+
+  <h2>Pager Status</h2>
+  
+  <p>The pager reported status as:</p>
+
+  <pre id="p4Status"><h2>Internal Data Structure State (Isp *ip)</h2>
+	oracc=/home/oracc
+	from=list
+	data=dcat
+	show=rcat
+	project=dcclt
+	projdir=/home/oracc/dcclt
+	list_name=outlined.lst
+	op_nlevels=0
+	dors=1
+	perm=12
+	zoom=45
+	page=30
+	psiz=25
+	srch=(null)
+	glos=(null)
+	item=P010677.6
+	item_replace=(null)
+	bkmk=(null)
+	ceid=xmd
+	cemd=ccat
+	lang=en
+	xhmd=html
+	part=(null)
+	form=(null)
+	what=pager
+	wrap=(null)
+	uimd=(null)
+	pack=asis
+	host=(null)
+	aapi=rest
+	host_path=(null)
+	sig=(null)
+	tmp_dir=(null)
+	err=(null)
+	errx=(null)
+	pui=p4html.xml
+	nowhat=0
+	force=0
+	olev=0
+	debug=0
+	hdr_done=1
+	noheader=0
+	pub_output=0
+	verbose=0
+	web=1
+	zlev=2
+	argc=4
+	ood=0
+	referer=(null)
+	tmpdir=(null)
+<h3>	struct isp_cache ip->cache</h3>
+		sys=/home/oracc/www/p4.d
+		project=/home/oracc/www/p4.d/dcclt
+		sub=/home/oracc/dcclt/02pub/p4.d/outlined.lst
+		out=/home/oracc/www/p4.d/dcclt/outlined.lst/12
+		list=/home/oracc/dcclt/02pub/p4.d/outlined.lst/list
+		sort=/home/oracc/dcclt/02pub/p4.d/outlined.lst/12
+		csi=(null)
+		tsv=/home/oracc/dcclt/02pub/p4.d/outlined.lst/12/pag.tsv
+		max=/home/oracc/dcclt/02pub/p4.d/outlined.lst/12/max.tsv
+		mol=/home/oracc/dcclt/02pub/p4.d/outlined.lst/12/zoom.mol
+		pkey=(null)
+		pgin=(null)
+		page=/home/oracc/www/p4.d/dcclt/outlined.lst/12/12-z45-p30.div
+		zout=/home/oracc/www/p4.d/dcclt/outlined.lst/12/12-z45.otl
+		item=/home/oracc/www/p4.d/htm/dcclt/P010/P010677
+		prox=/home/oracc/www/p4.d/htm/dcclt/P010/P010677
+		meta=/home/oracc/www/p4.d/htm/dcclt/P010/P010677/meta.xml
+		html=(null)
+		ltab=(null)
+		hilite=(null)
+		pub=/home/oracc/dcclt/02pub/p4.d
+		use=/home/oracc/dcclt/02pub/p4.d
+		txtindex=/home/oracc/dcclt/02pub/p4.d/txtindex.lst/123
+		t_sort=(null)
+		t_tsv=(null)
+		t_max=(null)
+		t_mol=(null)
+<h3>	struct isp_config ip->default_cfg</h3>
+		leftmenu=1
+		select=1
+		sort_fields=period,subgenre,provenience
+		sort_labels=Time,Genre,Place
+		head_template=1 2 3
+		cat_fields=designation,primary_publication,museum_no|excavation_no|accession_no,subgenre,subgenre_remarks,text_remarks
+		cat_links=(null)
+		cat_widths=10,15,20,20,7,25
+<h3>	struct isp_config ip->special_cfg</h3>
+		leftmenu=1
+		select=1
+		sort_fields=period,subgenre
+		sort_labels=period,subgenre
+		head_template=1 2 3
+		cat_fields=designation,subgenre,keywords
+		cat_links=(null)
+		cat_widths=30,25,41
+<h3>	struct isp_glosdata ip->glosdata</h3>
+		dir=(null)
+		web=(null)
+		let=(null)
+		lmax=(null)
+		ent=(null)
+		xis=(null)
+		ltab=(null)
+		lbase=(null)
+		lpath=(null)
+		ecpath=(null)
+		emax=(null)
+		ipath=(null)
+<h3>	struct isp_itemdata ip->itemdata</h3>
+		langs=
+		nlangs=0
+		xtflang=en
+		lmem=(null)
+		item=P010677
+		fullitem=(null)
+		block=(null)
+		file=(null)
+		proj=dcclt
+		htmd=/home/oracc/www/p4.d/htm
+		html=/home/oracc/www/p4.d/htm/dcclt/P010/P010677/P010677.html
+		cfy=(null)
+		img=(null)
+		dotted=P010677.6
+		index=730
+		page=30
+		pindex=5
+		zoom=45
+		zpag=1
+		zindex=1
+		prev=P427608
+		next=P010088
+		tmax=(null)
+		xmdxsl=/home/oracc/lib/scripts/p4-xmd-div.xsl
+		bld=/home/oracc/www/p4.d/htm/dcclt/P010/P010677/P010677.html
+		hili=P010677.6
+		type=(null)
+		not=0
+		oic=0
+<h3>	struct isp_list_loc ip->lloc</h3>
+		type=www
+		lang=(null)
+		method=file
+		key=(null)
+		dbpath=(null)
+		dbname=(null)
+		path=/home/oracc/bld/dcclt/lists/outlined.lst
+<h3>	struct isp_srchdata ip->srchdata</h3>
+		tmp=(null)
+		bar=(null)
+		count=0
+		gran=(null)
+		list=(null)
+		new=0
+		adhoc=0
+	zmax=1
+</pre>
+
+  <h2>Environment</h2>
+
+  <p>HTTP environment variables:</p>
+
+  <pre id="p4Environment">CONTEXT_DOCUMENT_ROOT=/home/oracc/www
+CONTEXT_PREFIX=
+DOCUMENT_ROOT=/home/oracc/www
+GATEWAY_INTERFACE=CGI/1.1
+HTTPS=on
+HTTP_ACCEPT=application/json, text/plain, */*
+HTTP_ACCEPT_ENCODING=gzip
+HTTP_ACCEPT_LANGUAGE=en-US,en;q=0.9
+HTTP_CONNECTION=keep-alive
+HTTP_HOST=build-oracc.museum.upenn.edu
+HTTP_ORIGIN=http://localhost:4200
+HTTP_REFERER=http://localhost:4200/
+HTTP_SEC_CH_UA="Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"
+HTTP_SEC_CH_UA_MOBILE=?0
+HTTP_SEC_CH_UA_PLATFORM="Linux"
+HTTP_SEC_FETCH_DEST=empty
+HTTP_SEC_FETCH_MODE=cors
+HTTP_SEC_FETCH_SITE=cross-site
+HTTP_USER_AGENT=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.0.0 Safari/537.36
+ORACC=/home/oracc
+ORACC_BUILDS=/home/oracc
+ORACC_HOME=/home/oracc
+ORACC_HOST=build-oracc.museum.upenn.edu
+ORACC_MODE=multi
+ORACC_USER=yes
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+PATH_INFO=/dcclt/P010677.6
+PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/dcclt/P010677.6
+QUERY_STRING=
+REMOTE_ADDR=82.1.249.33
+REMOTE_PORT=56024
+REQUEST_METHOD=GET
+REQUEST_SCHEME=https
+REQUEST_URI=/dcclt/P010677.6
+SCRIPT_FILENAME=/home/oracc/www/cgi-bin/wx
+SCRIPT_NAME=
+SCRIPT_URI=https://build-oracc.museum.upenn.edu/dcclt/P010677.6
+SCRIPT_URL=/dcclt/P010677.6
+SERVER_ADDR=130.91.81.219
+SERVER_ADMIN=stinney@upenn.edu
+SERVER_NAME=build-oracc.museum.upenn.edu
+SERVER_PORT=443
+SERVER_PROTOCOL=HTTP/1.1
+SERVER_SIGNATURE=<address>Apache/2.4.52 (Ubuntu) Server at build-oracc.museum.upenn.edu Port 443</address>
+
+SERVER_SOFTWARE=Apache/2.4.52 (Ubuntu)
+SSL_TLS_SNI=build-oracc.museum.upenn.edu
+</pre>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+[
+  {
+    "gw": "Sidon",
+    "headword": "Ṣidunu[Sidon]SN",
+    "cf": "Ṣidunu",
+    "icount": 10,
+    "id": "x000012260",
+    "senses_mng": [
+      "Sidon"
+    ],
+    "forms_n": [
+      "{URU}ṣi-du-ni",
+      "{URU}ṣi-du-nu",
+      "{KUR}ṣi-du-un-ni",
+      "{URU}ṣi-du-un-ni",
+      "{URU}ṣi-du-un-nu",
+      "{URU}ṣi-dun-ni",
+      "{URU}ṣi-dun-nu"
+    ],
+    "norms_n": [
+      "Ṣidunni",
+      "Ṣidunnu",
+      "Ṣidunu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003478.32.10",
+      "rinap/rinap3:Q003478.33.1",
+      "rinap/rinap3:Q003500.11.4",
+      "rinap/rinap4:Q003230.157.3",
+      "rinap/rinap4:Q003230.160.1",
+      "rinap/rinap4:Q003230.182.4",
+      "rinap/rinap4:Q003235.36.1",
+      "rinap/rinap4:Q003269.6.4",
+      "rinap/rinap4:Q003289.4.5",
+      "rinap/rinap4:Q003299.2.17"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Ṣidunu",
+      "Sidon"
+    ],
+    "sort": "['Sidon']",
+    "instances_count": 10
+  },
+  {
+    "gw": "king of Sidon",
+    "headword": "Abdi-milkuti[king of Sidon]RN",
+    "cf": "Abdi-milkuti",
+    "icount": 7,
+    "id": "x000028770",
+    "senses_mng": [
+      "king of Sidon"
+    ],
+    "forms_n": [
+      "{m}ab-di-mi-il-ku-ti",
+      "{m}ab-di-mi-il-ku-ut-ti",
+      "{m}ab-di-mi₃-il-ku-ut-ti",
+      "{m}ab-di-mil-ku-ti",
+      "{m}ab-di-mil-ku-u-te",
+      "{m}ab-di-mil-ku-ut-ti",
+      "{m}ab-di-mil-ku-ut-tim"
+    ],
+    "norms_n": [
+      "Abdi-milkute",
+      "Abdi-milkuti",
+      "Abdi-milkutti",
+      "Abdi-milkuttim"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap4:Q003230.157.1",
+      "rinap/rinap4:Q003231.21.1",
+      "rinap/rinap4:Q003231.46.2",
+      "rinap/rinap4:Q003232.36.2",
+      "rinap/rinap4:Q003232.42.4",
+      "rinap/rinap4:Q003235.39.1",
+      "rinap/rinap4:Q003260.31.2"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Abdi-milkuti",
+      "king of Sidon"
+    ],
+    "sort": "['king of Sidon']",
+    "instances_count": 7
+  },
+  {
+    "gw": "Lesser Sidon",
+    "headword": "Ṣidunu ṣehru[Lesser Sidon]SN",
+    "cf": "Ṣidunu ṣehru",
+    "icount": 2,
+    "id": "x000050670",
+    "senses_mng": [
+      "Lesser Sidon"
+    ],
+    "forms_n": [
+      "{URU}ṣi-du-un-nu ṣe-eh-ru",
+      "{URU}ṣi-du-un-nu TUR"
+    ],
+    "norms_n": [
+      "ṣehru"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003478.33.3+Q003478.33.4",
+      "rinap/rinap3:Q003496.128.3+Q003496.128.4"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Ṣidunu ṣehru",
+      "Lesser Sidon"
+    ],
+    "sort": "['Lesser Sidon']",
+    "instances_count": 2
+  },
+  {
+    "gw": "of Sidon",
+    "headword": "Ṣidunayu[of Sidon]EN",
+    "cf": "Ṣidunayu",
+    "icount": 2,
+    "id": "x000021330",
+    "senses_mng": [
+      "of Sidon"
+    ],
+    "forms_n": [
+      "{URU}ṣi-du-un-na-a-a"
+    ],
+    "norms_n": [
+      "Ṣidunaya",
+      "Ṣidunnaya"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003478.36.5",
+      "rinap/rinap3:Q003494.8.1"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Ṣidunayu",
+      "of Sidon"
+    ],
+    "sort": "['of Sidon']",
+    "instances_count": 2
+  },
+  {
+    "gw": "Greater Sidon",
+    "headword": "Ṣidunu rabu[Greater Sidon]SN",
+    "cf": "Ṣidunu rabu",
+    "icount": 1,
+    "id": "x000050660",
+    "senses_mng": [
+      "Greater Sidon"
+    ],
+    "forms_n": [
+      "{URU}ṣi-du-un-nu GAL-u₂"
+    ],
+    "norms_n": [
+      "rabû"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003478.33.1+Q003478.33.2"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Ṣidunu rabu",
+      "Greater Sidon"
+    ],
+    "sort": "['Greater Sidon']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Sidon",
+    "headword": "Luli[king of Sidon]RN",
+    "cf": "Luli",
+    "icount": 1,
+    "id": "x000032370",
+    "senses_mng": [
+      "king of Sidon"
+    ],
+    "forms_n": [
+      "{m}lu-li-i"
+    ],
+    "norms_n": [
+      "Luli"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003478.32.8"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Luli",
+      "king of Sidon"
+    ],
+    "sort": "['king of Sidon']",
+    "instances_count": 1
+  }
+]
