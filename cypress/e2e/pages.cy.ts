@@ -81,6 +81,8 @@ describe('Pages', () => {
       cy.get(translat_1).should('be.visible').parent().should('have.class', 'selected');
       // Now scroll the transliterations
       cy.get("#central-panel").first().scrollTo(0, 1200).wait(0).trigger("scrollend");
+      // Unfortunately cy.get interrupts scrolls, so we must wait for all the scrolls to happen
+      cy.wait(2200);
       // and check that the translations scroll into view and match
       cy.get("#central-panel tr.selected").should('have.length', 1).should('be.visible').then($e => {  
         cy.get("#right-panel tr.selected td").should(
