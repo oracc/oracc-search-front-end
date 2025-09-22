@@ -449,12 +449,18 @@ export class DetailsTextsComponent extends ThreePanel {
     const selected = findAncestorByTag(element, "tr");
     const panel = document.getElementById("central-panel");
     const trs = panel.querySelectorAll<HTMLElement>("tr");
-    this.selectTlitAndAssociatedTlat(trs, selected);
+    const tr = this.selectTlitAndAssociatedTlat(trs, selected);
     this.scrollPanelToHeight(
       "central-panel",
       selected,
       selected.offsetTop + selected.offsetHeight - selected.offsetTop,
     );
+    if (tr) {
+      selected.scrollIntoView({
+        block: "center",
+        behavior: "smooth",
+      });
+    }
   }
 
   override changeText(item: string) {
