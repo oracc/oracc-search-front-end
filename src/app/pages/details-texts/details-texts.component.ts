@@ -294,17 +294,22 @@ export class DetailsTextsComponent extends ThreePanel {
     const targetPanel = document.getElementById(scrollPanelId);
     const panelOffset = this.totalOffset(elementToView, targetPanel);
     const bottom = elementToView.offsetTop + height;
+    const mid = elementToView.offsetTop + height / 2;
     const panelTop = targetPanel.scrollTop - panelOffset;
     const panelHeight = targetPanel.offsetHeight;
     const panelBottom = panelTop + panelHeight;
     if (elementToView.offsetTop < panelTop && bottom < panelBottom) {
+      // scroll up
       targetPanel.scrollTo({
-        top: elementToView.offsetTop + panelOffset,
+        // top: elementToView.offsetTop + panelOffset,  // match top of element to top of panel
+        top: mid - panelHeight / 2 + panelOffset, // match middle of element to middle of panel
         behavior: "smooth",
       });
     } else if (panelTop < elementToView.offsetTop && panelBottom < bottom) {
+      // scroll down
       targetPanel.scrollTo({
-        top: bottom - panelHeight + panelOffset,
+        //top: bottom - panelHeight + panelOffset,  // match bottom of element to bottom of panel
+        top: mid - panelHeight / 2 + panelOffset, // match middle of element to middle of panel
         behavior: "smooth",
       });
     }
@@ -432,6 +437,7 @@ export class DetailsTextsComponent extends ThreePanel {
   private findPreviousLinked(element: Element) {
     const allSibs = element.parentElement.children;
     let lastSeen = null;
+    let elementFound = false;
     const count = allSibs.length;
     for (let index = 0; index !== count; ++index) {
       const sib = allSibs.item(index);
@@ -439,6 +445,9 @@ export class DetailsTextsComponent extends ThreePanel {
         lastSeen = sib;
       }
       if (sib === element) {
+        elementFound = true;
+      }
+      if (elementFound && lastSeen !== null) {
         return lastSeen;
       }
     }
