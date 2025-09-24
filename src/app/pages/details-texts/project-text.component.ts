@@ -60,7 +60,7 @@ export class ProjectTextComponent extends ThreePanel {
     );
   }
 
-  public handleDetailsClick(e) {
+  override handleDetailsClick(e) {
     e.preventDefault();
     const anchorEl = findAncestorByTag(e.target, 'a');
     if (!anchorEl) {

@@ -94,6 +94,7 @@
           class="details__panel-main js-panel-central ls"
           [innerHTML]="middlePanel"
           (click)="handleDetailsClick($event)"
+          (scrollend)="handleDetailsScroll($event)"
         ></div>
       </div>
 
@@ -111,10 +112,12 @@
           ></span>
         </div>
         <div
+          id="right-panel"
           class="details__panel-main details__panel-main--right js-panel-right"
           [ngClass]="{ hidden_if_narrow: !isTextPanelActive }"
           [innerHTML]="textPanel"
           (click)="handleTextClick($event)"
+          (scrollend)="handleTextScroll($event)"
         ></div>
       </div>
     </div>

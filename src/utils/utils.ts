@@ -92,7 +92,11 @@ function splitOutColumnByClass(node: Node, extractClass: string) : Node {
   }
   // Not a TD, so must be in both. Shallow clone it for the
   // translations node and fill it with splits of all the child nodes.
-  let extracted = node.cloneNode(false);
+  let extracted = node.cloneNode(false) as HTMLElement;
+  if (extracted.tagName === "TR") {
+    extracted.removeAttribute("id");
+    extracted.removeAttribute("data-tlat-ref");
+  }
   node.childNodes.forEach(child => {
     let extr = splitOutColumnByClass(child, extractClass);
     if (extr) {

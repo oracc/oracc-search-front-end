@@ -159,6 +159,37 @@
   },
   {
     "gw": "harness",
+    "headword": "ur[harness]N",
+    "cf": "ur",
+    "icount": 2,
+    "id": "o0041669",
+    "senses_mng": [
+      "harness"
+    ],
+    "forms_n": [
+      "ur₃"
+    ],
+    "norms_n": [
+      "ur"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000012.1.2",
+      "edlex:Q000038.57.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "ur",
+      "harness"
+    ],
+    "sort": "['harness']",
+    "instances_count": 2
+  },
+  {
+    "gw": "harness",
     "headword": "ibbaru[harness]N",
     "cf": "ibbaru",
     "icount": 2,
@@ -186,37 +217,6 @@
     "lang": "sux",
     "completions": [
       "ibbaru",
-      "harness"
-    ],
-    "sort": "['harness']",
-    "instances_count": 2
-  },
-  {
-    "gw": "harness",
-    "headword": "ur[harness]N",
-    "cf": "ur",
-    "icount": 2,
-    "id": "o0041669",
-    "senses_mng": [
-      "harness"
-    ],
-    "forms_n": [
-      "ur₃"
-    ],
-    "norms_n": [
-      "ur"
-    ],
-    "periods_p": [
-      "Early Dynastic"
-    ],
-    "instances": [
-      "edlex:Q000012.1.2",
-      "edlex:Q000038.57.1"
-    ],
-    "project": "neo",
-    "lang": "sux",
-    "completions": [
-      "ur",
       "harness"
     ],
     "sort": "['harness']",

@@ -2642,40 +2642,6 @@
   },
   {
     "gw": "king of Gaza",
-    "headword": "Hanunu[king of Gaza]RN",
-    "cf": "Hanunu",
-    "icount": 3,
-    "id": "x000030430",
-    "senses_mng": [
-      "king of Gaza"
-    ],
-    "forms_n": [
-      "{m}ha-a-nu-nu",
-      "{m}ha-a-nu-u₂-nu",
-      "{m}ha-nu-nu"
-    ],
-    "norms_n": [
-      "Hanunu"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap1:Q003455.9.7",
-      "rinap/rinap2:Q006482.31.1",
-      "rinap/rinap2:Q006488.25.2"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Hanunu",
-      "king of Gaza"
-    ],
-    "sort": "['king of Gaza']",
-    "instances_count": 3
-  },
-  {
-    "gw": "king of Gaza",
     "headword": "Ṣilli-Bel[king of Gaza]RN",
     "cf": "Ṣilli-Bel",
     "icount": 3,
@@ -2703,6 +2669,40 @@
     "lang": "qpn",
     "completions": [
       "Ṣilli-Bel",
+      "king of Gaza"
+    ],
+    "sort": "['king of Gaza']",
+    "instances_count": 3
+  },
+  {
+    "gw": "king of Gaza",
+    "headword": "Hanunu[king of Gaza]RN",
+    "cf": "Hanunu",
+    "icount": 3,
+    "id": "x000030430",
+    "senses_mng": [
+      "king of Gaza"
+    ],
+    "forms_n": [
+      "{m}ha-a-nu-nu",
+      "{m}ha-a-nu-u₂-nu",
+      "{m}ha-nu-nu"
+    ],
+    "norms_n": [
+      "Hanunu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap1:Q003455.9.7",
+      "rinap/rinap2:Q006482.31.1",
+      "rinap/rinap2:Q006488.25.2"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Hanunu",
       "king of Gaza"
     ],
     "sort": "['king of Gaza']",
@@ -3381,6 +3381,39 @@
   },
   {
     "gw": "king of Ashdod",
+    "headword": "Iamani[king of Ashdod]RN",
+    "cf": "Iamani",
+    "icount": 2,
+    "id": "x000031090",
+    "senses_mng": [
+      "king of Ashdod"
+    ],
+    "forms_n": [
+      "{m}ia-ad-na",
+      "{m}ia-ma-ni"
+    ],
+    "norms_n": [
+      "Iadna",
+      "Iamani"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006482.217.2",
+      "rinap/rinap2:Q006488.95.6"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Iamani",
+      "king of Ashdod"
+    ],
+    "sort": "['king of Ashdod']",
+    "instances_count": 2
+  },
+  {
+    "gw": "king of Ashdod",
     "headword": "Ahi-Milki[king of Ashdod]RN",
     "cf": "Ahi-Milki",
     "icount": 2,
@@ -3438,39 +3471,6 @@
     "lang": "qpn",
     "completions": [
       "Ahi-Miti",
-      "king of Ashdod"
-    ],
-    "sort": "['king of Ashdod']",
-    "instances_count": 2
-  },
-  {
-    "gw": "king of Ashdod",
-    "headword": "Iamani[king of Ashdod]RN",
-    "cf": "Iamani",
-    "icount": 2,
-    "id": "x000031090",
-    "senses_mng": [
-      "king of Ashdod"
-    ],
-    "forms_n": [
-      "{m}ia-ad-na",
-      "{m}ia-ma-ni"
-    ],
-    "norms_n": [
-      "Iadna",
-      "Iamani"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap2:Q006482.217.2",
-      "rinap/rinap2:Q006488.95.6"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Iamani",
       "king of Ashdod"
     ],
     "sort": "['king of Ashdod']",
@@ -3539,6 +3539,38 @@
       "king of Ashkelon"
     ],
     "sort": "['king of Ashkelon']",
+    "instances_count": 2
+  },
+  {
+    "gw": "king of Assyria",
+    "headword": "Šamši-Adad_V[king of Assyria]RN",
+    "cf": "Šamši-Adad_V",
+    "icount": 2,
+    "id": "x000038000",
+    "senses_mng": [
+      "king of Assyria"
+    ],
+    "forms_n": [
+      "{m}šam-ši-{d}IŠKUR",
+      "{m}{d}UTU-ši-{d}IŠKUR"
+    ],
+    "norms_n": [
+      "Šamši-Adad"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006573.5.3",
+      "rinap/rinap5:Q003706.1103.4"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Šamši-Adad_V",
+      "king of Assyria"
+    ],
+    "sort": "['king of Assyria']",
     "instances_count": 2
   },
   {
@@ -3631,38 +3663,6 @@
     "lang": "qpn",
     "completions": [
       "Aššur-reša-iši_I",
-      "king of Assyria"
-    ],
-    "sort": "['king of Assyria']",
-    "instances_count": 2
-  },
-  {
-    "gw": "king of Assyria",
-    "headword": "Šamši-Adad_V[king of Assyria]RN",
-    "cf": "Šamši-Adad_V",
-    "icount": 2,
-    "id": "x000038000",
-    "senses_mng": [
-      "king of Assyria"
-    ],
-    "forms_n": [
-      "{m}šam-ši-{d}IŠKUR",
-      "{m}{d}UTU-ši-{d}IŠKUR"
-    ],
-    "norms_n": [
-      "Šamši-Adad"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap2:Q006573.5.3",
-      "rinap/rinap5:Q003706.1103.4"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Šamši-Adad_V",
       "king of Assyria"
     ],
     "sort": "['king of Assyria']",
@@ -3827,37 +3827,6 @@
   },
   {
     "gw": "king of Ekron",
-    "headword": "Ikausu[king of Ekron]RN",
-    "cf": "Ikausu",
-    "icount": 2,
-    "id": "x000030930",
-    "senses_mng": [
-      "king of Ekron"
-    ],
-    "forms_n": [
-      "{m}i-ka-u₂-su"
-    ],
-    "norms_n": [
-      "Ikausu"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap4:Q003230.418.1",
-      "rinap/rinap5:Q003705.146.1"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Ikausu",
-      "king of Ekron"
-    ],
-    "sort": "['king of Ekron']",
-    "instances_count": 2
-  },
-  {
-    "gw": "king of Ekron",
     "headword": "Padi[king of Ekron]RN",
     "cf": "Padi",
     "icount": 2,
@@ -3884,6 +3853,37 @@
     "lang": "qpn",
     "completions": [
       "Padi",
+      "king of Ekron"
+    ],
+    "sort": "['king of Ekron']",
+    "instances_count": 2
+  },
+  {
+    "gw": "king of Ekron",
+    "headword": "Ikausu[king of Ekron]RN",
+    "cf": "Ikausu",
+    "icount": 2,
+    "id": "x000030930",
+    "senses_mng": [
+      "king of Ekron"
+    ],
+    "forms_n": [
+      "{m}i-ka-u₂-su"
+    ],
+    "norms_n": [
+      "Ikausu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap4:Q003230.418.1",
+      "rinap/rinap5:Q003705.146.1"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Ikausu",
       "king of Ekron"
     ],
     "sort": "['king of Ekron']",
@@ -5203,36 +5203,6 @@
   },
   {
     "gw": "king of Arwad",
-    "headword": "Abdi-Liʾti[king of Arwad]RN",
-    "cf": "Abdi-Liʾti",
-    "icount": 1,
-    "id": "x000028760",
-    "senses_mng": [
-      "king of Arwad"
-    ],
-    "forms_n": [
-      "{m}ab-di-li-iʾ-ti"
-    ],
-    "norms_n": [
-      "Abdi-Liʾti"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap3:Q003478.36.6"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Abdi-Liʾti",
-      "king of Arwad"
-    ],
-    "sort": "['king of Arwad']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Arwad",
     "headword": "Mattan-Baʾal[king of Arwad]RN",
     "cf": "Mattan-Baʾal",
     "icount": 1,
@@ -5256,6 +5226,36 @@
     "lang": "qpn",
     "completions": [
       "Mattan-Baʾal",
+      "king of Arwad"
+    ],
+    "sort": "['king of Arwad']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Arwad",
+    "headword": "Abdi-Liʾti[king of Arwad]RN",
+    "cf": "Abdi-Liʾti",
+    "icount": 1,
+    "id": "x000028760",
+    "senses_mng": [
+      "king of Arwad"
+    ],
+    "forms_n": [
+      "{m}ab-di-li-iʾ-ti"
+    ],
+    "norms_n": [
+      "Abdi-Liʾti"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003478.36.6"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Abdi-Liʾti",
       "king of Arwad"
     ],
     "sort": "['king of Arwad']",
@@ -5293,36 +5293,6 @@
   },
   {
     "gw": "king of Ashdod",
-    "headword": "Azuri[king of Ashdod]RN",
-    "cf": "Azuri",
-    "icount": 1,
-    "id": "x000028730",
-    "senses_mng": [
-      "king of Ashdod"
-    ],
-    "forms_n": [
-      "{m}a-zu-ri"
-    ],
-    "norms_n": [
-      "Azuri"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap2:Q006482.212.2"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Azuri",
-      "king of Ashdod"
-    ],
-    "sort": "['king of Ashdod']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Ashdod",
     "headword": "Mitinti[king of Ashdod]RN",
     "cf": "Mitinti",
     "icount": 1,
@@ -5346,6 +5316,36 @@
     "lang": "qpn",
     "completions": [
       "Mitinti",
+      "king of Ashdod"
+    ],
+    "sort": "['king of Ashdod']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Ashdod",
+    "headword": "Azuri[king of Ashdod]RN",
+    "cf": "Azuri",
+    "icount": 1,
+    "id": "x000028730",
+    "senses_mng": [
+      "king of Ashdod"
+    ],
+    "forms_n": [
+      "{m}a-zu-ri"
+    ],
+    "norms_n": [
+      "Azuri"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006482.212.2"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Azuri",
       "king of Ashdod"
     ],
     "sort": "['king of Ashdod']",
@@ -5379,6 +5379,66 @@
       "king of Ashkelon"
     ],
     "sort": "['king of Ashkelon']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Assyria",
+    "headword": "Mutakkil-Nusku[king of Assyria]RN",
+    "cf": "Mutakkil-Nusku",
+    "icount": 1,
+    "id": "x000032950",
+    "senses_mng": [
+      "king of Assyria"
+    ],
+    "forms_n": [
+      "{m}mu-tak-kil-{d}nusku"
+    ],
+    "norms_n": [
+      "Mutakkil-Nusku"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap5:Q003871.23.4"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Mutakkil-Nusku",
+      "king of Assyria"
+    ],
+    "sort": "['king of Assyria']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Assyria",
+    "headword": "Ilu-šuma[king of Assyria]RN",
+    "cf": "Ilu-šuma",
+    "icount": 1,
+    "id": "x000026820",
+    "senses_mng": [
+      "king of Assyria"
+    ],
+    "forms_n": [
+      "{m}DINGIR-šum-ma"
+    ],
+    "norms_n": [
+      "Ilu-šumma"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap4:Q003286.98.3"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Ilu-šuma",
+      "king of Assyria"
+    ],
+    "sort": "['king of Assyria']",
     "instances_count": 1
   },
   {
@@ -5436,66 +5496,6 @@
     "lang": "qpn",
     "completions": [
       "Aššur-x",
-      "king of Assyria"
-    ],
-    "sort": "['king of Assyria']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Assyria",
-    "headword": "Ilu-šuma[king of Assyria]RN",
-    "cf": "Ilu-šuma",
-    "icount": 1,
-    "id": "x000026820",
-    "senses_mng": [
-      "king of Assyria"
-    ],
-    "forms_n": [
-      "{m}DINGIR-šum-ma"
-    ],
-    "norms_n": [
-      "Ilu-šumma"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap4:Q003286.98.3"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Ilu-šuma",
-      "king of Assyria"
-    ],
-    "sort": "['king of Assyria']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Assyria",
-    "headword": "Mutakkil-Nusku[king of Assyria]RN",
-    "cf": "Mutakkil-Nusku",
-    "icount": 1,
-    "id": "x000032950",
-    "senses_mng": [
-      "king of Assyria"
-    ],
-    "forms_n": [
-      "{m}mu-tak-kil-{d}nusku"
-    ],
-    "norms_n": [
-      "Mutakkil-Nusku"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap5:Q003871.23.4"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Mutakkil-Nusku",
       "king of Assyria"
     ],
     "sort": "['king of Assyria']",
@@ -5593,66 +5593,6 @@
   },
   {
     "gw": "king of Babylon",
-    "headword": "Bel-ibni[king of Babylon]RN",
-    "cf": "Bel-ibni",
-    "icount": 1,
-    "id": "x000027010",
-    "senses_mng": [
-      "king of Babylon"
-    ],
-    "forms_n": [
-      "{m}EN-DU₃"
-    ],
-    "norms_n": [
-      "Bel-ibni"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap3:Q003475.54.1"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Bel-ibni",
-      "king of Babylon"
-    ],
-    "sort": "['king of Babylon']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Babylon",
-    "headword": "Eriba-Marduk[king of Babylon]RN",
-    "cf": "Eriba-Marduk",
-    "icount": 1,
-    "id": "x000030300",
-    "senses_mng": [
-      "king of Babylon"
-    ],
-    "forms_n": [
-      "{m}eri-ba-mar-duk"
-    ],
-    "norms_n": [
-      "Eriba-Marduk"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap4:Q003365.13.1"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Eriba-Marduk",
-      "king of Babylon"
-    ],
-    "sort": "['king of Babylon']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Babylon",
     "headword": "Marduk-nadin-ahhe[king of Babylon]RN",
     "cf": "Marduk-nadin-ahhe",
     "icount": 1,
@@ -5742,6 +5682,66 @@
     "instances_count": 1
   },
   {
+    "gw": "king of Babylon",
+    "headword": "Eriba-Marduk[king of Babylon]RN",
+    "cf": "Eriba-Marduk",
+    "icount": 1,
+    "id": "x000030300",
+    "senses_mng": [
+      "king of Babylon"
+    ],
+    "forms_n": [
+      "{m}eri-ba-mar-duk"
+    ],
+    "norms_n": [
+      "Eriba-Marduk"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap4:Q003365.13.1"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Eriba-Marduk",
+      "king of Babylon"
+    ],
+    "sort": "['king of Babylon']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Babylon",
+    "headword": "Bel-ibni[king of Babylon]RN",
+    "cf": "Bel-ibni",
+    "icount": 1,
+    "id": "x000027010",
+    "senses_mng": [
+      "king of Babylon"
+    ],
+    "forms_n": [
+      "{m}EN-DU₃"
+    ],
+    "norms_n": [
+      "Bel-ibni"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003475.54.1"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Bel-ibni",
+      "king of Babylon"
+    ],
+    "sort": "['king of Babylon']",
+    "instances_count": 1
+  },
+  {
     "gw": "king of Bit-Ammon",
     "headword": "Ammi-nadbi[king of Bit-Ammon]RN",
     "cf": "Ammi-nadbi",
@@ -5803,36 +5803,6 @@
   },
   {
     "gw": "king of Edom",
-    "headword": "Aya-ramu[king of Edom]RN",
-    "cf": "Aya-ramu",
-    "icount": 1,
-    "id": "x000038070",
-    "senses_mng": [
-      "king of Edom"
-    ],
-    "forms_n": [
-      "{m}{d}a-a-ram-mu"
-    ],
-    "norms_n": [
-      "Aya-rammu"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap3:Q003478.37.7"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Aya-ramu",
-      "king of Edom"
-    ],
-    "sort": "['king of Edom']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Edom",
     "headword": "Qaʾuš-malaka[king of Edom]RN",
     "cf": "Qaʾuš-malaka",
     "icount": 1,
@@ -5862,33 +5832,33 @@
     "instances_count": 1
   },
   {
-    "gw": "king of Elam",
-    "headword": "Indabibi[king of Elam]RN",
-    "cf": "Indabibi",
+    "gw": "king of Edom",
+    "headword": "Aya-ramu[king of Edom]RN",
+    "cf": "Aya-ramu",
     "icount": 1,
-    "id": "x000031370",
+    "id": "x000038070",
     "senses_mng": [
-      "king of Elam"
+      "king of Edom"
     ],
     "forms_n": [
-      "{m}in-da-bi-bi"
+      "{m}{d}a-a-ram-mu"
     ],
     "norms_n": [
-      "Indabibi"
+      "Aya-rammu"
     ],
     "periods_p": [
       "Neo-Assyrian"
     ],
     "instances": [
-      "rinap/rinap5:Q003702.612.1"
+      "rinap/rinap3:Q003478.37.7"
     ],
     "project": "neo",
     "lang": "qpn",
     "completions": [
-      "Indabibi",
-      "king of Elam"
+      "Aya-ramu",
+      "king of Edom"
     ],
-    "sort": "['king of Elam']",
+    "sort": "['king of Edom']",
     "instances_count": 1
   },
   {
@@ -5916,6 +5886,36 @@
     "lang": "qpn",
     "completions": [
       "Paʾe",
+      "king of Elam"
+    ],
+    "sort": "['king of Elam']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Elam",
+    "headword": "Indabibi[king of Elam]RN",
+    "cf": "Indabibi",
+    "icount": 1,
+    "id": "x000031370",
+    "senses_mng": [
+      "king of Elam"
+    ],
+    "forms_n": [
+      "{m}in-da-bi-bi"
+    ],
+    "norms_n": [
+      "Indabibi"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap5:Q003702.612.1"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Indabibi",
       "king of Elam"
     ],
     "sort": "['king of Elam']",
@@ -5953,36 +5953,6 @@
   },
   {
     "gw": "king of Ellipi",
-    "headword": "Ispabara[king of Ellipi]RN",
-    "cf": "Ispabara",
-    "icount": 1,
-    "id": "x000031560",
-    "senses_mng": [
-      "king of Ellipi"
-    ],
-    "forms_n": [
-      "{m}is-pa-ba-a-ra"
-    ],
-    "norms_n": [
-      "Ispabara"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap3:Q003476.27.9"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Ispabara",
-      "king of Ellipi"
-    ],
-    "sort": "['king of Ellipi']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Ellipi",
     "headword": "Nibe[king of Ellipi]RN",
     "cf": "Nibe",
     "icount": 1,
@@ -6006,6 +5976,36 @@
     "lang": "qpn",
     "completions": [
       "Nibe",
+      "king of Ellipi"
+    ],
+    "sort": "['king of Ellipi']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Ellipi",
+    "headword": "Ispabara[king of Ellipi]RN",
+    "cf": "Ispabara",
+    "icount": 1,
+    "id": "x000031560",
+    "senses_mng": [
+      "king of Ellipi"
+    ],
+    "forms_n": [
+      "{m}is-pa-ba-a-ra"
+    ],
+    "norms_n": [
+      "Ispabara"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap3:Q003476.27.9"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Ispabara",
       "king of Ellipi"
     ],
     "sort": "['king of Ellipi']",
@@ -6163,6 +6163,36 @@
   },
   {
     "gw": "king of Moab",
+    "headword": "Salamanu[king of Moab]RN",
+    "cf": "Salamanu",
+    "icount": 1,
+    "id": "x000034150",
+    "senses_mng": [
+      "king of Moab"
+    ],
+    "forms_n": [
+      "{m}sa-la-ma-nu"
+    ],
+    "norms_n": [
+      "Salamanu"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap1:Q003460.69.5"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Salamanu",
+      "king of Moab"
+    ],
+    "sort": "['king of Moab']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Moab",
     "headword": "Kamas-halta[king of Moab]RN",
     "cf": "Kamas-halta",
     "icount": 1,
@@ -6216,36 +6246,6 @@
     "lang": "qpn",
     "completions": [
       "Kammusu-nadbi",
-      "king of Moab"
-    ],
-    "sort": "['king of Moab']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Moab",
-    "headword": "Salamanu[king of Moab]RN",
-    "cf": "Salamanu",
-    "icount": 1,
-    "id": "x000034150",
-    "senses_mng": [
-      "king of Moab"
-    ],
-    "forms_n": [
-      "{m}sa-la-ma-nu"
-    ],
-    "norms_n": [
-      "Salamanu"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap1:Q003460.69.5"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Salamanu",
       "king of Moab"
     ],
     "sort": "['king of Moab']",
@@ -6373,36 +6373,6 @@
   },
   {
     "gw": "king of Tilmun",
-    "headword": "Hundaru[king of Tilmun]RN",
-    "cf": "Hundaru",
-    "icount": 1,
-    "id": "x000030830",
-    "senses_mng": [
-      "king of Tilmun"
-    ],
-    "forms_n": [
-      "{m}hu-un-da-ru"
-    ],
-    "norms_n": [
-      "Hundaru"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap5:Q003722.131.7"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Hundaru",
-      "king of Tilmun"
-    ],
-    "sort": "['king of Tilmun']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Tilmun",
     "headword": "Qana[king of Tilmun]RN",
     "cf": "Qana",
     "icount": 1,
@@ -6426,6 +6396,36 @@
     "lang": "qpn",
     "completions": [
       "Qana",
+      "king of Tilmun"
+    ],
+    "sort": "['king of Tilmun']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Tilmun",
+    "headword": "Hundaru[king of Tilmun]RN",
+    "cf": "Hundaru",
+    "icount": 1,
+    "id": "x000030830",
+    "senses_mng": [
+      "king of Tilmun"
+    ],
+    "forms_n": [
+      "{m}hu-un-da-ru"
+    ],
+    "norms_n": [
+      "Hundaru"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap5:Q003722.131.7"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Hundaru",
       "king of Tilmun"
     ],
     "sort": "['king of Tilmun']",
@@ -6553,36 +6553,6 @@
   },
   {
     "gw": "king of Urarṭu",
-    "headword": "Argišti_II[king of Urarṭu]RN",
-    "cf": "Argišti_II",
-    "icount": 1,
-    "id": "x000029040",
-    "senses_mng": [
-      "king of Urarṭu"
-    ],
-    "forms_n": [
-      "{m}ar-giš-ti"
-    ],
-    "norms_n": [
-      "Argišti"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap2:Q006488.113.5"
-    ],
-    "project": "neo",
-    "lang": "qpn",
-    "completions": [
-      "Argišti_II",
-      "king of Urarṭu"
-    ],
-    "sort": "['king of Urarṭu']",
-    "instances_count": 1
-  },
-  {
-    "gw": "king of Urarṭu",
     "headword": "Išpueni[king of Urarṭu]RN",
     "cf": "Išpueni",
     "icount": 1,
@@ -6606,6 +6576,36 @@
     "lang": "qpn",
     "completions": [
       "Išpueni",
+      "king of Urarṭu"
+    ],
+    "sort": "['king of Urarṭu']",
+    "instances_count": 1
+  },
+  {
+    "gw": "king of Urarṭu",
+    "headword": "Argišti_II[king of Urarṭu]RN",
+    "cf": "Argišti_II",
+    "icount": 1,
+    "id": "x000029040",
+    "senses_mng": [
+      "king of Urarṭu"
+    ],
+    "forms_n": [
+      "{m}ar-giš-ti"
+    ],
+    "norms_n": [
+      "Argišti"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006488.113.5"
+    ],
+    "project": "neo",
+    "lang": "qpn",
+    "completions": [
+      "Argišti_II",
       "king of Urarṭu"
     ],
     "sort": "['king of Urarṭu']",

@@ -3,7 +3,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import {
-  composedPath,
   splitOutTranslations,
   findAttribute,
   findAttributeOnTag,
@@ -24,6 +23,13 @@ import { ThreePanel } from 'src/app/components/three-panel.component';
 export class DetailsTextsComponent extends ThreePanel {
   private item: string = '';
   private ref: string;
+  private matchScrollTimer1: NodeJS.Timeout;
+  private matchScrollTimer2: NodeJS.Timeout;
+  // The index of the selected TR in the transliteration (central) panel.
+  private tlitIndex = 0;
+  // The index of the selected TR in the translation (right) panel,
+  // out of all those TRs that have a TD with a data-tlit-id attribute.
+  private tlatIndex = 0;
 
   override initialize() {
     this.ref = this.route.snapshot.queryParams['iref'];
@@ -76,7 +82,7 @@ export class DetailsTextsComponent extends ThreePanel {
     );
   }
 
-  public handleDetailsClick(e) {
+  override handleDetailsClick(e) {
     e.preventDefault();
     const anchorEl = findAncestorByTag(e.target, 'a');
     if (!anchorEl) {
@@ -194,35 +200,275 @@ export class DetailsTextsComponent extends ThreePanel {
     window.open(href);
   }
 
-  override handleTextClick(e) {
-    const clickedLine = e.path
-      ? e.path.find((el) => {
-          return el.localName === 'tr';
+  override handleDetailsScroll(e) {
+    // Debounce scroll
+    if (this.matchScrollTimer1) {
+      clearTimeout(this.matchScrollTimer1);
+    }
+    // we need a timeout function that doesn't use "this"
+    const that = this;
+    function doScroll() {
+      that.scrollTranslationToMatchTransliteration();
+    }
+    this.matchScrollTimer1 = setTimeout(doScroll, 500);
+  }
+
+  override handleTextScroll(e) {
+    // Debounce scroll
+    if (this.matchScrollTimer2) {
+      clearTimeout(this.matchScrollTimer2);
+    }
+    // we need a timeout function that doesn't use "this"
+    const that = this;
+    function doScroll() {
+      that.scrollTransliterationToMatchTranslation();
+    }
+    this.matchScrollTimer2 = setTimeout(doScroll, 500);
+  }
+
+  private totalOffset(from: HTMLElement, toAncestor: Element): number {
+    let pe = from.offsetParent;
+    let offset = 0;
+    while (pe != toAncestor) {
+      const he = pe as HTMLElement;
+      if (he === null) {
+        return 0;
+      }
+      offset += he.offsetTop;
+      pe = he.offsetParent;
+    }
+    return offset;
+  }
+
+  private getNewIndex(
+    elementList: NodeListOf<HTMLElement>,
+    currentIndex: number,
+    panel: HTMLElement,
+  ): number | null {
+    if (elementList.length == 0) {
+      return null;
+    }
+    const topY = panel.scrollTop - this.totalOffset(elementList.item(0), panel);
+    const bottomY = topY + panel.offsetHeight;
+    // Let's binary chop elts to find the range within the panel
+    let start = 0;
+    let end = elementList.length
+    // Find the first element with a top within the panel
+    while (start != end) {
+      const mid = Math.floor(start + (end - start) / 2);
+      if (elementList.item(mid).offsetTop < topY) {
+        start = mid + 1;
+      } else {
+        end = mid;
+      }
+    }
+    let belowTop = end;
+    start = belowTop;
+    end = elementList.length;
+    // Find the last element with the bottom within the panel
+    while (start != end) {
+      const mid = Math.floor(start + (end - start) / 2);
+      const midElt = elementList.item(mid);
+      if (midElt.offsetTop + midElt.offsetHeight <= bottomY) {
+        start = mid + 1;
+      } else {
+        end = mid;
+      }
+    }
+    let aboveBottom = Math.max(end - 1, 0);
+    if (currentIndex < belowTop) {
+      // we are going down
+      return aboveBottom;
+    } else if (aboveBottom < currentIndex) {
+      // we are going up
+      return belowTop;
+    }
+    return null
+  }
+
+  private scrollPanelToHeight(
+    scrollPanelId: string,
+    elementToView: HTMLElement,
+    height: number,
+  ) {
+    const targetPanel = document.getElementById(scrollPanelId);
+    const panelOffset = this.totalOffset(elementToView, targetPanel);
+    const bottom = elementToView.offsetTop + height;
+    const mid = elementToView.offsetTop + height / 2;
+    const panelTop = targetPanel.scrollTop - panelOffset;
+    const panelHeight = targetPanel.offsetHeight;
+    const panelBottom = panelTop + panelHeight;
+    if (elementToView.offsetTop < panelTop && bottom < panelBottom) {
+      // scroll up
+      targetPanel.scrollTo({
+        // top: elementToView.offsetTop + panelOffset,  // match top of element to top of panel
+        top: mid - panelHeight / 2 + panelOffset, // match middle of element to middle of panel
+        behavior: "smooth",
+      });
+    } else if (panelTop < elementToView.offsetTop && panelBottom < bottom) {
+      // scroll down
+      targetPanel.scrollTo({
+        //top: bottom - panelHeight + panelOffset,  // match bottom of element to bottom of panel
+        top: mid - panelHeight / 2 + panelOffset, // match middle of element to middle of panel
+        behavior: "smooth",
+      });
+    }
+  }
+
+  private scrollPanelTo(scrollPanelId: string, elementToView: HTMLElement) {
+    this.scrollPanelToHeight(
+      scrollPanelId,
+      elementToView,
+      elementToView.offsetHeight,
+    );
+  }
+
+  private scrollTranslationToMatchTransliteration() {
+    const panel = document.getElementById("central-panel");
+    const elts = panel.querySelectorAll<HTMLElement>("tr")
+    const tlitIndex = this.getNewIndex(
+      elts,
+      this.tlitIndex,
+      panel,
+    );
+    if (tlitIndex === null) {
+      return;
+    }
+    this.selectTlitAndAssociatedTlat(elts, elts.item(tlitIndex));
+  }
+
+  // tlits is a list of TRs (in the central panel)
+  // trToSelect is the one of the TRs to select
+  private selectTlitAndAssociatedTlat(
+    tlits: NodeListOf<HTMLElement>,
+    trToSelect: HTMLElement,
+  ): HTMLElement | null {
+    const trHead = this.findPreviousLinked(trToSelect);
+    const id = trHead.getAttribute("data-tlat-ref");
+    if (!id) {
+      return null;
+    }
+    const target =document.getElementById(id);
+    if (target === null) {
+      return null;
+    }
+    this.scrollPanelTo("right-panel", target);
+    document.querySelectorAll("#right-panel td[data-tlit-id]").forEach((e, index) => {
+      const rtr = findAncestorByTag(e as HTMLElement, "tr");
+      if (e === target) {
+        this.tlatIndex = index;
+        rtr.classList.add("selected");
+      } else {
+        rtr.classList.remove("selected");
+      }
+    });
+    tlits.forEach((e, index) => {
+      if (e === trToSelect) {
+        this.tlitIndex = index;
+        e.classList.add("selected");
+      } else {
+        e.classList.remove("selected");
+      }
+    });
+    return target;
+  }
+
+  private scrollTransliterationToMatchTranslation() {
+    const panel = document.getElementById("right-panel");
+    const elts = panel.querySelectorAll<HTMLElement>("td[data-tlit-id]")
+    const tlatIndex = this.getNewIndex(
+      elts,
+      this.tlatIndex,
+      panel,
+    );
+    if (tlatIndex === null) {
+      return;
+    }
+    this.selectTlatAndAssociatedTlit(elts, elts.item(tlatIndex));
+  }
+
+  // tlats is a list of TDs
+  // tdToSelect is the one of the TDs to select
+  private selectTlatAndAssociatedTlit(
+    tlats: NodeListOf<HTMLElement>,
+    tdToSelect: HTMLElement,
+  ): HTMLElement | null {
+    const id = tdToSelect.getAttribute("data-tlit-id");
+    const target =document.getElementById(id);
+    if (target === null) {
+      return null;
+    }
+    this.scrollPanelTo("central-panel", target);
+    document.querySelectorAll("#central-panel tr").forEach((e, index) => {
+      if (e === target) {
+        this.tlitIndex = index;
+        e.classList.add("selected");
+      } else {
+        e.classList.remove("selected");
+      }
+    })
+    tlats.forEach((td, index) => {
+      const e = findAncestorByTag(td, "tr");
+      if (td === tdToSelect) {
+        this.tlatIndex = index;
+        e.classList.add("selected");
+      } else {
+        e.classList.remove("selected");
+      }
+    });
+    return target;
+  }
+
+  override handleTextClick(e: Event) {
+    const clickedLine = findAncestorByTag(e.target as HTMLElement, "tr");
+    const clickedTd = clickedLine.querySelector("td[data-tlit-id]") as HTMLElement;
+    if (clickedLine) {
+      const elts = document.querySelectorAll<HTMLElement>("#right-panel td[data-tlit-id]");
+      const tlit = this.selectTlatAndAssociatedTlit(elts, clickedTd);
+      if (tlit) {
+        tlit.scrollIntoView({
+          block: "nearest",
+          behavior: "smooth",
         })
-      : composedPath(e.target).find((el) => {
-          return el.localName === 'tr';
-        });
+      }
+    }
+  }
 
-    if (!!clickedLine) {
-      const centralPanelLine: HTMLElement = clickedLine.id
-        ? document.getElementById(clickedLine.id)
-        : document.querySelector('.js-panel-central');
-      const centralPanel = document.querySelector('.js-panel-central');
-      const rightPanel = document.querySelector('.js-panel-right');
+  private findPreviousLinked(element: Element) {
+    const allSibs = element.parentElement.children;
+    let lastSeen = null;
+    let elementFound = false;
+    const count = allSibs.length;
+    for (let index = 0; index !== count; ++index) {
+      const sib = allSibs.item(index);
+      if (sib.hasAttribute("data-tlat-ref")) {
+        lastSeen = sib;
+      }
+      if (sib === element) {
+        elementFound = true;
+      }
+      if (elementFound && lastSeen !== null) {
+        return lastSeen;
+      }
+    }
+    return null;
+  }
 
-      this.isMobile
-        ? centralPanelLine.scrollIntoView()
-        : centralPanel.scroll({
-            top: centralPanelLine.offsetTop - 50
-          });
-      rightPanel.querySelectorAll('tr').forEach((el) => {
-        el.classList.remove('selected');
+  override doSelectInCentralPanel(element: HTMLElement): void {
+    const selected = findAncestorByTag(element, "tr");
+    const panel = document.getElementById("central-panel");
+    const trs = panel.querySelectorAll<HTMLElement>("tr");
+    const tr = this.selectTlitAndAssociatedTlat(trs, selected);
+    this.scrollPanelToHeight(
+      "central-panel",
+      selected,
+      selected.offsetTop + selected.offsetHeight - selected.offsetTop,
+    );
+    if (tr) {
+      selected.scrollIntoView({
+        block: "center",
+        behavior: "smooth",
       });
-      centralPanel.querySelectorAll('tr').forEach((el) => {
-        el.classList.remove('selected');
-      });
-      clickedLine.classList.add('selected');
-      centralPanelLine.classList.add('selected');
     }
   }
 

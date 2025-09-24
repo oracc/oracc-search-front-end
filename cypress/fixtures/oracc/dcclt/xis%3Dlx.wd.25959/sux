@@ -358,8 +358,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/dcclt/sux
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/dcclt/sux
 QUERY_STRING=xis=lx.wd.25959
-REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=34604
+REMOTE_ADDR=82.1.249.33
+REMOTE_PORT=56778
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/dcclt/sux?xis=lx.wd.25959

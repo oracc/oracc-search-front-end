@@ -500,36 +500,6 @@
   },
   {
     "gw": "~cow",
-    "headword": "IGI@g[~cow]N",
-    "cf": "IGI@g",
-    "icount": 1,
-    "id": "o0078308",
-    "senses_mng": [
-      "a designation of cows"
-    ],
-    "forms_n": [
-      "IGI@g"
-    ],
-    "norms_n": [
-      "IGI@g"
-    ],
-    "periods_p": [
-      "Early Dynastic"
-    ],
-    "instances": [
-      "edlex:Q000012.15.2"
-    ],
-    "project": "neo",
-    "lang": "sux",
-    "completions": [
-      "IGI@g",
-      "~cow"
-    ],
-    "sort": "['~cow']",
-    "instances_count": 1
-  },
-  {
-    "gw": "~cow",
     "headword": "zageš[~cow]N",
     "cf": "zageš",
     "icount": 1,
@@ -553,6 +523,36 @@
     "lang": "sux",
     "completions": [
       "zageš",
+      "~cow"
+    ],
+    "sort": "['~cow']",
+    "instances_count": 1
+  },
+  {
+    "gw": "~cow",
+    "headword": "IGI@g[~cow]N",
+    "cf": "IGI@g",
+    "icount": 1,
+    "id": "o0078308",
+    "senses_mng": [
+      "a designation of cows"
+    ],
+    "forms_n": [
+      "IGI@g"
+    ],
+    "norms_n": [
+      "IGI@g"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000012.15.2"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "IGI@g",
       "~cow"
     ],
     "sort": "['~cow']",

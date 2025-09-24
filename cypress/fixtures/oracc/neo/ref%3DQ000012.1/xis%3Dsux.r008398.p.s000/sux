@@ -143,7 +143,7 @@
     <ul>
       <li>Catalogue entry</li>
       <li>
-        <a href="http://build-oracc.museum.upenn.edu/dcclt/Q000012/html">Print text</a>
+        <a href="http://dev-oracc.museum.upenn.edu/dcclt/Q000012/html">Print text</a>
       </li>
       <li>
         <a href="javascript://" onclick="act_score(event)">Score</a>
@@ -392,8 +392,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 PATH_INFO=/neo/sux
 PATH_TRANSLATED=/home/oracc/www/cgi-bin/wx/neo/sux
 QUERY_STRING=xis=sux.r008398.p.s000&ref=Q000012.1
-REMOTE_ADDR=86.12.69.28
-REMOTE_PORT=43564
+REMOTE_ADDR=82.1.249.33
+REMOTE_PORT=46776
 REQUEST_METHOD=GET
 REQUEST_SCHEME=https
 REQUEST_URI=/neo/sux?xis=sux.r008398.p.s000&ref=Q000012.1

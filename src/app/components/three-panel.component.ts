@@ -207,15 +207,19 @@ export class ThreePanel implements OnInit, AfterViewChecked {
   private scrollToSelected(): void {
     // need to do this after the request for the content has completed
     let container = document.querySelector('table.transliteration');
-    let selectedElement = container?.querySelector('.selected');
+    let selectedElement = container?.querySelector<HTMLElement>('.selected');
     if (selectedElement) {
-      selectedElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
       this.scrollIsDone =  true;
       this.scrollTimer = null;
+      this.doSelectInCentralPanel(selectedElement);
     }
+  }
+
+  public doSelectInCentralPanel(element: HTMLElement): void {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
   }
 
   // Update the page buttons after page change or zoom
@@ -319,8 +323,20 @@ export class ThreePanel implements OnInit, AfterViewChecked {
     return this.zoom != null;
   }
 
+  // override this to handle the user clicking the Details (second) panel
+  public handleDetailsClick(e) {
+  }
+
+  // override this to handle the user scrolling the Details (second) panel
+  public handleDetailsScroll(e) {
+  }
+
   // override this to handle the user clicking the Text (third) panel
   public handleTextClick(e) {
+  }
+
+  // override this to handle the user scrolling the Text (third) panel
+  public handleTextScroll(e) {
   }
 
   // override this to handle prev/next buttons

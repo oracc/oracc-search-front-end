@@ -1060,42 +1060,6 @@
   },
   {
     "gw": "water",
-    "headword": "māmū[water]N",
-    "cf": "māmū",
-    "icount": 4,
-    "id": "x0006670",
-    "senses_mng": [
-      "water"
-    ],
-    "forms_n": [
-      "ma-a-me",
-      "ma-a-mi",
-      "ma-mi"
-    ],
-    "norms_n": [
-      "māmē",
-      "māmī"
-    ],
-    "periods_p": [
-      "Neo-Assyrian"
-    ],
-    "instances": [
-      "rinap/rinap2:Q006498.5.3",
-      "rinap/rinap3:Q003475.76.21",
-      "rinap/rinap3:Q003498.59.2",
-      "rinap/rinap3:Q004028.6.11"
-    ],
-    "project": "neo",
-    "lang": "akk",
-    "completions": [
-      "māmū",
-      "water"
-    ],
-    "sort": "['water']",
-    "instances_count": 4
-  },
-  {
-    "gw": "water",
     "headword": "aʾu[water]N",
     "cf": "aʾu",
     "icount": 4,
@@ -1126,6 +1090,42 @@
     "lang": "sux",
     "completions": [
       "aʾu",
+      "water"
+    ],
+    "sort": "['water']",
+    "instances_count": 4
+  },
+  {
+    "gw": "water",
+    "headword": "māmū[water]N",
+    "cf": "māmū",
+    "icount": 4,
+    "id": "x0006670",
+    "senses_mng": [
+      "water"
+    ],
+    "forms_n": [
+      "ma-a-me",
+      "ma-a-mi",
+      "ma-mi"
+    ],
+    "norms_n": [
+      "māmē",
+      "māmī"
+    ],
+    "periods_p": [
+      "Neo-Assyrian"
+    ],
+    "instances": [
+      "rinap/rinap2:Q006498.5.3",
+      "rinap/rinap3:Q003475.76.21",
+      "rinap/rinap3:Q003498.59.2",
+      "rinap/rinap3:Q004028.6.11"
+    ],
+    "project": "neo",
+    "lang": "akk",
+    "completions": [
+      "māmū",
       "water"
     ],
     "sort": "['water']",
@@ -1603,36 +1603,6 @@
   },
   {
     "gw": "bird",
-    "headword": "gamgam[bird]N",
-    "cf": "gamgam",
-    "icount": 1,
-    "id": "o0027804",
-    "senses_mng": [
-      "a water bird"
-    ],
-    "forms_n": [
-      "gam₃-gam₃{mušen}"
-    ],
-    "norms_n": [
-      "gamgam"
-    ],
-    "periods_p": [
-      "Early Dynastic"
-    ],
-    "instances": [
-      "edlex:Q000018.36.1"
-    ],
-    "project": "neo",
-    "lang": "sux",
-    "completions": [
-      "gamgam",
-      "bird"
-    ],
-    "sort": "['bird']",
-    "instances_count": 1
-  },
-  {
-    "gw": "bird",
     "headword": "um[bird]N",
     "cf": "um",
     "icount": 1,
@@ -1656,6 +1626,36 @@
     "lang": "sux",
     "completions": [
       "um",
+      "bird"
+    ],
+    "sort": "['bird']",
+    "instances_count": 1
+  },
+  {
+    "gw": "bird",
+    "headword": "gamgam[bird]N",
+    "cf": "gamgam",
+    "icount": 1,
+    "id": "o0027804",
+    "senses_mng": [
+      "a water bird"
+    ],
+    "forms_n": [
+      "gam₃-gam₃{mušen}"
+    ],
+    "norms_n": [
+      "gamgam"
+    ],
+    "periods_p": [
+      "Early Dynastic"
+    ],
+    "instances": [
+      "edlex:Q000018.36.1"
+    ],
+    "project": "neo",
+    "lang": "sux",
+    "completions": [
+      "gamgam",
       "bird"
     ],
     "sort": "['bird']",
