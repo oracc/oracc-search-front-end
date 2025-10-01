@@ -66,28 +66,8 @@ configuration within the `angular.json` file.
 
 ## Deployment
 
-Angular has guides for deploying across many hosting solutions, including the approaches we take below for staging and production. Please see [here](https://angular.io/guide/deployment) for more information.
-
-We currently deploy the application in two locations: GitHub pages for the staging version and the Oracc build server for the production version. GitHub pages offers a very quick and convenient approach to deploying the staging version of the application for testing out new features. The production deployment involves more steps.
-
-Both deployment strategies are described below.
-
----
-
-## Deploy to GH-pages (for staging)
-
-Make sure that the project has first been initialised through Git and linked to your remote repository. See the [documentation for the package we use](https://www.npmjs.com/package/angular-cli-ghpages) for more information.
-
-From the main project directory run: `npm run gh-pages-deploy`
-
-This will run the `gh-pages-deploy` script defined in `package.json`. It will build the project using the `github-pages` build target defined in `angular.json`. This sets a custom `baseHref` property (which is the name of your github repo) and also sets the custom environment variables.
-
-The project will automatically be deployed to [github-pages](https://oracc.github.io/oracc-search-front-end).
-
-
-## Deploy to the build-oracc or oracc.museum server or (for production)
-
-The application is currently deployed for production to the Oracc build server (more details [here](https://github.com/oracc/website/wiki/ORACC-Server)) which runs on Ubuntu and exposes an Apache web server. Ask a senior team member or Steve Tinney to get access to this server.
+The application is currently deployed for production to the Oracc build server (more details [here](https://github.com/oracc/website/wiki/ORACC-Server)) which runs on Ubuntu and exposes an Apache web server.
+Ask a senior team member or Steve Tinney to get access to this server.
 
 ### Build the assets
 
@@ -229,16 +209,11 @@ You can learn more about Apache configurations for an Angular app [here](https:/
 
 ### Angular config for serving the app under a custom url directory
 
-As explained above, the production and staging apps are configured to run under a `/search` directory while the gh-pages deployment and development environment just run from the root directory `/`. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/search/"` value accordingly.
+As explained above, the production and staging apps are configured to run under a `/search` directory. If you want to change this you need to edit the `angular.json` file and change the `"baseHref": "/search/"` value accordingly.
 
 It is also possible to define the `baseHref` property using a custom build configuration if desired. You can do this by setting a custom field within the `configurations` object within `angular.json`. For instance, we currently have set the `github-pages` configuration which sets a custom `baseHref`and is run with `ng build --configuration=github-pages`.
 
 ---
-
-## Running unit tests
-
-Run `npx ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-Although there are not unit tests at the moment.
 
 ## Running end-to-end tests
 
